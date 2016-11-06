@@ -8,3 +8,6 @@ theme         = "Lanyon"
 
 [indexes]
   category  = "categories"
+
+[Params]
+  disqus    = "tonisagrista"
