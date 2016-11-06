@@ -1,8 +1,8 @@
 contentdir    = "content"
 layoutdir     = "layouts"
 publishdir    = "public"
-baseurl       = "https://pages.gitlab.io/hugo/"
-title         = "Hugo Blog Template for GitLab Pages"
+baseurl       = "https://jumpinglangur.gitlab.io"
+title         = "Toni Sagrista Selles | Personal page and portfolio"
 canonifyurls  = true
 theme         = "Lanyon"
 
