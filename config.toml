@@ -1,8 +1,8 @@
 contentdir    = "content"
 layoutdir     = "layouts"
 publishdir    = "public"
-baseurl       = "https://jumpinglangur.gitlab.io"
-title         = "Toni Sagrista Selles | Personal page and portfolio"
+baseurl       = "https://jumpinglangur.gitlab.io/hugo"
+title         = "Toni Sagrista Selles, Personal page and portfolio"
 canonifyurls  = true
 theme         = "Lanyon"
 
