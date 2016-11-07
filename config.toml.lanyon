@@ -1,0 +1,11 @@
+contentdir    = "content"
+layoutdir     = "layouts"
+publishdir    = "public"
+baseurl       = "http://jumpinglangur.gitlab.io/hugo"
+title         = "Toni Sagristà Sellés"
+canonifyurls  = true
+theme         = "Lanyon"
+
+[indexes]
+  category  = "categories"
+

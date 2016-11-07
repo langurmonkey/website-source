@@ -1,11 +1,43 @@
-contentdir    = "content"
-layoutdir     = "layouts"
-publishdir    = "public"
-baseurl       = "http://jumpinglangur.gitlab.io/hugo"
-title         = "Toni Sagristà Sellés"
-canonifyurls  = true
-theme         = "Lanyon"
+baseurl = "http://jumpinglangur.gitlab.io/hugo/"
+languageCode = "en-GB"
+title = "Toni Sagristà Sellés"
+# Enable comments by entering your Disqus shortname
+disqusShortname = "tonisagrista"
+# Enable Google Analytics by entering your tracking code
+googleAnalytics = "UA-9365716-2"
+theme = "hugo-sustain"
 
-[indexes]
-  category  = "categories"
+[permalinks]
+  post = "/:year/:month/:day/:slug"
 
+[params]
+  avatar = "jumpingMonkey.jpg"
+  author = "Toni Sagristà Sellés"
+  description = "I am a Software Engineer from Barcelona specially interested in physics simulations and mobile applications. I am now living in Heidelberg (Germany) and struggling to learn the language and comprehend German culture."
+
+  # Custom assets can be linked with their paths relative to static/
+  custom_css = []
+  custom_js  = []
+
+[social]
+  Github        = "langurmonkey"
+  Email         = "admin@tonisagrista.com"
+  Twitter       = "toninoni_"
+  LinkedIn      = "toni-sagristà-2101a927"
+
+## Main Menu
+[[menu.main]]
+  name = "blog"
+  weight = 100
+  identifier = "blog"
+  url = "/blog/"
+[[menu.main]]
+  name = "projects"
+  identifier = "projects"
+  weight = 200
+  url = "/projects/"
+[[menu.main]]
+  name = "resume"
+  identifier = "resume"
+  weight = 300
+  url = "/resume/"
