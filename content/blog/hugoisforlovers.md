@@ -1,28 +1,26 @@
 +++
-title = "Getting Started with Hugo"
-description = ""
-tags = [
-    "go",
-    "golang",
-    "hugo",
-    "development",
-]
+author = "Hugo author"
+categories = ["Hugo"]
 date = "2014-04-02"
-categories = [
-    "Development",
-    "golang",
-]
-highlight = "true"
+description = ""
+featured = "pic03.jpg"
+featuredalt = "Pic 3"
+featuredpath = "date"
+linktitle = ""
+title = "Getting Started with Hugo"
+type = "post"
+
 +++
 
 ## Step 1. Install Hugo
 
-Goto [hugo releases](https://github.com/spf13/hugo/releases) and download the
+Go to [hugo releases](https://github.com/spf13/hugo/releases) and download the
 appropriate version for your os and architecture.
 
 Save it somewhere specific as we will be using it in the next step.
 
 More complete instructions are available at [installing hugo](/overview/installing/)
+<!--more-->
 
 ## Step 2. Build the Docs
 
