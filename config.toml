@@ -1,5 +1,5 @@
 baseurl = "http://jumpinglangur.gitlab.io"
-languageCode = "en-us"
+languageCode = "en-gb"
 title = "Toni Sagristà Sellés"
 theme = "future-imperfect"
 preserveTaxonomyNames = true
@@ -8,6 +8,7 @@ disqusShortname = "tonisagrista"
 googleAnalytics = ""
 
 [params]
+ 
     # Sets the meta tag description, usually reserved for the main page
     description          = "Personal website and portfolio"
     # This will appear on the top left of the navigation bar

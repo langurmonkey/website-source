@@ -2684,6 +2684,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     display: block
 }
 
+article {
+  color: #fff;
+}
+
 .author, h1, h2, h3, h4, h5, h6 {
     letter-spacing: .25em;
     text-transform: uppercase
