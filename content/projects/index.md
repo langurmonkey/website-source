@@ -6,11 +6,7 @@ title = "Projects"
 showpagemeta = "false"
 +++
 
-<section id="projects">
-  <div class="container">
-    <h3>Projects</h3>
-    <div class="panel panel-default">
-      <div class="panel-body">
+
       <h5>
         <i class="fa fa-github"></i>&nbsp;&nbsp;<strong><a href="#">Project 1</a></strong>
         - Ei viderer tacimates pro, quem assum ea nam. Veritus omnesque eam te. Et natum mucius tamquam vel,
@@ -45,10 +41,3 @@ showpagemeta = "false"
         - Essent putant indoctum sed in, reprimique persequeris neglegentur te quo. Nam rebum
         tractatos partiendo at, debet ubique oporteat ut his.
       </h5>
-
-
-      </div>
-    </div>
-  </div>
-</section>
-
