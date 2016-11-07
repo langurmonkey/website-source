@@ -1,3 +1,11 @@
++++
+categories = ["resume"]
+date = "2016-11-07T23:34:05-04:00"
+tags = ["resume"]
+title = "Resumé"
+showpagemeta = "false"
++++
+
 <p>&nbsp;</p>
 <p>
 <link href="/css/resume.css" rel="stylesheet" type="text/css">
