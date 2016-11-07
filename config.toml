@@ -1,4 +1,4 @@
-baseurl = "http://jumpinglangur.gitlab.io/hugo/"
+baseurl = "http://jumpinglangur.gitlab.io"
 languageCode = "en-us"
 title = "Toni Sagrista Selles"
 theme = "hugo-future-imperfect"
