@@ -107,6 +107,10 @@ article.post footer .stats {
         opacity: 0.87;
     }
 
+    article.post ul {
+      color: #000;
+    }
+
 #header h2 {
     font-size: inherit;
     height: inherit;

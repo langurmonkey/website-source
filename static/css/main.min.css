@@ -2684,10 +2684,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     display: block
 }
 
-article {
-  color: #fff;
-}
-
 .author, h1, h2, h3, h4, h5, h6 {
     letter-spacing: .25em;
     text-transform: uppercase
@@ -5539,6 +5535,10 @@ article.post h2, article.post h3, article.post h4, article.post p {
     opacity: .87
 }
 
+article.post ul {
+  color: #000;
+}
+
 #social-share-nav .share-btn h3, .share-btn {
     color: #fff
 }
@@ -5902,4 +5902,8 @@ ul.pagination .button {
 
 .post p img.inline {
     display: inline;
+}
+
+article {
+  color: #fff;
 }
