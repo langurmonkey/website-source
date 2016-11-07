@@ -185,8 +185,9 @@ blockquote p {
 }
 
 #social-share .share-btn {
-    padding: 0.5em;
-    width: 4em;
+    padding: 0.1em;
+    width: 2em;
+    height: 2em;
 }
 
 #social-share-nav .share-btn h3{

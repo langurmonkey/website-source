@@ -28,6 +28,7 @@
 
 	ol, ul {
 		list-style: none;
+		margin: 0 0 2em
 	}
 
 	blockquote, q {
@@ -1408,7 +1409,7 @@
 	}
 
 	body {
-		background: #f4f4f4;
+		background: #000;
 	}
 
 		body.is-loading *, body.is-loading *:before, body.is-loading *:after {
@@ -1491,7 +1492,7 @@
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #2ebaae !important;
+			color: #22AA44 !important;
 		}
 
 			a:hover:before {
@@ -1512,8 +1513,8 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #3c3b3b;
-		font-family: "Raleway", Helvetica, sans-serif;
+		color: #22AA44;
+    font-family: Comfortaa;
 		font-weight: 800;
 		letter-spacing: 0.25em;
 		line-height: 1.65;
@@ -1732,8 +1733,8 @@
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			box-shadow: inset 0 0 0 1px #2ebaae;
-			color: #2ebaae !important;
+			box-shadow: inset 0 0 0 1px #22AA44;
+			color: #22AA44 !important;
 		}
 
 			input[type="submit"]:hover:active,
@@ -3008,6 +3009,7 @@
 			margin-left: 1.5em;
 			overflow: hidden;
 			padding-left: 1.5em;
+			color: #000;
 		}
 
 			#header .links ul li {
@@ -3165,6 +3167,7 @@
 		opacity: 1;
 		padding: 4.5em;
 		width: 90em;
+		color: #fff;
 	}
 
 		body.is-menu-visible #wrapper {
@@ -3433,4 +3436,14 @@
 				padding: 1.5em;
 			}
 
+		}
+
+		.post p img {
+		    display: block;
+		    margin-left: auto;
+		    margin-right: auto;
+		}
+
+		.post p img.inline {
+		    display: inline;
 		}
