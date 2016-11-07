@@ -3796,7 +3796,7 @@ a {
     -ms-transition: color .2s ease, border-bottom-color .2s ease;
     transition: color .2s ease, border-bottom-color .2s ease;
     border-bottom: dotted 1px rgba(160, 160, 160, .65);
-    color: inherit;
+    color: #22AA44;
     text-decoration: none
 }
 

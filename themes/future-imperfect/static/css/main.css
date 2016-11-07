@@ -1483,7 +1483,7 @@
 		-ms-transition: color 0.2s ease, border-bottom-color 0.2s ease;
 		transition: color 0.2s ease, border-bottom-color 0.2s ease;
 		border-bottom: dotted 1px rgba(160, 160, 160, 0.65);
-		color: inherit;
+		color: #22AA44;
 		text-decoration: none;
 	}
 
