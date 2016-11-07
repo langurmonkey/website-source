@@ -5,7 +5,7 @@ tags = ["html5", "game"]
 date = "2013-10-29"
 description = "HTML5 snake game"
 linktitle = ""
-title = "HTML5 Snake game preview"
+title = "Messing around with HTML5"
 type = "post"
 +++
 
