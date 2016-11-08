@@ -1,6 +1,7 @@
 +++
 author = "Toni Sagrista Selles"
-categories = ["RTS engine", "Java", "Game programming"]
+categories = [ "RTS engine" ]
+tags = [ "programming", "game" ]
 date = "2013-06-10"
 description = "Video preview of Real Time Strategy engine"
 linktitle = ""

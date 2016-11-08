@@ -1,5 +1,5 @@
 +++
-categories = ["projects"]
+categories = ["Projects"]
 date = "2013-10-29"
 tags = ["snake", "html5"]
 title = "HTML5 Snake Game"

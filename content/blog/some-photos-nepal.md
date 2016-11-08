@@ -1,7 +1,7 @@
 +++
 author = "Toni Sagrista Selles"
 categories = ["Photography"]
-tags = ["Nepal", "photos", "camera"]
+tags = ["nepal", "photos", "camera"]
 date = "2013-10-11"
 description = "Some photos of Nepal"
 linktitle = ""

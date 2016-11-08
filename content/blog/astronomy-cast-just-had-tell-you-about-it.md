@@ -1,6 +1,7 @@
 +++
 author = "Toni Sagrista Selles"
-categories = ["Podcast", "Astronomy"]
+categories = ["Astronomy"]
+tags = [ "podcast", "astronomy" ]
 date = "2011-10-19"
 description = "Astronomy Cast, a good podcast about astronomy"
 linktitle = ""

@@ -1,5 +1,5 @@
 +++
-categories = ["projects"]
+categories = ["N-Body Live Wallpaper"]
 date = "2011-09-20"
 tags = ["android", "physics", "simulator", "n-body"]
 title = "N-Body Live Wallpaper"

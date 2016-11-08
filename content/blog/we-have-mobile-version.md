@@ -1,6 +1,7 @@
 +++
 author = "Toni Sagrista Selles"
 categories = ["Website"]
+tags = [ "website" ]
 date = "2011-12-08"
 description = "New mobile version of the site up and running"
 linktitle = ""

@@ -1,7 +1,7 @@
 +++
 author = "Toni Sagrista Selles"
 categories = ["Gaia Sky"]
-tags = [ "Gaia Sky", "Simulation", "Astronomy", "Astrophysics", "Gaia", "OpenGL"]
+tags = [ "gaia sky", "simulation", "astronomy", "astrophysics", "gaia", "opengl", "videos"]
 date = "2016-09-24"
 description = "Gaia Sky videos"
 linktitle = ""

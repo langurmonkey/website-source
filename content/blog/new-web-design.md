@@ -1,7 +1,7 @@
 +++
 author = "Toni Sagrista Selles"
 categories = ["Website", "Design"]
-tags = [ "Design", "Programming", "Web"]
+tags = [ "design", "programming", "web"]
 date = "2013-07-03"
 description = "We have updated the design of the site"
 linktitle = ""

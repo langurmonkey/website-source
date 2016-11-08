@@ -1,5 +1,5 @@
 +++
-categories = ["projects", "particle physics simulator", "changelog"]
+categories = ["Particle Physics Simulator"]
 date = "2011-09-21"
 tags = ["projects", "android", "changelog"]
 title = "Changelog"

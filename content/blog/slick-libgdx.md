@@ -1,7 +1,7 @@
 +++
 author = "Toni Sagrista Selles"
 categories = ["Libgdx"]
-tags = ["Libgdx" , "Programming", "Java", "English"]
+tags = ["libgdx" , "programming", "java" ]
 date = "2013-07-05"
 description = "A migration story"
 linktitle = ""

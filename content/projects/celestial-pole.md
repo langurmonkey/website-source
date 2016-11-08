@@ -1,5 +1,5 @@
 +++
-categories = ["projects"]
+categories = ["Projects"]
 date = "2014-11-12"
 tags = ["astronomy", "java", "astrophysics", "programming"]
 title = "Celestial Pole Motion"
