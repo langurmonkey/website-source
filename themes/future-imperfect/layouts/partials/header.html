@@ -49,7 +49,8 @@
         {{ else }}
             {{ $.Scratch.Set "cssFiles" false }}
         {{ end }}
-
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa" />
         <!-- If the value "default" is passed into the param then we will first
              load the standard css files associated with the theme -->
         {{ if or (in ($.Scratch.Get "cssFiles") "default") (eq ($.Scratch.Get "cssFiles") false) }}
@@ -58,7 +59,6 @@
             <link rel="stylesheet" href="/css/main.css" />
             <link rel="stylesheet" href="/css/add-on.css" />
             <link rel="stylesheet" href="/css/monokai-sublime.css" />
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa" />
         {{ end }}
 
         {{ if ne ($.Scratch.Get "cssFiles") false }}
