@@ -1665,13 +1665,13 @@
 
 /* Blurb */
 
+	.blurb {
+		margin-top: 14em;
+	}
+
 	.blurb h2 {
 		font-size: 0.8em;
 		margin: 0 0 1.5em 0;
-	}
-
-	.blurb h3 {
-		font-size: 0.7em;
 	}
 
 	.blurb p {
@@ -3224,8 +3224,8 @@
 
 		#sidebar > * {
 			/*border-top: solid 1px rgba(160, 160, 160, 0.3);*/
-			margin: 3em 0 0 0;
-			padding: 3em 0 0 0;
+			margin: 2em 0 0 0;
+			padding: 2em 0 0 0;
 		}
 
 		#sidebar > :first-child {

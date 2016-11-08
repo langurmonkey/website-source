@@ -131,13 +131,14 @@
                 {{ end }}
             </ul>
         </section>
-        <br />
     {{ end }}
 
     <!-- About -->
         {{ with .Site.Params.intro.about }}
         <section class="blurb">
-            <h2>About</h2>
+            <header>
+              <h3><a href="/about">About</a></h3>
+            </header>
             <p>{{ . }}</p>
         </section>
         {{ end }}

@@ -3,7 +3,7 @@ languageCode = "en-gb"
 title = "Toni Sagristà Sellés"
 theme = "future-imperfect"
 preserveTaxonomyNames = true
-paginate = 3
+paginate = 5
 disqusShortname = "tonisagrista"
 googleAnalytics = "UA-9365716-2"
 
@@ -41,8 +41,8 @@ googleAnalytics = "UA-9365716-2"
     # customJS             = ["default", "/path/to/file"]
 
     # Loading min files for exampleSite
-    customCSS            = ["/css/main.min.css"]
-    customJS             = ["/js/main.min.js"]
+    # customCSS            = ["/css/main.min.css"]
+    # customJS             = ["/js/main.min.js"]
 
 # parms.intro will appear on the sidebar
 # This is optional, but it's suggested to use
@@ -79,28 +79,34 @@ googleAnalytics = "UA-9365716-2"
     weight = 1
 
 [[menu.main]]
-    name = "Categories"
-    url = "/categories"
-    identifier = "fa fa-tags"
-    weight = 6
-
-[[menu.main]]
     name = "Projects"
     url = "/projects"
     identifier = "fa fa-futbol-o"
-    weight = 3
+    weight = 2
 
 [[menu.main]]
     name = "Papers & edu"
     url = "/papers"
     identifier = "fa fa-mortar-board"
-    weight = 4
+    weight = 3
 
 [[menu.main]]
     name = "Résumé"
     url = "/resume"
     identifier = "fa fa-hashtag"
+    weight = 4
+
+[[menu.main]]
+    name = "Photo"
+    url = "https://www.flickr.com/photos/tonisagrista/"
+    identifier = "fa fa-camera-retro"
     weight = 5
+
+[[menu.main]]
+    name = "Categories"
+    url = "/categories"
+    identifier = "fa fa-tags"
+    weight = 6
 
 # Insert your username and the icon will apear on the page as long as
 # socialAppearAtTop or socialAppearAtBottom is set to true in the params area
