@@ -6,38 +6,33 @@ title = "Projects"
 showpagemeta = "false"
 +++
 
+### Software and applications
 
-      <h5>
-        <i class="fa fa-github"></i>&nbsp;&nbsp;<strong><a href="#">Project 1</a></strong>
-        - Ei viderer tacimates pro, quem assum ea nam. Veritus omnesque eam te. Et natum mucius tamquam vel,
-        ea dolorem volumus deterruisset nec. Graeci mentitum sea an, eu prima elaboraret est.
-      </h5>
-      <h5>
-        <i class="fa fa-github"></i>&nbsp;&nbsp;<strong><a href="#">Project 2</a></strong>
-        - An eripuit phaedrum qui, nec facer splendide ex, vel ea assum facilisi convenire.
-        Te his neglegentur consectetuer.
-      </h5>
-        <h5>
-        <i class="fa fa-github"></i>&nbsp;&nbsp;<strong><a href="#">Project 3</a></strong>
-        - An alii quot tantas eum, doming platonem persecuti mea et, vim perpetua cotidieque delicatissimi in.
-      </h5>
-      <h5>
-        <i class="fa fa-globe"></i>&nbsp;&nbsp;<strong><a href="#">Project 4</a></strong>
-        - Vim an case vidit sententiae, est at euismod laboramus efficiantur. Ei sit brute lorem,
-        ea eam timeam viderer aliquid, cu integre omittam moderatius quo.
-      </h5>
-      <h5>
-        <i class="fa fa-globe"></i>&nbsp;&nbsp;<strong><a href="#">Project 5</a></strong>
-        - Dicta causae meliore ex vel, in vix erant integre petentium. Vix ei nisl scripta recusabo,
-        eam doming blandit facilisis.
-      </h5>
-      <h5>
-        <i class="fa fa-cog"></i>&nbsp;&nbsp;<strong><a href="#">Project 6</a></strong>
-        - Inermis recusabo elaboraret mea et, dicat neglegentur vim te. Nec et sanctus scriptorem,
-        usu ex sapientem gubergren. Tamquam admodum ei usu.
-      </h5>
-      <h5>
-        <i class="fa fa-cog"></i>&nbsp;&nbsp;<strong><a href="#">Project 7</a></strong>
-        - Essent putant indoctum sed in, reprimique persequeris neglegentur te quo. Nam rebum
-        tractatos partiendo at, debet ubique oporteat ut his.
-      </h5>
+  <i class="fa fa-github"></i>&nbsp;&nbsp;<strong><a href="https://zah.uni-heidelberg.de/gaia/outreach/gaiasky/">Gaia Sky</a></strong>
+  -  A real-time 3D visualisation application developed in OpenGL in the framework of Gaia outreach. Gestated in the Astronomisches Rechen-Institut of Heidelberg University.
+
+
+  <i class="fa fa-github"></i>&nbsp;&nbsp;<strong><a href="https://github.com/langurmonkey/rts-engine">RTS Engine</a></strong>
+  - Real time strategy game engine written in Java. Very early stage, needs huge refactoring.
+
+
+  <i class="fa fa-github"></i>&nbsp;&nbsp;<strong><a href="/projects/pps/">Particle Physics Simulator</a></strong>
+  - A gravitational physics playground application for Android (v2.1+) devices.
+
+
+  <i class="fa fa-github"></i>&nbsp;&nbsp;<strong><a href="/projects/nblw/">N-Body Live Wallpaper</a></strong>
+  - A physics live wallpaper for Android (v2.1+) devices.
+
+
+  <i class="fa fa-github"></i>&nbsp;&nbsp;<strong><a href="/projects/celestial-pole/">Celestial Pole Motion</a></strong>
+  - Tracks the motion of the mean celestial poles with respect to the ICRS due to the Earth's precession and nutation.
+
+
+  <i class="fa fa-globe"></i>&nbsp;&nbsp;<strong><a href="/projects/snake/">HTML5 Snake Game</a></strong>
+  - A modified version of an HTML5 snake game.
+
+
+### Achivements
+
+-  [Gaia: Here Comes the Sun](http://apod.nasa.gov/apod/ap160926.html) - **Astronomy Picture of the Day** - *26/09/2016*
+-  [A Window to Gaia: The Focal Plane](http://www.cosmos.esa.int/web/gaia/iow_20160422) - **Gaia Image of the Week** - *22/04/2016*

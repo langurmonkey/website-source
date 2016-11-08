@@ -2,7 +2,7 @@
 categories = ["resume"]
 date = "2016-11-07T23:34:05-04:00"
 tags = ["resume"]
-title = "Resumé"
+title = "Résumé"
 showpagemeta = "false"
 +++
 
@@ -152,17 +152,21 @@ showpagemeta = "false"
     </ul>
     <h2 class="cv">Publications and projects</h2>
     <ul>
-      <li><a href="http://iopscience.iop.org/0067-0049/216/1/13/">Leaving the dark ages with AMIGA</a> - Alberto Manrique et al. 2015 ApJS 216 13.</li>
-      <li><a href="http://www.csd.abdn.ac.uk/teaching/projectabstracts/abstract.php?id=cs02ts&amp;year=2007">Computer-aided catalan learning application</a> - 2007, The University of Aberdeen, Computing Science Dept., degree thesis.</li>
-      <li><a href="/sites/default/files/pdf/MasterThesis.pdf">Development of the AMIGA font end for external use</a> - 2011, Universitat de Barcelona, Dept. of Astronomy, M.Sc. thesis.</li>
-      <li><a href="/particlephysicsandroid" title="Particle Physics Simulator">Particle Physics Simulator</a> - Android application with +500K downloads.
-      <li>Check my portfolio <a href="/projects" title="Portfolio">here</a>.
+      <li><a href="http://ieeexplore.ieee.org/document/7539608/">Topological Analysis of Inertial Dynamics</a> - A. Sagristà, S. Jordan, A. Just, F. Dias, L. G. Nonato, F. Sadlo - 2016, <em>IEEE Transactions on Visualization and Computer Graphics, VIS 2016</em></li>
+      <li><a href="http://www.aanda.org/component/article?access=doi&doi=10.1051/0004-6361/201629272">The Gaia Mission</a> - The Gaia Consortium... A, Sagristà... - 2016, <em>Astronomy & Astrophysics</em></li>
+      <li><a href="http://dx.doi.org/10.1051/0004-6361/201629512">Gaia Data Release 1. Summary of the astrometric, photometric, and survey properties</a> - The Gaia Consortium... A, Sagristà... - 2016, <em>Astronomy & Astrophysics</em></li>
+      <li><a href="http://iopscience.iop.org/0067-0049/216/1/13/">Leaving the dark ages with AMIGA</a> - Alberto Manrique et al. - 2015, <em>The Astrophysical Journal</em></li>
+      <li><a href="/pdf/MasterThesis.pdf">Development of the AMIGA font end for external use</a> - 2011, Universitat de Barcelona, Dept. of Astronomy, <em>M.Sc. thesis</em></li>
+      <li><a href="http://www.csd.abdn.ac.uk/teaching/projectabstracts/abstract.php?id=cs02ts&amp;year=2007">Computer-aided catalan learning application</a> - 2007, The University of Aberdeen, Computing Science Dept., <em>degree thesis</em></li>
+      <li><a href="https://zah.uni-heidelberg.de/gaia/outreach/gaiasky/" title="Gaia Sky">Gaia Sky</a> - 3D Universe simulator focused on Gaia data
+      <li><a href="/pps" title="Particle Physics Simulator">Particle Physics Simulator</a> - Android application with +500K downloads
+      <li>Check out my various projects <a href="/projects" title="Projects">here</a>
     </ul>
     <h2 class="cv">Social Skills and Competences</h2>
     <ul>
       <li>Teamworking. Ability to work in a multicultural environment.</li>
-      <li>Good communication and presentation skills in both Spanish and English.</li>
-      <li>Experience in software project management</li>
+      <li>Good communication and presentation skills.</li>
+      <li>Experience in software project management.</li>
     </ul>
     <p>&nbsp;</p>
   </dd>

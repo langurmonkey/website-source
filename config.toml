@@ -7,8 +7,12 @@ paginate = 3
 disqusShortname = "tonisagrista"
 googleAnalytics = ""
 
+[taxonomies]
+    tag = "tags"
+    category = "categories"
+
 [params]
- 
+
     # Sets the meta tag description, usually reserved for the main page
     description          = "Personal website and portfolio"
     # This will appear on the top left of the navigation bar
@@ -92,7 +96,7 @@ googleAnalytics = ""
     weight = 4
 
 [[menu.main]]
-    name = "Resumé"
+    name = "Résumé"
     url = "/resume"
     identifier = "fa fa-hashtag"
     weight = 5
