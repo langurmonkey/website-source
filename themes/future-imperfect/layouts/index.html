@@ -3,11 +3,17 @@
     {{ partial "navbar" . }}
     <!-- Main -->
     <div id="main">
-        {{ range first 4 (where .Site.Pages "Type" "post") }}
-            {{ .Render "content-list" }}
+      {{ if .Site.Params.orderByPublishDate }}
+          {{ $paginator := .Paginate (where .Data.Pages.ByPublishDate.Reverse "Type" "post") }}
+      {{ else }}
+          {{ $paginator := .Paginate (where .Site.Pages "Type" "post") }}
+      {{ end }}
 
-            {{ partial "share-menu" . }}
-        {{ end }}
+      {{ range .Paginator.Pages }}
+          {{ .Render "content-list" }}
+      {{ end }}
+
+      {{ partial "pagination" . }}
     </div>
     {{ partial "sidebar" . }}
 {{ partial "footer" . }}
