@@ -2,10 +2,7 @@
 
 ---
 
-My website in GitLab Pages.
-
-Learn more about GitLab Pages at https://pages.gitlab.io and the official
-documentation http://doc.gitlab.com/ee/pages/README.html.
+My website project. Visit it in [jumpinglangur.gitlab.io](http://jumpinglangur.gitlab.io).
 
 ---
 
