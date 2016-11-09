@@ -1730,6 +1730,9 @@
 		text-decoration: none;
 		text-transform: uppercase;
 		white-space: nowrap;
+		-webkit-border-radius: 40px;
+		-moz-border-radius: 40px;
+		border-radius: 40px;
 	}
 
 		input[type="submit"]:hover,
@@ -2386,7 +2389,7 @@
 		}
 
 			ul.posts li {
-				border-top: dotted 1px rgba(160, 160, 160, 0.3);
+				/* border-top: dotted 1px rgba(160, 160, 160, 0.3); */
 				margin: 0.2em 0 0 0;
 				padding: 0.2em 0 0 0;
 			}
