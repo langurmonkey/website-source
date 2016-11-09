@@ -105,8 +105,14 @@ googleAnalytics = "UA-9365716-2"
 [[menu.main]]
     name = "Categories"
     url = "/categories"
-    identifier = "fa fa-tags"
+    identifier = "fa fa-object-ungroup"
     weight = 6
+
+[[menu.main]]
+    name = "Tags"
+    url = "/tags"
+    identifier = "fa fa-tags"
+    weight = 7
 
 # Insert your username and the icon will apear on the page as long as
 # socialAppearAtTop or socialAppearAtBottom is set to true in the params area

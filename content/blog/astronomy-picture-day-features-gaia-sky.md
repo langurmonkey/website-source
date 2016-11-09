@@ -1,6 +1,6 @@
 +++
 author = "Toni Sagrista Selles"
-categories = ["Gaia Sky"]
+categories = ["Gaia Sky", "Test"]
 tags = [ "simulation", "astronomy", "astrophysics", "gaia", "opengl", "apod"]
 date = "2016-09-26"
 description = "Astronomy Picture of the Day features Gaia Sky"
