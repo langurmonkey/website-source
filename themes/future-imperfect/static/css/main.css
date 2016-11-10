@@ -1487,6 +1487,11 @@
 		text-decoration: none;
 	}
 
+	a.external:after {
+		content: url(/img/main/external.png);
+  	margin: 0 0 0 5px;
+	}
+
 		a:before {
 			-moz-transition: color 0.2s ease;
 			-webkit-transition: color 0.2s ease;
