@@ -13,4 +13,6 @@ With [Gaia Data Release 1](http://sci.esa.int/gaia/58210-gaia-data-release-1/) i
 
 Check out the playlist:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLDZ2SS9VxN5tZYcjya_KExcqtqba_NWUk" frameborder="0" allowfullscreen></iframe>
+<div class="videowrapper">
+  <iframe width="100%" src="https://www.youtube.com/embed/videoseries?list=PLDZ2SS9VxN5tZYcjya_KExcqtqba_NWUk" frameborder="0" allowfullscreen></iframe>
+</div>

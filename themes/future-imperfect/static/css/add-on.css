@@ -342,6 +342,9 @@ body.is-share-visible #wrapper {
 
 .post {
     margin: 0 0 2em 0;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
 }
 
     #content img {
