@@ -11,6 +11,7 @@ type = "post"
 
 Here are some videos of the various versions that have been released of the **Particle Physics Simulator** (formerly called N-Body Simulator) for Android.
 
+<!--more-->
 
 ### Version 3.1.4
 {{< youtube AjvF6ey3_Lc >}}

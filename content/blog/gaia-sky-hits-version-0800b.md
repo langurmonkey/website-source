@@ -16,6 +16,9 @@ This time around we bring on loads of improvements, bug fixes and new features. 
 -  Reimplemented star render algorithm, now all stars are shaded as points in the GPU.
 -  New [Milky Way](http://ari-zah.github.io/gaiasky/images/screenshots/screenshot_00028.jpg) rendering with 40K particles and 100 nebulae.
 -  Three graphics quality settings, low, normal and high, which have an impact in the size of textures, the complexity of the models and the quality of the graphical effects.
+
+<!--more-->
+
 -  New embedded music player in the Gaia Sky interface to play your favourite songs when Gaiaing!
 -  Improved mouse interactions.
 -  Stereoscopic mode effects have been fixed and now work properly in 3D.

@@ -11,6 +11,8 @@ type = "post"
 
 With [Gaia Data Release 1](http://sci.esa.int/gaia/58210-gaia-data-release-1/) in mind, we have prepared a few videos with flights through the [TGAS](http://www.cosmos.esa.int/web/gaia/iow_20150115) catalog and generally showcasing Gaia Sky.
 
+<!--more-->
+
 Check out the playlist:
 
 <div class="videowrapper">

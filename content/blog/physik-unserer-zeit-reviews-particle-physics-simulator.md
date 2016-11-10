@@ -13,6 +13,8 @@ Turns out the German physics educational journal [*Physik in unserer Zeit*](http
 
 For what I could understand with my still basic German, the article talks about how the app can aid in the **teaching of gas dynamics**, providing some hints on the configuration set-up (no gravity, elastic collisions, etc.) in order to simulate a gas. For example, it teaches how to illustrate the concept of [Brownian motion](http://en.wikipedia.org/wiki/Brownian_motion), removing the gravity and creating several small-sized particles along with one or two big-sized particles.
 
+<!--more-->
+
 ![Phisik in unserer Zeit](http://onlinelibrary.wiley.com/store/10.1002/piuz.v45.1/asset/cover.gif?v=1&s=84c995dece7f5e1871bf17b9307418f22b44020d)
 
 If you are interested, you can get that article for free here: [Link to article](http://onlinelibrary.wiley.com/doi/10.1002/piuz.201490007/abstract). Just click on Get `PDF` in the `ARTICLE TOOLS` menu on the right.

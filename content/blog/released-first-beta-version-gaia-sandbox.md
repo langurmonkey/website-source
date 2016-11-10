@@ -14,6 +14,7 @@ type = "post"
 
 Today we have published the first public BETA version (**v0.703b**) of the [Gaia Sandbox](http://www.zah.uni-heidelberg.de/gaia/outreach/gaiasky/), a real-time, 3D, astronomy visualisation application that runs on **Linux**, **Windows** and **MacOSX** systems. Its main purpose is to serve as an outreach platform to [ESA](http://sci.esa.int/)'s [Gaia](http://sci.esa.int/gaia/) mission, and it is free (as in freedom and gratis). It is also open source under the LGPL, so go [try it out](http://www.zah.uni-heidelberg.de/gaia/outreach/gaiasky/)!
 
+<!--more-->
 
 The Gaia Sandbox is a real time simulation of [Gaia](http://sci.esa.int/gaia/), the Solar System and the Galaxy with advanced graphics and more than 100.000 stars to observe and navigate through. Here are some of its main features:
 

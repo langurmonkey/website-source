@@ -11,6 +11,8 @@ type = "post"
 
 I have been working hard these last couple of months and today I'm proud to announce the release of the second beta version of the [Gaia Sandbox](http://www.zah.uni-heidelberg.de/gaia2/outreach/gaiasky), the open source, free, astronomy sandbox focused on the [Gaia mission](http://sci.esa.int/gaia/).
 
+<!--more-->
+
 It comes with lots of **bug fixes**, **features** and **improvements**. But do not believe me, check out the following list of new stuff for yourself:
 
 -  Lots of bug fixes.

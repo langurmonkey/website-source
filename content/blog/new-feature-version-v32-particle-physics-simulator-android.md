@@ -18,4 +18,6 @@ Let's see the new features:
 -  Simulation can be paused using top velocity bar. This may be useful to set up a configuration from scratch without having particles moving around.
 -  Finally, initial particle sizes can now be set to extra small, small, medium, large and extra large. It may come in handy in tabs with big screens.
 
+<!--more-->
+
 That's all for now folks!

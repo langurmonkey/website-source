@@ -16,4 +16,6 @@ We just released the new **bugfix version (3.2.4)** which fixes the following bu
 -  Particles got stuck on wall ends.
 -  Additionally, the maximum number of walls has been increased from ten to fifteen.
 
+<!--more-->
+
 As usual, you can download it from the [Google Play Store](https://play.google.com/store/apps/details?id=com.tss.android).

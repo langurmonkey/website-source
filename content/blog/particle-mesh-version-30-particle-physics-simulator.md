@@ -16,6 +16,8 @@ The new version 3.0 of the **Particle Physics Simulator** has been out for almos
 
 In the basic **direct method** each particle's force is calculated directly applying Newton's second law of motion, where given initial positions <img class="inline" src="https://chart.googleapis.com/chart?cht=tx&amp;chl=q_i"> and velocities <img class="inline" src="https://chart.googleapis.com/chart?cht=tx&amp;chl=\dot q_i"> for the i particles, we can get the forces with:
 
+<!--more-->
+
 <img src="https://chart.googleapis.com/chart?cht=tx&amp;chs=40&amp;chl=f_i = m_i \ddot q_i = G \sum \frac{m_j m_k (q_k - q_j)}{|q_k q_j|^3}~~ j = 1,\cdots,n,">
 
 where <img class="inline" src="https://chart.googleapis.com/chart?cht=tx&amp;chl=n"> is the number of particles and <img class="inline" src="https://chart.googleapis.com/chart?cht=tx&amp;chl=q_i">, <img class="inline" src="https://chart.googleapis.com/chart?cht=tx&amp;chl=\dot q_i"> and<img class="inline" src="https://chart.googleapis.com/chart?cht=tx&amp;chl=\ddot q_i"> are their positions, velocities and accelerations. The efficiency of this method is <img class="inline" src="https://chart.googleapis.com/chart?cht=tx&amp;chl=\sim O(n^2)">.

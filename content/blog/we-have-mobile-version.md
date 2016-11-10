@@ -13,3 +13,5 @@ Finally the **mobile version** of this site is up and ready to go. It features m
 
 -  [Mobile version](http://tonisagrista.com/?device=mobile)
 -  [Desktop version](http://tonisagrista.com/?device=desktop)
+
+<!--more-->
