@@ -13,4 +13,4 @@ This is the first post of my new website. I will use it to discuss my various pr
 
 Hope you enjoy it ;)
 
-<!-- more -->
+<!--more-->

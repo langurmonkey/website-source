@@ -109,6 +109,13 @@ article.post footer .stats {
 
     article.post ul {
       color: #000;
+
+      /* This works in IE 8 & 9 too */
+      /* ... but also 5, 6, 7 */
+      filter: alpha(opacity=87);
+
+      /* Modern Browsers */
+      opacity: 0.87;
     }
 
 #header h2 {

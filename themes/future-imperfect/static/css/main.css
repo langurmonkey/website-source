@@ -1508,6 +1508,10 @@
 		font-weight: 700;
 	}
 
+	a strong, b {
+		color: #22aa44;
+	}
+
 	em, i {
 		font-style: italic;
 	}
