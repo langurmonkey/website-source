@@ -1,7 +1,7 @@
 +++
 author = "Toni Sagrista Selles"
 categories = ["Website"]
-tags = [ "programming", "projects", "website", "web" ]
+tags = [ "programming", "projects", "website", "web", "static site generator", "drupal", "hugo", "ipage" ]
 date = "2016-11-10"
 description = "Bye bye paid web hosting + Drupal, hello GitLab + Hugo"
 linktitle = ""
