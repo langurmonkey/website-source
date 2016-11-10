@@ -12,7 +12,7 @@ featuredpath = "date"
 type = "post"
 +++
 
-The idea of ditching both my web hosting provider and Drupal has been at the back of my mind for a few months.
+The idea of **ditching** both my **web hosting provider** and **Drupal** has been at the back of my mind for a few months.
 
 Bear with me. Since about 2011 I have been maintaining this website using the cheapest hosting tier my hosting offers -- At least it was the cheapest at the time I got it. They call it *The Essential* and it costs over 300 bucks for 2 years. It is not a lot, but it is definitely too much for my purposes of hosting a small blog where I provide occasional updates on my projects, my portfolio and my CV.
 
