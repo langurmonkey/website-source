@@ -3187,7 +3187,7 @@
 		@media screen and (max-width: 1680px) {
 
 			#wrapper {
-				padding: 3em;
+				padding: 2em;
 			}
 
 		}
@@ -3223,7 +3223,7 @@
 /* Sidebar */
 
 	#sidebar {
-		margin-right: 3em;
+		margin-right: 2em;
 		min-width: 22em;
 		width: 22em;
 	}
