@@ -1487,7 +1487,7 @@
 		text-decoration: none;
 	}
 
-	a.external:after {
+	article a.external:after{
 		content: url(/img/main/external.png);
   	margin: 0 0 0 5px;
 	}
