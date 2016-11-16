@@ -180,6 +180,7 @@ blockquote p {
 #social-share {
     position: relative;
     top: -0.5em;
+    margin-top: 5.5em;
 }
 
 #social-share ul {
@@ -209,8 +210,8 @@ blockquote p {
     display: inline-block;
     color: #ffffff;
     border: none;
-    border-radius: 4px;
-    box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
+    border-radius: 15px;
+    box-shadow: 2px 2px 0 0 rgba(0,0,0,0.2);
     outline: none;
     text-align: center;
     text-decoration: none;
