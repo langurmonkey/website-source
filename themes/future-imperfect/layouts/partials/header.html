@@ -6,6 +6,12 @@
 -->
 <html>
     <head>
+      <script language="javascript" type="text/javascript">
+      var host = "tonisagrista.com";
+      if ((host == window.location.host) && (window.location.protocol != 'https:')) {
+        window.location = window.location.toString().replace(/^http:/, "https:");
+      }
+      </script>
         {{ with $.Scratch.Get "generalTitle" }}
             <title>{{ . }}</title>
         {{ else }}
@@ -15,7 +21,7 @@
                 <title>{{ .Site.Title }}</title>
             {{ end }}
         {{ end }}
-	
+
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {{ .Hugo.Generator }}
@@ -49,7 +55,7 @@
         {{ else }}
             {{ $.Scratch.Set "cssFiles" false }}
         {{ end }}
-        
+
         <!-- If the value "default" is passed into the param then we will first
              load the standard css files associated with the theme -->
         {{ if or (in ($.Scratch.Get "cssFiles") "default") (eq ($.Scratch.Get "cssFiles") false) }}
@@ -68,7 +74,7 @@
             {{ end }}
         {{ end }}
 	    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa" />
-	
+
         <!--[if lte IE 9]><link rel="stylesheet" href="/css/ie9.css" /><![endif]-->
         <!--[if lte IE 8]><link rel="stylesheet" href="/css/ie8.css" /><![endif]-->
         {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}

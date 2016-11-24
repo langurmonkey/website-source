@@ -59,14 +59,6 @@
                  }
               }
             </script>
-
-            <!-- Convert http to https -->
-            <script type="text/javascript">
-            var host = "tonisagrista.com";
-            if ((host == window.location.host) && (window.location.protocol != 'https:')) {
-              window.location = window.location.toString().replace(/^http:/, "https:");
-            }
-            </script>
         {{ end }}
 
         {{ if ne ($.Scratch.Get "jsFiles") false }}
