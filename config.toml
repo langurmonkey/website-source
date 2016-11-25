@@ -118,7 +118,7 @@ googleAnalytics = "UA-9365716-2"
 # socialAppearAtTop or socialAppearAtBottom is set to true in the params area
 # The social media icons will appear on the sidebar
 [social]
-    github          = "jumpinglangur"
+    github          = "langurmonkey"
     bitbucket       = "tsagrista"
     jsfiddle        = ""
     codepen         = ""
