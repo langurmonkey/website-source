@@ -13,12 +13,12 @@
       }
       </script>
         {{ with $.Scratch.Get "generalTitle" }}
-            <title>{{ . }}</title>
+        <title>{{ . }}</title>
         {{ else }}
             {{ with .Title }}
-                <title>{{ . }}</title>
+        <title>{{ . }}</title>
             {{ else }}
-                <title>{{ .Site.Title }}</title>
+        <title>{{ .Site.Title }}</title>
             {{ end }}
         {{ end }}
 
@@ -28,13 +28,13 @@
         {{ partial "favicon" . }}
 
         {{ with .Params.author }}
-            <meta name="author" content="{{ . }}">
+        <meta name="author" content="{{ . }}">
         {{ end }}
         {{ with .Description }}
-            <meta name="description" content="{{ . }}">
+        <meta name="description" content="{{ . }}">
         {{ else }}
             {{ with .Site.Params.description }}
-                <meta name="description" content="{{ . }}">
+        <meta name="description" content="{{ . }}">
             {{ end }}
         {{ end }}
 
@@ -69,11 +69,12 @@
         {{ if ne ($.Scratch.Get "cssFiles") false }}
             {{ range $.Scratch.Get "cssFiles" }}
                 {{ if ne . "default" }}
-                    <link rel="stylesheet" href="{{ . }}" />
+            <link rel="stylesheet" href="{{ . }}" />
                 {{ end }}
             {{ end }}
         {{ end }}
-	    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa" />
+	          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa" />
+            <link rel="canonical" href="{{ .Permalink }}">
 
         <!--[if lte IE 9]><link rel="stylesheet" href="/css/ie9.css" /><![endif]-->
         <!--[if lte IE 8]><link rel="stylesheet" href="/css/ie8.css" /><![endif]-->
