@@ -13,7 +13,7 @@
                 {{ if ne (len $tagMenu) 0 }}
                     {{ $tagMenu := index $tagMenu 0 }}
 
-                    {{ $.Scratch.Set "tagUrl" $tagMenu.URL }}
+                    {{ $.Scratch.Set "tagUrl" "/tags/" }}
 
                     {{ with $tagMenu.Identifier }}
                         <i class="{{ . }}">&nbsp;</i>

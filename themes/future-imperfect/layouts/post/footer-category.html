@@ -13,7 +13,7 @@
                 {{ if ne (len $categoryMenu) 0 }}
                     {{ $categoryMenu := index $categoryMenu 0 }}
 
-                    {{ $.Scratch.Set "categoryUrl" $categoryMenu.URL }}
+                    {{ $.Scratch.Set "categoryUrl" "/categories/" }}
 
                     {{ with $categoryMenu.Identifier }}
                         <i class="{{ . }}">&nbsp;</i>
