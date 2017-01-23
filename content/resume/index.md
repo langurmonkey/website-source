@@ -146,7 +146,7 @@ showpagemeta = "false"
         Also worked with Oracle's <i>NetBeans</i>.</li>
       <li><b>HPC</b> - Tuning and profiling code for its execution in the supercomputers at <a href="http://cesca.cat" target="_blank">CESCA</a> and <a href="http://www.bsc.es">BSC</a>.</li>
       <li><b>Android SDK</b> - Expertise in the Android SDK. Two applications published in the Android Market (see my <a href="/portfolio">Portfolio</a>).</li>
-      <li><b>OpenGL/GLSL</b> - Deep knowledge of the Open Graphics Library, both regular and ES versions. Also coded some basic shaders in GLSL.</li>
+      <li><b>OpenGL/GLSL</b> - Deep knowledge of the Open Graphics Library, both regular and ES versions.</li>
       <li><b>LaTeX</b> - I use LaTeX to format almost all the documents I produce, including technical work, science reports and my <a href="/sites/default/files/pdf/cv.pdf">resumé</a>.</li>
       <li><b>Drupal/WordPress</b> - I set up a Drupal environment from scratch to build this very site.</li>
       <li><b>Web technologies</b> - I am proficient in web technologies.
