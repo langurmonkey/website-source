@@ -35,7 +35,8 @@ showpagemeta = "false"
       11/2013 - currently&nbsp;&nbsp;&nbsp;<a href="http://www.ari.uni-heidelberg.de/" title="ARI" target="_blank">ARI</a>/<a href="http://uni-heidelberg.de" title="University of Heidelberg" target="_blank">University of Heidelberg</a>, software engineer and researcher
     </h2>
     <ul>
-      <li><strong>Gaia/CU9</strong> - Support for the scientiﬁc exploration of the Gaia data as well as its electronic publication. Support for the Gaia data visualisation and public outreach. My main project is <a href="http://www.ari.uni-heidelberg.de/gaia/outreach/gaiasky">Gaia Sky</a>.</li>
+      <li><strong>Gaia/CU9</strong> - Support for the scientiﬁc exploration of the Gaia data as well as its electronic publication. Support for the Gaia data visualisation and public outreach.</li>
+      <li><strong><a href="http://www.ari.uni-heidelberg.de/gaia/outreach/gaiasky">Gaia Sky</a></strong> - 3D Universe software.</li>
     </ul>
     <h2 class="cv">
       04/2015 - currently&nbsp;&nbsp;&nbsp;<a href="http://iwr.uni-heidelberg.de/groups/viscomp" title="viscomp" target="_blank">Viscomp group</a>/<a href="http://iwr.uni-heidelberg.de" title="Interdisciplinary center for scientific computing" target="_blank">IWR</a>, researcher and Ph.D. candidate
