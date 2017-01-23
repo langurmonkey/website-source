@@ -148,12 +148,12 @@ showpagemeta = "false"
       <li><b>Android SDK</b> - Expertise in the Android SDK. Two applications published in the Android Market (see my <a href="/portfolio">Portfolio</a>).</li>
       <li><b>OpenGL/GLSL</b> - Deep knowledge of the Open Graphics Library, both regular and ES versions.</li>
       <li><b>LaTeX</b> - I use LaTeX to format almost all the documents I produce, including technical work, science reports and my <a href="/sites/default/files/pdf/cv.pdf">resumé</a>.</li>
-      <li><b>Drupal/WordPress</b> - I set up a Drupal environment from scratch to build this very site.</li>
+      <li><b>Drupal/WordPress</b> - I set up a Drupal environment from scratch to build my previous site.</li>
       <li><b>Web technologies</b> - I am proficient in web technologies.
         <ul><li><strong>CSS3&HTML5</strong> - The future of the web.</li>
         <li><strong>Javascript</strong> - I also know well AJAX and jQuery.</li>
         <li><strong>PHP</strong> - I coded personal websites in PHP a while ago.</li>
-        <li><strong>Others</strong> - Dreamweaver+VBScript+ASP and FrontPage.</li>
+        <li><strong>Others</strong> - Dreamweaver+VBScript+ASP and FrontPage. Hugo.</li>
         </ul>
       </li>
       <li><b>NLP. 2007</b> - Natural Language Processing knowledge, acquired developing the final year project.</li>
