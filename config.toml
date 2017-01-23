@@ -51,7 +51,7 @@ googleAnalytics = "UA-9365716-2"
 
     paragraph = "Personal website and portfolio"
 
-    about     = "I am a Software Engineer from Barcelona interested in astrophysics and visualisation. I live in Heidelberg (Germany) and struggle to learn the language and comprehend German culture."
+    about     = "I am a Software Engineer from Barcelona interested in astrophysics and visualisation. I live in Heidelberg (Germany) and struggle to learn the language and comprehend German culture. Working on CU9/Gaia at <a href='http://ari.uni-heidelberg.de'>ARI/ZAH</a>. Researcher at the <a href='http://iwr.uni-heidelberg.de/groups/viscomp'>viscomp</a> of <a href='http://iwr.uni-heidelberg.de'>IWR</a>."
 
 # This will also appear on the sidebar.
 # A width of less than 100px is recommended
