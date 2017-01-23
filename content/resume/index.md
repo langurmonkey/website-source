@@ -32,7 +32,7 @@ showpagemeta = "false"
   <dt class="cv">Experience</dt>
   <dd class="cv">
     <h2 class="cv">
-      11/2013 - currently&nbsp;&nbsp;&nbsp;<a href="http://www.ari.uni-heidelberg.de/" title="ARI" target="_blank">Astronomisches Rechen-Institut</a>/<a href="http://uni-heidelberg.de" title="University of Heidelberg" target="_blank">University of Heidelberg</a>, software engineer and researcher
+      11/2013 - currently&nbsp;&nbsp;&nbsp;<a href="http://www.ari.uni-heidelberg.de/" title="ARI" target="_blank">ARI</a>/<a href="http://uni-heidelberg.de" title="University of Heidelberg" target="_blank">University of Heidelberg</a>, software engineer and researcher
     </h2>
     <ul>
       <li><strong>Gaia/CU9</strong> - Support for the scientiﬁc exploration of the Gaia data as well as its electronic publication. Support for the Gaia data visualisation and public outreach. My main project is <a href="http://www.ari.uni-heidelberg.de/gaia/outreach/gaiasky">Gaia Sky</a>.</li>
