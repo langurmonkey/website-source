@@ -26,7 +26,7 @@ showpagemeta = "false"
   </p>
 </div>
 <div id="objective">
-  <p>I am a software engineer expert in various java technologies such as J2EE, GWT and Android. I am fascinated by the physics of nature and have a strong interest for physics simulations. I have lately developed a passion for game programming techniques.</p>
+  <p>I am a software engineer expert in various java technologies and doing research in scientific visualisation. I am fascinated by the physics of nature and have a strong interest for physics simulations. I have lately developed a passion for game programming techniques.</p>
 </div>
 <dl class="cv">
   <dt class="cv">Experience</dt>
@@ -41,7 +41,7 @@ showpagemeta = "false"
       04/2015 - currently&nbsp;&nbsp;&nbsp;<a href="http://iwr.uni-heidelberg.de/groups/viscomp" title="viscomp" target="_blank">Viscomp group</a>/<a href="http://iwr.uni-heidelberg.de" title="Interdisciplinary center for scientific computing" target="_blank">IWR</a>, researcher and Ph.D. candidate
     </h2>
     <ul>
-      <li><strong>Scientific visualization</strong> - Research in scientific visualization for astronomy and astrophysics.</li>
+      <li><strong>Scientific visualization</strong> - Research in scientific visualisation for astronomy and astrophysics.</li>
     </ul>
     <h2 class="cv">
       12/2011 - 10/2013&nbsp;&nbsp;&nbsp;<a href="http://www.ieec.cat/" title="IEEC" target="_blank">IEEC</a>/<a href="http://icc.ub.edu" title="ICC" target="_blank">ICC</a>/<a href="http://ub.edu" title="UB" target="_blank">UB</a>, software engineer
@@ -130,6 +130,9 @@ showpagemeta = "false"
         <li><strong>Libraries</strong> - Apache commons, jetty, Eclipse GEF, GMF and SWF, libGDX, Quartz, Lucene, etc.</li>
         <li><strong>Profiling</strong> - Eclipse MAT, VisualVM, JProfile, JProbe, jmap, jhat, jstack.</li>
         </ul>
+      </li>
+      <li><strong>CUDA</strong>
+      </li>
       <li><strong>Other languages</strong> - Other languages I know and use.
         <ul><li><strong>FORTRAN</strong> - Got to know FORTRAN well thanks to my work with the semi-analytic model AMIGA.</li>
         <li><strong>C, C++</strong> - Some practical works done in both languages during my degree.</li>
