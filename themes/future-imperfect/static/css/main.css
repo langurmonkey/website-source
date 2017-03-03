@@ -2662,13 +2662,10 @@
 		}
 
 			.post > .image.featured img {
-				-moz-transition: -moz-transform 0.2s ease-out;
-				-webkit-transition: -webkit-transform 0.2s ease-out;
-				-ms-transition: -ms-transform 0.2s ease-out;
-				transition: transform 0.2s ease-out;
-				-webkit-border-radius: 10px;
-				-moz-border-radius: 10px;
-				border-radius: 10px;
+				-moz-transition: -moz-transform 0.5s ease-out;
+				-webkit-transition: -webkit-transform 0.5s ease-out;
+				-ms-transition: -ms-transform 0.5s ease-out;
+				transition: transform 0.5s ease-out;
 			}
 
 			.post > .image.featured:hover img {
