@@ -12,7 +12,7 @@ featuredpath = "date"
 type = "post"
 +++
 
-This time around we've had a slightly longer development cycle so Gaia Sky `1.5.0`  \'*Jumbo Summer Release*\' is here with a ton of new features, enhancements and bug fixes. Most importantly, we have essentially **refactored the way star catalogs are handled**, so that we can now stream data from disk when it is needed. Also, we've been working hard to make **better use of the GPU** and we are proud to announce that we've increased the performance fourfold while being able to display many more objects on screen at once.
+This time around we've had a slightly longer development cycle so Gaia Sky `1.5.0`  '*Jumbo Summer Release*' is here with a ton of new features, enhancements and bug fixes. Most importantly, we have essentially **refactored the way star catalogs are handled**, so that we can now stream data from disk when it is needed. Also, we've been working hard to make **better use of the GPU** and we are proud to announce that we've increased the performance fourfold while being able to display many more objects on screen at once.
 
 Here is the list of the most important **enhancements**:
 
