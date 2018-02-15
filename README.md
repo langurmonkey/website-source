@@ -4,4 +4,9 @@
 
 My website project. Visit it in [jumpinglangur.gitlab.io](http://jumpinglangur.gitlab.io).
 
+To renew the certificate, just do:
+
+```
+$  sudo certbot certonly --manual -d tonisagrista.com
+```
 ---
