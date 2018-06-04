@@ -1,21 +1,11 @@
-# All available Hugo versions are listed here: https://gitlab.com/pages/hugo/container_registry
-image: registry.gitlab.com/pages/hugo:latest
-
-variables:
-  GIT_SUBMODULE_STRATEGY: recursive
-
-test:
-  script:
-  - hugo
-  except:
-  - master
-
 pages:
-  script:
-  - hugo
-  artifacts:
+# this image is slimmer than official one; based on Alpine
+image: fundor333/hugo 
+script:
+    - hugo
+# send all files from public directory to the CI server
+artifacts:
     paths:
-    - public
-  only:
-  - master
-
+      - public
+only:
+    - master  # this job will affect only the 'master' branch
