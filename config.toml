@@ -6,6 +6,11 @@ preserveTaxonomyNames = true
 paginate = 5
 disqusShortname = "tonisagrista"
 googleAnalytics = "UA-9365716-2"
+pygmentsUseClassic = false
+pygmentsCodeFences = true
+pygmentsCodeFencesGuessSyntax = true
+pygmentsUseClasses = false
+pygmentsStyle = "monokai"
 
 [taxonomies]
     tag = "tags"
