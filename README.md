@@ -14,5 +14,4 @@ Then go to the [repo configuration](https://gitlab.com/jumpinglangur/jumpinglang
 and update the certificate and key with `/etc/letsencrypt/live/tonisagrista.com/fullchain.pem` and
 `/etc/letsencryp/live/tonisagrista.com/privkey.pem` respectively.
 
-
 ---
