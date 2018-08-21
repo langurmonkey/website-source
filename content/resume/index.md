@@ -20,7 +20,7 @@ showpagemeta = "false"
     [PDF:&nbsp;<a href="/pdf/Resume-ToniSagrista.pdf#overlay-context=resume" target="_blank" title="Resume inPDF">Basic version</a>&nbsp;- <a href="/pdf/Europass_CV.pdf#overlay-context=resume" title="Europass CV" target="_blank">Europass CV</a>]
   </p>
   <p class="contactinfo">
-    Cell: <span class="tel">+49 (0)17681865087</span>, <span class="tel">+34 669724840</span>
+    Cell: <span class="tel">+49 (0)17683798752</span>, <span class="tel">+34 669724840</span>
     <br>Email: <a class="email" href="mailto:admin@tonisagrista.com">admin@tonisagrista.com</a>
     <br><a href="https://pgp.key-server.io/search/0x1F0789CCB03BEE02" target="_blank">My PGP public key</a>
     <br>Born: August 5, 1983
