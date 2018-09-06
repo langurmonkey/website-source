@@ -25,6 +25,20 @@ showpagemeta = "false"
 *   [The Gaia mission](http://www.aanda.org/component/article?access=doi&doi=10.1051/0004-6361/201629272) - Gaia Collaboration... T. Sagristà Sellés... - 2016, A&A, 595 (2016) A1 
 *   [Leaving the Dark Ages with AMIGA](http://iopscience.iop.org/0067-0049/216/1/13) - A. Manrique, E. Salvador-Solé, E. Juan, E. Hatziminaoglou, J. María Rozas, A. Sagristà, K. Casteels, G. Bruzual, G. Magris- 2016, ApJS 216 13 
 
+### Talks and lectures
+
+*   **2018-06-20** Gaia Data Workshop 2018, Haus der Astronomy, Heidelberg - Gaia Sky \[pdf\]
+*   **2018-02-21** CU9 Plenary Meeting, Leiden - Gaia Sky, what's new \[pdf\]
+*   **2017-01-22** DPAC Consortium Meeting, Sitges - Gaia Sky \[pdf\]
+*   **2016-11-22** Gaia Data Workshop 2016, Haus der Astronomy, Heidelberg - Gaia Sky \[odp\]
+*   **2016-01-18** PhD selection - Visualization of Astrometric and Astrophysical Data \[pdf\]
+*   **2015-11-19** DPAC Consortium Meeting, Leiden - Gaia Sandbox, what's new \[pdf\]
+*   **2015-09-22** CU9 Plenary Meeting, Barcelona - Gaia Sandbox \[pdf\]
+*   **2015-09-17** AG2015, Kiel - Gaia Visualization \[pdf\]
+*   **2015-01-22** ARI colloquium - Gaia Sandbox \[pdf\]
+*   **2014-12-11** Gaia group seminar - Gaia Visualization for Outreach \[pdf\]
+*   **2014-02-19** Gaia visualization in the dome \[pdf\]
+*   **2012-06-18** Telemetry Validator talk - Gaia/UB \[pdf\]
 
 ### Documents and reports
 
