@@ -4,7 +4,6 @@ title = "Toni Sagristà Sellés"
 theme = "future-imperfect"
 preserveTaxonomyNames = true
 paginate = 5
-disqusShortname = "tonisagrista"
 pygmentsUseClassic = false
 pygmentsCodeFences = true
 pygmentsCodeFencesGuessSyntax = true
