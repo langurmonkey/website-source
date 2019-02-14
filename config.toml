@@ -123,7 +123,6 @@ pygmentsStyle = "monokai"
 [social]
     github          = "langurmonkey"
     gitlab          = "langurmonkey"
-    stackoverflow   = ""
     bitbucket       = ""
     jsfiddle        = ""
     codepen         = ""
