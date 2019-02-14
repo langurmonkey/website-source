@@ -122,6 +122,8 @@ pygmentsStyle = "monokai"
 # The social media icons will appear on the sidebar
 [social]
     github          = "langurmonkey"
+    gitlab          = "langurmonkey"
+    stackoverflow   = ""
     bitbucket       = ""
     jsfiddle        = ""
     codepen         = ""
