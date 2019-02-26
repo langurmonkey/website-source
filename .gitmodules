@@ -1,0 +1,9 @@
+[submodule "themes/cupper-hugo-theme"]
+	path = themes/cupper-hugo-theme
+	url = https://github.com/zwbetz-gh/cupper-hugo-theme.git
+[submodule "themes/academic-kickstart"]
+	path = themes/academic-kickstart
+	url = https://github.com/sourcethemes/academic-kickstart.git
+[submodule "themes/hugo-bingo"]
+	path = themes/hugo-bingo
+	url = git@github.com:gundamew/hugo-bingo.git

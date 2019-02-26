@@ -1,0 +1,84 @@
+baseurl = "/"
+languageCode = "en-GB"
+title = "Toni Sagrista Selles"
+theme = "hugo-bingo"
+
+disableHugoGeneratorInject = true
+enableEmoji = true
+footnoteReturnLinkContents = "↩"
+hasCJKLanguage = true
+
+[permalinks]
+  post = "/blog/:slug/"
+
+[menu]
+
+  [[menu.main]]
+      identifier = "home"
+      name = "home"
+      url = "/"
+      weight = 1
+
+  [[menu.main]]
+      identifier = "blog"
+      name = "blog"
+      url = "/blog"
+      weight = 2
+
+  [[menu.main]]
+      name = "projects"
+      url = "/projects"
+      identifier = "fa fa-futbol-o"
+      weight = 3
+  
+  [[menu.main]]
+      name = "publications"
+      url = "/papers"
+      identifier = "fa fa-mortar-board"
+      weight = 4
+  
+  [[menu.main]]
+      name = "résumé"
+      url = "/resume"
+      identifier = "fa fa-hashtag"
+      weight = 5
+  
+  [[menu.main]]
+      name = "photo"
+      url = "https://www.flickr.com/photos/tonisagrista/"
+      identifier = "fa fa-camera-retro"
+      weight = 6
+  
+  [[menu.main]]
+      name = "categories"
+      url = "/categories"
+      identifier = "fa fa-object-ungroup"
+      weight = 7
+  
+  [[menu.main]]
+      name = "tags"
+      url = "/tags"
+      identifier = "fa fa-tags"
+      weight = 8
+
+[params]
+
+  [[params.social]]
+    icon = "github"
+    url = "https://github.com/example"
+    weight = 10
+
+  [[params.social]]
+    icon = "twitter"
+    url = "https://twitter.com/example"
+    weight = 30
+
+  [[params.social]]
+    icon = "stackoverflow"
+    url = "https://stackoverflow.com/story/example"
+    weight = 40
+
+  [[params.social]]
+    icon = "linkedin"
+    url = "https://www.linkedin.com/in/example"
+    weight = 20
