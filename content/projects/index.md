@@ -6,8 +6,11 @@ title = "Projects"
 showpagemeta = "false"
 +++
 
-### Software and applications
+### Software and scripts
 
+  <i class="fa fa-github"></i>&nbsp;&nbsp;<strong><a href="https://github.com/langurmonkey/dotfiles">dotfiles</a></strong>
+  - My dotfiles project. Contains the configuration, bootstrapping and deploying of my `i3wm` environment. 
+  
   <i class="fa fa-github"></i>&nbsp;&nbsp;<strong><a href="https://zah.uni-heidelberg.de/gaia/outreach/gaiasky/">Gaia Sky</a></strong>
   -  A real-time 3D visualisation application developed in OpenGL in the framework of Gaia outreach. Gestated in the Astronomisches Rechen-Institut of Heidelberg University.
 
