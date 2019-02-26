@@ -11,10 +11,11 @@ showpagemeta = "false"
   <i class="fa fa-github"></i>&nbsp;&nbsp;<strong><a href="https://zah.uni-heidelberg.de/gaia/outreach/gaiasky/">Gaia Sky</a></strong>
   -  A real-time 3D visualisation application developed in OpenGL in the framework of Gaia outreach. Gestated in the Astronomisches Rechen-Institut of Heidelberg University.
 
-
   <i class="fa fa-github"></i>&nbsp;&nbsp;<strong><a href="https://github.com/langurmonkey/rts-engine">RTS Engine</a></strong>
   - Real time strategy game engine written in Java. Very early stage, needs huge refactoring.
 
+  <i class="fa fa-github"></i>&nbsp;&nbsp;<strong><a href="https://github.com/langurmonkey/mediaorganiser-py">mediaorganiser-py</a></strong>
+  - Very small script to organise media files into folders sorted by year and month (/YYYYMM). It scans the file name and the EXIF and RAW metadata. Very handy to keep your photos and videos automatically sorted. 
 
   <i class="fa fa-github"></i>&nbsp;&nbsp;<strong><a href="/project/pps/">Particle Physics Simulator</a></strong>
   - A gravitational physics playground application for Android (v2.1+) devices.
