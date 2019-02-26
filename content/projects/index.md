@@ -16,19 +16,19 @@ showpagemeta = "false"
   - Real time strategy game engine written in Java. Very early stage, needs huge refactoring.
 
 
-  <i class="fa fa-github"></i>&nbsp;&nbsp;<strong><a href="/projects/pps/">Particle Physics Simulator</a></strong>
+  <i class="fa fa-github"></i>&nbsp;&nbsp;<strong><a href="/project/pps/">Particle Physics Simulator</a></strong>
   - A gravitational physics playground application for Android (v2.1+) devices.
 
 
-  <i class="fa fa-github"></i>&nbsp;&nbsp;<strong><a href="/projects/nblw/">N-Body Live Wallpaper</a></strong>
+  <i class="fa fa-github"></i>&nbsp;&nbsp;<strong><a href="/project/nblw/">N-Body Live Wallpaper</a></strong>
   - A physics live wallpaper for Android (v2.1+) devices.
 
 
-  <i class="fa fa-github"></i>&nbsp;&nbsp;<strong><a href="/projects/celestial-pole/">Celestial Pole Motion</a></strong>
+  <i class="fa fa-github"></i>&nbsp;&nbsp;<strong><a href="/project/celestial-pole/">Celestial Pole Motion</a></strong>
   - Tracks the motion of the mean celestial poles with respect to the ICRS due to the Earth's precession and nutation.
 
 
-  <i class="fa fa-globe"></i>&nbsp;&nbsp;<strong><a href="/projects/snake/">HTML5 Snake Game</a></strong>
+  <i class="fa fa-globe"></i>&nbsp;&nbsp;<strong><a href="/project/snake/">HTML5 Snake Game</a></strong>
   - A modified version of an HTML5 snake game.
 
 
