@@ -360,11 +360,11 @@ body.is-share-visible #wrapper {
     }
 
     #content p a, #content ul li a {
-        border-bottom: dotted 2px rgba(160,160,160,.65);
+        border-bottom: dotted 2px #2A4;
     }
 
-        #content p a:hover {
-            border-bottom-color: transparent;
+        #content p a:hover, #content ul li a:hover {
+            border-bottom-style: solid !important;
         }
 
     #content blockquote, #content p, #content ul{
