@@ -54,7 +54,7 @@ pygmentsStyle = "monokai"
 
     paragraph = "Personal website and portfolio"
 
-    about     = "I am a Software Engineer interested in astrophysics and scientific visualisation. I live in Heidelberg (Germany) and struggle to learn the language and comprehend German culture. Working on CU3/CU9/Gaia at ARI/ZAH@Uni-Heidelberg. Also, PhD candidate at the viscomp group, IWR@Uni-Heidelberg."
+    about     = "I am a Software Engineer interested in astrophysics and scientific visualisation. I live in Heidelberg (Germany) and struggle to learn the language and comprehend German culture. I'm currently working on CU3/CU9/Gaia at ARI/ZAH@Uni-Heidelberg and I'm also a Ph.D. candidate at the viscomp group, IWR@Uni-Heidelberg."
 
 # This will also appear on the sidebar.
 # A width of less than 100px is recommended
