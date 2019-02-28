@@ -6,6 +6,8 @@ title = "Projects"
 showpagemeta = "false"
 +++
 
+
+
 ### Software and scripts
 
   <i class="fa fa-github"></i>&nbsp;&nbsp;<strong><a href="https://github.com/langurmonkey/dotfiles">dotfiles</a></strong>
@@ -20,7 +22,11 @@ showpagemeta = "false"
   <i class="fa fa-github"></i>&nbsp;&nbsp;<strong><a href="https://github.com/langurmonkey/mediaorganiser-py">mediaorganiser-py</a></strong>
   - Very small script to organise media files into folders sorted by year and month (/YYYYMM). It scans the file name and the EXIF and RAW metadata. Very handy to keep your photos and videos automatically sorted. 
 
-  <i class="fa fa-github"></i>&nbsp;&nbsp;<strong><a href="/project/pps/">Particle Physics Simulator</a></strong>
+<img src="/img/drawings/projects_col_s.jpg"
+     alt="Projects"
+     style="float: right; margin-left: 50px; width: 40%" />
+
+<i class="fa fa-github"></i>&nbsp;&nbsp;<strong><a href="/project/pps/">Particle Physics Simulator</a></strong>
   - A gravitational physics playground application for Android (v2.1+) devices.
 
 
