@@ -1,6 +1,7 @@
 +++
 title = "Hi there!"
 categories = ["About"]
+tags = ["welcome","home","about"]
 date = "2019-02-28"
 type = "homepage"
 +++
