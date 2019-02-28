@@ -1,19 +1,15 @@
 {{ partial "header" . }}
     {{ $.Scratch.Set "shareNav" true }}
     {{ partial "navbar" . }}
-    <!-- Main -->
-    <div id="main">
-      {{ if .Site.Params.orderByPublishDate }}
-          {{ $paginator := .Paginate (where .Data.Pages.ByPublishDate.Reverse "Type" "post") }}
-      {{ else }}
-          {{ $paginator := .Paginate (where .Site.Pages "Type" "post") }}
-      {{ end }}
-
-      {{ range .Paginator.Pages }}
-          {{ .Render "content-list" }}
-      {{ end }}
-
-      {{ partial "pagination" . }}
-    </div>
+        {{ range where .Data.Pages "Type" "homepage" }}
+        <article>
+        <!-- Title, as defined in the front-matter  of /content/index.md -->
+        <h1 class="pagetitle">{{ .Title }}</h1>
+        <div class="content">
+        <!-- Content. is the actual content of '/content/index.md' -->
+        {{ .Content }}
+        </div>
+        </article>
+        {{ end }}
     {{ partial "sidebar" . }}
 {{ partial "footer" . }}
