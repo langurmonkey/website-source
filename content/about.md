@@ -2,7 +2,7 @@
 title = "Hi there!"
 categories = ["About"]
 date = "2019-02-28"
-type = "staticpage"
+type = "homepage"
 +++
 
 <img src="/img/myself_col.jpg"

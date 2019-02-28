@@ -3,17 +3,15 @@
 {{ partial "navbar" . }}
 <!-- Main -->
 <div id="main">
-	{{ if .Site.Params.orderByPublishDate }}
-	{{ $paginator := .Paginate (where .Data.Pages.ByPublishDate.Reverse "Type" "post") }}
-	{{ else }}
-	{{ $paginator := .Paginate (where .Site.Pages "Type" "post") }}
-	{{ end }}
+    <article class="post">
+    {{ range where .Data.Pages "Title" "Hi there!" }}
+    <header>
+    <div class="title"><h2><a href="">{{ .Title }}</a></h2></div>
+    </header>
+    {{ .Content }}
+    {{ end }}
+    </article>
 
-	{{ range .Paginator.Pages }}
-	{{ .Render "content-list" }}
-	{{ end }}
-
-	{{ partial "pagination" . }}
 </div>
 {{ partial "sidebar" . }}
 {{ partial "footer" . }}

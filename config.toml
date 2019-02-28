@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://tonisagrista.com/"
 languageCode = "en-gb"
 title = "Toni Sagristà Sellés"
 theme = "future-imperfect"
@@ -77,45 +77,37 @@ pygmentsStyle = "monokai"
 
 # Set up your menu items in the navigation bar
 # You can use identifier to prepend a font awesome icon to your text
-[[menu.main]]
-    name = "/About"
-    url = "/about"
-    weight = 1
 
 [[menu.main]]
     name = "/Blog"
     url = "/blog"
-    weight = 2
+    weight = 1
 
 [[menu.main]]
     name = "/Projects"
     url = "/projects"
-    weight = 3
+    weight = 2
 
 [[menu.main]]
     name = "/Publications"
     url = "/papers"
-    weight = 4
+    weight = 3
 
 [[menu.main]]
     name = "/CV"
     url = "/resume"
-    weight = 5
+    weight = 4
 
 [[menu.main]]
     name = "/Photo"
     url = "https://www.flickr.com/photos/tonisagrista/"
+    weight = 5
+
+[[menu.main]]
+    name = "/Categories"
+    url = "/categories"
     weight = 6
 
-[[menu.main]]
-    name = "/Categs"
-    url = "/categories"
-    weight = 7
-
-[[menu.main]]
-    name = "/Tags"
-    url = "/tags"
-    weight = 8
 
 # Insert your username and the icon will apear on the page as long as
 # socialAppearAtTop or socialAppearAtBottom is set to true in the params area
