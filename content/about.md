@@ -18,7 +18,7 @@ I'm currently working in the ESA astrometric satellite Gaia group in the [Astron
 - Have a peek into my [blog posts](/blog)
 - Have a look at some of my [projects](/projects)
 - Check out my [publications](/papers)
-- Relax watching some of my [photos](https://flickr.com/photos/tonisagrista/)
+- Relax watching my [photos](https://flickr.com/photos/tonisagrista/)
 - I'm tweeting from [@jumpinglangur](https://twitter.com/jumpinglangur) and also [@GaiaSky_dev](https://twitter.com/GaiaSky_dev)
 - And here is my [CV](/resume), just in case you want to offer me my dream job
 
