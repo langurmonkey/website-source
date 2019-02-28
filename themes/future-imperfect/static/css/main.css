@@ -3002,7 +3002,10 @@
 		}
 
 			#header h1 a {
-                text-transform: none;
+                letter-spacing: normal;
+				font-size: 0.8em;
+			}
+			#header h2 a {
                 letter-spacing: normal;
 				font-size: 0.8em;
 			}
