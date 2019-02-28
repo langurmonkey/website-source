@@ -399,3 +399,18 @@ ul.pagination li {
         transition: opacity .3s 0s, visibility 0s 0s;
         opacity: .5;
     }
+
+#tags {
+    min-height: 20em;
+}
+
+ul.recent-posts-list {
+    list-style-position: outside;
+    list-style-type: circle;
+}
+
+ul.recent-posts-list time {
+    color: #aaa;
+    font-size: 0.8em;
+    text-transform: uppercase;
+}

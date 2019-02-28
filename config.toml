@@ -24,7 +24,7 @@ pygmentsStyle = "monokai"
     navbarTitle          = "Toni Sagristà Sellés"
     # Social media buttons that appear on the sidebar
     socialAppearAtTop    = true
-    socialAppearAtBottom = true
+    socialAppearAtBottom = false
     # Sets where 'View more posts' links
     viewMorePostLink     = "/blog/"
 
