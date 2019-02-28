@@ -1,9 +1,11 @@
-baseurl = "https://tonisagrista.com/"
+baseurl = "/"
 languageCode = "en-gb"
 title = "Toni Sagristà Sellés"
 theme = "future-imperfect"
 preserveTaxonomyNames = true
 paginate = 5
+enableRobotsTXT = true
+canonifyURLs = true
 pygmentsUseClassic = false
 pygmentsCodeFences = true
 pygmentsCodeFencesGuessSyntax = true
@@ -23,7 +25,7 @@ pygmentsStyle = "monokai"
     # Social media buttons that appear on the sidebar
     socialAppearAtTop    = true
     socialAppearAtBottom = true
-    # set this to the section name if section is not post
+    # Sets where 'View more posts' links
     viewMorePostLink     = "/blog/"
 
     # Optional Params
@@ -76,39 +78,44 @@ pygmentsStyle = "monokai"
 # Set up your menu items in the navigation bar
 # You can use identifier to prepend a font awesome icon to your text
 [[menu.main]]
+    name = "/About"
+    url = "/about"
+    weight = 1
+
+[[menu.main]]
     name = "/Blog"
     url = "/blog"
-    weight = 1
+    weight = 2
 
 [[menu.main]]
     name = "/Projects"
     url = "/projects"
-    weight = 2
+    weight = 3
 
 [[menu.main]]
     name = "/Publications"
     url = "/papers"
-    weight = 3
+    weight = 4
 
 [[menu.main]]
-    name = "/Résumé"
+    name = "/CV"
     url = "/resume"
-    weight = 4
+    weight = 5
 
 [[menu.main]]
     name = "/Photo"
     url = "https://www.flickr.com/photos/tonisagrista/"
-    weight = 5
+    weight = 6
 
 [[menu.main]]
-    name = "/Categories"
+    name = "/Categs"
     url = "/categories"
-    weight = 6
+    weight = 7
 
 [[menu.main]]
     name = "/Tags"
     url = "/tags"
-    weight = 7
+    weight = 8
 
 # Insert your username and the icon will apear on the page as long as
 # socialAppearAtTop or socialAppearAtBottom is set to true in the params area
