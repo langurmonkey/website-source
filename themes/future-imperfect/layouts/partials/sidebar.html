@@ -77,7 +77,7 @@
                 <ul class="recent-posts-list">
                     {{ range first ($.Scratch.Get "postLimit") (where ($.Scratch.Get "recentPosts") "Type" "post") }}
                     <li>
-                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>&nbsp;
+                        <a href="{{ .RelPermalink }}">{{ .Title | truncate 30 }}</a>&nbsp;
                         {{ $.Scratch.Set "dateType" .Date }}
                         <time class="published" datetime='{{ ($.Scratch.Get "dateType").Format "2006-01-02" }}'>
                            [ {{ ($.Scratch.Get "dateType").Format "January 2, 2006" }} ]

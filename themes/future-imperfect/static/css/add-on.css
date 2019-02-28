@@ -405,8 +405,12 @@ ul.pagination li {
 }
 
 ul.recent-posts-list {
-    list-style-position: outside;
-    list-style-type: circle;
+    list-style-type: none;
+    margin-left: -1.4em;
+}
+
+ul.recent-posts-list a {
+    font-size: 0.95em;
 }
 
 ul.recent-posts-list time {
