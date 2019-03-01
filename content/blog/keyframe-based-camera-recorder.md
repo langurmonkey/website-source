@@ -22,8 +22,8 @@ During the last months I have been working on a QOL improvement for Gaia Sky vid
 
 In the next version, Gaia Sky will get a keyframe-based camera path mode. This mode enables the interactive definition of camera paths in the scene space. Basically, the user defines a set of locations, or keyframes, which must be hit by the camera at a certain time. Each keyframe contains the position and orientation of the camera, in addition to the simulation timestamp and time delay. Keyframes can be saved to keyframe files `.gkf` and exported to regular Gaia Sky camera path files `.gsc`.
 
-<a href="/img/2019/keyframes.jpg">
-<img src="/img/2019/keyframes.jpg"
+<a href="/img/2019/03/keyframes.jpg">
+<img src="/img/2019/03/keyframes.jpg"
      alt="Keyframe-based camera paths"
      style="width: 70%" />
 </a>
@@ -34,7 +34,7 @@ Additionally, individual keyframes are now focusable, so that they can be select
 Below is an early video of the state as of a month ago:
 
 <video width="70%" style="display: block; margin: auto;" controls>
-  <source src="/img/2019/keyframes.mp4" type="video/mp4">
+  <source src="/img/2019/03/keyframes.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
 
