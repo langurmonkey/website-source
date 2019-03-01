@@ -3348,7 +3348,7 @@
 
 /* Footer */
     #footer {
-        padding-top: 20em;
+        padding: 0;
     }
 
 	#footer .icons {

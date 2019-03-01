@@ -369,6 +369,7 @@ body.is-share-visible #wrapper {
 
     #content blockquote, #content p, #content ul{
         margin: 0 0 1em;
+        list-style-type: disc;
     }
 
 ul.pagination li {
