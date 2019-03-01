@@ -3,16 +3,20 @@ author = "Toni Sagrista Selles"
 categories = ["Linux"]
 tags = [ "programming", "scripts", "i3wm", "polybar", "rice" ]
 date = 2019-03-01
-description = "Modified version of memory, CPU and temperature applets"
+description = "Modified version of system monitor scripts"
 linktitle = ""
-title = "Polybar modules for memory, CPU and temperature"
+title = "System monitoring polybar modules"
 featured = "polybar-cpu-mem.jpg"
 featuredalt = "Polybar modules"
 featuredpath = "date"
 type = "post"
 +++
 
-A couple of days ago I sumbled upon [this video](https://www.youtube.com/watch?v=MNwpdqD_I8Y) from Luke Smith where he presented a couple of scripts to get CPU, memory and temperature information in [i3blocks](https://github.com/vivien/i3blocks). I use [polybar](https://github.com/jaagr/polybar) (it works better with my multiple monitors with different DPI), so I decided I'd adapt and change the scripts so that I can use them with polybar. You can find all these files in my [dotfiles repo](https://gitlab.com/langurmonkey/dotfiles).
+A couple of days ago I sumbled upon [this video](https://www.youtube.com/watch?v=MNwpdqD_I8Y) by Luke Smith where he presented a couple of scripts to display CPU, memory and temperature information in [i3blocks](https://github.com/vivien/i3blocks). Since I use [polybar](https://github.com/jaagr/polybar) due to it working much better in tandem with my dual-monitor setup with different DPIs, I decided I'd adapt and change the scripts to work in polybar. Polybar already comes with memory, CPU and temperature modules by default, but they don't include a popup showing the top-consuming processes, which is a nice feature to have.
+
+You can find all these files in my [dotfiles repo](https://gitlab.com/langurmonkey/dotfiles).
+
+For this setup we need two bash scripts, `memory.sh` and `cpu.sh`, and a few extra lines in the polybar config file `~/.config/polybar/config` to set up the modules. Let's see the details.
 
 ## `memory.sh`
 
