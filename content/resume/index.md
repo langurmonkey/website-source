@@ -6,7 +6,6 @@ title = "Résumé"
 showpagemeta = "false"
 +++
 
-<p>&nbsp;</p>
 <p>
 <link href="/css/resume.css" rel="stylesheet" type="text/css">
 </p>
