@@ -95,7 +95,7 @@ h2.cv{
     }
 
     h1.fn {
-        font-size: 1.1em;
+        font-size: 1.0em;
     }
 
     #pic {
@@ -112,6 +112,8 @@ h2.cv{
         border-right: none;
         border-bottom: 1px solid #999;
         height: auto;
+        text-align: left;
+        width: 15em;
     }
 
     dd h2 {
