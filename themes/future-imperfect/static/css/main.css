@@ -1541,6 +1541,12 @@
 			border-bottom: 0;
 		}
 
+		@media screen and (max-width: 980px) {
+	        h1, h2, h3, h4, h5, h6 {
+                margin: 0 0 0.25em 0;
+            }
+        }
+
 	h2 {
 		font-size: 1.1em;
 	}
@@ -2553,7 +2559,7 @@
 
 				.mini-posts > * {
 					margin: 2em 2em 0 0;
-					width: calc(50% - 2em);
+					/*width: calc(50% - 2em);*/
 				}
 
 				.mini-posts > :nth-child(-n + 2) {
@@ -2727,13 +2733,13 @@
 					-webkit-flex-direction: column;
 					-ms-flex-direction: column;
 					flex-direction: column;
-					padding: 3.75em 3em 1.25em 3em ;
+					padding: 0.75em 3em 0.25em 3em ;
 					border-left: 0;
 				}
 
 					.post > header .title {
 						-ms-flex: 0 1 auto;
-						margin: 0 0 2em 0;
+						margin: 0;
 						padding: 0;
 						text-align: center;
 					}
@@ -2804,7 +2810,7 @@
 			}
 
 				.post > header {
-					padding: 3em 1.5em 0.5em 1.5em ;
+					padding: 0em 1.5em 0.5em 1.5em ;
 					left: -1.5em;
 					margin: -1.5em 0 1.5em 0;
 					width: calc(100% + 3em);
@@ -3188,7 +3194,7 @@
 		@media screen and (max-width: 1680px) {
 
 			#wrapper {
-				padding: 2em;
+				padding: 0 2em 0 2em;
 			}
 
 		}
@@ -3205,6 +3211,7 @@
 
 			#wrapper {
 				padding: 1.5em;
+                padding-top: 0;
 			}
 
 		}
@@ -3314,7 +3321,7 @@
 	@media screen and (max-width: 736px) {
 
 		#intro {
-			margin: 0 0 1.5em 0;
+			margin: 0;
 			padding: 1.25em 0;
 		}
 
@@ -3327,12 +3334,16 @@
 			}
 
 			#intro header h2 {
-				font-size: 1.25em;
+				font-size: 1em;
 			}
 
 			#intro header > :last-child {
 				margin-bottom: 0;
 			}
+
+            #intro .intro-circle {
+                width: 75px;
+            }
 
 	}
 
