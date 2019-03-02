@@ -40,39 +40,16 @@
     </section>
     {{ end }}
 
-
-
-    <!-- This if statement only applies if someone goes to the /tags url -->
-    <!-- Otherwise this section is shown for all other links -->
-    {{ if ne ($.Scratch.Get "showTags") false }}
-    <!-- Tags List -->
-    <section id="tags">
-        <ul class="posts">
-            <header>
-                <h3><a href="/tags/">Tag Cloud</a></h3>
-            </header>
-            {{ $.Scratch.Set "tags" .Site.Taxonomies.tags.Alphabetical }}
-
-            {{ range $key, $value := $.Scratch.Get "tags" }}
-            <div class="tag" style="font-size: {{ add 10 $value.Count }}px">
-                <a href="/tags/{{ $value.Name | urlize }}/">{{ $value.Name }}</a>
-            </div>
-            {{ end }}
-        </ul>
-    </section>
-    {{ end }}
-
-
     <!-- Posts List -->
     <section class="recent-posts">
         <div class="mini-posts">
             <header>
-                <h3>Recent Posts</h3>
+                <h3>Latest Posts</h3>
             </header>
             <div class="posts-container">
                 {{ $.Scratch.Set "recentPosts" .Site.Pages }}
 
-                {{ $.Scratch.Set "postLimit" 15 }}
+                {{ $.Scratch.Set "postLimit" 20 }}
 
                 <ul class="recent-posts-list">
                     {{ range first ($.Scratch.Get "postLimit") (where ($.Scratch.Get "recentPosts") "Type" "post") }}
@@ -98,6 +75,26 @@
             {{ end }}
         </div>
     </section>
+    
+    <!-- This if statement only applies if someone goes to the /tags url -->
+    <!-- Otherwise this section is shown for all other links -->
+    {{ if ne ($.Scratch.Get "showTags") false }}
+    <!-- Tags List -->
+    <section id="tags">
+        <ul class="posts">
+            <header>
+                <h3><a href="/tags/">Tag Cloud</a></h3>
+            </header>
+            {{ $.Scratch.Set "tags" .Site.Taxonomies.tags.Alphabetical }}
+
+            {{ range $key, $value := $.Scratch.Get "tags" }}
+            <div class="tag" style="font-size: {{ add 10 $value.Count }}px">
+                <a href="/tags/{{ $value.Name | urlize }}/">{{ $value.Name }}</a>
+            </div>
+            {{ end }}
+        </ul>
+    </section>
+    {{ end }}
 
     <!-- Footer -->
     <section id="footer">
