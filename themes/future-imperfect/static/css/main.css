@@ -2427,6 +2427,12 @@
                     display: inline-block;
                     width: 15em;
                 }
+			    @media screen and (max-width: 680px) {
+                    div.post-in-list time{
+                        width: auto;
+                    }
+
+                }
 
                 div.post-in-list a{
                 }
