@@ -22,9 +22,10 @@ I use this configuration in the following machines:
 <p style="text-align: center; width: 70%; margin: 0 auto;">
 <a href="/img/2019/03/ari-rice.jpg">
 <img src="/img/2019/03/ari-rice_s.jpg"
-     alt="My work PC" />
+     alt="My work PC"
+     style="width: 100%" />
 </a>
-<em style="color: gray;">That is what my work PC looks like. On the left is a 4K monitor, on the right is a FHD monitor in portrait orientation and with an xrandr scale of 1.5"</em>
+<em style="color: gray;">That is what my work PC looks like. On the left is a 4K monitor, on the right is a FHD monitor in portrait orientation and with an xrandr scale of x1.5</em>
 </p>
 
 ## Dotfiles project
