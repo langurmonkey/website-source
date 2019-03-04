@@ -65,7 +65,7 @@
             </div>
 
             {{ if ge (len (where .Site.Pages "Type" "post")) ($.Scratch.Get "postLimit") }}
-            <a href="/posts-list" class="button">View more posts</a>
+            <a href="/blog/posts-list" class="button">View all posts</a>
             {{ end }}
         </div>
     </section>
