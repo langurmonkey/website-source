@@ -3,14 +3,14 @@ author = "Toni Sagrista Selles"
 categories = ["Linux"]
 tags = [ "programming", "scripts", "i3wm", "polybar", "rice", "qutebrowser", "pass", "neovim" ]
 date = 2019-03-02
-description = "Description of my daily Linux setup"
+description = "Description of my daily Linux setup as of March 2019"
 linktitle = ""
-title = "My Linux setup"
+title = "My Linux setup (as of 03/2019)"
 featuredpath = "date"
 type = "post"
 +++
 
-In this post I'm documenting the software setup I use in my machines. This has been converging for a long time and I don't consider it final, obviously. However, right now, it works well for me.
+In this post I'm documenting the current (March 2019) software setup I use in my machines. This has been converging for a long time but It will surely evolve in the future. However, right now, it works well for me.
 
 I use this configuration in the following machines:
 
@@ -18,6 +18,14 @@ I use this configuration in the following machines:
 - **IWR desktop** - *herschel*, i7-4790K, 16 Gb RAM, GTX 970, Manjaro Linux
 - **Home laptop** - *simian*, Dell XPS 13 9370 13", i7-8550U, 16 Gb RAM, Intel UHD 620, Arch Linux
 - **Home desktop** - *bonobo*, i5-4460, 16 Gb RAM, GTX 970, Antergos Linux
+
+<p style="text-align: center; width: 70%; margin: 0 auto;">
+<a href="/img/2019/03/ari-rice.jpg">
+<img src="/img/2019/03/ari-rice_s.jpg"
+     alt="My work PC" />
+</a>
+<em style="color: gray;">That is what my work PC looks like. On the left is a 4K monitor, on the right is a FHD monitor in portrait orientation and with an xrandr scale of 1.5"</em>
+</p>
 
 ## Dotfiles project
 
@@ -43,15 +51,15 @@ To deploy the configuration. You are done.
 
 ## Window manager
 
-I use `i3wm` in every computer I have to do work with. Additionally, Gnome Shell is installed to my home desktop *bonobo* for convenience, since it is connected to the TV in my living room.
+I use [`i3wm`](https://i3wm.org/), and in particular, Airblader's fork [`i3-gaps`](https://github.com/Airblader/i3) in every computer I have to do work with. Additionally, Gnome Shell is installed to my home desktop *bonobo* for convenience, since it is connected to the TV in my living room. It is not very convenient to operate i3 with one of [these](/img/2019/03/remote.jpg).
 
 ## Shell
 
-I use `zsh` (actually, `oh-my-zsh`) because I'm used to lots of its features that I otherwise miss when using `bash`.
+I use [`zsh`](www.zsh.org) (actually, [`oh-my-zsh`](https://github.com/robbyrussell/oh-my-zsh)) because I'm used to lots of its features that I otherwise miss when using `bash`.
 
 ## Terminal
 
-My terminal of choice is `urxvt` because it is simple and easy to configure, even though the default look makes your eyes bleed. I use the Terminus font. It looks crisp and is just a beautiful monospace font for terminals. Other than that, I have bindings to modify the font size automatically, scroll up and down using `k` and `j` and little else.
+My terminal of choice is [`urxvt`](http://software.schmorp.de/pkg/rxvt-unicode.html) because it is simple and easy to configure, even though the default look makes your eyes bleed. I use the Terminus font. It looks crisp and is just a beautiful monospace font for terminals. Other than that, I have bindings to modify the font size automatically, scroll up and down using `k` and `j` and little else.
 
 I've played around with [`st`](https://st.suclkess.org) but I'm not convinced by the config-in-source philosophy. It is just not too convenient for me, even though I keep it installed in my systems.
 
@@ -149,3 +157,7 @@ At the end of the day, both are very capable and produce good results. Also, bot
 ## Scripting
 
 Most of my scripts are written in `bash`, even though for more complex things I also use `python` from time to time.
+
+## Closing Notes
+
+I think this post sums up my basic setup pretty accurately. It will, of course, become obsolete with time, but for the time being, I will try to keep it up to date for my future reference.
