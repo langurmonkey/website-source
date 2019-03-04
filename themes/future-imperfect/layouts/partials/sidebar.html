@@ -65,13 +65,7 @@
             </div>
 
             {{ if ge (len (where .Site.Pages "Type" "post")) ($.Scratch.Get "postLimit") }}
-            <a href=
-               {{ with .Site.Params.viewMorePostLink }}
-               {{ . }}
-               {{ else }}
-               "/post/"
-               {{ end }}
-               class="button">View more posts</a>
+            <a href="/posts-list" class="button">View more posts</a>
             {{ end }}
         </div>
     </section>

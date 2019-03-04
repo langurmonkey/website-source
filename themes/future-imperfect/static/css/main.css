@@ -2416,6 +2416,17 @@
 				flex-direction: row-reverse;
 			}
 
+                div.post-in-list time{
+                    color: #aaa;
+                    font-size: 0.8em;
+                    text-transform: uppercase;
+                    display: inline-block;
+                    width: 15em;
+                }
+
+                div.post-in-list a{
+                }
+
 				ul.posts article .image {
 					display: block;
 					margin-right: 1.5em;
