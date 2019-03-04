@@ -13,15 +13,15 @@ A couple of posts ago I mentioned I would write a few lines about my experience 
 
 <!--more-->
 
-#### Library overview
+## Library overview
 -   On the one hand, **Slick** is a high-level 2D java gaming library originally created and maintained by Kev from cokeandcode.com. I have used it in the past for some projects and it really is **very easy and straightforward** to use, with a well designed API and tons of documentation. It adds a layer on top of [LWJGL](lwjgl.org), a Java binding for OpenGL 1.x, OpenAL and OpenCL, allowing for rookie and experienced programmers alike to write 2D game-like applications without having to mess with lower level libraries, specially OpenGL. Slick offers support for images, animations, particles, sounds, music, Tiled tile maps, Phys2D and much more. I'd say its strongest asset is that it keeps things simple, being it also its doom as it may not be as appealing to more advanced users. In addition, the project seems rather dying now since Kev stopped maintaining it and handed it over to someone.
 -   On the other hand, **libgdx** is an advanced java gaming library with support for cutting-edge technologies and platforms. It really is a vast improvement over Slick if you want to create really modern and graphically rich games. It offers most, if not all, the features Slick does, and also works with [LWJGL](lwjgl.org) underneath. Libgdx has tons of tools and utilities that make your development easier such as a texture packer, a project setup UI and a particle editor. It does a bunch of complicated stuff for you such as sprite batching, texture atlas management, session handling in Android and much [more](http://libgdx.badlogicgames.com/features.html). Libgdx's cross platformness (I like inventing words...) extend from Windows, Mac and Linux to Android, iOS and HTML5, making it very useful to code your app once and run it everywhere. Overall, libgdx is a more advanced library, it has a very active community and I would strongly recommend its use to anyone starting. If you just want to write a 2D game and keep things simple, you can always use [mini2Dx](http://mini2dx.org/), an easy-to-use 2D API built on top of libgdx.
 
-#### Migration
+## Migration
 
 Ok, so **why did I choose to migrate** from one to the other? Well, I think the question answers itself if you look at my overview of both projects. Additionally, I use to work on my little applications from time to time and several months may pass from when last worked on them until I take it over again. Last time this happened, I found slick not maintained anymore by its original creator and the page set up by the new maintainers was having issues. That's when I started looking for alternatives and ran into libgdx. It looked very attractive and seemed the project was actively supported, so I gave it a go. I couldn't be happier with the choice, I must add. Let's get started with the migration then.
 
-##### Code structure
+### Code structure
 
 Slick does not differ from a classic Java project. You just put your libraries in the lib folder and you are ready to go. **Libgdx** is a different matter. You have the core project where all your code and dependencies are put, let's call it *MyProject*. This contains your "game" class. Then, you need an Android project called *MyProject-android* where you need to put all the project's resources such as images and maps, and all the Android specific files like the `AndroidManifest.xml`. That's all you need if you want your application to run in Android. Additionally, you need extra optional projects if you want the desktop and HTML5 versions. Each platform-specific project has at least a main class which creates an instance of the "game" class. For instance, in the Android project you'd have an `Activity` with an `onCreate()` method like this:
 
@@ -39,11 +39,11 @@ In desktop, you'd have a main class creating an instance of `LwjglApplication` p
 
 The good news is that all this can be set up automatically and also updated to the latest libgdx version using their setup tool. Clean and easy! More info [here](https://code.google.com/p/libgdx/wiki/ProjectSetupNew).
 
-##### Main loop
+### Main loop
 
 The first thing you'll notice is that libgdx does not manage the main loop for you providing `update()` and `render()` methods like Slick does, so it is up to the programmer to implement this. However, what libgdx does provide is a function (`render()`) defined in the `ApplicationListener` interface which is called every time rendering should be performed, so we need to both update and render our entities in this method. Slick provided an update(`GameContainer` container, int delta) method which received the delta time in ms. Now, we can get the delta time since the last `render()` call using `Gdx.graphics.getDeltaTime()`, so no hassle here.
 
-##### Drawing sprites and shapes
+### Drawing sprites and shapes
 
 In **Slick** the drawing process is very simple, for the `Sprite` class itself has different draw methods. To draw shapes a class called `ShapeRenderer` is used in the following fashion:
 
@@ -60,7 +60,7 @@ batch.draw(spriteImage, position.x, position.y);
 batch.end();
 ```
 
-You may have noticed the `setProjectionMatrix(Camera camera)`` chunk. This is because libgdx offers cameras pretty much in the same fashion as OpenGL does. This line just tells the batch the position of the drawn sprites must be determined by the camera's position.
+You may have noticed the `setProjectionMatrix(Camera camera)` chunk. This is because libgdx offers cameras pretty much in the same fashion as OpenGL does. This line just tells the batch the position of the drawn sprites must be determined by the camera's position.
 
 The rendering of basic shapes in libgdx is a bit trickier than in Slick:
 
@@ -73,14 +73,14 @@ shapeRenderer.end();
 
 You need to begin and end the `shapeRenderer` with either "filled" or "line", set the color and draw the shape. Remember to enable `BLENDING` and `SRC_ALPHA` if you want transparencies, and disable them at the end. Mix sprite drawing with shape rendering in the code is not a good idea, so keep them separated if you don't want to run into problems later.
 
-##### Tiled integration
+### Tiled integration
 
 The integration with Tiled is good in both projects but the API and the implementation is probably more accurate to the `TMX` format in libgdx, where there are classes for tiled maps, tiled layers, object layers, each with its attributes. The best you can do is look at the API and figure it out yourself, for the details are numerous. There's a good starting point [here](https://code.google.com/p/libgdx-users/wiki/Tiles).
 
-##### Camera
+### Camera
 
 Finally, we'll briefly talk about the camera. As long as I know Slick does not offer a Camera class, but libgdx does. Libgdx offers an ortographic camera, with a parallel projection, suitable for 2D games, and a perspective camera which uses a perspective projection, suitable for 3D games. In my application with Slick I created a camera class which managed the position and movement of the camera. To convert it to libgdx, I converted this camera class into a wrapper over the `OrtographicCamera` so that the interface stayed the same.
 
-#### Conclusions
+## Conclusions
 
 It took me about a couple of days to migrate the whole thing but it was worth it. Now my application runs in Android and the performance has benefited from batching and texture mapping. I'd say that the rendering process of libgdx is more difficult but it also offers more possibilities. If you want to keep things very simple, stick with Slick. If you don't mind having to spend a bit longer in the learning process, go for libgdx, you won't regret it.
