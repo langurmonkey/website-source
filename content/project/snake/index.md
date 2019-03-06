@@ -83,7 +83,7 @@ This is my modification of the HTML5 snake game seen in [thecodeplayer.com](http
 
 Below is the javascript code, if you need it. You can also get it [here](/js/snake.js). Of course you'll need [jQuery](http://jquery.com/) and some form input fields to get the initial values from in your html page, but this is not difficult to work out at all.
 
-```
+```javascript
 $(document).ready(
 		function() {
 			// GLOBAL VARIABLES
