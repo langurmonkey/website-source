@@ -2501,6 +2501,10 @@
 			margin-left: 2em;
 		}
 
+    .posts-container {
+        width: 100%;
+    }
+
 /* Mini Post */
 
 	.mini-post {

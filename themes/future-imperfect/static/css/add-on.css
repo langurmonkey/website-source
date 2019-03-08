@@ -405,17 +405,22 @@ ul.pagination li {
     min-height: 20em;
 }
 
-ul.recent-posts-list {
+#tag-cloud {
+    max-width: 25em;
+}
+
+div.recent-posts-item {
+    float: left;
     list-style-type: none;
-    margin-left: -1.4em;
+    min-width: 21em;
 }
 
-ul.recent-posts-list a {
-    font-size: 0.95em;
+div.recent-posts-item a {
+    font-size: 0.9em;
 }
 
-ul.recent-posts-list time {
+div.recent-posts-item time {
     color: #aaa;
-    font-size: 0.8em;
+    font-size: 0.7em;
     text-transform: uppercase;
 }
