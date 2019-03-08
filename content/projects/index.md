@@ -18,6 +18,9 @@ showpagemeta = "false"
 
   <i class="fa fa-github"></i>&nbsp;&nbsp;<strong><a href="https://github.com/langurmonkey/rts-engine">RTS Engine</a></strong>
   - Real time strategy game engine written in Java. Very early stage, needs huge refactoring.
+  
+  <i class="fa fa-gitlab"></i>&nbsp;&nbsp;<strong><a href="https://gitlab.com/langurmonkey/tsnake">tsnake</a></strong>
+  - `tsnake` is a terminal snake game written in C++ using the ncurses library with support for different maps and tons of options.
 
   <i class="fa fa-github"></i>&nbsp;&nbsp;<strong><a href="https://github.com/langurmonkey/mediaorganiser-py">mediaorganiser-py</a></strong>
   - Very small script to organise media files into folders sorted by year and month (/YYYYMM). It scans the file name and the EXIF and RAW metadata. Very handy to keep your photos and videos automatically sorted. 
