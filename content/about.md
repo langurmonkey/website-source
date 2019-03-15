@@ -16,7 +16,7 @@ Anyway, my name is **Toni Sagristà Sellés** and I am a computer scientist and 
 
 I'm currently working in the ESA astrometric satellite Gaia group in the [Astronomisches Rechen-Institut](http://ari.uni-heidelberg.de) and doing research in scientific visualization in the [visual computing group](https://vcg.iwr.uni-heidelberg.de) of the [Interdisciplinary Instute for Scientific Computing](https://www.iwr.uni-heidelberg.de).
 
-- Have a peek into my [blog posts](/blog) ([full list](/blog/posts-list))
+- Have a peek into my [blog posts](/blog) ([full list](/posts-list))
 - Have a look at some of my [projects](/projects)
 - Check out my [publications](/papers)
 - Relax watching my [photos](https://flickr.com/photos/tonisagrista/)

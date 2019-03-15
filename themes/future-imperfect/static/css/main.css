@@ -1535,6 +1535,7 @@
 
 	h1, h2, h3, h4, h5, h6 {
 		color: #071;
+        font-size: 2em;
         font-family: monospace;
 		font-weight: 800;
 		line-height: 1.65;
@@ -3036,6 +3037,7 @@
 			height: inherit;
 			line-height: inherit;
 			padding: 0 0 0 1.5em;
+            font-size: 1em;
 			white-space: nowrap;
 		}
 

@@ -7,7 +7,6 @@ showpagemeta = "false"
 +++
 
 
-
 ### Software and scripts
 
   <i class="fa fa-github"></i>&nbsp;&nbsp;<strong><a href="https://github.com/langurmonkey/dotfiles">dotfiles</a></strong>

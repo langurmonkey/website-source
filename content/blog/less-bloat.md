@@ -21,4 +21,4 @@ I've once again changed the design of the site to make it cleaner, more simple a
 <em style="color: gray;">Old (left) and new (right) design side-by-side. The new design is cleaner and more pleasant to the eye.</em>
 </p>
 
-The new design also looks better on mobile screens, as I took some care of adapting the templates for pocket devices. Finally, I changed the home page from the blog summary listing to an introduction and welcome page, and added a [full blog listing](/blog/posts-list) page containing a list of all blog post titles sorted by date.
+The new design also looks better on mobile screens, as I took some care of adapting the templates for pocket devices. Finally, I changed the home page from the blog summary listing to an introduction and welcome page, and added a [full blog listing](/posts-list) page containing a list of all blog post titles sorted by date.
