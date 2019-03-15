@@ -3,8 +3,8 @@ author = "Toni Sagrista Selles"
 categories = ["Gaia Sky"]
 tags = [ "scripting", "python"]
 date = "2019-03-15"
-title = "The scripting system of Gaia Sky"
-description = "How the Gaia Sky scripting system currently works"
+title = "Scripting Gaia Sky"
+description = "Random thoughts on the Gaia Sky scripting system"
 linktitle = ""
 type = "post"
 +++
