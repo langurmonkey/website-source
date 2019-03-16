@@ -5,6 +5,9 @@ tags = [ "scripting", "python"]
 date = "2019-03-15"
 title = "Scripting Gaia Sky"
 description = "Random thoughts on the Gaia Sky scripting system"
+featured = "gs-scripting-main.jpg"
+featuredalt = "Scripting Gaia Sky with Py4J"
+featuredpath = "date"
 linktitle = ""
 type = "post"
 +++
