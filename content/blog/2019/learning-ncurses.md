@@ -12,7 +12,7 @@ featuredpath = "date"
 type = "post"
 +++
 
-Lately, I have been kicking the dust off my C++ skills, and decided to start by learning to use a library which I have been eyeing for a while, `ncurses`. `ncurses` is a C library which lets you create terminal applications in the fashion of the featured gif of this post. Basically, you can use the terminal to implement text-based user interfaces. Since I seem to have an [obsession with snake games](/project/snake), I figured I'd create a snake game for the terminal.
+Lately, I have been kicking the dust off my C++ skills, and decided to start by learning to use a library which I have been eyeing for a while, `ncurses`. `ncurses` is a C library which lets you create text-based UI programs for the terminal, in the same fashion as the gif above. Basically, you can use the terminal to implement text-based user interfaces. Since I seem to have an [obsession with snake games](/project/snake), I figured I'd create a snake game for the terminal.
 
 <!--more-->
 
@@ -135,6 +135,6 @@ wrefresh(state.gamew);
 
 ## Conclusion
 
-There are obviously many more aspects to the tsnake which have not been presented here. This article only gives a very rough bird's eye view on how to use ncurses to create such a terminal game.
+There are obviously many more aspects to the implementation of tsnake which have not been presented here. This article only gives a very rough bird's eye view on how to use ncurses and the possibilities that the library offers.
 
 Feel free to check the full source code in the [gitlab repository](https://gitlab.com/langurmonkey/tsnake). You can install the [tsnake aur package](https://aur.archlinux.org/packages/tsnake) if you are on Arch or derivatives. 
