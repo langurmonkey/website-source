@@ -137,7 +137,7 @@ Right now I'm using [Thunderbird](https://thunderbird.net) with [Enigmail](https
 
 ## Music player
 
-I use [`cmus`](https://cmus.github.io) with [`vis`](https://github.com/dpayne/cli-visualizer). [`beets`](http://beets.io) is good to keep my library organised and my tags up to date. When I need to modify ID3 tags manually, [`easytag`](https://wiki.gnome.org/Apps/EasyTAG) does the trick just fine.
+I use [`cmus`](https://cmus.github.io) to play music. [`beets`](http://beets.io) is good to keep my library organised and my tags up to date. When I need to modify ID3 tags manually, [`easytag`](https://wiki.gnome.org/Apps/EasyTAG) does the trick just fine.
 
 ## RAW photo editing
 
@@ -158,6 +158,23 @@ At the end of the day, both are very capable and produce good results. Also, bot
 ## Scripting
 
 Most of my scripts are written in `bash`, even though for more complex things I also use `python` from time to time.
+
+## Additional utilities
+
+Here is a list of utilities I have installed and use regularly.
+
+-  [`cava`](karlstav.github.io/cava) - Audio visualizer and equalizer
+-  [`fd`](github.com/sharkdp/fd) - Amazing replacement for `find`
+-  [`fzf`](github.com/junegunn/fzf) - Terminal fuzzy finder and vim plugin
+-  [`sshfs`](github.com/libfuse/sshfs) - Mount file systems over SSH/SFTP
+-  [`apropos`] - Search the man pages
+-  [`units`](www.gnu.org/software/units) - Convert units on the terminal
+-  [`translate-shell`](github.com/soimort/translate-shell) - Google translate terminal wrapper
+-  [`rtv`](github.com/michael-lazar/rtv) - Reddit Terminal Viewer
+-  [`tealdeer`](github.com/dbrgn/tealdeer) - Access [`tldr-pages`](github.com/tldr-pages/tldr) with style
+-  [`pdfpc`](github.com/phillipberndt/pdfpc) - Presenter console for for PDF files
+-  [`tig`](github.com/jonas/tig) - Text interface for `git`
+-  [`bc`] - Best calculator ;)
 
 ## Closing Notes
 
