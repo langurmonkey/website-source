@@ -159,6 +159,23 @@ At the end of the day, both are very capable and produce good results. Also, bot
 
 Most of my scripts are written in `bash`, even though for more complex things I also use `python` from time to time.
 
+## Additional utilities
+
+Here is a list of utilities I have installed and use regularly.
+
+-  [`cava`](karlstav.github.io/cava) - Audio visualizer and equalizer
+-  [`fd`](github.com/sharkdp/fd) - Amazing replacement for `find`
+-  [`fzf`](github.com/junegunn/fzf) - Terminal fuzzy finder and vim plugin
+-  [`sshfs`](github.com/libfuse/sshfs) - Mount file systems over SSH/SFTP
+-  [`apropos`] - Search the man pages
+-  [`units`](www.gnu.org/software/units) - Convert units on the terminal
+-  [`translate-shell`](github.com/soimort/translate-shell) - Google translate terminal wrapper
+-  [`rtv`](github.com/michael-lazar/rtv) - Reddit Terminal Viewer
+-  [`tealdeer`](github.com/dbrgn/tealdeer) - Access [`tldr-pages`](github.com/tldr-pages/tldr) with style
+-  [`pdfpc`](github.com/phillipberndt/pdfpc) - Presenter console for for PDF files
+-  [`tig`](github.com/jonas/tig) - Text interface for `git`
+-  [`bc`] - Best calculator ;)
+
 ## Closing Notes
 
 I think this post sums up my basic setup pretty accurately. It will, of course, become obsolete with time, but for the time being, I will try to keep it up to date for my future reference.
