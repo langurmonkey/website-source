@@ -137,7 +137,7 @@ Right now I'm using [Thunderbird](https://thunderbird.net) with [Enigmail](https
 
 ## Music player
 
-I use [`cmus`](https://cmus.github.io) to play music. [`beets`](http://beets.io) is good to keep my library organised and my tags up to date. When I need to modify ID3 tags manually, [`easytag`](https://wiki.gnome.org/Apps/EasyTAG) does the trick just fine.
+I have used [`cmus`](https://cmus.github.io) with [`vis`](https://github.com/dpayne/cli-visualizer) for a long time, coupled with [`beets`](http://beets.io) to keep my library organised and my tags up to date. However, lately I've turned to the [`mdp`](https://musicpd.org) + [`ncmpcpp`](https://github.com/arybczak/ncmpcpp) tandem. The MPD service is running in the background and maintains the libary, playlists and player state. NCMPCPP connects to it and offers a terminal-based clean interface. Every day I like it more and more.
 
 ## RAW photo editing
 
