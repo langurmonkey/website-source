@@ -23,7 +23,7 @@ showpagemeta = "false"
 *   [VizieR Online Data Catalog: Gaia DR1 open cluster members](http://adsabs.harvard.edu/abs/2017yCat..36010019G) - Gaia Collaboration... A. Sagristà... - 2017, VizieR Online Data Catalog, J/A+A/601/A19
 *   [Topological Analysis of Inertial Dynamics](https://doi.org/10.1109/TVCG.2016.2599018) - A. Sagristà, S. Jordan, A. Just, F. Dias, L. G. Nonato, F. Sadlo - 2016, IEEE Transactions on Visualization and Computer Graphics, [10.1109/TVCG.2016.2599018](https://doi.org/10.1109/TVCG.2016.2599018)
 *   [Gaia Data Release 1: Summary of the astrometric, photometric, and survey properties](http://dx.doi.org/10.1051/0004-6361/201629512) - Gaia Collaboration... A. Sagristà... - 2016, A&A, 595 (2016) A2
-*   [The Gaia mission](http://www.aanda.org/component/article?access=doi&doi=10.1051/0004-6361/201629272) - Gaia Collaboration... T. Sagristà Sellés... - 2016, A&A, 595 (2016) A1 
+*   [The Gaia mission](http://www.aanda.org/component/article?access=doi&doi=10.1051/0004-6361/201629272) - Gaia Collaboration... A. Sagristà... - 2016, A&A, 595 (2016) A1 
 *   [Leaving the Dark Ages with AMIGA](http://iopscience.iop.org/0067-0049/216/1/13) - A. Manrique, E. Salvador-Solé, E. Juan, E. Hatziminaoglou, J. María Rozas, A. Sagristà, K. Casteels, G. Bruzual, G. Magris - 2016, ApJS 216 13 
 
 ### Talks and lectures
