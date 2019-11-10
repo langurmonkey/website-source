@@ -8,6 +8,7 @@ pre {
     width: 100%
 }
 
+
 #header .links a {
     /* Theoretically for IE 8 & 9 (more valid) */
     /* ...but not required as filter works too */
@@ -423,4 +424,9 @@ div.recent-posts-item time {
     color: #aaa;
     font-size: 0.7em;
     text-transform: uppercase;
+}
+
+p.caption {
+    color: #999 !important;
+    font-style: italic;
 }
