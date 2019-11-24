@@ -43,6 +43,7 @@ showpagemeta = "false"
     </h2>
     <ul>
       <li><strong>Scientific visualization</strong> - Research in scientific visualisation for astronomy and astrophysics.</li>
+      <li><strong>HGS MathComp fellow</strong> - Check it out <a href="http://www.mathcomp.uni-heidelberg.de/" title="HGS MathComp" target="_blank">here</a>.</li>
     </ul>
     <h2 class="cv">
       12/2011 - 10/2013&nbsp;&nbsp;&nbsp;<a href="http://www.ieec.cat/" title="IEEC" target="_blank">IEEC</a>/<a href="http://icc.ub.edu" title="ICC" target="_blank">ICC</a>/<a href="http://ub.edu" title="UB" target="_blank">UB</a>, software engineer
@@ -125,53 +126,46 @@ showpagemeta = "false"
   <dd class="cv">
     <h2 class="cv">Technical Skills</h2>
     <ul>
-      <li><strong>Java and J2EE</strong> - Expert in various J2EE technologies and frameworks.
-        <ul><li><strong>Application/web servers</strong> - Tomcat, jBoss, Apache.</li>
-        <li><strong>Frameworks</strong> - Struts 1&2, Spring MVC, JSF, WebWorks, GWT, Hibernate, jBPM.</li>
-        <li><strong>Libraries</strong> - Apache commons, jetty, Eclipse GEF, GMF and SWF, libGDX, Quartz, Lucene, etc.</li>
-        <li><strong>Profiling</strong> - Eclipse MAT, VisualVM, JProfile, JProbe, jmap, jhat, jstack.</li>
-        </ul>
-      </li>
       <li><strong>CUDA</strong>
       </li>
-      <li><strong>Other languages</strong> - Other languages I know and use.
-        <ul><li><strong>FORTRAN</strong> - Got to know FORTRAN well thanks to my work with the semi-analytic model AMIGA.</li>
-        <li><strong>C, C++</strong> - Some practical works done in both languages during my degree.</li>
-        <li><strong>Python</strong> - Used extensively in Gaia.</li>
+      <li><strong>Programming languages</strong> - Languages I know best.
+        <ul><li><strong>C, C++</strong> - Used in some personal projects and practical works done in both languages during my degree.</li>
+        <li><strong>FORTRAN</strong> - Got to know FORTRAN well thanks to my work with the semi-analytic model AMIGA.</li>
+        <li><strong>Python</strong> - Used extensively during my Ph.D. and Gaia Sky.</li>
+        <li><strong>Java and J2EE</strong> - Expert in various J2EE technologies and frameworks.
+          <ul><li><strong>Application/web servers</strong> - Tomcat, jBoss, Apache.</li>
+          <li><strong>Frameworks</strong> - Struts 1&2, Spring MVC, JSF, WebWorks, GWT, Hibernate, jBPM.</li>
+          <li><strong>Libraries</strong> - Apache commons, jetty, Eclipse GEF, GMF and SWF, libGDX, Quartz, Lucene, etc.</li>
+          <li><strong>Profiling</strong> - Eclipse MAT, VisualVM, JProfile, JProbe, jmap, jhat, jstack.</li>
+          </ul>
+        </li>
         <li><strong>Shell scripting</strong> - bash, csh.</li>
         </ul>
       </li>
+      <li><b>OpenGL/GLSL</b> - Deep knowledge of OpenGL (2.x, 3.x, 4.x and ES).</li>
       <li><strong>Databases</strong> - MySQL, PostgreSQL, OracleDB, HyperSQL and specific languages like ADQL.</li>
-      <li><strong>XML</strong> - XML, DTD, XSLT, SOAP.</li>
-      <li><b>Eclipse IDE</b> - I have a profound knowledge of the Eclipse IDE as I use it as my main developing environment&nbsp;and used<br>several Eclispe technologies such as GEF and GMF.
+      <li><b>vim</b> - My main development tool, aided with handy plugins.</li>
+      <li><b>IntelliJ IDEA</b> - I sometimes use it for development.</li>
+      <li><b>Eclipse IDE</b> - I used the Eclipse IDE as my main developing environment in the past&nbsp;and worked<br>several Eclispe technologies such as GEF and GMF.
         Also worked with Oracle's <i>NetBeans</i>.</li>
       <li><b>HPC</b> - Tuning and profiling code for its execution in the supercomputers at <a href="http://cesca.cat" target="_blank">CESCA</a> and <a href="http://www.bsc.es">BSC</a>.</li>
-      <li><b>Android SDK</b> - Expertise in the Android SDK. Two applications published in the Android Market (see my <a href="/portfolio">Portfolio</a>).</li>
-      <li><b>OpenGL/GLSL</b> - Deep knowledge of the Open Graphics Library, both regular and ES versions.</li>
+      <li><b>Android SDK</b> - Expertise in the Android SDK. Two applications published in the Play store (see my <a href="/portfolio">Portfolio</a>).</li>
       <li><b>LaTeX</b> - I use LaTeX to format almost all the documents I produce, including technical work, science reports and my <a href="/sites/default/files/pdf/cv.pdf">resumé</a>.</li>
       <li><b>Drupal/WordPress</b> - I set up a Drupal environment from scratch to build my previous site.</li>
-      <li><b>Web technologies</b> - I am proficient in web technologies.
+      <li><b>Web technologies</b> - I am somewhat proficient in web technologies.
         <ul><li><strong>CSS3&HTML5</strong> - The future of the web.</li>
-        <li><strong>Javascript</strong> - I also know well AJAX and jQuery.</li>
+        <li><strong>Javascript</strong> - I also knew well AJAX and jQuery.</li>
         <li><strong>PHP</strong> - I coded personal websites in PHP a while ago.</li>
-        <li><strong>Others</strong> - Dreamweaver+VBScript+ASP and FrontPage. Hugo.</li>
+        <li><strong>Others</strong> - Dreamweaver+VBScript+ASP and FrontPage (a very long time ago). Hugo (this site).</li>
         </ul>
       </li>
       <li><b>NLP. 2007</b> - Natural Language Processing knowledge, acquired developing the final year project.</li>
       <li><b>E-Business and Informatics for e-Enterprise courses. 2005</b> - The University of Reading, Computer Science department.</li>
     </ul>
     <h2 class="cv">Publications and projects</h2>
-    <ul>
-      <li><a href="http://ieeexplore.ieee.org/document/7539608/">Topological Analysis of Inertial Dynamics</a> - A. Sagristà, S. Jordan, A. Just, F. Dias, L. G. Nonato, F. Sadlo - 2016, <em>IEEE Transactions on Visualization and Computer Graphics, VIS 2016</em></li>
-      <li><a href="http://www.aanda.org/component/article?access=doi&doi=10.1051/0004-6361/201629272">The Gaia Mission</a> - The Gaia Consortium... A, Sagristà... - 2016, <em>Astronomy & Astrophysics</em></li>
-      <li><a href="http://dx.doi.org/10.1051/0004-6361/201629512">Gaia Data Release 1. Summary of the astrometric, photometric, and survey properties</a> - The Gaia Consortium... A, Sagristà... - 2016, <em>Astronomy & Astrophysics</em></li>
-      <li><a href="http://iopscience.iop.org/0067-0049/216/1/13/">Leaving the dark ages with AMIGA</a> - Alberto Manrique et al. - 2015, <em>The Astrophysical Journal</em></li>
-      <li><a href="/pdf/MasterThesis.pdf">Development of the AMIGA font end for external use</a> - 2011, Universitat de Barcelona, Dept. of Astronomy, <em>M.Sc. thesis</em></li>
-      <li><a href="http://www.csd.abdn.ac.uk/teaching/projectabstracts/abstract.php?id=cs02ts&amp;year=2007">Computer-aided catalan learning application</a> - 2007, The University of Aberdeen, Computing Science Dept., <em>degree thesis</em></li>
-      <li><a href="https://zah.uni-heidelberg.de/gaia/outreach/gaiasky/" title="Gaia Sky">Gaia Sky</a> - 3D Universe simulator focused on Gaia data
-      <li><a href="/pps" title="Particle Physics Simulator">Particle Physics Simulator</a> - Android application with +500K downloads
-      <li>Check out my various projects <a href="/projects" title="Projects">here</a>
-    </ul>
+    <ul><li>
+    Please, see the sections <a href="/papers">publications</a> and <a href="/projects">projects</a> of this webiste.
+    </li></ul>
     <h2 class="cv">Social Skills and Competences</h2>
     <ul>
       <li>Teamworking. Ability to work in a multicultural environment.</li>
