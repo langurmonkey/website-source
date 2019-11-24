@@ -146,8 +146,7 @@ showpagemeta = "false"
       <li><strong>Databases</strong> - MySQL, PostgreSQL, OracleDB, HyperSQL and specific languages like ADQL.</li>
       <li><b>vim</b> - My main development tool, aided with handy plugins.</li>
       <li><b>IntelliJ IDEA</b> - I sometimes use it for development.</li>
-      <li><b>Eclipse IDE</b> - I used the Eclipse IDE as my main developing environment in the past&nbsp;and worked<br>several Eclispe technologies such as GEF and GMF.
-        Also worked with Oracle's <i>NetBeans</i>.</li>
+      <li><b>Eclipse IDE</b> - I used the Eclipse IDE as my main developing environment in the past&nbsp;and worked<br>several Eclispe technologies such as GEF and GMF.</li>
       <li><b>HPC</b> - Tuning and profiling code for its execution in the supercomputers at <a href="http://cesca.cat" target="_blank">CESCA</a> and <a href="http://www.bsc.es">BSC</a>.</li>
       <li><b>Android SDK</b> - Expertise in the Android SDK. Two applications published in the Play store (see my <a href="/portfolio">Portfolio</a>).</li>
       <li><b>LaTeX</b> - I use LaTeX to format almost all the documents I produce, including technical work, science reports and my <a href="/sites/default/files/pdf/cv.pdf">resumé</a>.</li>
