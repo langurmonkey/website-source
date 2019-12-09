@@ -20,10 +20,11 @@
         </header>
         {{ end }}
         <ul class="icons">
+            <!--
             {{ if .RSSLink }}
             <li><a href="{{ .RSSLink }}" type="application/rss+xml"
-                                         target="_blank" title="RSS" class="fa fa-rss"></a></li>
-            {{ end }}
+                                         target="_blank" title="RSS" class="la la-rss"></a></li>
+                                         {{ end }}-->
             {{ if .Site.Params.socialAppearAtTop }}
             {{ partial "social" . }}
             {{ end }}
