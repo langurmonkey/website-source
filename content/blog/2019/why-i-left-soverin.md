@@ -10,7 +10,7 @@ featuredpath = "date"
 type = "post"
 +++
 
-My [degoogling process](reddit.com/r/degoogle) started a few months ago, and it included moving on from Gmail to a privacy-focused email provider, amongst many other actions. I surveyed the landscape and considered Proton Mail, Tutanota, Posteo, and a few others. Finally I settled with the Amsterdam-based [Soverin.net](soverin.net), openend an account back in July 2019 and paid for a full year of service. What follows is the story of why I cancelled my account yesterday in favour of another provider.
+My [degoogling process](https://reddit.com/r/degoogle) started a few months ago, and it included moving on from Gmail to a privacy-focused email provider, amongst many other actions. I surveyed the landscape and considered Proton Mail, Tutanota, Posteo, and a few others. Finally I settled with the Amsterdam-based [Soverin.net](https://soverin.net), openend an account back in July 2019 and paid for a full year of service. What follows is the story of why I cancelled my account yesterday in favour of another provider.
 
 This post is a transcript of this [post I created in reddit](https://www.reddit.com/r/privacytoolsIO/comments/e14rxf/my_experience_with_soverin/).
 
