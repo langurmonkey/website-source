@@ -41,7 +41,6 @@
         {{ template "_internal/twitter_cards.html" . }}
         {{ template "_internal/opengraph.html" . }}
         {{ template "_internal/schema.html" . }}
-        {{ template "_internal/google_news.html" . }}
 
         <!--[if lte IE 8]><script src="/js/ie/html5shiv.js"></script><![endif]-->
 
@@ -59,7 +58,7 @@
         <!-- If the value "default" is passed into the param then we will first
              load the standard css files associated with the theme -->
         {{ if or (in ($.Scratch.Get "cssFiles") "default") (eq ($.Scratch.Get "cssFiles") false) }}
-            <link rel="stylesheet" href="/css/google-font.css" />
+            <link rel="stylesheet" href="/css/local-gfonts.css" />
             <link rel="stylesheet" href="/css/line-awesome.min.css" />
             <link rel="stylesheet" href="/css/main.css" />
             <link rel="stylesheet" href="/css/add-on.css" />
