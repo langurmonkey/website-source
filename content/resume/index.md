@@ -21,7 +21,7 @@ showpagemeta = "false"
   <p class="contactinfo">
     Cell: <span class="tel">+49 (0)17683798752</span>, <span class="tel">+34 669724840</span>
     <br>Email: <a class="email" href="mailto:me@tonisagrista.com">me@tonisagrista.com</a>
-    <br><a href="/pgp/tss_pubkey.asc" target="_blank">My PGP public key</a>
+    <br>PGP: <a href="/pgp/tss_pubkey.asc" target="_blank">0x2FD2A59C1D734C1F</a>
     <br>Born: August 5, 1983
   </p>
 </div>
