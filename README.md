@@ -20,6 +20,8 @@ and update the certificate and key with `/etc/letsencrypt/live/tonisagrista.com/
 Gallery
 -------
 
+In order to generate the static gallery you will need [thumbsup](thumbsup.github.io) and also [exiftool-json-db](github.com/thumbsup/exiftool-json-db) in your path (for EXIF data).
+
 Generate the gallery from a set of static files using:
 
 ```bash
