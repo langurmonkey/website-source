@@ -105,7 +105,7 @@ pygmentsStyle = "monokai"
 
 [[menu.main]]
     name = "/Photo"
-    url = "https://www.flickr.com/photos/tonisagrista/"
+    url = "/photo-gallery"
     weight = 5
 
 [[menu.main]]
