@@ -13,7 +13,6 @@ test:
 pages:
   script:
   - hugo
-  - cp static/photo-gallery/public static/photo-gallery/pub
   artifacts:
     paths:
     - public
