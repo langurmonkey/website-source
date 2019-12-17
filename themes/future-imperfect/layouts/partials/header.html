@@ -58,8 +58,8 @@
         <!-- If the value "default" is passed into the param then we will first
              load the standard css files associated with the theme -->
         {{ if or (in ($.Scratch.Get "cssFiles") "default") (eq ($.Scratch.Get "cssFiles") false) }}
+            <script src="https://kit.fontawesome.com/5ae25d3cf4.js" crossorigin="anonymous"></script>
             <link rel="stylesheet" href="/css/local-gfonts.css" />
-            <link rel="stylesheet" href="/css/line-awesome.css" />
             <link rel="stylesheet" href="/css/main.css" />
             <link rel="stylesheet" href="/css/add-on.css" />
             <link rel="stylesheet" href="/css/monokai-sublime.css" />
