@@ -56,11 +56,13 @@ style="float: right; margin-left: 50px; width: 40%" />
 <article>
 <i class="fas fa-globe-europe"></i>&nbsp;&nbsp;<strong><a href="/project/snake/">HTML5 Snake Game</a></strong> &mdash; A modified version of an HTML5 snake game.
 </article>
-
+<br/>
+<br/>
+<br/>
 
 ### Achivements
 
--  [Mapping and Visualising Gaia DR2](https://www.cosmos.esa.int/web/gaia/iow_20180614) - **Gaia Image of the Week** - *2018/06/14*
--  [Visualising the gaia data with Gaia Sky](https://www.cosmos.esa.int/web/gaia/gaiadr2_gaiasky) - **Gaia Image of the Week** - *2018/04/25*
--  [Gaia: Here Comes the Sun](http://apod.nasa.gov/apod/ap160926.html) - **Astronomy Picture of the Day** - *2016/09/26*
--  [A Window to Gaia: The Focal Plane](http://www.cosmos.esa.int/web/gaia/iow_20160422) - **Gaia Image of the Week** - *2016/04/22*
+-  [Mapping and Visualising Gaia DR2](https://www.cosmos.esa.int/web/gaia/iow_20180614) &mdash; **Gaia Image of the Week** (*2018-06-14*)
+-  [Visualising the gaia data with Gaia Sky](https://www.cosmos.esa.int/web/gaia/gaiadr2_gaiasky) &mdash; **Gaia Image of the Week** (*2018-04-25*)
+-  [Gaia: Here Comes the Sun](http://apod.nasa.gov/apod/ap160926.html) &mdash; **Astronomy Picture of the Day** (*2016-09-26*)
+-  [A Window to Gaia: The Focal Plane](http://www.cosmos.esa.int/web/gaia/iow_20160422) &mdash; **Gaia Image of the Week** (*2016-04-22*)
