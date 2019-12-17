@@ -1,4 +1,3 @@
-![Build Status](https://gitlab.com/pages/hugo/badges/master/build.svg)
 
 ---
 
@@ -12,6 +11,6 @@ $  sudo certbot certonly --manual -d tonisagrista.com
 
 Then go to the [repo configuration](https://gitlab.com/jumpinglangur/jumpinglangur.gitlab.io/pages)
 and update the certificate and key with `/etc/letsencrypt/live/tonisagrista.com/fullchain.pem` and
-`/etc/letsencryp/live/tonisagrista.com/privkey.pem` respectively.
+`/etc/letsencrypt/live/tonisagrista.com/privkey.pem` respectively.
 
 ---
