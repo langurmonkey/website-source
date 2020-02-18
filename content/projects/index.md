@@ -30,7 +30,7 @@ showpagemeta = "false"
 </article>
 
 <article>
-<i class="fab fa-gitlab"></i>&nbsp;&nbsp;<strong><a href="https://gitlab.com/langurmonkey/mediaorganiser-py">mediaorganiser-py</a></strong> &mdash; Very small script to organise media files into folders sorted by year and month (/YYYYMM). It scans the file name and the EXIF and RAW metadata. Very handy to keep your photos and videos automatically sorted. I also made a C++ port ([here](https://gitlab.com/langurmonkey/mediaorganiser)), but it is kind of unmaintained.
+<i class="fab fa-gitlab"></i>&nbsp;&nbsp;<strong><a href="https://gitlab.com/langurmonkey/mediaorganiser-py">mediaorganiser-py</a></strong> &mdash; Very small script to organise media files into folders sorted by year and month (/YYYYMM). It scans the file name and the EXIF and RAW metadata. Very handy to keep your photos and videos automatically sorted. I also made a C++ port (<a href="https://gitlab.com/langurmonkey/mediaorganiser">here</a>), but it is kind of unmaintained.
 </article>
 
 <article>
