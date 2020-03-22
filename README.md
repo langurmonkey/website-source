@@ -22,6 +22,12 @@ Gallery
 
 In order to generate the static gallery you will need [thumbsup](https://thumbsup.github.io) and also [exiftool-json-db](https://github.com/thumbsup/exiftool-json-db) in your path (for EXIF data).
 
+```bash
+$  sudo npm install -g thumbsup --unsafe-perm=true
+$  sudo npm install -g exiftool-json-db --unsafe-perm=true
+$  sudo pacman -S gifsicle dcraw imagemagick ffmpeg
+```
+
 Generate the gallery from a set of static files using:
 
 ```bash

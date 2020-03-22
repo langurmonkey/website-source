@@ -12,7 +12,7 @@ type = "homepage"
 
 How the hell did you end up here?
 
-Anyway, my name is **Toni Sagristà Sellés** and I am a computer scientist and M.Sc. in astrophysics. I like computer graphics and visualization, astronomy, photography (sometimes), snowboarding, playing and watching football, drawing horribly, caring for my daughter, and occasionally gaming. I sometimes use the aliases 'jumpinglangur' and 'langurmonkey'.
+Anyway, my name is **Toni Sagristà Sellés** and I am a computer scientist and M.Sc. in astrophysics. I like computer graphics and visualization, astronomy, photography (sometimes), snowboarding, playing and watching football, drawing horribly, playing with my kids, and occasionally gaming. I sometimes use the aliases 'jumpinglangur' and 'langurmonkey'.
 
 I'm currently working in the ESA astrometric satellite Gaia group in the [Astronomisches Rechen-Institut](http://ari.uni-heidelberg.de) and doing research in scientific visualization in the [visual computing group](https://vcg.iwr.uni-heidelberg.de) of the [Interdisciplinary Instute for Scientific Computing](https://www.iwr.uni-heidelberg.de).
 
