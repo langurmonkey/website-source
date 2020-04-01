@@ -21,20 +21,15 @@
     </nav>
     <nav class="main">
         <ul>
-            {{ if $.Scratch.Get "shareNav" }}
-            <li id="share-nav" class="share-menu" style="display:none;">
-                <a class="fas fa-share" href="#share-menu">Share</a>
-            </li>
-            {{ end }}
             <li class="search">
-                <a class="fas fa-search" href="#search" style="font-size: 14px; line-height: 2.2">Search</a>
-                <form id="search" method="get" action="//google.com/search">
+                <a href="#search"><i class="fa fa-search fa-fw" style="font-size: 14px; line-height: 2.2; text-indent: -5.5em"></i>Search</a>
+                <form id="search" method="get" action="//duckduckgo.com/">
                     <input type="text" name="q" placeholder="Search" />
                     <input type="hidden" name="q" value="site:{{ .Site.BaseURL }}">
                 </form>
             </li>
             <li class="menu">
-                <a class="fas fa-bars" href="#menu" style="font-size: 14px; line-height: 2.2">Menu</a>
+                <a href="#menu"><i class="fa fa-bars fa-fw" style="font-size: 14px; line-height: 2.2; text-indent: -5.5em"></i>Menu</a>
             </li>
         </ul>
     </nav>
@@ -45,7 +40,7 @@
 
     <!-- Search -->
         <section>
-            <form class="search" method="get" action="//google.com/search">
+            <form class="search" method="get" action="//duckduckgo.com/">
                 <input type="text" name="q" placeholder="Search" />
                 <input type="hidden" name="q" value="site:{{ .Site.BaseURL }}">
             </form>

@@ -34,4 +34,4 @@ You can get more information on how this is calculated in this <strong><a href="
 <ul><li><strong>Linux</strong> - Give execution permissions to the <em>run.sh</em> file and run it.</li>
 <li><strong>Windows</strong> - Just run the <em>run.bat</em> file.</li></ul>
 <h3>Source</h3>
-<p>If you want to run it from the source or just play around with it, feel free to clone this <strong><a href="https://github.com/langurmonkey/celestial-pole-motion" target="_blank">Github repository</a></strong>.</p>
+<p>If you want to run it from the source or just play around with it, feel free to clone this <strong><a href="https://gitlab.com/langurmonkey/celestial-pole-motion" target="_blank">Gitlab repository</a></strong>.</p>

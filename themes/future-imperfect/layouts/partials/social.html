@@ -1,35 +1,39 @@
+{{ with .Site.Social.rss }}
+<li><a href="/{{.}}" target="_blank" title="RSS"><i class="fa fa-rss-square"></i></a></li>
+{{ end }}
+
 {{ with .Site.Social.gitlab }}
-  <li><a href="//gitlab.com/{{.}}" target="_blank" title="GitLab" class="fab fa-gitlab"></a></li>
+<li><a href="//gitlab.com/{{.}}" target="_blank" title="GitLab"><i class="fa fa-gitlab"></i></a></li>
 {{ end }}
 
 {{ with .Site.Social.github }}
-<li><a href="//github.com/{{.}}" target="_blank" title="GitHub" class="fab fa-github-alt"></a></li>
+<li><a href="//github.com/{{.}}" target="_blank" title="GitHub"><i class="fa fa-github-alt"></i></a></li>
 {{ end }}
 
 {{ with .Site.Social.youtube }}
-<li><a href="//youtube.com/{{.}}" target="_blank" title="YouTube" class="fab fa-youtube"></a></li>
+<li><a href="//youtube.com/{{.}}" target="_blank" title="YouTube"><i class="fa fa-youtube-play"></i></a></li>
 {{ end }}
 
 {{ with .Site.Social.linkedin }}
-<li><a href="//linkedin.com/in/{{.}}" target="_blank" title="LinkedIn" class="fab fa-linkedin-in"></a></li>
+<li><a href="//linkedin.com/in/{{.}}" target="_blank" title="LinkedIn"><i class="fa fa-linkedin-square"></i></a></li>
 {{ end }}
 
 {{ with .Site.Social.reddit }}
-<li><a href="//reddit.com/user/{{.}}" target="_blank" title="Reddit" class="fab fa-reddit"></a></li>
+<li><a href="//reddit.com/user/{{.}}" target="_blank" title="Reddit"><i class="fa fa-reddit-square"></i></a></li>
 {{ end }}
 
 {{ with .Site.Social.mastodon }}
-<li><a href="//mastodont.cat/{{.}}" target="_blank" title="Mastodon" class="fa fa-paw"></a></li>
+<li><a href="//mastodont.cat/{{.}}" target="_blank" title="Mastodon"><i class="fa fa-mastodon"></i></a></li>
 {{ end }}
 
 {{ with .Site.Social.twitter }}
-<li><a href="//twitter.com/{{.}}" target="_blank" title="Twitter" class="fab fa-twitter"></a></li>
+<li><a href="//twitter.com/{{.}}" target="_blank" title="Twitter"><i class="fa fa-twitter-square"></i></a></li>
 {{ end }}
 
 {{ with .Site.Social.pgp }}
-<li><a href="/pgp/tss_pubkey.asc" target="_blank" title="PGP" class="fas fa-key"></a></li>
+<li><a href="/pgp/tss_pubkey.asc" target="_blank" title="PGP"><i class="fa fa-gnupg"></i></a></li>
 {{ end }}
 
 {{ with .Site.Social.email }}
-<li><a href="mailto:{{.}}" title="Email" class="fas fa-envelope"></a></li>
+<li><a href="mailto:{{.}}" title="Email"><i class="fa fa-envelope-square"></i></a></li>
 {{ end }}
