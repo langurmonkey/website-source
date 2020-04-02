@@ -31,7 +31,7 @@ $  sudo pacman -S gifsicle dcraw imagemagick ffmpeg
 Generate the gallery from a set of static files using:
 
 ```bash
-$  thumbsup --input ./folder-with-photos --output ./photo-gallery --embed-exif --title "Toni Sagristà Sellés - Photo gallery" --theme flow --photo-preview link --photo-download link --link-prefix "http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/"
+$  thumbsup --input ./folder-with-photos --output ./photo-gallery --embed-exif --title "Toni Sagrista Selles - Photo gallery" --theme flow --photo-preview link --photo-download link --link-prefix "http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/"
 ```
 
 The original photos are hosted in `gaiasandbox`'s ARI page.
