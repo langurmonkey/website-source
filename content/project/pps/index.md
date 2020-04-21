@@ -7,13 +7,26 @@ description = "Fully-feature physics simulator in your pocket"
 showpagemeta = "false"
 +++
 
-The **Particle Physics Simulator** is a physics application for [Android](http://www.android.com/) devices (v2.2+) in which real gravitational systems of particles can be created, simulated and interacted with in real time. It is an [N-body particle simulator](http://en.wikipedia.org/wiki/N-body_simulation) where the behaviour of the system is driven only by each particle's gravity and its interaction with all the other particles in it. It is turning more into a physics playground lately though, with the addition of accelcerometer support, elastic collisions, ability to create walls, anti-particles and more.
+The **Particle Physics Simulator** is a physics application for [Android](http://www.android.com/) devices (v2.2+) in which real gravitational systems of particles can be created, simulated and interacted with in real time. It is an [N-body particle simulator](http://en.wikipedia.org/wiki/N-body_simulation) where the behaviour of the system is driven only by each particle's gravity and its interaction with all the other particles in it. It is turning more into a physics playground lately though, with the addition of accelerometer support, elastic collisions, ability to create walls, anti-particles and more.
 
-You can download the application from [Google Play](https://play.google.com/store/apps/details?id=com.tss.android). If you like it very much you can even [buy me a beer](/donate)!
+## Download
+
+Get the apk for the latest versions:
+
+-  Particle Physics Simulator APK [3.7.0](/apk/pps/nbodyandroid-3.7.0.apk)
+-  Particle Physics Simulator APK [3.7.1](/apk/pps/nbodyandroid-3.7.1.apk)
+-  Particle Physics Simulator APK [3.7.2](/apk/pps/nbodyandroid-3.7.2.apk)
+-  Particle Physics Simulator APK [3.7.3](/apk/pps/nbodyandroid-3.7.3.apk)
+
+You can also download the application from [Google Play](https://play.google.com/store/apps/details?id=com.tss.android).
 
 ![Particle Physics SImulator QR Code](http://qrcode.kaywa.com/img.php?s=6&d=https%3A%2F%2Fmarket.android.com%2Fdetails%3Fid%3Dcom.tss.android)
 
-### Features
+## Changelog
+
+Find the changelog [here](/pps/changelog).
+
+## Features
 
 Follows the current list of features of the Particle Physics Simulator.
 
@@ -39,17 +52,44 @@ Follows the current list of features of the Particle Physics Simulator.
 *   Modify **simulation velocity** in real time using the top slider.
 *   Display system information such as the number of particles and the frames per second.
 
-### Videos
+## Videos
 
 See [here](/pps/videos).
 
-### Screenshots
 
-<div style="text-align:center;">
-<embed type="application/x-shockwave-flash" src="https://picasaweb.google.com/s/c/bin/slideshow.swf" width="350" height="622" flashvars="host=picasaweb.google.com&hl=en_US&feat=flashalbum&RGB=0x000000&feed=https%3A%2F%2Fpicasaweb.google.com%2Fdata%2Ffeed%2Fapi%2Fuser%2FToniNoni%2Falbumid%2F5661063123461778177%3Falt%3Drss%26kind%3Dphoto%26authkey%3DGv1sRgCIKK2-GDg5_4Zw%26hl%3Den_US" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>
+## Screenshots
+
+
+<div class="row">
+  <div class="column">
+    <a href="/img/pps/screenshots/particles01.png" style="float:left"><img src="/img/pps/screenshots/small/particles01.png" /></a>
+  </div>
+  <div class="column">
+    <a href="/img/pps/screenshots/particles02.png" style="float:left"><img src="/img/pps/screenshots/small/particles02.png" /></a>
+  </div>
+  <div class="column">
+    <a href="/img/pps/screenshots/particles03.png" style="float:left"><img src="/img/pps/screenshots/small/particles03.png" /></a>
+  </div>
+  <div class="column">
+    <a href="/img/pps/screenshots/particles04.png" style="float:left"><img src="/img/pps/screenshots/small/particles04.png" /></a>
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <a href="/img/pps/screenshots/particles05.png" style="float:left"><img src="/img/pps/screenshots/small/particles05.png" /></a>
+  </div>
+  <div class="column">
+    <a href="/img/pps/screenshots/particles06.png" style="float:left"><img src="/img/pps/screenshots/small/particles06.png" /></a>
+  </div>
+  <div class="column">
+    <a href="/img/pps/screenshots/particles07.png" style="float:left"><img src="/img/pps/screenshots/small/particles07.png" /></a>
+  </div>
+  <div class="column">
+    <a href="/img/pps/screenshots/particles08.png" style="float:left"><img src="/img/pps/screenshots/small/particles08.png" /></a>
+  </div>
 </div>
 
-### User guide
+## User guide
 
 Go to Menu > Settings to change other preferences, such as:
 
@@ -69,28 +109,25 @@ Go to Menu > Settings to change other preferences, such as:
 The on-screen controls of the Particle Physics Simulator available are the following:
 
 
-<img src="/img/pps/pan.png" title="Pan" style="margin-left: 0"/>
+<img src="/img/pps/pan.png" title="Pan" style="margin-left: 0; margin-right: 1em; float: left"></img>
 **Pans the view**. Only works in the big simulation area mode.
 
-<img src="/img/pps/shoot.png" title="Shoot" style="margin-left: 0"/>
+<img src="/img/pps/shoot.png" title="Shoot" style="margin-left: 0; margin-right: 1em; float: left"></img>
 **Enables shooting mode**, where particles can be shot into the screen. Tap once to shoot a regular particle. Tap twice to shoot an anti-particle, which is the same button but the particle has a spot inside.
 
-<img src="/img/pps/repel.png" title="Repel" style="margin-left: 0"/>
+<img src="/img/pps/repel.png" title="Repel" style="margin-left: 0; margin-right: 1em; float: left"></img>
 **Enables the repelling mode**, which creates a repelling force to all particles at the position of your tap.
 
-<img src="/img/pps/wall.png" title="Wall" style="margin-left: 0"/>
+<img src="/img/pps/wall.png" title="Wall" style="margin-left: 0; margin-right: 1em; float: left"></img>
 **Activates the wall mode**, with which you can create walls in real time that particles can't trespass.
 
-<img src="/img/pps/center.png" title="Center" style="margin-left: 0"/>
+<img src="/img/pps/center.png" title="Center" style="margin-left: 0; margin-right: 1em; float: left"></img>
 **Resets the view** to its initial state of zoom and pan.
 
-<img src="/img/pps/zoom.png" title="Zoom" style="margin-left: 0"/>
+<img src="/img/pps/zoom.png" title="Zoom" style="margin-left: 0; margin-right: 1em; float: left"></img>
 **Use two fingers to zoom in** the big simulation area mode. Separate fingers to zoom in, join them to zoom out.
 
-<img src="/img/pps/velocity.png" title="Velocity" style="margin-left: 0"/>
+<img src="/img/pps/velocity.png" title="Velocity" style="margin-left: 0; margin-right: 1em; float: left"></img>
 **Use the upper slider bar to adjust the simulation velocity** in real time.
 
 
-### Changelog
-
-Find the changelog [here](/pps/changelog).

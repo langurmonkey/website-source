@@ -6,6 +6,21 @@ title = "Changelog"
 showpagemeta = "false"
 +++
 
+##### **v3.7.3** (21/04/2020)
+-    Increase max number of walls from 16 to 5
+-    Increase max number of sparks from 20 to 40
+-    Increase max number of bodies from 200 to 800
+
+##### **v3.7.2** (21/04/2020)
+-    Fix orientation policy
+
+##### **v3.7.1** (20/04/2020)
+-   Fix layout issues
+-   Update button background
+
+##### **v3.7** (20/04/2020)
+-   Add button to open legacy menu to main screen 
+-   64-bit support
 
 ##### **v3.6** (02/01/2013)
 -   Tail gradient effect (performance is affected, but it's cool!).

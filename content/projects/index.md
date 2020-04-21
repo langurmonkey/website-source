@@ -7,7 +7,7 @@ showpagemeta = "false"
 +++
 
 
-### Software and scripts
+## Software and scripts
 
 <article>
 <strong><a href="https://gitlab.com/langurmonkey/dotfiles">dotfiles</a> <i class="fa fa-linux"></i> <i class="fa fa-git-square"></i></strong> &mdash; My dotfiles project. Contains the configuration, bootstrapping and deploying of my `i3wm` environment.
@@ -18,7 +18,7 @@ showpagemeta = "false"
 </article>
 <br />
 <article>
-<strong><a href="https://gitlab.com/langurmonkey/rts-engine">RTS Engine</a> <i class="fa fa-linux"></i> <i class="fa fa-git-square"></i></strong> &mdash; Real time strategy game engine written in Java. Very early stage, needs huge refactoring.
+<strong><a href="/blog/2013/rts-engine-preview/">RTS Engine</a> <i class="fa fa-linux"></i> <i class="fa fa-git-square"></i></strong> &mdash; Real time strategy game engine written in Java. Very early stage, needs huge refactoring.
 </article>
 <br />
 <article>
@@ -60,7 +60,7 @@ style="float: right; margin-left: 50px; width: 40%" />
 <br/>
 <br/>
 
-### Achivements
+## Achivements
 
 -  [Mapping and Visualising Gaia DR2](https://www.cosmos.esa.int/web/gaia/iow_20180614) &mdash; **Gaia Image of the Week** (*2018-06-14*)
 -  [Visualising the gaia data with Gaia Sky](https://www.cosmos.esa.int/web/gaia/gaiadr2_gaiasky) &mdash; **Gaia Image of the Week** (*2018-04-25*)

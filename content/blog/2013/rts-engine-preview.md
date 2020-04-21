@@ -12,7 +12,7 @@ featuredpath = "date"
 type = "post"
 +++
 
-Today I want to introduce a very different piece of software I have been putting together lately. It is a **RTS (real time strategy) engine**. I started playing with the idea as a time killer some years ago, kicking off the development with a fast version of the A* pathfinding algorithm backed not by a grid (as usual) but by a quadtree. **Quadtrees make pathfinding super-fast** because of their hierarchical division of space and their adaptive partition sizes. Even though I used visibility graphs to store the navigable nodes from one given point, **quadtrees are also fast for checking the properties/elements of a position's surroundings**, for child nodes are always spatially contained in parent nodes.
+Today I want to introduce a very different piece of software I have been putting together lately. It is a **RTS (real time strategy) engine**. I started playing with the idea as a time killer some years ago, kicking off the development with a fast version of the A\* pathfinding algorithm backed not by a grid (as usual) but by a quadtree. **Quadtrees make pathfinding super-fast** because of their hierarchical division of space and their adaptive partition sizes. Even though I used visibility graphs to store the navigable nodes from one given point, **quadtrees are also fast for checking the properties/elements of a position's surroundings**, for child nodes are always spatially contained in parent nodes.
 
 <!--more-->
 
@@ -24,4 +24,5 @@ I recorded a **short video** demonstrating some unit movement and the real time 
 
 {{< youtube 17fDqcZ0mu8 >}}
 
-If you are interested, the source code is public in this [GitHub repository](https://github.com/langurmonkey/rts-engine).
+<br />
+The source code is open and public in this <i class="fa fa-gitlab"></i> [Gitlab repository](https://gitlab.com/langurmonkey/rts-engine).
