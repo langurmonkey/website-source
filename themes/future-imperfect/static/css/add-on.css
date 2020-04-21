@@ -125,6 +125,7 @@ article.post footer .stats {
     line-height: inherit;
     padding: 0 0 0 1.5em;
     white-space: nowrap;
+    margin-top: 0em;
 }
 
     #header h2 a {
