@@ -13,6 +13,9 @@ Here are some videos of the various versions that have been released of the **Pa
 
 <!--more-->
 
+### Version 3.7.3
+{{< youtube -POUc8_8mUg >}}
+
 ### Version 3.1.4
 {{< youtube AjvF6ey3_Lc >}}
 
