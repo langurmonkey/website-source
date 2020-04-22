@@ -92,7 +92,7 @@ This is what the map produced by the code above looks like:
      alt="tsnake map 0"
      style="width: 100%" />
 </a>
-<em style="color: gray;">The first map of tsnake, a simple pool surrounded by a few walls.</em>
+<p style="text-align: center;" class="caption">The first map of tsnake, a simple pool surrounded by a few walls.</p>
 </p>
 
 ## The game loop

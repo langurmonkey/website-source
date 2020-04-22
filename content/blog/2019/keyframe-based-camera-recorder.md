@@ -23,11 +23,14 @@ During the last months I have been working on a QOL improvement for Gaia Sky vid
 
 In the next version, Gaia Sky will get a brand new keyframe-based camera path mode. This mode enables the interactive definition of camera paths in the scene space. Basically, the user defines a set of locations, or keyframes, which must be hit by the camera at a certain time. Each keyframe contains the position and orientation of the camera, in addition to the simulation timestamp and time delay. Keyframes can be saved to keyframe files `.gkf`, which can later be loaded directly from the keyframes mode UI, and exported to regular Gaia Sky camera path files `.gsc` to be played back.
 
+<p>
 <a href="/img/2019/03/keyframes.jpg">
 <img src="/img/2019/03/keyframes.jpg"
      alt="Keyframe-based camera paths"
      style="width: 70%" />
 </a>
+</p>
+<p style="text-align: center" class="caption">Keyframe-based camera paths in Gaia Sky</p>
 
 The conversion from keyframes to camera path is done using either linear interpolation or Catmull-Rom splines (depending on the configuration settings). In the latter case, keyframes can be set to act as seams. Seam keyframes effectively *break* the path into two. In spline mode, this allows us to define subpaths and avoid spline overshooting.
 

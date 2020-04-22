@@ -1477,6 +1477,19 @@
 
 		}
 
+    a[href$=jpg], 
+    a[href$=jpeg], 
+    a[href$=png], 
+    a[href$=gif],
+    a[href$=jpg]:hover, 
+    a[href$=jpeg]:hover, 
+    a[href$=png]:hover, 
+    a[href$=gif]:hover {
+        text-decoration: none;
+        border: 0;
+        border: none;
+        }
+
 	a {
 		-moz-transition: color 0.2s ease, border-bottom-color 0.2s ease;
 		-webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;

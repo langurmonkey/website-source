@@ -7,6 +7,9 @@ description = "Fully-feature physics simulator in your pocket"
 showpagemeta = "false"
 +++
 
+<!-- Loading MathJax -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
 The **Particle Physics Simulator** is a physics application for [Android](http://www.android.com/) devices (v2.2+) in which real gravitational systems of particles can be created, simulated and interacted with in real time. It is an [N-body particle simulator](http://en.wikipedia.org/wiki/N-body_simulation) where the behaviour of the system is driven only by each particle's gravity and its interaction with all the other particles in it. It is turning more into a physics playground lately though, with the addition of accelerometer support, elastic collisions, ability to create walls, anti-particles and more.
 
 ## Source code
@@ -35,8 +38,8 @@ Follows the current list of features of the Particle Physics Simulator.
 *   Real **n-body physics simulation**, pure gravitational interactions between particles.
 *   Start with any number of particles from 2 to 100. Then you can add up to 200 particles in real time during the simulation.
 *   Two force calculator methods:
-    *   _Particle-Particle_, the direct method <img class="inline" src="https://chart.googleapis.com/chart?cht=tx&amp;chl=\sim O(n^2)">, which is very accurate but also computationally expensive.
-    *   _Particle-Mesh_, where forces are calculated using a mesh of potnentials, very efficient <img class="inline" src="https://chart.googleapis.com/chart?cht=tx&amp;chl=\sim O(n \cdot log n)"> but not as accurate as PP.
+    *   _Particle-Particle_, the direct method \\(\sim O(n^2)\\), which is very accurate but also computationally expensive.
+    *   _Particle-Mesh_, where forces are calculated using a mesh of potnentials, very efficient \\(\sim O(n \cdot log n)\\) but not as accurate as PP.
 *   Two simulation area modes:
     *   _Screen area_, which takes only the space of your cellphone screen.
     *   _Big area_, in which the simulation area extends well beyond the screen limits.
