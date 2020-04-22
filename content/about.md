@@ -20,6 +20,6 @@ I'm currently working in the [Gaia](https://sci.esa.int/web/gaia) group of the [
 - Have a look at some of my [projects](/projects)
 - Check out my [publications](/papers)
 - Chillax watching my [photos](https://flickr.com/photos/tonisagrista/)
-- I am [@jumpinglangur@mastodont.cat](https://mastodont.cat/@jumpinglangur) on Mastodon, and I'm tweeting from [@jumpinglangur](https://twitter.com/jumpinglangur) and also [@GaiaSky_dev](https://twitter.com/GaiaSky_dev)
+- I am [@jumpinglangur](https://mastodont.cat/@jumpinglangur) on Mastodon, and I'm tweeting from [@jumpinglangur](https://twitter.com/jumpinglangur) and also [@GaiaSky_dev](https://twitter.com/GaiaSky_dev)
 - And here is my [CV](/resume), just in case you want to offer me my dream job
 
