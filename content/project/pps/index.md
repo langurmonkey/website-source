@@ -15,16 +15,16 @@ The source code can be found in this <i class="fa fa-gitlab"></i> [Gitlab reposi
 
 ## Download
 
-Get the apk for the latest versions:
+Get the apk for the latest versions right here:
 
 -  Particle Physics Simulator APK [3.7.3](/apk/pps/nbodyandroid-3.7.3.apk)
 -  Particle Physics Simulator APK [3.7.2](/apk/pps/nbodyandroid-3.7.2.apk)
 -  Particle Physics Simulator APK [3.7.1](/apk/pps/nbodyandroid-3.7.1.apk)
 -  Particle Physics Simulator APK [3.7.0](/apk/pps/nbodyandroid-3.7.0.apk)
 
-You can also download the application from [Google Play](https://play.google.com/store/apps/details?id=com.tss.android).
+Or download it from [Google Play](https://play.google.com/store/apps/details?id=com.tss.android):
 
-![Particle Physics SImulator QR Code](http://qrcode.kaywa.com/img.php?s=6&d=https%3A%2F%2Fmarket.android.com%2Fdetails%3Fid%3Dcom.tss.android)
+<a href='https://play.google.com/store/apps/details?id=com.tss.android&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' width='200px' /></a>
 
 ## Changelog
 
