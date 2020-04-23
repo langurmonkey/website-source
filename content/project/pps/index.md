@@ -20,10 +20,11 @@ The source code can be found in this <i class="fa fa-gitlab"></i> [Gitlab reposi
 
 Get the apk for the latest versions right here:
 
--  Particle Physics Simulator APK [3.7.3](/apk/pps/nbodyandroid-3.7.3.apk)
--  Particle Physics Simulator APK [3.7.2](/apk/pps/nbodyandroid-3.7.2.apk)
--  Particle Physics Simulator APK [3.7.1](/apk/pps/nbodyandroid-3.7.1.apk)
--  Particle Physics Simulator APK [3.7.0](/apk/pps/nbodyandroid-3.7.0.apk)
+-  Particle Physics Simulator -- [apk 3.7.4](/apk/pps/nbodyandroid-3.7.4.apk) &nbsp;&nbsp; <sub><sup>**sha256:** `24297a48af13d9e9cbd8c159c36861c39e6f0b9b84c2e92d46838ccd58ae6a77`</sup></sub>
+-  Particle Physics Simulator -- [apk 3.7.3](/apk/pps/nbodyandroid-3.7.3.apk) &nbsp;&nbsp; <sub><sup>**sha256:** `4c6c598b4018d73df01edeaf2471cf00a4845fa9f51f613eb89833abbd377c85`</sup></sub>
+-  Particle Physics Simulator -- [apk 3.7.2](/apk/pps/nbodyandroid-3.7.2.apk) &nbsp;&nbsp; <sub><sup>**sha256:** `caddd8e1a3bc5fc8192d90dff8bd02b88f8a9c749475312822fb2608b387207b`</sup></sub>
+-  Particle Physics Simulator -- [apk 3.7.1](/apk/pps/nbodyandroid-3.7.1.apk) &nbsp;&nbsp; <sub><sup>**sha256:** `5da85b692b6d075abd67e93d399f8df7ce9f16d9dc1828ee69fb8ff126e656dd`</sup></sub>
+-  Particle Physics Simulator -- [apk 3.7.0](/apk/pps/nbodyandroid-3.7.0.apk) &nbsp;&nbsp; <sub><sup>**sha256:** `954ca2e7a1d5d264cc423d61de547f14498d778997afc2c7ec9f195671df7a8b`</sup></sub>
 
 Or download it from [Google Play](https://play.google.com/store/apps/details?id=com.tss.android).
 
