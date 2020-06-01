@@ -5,10 +5,12 @@ tags = [ "programming", "scripts", "i3wm", "polybar", "rice", "qutebrowser", "pa
 date = 2019-03-02
 description = "Description of my daily Linux setup as of March 2019"
 linktitle = ""
-title = "My Linux setup (as of 03/2019)"
+title = "My Linux setup (as of 06/2020)"
 featuredpath = "date"
 type = "post"
 +++
+
+**Edit** ``2020-06-01`` -- Change urxvt to termite, update info on qutebrowser with tor.
 
 In this post I'm documenting the current (March 2019) software setup I use in my machines. This has been converging for a long time but It will surely evolve in the future. However, right now, it works well for me.
 
@@ -60,7 +62,7 @@ I use [`zsh`](www.zsh.org) (actually, [`oh-my-zsh`](https://github.com/robbyruss
 
 ## Terminal
 
-My terminal of choice is [`urxvt`](http://software.schmorp.de/pkg/rxvt-unicode.html) because it is simple and easy to configure, even though the default look makes your eyes bleed. I use the Terminus font. It looks crisp and is just a beautiful monospace font for terminals. Other than that, I have bindings to modify the font size automatically, scroll up and down using `k` and `j` and little else.
+My terminal of choice is [`termite`](http://software.schmorp.de/pkg/rxvt-unicode.html) because it is simple and easy to configure. I use the Terminus font. It looks crisp and is just a beautiful monospace font for terminals. Other than that, I have bindings to modify the font size automatically, scroll up and down using `k` and `j` and little else.
 
 I've played around with [`st`](https://st.suclkess.org) but I'm not convinced by the config-in-source philosophy. It is just not too convenient for me, even though I keep it installed in my systems.
 
@@ -98,23 +100,23 @@ map bg shell cp %f ~/Pictures/wallpaper.jpg && feh --bg-fil ~/Pictures/wallpaper
 map bw shell cp %f ~/Pictures/wallpaper.jpg && ~/.local/bin/wal -c && ~/.local/bin/wal -a 85 -i ~/Pictures/wallpaper.jpg
 ```
 
-Additionally, I use this wee script to launch a new instance of ranger inside a urxvt terminal with a specific working directory:
+Additionally, I use this wee script to launch a new instance of ranger inside a terminal with a specific working directory:
 
 ```
 #!/bin/bash
-urxvt -cd "$1" -e ranger --cmd="shell ~/.local/bin/wal -R"
+termite -cd "$1" -e ranger --cmd="shell ~/.local/bin/wal -R"
 ```
 
-Whenever I need a new instance of ranger, I use the script. For example, I bind $sup+f to a new ranger-in-urxvt starting at the working directory of the currently focused window in my i3 configuration:
+Whenever I need a new instance of ranger, I use the script. For example, I bind $sup+f to a new ranger-in-termite starting at the working directory of the currently focused window in my i3 configuration:
 
 ```
-bindsym $sup+f exec ~/.dotfiles/bin/ranger-urxvt "\`$HOME/.dotfiles/bin/xcwd\`"
+bindsym $sup+f exec ~/.dotfiles/bin/ranger-term "\`$HOME/.dotfiles/bin/xcwd\`"
 ```
 
 Or I use ranger for displaying the mounted volumes from the udiskie tray icon, starting udiskie in this manner:
 
 ```
-exec --no-startup-id udiskie -f "/home/tsagrista/.dotfiles/bin/ranger-urxvt" --tray 
+exec --no-startup-id udiskie -f "/home/tsagrista/.dotfiles/bin/ranger-term" --tray 
 ```
 
 Finally, I use the following line to open the highlighted file instead of the selected file when pressing `l` or `arrow_right`.
@@ -125,7 +127,8 @@ map l move right=1 selection=False
 
 ## Browser
 
-[`qutebrowser`](https://qutebrowser.org) all the way. It is light and snappy. Only thing I'm missing right now is some sort of advanced ad blocking (current ad blocking system is host-based). This does not always work with youtube videos, but most of the time I use `mpv` to watch them anyway, for I have `V` mapped to 'open video with mpv'. Also, the way it integrates with `pass` is very neat.
+[`qutebrowser`](https://qutebrowser.org) all the way. It is light and snappy. Only thing I'm missing right now is some sort of advanced ad blocking (current ad blocking system is host-based). This does not always work with youtube videos, but most of the time I use `mpv` to watch them anyway, for I have `V` mapped to 'open video with mpv'. Additionally, the way it integrates with `pass` is very neat.
+You can use qutebrowser easily with the tor network. Check it out [here](/blog/2020/tor-qutebrowser).
 
 ## Password manager
 
