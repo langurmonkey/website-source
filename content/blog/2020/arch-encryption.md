@@ -154,31 +154,46 @@ $  mkdir /mnt/etc
 Now our disk and partitions are set up an mounted, so let's generate the fstab file.
 
 ```bash
-$  genfstab -U -p /mnt >> /mnt/etc/fstab
+$  genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
-Now we are ready to actually start installing Arch.
+Now we are ready to actually starting the [regular installation of Arch](wiki.archlinux.org/index.php/Installation_guide). First use pacstrap to install the base package, the linux kernel and firmware. Then, chroot into the newly installed system.
 
 ```bash
-$  pacstrap -i /mnt base
+$  pacstrap -i /mnt base linux linux-firmware
 $  # switch to the installation disk
 $  arch-chroot /mnt
 ```
 
-We are now already operating from our installed system. We need to install the kernel and some other goodies.
+We are now already operating from our installed system. We need to install some additionaly goodies. I've listed here some essentials. Particularly, you need the `lvm2` package.
 
 ```bash
-$  pacman -S linux linux-headers linux-firmware intel-ucode base-devel neovim networkmanager wpa_supplicant wireless-tools netctl dialog lvm2
+$  pacman -S linux-headers intel-ucode base-devel neovim networkmanager wpa_supplicant wireless-tools netctl dialog lvm2
 ```
 
-Here you can install as many packages as you want or just do it later. 
-Then, we enable the network manager.
+Install as many shit as your heart desires. You can feel guilty later when `neofetch` lists the number of packages in the thousands.
+Now we enable the network manager so that systemd starts it automatically.
 
 ```bash
 $  systemctl enable NetworkManager
 ```
 
-Then we need to enable encryption in the hooks of `mkinitcpio.conf`. To do so, edit the line which starts with `HOOKS=` in `/etc/mkinitcpio.conf` and add `encrypt` and `lvm2`. It should look like this:
+Edit your hostname.
+
+```bash
+$  nvim /etc/hostname # this file must contain only a single line with the host name.
+```
+
+And create the `etc/hosts` file with the following contents.
+
+```
+127.0.0.1	localhost
+::1		    localhost
+127.0.1.1	myhostname.localdomain	myhostname
+```
+Remember to modify substitute `myhostname` with your host name.
+
+**This step is important**. We need to enable encryption in the hooks of `mkinitcpio.conf`. To do so, edit the line which starts with `HOOKS=` in `/etc/mkinitcpio.conf` and add `encrypt` and `lvm2`. It should look like this:
 
 ```bash
 HOOKS=(base udev autodetect modconf block encrypt lvm2 filesystems keyboard fsck)
