@@ -22,9 +22,8 @@ For this setup we need two bash scripts, `memory.sh` and `cpu.sh`, and a few ext
 
 This script prints the amount of used memory with respect to the total available memory (uG/tG). If invoked with `--popup`, it brings up a notify-send popup with the top 10 memory intensive processes in the system.
 
-```
+```bash
 #!/bin/sh
-
 case "$1" in
     --popup)
         notify-send "Memory (%)" "$(ps axch -o cmd:10,pmem k -pmem | head | awk '$0=$0"%"' )"
@@ -39,9 +38,8 @@ esac
 
 This is very similar to the memory script. It prints CPU usage and temperature, and a popup with a list of the top 10 CPU processes when invoked with `--popup`. 
 
-```
+```bash
 #!/bin/sh
-
 case "$1" in
     --popup)
         notify-send "CPU time (%)" "$(ps axch -o cmd:10,pcpu k -pcpu | head | awk '$0=$0"%"' )"

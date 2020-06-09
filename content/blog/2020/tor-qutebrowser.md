@@ -14,12 +14,12 @@ If you are a qutebrowser user and care about privacy and anonymity, you may want
 
 <!--more-->
 
-First, install tor and enable/start it (assuming systemd):
+First, bring up a terminal and install and enable/start tor (assuming systemd):
 
 ```bash
-$  pacman -S tor
-$  systemctl enable tor.service
-$  systemctl start tor.service
+pacman -S tor
+systemctl enable tor.service
+systemctl start tor.service
 ```
 
 Then, just edit the configuration of qutebrowser to use the tor network as a proxy:

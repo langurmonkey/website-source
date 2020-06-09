@@ -39,13 +39,13 @@ All of the configuration files are hosted in my [dotfiles repository](https://gi
 I have a couple of scripts to painlessly and automatically bootstrap and deploy the configuration. Please, see the [README](https://gitlab.com/langurmonkey/dotfiles/blob/master/README.md) file for more details.
 Basically, run
 
-```
- $  bash <(curl -s https://gitlab.com/langurmonkey/dotfiles/raw/master/bootstrap.sh)
+```bash
+bash <(curl -s https://gitlab.com/langurmonkey/dotfiles/raw/master/bootstrap.sh)
 ```
 
 To check out the repository to `~/.dotfiles` and install the required software. Then, do
 
-```
+```bash
 ~/.dotfiles/deploy
 ```
 
@@ -102,7 +102,7 @@ map bw shell cp %f ~/Pictures/wallpaper.jpg && ~/.local/bin/wal -c && ~/.local/b
 
 Additionally, I use this wee script to launch a new instance of ranger inside a terminal with a specific working directory:
 
-```
+```bash
 #!/bin/bash
 termite -cd "$1" -e ranger --cmd="shell ~/.local/bin/wal -R"
 ```
