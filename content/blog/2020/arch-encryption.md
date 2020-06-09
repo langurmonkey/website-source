@@ -16,7 +16,7 @@ In this guide, I'm documenting my latest Arch Linux installation on my laptop, w
 
 <!--more-->
 
-There is a video version of a very similar installation process by LearnLinuxTV [here](https://invidio.us/watch?v=Lq4cbp5AOZM). You may use that instead if find it easier to follow a video.
+There is a video version of a very similar installation process by LearnLinuxTV [here](https://invidio.us/watch?v=Lq4cbp5AOZM). You may want to use that instead if you'd rather follow a video tutorial.
 
 Please note that this may become obsolete quickly, as the install process may change over time.
 When we are done, we will have a system with a LUKS-encrypted physical volume with two logical partitions, `/` and `/home`. We will use `grub2` as a bootloader.
@@ -60,7 +60,7 @@ Check your drives:
 fdisk -l
 ```
 
-We'll be installing Arch on the SSD `/dev/nvme0n1`. This will probably be different for you. So, let's prepare the dist. We'll be creating two 500 MB partitions (for EFI and `/boot`), and another `ext4` partition for the logical volume.
+We'll be installing Arch on the SSD `/dev/nvme0n1`. This will probably be different for you. et's now prepare the dist. We'll be creating two 500 MB partitions (for EFI and `/boot`), and another `ext4` partition for the logical volume.
 
 ```bash
 fdisk /dev/nvme0n1
