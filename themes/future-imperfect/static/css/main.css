@@ -1549,11 +1549,10 @@
 	h1, h2, h3, h4, h5, h6 {
 		color: #071;
         font-size: 2em;
-        font-family: monospace;
+        font-family: sans-serif;
 		font-weight: 800;
 		line-height: 1.65;
 		margin: 0 0 1em 0;
-		text-transform: lowercase;
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -1569,27 +1568,27 @@
 
 	h2 {
         margin-top: 1.5em;
-		font-size: 1.1em;
+		font-size: 1.3em;
 	}
 
 	h3 {
         margin-top: 1.0em;
-		font-size: 0.9em;
+		font-size: 1.1em;
 	}
 
 	h4 {
         margin-top: 0.8em;
-		font-size: 0.7em;
+		font-size: 1.0em;
 	}
 
 	h5 {
         margin-top: 0.6em;
-		font-size: 0.7em;
+		font-size: 0.9em;
 	}
 
 	h6 {
         margin-top: 0.4em;
-		font-size: 0.7em;
+		font-size: 0.8em;
 	}
 
 	sub {
@@ -1616,13 +1615,13 @@
     }
 
 	code {
-		background: rgba(160, 160, 160, 0.075);
+        background: rgba(160, 160, 160, 0.075);
 		border: solid 1px rgba(160, 160, 160, 0.3);
 		font-family: "Courier New", monospace;
 		font-size: 0.9em;
-		margin: 0 0.05em;
-		padding: 0.25em 0.05em;
-        color: #4f8b55;
+		margin: 0 0;
+		padding: 0.25em 0.25em;
+        color: #00880e;
 	}
 
     div.highlight code.language-fallback {
