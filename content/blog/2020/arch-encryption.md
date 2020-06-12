@@ -34,7 +34,7 @@ wifi-menu
 ```
 Select your wifi, enter your password and select 'connect'.
 
-*The archiso I used (downloaded some time during the half part of May 2020) was broken and did not manage to connect to my wifi with `wifi-menu`. To solve that, I switched down the interface. Not sure why this worked, but keep it in mind in case you can't get a connection either.*
+*The archiso I used (downloaded some time during the last half of May 2020) was broken and did not manage to connect to my wifi with `wifi-menu`. To solve that, I switched down the interface. Not sure why this worked, but keep it in mind in case you can't get a connection either.*
 
 ```bash
 ip link set wlan0 down
