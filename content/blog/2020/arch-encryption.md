@@ -100,7 +100,7 @@ mkfs.fat -F32 /dev/nvme0n1p1
 mkfs.ext4 /dev/nvme0n1p2
 ```
 
-## Set up LUKS on LVM
+## LUKS encryption on LVM partition
 
 Now we need to set up encryption in the third disk. 
 
@@ -158,7 +158,7 @@ mount /dev/nvme0n1p2 /mnt/boot
 mkdir /mnt/etc
 ```
 
-## Proceed with the Arch Linux installation
+## Starting actual Arch installation
 
 Now our disk and partitions are set up an mounted, so let's generate the fstab file.
 
@@ -237,7 +237,7 @@ en_GB.UTF-8
 locale-gen
 ```
 
-## Set up user and passwords
+## User management
 
 Now, we set up the root password and create a user with superuser permissions. To do so, we add it to the `wheel` group, which we will add as superusers.
 
@@ -264,7 +264,7 @@ visudo
 [...]
 ```
 
-## Set up grub2
+## Bootloader configuration
 
 First install GRUB2 and some utilities
 
@@ -306,7 +306,7 @@ cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-## Set up swap file
+## Swap file creation
 
 This is optional, but I usually like to use a swap file. To create and activate a swap file of 8 GB, run the following. Use, of course, whatever size suits your system.
 
@@ -317,7 +317,11 @@ mkswap /myswap
 echo '/myswap none swap defaults 0 0' | tee -a /etc/fstab
 ```
 
+## Last words
+
 That is it, you can now install whatever display server you need, if any. Just follow the Arch Linux wiki for instructions on how to proceed from here.
-I would usually install `xorg-server`, `ly-git`, `mesa` or `nvidia` and `i3-gaps`. Then I would deploy my [.dotfiles](/blog/2019/my-dotfiles), but that is another story.
+At this point I would usually install `xorg-server`, `ly-git`, `mesa` or `nvidia` and `i3-gaps`. Then I would deploy my [.dotfiles](/blog/2019/my-dotfiles), but that is another story.
+
+In this guide we have shown the complete procedure to install Arch Linux with LUKS encryption on an LVM drive with two logical partitions for root and home respectively. When you boot up, just after grub, you need to enter your encryption password to be able to proceed. Otherwise, the data in your LVM partitions won't be accessible.
 
 I hope this guide helped!
