@@ -9,6 +9,7 @@ title = "Arch with LUKS on LVM"
 featuredpath = "date"
 type = "post"
 +++
+*2020-06-16 edit: use dd to create swap file instead of fallocate*
 
 It is well known that Arch Linux does not have the easiest install process of all Linux distributions. In my opinion, for technical users this is a big plus, as you get to know your system better simply by having to set it up from scratch. This comes with the perk that you only install the packages you need, leading to a smaller and arguably snappier system.
 
@@ -307,13 +308,13 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 ## Set up swap file
 
-This is optional, but I usually like to use a swap file. To do so, run the following.
+This is optional, but I usually like to use a swap file. To create and activate a swap file of 8 GB, run the following. Use, of course, whatever size suits your system.
 
 ```bash
-fallocate -l 8G /myswap
+dd if=/dev/zero of=/myswap bs=1M count=8192 status=progress
 chmod 600 /myswap
 mkswap /myswap
-echo '/myswap none swap sw 0 0' | tee -a /etc/fstab
+echo '/myswap none swap defaults 0 0' | tee -a /etc/fstab
 ```
 
 That is it, you can now install whatever display server you need, if any. Just follow the Arch Linux wiki for instructions on how to proceed from here.
