@@ -10,7 +10,7 @@ featuredpath = "date"
 type = "post"
 +++
 
-**Edit** ``2020-06-01`` -- Change urxvt to termite, update info on qutebrowser with tor.
+*2020-06-01 edit: change urxvt to termite, update info on qutebrowser with tor.*
 
 In this post I'm documenting the current (March 2019) software setup I use in my machines. This has been converging for a long time but It will surely evolve in the future. However, right now, it works well for me.
 
