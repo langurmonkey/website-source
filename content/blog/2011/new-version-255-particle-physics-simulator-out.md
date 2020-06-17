@@ -18,4 +18,4 @@ I just submitted a **new version (v2.5.5) of the Particle Physics Simulator** to
 
 You can download the application from the [Market](https://market.android.com/details?id=com.tss.android) or using the provided QR code.
 
-![QR code](http://qrcode.kaywa.com/img.php?s=6&d=https%3A%2F%2Fmarket.android.com%2Fdetails%3Fid%3Dcom.tss.android)
+![QR code](/img/2011/10/pps-qr.png)
