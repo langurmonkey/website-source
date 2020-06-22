@@ -9,6 +9,7 @@ title = "Arch with LUKS on LVM"
 featuredpath = "date"
 type = "post"
 +++
+*2020-06-16 edit: use dd to create swap file instead of fallocate*
 
 It is well known that Arch Linux does not have the easiest install process of all Linux distributions. In my opinion, for technical users this is a big plus, as you get to know your system better simply by having to set it up from scratch. This comes with the perk that you only install the packages you need, leading to a smaller and arguably snappier system.
 
@@ -34,7 +35,7 @@ wifi-menu
 ```
 Select your wifi, enter your password and select 'connect'.
 
-*The archiso I used (downloaded some time during the half part of May 2020) was broken and did not manage to connect to my wifi with `wifi-menu`. To solve that, I switched down the interface. Not sure why this worked, but keep it in mind in case you can't get a connection either.*
+*The archiso I used (downloaded some time during the last half of May 2020) was broken and did not manage to connect to my wifi with `wifi-menu`. To solve that, I switched down the interface. Not sure why this worked, but keep it in mind in case you can't get a connection either.*
 
 ```bash
 ip link set wlan0 down
@@ -99,7 +100,7 @@ mkfs.fat -F32 /dev/nvme0n1p1
 mkfs.ext4 /dev/nvme0n1p2
 ```
 
-## Set up LUKS on LVM
+## LUKS encryption on LVM partition
 
 Now we need to set up encryption in the third disk. 
 
@@ -157,7 +158,7 @@ mount /dev/nvme0n1p2 /mnt/boot
 mkdir /mnt/etc
 ```
 
-## Proceed with the Arch Linux installation
+## Starting actual Arch installation
 
 Now our disk and partitions are set up an mounted, so let's generate the fstab file.
 
@@ -236,7 +237,7 @@ en_GB.UTF-8
 locale-gen
 ```
 
-## Set up user and passwords
+## User management
 
 Now, we set up the root password and create a user with superuser permissions. To do so, we add it to the `wheel` group, which we will add as superusers.
 
@@ -263,7 +264,7 @@ visudo
 [...]
 ```
 
-## Set up grub2
+## Bootloader configuration
 
 First install GRUB2 and some utilities
 
@@ -305,18 +306,22 @@ cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-## Set up swap file
+## Swap file creation
 
-This is optional, but I usually like to use a swap file. To do so, run the following.
+This is optional, but I usually like to use a swap file. To create and activate a swap file of 8 GB, run the following. Use, of course, whatever size suits your system.
 
 ```bash
-fallocate -l 8G /myswap
+dd if=/dev/zero of=/myswap bs=1M count=8192 status=progress
 chmod 600 /myswap
 mkswap /myswap
-echo '/myswap none swap sw 0 0' | tee -a /etc/fstab
+echo '/myswap none swap defaults 0 0' | tee -a /etc/fstab
 ```
 
+## Last words
+
 That is it, you can now install whatever display server you need, if any. Just follow the Arch Linux wiki for instructions on how to proceed from here.
-I would usually install `xorg-server`, `ly-git`, `mesa` or `nvidia` and `i3-gaps`. Then I would deploy my [.dotfiles](/blog/2019/my-dotfiles), but that is another story.
+At this point I would usually install `xorg-server`, `ly-git`, `mesa` or `nvidia` and `i3-gaps`. Then I would deploy my [.dotfiles](/blog/2019/my-dotfiles), but that is another story.
+
+In this guide we have shown the complete procedure to install Arch Linux with LUKS encryption on an LVM drive with two logical partitions for root and home respectively. When you boot up, just after grub, you need to enter your encryption password to be able to proceed. Otherwise, the data in your LVM partitions won't be accessible.
 
 I hope this guide helped!

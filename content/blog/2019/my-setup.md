@@ -10,9 +10,15 @@ featuredpath = "date"
 type = "post"
 +++
 
-**Edit** ``2020-06-01`` -- Change urxvt to termite, update info on qutebrowser with tor.
+*2020-06-01 edit: change urxvt to termite, update info on qutebrowser with tor.*
 
-In this post I'm documenting the current (March 2019) software setup I use in my machines. This has been converging for a long time but It will surely evolve in the future. However, right now, it works well for me.
+
+## Overview
+
+In this post I'm documenting the current (March 2019) system setup I use in my development machines. This has been converging for a long time already, and It will surely evolve in the future. However, right now, it works well for me.
+I the machines mostly for development work ([Gaia Sky](https://zah.uni-heidelberg.de/institutes/ari/gaia/outreach/gaiasky/), Gaia First Look, Ph.D., etc.). I also use my personal computers for the occasional light gaming session (Terraria, C&C remastered, or whatever I feel like at the moment) and as all-around computing devices to manage stuff.
+
+The setup is based around the keyboard and command-line tools (CLI), that run in the terminal. Of course, I use also plenty of GUI applications, but the basic workflow is just optimized to minimal mouse use. It is just faster to get around and get things done quickly.
 
 I use this configuration in the following machines:
 
@@ -37,13 +43,13 @@ All of the configuration files are hosted in my [dotfiles repository](https://gi
 ## Bootstrapping and deploying
 
 I have a couple of scripts to painlessly and automatically bootstrap and deploy the configuration. Please, see the [README](https://gitlab.com/langurmonkey/dotfiles/blob/master/README.md) file for more details.
-Basically, run
+Basically, run:
 
 ```bash
 bash <(curl -s https://gitlab.com/langurmonkey/dotfiles/raw/master/bootstrap.sh)
 ```
 
-To check out the repository to `~/.dotfiles` and install the required software. Then, do
+To check out the repository to `~/.dotfiles` and install the required software. Then, do:
 
 ```bash
 ~/.dotfiles/deploy
@@ -128,11 +134,11 @@ map l move right=1 selection=False
 ## Browser
 
 [`qutebrowser`](https://qutebrowser.org) all the way. It is light and snappy. Only thing I'm missing right now is some sort of advanced ad blocking (current ad blocking system is host-based). This does not always work with youtube videos, but most of the time I use `mpv` to watch them anyway, for I have `V` mapped to 'open video with mpv'. Additionally, the way it integrates with `pass` is very neat.
-You can use qutebrowser easily with the tor network. Check it out [here](/blog/2020/tor-qutebrowser).
+You can use qutebrowser easily with the tor network. Check it out [here](/blog/2020/tor-qutebrowser). It has a built-in ad-blocker and, if that is not enough, I also use a custom `/etc/hosts` file.
 
 ## Password manager
 
-I used KeePassX for many years until I discovered [`pass`](https://www.passwordstore.org). It is a simple password manager where the passwords are stored in text files encrypted with your PGP key. Then you can version control the `pass` folder to sync it across all your devices. Simple to set up and simpler to use, the passwords can even be decrypted directly with `gpg`, so you are always in control.
+I used KeePassX for many years until I discovered [`pass`](https://www.passwordstore.org). It is a simple CLI password manager where the passwords are stored in text files encrypted with your PGP key. Then you can version control the `pass` folder to sync it across all your devices. Simple to set up and simpler to use, the passwords can even be decrypted directly with `gpg`, so you are always in control.
 
 ## Mail client
 
@@ -181,4 +187,4 @@ Here is a list of utilities I have installed and use regularly.
 
 ## Closing Notes
 
-I think this post sums up my basic setup pretty accurately. It will, of course, become obsolete with time, but for the time being, I will try to keep it up to date for my future reference.
+I think this post sums up my basic setup pretty accurately. It will, of course, become obsolete at some point, but for the time being, I will try to keep it up to date whenever I implement major changes.
