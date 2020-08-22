@@ -18,4 +18,4 @@ The new **version 3.6** of the Particle Physics Simulator is now out with custom
 
 ![PPS 3.6](/img/2013/01/billiard-full.png)
 
-As always, get it from the [Google Play Store](https://play.google.com/store/apps/details?id=com.tss.android).
+As always, get it from [F-Droid](https://f-droid.org/en/packages/com.tss.android/) or the [Play Store](https://play.google.com/store/apps/details?id=com.tss.android).

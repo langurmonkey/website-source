@@ -26,7 +26,7 @@ Get the apk for the latest versions right here:
 -  Particle Physics Simulator -- [apk 3.7.1](/apk/pps/nbodyandroid-3.7.1.apk) &nbsp;&nbsp; <sub><sup>**sha256:** `5da85b692b6d075abd67e93d399f8df7ce9f16d9dc1828ee69fb8ff126e656dd`</sup></sub>
 -  Particle Physics Simulator -- [apk 3.7.0](/apk/pps/nbodyandroid-3.7.0.apk) &nbsp;&nbsp; <sub><sup>**sha256:** `954ca2e7a1d5d264cc423d61de547f14498d778997afc2c7ec9f195671df7a8b`</sup></sub>
 
-Or download it from [Google Play](https://play.google.com/store/apps/details?id=com.tss.android).
+Or get it from [F-Droid](https://f-droid.org/en/packages/com.tss.android/) or [Google Play](https://play.google.com/store/apps/details?id=com.tss.android).
 
 ## Changelog
 
