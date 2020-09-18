@@ -18,10 +18,10 @@ These days of coronavirus where a lot of people work from home the number of tel
 
 First, install the droidcam app in your phone, and download and unpack the Linux version wherever. Then, follow the instructions [here](https://www.dev47apps.com/droidcam/linuxx/) to install it. You will have to launch the app on your phone before attempting the connection from your PC.
 
-## Using with wifi
+## Using droidcam via WiFi
 
 This is the easiest way to connect the phone camera to your PC. For this to work, the phone and the computer must be on the same local network. The phone will be connected via wifi, and the computer may either be wired or wirelessly connected.
-Open the app on your phone and take note of the Wifi IP and port. Then, `cd` to the droidcam installation folder and do:
+Open the app on your phone and take note of the wifi IP and port. Then, `cd` to the droidcam installation folder and do:
 
 ```bash
 droidcam-cli <ip> <port>
