@@ -10,7 +10,7 @@ featuredpath = "date"
 type = "post"
 +++
 
-My [degoogling process](https://reddit.com/r/degoogle) started a few months ago, and it included moving on from Gmail to a privacy-focused email provider, amongst many other actions. I surveyed the landscape and considered Proton Mail, Tutanota, Posteo, and a few others. Finally I settled with the Amsterdam-based [Soverin.net](https://soverin.net), openend an account back in July 2019 and paid for a full year of service. What follows is the story of why I cancelled my account yesterday in favour of another provider.
+My [degoogling process](https://reddit.com/r/degoogle) started a few months ago, and it included moving on from Gmail to a privacy-focused email provider, among many other actions. I surveyed the landscape and considered Proton Mail, Tutanota, Posteo, and a few others. Finally I settled with the Amsterdam-based [Soverin.net](https://soverin.net), opened an account back in July 2019 and paid for a full year of service. What follows is the story of why I canceled my account yesterday in favor of another provider.
 
 This post is a transcript of this [post I created in reddit](https://www.reddit.com/r/privacytoolsIO/comments/e14rxf/my_experience_with_soverin/).
 
@@ -25,3 +25,5 @@ This post is a transcript of this [post I created in reddit](https://www.reddit.
 >
 > Also, as I said, the email service is solid for the most part.
 > I think Soverin has major problems with their implementation of some essential services, which made me look elsewhere. I signed up today with a another provider and the difference is night and day. Everything works as it should, which helped me look at things with some perspective and realize just how bad some of Soverin's services really are.
+
+**Edit 2020-09-24**: As a final note, I want to comment on the service I switched to, as I'm getting a bunch of emails asking precisely this. I will not publicly endorse any service provider, but I can recommend you this: visit [privacytools.io](privacytools.io) and go over the email providers section. You will find a comprehensive list of privacy-respecting email providers annotated with their strong and weak points. That should help you decide the provider that is best for you.
