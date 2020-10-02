@@ -3,14 +3,14 @@ author = "Toni Sagrista Selles"
 categories = ["Linux"]
 tags = [ "programming", "scripts", "i3wm", "polybar", "rice", "qutebrowser", "pass", "neovim" ]
 date = 2019-03-02
-description = "Description of my daily Linux setup as of March 2019"
+description = "Description of my daily Linux setup as of October 2019"
 linktitle = ""
-title = "My Linux setup (as of 06/2020)"
+title = "My Linux setup (as of 10/2020)"
 featuredpath = "date"
 type = "post"
 +++
 
-*2020-10-02 edit: change termite to kitty due to font ligatures support.*
+*2020-10-02 edit: change termite to kitty due to font ligatures support.*\
 *2020-06-01 edit: change urxvt to termite, update info on qutebrowser with tor.*
 
 
