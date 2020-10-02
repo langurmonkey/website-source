@@ -10,6 +10,7 @@ featuredpath = "date"
 type = "post"
 +++
 
+*2020-10-02 edit: change termite to kitty due to font ligatures support.*
 *2020-06-01 edit: change urxvt to termite, update info on qutebrowser with tor.*
 
 
@@ -66,11 +67,11 @@ I use [`i3wm`](https://i3wm.org/), and in particular, Airblader's fork [`i3-gaps
 
 I use [`zsh`](www.zsh.org) (actually, [`oh-my-zsh`](https://github.com/robbyrussell/oh-my-zsh)) because I'm used to lots of its features that I otherwise miss when using `bash`.
 
-## Terminal
+## Terminal emulator
 
-My terminal of choice is [`termite`](http://software.schmorp.de/pkg/rxvt-unicode.html) because it is simple and easy to configure. I use the Terminus font. It looks crisp and is just a beautiful monospace font for terminals. Other than that, I have bindings to modify the font size automatically, scroll up and down using `k` and `j` and little else.
+My terminal emulator of choice is [`kitty`](https://sw.kovidgoyal.net/kitty/) because it is simple and easy to configure. It is not the fastest terminal emulator in the west, but it supports font ligatures. Ligatures are important to developers, and not many terminal emulators support them. I use the `FiraCode Nerd Font` font. It looks crisp and is just a beautiful monospace font for code, with ligatures. Other than that, I have bindings to modify the font size automatically, scroll up and down using `k` and `j` and little else.
 
-I've played around with [`st`](https://st.suclkess.org) but I'm not convinced by the config-in-source philosophy. It is just not too convenient for me, even though I keep it installed in my systems.
+I've played around with [`st`](https://st.suclkess.org) but I'm a fan of having to apply patches for even the most basic of functionalities. It is just not too convenient for me, even though I keep it installed in my systems.
 
 ## Bar
 
@@ -110,10 +111,10 @@ Additionally, I use this wee script to launch a new instance of ranger inside a 
 
 ```bash
 #!/bin/bash
-termite -cd "$1" -e ranger --cmd="shell ~/.local/bin/wal -R"
+kitty -cd "$1" -e ranger --cmd="shell ~/.local/bin/wal -R"
 ```
 
-Whenever I need a new instance of ranger, I use the script. For example, I bind $sup+f to a new ranger-in-termite starting at the working directory of the currently focused window in my i3 configuration:
+Whenever I need a new instance of ranger, I use the script. For example, I bind $sup+f to a new ranger-in-term starting at the working directory of the currently focused window in my i3 configuration:
 
 ```
 bindsym $sup+f exec ~/.dotfiles/bin/ranger-term "\`$HOME/.dotfiles/bin/xcwd\`"
