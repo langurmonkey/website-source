@@ -14,7 +14,7 @@ I remember many years ago, when I was a Windows user, and even later after I mad
 
 <!--more-->
 
-The idea of `mpd` is elegant and simple. A server that runs on the background and serves music to different clients. It is always on in the background (if needed), ready to be requested anything from its library. It is powerful and extensible through plugins. Multiple client applications can be used to talk to it. My client of choice is `ncmpcpp`, a C++ version of `ncmpc`, but there are countless others for all needs and tastes. The awesome thing is that the library is handled by `mpd`, so that switching clients is much easier:. In this post I document how to set up `mpd` in Arch Linux as a user service, and how to configure it.
+The idea of `mpd` is elegant and simple. A server that runs as a daemon and serves music to different clients. It is always on in the background, ready to be requested anything from its library. It is powerful and extensible through plugins, and supports multiple audio interfaces. Several client applications can be used to talk to it. My client of choice is `ncmpcpp`, a C++ version of `ncmpc` with some improvements, but there are countless others for all needs and tastes. The awesome thing is that the library is handled by `mpd`, so that switching clients doesn't mean reimporting everything. In this post I document how to set up `mpd` in Arch Linux as a user service, and how to configure it. It is so simple that this introduction is longer than the actual setup. Bear with me.
 
 First, we need to install `mpd`:
 
