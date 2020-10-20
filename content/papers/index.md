@@ -9,6 +9,7 @@ showpagemeta = "false"
 ### Peer-reviewed Papers
 
 
+*   [Visual Analysis of the Finite-Time Lyapunov Exponent](https://doi.org/10.1111/cgf.13984) - A. Sagristà, S. Jordan, F. Sadlo - 2020, Computer Graphics Forum, [10.1111/cgf.13984](https://onlinelibrary.wiley.com/doi/10.1111/cgf.13984)
 *   [Gaia Sky: Navigating the Gaia Catalog](https://doi.org/10.1109/TVCG.2018.2864508) - A. Sagristà, S. Jordan, T. Müller, F. Sadlo - 2019, IEEE Transactions on Visualization and Computer Graphics, [10.1109/TVCG.2018.2864508](https://doi.org/10.1109/TVCG.2018.2864508)
 *   [Visualization of Parameter Sensitivity of 2D Time-Dependent Flow](https://vcg.iwr.uni-heidelberg.de/publications/pubdetails/Hanser2018parameterSensitivity://vcg.iwr.uni-heidelberg.de/publications/pubdetails/Hanser2018parameterSensitivity/) - K. Hanser, O. Klein, B. Rieck, B. Wiebe, T. Selz, M. Piatkowski, A. Sagristà, B. Zheng, M. Lukácová, G. Craig, H. Leitte, F. Sadlo - 2018, Lecture Notes in Computer Science: Advances is Visual Computing (Proceedings of International Symposium on Visual Computing), pp. 359–370
 *   [Gaia Data Release 2: Observations of solar system objects](https://doi.org/10.1051/0004-6361/201832900) - Gaia Collaboration... A. Sagristà... - 2018, A&A, 616 (2018) A13
