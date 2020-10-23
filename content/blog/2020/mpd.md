@@ -22,13 +22,46 @@ First, we need to install `mpd`:
 yay -S mpd
 ```
 
+Once that's done, we need a configuration file. The default location is `~/.config/mpd/mpd.conf`. My configuration file contains the paths to the music directory, as well as the database, log files, and others. Then, a few lines to define the audio interfaces and the visualizer (if you need that).
+
+{{< highlight bash "linenos=table" >}}
+music_directory	        "~/Music"
+playlist_directory		"~/.local/share/mpd/playlists"
+db_file			        "~/.local/share/mpd/database"
+log_file			    "~/.local/share/mpd/log"
+pid_file			    "~/.local/share/mpd/pid"
+state_file			    "~/.local/share/mpd/state"
+sticker_file			"~/.local/share/mpd/sticker.sql"
+log_level			    "default"
+auto_update	            "yes"
+
+input {
+    plugin              "curl"
+}
+
+audio_output {
+	type	        	"pulse"
+	name		        "Pulse output"
+    mixer_type          "software"
+}
+
+# FIFO visualizer in ncmpcpp
+audio_output {
+    type                "fifo"
+    name                "mpd_fifo"
+    path                "/tmp/mpd.fifo"
+    format              "44100:16:2"
+}
+{{< /highlight >}}
+
 Then, enable and start the service in user mode:
 
 ```bash
 systemctl --user enable mpd.service
 systemctl --user start mpd.service
 ```
-Once that's done, `mpd` will look for configuration files in `~/.config/mpd/mpd.conf`. In my case, my config file, as well as my playlists, are stored in [the `mpd` folder of my dotfiles project](https://gitlab.com/langurmonkey/dotfiles/-/tree/master/mpd). The [configuration file](https://gitlab.com/langurmonkey/dotfiles/-/blob/master/mpd/config/mpd.conf) is pretty straightforward. It contains the paths to the music directory, as well as the database, log files, and others. Then, a few lines to define the audio interfaces and the visualizer (if you need that).
+`mpd` should now be ready to serve music. To test it, open `ncmpcpp` and press `u` to initialize/update your music library. A few seconds later --or minutes, depending on the size of your library-- all your music will be perfectly organised and available in the player, ready to be listened to, a few keyboard strokes away. Pair it with a `polybar` module and a few `i3wm` bindings, and it's over 9000.
+
 
 <p style="text-align: center; width: 70%; margin: 0 auto;">
 <img src="/img/2020/10/ncmpcpp.jpg"
@@ -37,6 +70,34 @@ Once that's done, `mpd` will look for configuration files in `~/.config/mpd/mpd.
 <em style="color: gray;">Glorious ncmpcpp is glorious</em>
 </p>
 
-And that's it. Just open `ncmpcpp` and press `u` to initialize/update your music library. A few seconds later --or minutes, depending on the size of your library-- all your music will be perfectly organised and available in the player, ready to be listened to, a few keyboard strokes away. Pair it with a `polybar` module and a few `i3wm` bindings, and it's over 9000.
+My `~/.config/ncmpcpp/config` file is pretty basic. I mostly go with the defaults, but here it is in case you need it:
 
 
+{{< highlight bash "linenos=table" >}}
+ncmpcpp_directory = ~/.local/share/ncmpcpp
+lyrics_directory = ~/.local/share/ncmpcpp/lyrics
+
+[mdp]
+mpd_host = localhost
+mpd_port = 6600
+mpd_music_dir = ~/Music
+mpd_crossfade_time = 2
+
+[visualizer]
+visualizer_fifo_path = /tmp/mpd.fifo
+visualizer_output_name = mpd_fifo
+visualizer_in_stereo = no
+visualizer_sync_interval = 15
+visualizer_type = wave
+visualizer_look = ●▮
+visualizer_color = default
+
+[global]
+colors_enabled = yes
+main_window_color = default
+centered_cursor = yes
+enable_window_title = yes
+external_editor = nvim
+{{< /highlight >}}
+
+And that's it. Nowadays it is quite straightforward to configure a fully-featured audio server in your Linux box and pair it with a no-nonsense, CLI player that is lightweight and feels amazing to use.
