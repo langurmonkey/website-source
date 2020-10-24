@@ -74,7 +74,7 @@ The two lines above bind `$mod`+`.` and `$mod`+`,` to play the next and previous
 <img src="/img/2020/10/ncmpcpp.jpg"
      alt="Ncmpcpp in all its glory"
      style="width: 100%" />
-<em style="color: gray;">Glorious ncmpcpp is glorious</em>
+<em style="color: gray;">Glorious ncmpcpp is glorious. Below, cli-visualizer.</em>
 </p>
 
 My `~/.config/ncmpcpp/config` file is pretty basic. I mostly go with the defaults, but here it is in case you need it:
