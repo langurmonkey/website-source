@@ -62,6 +62,13 @@ systemctl --user start mpd.service
 ```
 `mpd` should now be ready to serve music. To test it, open `ncmpcpp` and press `u` to initialize/update your music library. A few seconds later --or minutes, depending on the size of your library-- all your music will be perfectly organised and available in the player, ready to be listened to, a few keyboard strokes away. Pair it with a `polybar` module and a few `i3wm` bindings, and it's over 9000.
 
+```bash
+bindsym $mod+period exec mpc next
+bindsym $mod+comma exec mpc prev
+```
+
+The two lines above bind `$mod`+`.` and `$mod`+`,` to play the next and previous song respectively. So easy.
+
 
 <p style="text-align: center; width: 70%; margin: 0 auto;">
 <img src="/img/2020/10/ncmpcpp.jpg"
