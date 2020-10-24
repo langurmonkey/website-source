@@ -3,14 +3,14 @@ author = "Toni Sagrista Selles"
 categories = ["Linux"]
 tags = [ "linux", "open source", "fun", "music" ]
 date = 2020-10-20
-description = "Run mpd as a user service for maximum fun"
+description = "MPD is the superior way to access your music library"
 linktitle = ""
-title = "Music player daemon"
+title = "A few words about MPD"
 featuredpath = "date"
 type = "post"
 +++
 
-I remember many years ago, when I was a Windows user, and even later after I made the switch to Linux, I always struggled to find the perfect music player that would fit my needs perfectly. From time to time I would fantasize about programming my own little, perfect, shiny music player program that would fit my needs perfectly like Cinderella's shoe. But I was nowhere near naïve enough to actually start the project, let alone finish it. I know how much time and effort it would take. Then I discovered [`mpd`](https://www.musicpd.org), the music player daemon.
+I remember many years ago, when I was a Windows user, and even later after I made the switch to Linux, I always struggled to find the perfect music player that would fit my needs perfectly. From time to time I would fantasize about programming my own little, perfect, shiny music player program that would fit my needs perfectly like Cinderella's shoe. But I was nowhere near naïve enough to actually start the project, let alone finish it. I know how much time and effort it would take. Then I discovered [`mpd`](https://www.musicpd.org) (Music Player Daemon).
 
 <!--more-->
 
