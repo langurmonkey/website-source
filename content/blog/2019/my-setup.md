@@ -177,14 +177,14 @@ Here is a list of utilities I have installed and use regularly.
 -  [`fd`](github.com/sharkdp/fd) - Amazing replacement for `find`
 -  [`fzf`](github.com/junegunn/fzf) - Terminal fuzzy finder and vim plugin
 -  [`sshfs`](github.com/libfuse/sshfs) - Mount file systems over SSH/SFTP
--  [`apropos`] - Search the man pages
+-  `apropos` - Search the man pages
 -  [`units`](www.gnu.org/software/units) - Convert units on the terminal
 -  [`translate-shell`](github.com/soimort/translate-shell) - Google translate terminal wrapper
 -  [`rtv`](github.com/michael-lazar/rtv) - Reddit Terminal Viewer
 -  [`tealdeer`](github.com/dbrgn/tealdeer) - Access [`tldr-pages`](github.com/tldr-pages/tldr) with style
 -  [`pdfpc`](github.com/phillipberndt/pdfpc) - Presenter console for for PDF files
 -  [`tig`](github.com/jonas/tig) - Text interface for `git`
--  [`bc`] - Best calculator ;)
+-  `bc` - Best calculator ;)
 
 ## Closing Notes
 
