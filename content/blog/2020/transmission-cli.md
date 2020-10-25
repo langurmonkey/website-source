@@ -57,7 +57,7 @@ $  transmission-daemon --dump-settings
 Start the daemon by just calling the program with no arguments. Then, you can start adding torrents:
 
 ```bash
-transmission-remote -a "magnet-link"
+transmission-remote -a "magnet link or torrent file URL"
 ```
 
 You can either use magnet links, or the URL of the torrent file directly. Both work.
@@ -78,6 +78,14 @@ Use `watch` to update the listing automatically every x seconds.
 ```bash
 watch -n 3 "transmission-remote -l"
 ```
+
+If you made a mistake and need to remove a torrent, note down the ID in the list above and then pass it on to the following command.
+
+```bash
+transmission-remote -t ID -r
+```
+
+Of course, there are plenty of other options. Use `-h` to learn about them.
 
 As a final tip, I personally find typing `transmission-remote` every time far too long. I have aliased it to `tr`, with an extra `tra` and `trl` for adding an listing:
 
