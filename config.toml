@@ -116,11 +116,11 @@ pygmentsStyle = "monokai"
 # socialAppearAtTop or socialAppearAtBottom is set to true in the params area
 # The social media icons will appear on the sidebar
 [social]
-#   rss             = "index.xml"
-    github          = "langurmonkey"
+    rss             = "index.xml"
     gitlab          = "langurmonkey"
     twitter         = "GaiaSky_Dev"
-    #flickr          = "55929244@N00"
+    #flickr         = "55929244@N00"
+    lbry            = "@GaiaSky"
     youtube         = "toninoni"
     linkedin        = "toni-sagristà-2101a927"
     email           = "me@tonisagrista.com"

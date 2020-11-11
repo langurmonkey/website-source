@@ -10,6 +10,10 @@
 <li><a href="//github.com/{{.}}" target="_blank" title="GitHub"><i class="fa fa-github-alt"></i></a></li>
 {{ end }}
 
+{{ with .Site.Social.lbry }}
+<li><a href="//odysee.com/{{.}}" target="_blank" title="Lbry"><i class="fa fa-film"></i></a></li>
+{{ end }}
+
 {{ with .Site.Social.youtube }}
 <li><a href="//youtube.com/{{.}}" target="_blank" title="YouTube"><i class="fa fa-youtube-play"></i></a></li>
 {{ end }}
