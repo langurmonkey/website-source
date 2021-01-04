@@ -19,7 +19,6 @@ I'm currently working in the [Gaia](https://sci.esa.int/web/gaia) group of the [
 - Take a peek at my [blog posts](/blog) ([full list](/posts-list))
 - Have a look at some of my [projects](/projects)
 - Check out my [publications](/papers)
-- Chillax watching my [photos](https://flickr.com/photos/tonisagrista/)
+- Chillax watching my [photos](/photo-gallery)
 - I am [@jumpinglangur](https://mastodont.cat/@jumpinglangur) on Mastodon, and I'm tweeting (on a professional capacity) at [@GaiaSky_dev](https://twitter.com/GaiaSky_dev)
 - And here is my [CV](/resume), just in case you want to offer me my dream job
-

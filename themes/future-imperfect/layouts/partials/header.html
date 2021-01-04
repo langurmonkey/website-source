@@ -64,6 +64,7 @@
             <link rel="stylesheet" href="/css/monokai-sublime.css" />
             <link rel="stylesheet" href="/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
         {{ end }}
+        <base href="{{ .Site.BaseURL }}" />
 
         {{ if ne ($.Scratch.Get "cssFiles") false }}
             {{ range $.Scratch.Get "cssFiles" }}

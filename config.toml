@@ -1,4 +1,4 @@
-baseurl = "https://tonisagrista.com/"
+baseurl = ""
 languageCode = "en-gb"
 title = "Toni Sagristà Sellés"
 theme = "future-imperfect"
@@ -11,6 +11,9 @@ pygmentsCodeFences = true
 pygmentsCodeFencesGuessSyntax = true
 pygmentsUseClasses = false
 pygmentsStyle = "monokai"
+canonifyurls = false
+relativeurls = true
+uglyurls = false
 
 [taxonomies]
     tag = "tags"
@@ -26,7 +29,7 @@ pygmentsStyle = "monokai"
     socialAppearAtTop    = true
     socialAppearAtBottom = false
     # Sets where 'View more posts' links
-    viewMorePostLink     = "/blog/"
+    viewMorePostLink     = "/blog"
 
     # Optional Params
     categoriesByCount    = true
