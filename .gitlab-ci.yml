@@ -12,7 +12,7 @@ test:
 
 pages:
   script:
-  - hugo && gzip -k -6 $(find public -type f)
+  - hugo --minify && gzip -k -6 $(find public -type f)
   artifacts:
     paths:
     - public
