@@ -68,10 +68,10 @@ This one is not Rust-only, but nice to have. [`fzf.vim`](https://github.com/june
 
 ## Extra stuff
 
-Additionally, you can set up a file system watch on the current folder and run the `cargo build` automatically whenever something changes. I sometimes use [`rerun2`](https://github.com/tartley/rerun2) for this purpose. `rust-analyzer` already compiles and checks the code on save, though.
+Additionally, you can set up a file system watch on the current folder and run the `cargo build` automatically whenever something changes. I sometimes use [`entr`](https://github.com/eradman/entr) for this purpose. `rust-analyzer` already compiles and checks the code on save, so the utility of this is up for debate. But still, I find looking at the proper `rustc` output in a different pane useful.
 
 ```bash
-rerun2 cargo build
+ls src/*.rs | entr cargo build
 ```
 
 
