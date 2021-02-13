@@ -8,7 +8,7 @@ type = "homepage"
 
 <img src="/img/myself_col.jpg"
      alt="My photo"
-     style="float: right; margin-left: 50px; width: 40%" />
+     style="float: right; margin-left: 50px; width: 25%" />
 
 How the hell did you end up here?
 
