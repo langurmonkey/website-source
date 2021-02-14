@@ -9,7 +9,9 @@ featuredpath = "date"
 type = "post"
 +++
 
-*This is a verbatim copy of a post made in my old blog dimlight.wrodpress.com, included here for archiving purposes*
+<div class="post-notice">
+This is a verbatim copy of a post made in my old blog dimlight.wrodpress.com, included here for archiving purposes.
+</div>
 
 So finally I could swap rooms with Kunal. It’s been quite a hard task to accomplish, since there’s a lot of bureaucracy for such an easy thing as well. But let’s start at the beginning. Kunal is an indian guy who arrived at Scotland just one day after I did, and he was very close to the indians of my former flat. This flat was actually occupied by three indians and Mathew, a german erasmus who’s given up in teaching the indians how to behave when they live with others. The thing is that they are used to have everything done at their homeland, with servants cooking and cleaning for them and this kind of stuff. So when I first saw my former kitchen I was a bit shocked coz it looked like the Irak war had taken place in there. A big mess, indeed.
 

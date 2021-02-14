@@ -9,7 +9,9 @@ featuredpath = "date"
 type = "post"
 +++
 
-*This is a verbatim copy of a post made in my old blog dimlight.wrodpress.com, included here for archiving purposes*
+<div class="post-notice">
+This is a verbatim copy of a post made in my old blog dimlight.wrodpress.com, included here for archiving purposes.
+</div>
 
 Here goes my new address, which is meant to be permanent till I leave Aberdeen on June:
 

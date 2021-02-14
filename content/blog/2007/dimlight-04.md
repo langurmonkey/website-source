@@ -9,8 +9,9 @@ featuredpath = "date"
 type = "post"
 +++
 
-*This is a verbatim copy of a post made in my old blog dimlight.wrodpress.com, included here for archiving purposes*
-
+<div class="post-notice">
+This is a verbatim copy of a post made in my old blog dimlight.wrodpress.com, included here for archiving purposes.
+</div>
 
 Finalment he aconseguit superar amb èxit el caos i la desorganització d’aquesta universitat els 2 primers.  He tingut força problemes per gairebé tot. Primer,  per a registrar-se com a estudiant i aconseguir un compte per poder utilitzar internet -cosa extremament simple a Reading- he hagut de recorrer d’un edifici a un altre per després tornar al primer durant gairebé dos esgotadors dies sencers. Del Help Desk a la University Registry, i d’allà al departament de Computer Science. Un cop vist el coordinador d’erasmus de Computer Science, torna cap al Registry per després acabar al Help Desk. Quan sembla que tot està enllestit, resulta que a l’endemà no puc entrar al meu compte. Torna a baixar a la universitat, un altre cop cap al Help Desk, on em diuen que no estic matriculat completament i m’envien per enèssima vegada al Registry, on em diuen que hi ha hagut algun error i m’ho arreglen, de manera que des d’avui al matí el meu compte hauria d’estar actiu.
 

@@ -9,7 +9,9 @@ featuredpath = "date"
 type = "post"
 +++
 
-*This is a verbatim copy of a post made in my old blog dimlight.wrodpress.com, included here for archiving purposes*
+<div class="post-notice">
+This is a verbatim copy of a post made in my old blog dimlight.wrodpress.com, included here for archiving purposes.
+</div>
 
 Good morning, bon dia, bonjour, guten tag, buon giorno, goddag, hyvää päivää, konnichi wa, habari gani, buenos días, prynhawn da!
 

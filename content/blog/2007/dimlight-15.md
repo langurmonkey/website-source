@@ -9,7 +9,9 @@ featuredpath = "date"
 type = "post"
 +++
 
-*This is a verbatim copy of a post made in my old blog dimlight.wrodpress.com, included here for archiving purposes*
+<div class="post-notice">
+This is a verbatim copy of a post made in my old blog dimlight.wrodpress.com, included here for archiving purposes.
+</div>
 
 No us perdeu aquest video, tota una troballa. És fresc, fa estiu, i la lletra és simplement magistral. Verigut!
 

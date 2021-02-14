@@ -431,3 +431,13 @@ p.caption {
     color: #999 !important;
     font-style: italic;
 }
+
+div.post-notice {
+    color: #796a6a;
+    font-size: 0.9em;
+    background-color: #fff9cc;
+    margin: 0 auto 1em auto;
+    padding: 0.5em;
+    width: 78%;
+
+}

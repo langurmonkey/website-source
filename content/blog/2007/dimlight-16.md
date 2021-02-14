@@ -9,7 +9,9 @@ featuredpath = "date"
 type = "post"
 +++
 
-*This is a verbatim copy of a post made in my old blog dimlight.wrodpress.com, included here for archiving purposes*
+<div class="post-notice">
+This is a verbatim copy of a post made in my old blog dimlight.wrodpress.com, included here for archiving purposes.
+</div>
 
 Finally, someone decided to put some light of truth on a story that has been manipulated over and over, again and again. Here is the true story of Jesus Christ. Enjoy!
 

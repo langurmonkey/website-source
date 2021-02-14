@@ -9,7 +9,9 @@ featuredpath = "date"
 type = "post"
 +++
 
-*This is a verbatim copy of a post made in my old blog dimlight.wrodpress.com, included here for archiving purposes*
+<div class="post-notice">
+This is a verbatim copy of a post made in my old blog dimlight.wrodpress.com, included here for archiving purposes.
+</div>
 
 Woha, it’s been a long time since the last post… Anyway, this August I’m going definately to Japan, we’ve already got the tickets for a moderate price, and we’ve got Hokuto and Ikuya there waiting for taking us to a trip around the countryside and the most important cities, both traditional and modern Japan. Karaoke nights full of sake and sapporo, meals of rice, noodles and tempora. Katanas, samurais, temples, judo, almond trees (sakura) and manga.
 
