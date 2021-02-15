@@ -433,11 +433,13 @@ p.caption {
 }
 
 div.post-notice {
-    color: #796a6a;
+    color: #8e8e8e;
     font-size: 0.9em;
-    background-color: #fff9cc;
+    background-color: #d8ffe1;
     margin: 0 auto 1em auto;
     padding: 0.5em;
     width: 78%;
+    line-height: 1.2em;
+    border-radius: 0.7em;
 
 }
