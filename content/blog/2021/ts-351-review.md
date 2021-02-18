@@ -3,20 +3,20 @@ author = "Toni Sagrista Selles"
 categories = ["Hardware"]
 tags = [ "nas", "qnap", "storage", "linux"]
 date = "2021-02-18"
-description = "I got myself QNAP T-351-2G NAS a year ago, here is my review"
+description = "I got myself QNAP TS-351-2G NAS a year ago, here is my review"
 linktitle = ""
-title = "NAS review: QNAP T-351-2G"
+title = "NAS review: QNAP TS-351-2G"
 type = "post"
 +++
 
 
-A little over a year ago, in January 2020, I got myself a QNAP T-351-2G 3-bay NAS in order to store all of my and my family's data in a failsafe RAID configuration. I opted for the somewhat unconventional 3-bay setup in an attempt to trade off limited physical space at home with storage capacity. I don't have much space in my living room for a big NAS, and the 2-bay options, albeit being very compact, are limited to RAID-1, where half of the space is used for storage and the other half is used for redundancy protection (data is basically mirrored on the second drive). In QNAP's website there are three 3-bay *Home* options: the entry-level TS-332X, the middle-range TS-328 and the high-end TS-351. So I thought to myself, "*I'm getting the high-end unit, how bad can it be?*". Well, now that I have been using this NAS for a year I think I can answer this question.
+A little over a year ago, in January 2020, I got myself a QNAP TS-351-2G 3-bay NAS in order to store all of my and my family's data in a failsafe RAID configuration. I opted for the somewhat unconventional 3-bay setup in an attempt to trade off limited physical space at home with storage capacity. I don't have much space in my living room for a big NAS, and the 2-bay options, albeit being very compact, are limited to RAID-1, where half of the space is used for storage and the other half is used for redundancy protection (data is basically mirrored on the second drive). In QNAP's website there are three 3-bay *Home* options: the entry-level TS-332X, the middle-range TS-328 and the high-end TS-351. So I thought to myself, "*I'm getting the high-end unit, how bad can it be?*". Well, now that I have been using this NAS for a year I think I can answer this question.
 
 <!--more-->
 
 <p style="float: right; width: 40%; margin: 0 0 1em 1em;">
-<img src="/img/2021/02/qnap-t351.jpg"
-     alt="QNAP T-351"
+<img src="/img/2021/02/qnap-ts351.jpg"
+     alt="QNAP TS-351"
      style="width: 100%" ></img>
 </p>
 
@@ -43,7 +43,7 @@ With that show-stopping nonsense out of the way, let's continue. Together with t
 
 ##### Running out of memory
 
-From a distance, the T-351-2G looks like agood machine overall. The 2 GB of RAM are a bit on the scrawny side, but it should be enough to run an embedded Linux, right? Well, nope. Not enough. Is it due to their software being bloated? Maybe, but they must have also realized that 2 GB is far too low nowadays for a NAS with an HDMI port that is supposed to connect to the TV and perform the functions of an HTPC, as the 2 GB option is now listed as EOL on their website. I noticed that too, and less than a week after the purchase I got myself a HyperX Impact 4 GB 1866 RAM stick and installed it. Most QNAP NASes are quite picky as to what memory sticks can be expected to work with them. They even have compatibility lists on their website for each model, so I made sure this one works with the T-351. I installed it and the system works a bit better now.
+From a distance, the TS-351-2G looks like agood machine overall. The 2 GB of RAM are a bit on the scrawny side, but it should be enough to run an embedded Linux, right? Well, nope. Not enough. Is it due to their software being bloated? Maybe, but they must have also realized that 2 GB is far too low nowadays for a NAS with an HDMI port that is supposed to connect to the TV and perform the functions of an HTPC, as the 2 GB option is now listed as EOL on their website. I noticed that too, and less than a week after the purchase I got myself a HyperX Impact 4 GB 1866 RAM stick and installed it. Most QNAP NASes are quite picky as to what memory sticks can be expected to work with them. They even have compatibility lists on their website for each model, so I made sure this one works with the TS-351. I installed it and the system works a bit better now.
 
 ##### Processor
 
@@ -56,4 +56,4 @@ So here is my recommendation. **DO NOT GET THIS NAS** if you plan on plugging it
 ### Conclusion
 
 The list of problems goes on, but I will stop here.
-In short, I do not recommend getting the T-351 if you plan to use it for anything other than just storing your data and mounting it remotely in your other devices (and if so, just get a 3-bay NAS without the HDMI interface), or if you expect the data to be recoverable when your NAS crashes. Video playback, transcoding, streaming, or anything similar won't work. I reckon the old, slow CPU is to blame here. I will probably never buy a QNAP device again due to the LVM issue.
+In short, I do not recommend getting the TS-351 if you plan to use it for anything other than just storing your data and mounting it remotely in your other devices (and if so, just get a 3-bay NAS without the HDMI interface), or if you expect the data to be recoverable when your NAS crashes. Video playback, transcoding, streaming, or anything similar won't work. I reckon the old, slow CPU is to blame here. I will probably never buy a QNAP device again due to the LVM issue.
