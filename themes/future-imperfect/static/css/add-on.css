@@ -473,3 +473,7 @@ ul.sidebar-links li a {
     letter-spacing: 0.25em;
     font-weight: 400;
 }
+
+.fa-tss {
+    margin-right: 2px;
+}
