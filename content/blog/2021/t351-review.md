@@ -34,7 +34,7 @@ It is clear that a terminal emulator is a second or third-class citizen for QNAP
 
 #### LVM incompatibility
 
-This is a problem with all QNAP devices. In the eventual case of a NAS hardware fail, **you can't recover the data by removing the disks and plugging them in elsewhere**. You absolutely need a QNAP device, as they ship their own implementation of LVM which renders it incompatible with non-QNAP hardware. This kind of vendor lock-in is an utter shame, it's *bullshit*, and had I made my homework and researched this properly before buying, I would have never bought QNAP in the first place. Synology, for example, uses plain LVM, and their RAID is readable from any Linux.
+This is a problem with all QNAP devices. In the eventual case of a NAS hardware fail, **you can't recover the data by removing the disks and plugging them in elsewhere**. You absolutely need a QNAP device, as they ship their own implementation of LVM which renders it incompatible with non-QNAP hardware. This kind of vendor lock-in is an utter shame, it's *bullshit*, and had I made my homework and researched this properly before buying, I would have never bought QNAP in the first place. Synology, for example, uses plain LVM, and their RAID is [readable from any Linux](https://www.synology.com/en-global/knowledgebase/DSM/tutorial/Storage/How_can_I_recover_data_from_my_DiskStation_using_a_PC).
 
 #### The hardware
 
