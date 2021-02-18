@@ -17,7 +17,11 @@ showpagemeta = "false"
 </article>
 <br />
 <article>
-<strong><a href="/blog/2013/rts-engine-preview/">RTS Engine</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-git-square"></i></strong> &mdash; Real time strategy game engine written in Java. Very early stage, needs huge refactoring.
+<strong><a href="https://gitlab.com/gaiasky/gaiasky-catgen">Gaia Sky catalog generation</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-git-square"></i></strong> &mdash; LOD catalog generation for Gaia Sky written in Rust. It supports the integration of multiple catalogs using cross-match information, additional columns cross-referenced by id, extinction and reddening corrections and much more.
+</article>
+<br />
+<article>
+<strong><a href="/blog/2013/rts-engine-preview/">RTS Engine</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-git-square"></i></strong> &mdash; Real time strategy game engine written in Java. Very early stage, but already usable. There is a private fork which contains much more advanced AI based on behavior trees and state machines, original graphics, sound, heights, and uses an entity component system (ECS) internally.
 </article>
 <br />
 <article>
