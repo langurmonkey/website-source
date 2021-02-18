@@ -64,24 +64,4 @@
             </ul>
         </section>
 
-    <!-- Recent Posts -->
-        <section>
-            <ul class="links">
-                <header>
-                    <h3>Recent Posts</h3>
-                </header>
-                {{ with .Site.Params.postAmount.sidebar }}
-                    {{ $.Scratch.Set "postLimit" . }}
-                {{ else }}
-                    {{ $.Scratch.Set "postLimit" 5 }}
-                {{ end }}
-
-                {{ range first ($.Scratch.Get "postLimit") (where .Site.Pages "Type" "post") }}
-                    <li>
-                        <a href="{{ .Permalink }}"><p>{{ .Title }}</p></a>
-                    </li>
-                {{ end }}
-            </ul>
-        </section>
-
 </section>

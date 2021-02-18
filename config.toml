@@ -35,8 +35,6 @@ uglyurls = false
     categoriesByCount    = true
     tagsByCount          = true
     includeReadingTime   = true
-    # The set of favicons used are based on the write-up from this link:
-    # https://github.com/audreyr/favicon-cheat-sheet
     # Please see the favicon partial template for more information
     loadFavicon          = false
     faviconVersion       = ""
@@ -62,7 +60,7 @@ uglyurls = false
     header    = "Toni Sagristà Sellés"
     paragraph = "Personal website and portfolio"
 
-    about     = "I am a Software Engineer interested in astrophysics and scientific visualisation. I live in Heidelberg (Germany) and struggle to learn the language and comprehend German culture. I'm currently working on CU3/CU9/Gaia at ARI/ZAH@Uni-Heidelberg and I'm also a Ph.D. candidate at the viscomp group, IWR@Uni-Heidelberg."
+#    about     = "I am a Software Engineer interested in astrophysics and scientific visualisation. I live in Heidelberg (Germany) and struggle to learn the language and comprehend German culture. I'm currently working on CU3/CU9/Gaia at ARI/ZAH@Uni-Heidelberg and I'm also a Ph.D. candidate at the viscomp group, IWR@Uni-Heidelberg."
 
 # This will also appear on the sidebar.
 # A width of less than 100px is recommended
@@ -109,12 +107,6 @@ uglyurls = false
     url = "/photo-gallery"
     weight = 5
 
-[[menu.main]]
-    name = "/Categories"
-    url = "/categories"
-    weight = 6
-
-
 # Insert your username and the icon will apear on the page as long as
 # socialAppearAtTop or socialAppearAtBottom is set to true in the params area
 # The social media icons will appear on the sidebar
@@ -122,7 +114,6 @@ uglyurls = false
     rss             = "index.xml"
     gitlab          = "langurmonkey"
     twitter         = "GaiaSky_Dev"
-    #flickr         = "55929244@N00"
     lbry            = "@GaiaSky"
     youtube         = "toninoni"
     linkedin        = "toni-sagristà-2101a927"

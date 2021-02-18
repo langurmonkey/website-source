@@ -12,7 +12,7 @@
                 {{ .Content }}
             </div>
             {{ $.Scratch.Set "postsList" .Site.Pages }}
-            {{ $.Scratch.Set "postLimit" 2000 }}
+            {{ $.Scratch.Set "postLimit" 200 }}
             <div class="posts-list">
                 {{ range first ($.Scratch.Get "postLimit") (where ($.Scratch.Get "postsList") "Type" "post") }}
                 <div class="post-in-list">

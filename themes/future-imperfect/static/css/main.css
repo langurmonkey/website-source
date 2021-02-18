@@ -1761,12 +1761,12 @@
 	.button {
 		background-color: transparent;
 		border: 0;
-		color: #999 !important;
+		color: #333 !important;
 		cursor: pointer;
 		display: inline-block;
 		font-family: "Raleway", Helvetica, sans-serif;
-		font-size: 0.6em;
-		font-weight: 800;
+		font-size: 0.7em;
+		font-weight: 400;
 		height: 2.8125em;
 		letter-spacing: 0.25em;
 		line-height: 2.8125em;
@@ -3290,9 +3290,8 @@
 /* Sidebar */
 
 	#sidebar {
-		margin-right: 2em;
-		min-width: 22em;
-		width: 22em;
+		min-width: 21em;
+		width: 21em;
 	}
 
 		#sidebar > * {
@@ -3423,12 +3422,12 @@
 	}
 
 	#footer .copyright {
-		color: #aaaaaa;
+		color: #999;
 		font-family: "Raleway", Helvetica, sans-serif;
-		font-size: 0.5em;
+		font-size: 0.6em;
 		font-weight: 400;
 		letter-spacing: 0.25em;
-		text-transform: uppercase;
+		text-transform: lowercase;
 	}
 
 /* Menu */

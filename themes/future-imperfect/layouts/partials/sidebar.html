@@ -35,6 +35,15 @@
         <p>{{ . }}</p>
     </section>
     {{ end }}
+    
+    <!-- Links -->
+    <section id="links">
+        <ul class="sidebar-links">
+            <li><a href="/about" class="button">/about</a></li>
+            <li><a href="/categories" class="button">/categories</a></li>
+            <li><a href="/tags" class="button">/tags</a></li>
+        </ul>
+    </section>
 
     <!-- Posts List -->
     <section class="recent-posts">
@@ -45,7 +54,7 @@
             <div class="posts-container">
                 {{ $.Scratch.Set "recentPosts" .Site.Pages }}
 
-                {{ $.Scratch.Set "postLimit" 20 }}
+                {{ $.Scratch.Set "postLimit" 8 }}
 
                     {{ range first ($.Scratch.Get "postLimit") (where ($.Scratch.Get "recentPosts") "Type" "post") }}
                     <div class="recent-posts-item">
@@ -59,32 +68,10 @@
             </div>
 
             {{ if ge (len (where .Site.Pages "Type" "post")) ($.Scratch.Get "postLimit") }}
-            <a href="/posts-list" class="button">View all posts</a>
+            <a href="/posts-list" class="button" style="margin-top: 2em;">View all posts</a>
             {{ end }}
         </div>
     </section>
-    
-    <!-- This if statement only applies if someone goes to the /tags url -->
-    <!-- Otherwise this section is shown for all other links -->
-    {{ if ne ($.Scratch.Get "showTags") false }}
-    <!-- Tags List -->
-    <section id="tags">
-        <ul class="posts">
-            <header>
-                <h3><a href="/tags/">Tag Cloud</a></h3>
-            </header>
-            <div id="tag-cloud">
-            {{ $.Scratch.Set "tags" .Site.Taxonomies.tags.Alphabetical }}
-
-            {{ range $key, $value := $.Scratch.Get "tags" }}
-            <div class="tag" style="font-size: {{ add 10 $value.Count }}px">
-                <a href="/tags/{{ $value.Name | urlize }}/">{{ $value.Name }}</a>
-            </div>
-            {{ end }}
-            </div>
-        </ul>
-    </section>
-    {{ end }}
 
     <!-- Footer -->
     <section id="footer">
