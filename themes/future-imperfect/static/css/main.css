@@ -2197,9 +2197,9 @@ input[type="radio"] + label:before {
 /* List */
 
 ol {
+    padding-inline-start: 40px;
+    list-style-position: inside;
     list-style: decimal;
-    margin: 0 0 2em 0;
-    padding-left: 1.25em;
 }
 
 ol li {
@@ -2207,9 +2207,9 @@ ol li {
 }
 
 ul {
+    padding-inline-start: 40px;
+    list-style-position: inside;
     list-style: square;
-    margin: 0 0 0.5em 0;
-    padding-left: 1em;
 }
 
 ul li {
