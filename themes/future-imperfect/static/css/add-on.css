@@ -30,7 +30,7 @@ pre {
 }
 
 #header .main ul li > a {
-    color: #000000;
+    color: #aaa;
     /* Theoretically for IE 8 & 9 (more valid) */
     /* ...but not required as filter works too */
     /* should come BEFORE filter */
@@ -39,9 +39,6 @@ pre {
     /* This works in IE 8 & 9 too */
     /* ... but also 5, 6, 7 */
     filter: alpha(opacity=35);
-
-    /* Modern Browsers */
-    opacity: 0.35;
 }
 
 #header .main .search input {
