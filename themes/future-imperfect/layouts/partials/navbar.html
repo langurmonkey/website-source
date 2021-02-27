@@ -20,18 +20,9 @@
 
     </nav>
     <nav class="main">
-        <ul>
-            <li class="search">
-                <a href="#search"><i class="fa fa-search fa-fw" style="font-size: 14px; line-height: 2.2; text-indent: -5.5em"></i>Search</a>
-                <form id="search" method="get" action="//duckduckgo.com/">
-                    <input type="text" name="q" placeholder="Search" />
-                    <input type="hidden" name="q" value="site:{{ .Site.BaseURL }}">
-                </form>
-            </li>
-            <li class="menu">
-                <a href="#menu"><i class="fa fa-bars fa-fw" style="font-size: 14px; line-height: 2.2; text-indent: -5.5em"></i>Menu</a>
-            </li>
-        </ul>
+        <a href="javascript:darkModeToggle()" style="border: none;" title="Toggle dark mode">
+        <i class="fa fa-paint-brush" style="margin-right: 1em; color: #bbb" aria-hidden="true"></i>
+        </a>
     </nav>
 </header>
 

@@ -1,4 +1,11 @@
             </div>
+    <div>
+        <ul class="icons">
+            {{ if .Site.Params.socialAppearAtTop }}
+            {{ partial "social" . }}
+            {{ end }}
+        </ul>
+    </div>
             <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
         <!-- Scripts -->
 

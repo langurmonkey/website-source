@@ -22,10 +22,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     display: block;
 }
 
-article {
-    color: #000;
-}
-
 body {
     line-height: 1;
 }
@@ -1431,7 +1427,7 @@ body.is-loading *, body.is-loading *:before, body.is-loading *:after {
 
 body, input, select, textarea {
     color: #646464;
-    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    font-family: noto,serif;
     font-size: 14pt;
     font-weight: 400;
     line-height: 1.75;
@@ -1496,7 +1492,7 @@ a {
     -ms-transition: color 0.2s ease, border-bottom-color 0.2s ease;
     transition: color 0.2s ease, border-bottom-color 0.2s ease;
     border-bottom: dotted 2px #2a4;
-    color: #071;
+    color: #2a4;
     text-decoration: none;
 }
 
@@ -1530,7 +1526,6 @@ a:hover {
 
 
 strong, b {
-    color: #3c3b3b;
     font-weight: 700;
 }
 
@@ -1547,16 +1542,16 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #071;
+    color: #2a4;
     font-size: 2em;
-    font-family: sans-serif;
-    font-weight: 800;
+    font-family: open sans, sans-serif;
+    font-weight: 400;
     line-height: 1.65;
     margin: 0 0 0.5em 0;
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-    color: #071;
+    color: #2a4;
     border-bottom: 0;
 }
 
@@ -1693,7 +1688,7 @@ hr.major {
     -ms-justify-content: -ms-flex-end;
     justify-content: flex-end;
     border-bottom: 0;
-    font-family: "Raleway", Helvetica, sans-serif;
+    font-family: open sans, sans-serif;
     font-size: 0.6em;
     font-weight: 400;
     letter-spacing: 0.25em;
@@ -1766,14 +1761,12 @@ button,
 .button {
     background-color: transparent;
     border: 0;
-    color: #333 !important;
     cursor: pointer;
     display: inline-block;
-    font-family: "Raleway", Helvetica, sans-serif;
+    font-family: open sans, sans-serif;
     font-size: 0.7em;
     font-weight: 400;
     height: 2.8125em;
-    letter-spacing: 0.25em;
     line-height: 2.8125em;
     text-align: center;
     text-decoration: none;
@@ -2214,7 +2207,7 @@ ol li {
 }
 
 ul {
-    list-style: disc;
+    list-style: square;
     margin: 0 0 0.5em 0;
     padding-left: 1em;
 }
@@ -2246,7 +2239,11 @@ ul.icons {
 
 ul.icons li {
     display: inline-block;
-    padding: 0 1em 0 0;
+    padding: 0 0.4em 0 0;
+    opacity: 0.6;
+}
+ul.icons li:hover {
+    opacity: 1;
 }
 
 ul.icons li:last-child {
@@ -2506,7 +2503,7 @@ ul.posts article header h3 {
 
 ul.posts article header .published {
     display: block;
-    font-family: "Raleway", Helvetica, sans-serif;
+    font-family: open sans, sans-serif;
     font-size: 0.6em;
     font-weight: 400;
     letter-spacing: 0.25em;
@@ -2588,7 +2585,7 @@ dl dd {
 
 .mini-post header .published {
     display: block;
-    font-family: "Raleway", Helvetica, sans-serif;
+    font-family: open sans, sans-serif;
     font-size: 0.6em;
     font-weight: 400;
     letter-spacing: 0.25em;
@@ -2649,7 +2646,6 @@ dl dd {
 
 .post {
     padding: 2em 2em 2em 2em ;
-    background: #ffffff;
     /*border: solid 1px rgba(160, 160, 160, 0.3);*/
     margin: 0 0 3em 0;
     position: relative;
@@ -2678,7 +2674,7 @@ dl dd {
 
 .post > header .title h2 {
     font-weight: 400;
-    font-size: 1.5em;
+    font-size: 1.7em;
 }
 
 .post > header .title > :last-child {
@@ -2686,7 +2682,8 @@ dl dd {
 }
 
 .post > header .meta {
-    padding: 2.75em 4em 0.75em 1em ;
+    opacity: 0.5;
+    padding: 4em 4em 0.75em 1em ;
     min-width: 17em;
     text-align: right;
     width: 17em;
@@ -2701,12 +2698,10 @@ dl dd {
 }
 
 .post > header .meta .published {
-    color: #3c3b3b;
     display: block;
-    font-family: "Raleway", Helvetica, sans-serif;
+    font-family: open sans, sans-serif;
     font-size: 1em;
     font-weight: 500;
-    letter-spacing: 0.25em;
     margin-top: 0.5em;
     white-space: nowrap;
 }
@@ -2754,16 +2749,14 @@ dl dd {
 }
 
 .post > footer .stats li {
-
     display: inline-block;
-    font-family: "Raleway", Helvetica, sans-serif;
+    font-family: open sans, sans-serif;
     font-size: 0.6em;
     font-weight: 400;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.1em;
     line-height: 1;
     margin: 0 0 0 0.4em;
     padding: 0 0 0 0em;
-    text-transform: uppercase;
 }
 
 .post > footer .stats li:first-child {
@@ -2942,10 +2935,9 @@ section.special, article.special {
 }
 
 header p {
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: 400;
-    letter-spacing: 0.1em;
-    margin-top: -1em;
+    margin-top: -0.5em;
 }
 
 /* Table */
@@ -3023,6 +3015,7 @@ body {
 }
 
 #header {
+    background-color: white;
     display: -moz-flex;
     display: -webkit-flex;
     display: -ms-flex;
@@ -3031,7 +3024,6 @@ body {
     -webkit-justify-content: space-between;
     -ms-justify-content: space-between;
     justify-content: space-between;
-    background-color: #ffffff;
     border-bottom: solid 1px rgba(160, 160, 160, 0.3);
     box-shadow: 0px 0px 3px black;
     height: 1.8em;
@@ -3087,7 +3079,6 @@ body {
     margin-left: 1.5em;
     overflow: hidden;
     padding-left: 1.5em;
-    color: #000;
 }
 
 #header .links ul li {
@@ -3104,7 +3095,7 @@ body {
 
 #header .links ul li a {
     border-bottom: 0;
-    font-family: "Raleway", Helvetica, sans-serif;
+    font-family: open sans, sans-serif;
     font-size: 0.8em;
     font-weight: 400;
     letter-spacing: 0.25em;
@@ -3244,7 +3235,6 @@ body {
     opacity: 1;
     padding: 1.5em;
     width: 90em;
-    color: #000;
 }
 
 body.is-menu-visible #wrapper {
@@ -3285,7 +3275,6 @@ body.is-menu-visible #wrapper {
     flex-grow: 1;
     -ms-flex: 1;
     width: 100%;
-    color: #000;
 }
 
 /* Sidebar */
@@ -3357,7 +3346,7 @@ body.is-menu-visible #wrapper {
 }
 
 #intro header p {
-    font-family: "Raleway", Helvetica, sans-serif;
+    font-family: open sans, sans-serif;
     font-size: 0.8em;
 }
 
@@ -3425,7 +3414,7 @@ body.is-menu-visible #wrapper {
 
 #footer .copyright {
     color: #999;
-    font-family: "Raleway", Helvetica, sans-serif;
+    font-family: open sans, sans-serif;
     font-size: 0.6em;
     font-weight: 400;
     letter-spacing: 0.25em;
@@ -3498,7 +3487,7 @@ body.is-menu-visible #wrapper {
 }
 
 #menu .links > li a p {
-    font-family: "Raleway", Helvetica, sans-serif;
+    font-family: open sans, sans-serif;
     font-size: 0.6em;
     font-weight: 400;
     letter-spacing: 0.25em;

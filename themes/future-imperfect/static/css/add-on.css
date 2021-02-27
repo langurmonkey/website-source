@@ -1,5 +1,11 @@
-body, input, select, textarea, b, strong {
-    color: #000000;
+body {
+    color: black;
+    background-color: white;
+}
+
+.dark-mode{
+    color: white !important;
+    background-color: black !important;
 }
 
 pre {
@@ -112,8 +118,6 @@ article.post h4 {
 }
 
 article.post ul {
-    color: #000;
-
     /* This works in IE 8 & 9 too */
     /* ... but also 5, 6, 7 */
     filter: alpha(opacity=87);
@@ -476,7 +480,23 @@ ul.sidebar-links li a {
     letter-spacing: 0.25em;
     font-weight: 400;
 }
+ul.icons {
+    display: block;
+    text-align: center;
+    margin-top: 3em;
+}
 
 .fa-tss {
     margin-right: 2px;
+}
+ul.posts-list-button {
+    border: solid 1px #bbb;
+    border-radius: 0.5em;
+    display: block;
+    text-align: center;
+    width: 12em;
+    margin: 0 2em 0 auto;
+}
+ul.posts-list-button a {
+    border-bottom-style: none;
 }

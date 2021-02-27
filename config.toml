@@ -36,7 +36,7 @@ uglyurls = false
     tagsByCount          = true
     includeReadingTime   = true
     # Please see the favicon partial template for more information
-    loadFavicon          = false
+    loadFavicon          = true
     faviconVersion       = ""
 
     # Load custom CSS or JavaScript files. This replaces the deprecated params
@@ -83,29 +83,34 @@ uglyurls = false
 # You can use identifier to prepend a font awesome icon to your text
 
 [[menu.main]]
-    name = "/Blog"
-    url = "/blog"
+    name = "/home"
+    url = "/"
     weight = 1
 
 [[menu.main]]
-    name = "/Projects"
-    url = "/projects"
+    name = "/blog"
+    url = "/blog"
     weight = 2
 
 [[menu.main]]
-    name = "/Publications"
-    url = "/papers"
+    name = "/projects"
+    url = "/projects"
     weight = 3
 
 [[menu.main]]
-    name = "/CV"
-    url = "/resume"
+    name = "/publications"
+    url = "/papers"
     weight = 4
 
 [[menu.main]]
-    name = "/Photo"
-    url = "/photo-gallery"
+    name = "/cv"
+    url = "/resume"
     weight = 5
+
+[[menu.main]]
+    name = "/photo"
+    url = "/photo-gallery"
+    weight = 6
 
 # Insert your username and the icon will apear on the page as long as
 # socialAppearAtTop or socialAppearAtBottom is set to true in the params area

@@ -585,3 +585,18 @@
 	};
 
 })(jQuery);
+
+// Dark mode
+if(sessionStorage.getItem("dark-mode") == "true"){
+    document.body.classList.toggle("dark-mode");
+    document.getElementsByTagName('header')[0].classList.toggle("dark-mode");
+}
+function darkModeToggle() {
+    document.body.classList.toggle("dark-mode");
+    document.getElementsByTagName('header')[0].classList.toggle("dark-mode");
+    if(sessionStorage.getItem("dark-mode") != "true"){
+        sessionStorage.setItem("dark-mode", "true");
+    } else {
+        sessionStorage.setItem("dark-mode", "false");
+    }
+}
