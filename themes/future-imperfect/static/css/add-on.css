@@ -351,10 +351,11 @@ body.is-share-visible #share-menu {
 }
 
 .post {
-    margin: 0 0 2em 0;
+    margin: 0 auto 2em auto;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
+    max-width: 70em;
 }
 
 #content img {
@@ -482,12 +483,12 @@ ul.icons {
     margin-right: 2px;
 }
 ul.posts-list-button {
-    border: solid 1px #bbb;
+    border: solid 1px #555;
     border-radius: 0.5em;
     display: block;
     text-align: center;
     width: 12em;
-    margin: 0 2em 0 auto;
+    margin: 0 auto 0 auto;
 }
 ul.posts-list-button a {
     border-bottom-style: none;
