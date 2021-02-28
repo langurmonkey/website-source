@@ -39,7 +39,7 @@ I use this configuration in the following machines:
 
 ## Dotfiles project
 
-All of the configuration files are hosted in my [dotfiles repository](https://gitlab.com/langurmonkey/dotfiles). I try to keep things clean, simple and generic. For more information see this [post](/blog/my-dotfiles) where I originally shared the repo.
+All of the configuration files are hosted in my [dotfiles repository](https://gitlab.com/langurmonkey/dotfiles). I try to keep things clean, simple and generic. For more information see this [post](/blog/2019/my-dotfiles) where I originally shared the repo.
 
 ## Bootstrapping and deploying
 
@@ -75,7 +75,7 @@ I've played around with [`st`](https://st.suclkess.org) but I'm a fan of having 
 
 ## Bar
 
-I tried a few bars: `i3bar`, `i3blocks`, `bumblebee-status`, you name it. The only one which worked with very little quirks and easy config with my two-monitor setup with different DPI is [`polybar`](https://github.com/jaagr/polybar). Also, it looks gorgeous, and it is very easy to write modules for. Check out this [post](/blog/polybar-cpu-memory) for an example of a script which shows CPU and memory usage. 
+I tried a few bars: `i3bar`, `i3blocks`, `bumblebee-status`, you name it. The only one which worked with very little quirks and easy config with my two-monitor setup with different DPI is [`polybar`](https://github.com/jaagr/polybar). Also, it looks gorgeous, and it is very easy to write modules for. Check out this [post](/blog/2019/polybar-cpu-memory) for an example of a script which shows CPU and memory usage. 
 
 <p style="text-align: center">
 <a href="/img/2019/03/polybar.jpg">
