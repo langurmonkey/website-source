@@ -2400,7 +2400,6 @@ ul.actions.fit.small li {
     ul.actions li {
         padding: 1em 0 0 0;
         display: block;
-        text-align: center;
         width: 100%;
     }
 
@@ -2409,7 +2408,6 @@ ul.actions.fit.small li {
     }
 
     ul.actions li > * {
-        width: 100%;
         margin: 0 !important;
     }
 
@@ -2896,24 +2894,13 @@ dl dd {
         width: calc(100% + 3em);
     }
 
-    .post > footer {
-        -moz-align-items: stretch;
-        -webkit-align-items: stretch;
-        -ms-align-items: stretch;
-        align-items: stretch;
-        -moz-flex-direction: column-reverse;
-        -webkit-flex-direction: column-reverse;
-        -ms-flex-direction: column-reverse;
-        flex-direction: column-reverse;
-    }
-
     .post > footer .stats {
         text-align: center;
     }
 
     .post > footer .stats li {
-        margin: 0 0 0 1.25em;
-        padding: 0 0 0 1.25em;
+        margin: 0 0 0 0.1em;
+        padding: 0 0 0 0.1em;
     }
 
 }
