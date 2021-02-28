@@ -155,7 +155,7 @@ article.post ul {
 }
 @media screen and (max-width: 736px) {
     .post > header .title h1 {
-        font-size: 1.1em;
+        font-size: 2.3em;
     }
 }
 
