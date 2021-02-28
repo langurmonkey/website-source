@@ -1546,7 +1546,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 2em;
     font-family: open sans, sans-serif;
     font-weight: 400;
-    line-height: 1.65;
+    line-height: 1.2;
     margin: 0 0 0.5em 0;
 }
 
@@ -1562,7 +1562,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 }
 
 h2 {
-    margin-top: 1.5em;
+    margin: 1.5em 0 0.5em 0;
     font-size: 1.75em;
     font-weight: 400;
 }
@@ -2808,14 +2808,12 @@ dl dd {
         border-left: 0;
         margin: 0 0 0.5em 0;
         padding: 0;
-        text-align: right;
+        text-align: left;
         width: 98%;
     }
 
     .post > header .meta > * {
         border-left: solid 1px rgba(160, 160, 160, 0.3);
-        margin-left: 2em;
-        padding-left: 2em;
     }
 
     .post > header .meta > :first-child {
@@ -2859,7 +2857,7 @@ dl dd {
     .post > header {
         padding: 0em 1.5em 0.5em 1.5em ;
         left: -1.5em;
-        margin: -1.5em 0 1.5em 0;
+        margin: -1.5em 0 0 0;
         width: calc(100% + 3em);
     }
 
@@ -2884,7 +2882,7 @@ dl dd {
 
     .post > header .meta > * {
         border-left: 0;
-        margin: 1em 0 0 0;
+        margin: 0.1em 0 0 0;
         padding-left: 0;
     }
 
@@ -2930,6 +2928,7 @@ header p {
     font-size: 1.1em;
     font-weight: 400;
     margin-top: -0.5em;
+    line-height: 1.4;
 }
 
 /* Table */
