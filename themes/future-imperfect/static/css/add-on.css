@@ -178,10 +178,6 @@ blockquote p {
     clear: both;
 }
 
-.pagination .button {
-    background: white;
-}
-
 /** Social Share Button CSS **/
 #social-share {
     position: relative;
@@ -391,7 +387,6 @@ ul.pagination .button {
 }
 
 #back-to-top {
-    background-color: white;
     bottom: 5px;
     color: #aaaaaa;
     display: none;
