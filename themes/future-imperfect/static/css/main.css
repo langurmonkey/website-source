@@ -2851,17 +2851,16 @@ dl dd {
 @media screen and (max-width: 736px) {
 
     .post {
-        padding: 1.5em 1.5em 0.1em 1.5em ;
-        left: -1.5em;
+        padding: 0;
         margin: 0 0 2em 0;
-        width: calc(100% + (1.5em * 2));
+        width: 100%;
     }
 
     .post > header {
         padding: 0em 1.5em 0.5em 1.5em ;
         left: -1.5em;
         margin: -1.5em 0 0 0;
-        width: calc(100% + 3em);
+        width: 100%;
     }
 
     .post > header .title h2 {

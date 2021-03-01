@@ -400,8 +400,18 @@ ul.pagination .button {
 
 div.recent-posts-item {
     list-style-type: none;
-    min-width: 26em;
+    min-width: 21em;
     display: inline-block;
+}
+@media screen and (max-width: 736px) {
+    div.recent-posts-item {
+        min-width: 0em;
+    }
+}
+@media screen and (max-width: 480px) {
+    div.recent-posts-item {
+        min-width: 0em;
+    }
 }
 
 div.recent-posts-item a {
