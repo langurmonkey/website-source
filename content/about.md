@@ -6,7 +6,7 @@ date = "2019-02-28"
 type = "homepage"
 +++
 
-<img src="/img/myself_col.jpg"
+<img src="/img/myself_v3.jpg"
      alt="My photo"
      style="float: right; margin-left: 50px; width: 25%" />
 
