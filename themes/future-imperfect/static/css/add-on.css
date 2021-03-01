@@ -390,22 +390,6 @@ ul.pagination .button {
     padding-bottom: 1em;
 }
 
-#back-to-top {
-    bottom: 5px;
-    color: #aaaaaa;
-    display: none;
-    position: fixed;
-    right: 5px;
-}
-
-#back-to-top.btt-fade-out {
-    /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
-    -webkit-transition: opacity .3s 0s, visibility 0s 0s;
-    -moz-transition: opacity .3s 0s, visibility 0s 0s;
-    transition: opacity .3s 0s, visibility 0s 0s;
-    opacity: .5;
-}
-
 #tags {
     min-height: 20em;
 }
