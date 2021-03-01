@@ -2596,10 +2596,12 @@ dl dd {
 }
 
 .mini-posts {
-    margin: 0 0 2em 0;
+    padding: 0.4em 4em 0.4em 4em;
+    margin: 0 auto 0 auto;
+    max-width: 70em;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 980px) {
 
     .mini-posts {
         display: -moz-flex;
@@ -2610,6 +2612,8 @@ dl dd {
         -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
         width: calc(100% + 2em);
     }
 
@@ -2629,10 +2633,11 @@ dl dd {
     .mini-posts {
         display: block;
         width: 100%;
+        margin: 0;
     }
 
     .mini-posts > * {
-        margin: 0 0 2em 0;
+        margin: 0;
         width: 100%;
     }
 
@@ -2776,6 +2781,7 @@ dl dd {
         border-left: 0;
         border-right: 0;
         width: 100%;
+        padding: 0;
     }
 
     .post > header {

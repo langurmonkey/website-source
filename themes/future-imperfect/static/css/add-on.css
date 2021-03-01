@@ -415,19 +415,18 @@ ul.pagination .button {
 }
 
 div.recent-posts-item {
-    float: left;
     list-style-type: none;
-    min-width: 21em;
+    min-width: 26em;
+    display: inline-block;
 }
 
 div.recent-posts-item a {
-    font-size: 0.9em;
+    font-size: 0.7em;
 }
 
 div.recent-posts-item time {
     color: #aaa;
     font-size: 0.7em;
-    text-transform: uppercase;
 }
 
 p.caption {
@@ -495,4 +494,12 @@ ul.posts-list-button {
 }
 ul.posts-list-button a {
     border-bottom-style: none;
+}
+h4.latest-posts-bottom  {
+    float: left;
+    margin: 0 1em 0 0;
+}
+.latest-posts-viewall  {
+    font-size: 0.7em;
+    color: #aaa;
 }
