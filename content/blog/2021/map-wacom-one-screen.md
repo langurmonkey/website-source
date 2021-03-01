@@ -6,10 +6,13 @@ date = "2021-03-01"
 linktitle = ""
 description = "How to map a graphics tablet to a single display in a multi-monitor setup in Linux"
 title = "Map Wacom tablet to a single display"
+featured = "wacom-tablet.png"
+featuredalt = "Wacom Intuos graphics tablet"
+featuredpath = "date"
 type = "post"
 +++
 
-I have a Wacom Intuos graphics tablet for my occasional drawing and signing. By default, the tablet area is mapped to the whole screen area, making it almost unusable if you are using two or more monitors, as your drawing application of choice ([Krita](krita.org) in my case) usually resides in one display only. 
+I have a Wacom Intuos graphics tablet for my occasional drawing and signing. By default, the tablet area is mapped to the whole screen area, making it almost unusable if you are using two or more monitors, as your drawing application of choice ([Krita](https://krita.org) in my case) usually resides in one display only. 
 
 Well, turns out there's a very easy way to map the tablet to a single display in Linux with ``xinput``. But first, we need to find out the display we want to map the table to with ``xrandr``.
 
