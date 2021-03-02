@@ -80,7 +80,7 @@ article.post header .title p,
 article.post header .meta p,
 article.post header .meta span,
 article.post footer .stats {
-    font-family: "Raleway", Helvetica, sans-serif;
+    font-family: Helvetica, sans-serif;
     /* Theoretically for IE 8 & 9 (more valid) */
     /* ...but not required as filter works too */
     /* should come BEFORE filter */
@@ -94,6 +94,7 @@ article.post footer .stats {
     opacity: 0.50;
 }
 article.post footer .tags {
+    font-family: monospace;
     padding-left: 1em;
 }
 article.post header .meta p {
@@ -318,7 +319,7 @@ body.is-share-visible #wrapper {
 }
 
 #share-menu .links > li a p {
-    font-family: "Raleway", Helvetica, sans-serif;
+    font-family: Helvetica, sans-serif;
     font-size: 0.6em;
     font-weight: 400;
     letter-spacing: 0.25em;
@@ -419,8 +420,10 @@ div.recent-posts-item a {
 }
 
 div.recent-posts-item time {
+    font-family: monospace;
+    letter-spacing: -0.05em;
     color: #aaa;
-    font-size: 0.7em;
+    font-size: 0.6em;
 }
 
 p.caption {
@@ -464,7 +467,7 @@ ul.sidebar-links li {
 }
 ul.sidebar-links li a {
     color: #333 !important;
-    font-family: "Raleway", Helvetica, sans-serif;
+    font-family: Helvetica, sans-serif;
     font-size: 0.7em;
     letter-spacing: 0.25em;
     font-weight: 400;
@@ -479,6 +482,8 @@ ul.icons {
     margin-right: 2px;
 }
 ul.posts-list-button {
+    font-family: monospace;
+    letter-spacing: -0.05em;
     border: solid 1px #555;
     border-radius: 0.5em;
     display: block;
@@ -496,4 +501,7 @@ h4.latest-posts-bottom  {
 .latest-posts-viewall  {
     font-size: 0.7em;
     color: #aaa;
+}
+div.flexbox {
+    display: flex;
 }

@@ -17,7 +17,11 @@ showpagemeta = "false"
 </article>
 <br />
 <article>
-<strong><a href="https://gitlab.com/gaiasky/gaiasky-catgen">Gaia Sky catalog generation</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-git-square"></i></strong> &mdash; LOD catalog generation for Gaia Sky written in Rust. It supports the integration of multiple catalogs using cross-match information, additional columns cross-referenced by id, extinction and reddening corrections and much more.
+<strong><a href="https://gaia.ari.uni-heidelberg.de/gaiasky/docs">Gaia Sky docs</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-book"></i></strong> &mdash; Documentation pages of Gaia Sky, written in reSyncText with <a href="https://www.spninx-doc.org">Sphinx</a>.
+</article>
+<br />
+<article>
+<strong><a href="https://gitlab.com/gaiasky/gaiasky-catgen">Gaia Sky catgen</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-git-square"></i></strong> &mdash; LOD catalog generation for Gaia Sky written in <a href="https://rust-lang.org">Rust</a>. It supports the integration of multiple catalogs using cross-match information, additional columns cross-referenced by id, extinction and reddening corrections and much more.
 </article>
 <br />
 <article>
