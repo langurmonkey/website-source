@@ -4,7 +4,7 @@ categories = ["Gaia Sky"]
 tags = [ "open source", "data", "astronomy"]
 date = "2021-03-01"
 linktitle = ""
-title = "Using Gaia Sky data to mimic an astrophoto"
+title = "Using Gaia Sky data to mimic astrophoto"
 type = "post"
 +++
 
