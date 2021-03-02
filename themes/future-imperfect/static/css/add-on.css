@@ -94,7 +94,7 @@ article.post footer .stats {
     opacity: 0.50;
 }
 article.post footer .tags {
-    font-family: monospace;
+    font-family: courier,monospace;
     padding-left: 1em;
 }
 article.post header .meta p {
@@ -420,7 +420,7 @@ div.recent-posts-item a {
 }
 
 div.recent-posts-item time {
-    font-family: monospace;
+    font-family: courier,monospace;
     letter-spacing: -0.05em;
     color: #aaa;
     font-size: 0.6em;
@@ -482,7 +482,7 @@ ul.icons {
     margin-right: 2px;
 }
 ul.posts-list-button {
-    font-family: monospace;
+    font-family: courier,monospace;
     letter-spacing: -0.05em;
     border: solid 1px #555;
     border-radius: 0.5em;

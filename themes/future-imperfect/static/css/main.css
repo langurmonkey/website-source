@@ -1617,7 +1617,7 @@ a code {
 code {
     background: rgba(160, 160, 160, 0.075);
     border: solid 1px rgba(160, 160, 160, 0.3);
-    font-family: "Courier New", monospace;
+    font-family: courier,monospace;
     font-size: 0.9em;
     margin: 0 0;
     padding: 0.25em 0.25em;
@@ -1634,7 +1634,7 @@ div.highlight {
 
 pre {
     -webkit-overflow-scrolling: touch;
-    font-family: "Courier New", monospace;
+    font-family: courier,monospace;
     font-size: 0.9em;
     margin: 0 0 0 0;
 }
@@ -2454,7 +2454,7 @@ ul.posts article {
 }
 
 div.post-in-list time{
-    font-family: monospace;
+    font-family: courier,monospace;
     letter-spacing: -0.07em;
     color: #aaa;
     font-size: 0.8em;
@@ -2752,7 +2752,7 @@ dl dd {
 
 .post > footer .stats li {
     display: inline-block;
-    font-family: monospace;
+    font-family: courier,monospace;
     font-size: 0.6em;
     font-weight: 400;
     letter-spacing: 0.1em;
@@ -3044,7 +3044,8 @@ body {
 }
 
 #header h1 a {
-    letter-spacing: normal;
+    font-family: courier,monospace;
+    letter-spacing: -0.07em;
     font-size: 0.8em;
 }
 #header h2 a {
@@ -3078,10 +3079,10 @@ body {
 
 #header .links ul li a {
     border-bottom: 0;
-    font-family: monospace;
+    font-family: courier,monospace;
     font-size: 0.8em;
     font-weight: 400;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.1em;
     text-transform: lowercase;
 }
 
@@ -3466,7 +3467,7 @@ body.is-menu-visible #wrapper {
     font-size: 1.0em;
     text-transform: lowercase;
     font-weight: 100;
-    font-family: monospace;
+    font-family: courier,monospace;
 }
 
 #menu .links > li a p {
