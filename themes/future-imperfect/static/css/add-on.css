@@ -1,11 +1,11 @@
 body {
-    color: black;
-    background-color: white;
+    color: #000;
+    background-color: #fcfcfc;
 }
 
 .dark-mode{
-    color: white !important;
-    background-color: black !important;
+    color: #ddd !important;
+    background-color: #111 !important;
 }
 
 pre {
