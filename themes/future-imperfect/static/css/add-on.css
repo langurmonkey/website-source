@@ -354,7 +354,7 @@ body.is-share-visible #share-menu {
 }
 
 .post {
-    margin: 0 auto 2em auto;
+    margin: 2em auto 2em auto;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
