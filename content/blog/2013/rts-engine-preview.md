@@ -26,3 +26,10 @@ I recorded a **short video** demonstrating some unit movement and the real time 
 
 <br />
 The source code is open and public in this <i class="fa fa-gitlab"></i> [Gitlab repository](https://gitlab.com/langurmonkey/rts-engine).
+
+*Edit March 2021:*
+
+I have since been working on this project on and off, especially lately, dusting it off and polishing it a lot. There is now a private fork with many more features, and most of the development efforts will be focused on that. However, the public repository will still host the open source project. The new features include arbitrary zoom ins and outs, an ECS-backed model (entity component system) or a lot of awareness features concerning the map and the units. Below is a video of the state of the project before the private fork was created.
+
+<iframe id="lbry-iframe" width="100%" height="500" src="https://lbry.tv/$/embed/rts-fogwar-zoom-pathfinding/16072a7fdd4569bc72d20494a7e471fbfd618e27?r=621u1MynW1hV1p9kTVvSiB3pZyjj9tJW" allowfullscreen></iframe>
+
