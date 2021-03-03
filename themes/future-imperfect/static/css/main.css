@@ -1508,8 +1508,10 @@ a.mainlogo:hover {
 }
 
 article a.external:after{
-    content: url(/img/main/external.png);
-    margin: 0 0 0 5px;
+    content: "\f08e";
+    font-family: ForkAwesome;
+    font-size: 0.6em;
+    margin: 0 0 0 2px;
 }
 
 article a.share-btn:after {
