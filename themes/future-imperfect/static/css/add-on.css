@@ -80,7 +80,7 @@ article.post header .title p,
 article.post header .meta p,
 article.post header .meta span,
 article.post footer .stats {
-    font-family: Helvetica, sans-serif;
+    font-family: courier, monospace;
     /* Theoretically for IE 8 & 9 (more valid) */
     /* ...but not required as filter works too */
     /* should come BEFORE filter */
@@ -367,7 +367,7 @@ body.is-share-visible #share-menu {
 }
 
 #content p a, #content ul li a {
-    border-bottom: dotted 2px #2A4;
+    border-bottom: dotted 1px #2A4;
 }
 
 #content p a:hover, #content ul li a:hover {
@@ -504,4 +504,11 @@ h4.latest-posts-bottom  {
 }
 div.flexbox {
     display: flex;
+}
+#license{
+    margin: -3em auto 0 auto;
+    font-size: 0.5em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #777;
 }
