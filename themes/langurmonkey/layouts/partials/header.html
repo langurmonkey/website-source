@@ -58,6 +58,8 @@
         <!-- If the value "default" is passed into the param then we will first
              load the standard css files associated with the theme -->
         {{ if or (in ($.Scratch.Get "cssFiles") "default") (eq ($.Scratch.Get "cssFiles") false) }}
+            <link rel="stylesheet" href="/css/theme-pink-blue.css" />
+        <!--<link rel="stylesheet" href="/css/theme-green.css" />-->
             <link rel="stylesheet" href="/css/main.css" />
             <link rel="stylesheet" href="/css/add-on.css" />
             <link rel="stylesheet" href="/css/fork-awesome.min.css">

@@ -7,20 +7,6 @@ html5up.net | @n33co
 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
  */
 
-:root {
-    --title-color: #f35888;
-    --title-color-hover: #95bf0d;
-    --link-color: #008fb3;
-    --link-color-hover: #4ddbff;
-    --code-color: #669900;
-
-    --bg-color: #ececec;
-    --fg-color: #333;
-
-    --bg-color-dark: #181818;
-    --fg-color-dark: #bbb;
-}
-
 /* Reset */
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {

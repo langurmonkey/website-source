@@ -1,0 +1,13 @@
+:root {
+    --title-color: #2a4;
+    --title-color-hover: #071;
+    --link-color: #071;
+    --link-color-hover: #2a4;
+    --code-color: #669900;
+
+    --bg-color: #ececec;
+    --fg-color: #333;
+
+    --bg-color-dark: #111;
+    --fg-color-dark: #bbb;
+}

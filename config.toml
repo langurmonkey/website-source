@@ -1,7 +1,7 @@
 baseurl = ""
 languageCode = "en-gb"
-title = "Toni Sagristà Sellés"
-theme = "future-imperfect"
+title = "Jumping Langur - Toni Sagristà Sellés"
+theme = "langurmonkey"
 preserveTaxonomyNames = true
 paginate = 5
 enableRobotsTXT = true
@@ -24,7 +24,8 @@ uglyurls = false
     # Sets the meta tag description, usually reserved for the main page
     description          = "Personal website and portfolio"
     # This will appear on the top left of the navigation bar
-    navbarTitle          = "Toni Sagristà Sellés"
+    #navbarTitle          = "Toni Sagristà Sellés"
+    navbarTitle          = "Jumping Langur"
     # Social media buttons that appear on the sidebar
     socialAppearAtTop    = true
     socialAppearAtBottom = false

@@ -13,7 +13,7 @@ How the hell did you end up here?
      alt="My photo"
      style="float: right; margin-left: 50px; width: 25%" />
 
-Anyway, my name is **Toni Sagristà Sellés** and I am a computer scientist and M.Sc. in astrophysics. I like computer graphics and visualization, astronomy, photography (sometimes), snowboarding, playing and watching football, drawing horribly, playing with my kids, and occasionally gaming. I sometimes use the aliases *jumpinglangur* and *langurmonkey*.
+Anyway, my name is **Toni Sagristà Sellés** and I am a computer scientist and M.Sc. in astrophysics. I like computer graphics and visualization, astronomy, photography (sometimes), snowboarding, playing and watching football, drawing horribly, playing with my kids, and occasionally gaming. I sometimes use the aliases `jumpinglangur` and `langurmonkey`.
 
 I'm currently working in the [Gaia](https://sci.esa.int/web/gaia) group of the [Astronomisches Rechen-Institut](https://ari.uni-heidelberg.de) and doing research in scientific visualization in the [visual computing group](https://vcg.iwr.uni-heidelberg.de) of the [Interdisciplinary Center for Scientific Computing](https://www.iwr.uni-heidelberg.de).
 

@@ -11,8 +11,8 @@ body {
   margin: 0;
 }
 body {
-  background: #111;
-  color: #aaa;
+  background: #181818;
+  color: #bbb;
   font-family: open sans, sans-serif;
   font-size: 16px;
   font-weight: lighter;
@@ -39,8 +39,8 @@ a {
   padding: 2em;
 }
 header {
-  background: #111;
-  color: #2a4;
+  background: #181818;
+  color: #f35888;
   font-size: 1.8em;
   margin-bottom: 1.1em;
 }
@@ -50,7 +50,7 @@ h1 {
   font-size: 1.5em;
 }
 h1 a {
-  color: #2a4;
+  color: #f35888;
 }
 footer {
   color: #666;
@@ -62,7 +62,7 @@ footer a {
   color: #17baef;
 }
 nav.breadcrumbs {
-  border-bottom: 1px solid #aaa;
+  border-bottom: 1px solid #bbb;
   font-size: 1.2em;
   margin-bottom: 2em;
   padding: 0em 0em 0.8em 0.1em;
