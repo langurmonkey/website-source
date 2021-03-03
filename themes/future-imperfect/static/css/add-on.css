@@ -1,11 +1,11 @@
 body {
-    color: #000;
-    background-color: #fcfcfc;
+    color: var(--fg-color);
+    background-color: var(--bg-color);
 }
 
 .dark-mode{
-    color: #ddd !important;
-    background-color: #111 !important;
+    color: var(--fg-color-dark) !important;
+    background-color: var(--bg-color-dark) !important;
 }
 
 pre {
@@ -91,7 +91,7 @@ article.post footer .stats {
     filter: alpha(opacity=70);
 
     /* Modern Browsers */
-    opacity: 0.50;
+    opacity: 0.60;
 }
 article.post footer .tags {
     font-family: courier,monospace;
@@ -367,7 +367,7 @@ body.is-share-visible #share-menu {
 }
 
 #content p a, #content ul li a {
-    border-bottom: dotted 1px #2A4;
+    border-bottom: dotted 1px #409fbc;
 }
 
 #content p a:hover, #content ul li a:hover {

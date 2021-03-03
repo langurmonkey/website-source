@@ -142,24 +142,24 @@ showpagemeta = "false"
         <li><strong>Shell scripting</strong> - bash, csh.</li>
         </ul>
       </li>
-      <li><b>OpenGL/GLSL</b> - Deep knowledge of OpenGL (2.x, 3.x, 4.x and ES).</li>
+      <li><strong>OpenGL/GLSL</strong> - Deep knowledge of OpenGL (2.x, 3.x, 4.x and ES).</li>
       <li><strong>Databases</strong> - MySQL, PostgreSQL, OracleDB, HyperSQL and specific languages like ADQL.</li>
-      <li><b>vim</b> - My main development tool, aided with handy plugins.</li>
-      <li><b>IntelliJ IDEA</b> - I sometimes use it for development.</li>
-      <li><b>Eclipse IDE</b> - I used the Eclipse IDE as my main developing environment in the past&nbsp;and worked<br>several Eclispe technologies such as GEF and GMF.</li>
-      <li><b>HPC</b> - Tuning and profiling code for its execution in the supercomputers at <a href="http://cesca.cat" target="_blank">CESCA</a> and <a href="http://www.bsc.es">BSC</a>.</li>
-      <li><b>Android SDK</b> - Expertise in the Android SDK. Two applications published in the Play store (see my <a href="/portfolio">Portfolio</a>).</li>
-      <li><b>LaTeX</b> - I use LaTeX to format almost all the documents I produce, including technical work, science reports and my <a href="/sites/default/files/pdf/cv.pdf">resumé</a>.</li>
-      <li><b>Drupal/WordPress</b> - I set up a Drupal environment from scratch to build my previous site.</li>
-      <li><b>Web technologies</b> - I am somewhat proficient in web technologies.
+      <li><strong>vim</strong> - My main development tool, aided with handy plugins.</li>
+      <li><strong>IntelliJ IDEA</strong> - I sometimes use it for development.</li>
+      <li><strong>Eclipse IDE</strong> - I used the Eclipse IDE as my main developing environment in the past&nbsp;and worked<br>several Eclispe technologies such as GEF and GMF.</li>
+      <li><strong>HPC</strong> - Tuning and profiling code for its execution in the supercomputers at <a href="http://cesca.cat" target="_blank">CESCA</a> and <a href="http://www.bsc.es">BSC</a>.</li>
+      <li><strong>Android SDK</strong> - Expertise in the Android SDK. Two applications published in the Play store (see my <a href="/portfolio">Portfolio</a>).</li>
+      <li><strong>LaTeX</strong> - I use LaTeX to format almost all the documents I produce, including technical work, science reports and my <a href="/sites/default/files/pdf/cv.pdf">resumé</a>.</li>
+      <li><strong>Drupal/WordPress</strong> - I set up a Drupal environment from scratch to build my previous site.</li>
+      <li><strong>Web technologies</strong> - I am somewhat proficient in web technologies.
         <ul><li><strong>CSS3&HTML5</strong> - The future of the web.</li>
         <li><strong>Javascript</strong> - I also knew well AJAX and jQuery.</li>
         <li><strong>PHP</strong> - I coded personal websites in PHP a while ago.</li>
         <li><strong>Others</strong> - Dreamweaver+VBScript+ASP and FrontPage (a very long time ago). Hugo (this site).</li>
         </ul>
       </li>
-      <li><b>NLP. 2007</b> - Natural Language Processing knowledge, acquired developing the final year project.</li>
-      <li><b>E-Business and Informatics for e-Enterprise courses. 2005</b> - The University of Reading, Computer Science department.</li>
+      <li><strong>NLP. 2007</strong> - Natural Language Processing knowledge, acquired developing the final year project.</li>
+      <li><strong>E-Business and Informatics for e-Enterprise courses. 2005</strong> - The University of Reading, Computer Science department.</li>
     </ul>
     <h2 class="cv">Publications and projects</h2>
     <ul><li>
