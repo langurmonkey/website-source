@@ -5,9 +5,9 @@
 }
 
 #pic{
-	float: right;
-	margin: -30px 0 0 0;
-	width: 25%;
+    float: right;
+    margin: -30px 0 0 0;
+    width: 25%;
 }
 #objective{
 }
@@ -21,63 +21,63 @@ ul {
 }
 
 #objective p{
-	font-family: Georgia, Serif;
-	font-size: 0.85em;
-	font-style: italic;
-	color: #666;
+    font-family: Georgia, Serif;
+    font-size: 0.85em;
+    font-style: italic;
+    color: #666;
 }
 p.pdflink{
-	float:right;
+    float:right;
 }
 p.contactinfo{
-	width: 295px;
+    width: 30em;
 }
 div.contact-info h1{
-	font-size: 2em;
+    font-size: 2em;
 }
 dl.cv{
-	margin-top: 10px;
+    margin-top: 10px;
 }
 dt.cv {
-	font-style: italic;
-	font-weight: bold;
-	font-size: 18px;
-	text-align: right;
-	padding: 10px 26px 0 0;
-	width: 120px;
-	float: left;
-	height: 85px;
-	border-right: 1px solid #999;
-	color: #999;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: right;
+    padding: 10px 26px 0 0;
+    width: 8em;
+    float: left;
+    height: 85px;
+    border-right: 1px solid #999;
+    color: #999;
 }
 dd.cv {
-	margin-left: 0;
-	min-height: 97px;
-	padding-left: 160px;
+    margin-left: 0;
+    min-height: 97px;
+    padding-left: 160px;
 }
 dd.clear {
-	float: none;
-	margin: 0;
-	height: 15px;
+    float: none;
+    margin: 0;
+    height: 15px;
 }
 dd p{
-	margin: 0px;
+    margin: 0px;
 }
 dd h2{
-	margin-top: 0px;
-	font-size: 1em;
+    margin-top: 0px;
+    font-size: 1em;
 }
 
 h1.fn{
-	font-size: 1.5em;
-	margin-bottom: 0px;
+    font-size: 1.5em;
+    margin-bottom: 0px;
 }
 div.subtitle{
-	color: #9A9A9A;
-	margin-bottom: 10px;
+    color: #9A9A9A;
+    margin-bottom: 10px;
 }
 h2.cv{
-	margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 @media only screen and (max-width: 900px){
@@ -88,7 +88,7 @@ h2.cv{
     div.subtitle {
         font-size: 0.85em;
     }
-    
+
     #objective p {
         font-size: 0.8em;
     }
