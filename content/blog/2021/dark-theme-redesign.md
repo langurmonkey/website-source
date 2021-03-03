@@ -78,7 +78,7 @@ Qutebrowser really makes things easy. You just need to add the line
 ```python
 c.colors.webpage.prefers_color_scheme_dark = True
 ```
-to your ``config.py``, or look for the setting ``colors.webpage.prefers_color_scheme_dark`` in ``:set`` and set it to ``true``.
+to your ``config.py``, or look for the setting ``prefers_color_scheme_dark`` in ``:set`` and set it to ``true``.
 
 Dark mode in firefox
 --------------------

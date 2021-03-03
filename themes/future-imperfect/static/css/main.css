@@ -3070,6 +3070,7 @@ body {
     padding: 0 0 0 1.5em;
     font-size: 1em;
     white-space: nowrap;
+    margin-top: 0;
 }
 
 #header h1 a {
