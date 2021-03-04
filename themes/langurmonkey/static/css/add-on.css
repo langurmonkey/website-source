@@ -506,9 +506,10 @@ div.flexbox {
     display: flex;
 }
 #license{
-    margin: -3em auto 0 auto;
     font-size: 0.5em;
+    font-family: sans-serif;
     text-transform: uppercase;
-    text-align: center;
     color: #777;
+    text-align: center;
+    margin: -3em auto 0 auto;
 }
