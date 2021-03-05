@@ -21,9 +21,9 @@ type = "post"
 
 Up to Gaia Sky version `2.1.7`, we used [Jython](https://www.jython.org) to run the scripts. Jython is a Java implementation of Python. With it, it is possible to run a Python interpreter inside the JVM and have virtually unlimited access to the JVM objects and features. This allowed for a seamless integration between Gaia Sky and the scripts. You could have very easy access to *everything* from a script. This, of course, introduced lots of risks. For one, it was very easy to create a script which completely destroyed the Gaia Sky instance:
 
-The 'official' way of interacting with Gaia Sky was an object called `EventScriptingInterface`, which is an implementation of the API at [`IScriptingInterface`](https://gitlab.com/langurmonkey/gaiasky/blob/master/core/src/gaia/cu9/ari/gaiaorbit/script/IScriptingInterface.java):
+The 'official' way of interacting with Gaia Sky was an object called `EventScriptingInterface`, which is an implementation of the API at [`IScriptingInterface`](https://gitlab.com/langurmonkey/gaiasky/blob/master/core/src/gaiasky/script/IScriptingInterface.java):
 
-```python
+{{< highlight python "linenos=table" >}}
 from gaia.cu9.ari.gaiaorbit.script import EventScriptingInterface
 
 gs = EventScriptingInterface.instance()
@@ -32,16 +32,16 @@ gs = EventScriptingInterface.instance()
 gs.APImethod1()
 gs.APImethod2()
 [...]
-
-```
+{{< /highlight >}}
 
 However, nobody was prevented to create and run something like this script, let's call it `gaiasky-killer.py`.
 
-```python
+{{< highlight python "linenos=table" >}}
 from gaia.cu9.ari.gaiaorbit import GaiaSky
 
 GaiaSky.instance.dispose()
-```
+{{< /highlight >}}
+
 This very short script would kill the running instance of Gaia Sky in the blink of an eye. It is not a very severe vulnerability, as the user needs to explicitly run the script to make it happen, and at the end of the day only Gaia Sky is killed, which itself runs in a sandboxed JVM. But still. 
 
 Other drawbacks derived from using Jython are listed here:
@@ -62,7 +62,7 @@ This opens a world of possibilities. For starters, Python 3 may be used. Also, G
 
 The new scripts will need to import and create the `py4j` Java gateway, and then use its `entry_point` to acces the API. At the end of the script, it is necessary to close the gateway object.
 
-```python
+{{< highlight python "linenos=table" >}}
 from py4j.java_gateway import JavaGateway, GatewayParameters
 
 gateway = JavaGateway(gateway_parameters=GatewayParameters(auto_convert=True))
@@ -71,7 +71,7 @@ gs = gateway.entry_point
 [...]
 
 gateway.close()
-```
+{{< /highlight >}}
 
 The initialisation with `auto_convert=True` enables the automatic conversion from Python collections to their java counterparts. This is not strictly necessary, but highly recommended. Otherwise, you need to do the conversion yourself before sending the objects to the Java side via the API calls. In our case, we only ever send `double[]` array objects, so we duplicated the methods which need such parameter types so that they accept instances of `java.util.List` as well. This makes them work with the automatic conversion provided by Py4J, and it is very convenient for the user, since now she can pass Python lists directly to the API.
 
@@ -96,7 +96,7 @@ Your browser does not support the video tag.
 
 ### Parameter types
 
-Another point to mention is that Py4J is very strict with the parameter types. Before, we could use integer values as floating-point parameters and the Jython-Java tandem would do the conversion automatically, just as if the calling code was in Java. Now, we can't pass an integer to a location where the API expects a float. We try to mitigate this by creating several method definitions accepting all combinations of `double` and `long`, but still it is generally safer to stick to the types defined in the [API](https://gitlab.com/langurmonkey/gaiasky/blob/master/core/src/gaia/cu9/ari/gaiaorbit/script/IScriptingInterface.java).
+Another point to mention is that Py4J is very strict with the parameter types. Before, we could use integer values as floating-point parameters and the Jython-Java tandem would do the conversion automatically, just as if the calling code was in Java. Now, we can't pass an integer to a location where the API expects a float. We try to mitigate this by creating several method definitions accepting all combinations of `double` and `long`, but still it is generally safer to stick to the types defined in the [API](https://gitlab.com/langurmonkey/gaiasky/blob/master/core/src/gaiasky/script/IScriptingInterface.java).
 
 For example, the API method
 
@@ -118,11 +118,11 @@ gs.galacticToInternalCartesian(10.0, 43.5, 2.0)
 
 ### Callbacks
 
-Before, it was very easy to implement Java interfaces from Python to implement functionality from scripts. For instance, [some API calls](https://gitlab.com/langurmonkey/gaiasky/blob/master/core/src/gaia/cu9/ari/gaiaorbit/script/IScriptingInterface.java#L1405) get a runnable object and park it after the main loop, so that the code in `run()` is executed once every cycle of the main loop.
+Before, it was very easy to implement Java interfaces from Python to implement functionality from scripts. For instance, [some API calls](https://gitlab.com/langurmonkey/gaiasky/blob/master/core/src/gaiasky/script/IScriptingInterface.java#L1405) get a runnable object and park it after the main loop, so that the code in `run()` is executed once every cycle of the main loop.
 
 The new system also allows for this kind of behaviour. Now, we need to add an extra object `CallbackServerParameter` to the recipe, enabling the synchronization of the shared objects. Let's see an example:
 
-```python
+{{< highlight python "linenos=table" >}}
 from py4j.java_gateway import JavaGateway, GatewayParameters, CallbackServerParameters
 
 class FrameCounterRunnable(object):
@@ -152,7 +152,7 @@ gs.sleep(15.0)
 	gs.unparkRunnable("frame_counter")
 
 gateway.close()
-```
+{{< /highlight >}}
 
 This example parks a runnable that counts frames for 15 seconds. A more useful example can be found [here](https://gitlab.com/langurmonkey/gaiasky/blob/master/assets/scripts/showcases/line-objects-update.py). In this one, a polyline is created between the Earth and the Moon. Then, a parked runnable is used to update the line points with the new postions of the bodies. Finally, time is started so that the bodies start moving and the line positions are updated correctly and in synch with the main thread.
 

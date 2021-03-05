@@ -3,9 +3,9 @@ author = "Toni Sagrista Selles"
 categories = ["Particle Physics Simulator"]
 tags = [ "android", "programming"]
 date = "2012-05-05"
-description = "New bugfix version of Particle Physics Simulator for Android (v3.2.4)"
+description = "New friction feature added in Particle Physics Simulator 3.3"
 linktitle = ""
-title = "Bug fixes and more in 3.2.4"
+title = "Friction added in version 3.3"
 type = "post"
 +++
 

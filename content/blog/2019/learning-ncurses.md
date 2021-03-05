@@ -120,7 +120,7 @@ char ch = getch();
 
 After managing the user input, we do the collision checking using the state stored in the game window by ncurses. Basically, if we hit any character other than a whitespace we have a collision. This results in a very simple collision check function:
 
-{{< highlight cpp >}}
+{{< highlight cpp "linenos=table" >}}
 int collision_check(game_state* state, int y, int x)
 {
     int testch = mvwinch(state->gamew, y, x) & A_CHARTEXT;
@@ -134,6 +134,7 @@ At the end of the loop, we need to refresh both the standard screen and the wind
 refresh();
 wrefresh(state.gamew);
 {{< /highlight >}}
+
 
 ## Conclusion
 
