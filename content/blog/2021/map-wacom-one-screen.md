@@ -17,7 +17,7 @@ I have a Wacom Intuos graphics tablet for my occasional drawing and signing. By 
 Well, turns out there's a very easy way to map the tablet to a single display in Linux with ``xinput``. But first, we need to find out the display we want to map the table to with ``xrandr``.
 
 ```bash
-$ xrandr
+$  xrandr
 Screen 0: minimum 8 x 8, current 7740 x 2160, maximum 32767 x 32767
 DVI-D-0 connected 3840x2160+0+0 (normal left inverted right x axis y axis) 531mm x 299mm
    1920x1080     60.00*+
@@ -56,7 +56,7 @@ In my case, I have two displays. To the left, I use a 1080p Fujitsu connected vi
 Now, before actually doing the mapping with ``xinput``, we need to find the identifiers of our Wacom device:
 
 ```bash
-$ xinput | grep Wacom
+$  xinput | grep Wacom
 ⎜   ↳ Wacom Intuos BT S Pad                   	id=11	[slave  pointer  (2)]
 ⎜   ↳ Wacom Intuos BT S Pen Pen (0x8880f16b)  	id=13	[slave  pointer  (2)]
     ↳ Wacom Intuos BT S Pen                   	id=12	[slave  keyboard (3)]
@@ -65,9 +65,9 @@ $ xinput | grep Wacom
 Here they are. The IDs are 11, 12 and 13, so let's map them to ``DP-2``:
 
 ```bash
-$ xinput map-to-output 11 DP-2
-$ xinput map-to-output 12 DP-2
-$ xinput map-to-output 13 DP-2
+xinput map-to-output 11 DP-2
+xinput map-to-output 12 DP-2
+xinput map-to-output 13 DP-2
 ```
 
 And that's it. Easy-peasy!

@@ -32,7 +32,7 @@ The ``darkmode.js`` file
 
 By default, the browser preference is queried and honored. If the user chooses to override the default behavior via the UI button, then the ``sessionStorage`` is used. Below is the ``darkmode.js`` file I'm using.
 
-```javascript
+{{< highlight javascript "linenos=table" >}}
 if(sessionStorage.getItem("dark-mode") == "true") {
     // Toggle dark-mode class if "dark-mode" property of sessionStorage is true
     darkModeAdd();
@@ -55,17 +55,17 @@ function darkModeToggle() {
     hasDark = document.body.classList.contains("dark-mode");
     sessionStorage.setItem("dark-mode", hasDark);
 }
-```
+{{< /highlight >}}
 
 It contains two functions and an initial setup. The second function, ``darkModeToggle()``, is run whenever the user clicks on the dark mode UI control (the little light bulb <i class="fa fa-lightbulb-o"></i> at the top of the page). It sets the ``"dark-mode"`` property in the ``sessionStorage``. 
 
-```html
+{{< highlight html "linenos=table" >}}
 <li class="menu">
     <a href="javascript:darkModeToggle()" style="border: none;" title="Toggle dark mode">
         <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
     </a>
 </li>
-```
+{{< /highlight >}}
 
 
 All that's left is actually implementing the dark mode style in your CSS files. In my case, it is very minimal. I just change the background and text color defaults and call it a day.

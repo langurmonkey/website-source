@@ -19,9 +19,9 @@ To that purpose, we will use the [``memmap``](https://docs.rs/memmap/0.7.0/memma
 
 In my case, since I only need to read text files line by line, reading is the easy part. My input files may or may not be gzipped, so my ``Read`` objects need to be wrapped up in a ``Box``, since its size is not known at compile time. Other than that, we need to create a memory mapped buffer and pass it on to the actual reader creation.
  
-The snippet below shows how to read a text file by memory mapping it.
+The snippet below shows how to read a text file by memory mapping it (memory map creation highlighted).
 
-```rust
+{{< highlight rust "linenos=table,hl_lines=5 6" >}}
     pub fn load_file(&self, file: &str) {
         let mut skipped: usize = 0;
         let is_gz = file.ends_with(".gz") || file.ends_with(".gzip");
@@ -47,7 +47,7 @@ The snippet below shows how to read a text file by memory mapping it.
             }
         }
     }
-```
+{{< /highlight >}}
 
 
 ## Writing memory mapped binary files
@@ -69,9 +69,11 @@ The file format used is a binary format, [described here](https://gaia.ari.uni-h
     * 1 single-precision integer (32-bit) – namelen -> Length of name
     * namelen * char (16-bit * namelen) – Characters of the star name, where each character is encoded with UTF-16
 
-Writing to a memory mapped file in rust is really almost the same as writing to a byte buffer. You need to know the exact size of the file beforehand, and then fill the buffer with the right bytes at the right positions. As you can see below, that's exactly what I'm doing. I first compute the final size of the file and only then, I create the mapped buffer and fill it up, making sure that each element is in the right position.
+Writing to a memory mapped file in rust is really almost the same as writing to a byte buffer. You need to know the exact size of the file beforehand, and then fill the buffer with the right bytes at the right positions. As you can see below, that's exactly what I'm doing. I first compute the final size of the file (lines 9 to 39) and only then I create the mapped buffer (highlighted lines) and fill it up, making sure that each element is in the right position (lines 62 through end).
 
-```rust
+Most of the code below pertains to my particular binary format, but it beautifully exemplifies how to fill up the buffer with different data types and variable numbers of them.
+
+{{< highlight rust "linenos=table,hl_lines=58 59" >}}
 pub fn write_particles_mmap(octree: &Octree, list: Vec<Particle>, output_dir: &str) {
     let mut file_num = 0;
     for node in octree.nodes.borrow().iter() {
@@ -262,8 +264,10 @@ pub fn write_particles_mmap(octree: &Octree, list: Vec<Particle>, output_dir: &s
     }
     log::info!("Written {} particle files", file_num);
 }
-```
+{{< /highlight >}}
 
 ## Conclusion
 
-That is all. The repository that contains this code is here: [``gaiasky-catgen``](https://gitlab.com/gaiasky/gaiasky-catgen). It constitutes my first foray into Rust, so a lot of the code may not be fully idiomatic (or idiomatic at all), and I'm sure there's better way to achieve some things, but it works and it is much faster than the Java version, and consumes much less memory. In this post we have seen how to deal with memory mapped files in Rust to both read and write data faster, avoiding memory copies.
+That is all. The repository that contains this code is here: [``gaiasky-catgen``](https://gitlab.com/gaiasky/gaiasky-catgen). It constitutes my first foray into Rust, so a lot of the code may not be fully idiomatic (or idiomatic at all), and I'm sure it's not the fastest also. However, it works, it is much faster than the Java version, and consumes much less memory. 
+
+In this post we have seen how to deal with memory mapped files in Rust to both read and write data faster, avoiding memory copie,s.

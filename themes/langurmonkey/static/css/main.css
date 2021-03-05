@@ -1631,7 +1631,6 @@ a code {
 code {
     background: rgba(160, 160, 160, 0.05);
     border: solid 1px rgba(160, 160, 160, 0.3);
-    border-radius: 0.3em;
     font-family: courier,monospace;
     font-size: 0.9em;
     margin: 0 0;
@@ -1657,7 +1656,7 @@ pre {
 pre code {
     display: block;
     line-height: 1.75em;
-    padding: 1em 1.5em;
+    padding: 1em 0.6em;
     overflow-x: auto;
 }
 
