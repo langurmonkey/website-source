@@ -22,12 +22,12 @@ The project I'm sharing today is [`tsnake`](https://gitlab.com/langurmonkey/tsna
 
 Let's see how it works. The game itself is initialised and run within the function `start_game(int, int)`. This function gets two paramters: the starting length of the snake and the map identifier. When a game finishes either because the user won or because she crashed, a window pops up displaying the final score and the user is given a couple of options. Either quit or keep playing. If she chooses to keep playing, the game resets with a new map. That is implemented in a simple loop in the main function:
 
-```C++
+{{< highlight cpp "linenos=table" >}}
 int ret;
 while(ret != R_QUIT){
     ret = start_game(start_length, ++map_id);
 }
-```
+{{< /highlight >}}
 
 The first thing we do when starting a new game is creating the game window. To do so, we use the `newwin(nlines, ncols, y, x)` ncurses call. This returns a `WINDOW` type object, which we keep in the game state structure, along with its width and height as cols and lines. The window has a size of  [`LINES-1`, `COLS`], leaving the last line for the status bar, where we print some useful information like the key bindings, the current score or the speed of the snake.
 
@@ -55,7 +55,7 @@ In the following sections we will mostly use the function variants which take in
 
 The code snippet that follows draws the initial map, which contains a pool with a fence surrounding it.
 
-```C++
+{{< highlight cpp "linenos=table" >}}
 // pool
 wattroff(state->gamew, COLOR_PAIR(C_WALL));
 wattron(state->gamew, COLOR_PAIR(C_WATER));
@@ -77,7 +77,8 @@ mvwvline(state->gamew, ty, bx, WALL, by - ty);
 mvwhline(state->gamew, by, tx, WALL, bx - tx + 1);
 mvwhline(state->gamew, ty, tx, WALL, state->gw_w * 0.21);
 mvwhline(state->gamew, ty, state->gw_w * 0.6, WALL, state->gw_w * 0.21);
-```
+{{< /highlight >}}
+
 Let's break it down a little. The variable `state` holds the game state, and contains the game windoe (`gamew`), the window width and height (`gw_w` and `gw_h`), the current score, the snake position and a few more pieces of information. In this snippet, we use `wattroff(*win, attr)` and `wattron(*win, attr)` to control the colors with which the characters will be printed. We use defines to link color location integers with meaningful names like `C_WATER` (blue) or `C_WALL` (red).
 
 Then, we can use `mvwhline(*win, y, x, char, num)` and/or `mvwvline(*win, y, x, char, num)` to create vertical and horizontal lines of length `num` starting at `[x, y]` with the character `char` in the window `win`. We also use defines for the character types. In this spirit, water tiles are `#define WATER '^'` and the walls are `#define  WALL '#'`. With all this, building the maps is just a matter of putting the right tiles at the right places.
@@ -103,35 +104,36 @@ In order to support terminal resizing, we need to check whether the variables CO
 
 Then, we use `getch()` to get input keys. Usually, this function blocks the program until a new character is received.
 
-```C++
+{{< highlight cpp "linenos=table" >}}
 // This function will block until a new input is received 
 char ch = getch();
-```
+{{< /highlight >}}
 
 However, ncurses allows the getch function to be non-blocking by using the `nodelay()` function:
 
-```C++
+{{< highlight cpp "linenos=table" >}}
 // In this case, getch() does not block the
 // execution and returns ERR if no input is ready
 nodelay(stdscr, TRUE);
 char ch = getch();
-```
+{{< /highlight >}}
+
 After managing the user input, we do the collision checking using the state stored in the game window by ncurses. Basically, if we hit any character other than a whitespace we have a collision. This results in a very simple collision check function:
 
-```C++
+{{< highlight cpp >}}
 int collision_check(game_state* state, int y, int x)
 {
     int testch = mvwinch(state->gamew, y, x) & A_CHARTEXT;
     return testch == SNAKE || testch == WALL || out_of_bounds(state, y, x);
 }
-```
+{{< /highlight >}}
 
 At the end of the loop, we need to refresh both the standard screen and the window in order for the buffers to be applied to the terminal:
 
-```C++
+{{< highlight cpp "linenos=table" >}}
 refresh();
 wrefresh(state.gamew);
-```
+{{< /highlight >}}
 
 ## Conclusion
 
