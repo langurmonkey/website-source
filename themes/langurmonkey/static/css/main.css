@@ -1658,6 +1658,7 @@ pre code {
     line-height: 1.75em;
     padding: 1em 0.6em;
     overflow-x: auto;
+    color: var(--bg-color);
 }
 
 hr {
