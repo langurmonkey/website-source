@@ -11,6 +11,7 @@ body {
 pre {
     /*display: table;*/
     table-layout: fixed;
+    border-radius: 0.3em;
     /*width: 100%*/
 }
 
