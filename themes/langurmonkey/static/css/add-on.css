@@ -489,7 +489,7 @@ ul.posts-list-button {
     display: block;
     text-align: center;
     width: 12em;
-    margin: 0 auto 0 auto;
+    margin: 1em auto 0 auto;
 }
 ul.posts-list-button a {
     border-bottom-style: none;
