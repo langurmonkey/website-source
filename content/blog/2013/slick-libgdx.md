@@ -25,7 +25,7 @@ Ok, so **why did I choose to migrate** from one to the other? Well, I think the 
 
 Slick does not differ from a classic Java project. You just put your libraries in the lib folder and you are ready to go. **Libgdx** is a different matter. You have the core project where all your code and dependencies are put, let's call it *MyProject*. This contains your "game" class. Then, you need an Android project called *MyProject-android* where you need to put all the project's resources such as images and maps, and all the Android specific files like the `AndroidManifest.xml`. That's all you need if you want your application to run in Android. Additionally, you need extra optional projects if you want the desktop and HTML5 versions. Each platform-specific project has at least a main class which creates an instance of the "game" class. For instance, in the Android project you'd have an `Activity` with an `onCreate()` method like this:
 
-```
+{{< highlight java "linenos=table" >}}
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +33,7 @@ Slick does not differ from a classic Java project. You just put your libraries i
         cfg.useGL20 = false;
         initialize(new MyGame(), cfg);
     }
-```
+{{< /highlight >}}
 
 In desktop, you'd have a main class creating an instance of `LwjglApplication` passing `MyGame` as a parameter. There's a pretty good description of the project [here](https://code.google.com/p/libgdx/wiki/ProjectSetup).
 
@@ -41,35 +41,35 @@ The good news is that all this can be set up automatically and also updated to t
 
 ### Main loop
 
-The first thing you'll notice is that libgdx does not manage the main loop for you providing `update()` and `render()` methods like Slick does, so it is up to the programmer to implement this. However, what libgdx does provide is a function (`render()`) defined in the `ApplicationListener` interface which is called every time rendering should be performed, so we need to both update and render our entities in this method. Slick provided an update(`GameContainer` container, int delta) method which received the delta time in ms. Now, we can get the delta time since the last `render()` call using `Gdx.graphics.getDeltaTime()`, so no hassle here.
+The first thing you'll notice is that libgdx does not manage the main loop for you providing `update()` and `render()` methods like Slick does, so it is up to the programmer to implement this. However, what libgdx does provide is a `render()` function defined in the `ApplicationListener` interface which is called every time rendering should be performed, so we need to both update and render our entities in this method. Slick provided an update(`GameContainer` container, int delta) method which received the delta time in ms. Now, we can get the delta time since the last `render()` call using `Gdx.graphics.getDeltaTime()`, so no hassle here.
 
 ### Drawing sprites and shapes
 
 In **Slick** the drawing process is very simple, for the `Sprite` class itself has different draw methods. To draw shapes a class called `ShapeRenderer` is used in the following fashion:
 
-```
+```java
 ShapeRenderer.draw(new Line(pos.x, pos.y, pos.x + vel.x, pos.y + vel.y));
 ```
 
 In **libgdx** sprites and shapes are batched and the whole process is a bit more low-level, but you have more control over everything. Now you need to start the sprite batch before drawing and end it after:
 
-```
+{{< highlight java "linenos=table" >}}
 batch.setProjectionMatrix(camera.combined);
 batch.begin();
 batch.draw(spriteImage, position.x, position.y);
 batch.end();
-```
+{{< /highlight >}}
 
 You may have noticed the `setProjectionMatrix(Camera camera)` chunk. This is because libgdx offers cameras pretty much in the same fashion as OpenGL does. This line just tells the batch the position of the drawn sprites must be determined by the camera's position.
 
 The rendering of basic shapes in libgdx is a bit trickier than in Slick:
 
-```
+{{< highlight java "linenos=table" >}}
 shapeRenderer.begin(ShapeType.Filled);
 shapeRenderer.setColor(new Color(0f, 0f, 1f, .4f));
 shapeRenderer.rect(cell.bounds.x, cell.bounds.y, cell.bounds.width, cell.bounds.height);
 shapeRenderer.end();
-```
+{{< /highlight >}}
 
 You need to begin and end the `shapeRenderer` with either "filled" or "line", set the color and draw the shape. Remember to enable `BLENDING` and `SRC_ALPHA` if you want transparencies, and disable them at the end. Mix sprite drawing with shape rendering in the code is not a good idea, so keep them separated if you don't want to run into problems later.
 

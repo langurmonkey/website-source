@@ -12,7 +12,7 @@ type = "post"
 The new version of the [Particle Physics Simulator](https://play.google.com/store/apps/details?id=com.tss.android) for Android is now out in the Market. The main new feature is the addition of *background images* to the simulations. Here's how they work:
 
 First, go to Settings and scroll down to the Background Image entry. Then, click on it and select the image you desire from your gallery/external storage. And yup, that's all!
-The images are conveniently cropped and scaled so that `OpenGL ES` can handle them. OpenGL ES only accepts square textures whose side length is a power of two, so what the app does is basically calculate the largest square-of-two-sided area that fits in the selected image and then crops it.
+The images are conveniently cropped and scaled so that *OpenGL ES* can handle them. OpenGL ES only accepts square textures whose side length is a power of two, so what the app does is basically calculate the largest square-of-two-sided area that fits in the selected image and then crops it.
 
 <!--more-->
 

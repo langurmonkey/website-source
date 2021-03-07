@@ -18,6 +18,5 @@ Today I'd like to drop some photos of my recent holidays to Nepal here. All of t
 
 Also, I took a good bunch of pictures using my phone, the `LG Nexus 4`, you'll find some in the Flickr set too.
 
-<a data-flickr-embed="true"  href="https://www.flickr.com/photos/55929244@N00/albums/72157636281720346" title="Nepal 2013"><img src="https://c5.staticflickr.com/8/7309/10122880836_e79d982e34_z.jpg" width="640" height="356" alt="Nepal 2013"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 
-[Nepal 2013 photo gallery](https://www.flickr.com/photos/55929244@N00/sets/72157636281720346)
+[Nepal 2013 photo gallery](https://tonisagrista.com/photo-gallery/travel.html)

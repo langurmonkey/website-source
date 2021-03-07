@@ -12,7 +12,7 @@ featuredpath = "date"
 type = "post"
 +++
 
-The new **version 3.6** of the Particle Physics Simulator is now out with customizable star sprites and fading tails. The new tail graphics have an impact in the performance with older devices (just like mine), but should be handled with minor fps drops by newer processors. However, if you encounter problems you can disable tails or set them to "short length" in the preferences screen.
+The new **version 3.6** of the Particle Physics Simulator is now out with customizable star sprites and fading tails. The new tail graphics have an impact on performance with older devices (just like mine), but should be handled with minor fps drops by newer processors. However, if you encounter problems you can disable tails or set them to "short length" in the preferences screen.
 
 <!--more-->
 

@@ -9,7 +9,7 @@ title = "New version 2.5.5 of Particle Physics Simulator out"
 type = "post"
 +++
 
-I just submitted a **new version (v2.5.5) of the Particle Physics Simulator** to the Android Market, so you should be receiving it shortly to your devices. This is a bugfix version:
+I just submitted a **new version (v2.5.5) of the Particle Physics Simulator** to the Android Market, so you should be receiving it shortly in your devices. This is a bugfix version:
 
 -  **Fixed bug** that prevented simulations in merger collisions mode from working properly. Thanks to Neil for reporting.
 -  Some minor **performance improvements** have been added that should make the simulator run more smoothly.

@@ -9,7 +9,7 @@ title = "Bug fixes and more in 3.2.4"
 type = "post"
 +++
 
-We just released the new **bugfix version (3.2.4)** which fixes the following bugs (all of them reported by Keith):
+I just released the new **bugfix version (3.2.4)** which fixes the following bugs (all of them reported by Keith):
 
 -  Repel touches were off in big simulation area mode.
 -  Zooming multitouch acted as a single touch when first finger was lifted.

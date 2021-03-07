@@ -9,14 +9,6 @@ js = ["/js/snake.js", "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.
 +++
 
 <style>
-#snakecanvas {
-    color: #000;
-}
-
-#snakeoptions {
-    color: #000;
-}
-
 input[type=checkbox], input[type=radio] {
 	  display: inline;
 		opacity: 1;
@@ -32,10 +24,6 @@ input[type=text] {
 		width: 15em;
 		margin-right: 0px;
 		margin-left: auto;
-}
-
-.snakehints {
-	  color: #000;
 }
 
 table td {
@@ -83,7 +71,7 @@ This is my modification of the HTML5 snake game seen in [thecodeplayer.com](http
 
 Below is the javascript code, if you need it. You can also get it [here](/js/snake.js). Of course you'll need [jQuery](http://jquery.com/) and some form input fields to get the initial values from in your html page, but this is not difficult to work out at all.
 
-```javascript
+{{< highlight javascript "linenos=table" >}}
 $(document).ready(
 		function() {
 			// GLOBAL VARIABLES
@@ -263,4 +251,4 @@ function updateCanvasSize(){
 	canvas.width = w;
 	canvas.height = h;
 }
-```
+{{< /highlight >}}
