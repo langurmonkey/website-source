@@ -1,3 +1,4 @@
+// IMPORTANT: This script is delivered inline in footer.html
 if(sessionStorage.getItem("dark-mode") == "true") {
     // Toggle dark-mode class if "dark-mode" property of sessionStorage is true
     darkModeAdd();
