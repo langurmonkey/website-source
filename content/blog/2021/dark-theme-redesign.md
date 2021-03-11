@@ -5,7 +5,7 @@ tags = [ "website", "design"]
 date = "2021-03-03"
 description = "How to implement a dark theme for your website, plus a small discussion on the recent redesign that aims at simplifying the experience"
 linktitle = ""
-title = "Dark theme and redesign"
+title = "CSS prefers-color-scheme to implement a dark theme"
 type = "post"
 +++
 
@@ -18,14 +18,50 @@ Dark theme
 
 All major browsers nowadays support dark themes by default. I'm not talking about the interface of the browser itself, but the setting where the browser *informs* the website that the user *prefers* dark themes. This has the upside of being totally seamless for the user. Just set the flag in the browser configuration and websites that do support a dark mode should honor it. Additionally, we may want to provide a visual control to override the default behavior in the form of a button or a checkbox. 
 
-How is this implemented practically? Well, in my case, I have written a very small javascript file (``darkmode.js``) which checks whether the browser setting is available and enabled. If so, then the dark mode CSS class ``"dark-mode"`` is added to a few DOM elements (namely the ``<body>``, the ``<header>`` and ``#menu``). If the setting is not set or not available, we fall back to the [``sessionStorage``](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage). 
+How is this implemented practically? 
+
+Usually, we just need to use the `@media` query checking for the dark or light theme preference, like this:
+
+{{< highlight css "linenos=table" >}}
+@media (prefers-color-scheme: dark) {
+    // Dark styling example
+    body {
+        color: white;
+        background-color: black;
+    }
+}
+@media (prefers-color-scheme: light) {
+    // Dark styling example
+    body {
+        color: black;
+        background-color: white;
+    }
+}
+{{< /highlight >}}
+
+The browser should be able to pick up the right theme depending on the user-set preference.
+
+However, this is fully automatic, and I want the user to be able to **override** the browser setting by clicking on a button (<i class="fa fa-lightbulb-o"></i>). To that purpose, I have written a very small javascript file (*Edit: the contents of the file are now served inline to reduce the amount of requests*) which checks whether the browser setting is available and enabled. If so, then the dark mode CSS class `"dark-mode"` is added to a few DOM elements (namely the `<body>`, the `<header>` and `#menu`). The following snippet contains the main CSS setup for the default (light) and dark modes. The values of the colors themselves are defined in the theme CSS file.
+
+{{< highlight css "linenos=table" >}}
+body {
+    color: var(--fg-color);
+    background-color: var(--bg-color);
+}
+.dark-mode{
+    color: var(--fg-color-dark);
+    background-color: var(--bg-color-dark);
+}
+{{< /highlight >}}
+
+If the setting is not set or not available, we fall back to checking the [`sessionStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage). 
 
 Session storage
 ---------------
 
 The ``sessionStorage`` is a privacy-respecting alternative to the ``localStorage`` or the browser cookies that expires when the page session ends (i.e. the page is closed). So, if a named setting for the current domain (I call it ``"dark-mode"``) is set to ``true``, then we apply the dark theme. If it is unset, or it is set to false, we don't. 
 
-The last piece of the puzzle is a UI control <i class="fa fa-lightbulb-o"></i> which lets the user set the ``sessionStorage`` ``"dark-mode"`` property, and we've got it all covered.
+The last piece of the puzzle is the theme switcher button <i class="fa fa-lightbulb-o"></i> which lets the user set the ``sessionStorage`` ``"dark-mode"`` property, and we've got it all covered.
 
 The ``darkmode.js`` file
 ------------------------
