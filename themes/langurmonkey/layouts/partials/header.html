@@ -74,14 +74,7 @@
             {{ end }}
         {{ end }}
             <link rel="canonical" href="{{ .Permalink }}">
-
-        <!--[if lte IE 9]><link rel="stylesheet" href="/css/ie9.css" /><![endif]-->
-        <!--[if lte IE 8]><link rel="stylesheet" href="/css/ie8.css" /><![endif]-->
-        {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
-            {{ template "_internal/google_analytics.html" . }}
-        {{ end }}
     </head>
     <body>
-
-        <!-- Wrapper -->
-        <div id="wrapper">
+    <!-- Wrapper -->
+    <div id="wrapper">
