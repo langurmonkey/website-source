@@ -1,13 +1,13 @@
 :root {
     --title-color: #e6b800;
     --title-color-hover: #997a00;
-    --link-color: #ff6600;
-    --link-color-hover: #99b3ff;
-    --code-color: #e6b800;
+    --link-color: #008fb3;
+    --link-color-hover: #4ddbff;
+    --code-color: #f67830;
 
     --bg-color: #fff;
     --fg-color: #0f1f3d;
 
-    --bg-color-dark: #0a1429;
+    --bg-color-dark: #010915;
     --fg-color-dark: #f2f2f2;
 }
