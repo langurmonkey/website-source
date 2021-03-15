@@ -41,7 +41,7 @@ Usually, we just need to use the `@media` query checking for the dark or light t
 
 The browser should be able to pick up the right theme depending on the user-set preference.
 
-However, this is fully automatic, and I want the user to be able to **override** the browser setting by clicking on a button (<i class="fa fa-lightbulb-o"></i>). To that purpose, I have written a very small javascript file (*Edit: the contents of the file are now served inline to reduce the amount of requests*) which checks whether the browser setting is available and enabled. If so, then the dark mode CSS class `"dark-mode"` is added to a few DOM elements (namely the `<body>`, the `<header>` and `#menu`). The following snippet contains the main CSS setup for the default (light) and dark modes. The values of the colors themselves are defined in the theme CSS file.
+However, this is fully automatic, and I want the user to be able to **override** the browser setting by clicking on a button (<i class="fa fa-moon"></i>/<i class="fa fa-sun"></i>). To that purpose, I have written a very small javascript file (*Edit: the contents of the file are now served inline to reduce the amount of requests*) which checks whether the browser setting is available and enabled. If so, then the dark mode CSS class `"dark-mode"` is added to a few DOM elements (namely the `<body>`, the `<header>` and `#menu`). The following snippet contains the main CSS setup for the default (light) and dark modes. The values of the colors themselves are defined in the theme CSS file.
 
 {{< highlight css "linenos=table" >}}
 body {
@@ -61,7 +61,7 @@ Session storage
 
 The ``sessionStorage`` is a privacy-respecting alternative to the ``localStorage`` or the browser cookies that expires when the page session ends (i.e. the page is closed). So, if a named setting for the current domain (I call it ``"dark-mode"``) is set to ``true``, then we apply the dark theme. If it is unset, or it is set to false, we don't. 
 
-The last piece of the puzzle is the theme switcher button <i class="fa fa-lightbulb-o"></i> which lets the user set the ``sessionStorage`` ``"dark-mode"`` property, and we've got it all covered.
+The last piece of the puzzle is the theme switcher button <i class="fa fa-moon"></i>/<i class="fa fa-sun"></i> which lets the user set the ``sessionStorage`` ``"dark-mode"`` property, and we've got it all covered. Note that the button must be updated, as it shows a sun in dark mode and a moon in light mode.
 
 The ``darkmode.js`` file
 ------------------------
@@ -83,17 +83,30 @@ function darkModeAdd() {
     document.body.classList.add("dark-mode");
     document.getElementsByTagName('header')[0].classList.add("dark-mode");
     document.getElementById('menu').classList.add("dark-mode");
+    updateLightsButton(true);
 }
 function darkModeToggle() {
+    var is_dark = document.body.classList.contains("dark-mode");
+    // Add classes
     document.body.classList.toggle("dark-mode");
     document.getElementsByTagName('header')[0].classList.toggle("dark-mode");
     document.getElementById('menu').classList.toggle("dark-mode");
     hasDark = document.body.classList.contains("dark-mode");
     sessionStorage.setItem("dark-mode", hasDark);
+    updateLightsButton(!is_dark);
+}
+function updateLightsButton(is_dark) {
+    var lights = document.getElementById('lights');
+    lights.classList.remove("fa-sun", "fa-moon");
+    if(is_dark) {
+       lights.classList.add("fa-sun"); 
+    } else {
+       lights.classList.add("fa-moon"); 
+    }
 }
 {{< /highlight >}}
 
-It contains two functions and an initial setup. The second function, ``darkModeToggle()``, is run whenever the user clicks on the dark mode UI control (the little light bulb <i class="fa fa-lightbulb-o"></i> at the top of the page). It sets the ``"dark-mode"`` property in the ``sessionStorage``. 
+It contains two functions and an initial setup. The second function, ``darkModeToggle()``, is run whenever the user clicks on the dark mode UI control (the little moon/sun <i class="fa fa-moon"></i>/<i class="fa fa-sun"></i> to the top-right of the page). It sets the ``"dark-mode"`` property in the ``sessionStorage``. 
 
 {{< highlight html "linenos=table" >}}
 <li class="menu">
