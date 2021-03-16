@@ -505,11 +505,59 @@ h4.latest-posts-bottom  {
 div.flexbox {
     display: flex;
 }
-#license{
+#license {
     font-size: 0.5em;
     font-family: sans-serif;
     text-transform: uppercase;
     color: #777;
     text-align: center;
     margin: -3em auto 0 auto;
+}
+img.inline {
+    display: inline;
+    vertical-align: middle;
+}
+.hint {
+    font-family: noto sans, sans-serif;
+    font-size: 0.9em;
+}
+.hint-title {
+    background-color: var(--bg-hint-title);
+    color: var(--fg-hint-title);
+    display: block;
+    padding: 0.3em 0.5em 0.3em 0.5em;
+    margin: 1em 0 0 0 !important;
+    border-radius: 0.3em 0.3em 0 0;
+}
+.hint-body {
+    background-color: var(--bg-hint-body);
+    color: var(--fg-hint-body);
+    padding: 0.3em 0.5em 0.3em 0.5em;
+    border-radius: 0 0 0.3em 0.3em;
+}
+.guilabel {
+    border: 1px solid #7fbbe3;
+    background: #e7f2fa;
+    color: #000;
+    font-family: monospace;
+    font-size: 80%;
+    font-weight: 700;
+    border-radius: 4px;
+    padding: 2.4px 6px;
+    margin: auto 2px;
+}
+.gray {
+    color: gray;
+}
+.blue {
+    color: #3355ff;
+}
+.orange {
+    color: orange;
+}
+.green {
+    color: #33ff55;
+}
+.red {
+    color: #ff5533;
 }

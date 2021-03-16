@@ -10,4 +10,9 @@
 
     --bg-color-dark: #010915;
     --fg-color-dark: #f2f2f2;
+
+    --bg-hint-title: #e6b800;
+    --bg-hint-body: #ffe870;
+    --fg-hint-title: #f3f3f3;
+    --fg-hint-body: #222;
 }

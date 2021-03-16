@@ -9,6 +9,12 @@ if(sessionStorage.getItem("dark-mode") == "true") {
     darkModeAdd();
 }
 
+function lightModeAdd() {
+    document.body.classList.remove("dark-mode");
+    document.getElementsByTagName('header')[0].classList.remove("dark-mode");
+    document.getElementById('menu').classList.remove("dark-mode");
+    updateLightsButton(false);
+}
 function darkModeAdd() {
     document.body.classList.add("dark-mode");
     document.getElementsByTagName('header')[0].classList.add("dark-mode");

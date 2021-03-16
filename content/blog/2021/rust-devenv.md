@@ -36,13 +36,7 @@ We need a few plugins to achieve a pleasant experience, but first, a word about 
 
 Conquer of Completion, or [`coc.vim`](github.com/neoclide/coc.nvim) provides the framework for instant increment completion. Very useful for auto-completing variables, methods and so on. But we need CoC to understand Rust, and for that we need to install `rust-analyzer` and then the CoC extension, [`coc-rust-analyzer`](https://github.com/fannheyward/coc-rust-analyzer).
 
-<p>
-<a href="/img/2021/02/vim-rust-completion.jpg">
-<img src="/img/2021/02/vim-rust-completion.jpg"
-     alt="Rust completion"
-     style="width: 70%" />
-</a>
-</p>
+{{< figure src="/img/2021/02/vim-rust-completion.jpg" link="/img/2021/02/vim-rust-completion.jpg" title="Rust completion in neovim" width="70%" class="fig-center" >}}
 
 `rust-analyzer` is an implementation of Language Server Protocol for Rust, which provides completion, goto definition and modular compilation. You can install it directly from your package manager (along with `rustup`),
 
@@ -77,13 +71,7 @@ ls src/*.rs | entr cargo build
 
 The great thing about this kind of configuration is that it is very easy to tailor to one's needs. You can easily manipulate every single behaviour and feature just by editing config files. To end on a high note, below is a capture of what the Rust dev workspace looks like.
 
-<p style="width: 100%; margin: 0 0 1em 0;">
-<a href="/img/2021/02/rust-devenv.jpg">
-<img src="/img/2021/02/rust-devenv.jpg"
-     alt="Pirate"
-     style="width: 100%" ></img>
-</a>
-</p>
+{{< figure src="/img/2021/02/rust-devenv.jpg" link="/img/2021/02/rust-devenv.jpg" title="The mouseless development environment" width="80%" class="fig-center" >}}
 
 
 The dotfiles for this configuration are all stored in [this repository](gitlab.com/langurmonkey/dotfiles). [Here](https://gitlab.com/langurmonkey/dotfiles/-/tree/master/vim) are my `vim` dotfiles, and [here](https://gitlab.com/langurmonkey/dotfiles/-/tree/master/i3) are my `i3` dotfiles.

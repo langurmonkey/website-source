@@ -72,12 +72,8 @@ where `<port>` is the port listed on the droidcam interface in your phone. Again
 ```bash
 mpv av://v4l2:/dev/video0
 ```
-<p style="text-align: center; width: 70%; margin: 0 auto;">
-<img src="/img/2020/06/droidcam-ss.jpg"
-     alt="Smartphone camera feed playing on mpv"
-     style="width: 100%" />
-<em style="color: gray;">Smartphone camera feed over ADB playing with mpv</em>
-</p>
+
+{{< figure src="/img/2020/06/droidcam-ss.jpg" link="/img/2020/06/droidcam-ss.jpg" title="Smartphone camera feed playing on mpv" width="60%" class="fig-center" >}}
 
 ## Final notes
 

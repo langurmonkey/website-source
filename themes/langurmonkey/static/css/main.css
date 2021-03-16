@@ -3528,6 +3528,26 @@ body.is-menu-visible #menu {
 
 }
 
+figcaption, figcaption > h4 {
+    font-family: open sans, sans-serif;
+    opacity: 0.87;
+    margin: 0.1em 0 1em 0;
+    color: gray;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 200;
+}
+
+figure.fig-center > img, figure.fig-center > a > img {
+    display: block;
+    margin: 0 auto 0 auto;
+}
+figure.fig-right {
+    margin: 0 0 1em 1em;
+    display: block;
+    float: right;
+}
+
 .post p img {
     display: block;
     margin-left: auto;
