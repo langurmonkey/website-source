@@ -74,7 +74,7 @@ By default **Gaia Sky automatically selects all downloaded packages** for you. H
 
 When Gaia Sky is ready to go, you will be presented with this screen:
 
-{{< figure src="img/2021/03/gs-tut/ui-initial.jpg" link="img/2021/03/gs-tut/ui-initial.jpg" title="Gaia Sky default scene" class="fig-center" width="60%" >}}
+{{< figure src="/img/2021/03/gs-tut/ui-initial.jpg" link="/img/2021/03/gs-tut/ui-initial.jpg" title="Gaia Sky default scene" class="fig-center" width="60%" >}}
 
 In it you can see a few things already. To the right the **focus panel** tells you that you are in focus mode, meaning that all our movement is relative to the focus object. The default focus of Gaia Sky is the Earth. You can also see in the **quick info bar** at the top that our focus is the {{< sp green >}}Earth{{</ sp >}}, and that the closest object to our location is also the {{< sp blue >}}Earth{{</ sp >}}. Additionally you see that your home object is again the {{< sp orange >}}orange{{</ sp >}}. Finally the **control panel** is collapsed at the top left. If you click on it, the panel opens. We will use it later.
 
@@ -100,7 +100,7 @@ At any time you can use the {{< sp guilabel >}}home{{</ sp >}} key in your keybo
 
 The user interface of Gaia Sky consists of basically two components: keyboard shortcuts and a graphical user interface in the form of the **control panel**.
 
-{{< figure src="img/2021/03/gs-tut/ui-all.jpg" link="img/2021/03/gs-tut/ui-all.jpg" title="Gaia Sky user interface with the most useful functions" class="fig-center" width="60%" >}}
+{{< figure src="/img/2021/03/gs-tut/ui-all.jpg" link="/img/2021/03/gs-tut/ui-all.jpg" title="Gaia Sky user interface with the most useful functions" class="fig-center" width="60%" >}}
 
 ### Control panel
 
@@ -128,11 +128,11 @@ To the top of the screen you can see the **quick info bar** which provides infor
 
 Gaia Sky has a built-in debug information panel that provides system information and is hidden by default. You can bring it up with {{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}d{{</ sp >}}, or by ticking the "*Show debug info*" check box in the system tab of the preferences window. By default, the debug panel is collapsed.
 
-{{< figure src="img/2021/03/gs-tut/debug-collapsed.jpg" link="img/2021/03/gs-tut/debug-collapsed.jpg" title="Collapsed debug panel" class="fig-center" >}}
+{{< figure src="/img/2021/03/gs-tut/debug-collapsed.jpg" link="/img/2021/03/gs-tut/debug-collapsed.jpg" title="Collapsed debug panel" class="fig-center" >}}
 
 You can expand it with the ``+`` symbol to get additional information.
 
-{{< figure src="img/2021/03/gs-tut/debug-expanded.jpg" link="img/2021/03/gs-tut/debug-expanded.jpg" title="Expanded debug panel" class="fig-center" width="60%" >}}
+{{< figure src="/img/2021/03/gs-tut/debug-expanded.jpg" link="/img/2021/03/gs-tut/debug-expanded.jpg" title="Expanded debug panel" class="fig-center" width="60%" >}}
 
 As you can see, the debug panel shows information on the current graphics device, system and graphics memory, the amount of objects loaded and on display, the octree (if a LOD dataset is in use) or the SAMP status.
 
@@ -140,12 +140,12 @@ Additional debug information can be obtained in the system tab of the help dialo
 
 ## Time controls
 
-Gaia Sky can simulate time. Play and pause the simulation using the {{< img "img/2021/03/gs-tut/play-icon.png">}}/{{< img "img/2021/03/gs-tut/pause-icon.png">}} `Play`/`Pause` buttons in the time pane, or toggle using {{< sp guilabel >}}Space{{</ sp >}}. You can also change the time warp, which is expressed as a scaling factor, using the provided **Warp factor** slider. Use {{< sp guilabel >}},{{</ sp >}} or {{< img "img/2021/03/gs-tut/minus-icon.png">}} and {{< sp guilabel >}}.{{</ sp >}} or {{< img "img/2021/03/gs-tut/plus-icon.png">}} to divide by 2 and double the value of the time warp, respectively.
+Gaia Sky can simulate time. Play and pause the simulation using the {{< img "/img/2021/03/gs-tut/play-icon.png">}}/{{< img "/img/2021/03/gs-tut/pause-icon.png">}} `Play`/`Pause` buttons in the time pane, or toggle using {{< sp guilabel >}}Space{{</ sp >}}. You can also change the time warp, which is expressed as a scaling factor, using the provided **Warp factor** slider. Use {{< sp guilabel >}},{{</ sp >}} or {{< img "/img/2021/03/gs-tut/minus-icon.png">}} and {{< sp guilabel >}}.{{</ sp >}} or {{< img "/img/2021/03/gs-tut/plus-icon.png">}} to divide by 2 and double the value of the time warp, respectively.
 
-{{< figure src="img/2021/03/gs-tut/warp-factor.jpg" link="img/2021/03/gs-tut/warp-factor.jpg" title="Warp factor slider" class="fig-center" >}}
+{{< figure src="/img/2021/03/gs-tut/warp-factor.jpg" link="/img/2021/03/gs-tut/warp-factor.jpg" title="Warp factor slider" class="fig-center" >}}
 
 
-Now, go ahead and press {{< sp guilabel >}}home{{</ sp >}}. This will bring us back to Earth. Now, start the time with {{< img "img/2021/03/gs-tut/play-icon.png">}} or {{< sp guilabel >}}space{{</ sp >}} and **drag the slider slightly to the right** to increase its speed. You will see that the Earth rotates faster and faster as you move the slider to the right. Now, **drag it to the left** until time is reversed and the Earth starts rotating in the opposite direction. Now time is going backwards!
+Now, go ahead and press {{< sp guilabel >}}home{{</ sp >}}. This will bring us back to Earth. Now, start the time with {{< img "/img/2021/03/gs-tut/play-icon.png">}} or {{< sp guilabel >}}space{{</ sp >}} and **drag the slider slightly to the right** to increase its speed. You will see that the Earth rotates faster and faster as you move the slider to the right. Now, **drag it to the left** until time is reversed and the Earth starts rotating in the opposite direction. Now time is going backwards!
 
 If you set the time warp high enough you will notice that as the bodies in the Solar System start going crazy, the stars start to slightly move. That's right: Gaia Sky also simulates proper motions.
 
@@ -167,43 +167,43 @@ The most interesting mode is **free mode** which lets us roam freely. Go ahead a
 
 There are three special render modes: [3D mode](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/Stereoscopic-mode.html#d-mode), [planetarium mode](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/Planetarium-mode.html#planetarium-mode) and [panorama mode](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/Panorama-mode.html#panorama-mode). You can access these modes using the buttons at the bottom of the camera pane or the following shortcuts:
 
-- {{< img "img/2021/03/gs-tut/3d-icon.png" >}} or {{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}s{{</ sp >}} - 3D mode
-- {{< img "img/2021/03/gs-tut/dome-icon.png" >}} or {{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}p{{</ sp >}} - Planetarium mode
-- {{< img "img/2021/03/gs-tut/cubemap-icon.png" >}} or {{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}k{{</ sp >}} - Panorama mode
+- {{< img "/img/2021/03/gs-tut/3d-icon.png" >}} or {{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}s{{</ sp >}} - 3D mode
+- {{< img "/img/2021/03/gs-tut/dome-icon.png" >}} or {{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}p{{</ sp >}} - Planetarium mode
+- {{< img "/img/2021/03/gs-tut/cubemap-icon.png" >}} or {{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}k{{</ sp >}} - Panorama mode
 
 ## Toggle visibility of components
 
 The visibility of most graphical elements can be switched off and on using the buttons in the **type visibility pane** in the control panel.
 For example you can hide the stars by clicking on the
-``stars`` {{< img "img/2021/03/gs-tut/ct/icon-elem-stars.png" >}} button. The object types available are the following:
+``stars`` {{< img "/img/2021/03/gs-tut/ct/icon-elem-stars.png" >}} button. The object types available are the following:
 
--  {{< img "img/2021/03/gs-tut/ct/icon-elem-stars.png" >}} -- Stars
--  {{< img "img/2021/03/gs-tut/ct/icon-elem-planets.png" >}} -- Planets
--  {{< img "img/2021/03/gs-tut/ct/icon-elem-moons.png" >}} -- Moons
--  {{< img "img/2021/03/gs-tut/ct/icon-elem-satellites.png" >}} -- Satellites
--  {{< img "img/2021/03/gs-tut/ct/icon-elem-asteroids.png" >}} -- Asteroids
--  {{< img "img/2021/03/gs-tut/ct/icon-elem-clusters.png" >}} -- Star clusters
--  {{< img "img/2021/03/gs-tut/ct/icon-elem-milkyway.png" >}} -- Milky Way
--  {{< img "img/2021/03/gs-tut/ct/icon-elem-galaxies.png" >}} -- Galaxies
--  {{< img "img/2021/03/gs-tut/ct/icon-elem-nebulae.png" >}} -- Nebulae
--  {{< img "img/2021/03/gs-tut/ct/icon-elem-meshes.png" >}} -- Meshes
--  {{< img "img/2021/03/gs-tut/ct/icon-elem-equatorial.png" >}} -- Equatorial grid
--  {{< img "img/2021/03/gs-tut/ct/icon-elem-ecliptic.png" >}} -- Ecliptic grid
--  {{< img "img/2021/03/gs-tut/ct/icon-elem-galactic.png" >}} -- Galactic grid
--  {{< img "img/2021/03/gs-tut/ct/icon-elem-labels.png" >}} -- Labels
--  {{< img "img/2021/03/gs-tut/ct/icon-elem-titles.png" >}} -- Titles
--  {{< img "img/2021/03/gs-tut/ct/icon-elem-orbits.png" >}} -- Orbits
--  {{< img "img/2021/03/gs-tut/ct/icon-elem-locations.png" >}} -- Locations
--  {{< img "img/2021/03/gs-tut/ct/icon-elem-countries.png" >}} -- Countries
--  {{< img "img/2021/03/gs-tut/ct/icon-elem-constellations.png" >}} -- Constellations
--  {{< img "img/2021/03/gs-tut/ct/icon-elem-boundaries.png" >}} -- Constellation boundaries
--  {{< img "img/2021/03/gs-tut/ct/icon-elem-ruler.png" >}} -- Ruler
--  {{< img "img/2021/03/gs-tut/ct/icon-elem-effects.png" >}} -- Particle effects
--  {{< img "img/2021/03/gs-tut/ct/icon-elem-atmospheres.png" >}} -- Atmospheres
--  {{< img "img/2021/03/gs-tut/ct/icon-elem-clouds.png" >}} -- Clouds
--  {{< img "img/2021/03/gs-tut/ct/icon-elem-axes.png" >}} -- Axes
--  {{< img "img/2021/03/gs-tut/ct/icon-elem-arrows.png" >}} -- Velocity vectors
--  {{< img "img/2021/03/gs-tut/ct/icon-elem-others.png" >}} -- Others
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-stars.png" >}} -- Stars
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-planets.png" >}} -- Planets
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-moons.png" >}} -- Moons
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-satellites.png" >}} -- Satellites
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-asteroids.png" >}} -- Asteroids
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-clusters.png" >}} -- Star clusters
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-milkyway.png" >}} -- Milky Way
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-galaxies.png" >}} -- Galaxies
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-nebulae.png" >}} -- Nebulae
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-meshes.png" >}} -- Meshes
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-equatorial.png" >}} -- Equatorial grid
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-ecliptic.png" >}} -- Ecliptic grid
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-galactic.png" >}} -- Galactic grid
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-labels.png" >}} -- Labels
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-titles.png" >}} -- Titles
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-orbits.png" >}} -- Orbits
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-locations.png" >}} -- Locations
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-countries.png" >}} -- Countries
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-constellations.png" >}} -- Constellations
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-boundaries.png" >}} -- Constellation boundaries
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-ruler.png" >}} -- Ruler
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-effects.png" >}} -- Particle effects
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-atmospheres.png" >}} -- Atmospheres
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-clouds.png" >}} -- Clouds
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-axes.png" >}} -- Axes
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-arrows.png" >}} -- Velocity vectors
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-others.png" >}} -- Others
 
 ### Velocity vectors
 
@@ -218,7 +218,7 @@ One of the elements, the **velocity vectors**, enable a few properties when sele
 Control the width of the velocity vectors with the **line width** slider in the **visual settings** pane.
 {{</ hint >}}
 
-{{< figure src="img/2021/03/gs-tut/velocity-vectors.jpg" link="img/2021/03/gs-tut/velocity-vectors.jpg" title="Velocity vectors in Gaia Sky" class="fig-center" width="60%" >}}
+{{< figure src="/img/2021/03/gs-tut/velocity-vectors.jpg" link="/img/2021/03/gs-tut/velocity-vectors.jpg" title="Velocity vectors in Gaia Sky" class="fig-center" width="60%" >}}
 
 ## Visual settings
 
@@ -234,7 +234,7 @@ The **visual settings** pane contains a few options to control the shading of st
 -  **Label size** -- control the size of the labels
 -  **Elevation multiplier** -- scale the height representation for planets with elevation maps
 
-{{< figure src="img/2021/03/gs-tut/visual-settings.jpg" link="img/2021/03/gs-tut/visual-settings.jpg" title="The visual settings pane" class="fig-center" >}}
+{{< figure src="/img/2021/03/gs-tut/visual-settings.jpg" link="/img/2021/03/gs-tut/visual-settings.jpg" title="The visual settings pane" class="fig-center" >}}
 
 ## Loading external datasets
 
@@ -242,7 +242,7 @@ Gaia Sky supports the loading of external datasets at runtime. Right now, ``VOTa
 
 The datasets loaded in Gaia Sky at a certain moment can be found in the [datasets](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/Datasets.html#datasets) pane of the control panel.
 
-{{< figure src="img/2021/03/gs-tut/ds-1.jpg" link="img/2021/03/gs-tut/ds-1.jpg" title="Datasets pane of Gaia Sky" class="fig-center" width="60%" >}}
+{{< figure src="/img/2021/03/gs-tut/ds-1.jpg" link="/img/2021/03/gs-tut/ds-1.jpg" title="Datasets pane of Gaia Sky" class="fig-center" width="60%" >}}
 
 There are three main ways to load new datasets into Gaia Sky:
 
@@ -254,7 +254,7 @@ There are three main ways to load new datasets into Gaia Sky:
 
 **Loading a dataset via SAMP** -- This section presupposes that Topcat is installed on the machine and that the user knows how to use it to connect to the VO to get some data. The following video demonstrates how to do this ([mirror](https://youtu.be/sc0q-VbeoPE)):
 
-{{< figure src="img/2021/03/gs-tut/samp.jpg" link="img/2021/03/gs-tut/samp.jpg" title="Loading a dataset from Topcat through SAMP (click for video)" class="fig-center" width="50%" >}}
+{{< figure src="/img/2021/03/gs-tut/samp.jpg" link="/img/2021/03/gs-tut/samp.jpg" title="Loading a dataset from Topcat through SAMP (click for video)" class="fig-center" width="50%" >}}
 
 **Loading a dataset via scripting** -- Wait for the scripting section of this course.
 
@@ -263,16 +263,16 @@ There are three main ways to load new datasets into Gaia Sky:
 All datasets loaded are displayed in the datasets pane in the control panel.
 A few useful tips for working with datasets:
 
--  The visibility of individual datasets can be switched on and off by clicking on the {{< img "img/2021/03/gs-tut/eye-s-on.png" >}} button
--  Remove datasets with the {{< img "img/2021/03/gs-tut/bin-icon.png" >}} button
--  You can **highlight a dataset** by clicking on the {{< img "img/2021/03/gs-tut/highlight-s-off.png" >}} button. The highlight color is defined by the color selector right on top of it. Additionally, we can map an attribute to the highlight color using a color map. Let's try it out:
+-  The visibility of individual datasets can be switched on and off by clicking on the {{< img "/img/2021/03/gs-tut/eye-s-on.png" >}} button
+-  Remove datasets with the {{< img "/img/2021/03/gs-tut/bin-icon.png" >}} button
+-  You can **highlight a dataset** by clicking on the {{< img "/img/2021/03/gs-tut/highlight-s-off.png" >}} button. The highlight color is defined by the color selector right on top of it. Additionally, we can map an attribute to the highlight color using a color map. Let's try it out:
   
     1.  Click on the color box in the Hipparcos dataset we have just loaded from Topcat via SAMP
     2.  Select the radio button "Color map"
     3.  Select the *rainbow* color map
     4.  Choose your attriubte. In this case, we will use the number of transits, *ntr*
     5.  Click {{< sp guilabel >}}Ok{{</ sp >}}
-    6.  Click on the highlight dataset {{< img "img/2021/03/gs-tut/highlight-s-off.png" >}} icon to apply the color map
+    6.  Click on the highlight dataset {{< img "/img/2021/03/gs-tut/highlight-s-off.png" >}} icon to apply the color map
 
 -  You can **define basic filters** on the objects of the dataset using their attributes from the dataset preferences window <i class="fa fa-gear"></i>. For example, we can filter out all stars with \\(\delta > 50^{\circ}\\):
 
@@ -290,7 +290,7 @@ Multiple filters can be combined with the **AND** and **OR** operators
 
 Gaia Sky offers three ways to display external information on the current focus object: **Wikipedia**, **Gaia archive** and **Simbad**.
 
-{{< figure src="img/2021/03/gs-tut/external-info.jpg" link="img/2021/03/gs-tut/external-info.jpg" title="Wikipedia, Gaia archive and Simbad connections" class="fig-center" width="60%" >}}
+{{< figure src="/img/2021/03/gs-tut/external-info.jpg" link="/img/2021/03/gs-tut/external-info.jpg" title="Wikipedia, Gaia archive and Simbad connections" class="fig-center" width="60%" >}}
 
 -  When the {{< sp guilabel >}}+Info{{</ sp >}} button appears in the focus info pane, it means that there is a Wikipedia article on this object ready to be pulled and displayed in Gaia Sky
 -  When the {{< sp guilabel >}}Archive{{</ sp >}} button appears in the focus info pane, it means that the full table information of selected star can be pulled from the Gaia archive
@@ -300,15 +300,15 @@ Gaia Sky offers three ways to display external information on the current focus 
 
 Gaia Sky includes a feature to record and play back camera paths. This comes in handy if you want to showcase a certain itinerary through a dataset, for example.
 
-**Recording a camera path** -- The system will capture the camera state at every frame and save it into a ``.gsc`` (for Gaia Sky camera) file. You can start a recording by clicking on the {{< img "img/2021/03/gs-tut/rec-icon-gray.png" >}} icon in the camera pane of the control panel. Once the recording mode is active, the icon will turn red {{< img "img/2021/03/gs-tut/rec-icon-red.png" >}}. Click on it again in order to stop recording and save the camera file to disk with an auto-generated file name (default location is ``$GS_DATA/camera`` (see the [folders section](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/Folders.html#folders) in the Gaia Sky documentation).
+**Recording a camera path** -- The system will capture the camera state at every frame and save it into a ``.gsc`` (for Gaia Sky camera) file. You can start a recording by clicking on the {{< img "/img/2021/03/gs-tut/rec-icon-gray.png" >}} icon in the camera pane of the control panel. Once the recording mode is active, the icon will turn red {{< img "/img/2021/03/gs-tut/rec-icon-red.png" >}}. Click on it again in order to stop recording and save the camera file to disk with an auto-generated file name (default location is ``$GS_DATA/camera`` (see the [folders section](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/Folders.html#folders) in the Gaia Sky documentation).
 
-**Playing a camera path** -- In order to playback a previously recorded ``.gsc`` camera file, click on the {{< img "img/2021/03/gs-tut/play-icon.png" >}} icon and select the desired camera path. The recording will start immediately.
+**Playing a camera path** -- In order to playback a previously recorded ``.gsc`` camera file, click on the {{< img "/img/2021/03/gs-tut/play-icon.png" >}} icon and select the desired camera path. The recording will start immediately.
 
 {{< hint >}}
 **Mind the FPS!** The camera recording system stores the position of the camera for every frame! It is important that recording and playback are done with the same (stable) frame rate. To set the target recording frame rate, edit the "Target FPS" field in the camrecorder settings of the preferences window. That will make sure the camera path is using the right frame rate. In order to play back the camera file at the right frame rate, you can edit the "Maximum frame rate" input in the graphics settings of the preferences window.
 {{</ hint >}}
 
-{{< figure src="img/2021/03/gs-tut/camerapaths.jpg" link="img/2021/03/gs-tut/camerapaths.jpg" title="Location of the controls of the camcorder in Gaia Sky" class="fig-center" width="60%" >}}
+{{< figure src="/img/2021/03/gs-tut/camerapaths.jpg" link="/img/2021/03/gs-tut/camerapaths.jpg" title="Location of the controls of the camcorder in Gaia Sky" class="fig-center" width="60%" >}}
 
 More information on camera paths in Gaia Sky can be found in [the camera paths section](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/Camera-paths.html#camera-paths) of the Gaia Sky user manual.
 
@@ -316,7 +316,7 @@ More information on camera paths in Gaia Sky can be found in [the camera paths s
 
 The camera path system offers an additional way to define camera paths based on keyframes. Essentially, the user defines the position and orientation of the camera at certain times and the system generates the camera path from these definitions. Gaia Sky incorporates a whole keyframe definition system which is outside the scope of this tutorial.
 
-As a very short preview, in order to bring up the keyframes window to start defining a camera path, click on the icon {{< img "img/2021/03/gs-tut/rec-key-icon-gray.png" >}}. 
+As a very short preview, in order to bring up the keyframes window to start defining a camera path, click on the icon {{< img "/img/2021/03/gs-tut/rec-key-icon-gray.png" >}}. 
 
 More information on the keyframe system can be found in the [keyframe system subsection](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/Camera-paths.html#keyframe-system) of the Gaia Sky user manual.
 
@@ -326,7 +326,7 @@ In order to create high-quality videos, Gaia Sky offers the possibility to expor
 
 You can start the frame output system by pressing {{< sp guilabel >}}F6{{</ sp >}}. Once active, the frame rate will go down (each frame is being saved to disk). The save location of the still frame images is, by default, ``$GS_DATA/frames/[prefix]_[num].jpg``, where ``[prefix]`` is an arbitrary string that can be defined in the preferences. The save location, mode (simple or advanced), and the resolution can also be defined in the preferences.
 
-{{< figure src="img/2021/03/gs-tut/frameoutput.jpg" link="img/2021/03/gs-tut/frameoutput.jpg" title="The configuration screen for the frame output system" class="fig-center" width="60%" >}}
+{{< figure src="/img/2021/03/gs-tut/frameoutput.jpg" link="/img/2021/03/gs-tut/frameoutput.jpg" title="The configuration screen for the frame output system" class="fig-center" width="60%" >}}
 
 Once we have the still frame images, we can convert them to a video using ``ffmpeg`` or any other encoding software. Additional information on how to convert the still frames to a video can be found in the [capturing videos section](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/Capturing-videos.html#capture-videos) of the Gaia Sky user manual.
 
