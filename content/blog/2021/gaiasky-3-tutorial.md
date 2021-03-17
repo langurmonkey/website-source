@@ -12,7 +12,7 @@ type = "post"
 <!-- Loading MathJax -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
-In this post, I'm reproducing the Gaia Sky 3 tutorial I wrote in the official [Gaia Sky documentation pages](https://gaia.ari.uni-heidelberg.de/gaiasky/docs) to use as a rough script for the workshop given in a splinter session of the 2021 DPAC consortium online meeting held on March 17 and 18, 2021. You can find the original tutorial [here](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/workshops/dpac-plenary-online-2021.html).
+In this post, I'm mirroring the Gaia Sky 3 tutorial I wrote for the official [Gaia Sky documentation](https://gaia.ari.uni-heidelberg.de/gaiasky/docs) to use as a rough script for the workshop given in a splinter session of the 2021 DPAC consortium online meeting held on March 17 and 18, 2021. You can find the original page [here](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/workshops/dpac-plenary-online-2021.html).
 
 {{< hint >}}
 This article is best viewed in **light mode**: <a href="javascript:lightModeAdd()">lights on</a>!
