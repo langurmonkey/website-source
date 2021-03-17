@@ -40,6 +40,23 @@ The main aim of this tutorial is to provide a comprehensive introduction on the 
 - Use keyframes to define a camera path
 - Write and run very basic Python scripts using the Gaia Sky API
 
+This tutorial does **not** deal with the following items:
+
+- Installation in different operating systems
+- Performance tuning and optimization (memory, GPU, etc.)
+- Data descriptors and formats
+- Internal workings of Gaia Sky
+- Internal reference system
+- Level-of-detail catalogs
+- VR mode setup and configuration
+- System folders (location, content, etc.)
+- Running Gaia Sky from source, CLI arguments, etc.
+- In-depth video production
+- Bookmarking system
+- Connecting Gaia Sky instances in master-slave configuration
+- Multi-display setups, dome, MPCDI, etc.
+- External view mode
+
 *Estimated duration:* 1.5 hours
 
 ## Before starting...
