@@ -9,7 +9,8 @@ title = "Arch with LUKS on LVM"
 featuredpath = "date"
 type = "post"
 +++
-*2020-06-16 edit: use dd to create swap file instead of fallocate*
+
+{{< sp orange >}}Edit (2020-06-16):{{</ sp >}} use dd to create swap file instead of fallocate*
 
 It is well known that Arch Linux does not have the easiest install process of all Linux distributions. In my opinion, for technical users this is a big plus, as you get to know your system better simply by having to set it up from scratch. This comes with the perk that you only install the packages you need, leading to a smaller and arguably snappier system.
 

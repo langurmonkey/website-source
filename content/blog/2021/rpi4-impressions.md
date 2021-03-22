@@ -33,7 +33,7 @@ You can connect the **fan** to either the **5v** pin or the **3.3v** pin of the 
 
 I connected the fan to the 3.3v pin of the GPIO, as in my tests it provided sufficient cooling (idles at 35C, goes up to ~40 when playing video), and connecting it to the 5v pin resulted in an unbearably high fan noise. Yes, the fan in this kit is super-noisy.
 
-{{< sp orange >}}EDIT (2021-03-22):{{</ sp >}} Three days after delivery the little fan has died on me. Tonight it was making some unusually high pitches and whines in an erratic pattern. Now it just stops randomly with sounds from Hell. RIP little fanny.
+{{< sp orange >}}Edit (2021-03-22):{{</ sp >}} Three days after delivery the little fan has died on me. Tonight it was making some unusually high pitches and whines in an erratic pattern. Now it just stops randomly with sounds from Hell. RIP little fanny.
 
 ## System setup and update
 
