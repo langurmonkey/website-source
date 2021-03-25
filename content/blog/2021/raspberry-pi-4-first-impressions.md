@@ -5,7 +5,7 @@ tags = [ "sbc", "raspberrypi"]
 date = "2021-03-21"
 description = "A suprisingly capable single board computer with endless possibilities"
 linktitle = ""
-title = "Raspberry Pi 4, first impressions"
+title = "Raspberry Pi 4: First impressions"
 type = "post"
 +++
 
