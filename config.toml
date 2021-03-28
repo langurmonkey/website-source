@@ -15,6 +15,9 @@ canonifyurls = false
 relativeurls = true
 uglyurls = false
 
+[outputs]
+    home = ["HTML", "RSS", "JSON"]
+
 [taxonomies]
     tag = "tags"
     category = "categories"
