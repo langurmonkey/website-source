@@ -9,9 +9,9 @@ featuredpath = "date"
 type = "post"
 +++
 
-<div class="post-notice">
+{{< notice Notice >}}
 This is a verbatim copy of a post made in my old blog dimlight.wrodpress.com, included here for archiving purposes.
-</div>
+{{</ notice >}}
 
 Ahir al migdia vaig jugar el primer partit de futbol des que he arribat a Aberdeen. Feia un fred que pelava (jo diria que estavem al voltant dels -1ºC). Vam ser unes 24 persones, gairebé tots estudiants internacionals, així que vam fer dos equips de 12. Un cop a Seaton Park ens vam vestir de curt (quin fred, Déu meu!!) i vam començar a jugar una cosa similar al futbol, on hi havia jugadors vestits de tots colors per tot arreu (el camp que vam fer era una mica més petit que un camp de futbol regular per questions d’espai). Més que jugadors del teu equip i adversaris el que hi havia era obstacles; no va ser una bona tarda de futbol, però va ser força divertit almenys, sobretot tenint en compte que la gran majoria de la gent no portava botes amb tacs i estava tota l’estona per terra -doncs la gesta estava lleugerament gelada-. Els afortunats que teniem botes portavem un gran aventatge, doncs.
 

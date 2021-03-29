@@ -9,9 +9,9 @@ featuredpath = "date"
 type = "post"
 +++
 
-<div class="post-notice">
+{{< notice Notice >}}
 This is a verbatim copy of a post made in my old blog dimlight.wrodpress.com, included here for archiving purposes.
-</div>
+{{</ notice >}}
 
 The picture below shows a Google Earth screenshot of the Hillhead Halls zone in Aberdeen. This is where I’ll be living from the end of January on and for a little more than four months. I’ve put some numbers on it to point out some interesting findings:
 

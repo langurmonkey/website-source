@@ -9,8 +9,8 @@ featuredpath = "date"
 type = "post"
 +++
 
-<div class="post-notice">
+{{< notice Notice >}}
 This is a verbatim copy of a post made in my old blog dimlight.wrodpress.com, included here for archiving purposes.
-</div>
+{{</ notice >}}
 
 Finally I’m done with the coding - I’m posting some screens so that u can feel what the project looks like. Maybe I’ll upload the whole application in the future…

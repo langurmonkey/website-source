@@ -9,9 +9,9 @@ featuredpath = "date"
 type = "post"
 +++
 
-<div class="post-notice">
+{{< notice Notice >}}
 This is a verbatim copy of a post made in my old blog dimlight.wrodpress.com, included here for archiving purposes.
-</div>
+{{</ notice >}}
 
 Hello, I’m back again, so dont get confused if you see me around in Barcelona or Arenys! After coming back I can confirm what I expected: the thing I miss the most from Aberdeen are the long football afternoons we spent in Seaton (well, that and cheap deals involving Guinness or any other kind of beer in the Watering Hole). I’ve had quite a nice time indeed and all that comes to my mind when I think of Scotland is “wonderful”.
 
