@@ -1,8 +1,8 @@
----
-title: Search
-description: Client-side search. No external servers involved.
-weight: -170
----
++++
+title = "Search"
+description = "Client-side search. No external servers involved."
+weight = -170
++++
 
 <p>
 <input id="search" type="text" placeholder="Enter your search query here">

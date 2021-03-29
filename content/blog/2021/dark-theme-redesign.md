@@ -1,7 +1,7 @@
 +++
 author = "Toni Sagrista Selles"
 categories = ["Website"]
-tags = [ "website", "design"]
+tags = [ "website", "design", "javascript"]
 date = "2021-03-03"
 description = "How to implement a dark theme for your website, plus a small discussion on the recent redesign that aims at simplifying the experience"
 linktitle = ""
