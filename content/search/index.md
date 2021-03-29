@@ -4,7 +4,9 @@ description: Client-side search. No external servers involved.
 weight: -170
 ---
 
-<p><input id="search" type="text" placeholder="Enter your search query here"></p>
+<p>
+<input id="search" type="text" placeholder="Enter your search query here">
+</p>
 
 <ul id="results"></ul>
 
@@ -17,7 +19,7 @@ var lunrIndex,
 
 function initLunr() {
   // retrieve the index file
-  $.getJSON("index.json")
+  $.getJSON("/index.json")
     .done(function(index) {
         documents = index;
 

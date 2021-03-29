@@ -561,3 +561,12 @@ img.inline {
 .red {
     color: #ff5533;
 }
+div#search-link {
+    border: solid 1px rgba(160, 160, 160, 0.6);
+    background-color: rgba(160, 160, 160, 0.1);
+    padding: 0.2em 0.5em 0.2em 0.5em;
+}
+div#search-link a {
+    color: rgba(160, 160, 160, 0.8);
+    border: none;
+}

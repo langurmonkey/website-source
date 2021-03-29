@@ -1972,7 +1972,7 @@ input[type="email"]:focus,
 input[type="tel"]:focus,
 select:focus,
 textarea:focus {
-    border: 0.1em solid #2A4;
+    border: 0.1em solid var(--title-color);
 }
 
 .select-wrapper {
