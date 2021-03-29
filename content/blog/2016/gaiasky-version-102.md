@@ -1,7 +1,7 @@
 +++
 author = "Toni Sagrista Selles"
 categories = ["Gaia Sky"]
-tags = [ "simulation", "astronomy", "astrophysics", "gaia", "opengl" ]
+tags = [ "simulation", "astronomy", "astrophysics", "gaia", "opengl", "gaia sky" ]
 date = "2016-11-14"
 description = "Version 1.0.2 brings spacecraft mode, lens glow, 360° and lots of bugfixes"
 linktitle = ""

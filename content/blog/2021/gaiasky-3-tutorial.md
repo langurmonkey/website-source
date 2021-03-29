@@ -1,7 +1,7 @@
 +++
 author = "Toni Sagrista Selles"
 categories = ["Gaia Sky"]
-tags = [ "programming", "opengl", "release", "version", "english", "tutorial" ]
+tags = [ "programming", "opengl", "release", "version", "english", "tutorial", "gaia sky" ]
 date = 2021-03-16
 linktitle = ""
 title = "Gaia Sky 3 tutorial for complete beginners"

@@ -1,7 +1,7 @@
 +++
 author = "Toni Sagrista Selles"
 categories = ["Gaia Sky"]
-tags = ["astronomy", "simulation", "gaia", "opengl"]
+tags = ["astronomy", "simulation", "gaia", "opengl", "gaia sky"]
 date = "2014-12-19"
 description = "Released the first beta version of the Gaia Sandbox!"
 linktitle = ""

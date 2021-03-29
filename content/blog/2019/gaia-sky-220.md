@@ -1,7 +1,7 @@
 +++
 author = "Toni Sagrista Selles"
 categories = ["Gaia Sky"]
-tags = [ "programming", "opengl", "release", "version", "english" ]
+tags = [ "programming", "opengl", "release", "version", "english", "gaia sky" ]
 date = 2019-08-01
 description = "Planetary surfaces, keyframed camera, new scripting and more"
 linktitle = ""

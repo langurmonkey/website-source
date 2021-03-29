@@ -1,7 +1,7 @@
 +++
 author = "Toni Sagrista Selles"
 categories = ["Gaia Sky"]
-tags = [ "simulation", "astronomy", "astrophysics", "gaia", "opengl" ]
+tags = [ "simulation", "astronomy", "astrophysics", "gaia", "opengl", "gaia sky" ]
 date = "2016-09-14"
 description = "Gaia Sky hits version 1.0.0"
 linktitle = ""

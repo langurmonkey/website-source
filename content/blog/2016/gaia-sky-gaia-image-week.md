@@ -1,7 +1,7 @@
 +++
 author = "Toni Sagrista Selles"
 categories = ["Gaia Sky"]
-tags = [ "simulation", "astronomy", "astrophysics", "gaia", "opengl" ]
+tags = [ "simulation", "astronomy", "astrophysics", "gaia", "opengl", "gaia sky" ]
 date = "2016-04-27"
 description = "Gaia Image of the week"
 linktitle = ""

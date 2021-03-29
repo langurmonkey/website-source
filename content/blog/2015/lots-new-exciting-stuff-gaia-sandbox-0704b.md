@@ -1,7 +1,7 @@
 +++
 author = "Toni Sagrista Selles"
 categories = ["Gaia Sky"]
-tags = [ "simulation", "astronomy", "astrophysics", "gaia", "opengl" ]
+tags = [ "simulation", "astronomy", "astrophysics", "gaia", "opengl", "gaia sky" ]
 date = "2015-03-29"
 description = "Lots of new exciting stuff in Gaia Sandbox 0.704b"
 linktitle = ""

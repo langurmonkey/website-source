@@ -1,7 +1,7 @@
 +++
 author = "Toni Sagrista Selles"
 categories = ["Gaia Sky"]
-tags = [ "programming", "camera", "opengl", "astronomy", "videos" ]
+tags = [ "programming", "camera", "opengl", "astronomy", "videos", "gaia sky" ]
 aliases = [ "/blog/keyframe-based-camera-recorder/" ]
 date = "2019-03-01"
 description = "Gaia Sky gets keyframe-based camera paths"

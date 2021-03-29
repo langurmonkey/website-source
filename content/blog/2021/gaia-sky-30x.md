@@ -1,7 +1,7 @@
 +++
 author = "Toni Sagrista Selles"
 categories = ["Gaia Sky"]
-tags = [ "programming", "opengl", "release", "version", "english" ]
+tags = [ "programming", "opengl", "release", "version", "english", "gaia sky" ]
 date = 2021-03-07
 description = "Dramatic performance improvements and lots of new features in Gaia Sky 3"
 linktitle = ""

@@ -1,7 +1,7 @@
 +++
 author = "Toni Sagrista Selles"
 categories = ["Gaia Sky"]
-tags = [ "simulation", "astronomy", "astrophysics", "gaia", "opengl" ]
+tags = [ "simulation", "astronomy", "astrophysics", "gaia", "opengl", "gaia sky" ]
 date = "2017-08-02"
 description = "Jumbo release 1.5.0 brings lots of new features and improvements"
 linktitle = ""

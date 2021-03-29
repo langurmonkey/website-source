@@ -1,7 +1,7 @@
 +++
 author = "Toni Sagrista Selles"
 categories = ["Gaia Sky"]
-tags = [ "scripting", "python"]
+tags = [ "scripting", "python", "gaia sky" ]
 aliases = [ "/blog/gaia-sky-scripting/" ]
 date = "2019-03-15"
 title = "Scripting Gaia Sky"
