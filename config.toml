@@ -53,11 +53,6 @@ uglyurls = false
     # Loading min files for exampleSite
     # customCSS            = ["/css/main.min.css"]
     # customJS             = ["/js/main.min.js"]
-
-# This fixes the 'raw HTML omitted' problem
-[markup.goldmark.renderer]
-    unsafe= true
-
 # parms.intro will appear on the sidebar
 # This is optional, but it's suggested to use
 [params.intro]
@@ -129,3 +124,24 @@ uglyurls = false
     email           = "me@tonisagrista.com"
     mastodon        = "@jumpinglangur"
     pgp             = "0x2FD2A59C1D734C1F"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.parser]
+      autoHeadingID = true
+      autoHeadingIDType = "github"
+      [markup.goldmark.parser.attribute]
+        block = false
+        title = true
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = true
+      xhtml = false
