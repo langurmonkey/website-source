@@ -534,6 +534,7 @@ img.inline {
     color: var(--fg-hint-body);
     padding: 0.3em 0.5em 0.3em 0.5em;
     border-radius: 0 0 0.3em 0.3em;
+    margin-top: 0 !important;
 }
 .guilabel {
     border: 1px solid #7fbbe3;
@@ -572,4 +573,17 @@ div#search-link a {
 }
 .footnotes ol {
     font-size: 0.7em;
+}
+.data-language-block {
+    font-family: monospace;
+    font-size: 0.7em;
+    display: inline-block;
+    background-color: #181818;
+    color: #aaa;
+    border: 1px #444 solid;
+    border-bottom: 0px;
+    padding: 0 1.5em 0 1.5em;
+    vertical-align: bottom;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
