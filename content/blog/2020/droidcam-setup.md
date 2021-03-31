@@ -10,7 +10,7 @@ featuredpath = "date"
 type = "post"
 +++
 
-These days of coronavirus where a lot of people work from home the number of teleconferences per unit of time has skyrocketed. Most of us are forced to use video conferencing software of [dubious privacy practices](https://www.theguardian.com/technology/2020/apr/02/zoom-technology-security-coronavirus-video-conferencing) without having much say in the choice, but that is a story for another day. If you are like me and do not have an external webcam to plug into your PC, don't run off to the store just yet. There are solutions to make your Android smartphone act as a webcam that work really well. One of them is droidcam from [Dev47Apps](https://www.dev47apps.com/droidcam), which works even if you [don't have Google Services](https://microg.org/) installed. This post quickly discusses how to set this up on your Linux PC using both wifi and ADB.
+These days of coronavirus where a lot of people work from home the number of teleconferences per unit of time has skyrocketed. Most of us are forced to use video conferencing software of dubious privacy practices[^zoom-privacy] without having much say in the choice, but that is a story for another day. If you are like me and do not have an external webcam to plug into your PC, don't run off to the store just yet. There are solutions to make your Android smartphone act as a webcam that work really well. One of them is droidcam from [Dev47Apps](https://www.dev47apps.com/droidcam), which works even if you [don't have Google Services](https://microg.org/) installed. This post quickly discusses how to set this up on your Linux PC using both wifi and ADB.
 
 <!--more-->
 
@@ -78,3 +78,5 @@ mpv av://v4l2:/dev/video0
 ## Final notes
 
 We have seen that it is quite easy to use a smartphone as a webcam on Linux. Right now, webcams are quite expensive due to the high demand, so this may be a good alternative for you, as it is for me. You can even use an old device and re-purpose it as a webcam, effectively extending its life, avoiding unnecessary expenses in new gadgets at the same time.
+
+[^zoom-privacy]: 'Zoom is malware': https://www.theguardian.com/technology/2020/apr/02/zoom-technology-security-coronavirus-video-conferencing

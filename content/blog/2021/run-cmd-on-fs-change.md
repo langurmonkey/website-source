@@ -10,7 +10,7 @@ type = "post"
 +++
 
 
-If you usually develop your software without an IDE, it may come in handy to be able to run a custom command or two whenever a file or a group of files in the file system is modified. This post discusses ['entr'](https://github.com/eradman/entr), a small event notify test runner which might just be what you need to fill an inconvenient gap in your mouseless development environment. 
+If you usually develop your software without an IDE, it may come in handy to be able to run a custom command or two whenever a file or a group of files in the file system is modified. This post discusses [`entr`](https://github.com/eradman/entr), a small event notify test runner which might just be what you need to fill an inconvenient gap in your mouseless development environment. 
 
 <!--more-->
 

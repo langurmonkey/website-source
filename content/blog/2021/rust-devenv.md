@@ -30,7 +30,7 @@ My setup consists of a workspace dedicated to Rust. This workspace is divided ve
 
 This is arguably the most important component of the setup. If configured correctly, with the proper plugins and key bindings, `vim` stands its ground against a fully-fledged IDE like IntelliJ IDEA.
 
-We need a few plugins to achieve a pleasant experience, but first, a word about plugin managers. I recommend using [vim-plug](https://github.com/junegunn/vim-plug) to install and manage your plugins. The configuration is dead-simple, as only a plugin list is required in the `init.vim` or `.vimrc` file. Plugin installation and update is done via the command `:PlugUpdate`. Once run, all defined plugins will be automatically downloaded and installed for you. If you remove a plugin from you list, run `:PlugClean` so that `vim-plug` removes it from your system. Now, let's see the plugins.
+We need a few plugins to achieve a pleasant experience, but first, a word about plugin managers. I recommend using [`vim-plug`](https://github.com/junegunn/vim-plug) to install and manage your plugins. The configuration is dead-simple, as only a plugin list is required in the `init.vim` or `.vimrc` file. Plugin installation and update is done via the command `:PlugUpdate`. Once run, all defined plugins will be automatically downloaded and installed for you. If you remove a plugin from you list, run `:PlugClean` so that `vim-plug` removes it from your system. Now, let's see the plugins.
 
 ### Conquer of Completion
 

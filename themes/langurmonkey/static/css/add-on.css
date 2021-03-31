@@ -570,3 +570,6 @@ div#search-link a {
     color: rgba(160, 160, 160, 0.8);
     border: none;
 }
+.footnotes ol {
+    font-size: 0.7em;
+}

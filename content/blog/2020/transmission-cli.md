@@ -16,7 +16,7 @@ type = "post"
      style="width: 100%" ></img>
 </p>
 
-At home, I have a scrawny HTPC called `chimp` in my living room connected to the TV --as I don't own a Smart TV [for good reasons](https://www.tomsguide.com/news/new-studies-reveal-how-smart-tvs-spy-on-you)--. Even though I have a NAS in the network capable of serving media, I connected a dedicated external disk directly to `chimp` because my stock router is not the fastest around. Whenever I use the HTPC, I use it remotely from either my desktop, `bonobo`, or my laptop, `simian`. Sometimes I need to fetch torrents and download them to the disk connected to the HTPC.
+At home, I have a scrawny HTPC called `chimp` in my living room connected to the TV ---as I don't own a Smart TV [for good reasons](https://www.tomsguide.com/news/new-studies-reveal-how-smart-tvs-spy-on-you)---. Even though I have a NAS in the network capable of serving media, I connected a dedicated external disk directly to `chimp` because my stock router is not the fastest around. Whenever I use the HTPC, I use it remotely from either my desktop, `bonobo`, or my laptop, `simian`. Sometimes I need to fetch torrents and download them to the disk connected to the HTPC.
 Enter Transmission. [Transmission](https://transmissionbt.com) is a somewhat popular BitTorrent client that includes a 'hidden' command line interface which is very, very useful and simple to use. Learn to use it and you will probably never want to open a GUI torrent client ever again.  
 <!--more-->
 

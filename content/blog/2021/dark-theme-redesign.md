@@ -54,7 +54,7 @@ body {
 }
 {{< /highlight >}}
 
-If the setting is not set or not available, we fall back to checking the [`sessionStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage). 
+If the setting is not set or not available, we fall back to checking the `sessionStorage`.[^sessSt] 
 
 Session storage
 ---------------
@@ -142,3 +142,5 @@ On another note, I have also been making some tweaks to the website to make it m
 I have removed the sidebar, which contained superfluous information, I have made the default font size larger, I have adjusted the fonts, the margins, and the paddings, and I have added a small "Latest posts" at the bottom of the welcome page. I have also removed all font files (except for fork awesome) in favor of the default font families (``monospace``, ``serif``, etc.) and I have moved the social items to the footer. All of this on top of the already discussed new dark mode.
 
 The result is, in my opinion, a much cleaner and less cluttered site, which is easier to read, more gentle to the eyes, and weighs less.
+
+[^sessSt]: The `Window.sessionStorage` property: https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage
