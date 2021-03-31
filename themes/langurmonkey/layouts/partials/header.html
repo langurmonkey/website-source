@@ -66,7 +66,7 @@
             <link rel="stylesheet" href="/css/add-on.css" />
             <link rel="stylesheet" href="/css/fork-awesome.min.css">
         {{ end }}
-        <base href="{{ .Site.BaseURL }}" />
+        <!-- <base href="{{ .Site.BaseURL }}" /> -->
 
         {{ if ne ($.Scratch.Get "cssFiles") false }}
             {{ range $.Scratch.Get "cssFiles" }}
