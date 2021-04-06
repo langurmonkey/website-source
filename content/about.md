@@ -9,7 +9,7 @@ type = "homepage"
 
 How the hell did you end up here?
 
-<img src="/img/myself_v3.png"
+<img src="/img/myself_v3.webp"
      alt="My photo"
      style="float: right; margin-left: 50px; width: 30%" />
 
