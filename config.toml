@@ -117,12 +117,12 @@ uglyurls = false
 [social]
     rss             = "index.xml"
     gitlab          = "langurmonkey"
-    twitter         = "GaiaSky_Dev"
+    # twitter         = "GaiaSky_Dev"
     lbry            = "@GaiaSky"
-    youtube         = "toninoni"
-    linkedin        = "toni-sagristà-2101a927"
+    # youtube         = "toninoni"
+    # linkedin        = "toni-sagristà-2101a927"
     email           = "me@tonisagrista.com"
-    mastodon        = "@jumpinglangur"
+    # mastodon        = "@jumpinglangur"
     pgp             = "0x2FD2A59C1D734C1F"
 
 [markup]
