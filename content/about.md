@@ -24,3 +24,8 @@ I'm currently working in the [Gaia](https://sci.esa.int/web/gaia) group of the [
 - here is my [CV](/resume), just in case you want to offer me my dream job
 - find me on [mastodon](https://mastodont.cat/@jumpinglangur) and (on a professional capacity) on [twitter](https://twitter.com/GaiaSky_dev)
 
+
+
+#### Privacy considerations
+
+This site strives to be as bloat-free as possible. It does not use cookies, tracking codes, analytics scripts or anything else that can be used to track users. All content is served from this domain. You can check the source code in [this repository](https://gitlab.com/langurmonkey/langurmonkey.gitlab.io). Find out more about my privacy policy [here](/privacypolicy)

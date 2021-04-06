@@ -47,7 +47,7 @@ uglyurls = false
     # minifiedFilesCSS and minifiedFilesJS. The variable is an array so that you
     # can load multiple files if necessary. You can also load the standard theme
     # files by adding the value, "default".
-    # customCSS            = ["default", "/path/to/file"]
+    # customCSS            = ["default", "/css/theme-pink-blue.css"]
     # customJS             = ["default", "/path/to/file"]
 
     # Loading min files for exampleSite

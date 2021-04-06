@@ -39,15 +39,7 @@
             {{ end }}
         {{ end }}
 
-        {{ template "_internal/twitter_cards.html" . }}
-        {{ template "_internal/opengraph.html" . }}
-        {{ template "_internal/schema.html" . }}
 
-        <!--[if lte IE 8]><script src="/js/ie/html5shiv.js"></script><![endif]-->
-
-        <!-- Keeping the deprecated param, minifiedFilesCSS, for now. The new param
-             that replaces this is customCSS. Utilizing a scratch variable cssFiles
-             to keep the deprecated param. -->
         {{ if isset .Site.Params "minifiedFilesCSS" }}
             {{ $.Scratch.Set "cssFiles" .Site.Params.minifiedFilesCSS }}
         {{ else if isset .Site.Params "customCSS" }}
@@ -59,14 +51,12 @@
         <!-- If the value "default" is passed into the param then we will first
              load the standard css files associated with the theme -->
         {{ if or (in ($.Scratch.Get "cssFiles") "default") (eq ($.Scratch.Get "cssFiles") false) }}
-            <link rel="stylesheet" href="/css/theme-pink-blue.css" />
-        <!-- <link rel="stylesheet" href="/css/theme-yellow-orange.css" /> -->
-        <!-- <link rel="stylesheet" href="/css/theme-green.css" /> -->
-            <link rel="stylesheet" href="/css/main.css" />
-            <link rel="stylesheet" href="/css/add-on.css" />
-            <link rel="stylesheet" href="/css/fork-awesome.min.css">
+            <link rel="stylesheet" href="/css/site-bundle.css" />
+            <!-- <link rel="stylesheet" href="/css/theme-pink-blue.css" /> -->
+            <!-- <link rel="stylesheet" href="/css/main.css" /> -->
+            <!-- <link rel="stylesheet" href="/css/add-on.css" /> -->
+            <!-- <link rel="stylesheet" href="/css/fork-awesome.min.css"> -->
         {{ end }}
-        <!-- <base href="{{ .Site.BaseURL }}" /> -->
 
         {{ if ne ($.Scratch.Get "cssFiles") false }}
             {{ range $.Scratch.Get "cssFiles" }}

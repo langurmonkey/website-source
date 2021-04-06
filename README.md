@@ -9,13 +9,40 @@ Letsencrypt certificate renewal
 To renew the certificate, just do:
 
 ```bash
-$  sudo certbot certonly --manual -d tonisagrista.com
+certbot certonly --manual -d tonisagrista.com
 ```
 
 Then go to the [repo configuration](https://gitlab.com/jumpinglangur/jumpinglangur.gitlab.io/pages)
 and update the certificate and key with `/etc/letsencrypt/live/tonisagrista.com/fullchain.pem` and
 `/etc/letsencrypt/live/tonisagrista.com/privkey.pem` respectively.
 
+Minify
+------
+
+In order to minify the JS and CSS, you need `uglifycss` and `uglify-js`.
+
+```bash
+npm install -g uglify-js uglifycss
+```
+
+If any of the CSS files are modified, re-generate the bundle with:
+
+```bash
+cd $WEB/themes/langurmonkey/static/css
+uglifycss theme-pink-blue.css main.css add-on.css fork-awesome.css > site-bundle.css
+```
+Same with the JavaScript files:
+
+```bash
+cd $WEB/themes/langurmonkey/static/js
+uglifyjs darkmode.js jquery.min.js skel.min.js codeblock.js util.js main.js > site-bundle.js
+```
+
+To minify everything, do:
+
+```bash
+scripts/minify-all.sh
+```
 
 Gallery
 -------

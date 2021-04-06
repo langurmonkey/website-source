@@ -7,6 +7,7 @@
         </ul>
     </div>
     <div id="license">
+        See my <a href="/privacypolicy">Privacy policy</a>.
         All content on this site is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA 4.0</a>. <br />
         Icons by <a href="https://forkaweso.me">Fork Awesome</a> (<a href="http://scripts.sil.org/OFL">SIL OFL 1.1</a>)
     </div>
@@ -24,16 +25,13 @@
         <!-- If the value "default" is passed into the param then we will first
              load the standard js files associated with the theme -->
         {{ if or (in ($.Scratch.Get "jsFiles") "default") (eq ($.Scratch.Get "jsFiles") false) }}
-            <!-- Dark mode script -->
-            <script>
-if(sessionStorage.getItem("dark-mode") == "true") { darkModeAdd(); } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && sessionStorage.getItem("dark-mode") == null) { darkModeAdd(); } function lightModeAdd() { document.body.classList.remove("dark-mode"); document.getElementsByTagName('header')[0].classList.remove("dark-mode"); document.getElementById('menu').classList.remove("dark-mode"); updateLightsButton(false); } function darkModeAdd() { document.body.classList.add("dark-mode"); document.getElementsByTagName('header')[0].classList.add("dark-mode"); document.getElementById('menu').classList.add("dark-mode"); updateLightsButton(true); } function darkModeToggle() { var is_dark = document.body.classList.contains("dark-mode"); document.body.classList.toggle("dark-mode"); document.getElementsByTagName('header')[0].classList.toggle("dark-mode"); document.getElementById('menu').classList.toggle("dark-mode"); hasDark = document.body.classList.contains("dark-mode"); sessionStorage.setItem("dark-mode", hasDark); updateLightsButton(!is_dark); } function updateLightsButton(is_dark) { var lights = document.getElementById('lights'); lights.classList.remove("fa-sun", "fa-moon"); if(is_dark) { lights.classList.add("fa-sun"); } else { lights.classList.add("fa-moon"); } }
-            </script>
+            <script src="/js/site-bundle.js"></script>
             <!-- <script src="/js/darkmode.js"></script> -->
-            <script src="/js/jquery.min.js"></script>
-            <script src="/js/skel.min.js"></script>
-            <script src="/js/codeblock.js"></script>
-            <script src="/js/util.js"></script>
-            <script src="/js/main.js"></script>
+            <!-- <script src="/js/jquery.min.js"></script> -->
+            <!-- <script src="/js/skel.min.js"></script> -->
+            <!-- <script src="/js/codeblock.js"></script> -->
+            <!-- <script src="/js/util.js"></script> -->
+            <!-- <script src="/js/main.js"></script> -->
 
             <!-- Convert links which point outside to open in new window -->
             <script type="text/javascript">
