@@ -60,7 +60,7 @@ Another thing I had my eye on for a while is [Pi-hole](https://pi-hole.net). The
 
 It comes with a very nice web interface which provides lots of info and statistics on the ad-blocking and the service.
 
-{{< figure src="/img/2021/03/rpi-pihole.png" link="/img/2021/03/rpi-pihole.png" title="The Ph-hole web interface as I'm writing this article" width="50%" class="fig-center" >}}
+{{< figure src="/img/2021/03/rpi-pihole.webp" link="/img/2021/03/rpi-pihole.webp" title="The Ph-hole web interface as I'm writing this article" width="50%" class="fig-center" >}}
 
 You can even set up local DNS records, so I naturally gave each of my systems a name. A device using the Pi-hole as its DNS server can access the devices by these names. Neat!
 
