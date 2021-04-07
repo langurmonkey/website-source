@@ -3,7 +3,7 @@ languageCode = "en-gb"
 title = "Jumping Langur - Toni Sagristà Sellés"
 theme = "langurmonkey"
 preserveTaxonomyNames = true
-paginate = 5
+paginate = 6
 enableRobotsTXT = true
 canonifyURLs = true
 pygmentsUseClassic = false
@@ -23,7 +23,6 @@ uglyurls = false
     category = "categories"
 
 [params]
-
     # Sets the meta tag description, usually reserved for the main page
     description          = "Personal website and portfolio"
     # This will appear on the top left of the navigation bar
@@ -49,34 +48,8 @@ uglyurls = false
     # files by adding the value, "default".
     # customCSS            = ["default", "/css/theme-pink-blue.css"]
     # customJS             = ["default", "/path/to/file"]
-
-    # Loading min files for exampleSite
-    # customCSS            = ["/css/main.min.css"]
-    # customJS             = ["/js/main.min.js"]
-# parms.intro will appear on the sidebar
-# This is optional, but it's suggested to use
-[params.intro]
-    header    = "Toni Sagristà Sellés"
-    paragraph = "Personal website and portfolio"
-
-#    about     = "I am a Software Engineer interested in astrophysics and scientific visualisation. I live in Heidelberg (Germany) and struggle to learn the language and comprehend German culture. I'm currently working on CU3/CU9/Gaia at ARI/ZAH@Uni-Heidelberg and I'm also a Ph.D. candidate at the viscomp group, IWR@Uni-Heidelberg."
-
-# This will also appear on the sidebar.
-# A width of less than 100px is recommended
-# This is optional
-[params.intro.pic]
-    src       = "/img/main/logo.jpg"
-    # modify your picture in the shape of a circle or
-    # future imperfect's hexagonal shape
-    circle    = true
-    imperfect = false
-    width     = "150"
-    alt       = "Jumping Langur"
-
-# Adjust the amount of recent posts on the sidebar.
-# This is optional. The default value 5 will be used
-[params.postAmount]
-    sidebar = 4
+    customcss              = ["/css/site-bundle.css"]
+    customjs               = ["/js/site-bundle.js"]
 
 # Set up your menu items in the navigation bar
 # You can use identifier to prepend a font awesome icon to your text
@@ -111,20 +84,15 @@ uglyurls = false
     url = "/photo-gallery"
     weight = 6
 
-# Insert your username and the icon will apear on the page as long as
-# socialAppearAtTop or socialAppearAtBottom is set to true in the params area
-# The social media icons will appear on the sidebar
+# These go in the footer
 [social]
     rss             = "index.xml"
     gitlab          = "langurmonkey"
-    # twitter         = "GaiaSky_Dev"
     lbry            = "@GaiaSky"
-    # youtube         = "toninoni"
-    # linkedin        = "toni-sagristà-2101a927"
     email           = "me@tonisagrista.com"
-    # mastodon        = "@jumpinglangur"
     pgp             = "0x2FD2A59C1D734C1F"
 
+# Properties of the markdown render engine (goldmark)
 [markup]
   [markup.goldmark]
     [markup.goldmark.extensions]

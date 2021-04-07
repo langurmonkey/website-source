@@ -21,9 +21,7 @@
         </header>
         <div class="posts-container">
             {{ $.Scratch.Set "recentPosts" .Site.Pages }}
-
             {{ $.Scratch.Set "postLimit" 8 }}
-
                 {{ range first ($.Scratch.Get "postLimit") (where ($.Scratch.Get "recentPosts") "Type" "post") }}
                 <div class="recent-posts-item">
                     <a href="{{ .RelPermalink }}">{{ .Title | truncate 40 }}</a>&nbsp;

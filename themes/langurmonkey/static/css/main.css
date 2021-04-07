@@ -1495,9 +1495,8 @@ a {
     -webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
     -ms-transition: color 0.2s ease, border-bottom-color 0.2s ease;
     transition: color 0.2s ease, border-bottom-color 0.2s ease;
-    border-bottom: dotted 1px var(--link-color);
+    text-decoration: underline;
     color: var(--link-color);
-    text-decoration: none;
 }
 
 a.mainlogo {
@@ -1507,11 +1506,12 @@ a.mainlogo:hover {
     border-style: none;
 }
 
-article a.external:after{
+a[href^="http"]:not([href*="tonisagrista.com"]):not([href="sagrista.info"]):after{
     content: "\f08e";
     font-family: ForkAwesome;
     font-size: 0.5em;
     margin: 0 0 0 4px;
+    display: inline-block;
 }
 
 article a.share-btn:after {
@@ -1535,10 +1535,6 @@ strong, b {
     font-weight: 700;
 }
 
-a strong, b {
-    color: var(--title-color);
-}
-
 em, i {
     font-style: italic;
 }
@@ -1558,7 +1554,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     color: var(--title-color);
-    border-bottom: 0;
+    text-decoration: none;
 }
 
 h1 a:hover, 

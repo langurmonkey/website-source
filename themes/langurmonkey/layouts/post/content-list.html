@@ -4,10 +4,10 @@
     <p>{{ printf "%s" .Summary | markdownify }}</p>
 
     <footer>
+        <!-- {{ .Render "footer-category" }} -->
+        <!-- {{ .Render "footer-tag" }} -->
         <ul class="actions">
             <li><a href="{{ .Permalink }}" class="button big">Continue Reading</a></li>
         </ul>
-        {{ .Render "footer-category" }}
-        {{ .Render "footer-tag" }}
     </footer>
 </article>
