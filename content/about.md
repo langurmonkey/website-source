@@ -15,7 +15,7 @@ How the hell did you end up here?
 
 Anyway, my name is **Toni Sagristà Sellés** and I am a computer scientist and M.Sc. in Astrophysics and Cosmology. I like computer graphics and visualization, astronomy, photography (sometimes), snowboarding, playing and watching football, drawing horribly, playing with my kids, and occasionally gaming. I sometimes use the aliases `jumpinglangur` and `langurmonkey`.
 
-I'm currently working in the [Gaia](https://sci.esa.int/web/gaia) group of the [Astronomisches Rechen-Institut](https://ari.uni-heidelberg.de) and doing research in scientific visualization in the [visual computing group](https://vcg.iwr.uni-heidelberg.de) of the [Interdisciplinary Center for Scientific Computing](https://www.iwr.uni-heidelberg.de).
+I'm currently working in the Gaia[^gaia] group of the Astronomisches Rechen-Institut[^ari] in Heidelberg, and doing research in scientific visualization in the Visual Computing Group[^viscomp] of the Interdisciplinary Center for Scientific Computing[^iwr], also in Heidelberg.
 
 While you are here, you may want to:
 
@@ -30,4 +30,10 @@ While you are here, you may want to:
 
 #### Privacy matters!
 
-This site strives to be as bloat-free as possible. It does not use cookies, tracking codes, analytics scripts or anything else that can be used to track users. All content is served from this domain. You can check the source code in [this repository](https://gitlab.com/langurmonkey/langurmonkey.gitlab.io).
+This site strives to be as bloat-free as possible. It does not use cookies, tracking codes, analytics scripts or anything else that can be used to track users.[^privacypolicy] All content is served from this domain. The source code of this site is open and freely available for all to inspect.[^webrepo] 
+[^gaia]: ESA Gaia: https://sci.esa.int/web/gaia
+[^ari]: Astronomisches-Rechen Institut website: https://ari.uni-heidelberg.de
+[^viscomp]: Visual Computing Group: https://vcg.iwr.uni-heidelberg.de
+[^iwr]: IWR: https://www.iwr.uni-heidelberg.de
+[^privacypolicy]: Privacy policy: [website/privacypolicy](/privacypolicy) 
+[^webrepo]: Website source repository: https://gitlab.com/langurmonkey/langurmonkey.gitlab.io
