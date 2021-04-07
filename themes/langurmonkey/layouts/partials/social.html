@@ -1,43 +1,43 @@
 {{ with .Site.Social.rss }}
-<li><a href="/{{.}}" target="_blank" alt="RSS"><i class="fa fa-rss-square"></i></a></li>
+<li><a href="/{{.}}" target="_blank" alt="RSS" title="RSS feed for this website">RSS</a></li>
 {{ end }}
 
 {{ with .Site.Social.gitlab }}
-<li><a href="//gitlab.com/{{.}}" target="_blank" alt="GitLab"><i class="fa fa-gitlab"></i></a></li>
+<li><a href="//gitlab.com/{{.}}" target="_blank" alt="GitLab" title="GitLab repository">GitLab</a></li>
 {{ end }}
 
 {{ with .Site.Social.github }}
-<li><a href="//github.com/{{.}}" target="_blank" alt="GitHub"><i class="fa fa-github-alt"></i></a></li>
+<li><a href="//github.com/{{.}}" target="_blank" alt="GitHub" title="GitHub repository">GitHub</a></li>
 {{ end }}
 
 {{ with .Site.Social.lbry }}
-<li><a href="//odysee.com/{{.}}" target="_blank" alt="Odysee"><i class="fa fa-film"></i></a></li>
+<li><a href="//odysee.com/{{.}}" target="_blank" alt="Odysee" title="Odysee channels">Odysee</a></li>
 {{ end }}
 
 {{ with .Site.Social.youtube }}
-<li><a href="//youtube.com/{{.}}" target="_blank" alt="YouTube"><i class="fa fa-youtube-play"></i></a></li>
+<li><a href="//youtube.com/{{.}}" target="_blank" alt="YouTube" title="YouTube channel">YouTube</a></li>
 {{ end }}
 
 {{ with .Site.Social.linkedin }}
-<li><a href="//linkedin.com/in/{{.}}" target="_blank" alt="LinkedIn"><i class="fa fa-linkedin-square"></i></a></li>
+<li><a href="//linkedin.com/in/{{.}}" target="_blank" alt="LinkedIn" tilte="LinkedIn account">LinkedIn</a></li>
 {{ end }}
 
 {{ with .Site.Social.reddit }}
-<li><a href="//reddit.com/user/{{.}}" target="_blank" alt="Reddit"><i class="fa fa-reddit-square"></i></a></li>
+<li><a href="//reddit.com/user/{{.}}" target="_blank" alt="Reddit">Reddit</a></li>
 {{ end }}
 
 {{ with .Site.Social.mastodon }}
-<li><a href="//mastodont.cat/{{.}}" target="_blank" alt="Mastodon"><i class="fa fa-mastodon"></i></a></li>
+<li><a href="//mastodont.cat/{{.}}" target="_blank" alt="Mastodon" title="Mastodon account">Mastodon</a></li>
 {{ end }}
 
 {{ with .Site.Social.twitter }}
-<li><a href="//twitter.com/{{.}}" target="_blank" alt="Twitter"><i class="fa fa-twitter-square"></i></a></li>
+<li><a href="//twitter.com/{{.}}" target="_blank" alt="Twitter" title="Twitter account">Twitter</a></li>
 {{ end }}
 
 {{ with .Site.Social.pgp }}
-<li><a href="/pgp/tss_pubkey.asc" target="_blank" alt="PGP"><i class="fa fa-gnupg"></i></a></li>
+<li><a href="/pgp/tss_pubkey.asc" target="_blank" alt="PGP" title="PGP key">PGP</a></li>
 {{ end }}
 
 {{ with .Site.Social.email }}
-<li><a href="mailto:{{.}}" alt="Email"><i class="fa fa-envelope-square"></i></a></li>
+<li><a href="mailto:{{.}}" alt="Email" title="Email address">Email</a></li>
 {{ end }}

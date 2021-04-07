@@ -2250,11 +2250,14 @@ ul.icons {
     cursor: default;
     list-style: none;
     padding-left: 0;
+    display: block;
+    text-align: center;
+    margin-top: 3em;
 }
 
 ul.icons li {
     display: inline-block;
-    padding: 0 0.4em 0 0;
+    padding: 0 0.9em 0 0;
     opacity: 0.6;
 }
 ul.icons li:hover {
@@ -2266,8 +2269,8 @@ ul.icons li:last-child {
 }
 
 ul.icons li > * {
-    text-decoration: none;
-    border: 0;
+    font-size: 0.7em;
+    font-family: monospace;
 }
 
 ul.icons li > *:before {

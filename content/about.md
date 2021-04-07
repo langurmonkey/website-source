@@ -28,6 +28,6 @@ While you are here, you may want to:
 
 
 
-#### Privacy considerations
+#### Privacy matters!
 
-This site strives to be as bloat-free as possible. It does not use cookies, tracking codes, analytics scripts or anything else that can be used to track users. All content is served from this domain. You can check the source code in [this repository](https://gitlab.com/langurmonkey/langurmonkey.gitlab.io). Find out more about my privacy policy [here](/privacypolicy)
+This site strives to be as bloat-free as possible. It does not use cookies, tracking codes, analytics scripts or anything else that can be used to track users. All content is served from this domain. You can check the source code in [this repository](https://gitlab.com/langurmonkey/langurmonkey.gitlab.io).

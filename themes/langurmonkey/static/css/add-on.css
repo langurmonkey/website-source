@@ -507,8 +507,7 @@ div.flexbox {
 }
 #license {
     font-size: 0.5em;
-    font-family: sans-serif;
-    text-transform: uppercase;
+    font-family: monospace;
     color: #777;
     text-align: center;
     margin: -3em auto 0 auto;
