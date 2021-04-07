@@ -15,13 +15,15 @@ From time to time I publish some of my pictures in my gallery here in this websi
 
 ## My gear
 
-Below is a more or less complete list of my gear:
+Below is a list of my gear (to be completed):
 
-*  Canon EOS 40D
-*  10-20mm F3.5 EX DC HSM
-*  Canon EF 28-105mm F/3.5 - 4.5
-*  Canon EF 50mm F/1.8 STM
+*  Cameras:
+    *  Canon EOS 40D
+    *  Panasonic LUMIX DMC-LX10/15
+*  Lenses:
+    *  Canon EF 28-105mm F/3.5 - 4.5
+    *  Canon EF 50mm F/1.8 STM
+    *  Sigma 10-20mm F3.5 EX DC HSM
 *  Carrying case (???)
 *  Tripod (???)
-*  Panasonic LUMIX DMC-LX10/15
 
