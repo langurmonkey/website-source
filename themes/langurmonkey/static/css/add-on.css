@@ -568,6 +568,10 @@ div#search-link a {
 .footnotes ol {
     font-size: 0.7em;
 }
+a.footnote-ref {
+    font-size: 0.8em;
+    text-decoration: none;
+}
 .data-language-block {
     font-family: monospace;
     font-size: 0.7em;
