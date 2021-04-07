@@ -3479,7 +3479,8 @@ body.is-menu-visible #wrapper {
 
 #menu .links > li a {
     display: block;
-    border-bottom: 0;
+    text-decoration: none;
+    color: inherit;
 }
 
 #menu .links > li a h3 {
@@ -3491,6 +3492,7 @@ body.is-menu-visible #wrapper {
     text-transform: lowercase;
     font-weight: 100;
     font-family: courier,monospace;
+    color: inherit;
 }
 
 #menu .links > li a p {

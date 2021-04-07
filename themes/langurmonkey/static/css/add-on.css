@@ -563,7 +563,7 @@ div#search-link {
 }
 div#search-link a {
     color: rgba(160, 160, 160, 0.8);
-    border: none;
+    text-decoration: none;
 }
 .footnotes ol {
     font-size: 0.7em;
