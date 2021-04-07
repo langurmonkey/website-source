@@ -81,7 +81,7 @@ uglyurls = false
 
 [[menu.main]]
     name = "/photo"
-    url = "/photo-gallery"
+    url = "/photography"
     weight = 6
 
 # These go in the footer

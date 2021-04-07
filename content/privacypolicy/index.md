@@ -3,7 +3,6 @@ title = "Privacy Policy"
 categories = ["Privacy"]
 tags = ["website","privacy","principles"]
 date = "2021-04-06"
-type = "homepage"
 +++
 
 This site strives to be as bloat-free as possible. It does not use cookies, tracking codes, analytics scripts or anything else that can be used to track users. 
