@@ -17,13 +17,13 @@ From time to time I publish some of my pictures in my gallery here in this websi
 
 Below is a list of my gear (to be completed):
 
-*  Cameras:
-    *  Canon EOS 40D {{< sp orange >}}[[pic1](/img/photography/canon40d.webp)]{{</ sp >}}
-    *  Panasonic LUMIX DMC-LX10/15 {{< sp orange >}}[[pic1](/img/photography/lumix-lx15-1.webp), [pic2](/img/photography/lumix-lx15-2.webp)]{{</ sp >}}
-*  Lenses:
-    *  Canon EF 28-105mm F/3.5 - 4.5 {{< sp orange >}}[[pic1](/img/photography/canon28-105.webp)]{{</ sp >}}
-    *  Canon EF 50mm F/1.8 STM {{< sp orange >}}[[pic1](/img/photography/canon50-1.webp), [pic2](/img/photography/canon50-2.webp)]{{</ sp >}}
-    *  Sigma 10-20mm F3.5 EX DC HSM {{< sp orange >}}[[pic1](/img/photography/sigma10-20.webp)]{{</ sp >}}
+*  {{< sp accent >}}Cameras{{</ sp >}}
+    *  Canon EOS 40D {{< sp accent >}}[[pic1](/img/photography/canon40d.webp)]{{</ sp >}}
+    *  Panasonic LUMIX DMC-LX10/15 {{< sp accent >}}[[pic1](/img/photography/lumix-lx15-1.webp), [pic2](/img/photography/lumix-lx15-2.webp)]{{</ sp >}}
+*  {{< sp accent >}}Lenses{{</ sp >}}
+    *  Canon EF 28-105mm F/3.5 - 4.5 {{< sp accent >}}[[pic1](/img/photography/canon28-105.webp)]{{</ sp >}}
+    *  Canon EF 50mm F/1.8 STM {{< sp accent >}}[[pic1](/img/photography/canon50-1.webp), [pic2](/img/photography/canon50-2.webp)]{{</ sp >}}
+    *  Sigma 10-20mm F3.5 EX DC HSM {{< sp accent >}}[[pic1](/img/photography/sigma10-20.webp)]{{</ sp >}}
 *  Lowepro All-Weather carrying case
 *  Manfrotto Adapto Tripod
 

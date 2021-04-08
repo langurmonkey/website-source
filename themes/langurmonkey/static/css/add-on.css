@@ -556,6 +556,9 @@ img.inline {
 .red {
     color: #ff5533;
 }
+.accent {
+    color: var(--title-color);
+}
 div#search-link {
     border: solid 1px rgba(160, 160, 160, 0.6);
     background-color: rgba(160, 160, 160, 0.1);
