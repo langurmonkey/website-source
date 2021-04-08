@@ -24,6 +24,6 @@ Below is a list of my gear (to be completed):
     *  Canon EF 28-105mm F/3.5 - 4.5
     *  Canon EF 50mm F/1.8 STM
     *  Sigma 10-20mm F3.5 EX DC HSM
-*  Carrying case (???)
-*  Tripod (???)
+*  Lowepro All-Weather carrying case
+*  Manfrotto Adapto Tripod
 
