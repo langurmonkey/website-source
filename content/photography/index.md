@@ -21,9 +21,9 @@ Below is a list of my gear (to be completed):
     *  Canon EOS 40D {{< sp accent >}}[[pic1](/img/photography/canon40d.webp)]{{</ sp >}}
     *  Panasonic LUMIX DMC-LX10/15 {{< sp accent >}}[[pic1](/img/photography/lumix-lx15-1.webp), [pic2](/img/photography/lumix-lx15-2.webp)]{{</ sp >}}
 *  {{< sp accent >}}Lenses{{</ sp >}}
-    *  Canon EF 28-105mm F/3.5 - 4.5 {{< sp accent >}}[[pic1](/img/photography/canon28-105.webp)]{{</ sp >}}
-    *  Canon EF 50mm F/1.8 STM {{< sp accent >}}[[pic1](/img/photography/canon50-1.webp), [pic2](/img/photography/canon50-2.webp)]{{</ sp >}}
-    *  Sigma 10-20mm F3.5 EX DC HSM {{< sp accent >}}[[pic1](/img/photography/sigma10-20.webp)]{{</ sp >}}
-*  Lowepro All-Weather carrying case
-*  Manfrotto Adapto Tripod
+    *  Canon EF 28-105mm f/3.5-4.5 II USM {{< sp accent >}}[[pic1](/img/photography/canon28-105.webp)]{{</ sp >}}
+    *  Canon EF 50mm f/1.8 II {{< sp accent >}}[[pic1](/img/photography/canon50-1.webp), [pic2](/img/photography/canon50-2.webp)]{{</ sp >}}
+    *  Sigma 10-20mm f/4-5.6 EX DC HSM {{< sp accent >}}[[pic1](/img/photography/sigma10-20.webp)]{{</ sp >}}
+*  Lowepro Nova 170 AW DSLR Camera Shoulder Bag
+*  Manfrotto Compact Advanced Smart 65" Tripod
 
