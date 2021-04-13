@@ -35,7 +35,7 @@ echo
 
 We use the `sar` command to get the CPU readings for one second, and then select the relevant lines with `grep`. The result of `sar -P ALL 1 1` is a data point taken over one second, plus the average at the end. This can be modified by changing the parameters. Below is the output with my *i7-7700*.
 
-{{< highlight sh >}}
+{{< highlight sh "hl_lines=17-24" >}}
 $  sar -P ALL 1 1
 Linux 5.11.11-arch1-1 (hidalgo) 	13/04/21 	_x86_64_	(8 CPU)
 
@@ -62,7 +62,7 @@ Average:          6     23.00      0.00     12.00      0.00      0.00     65.00
 Average:          7     23.81      0.00     13.33      0.00      0.00     62.86
 {{</ highlight >}}
 
-We need the average lines for each of the 8 cores, from 0 to 7. We select the relevant lines with `grep -E 'Average:\s+[0-9]+'`. This selects as many lines as cores. If you have more or less than 8, it should also work.
+We need the average lines for each of the 8 cores (highlighted in the snippet above), from 0 to 7. We select the relevant lines with `grep -E 'Average:\s+[0-9]+'`. This selects as many lines as cores. If you have more or less than 8, it should also work.
 
 After that, we process each of these lines by taking the column number 3 (`%user` column, which contains the percentage of CPU utilization that occurred while executing at the user level) with `awk`, and we convert it to the ramp array (`$ramp_arr`) index with some math using `bc`. Finally, the ramp character is printed and we go on to the next core.
 
