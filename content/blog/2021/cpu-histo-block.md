@@ -81,3 +81,4 @@ kborder_bottom=1
 markup=pango
 {{</ highlight >}}
 
+If you want to have a look at my other bar scripts, you can find them in [this repository](https://gitlab.com/langurmonkey/dotfiles/-/tree/master/i3blocks/scripts).
