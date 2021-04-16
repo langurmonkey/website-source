@@ -28,6 +28,9 @@ showpagemeta = "false"
 <strong><a href="/blog/2013/rts-engine-preview/">RTS Engine</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-git-square"></i></strong> &mdash; Real time strategy game engine written in Java. Very early stage, but already usable. There is a private fork which contains much more advanced AI based on behavior trees and state machines, original graphics, sound, heights, and uses an entity component system (ECS) internally.
 </article>
 <br />
+<strong><a href="https://gitlab.com/langurmonkey/rchip8">RCHIP-8</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-git-square"></i></strong> &mdash; A [CHIP-8](https://en.wikipedia.org/wiki/CHIP-8) emulator/VM written in Rust, with arbitrary display scaling, emulation speed control and much more.
+</article>
+<br />
 <article>
 <strong><a href="https://gitlab.com/langurmonkey/langursh">langursh</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-git-square"></i></strong> &mdash; A basic POSIX shell written in C. It offers only the basics, but it is fully functional and very light.
 </article>
