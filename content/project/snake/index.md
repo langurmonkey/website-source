@@ -10,24 +10,24 @@ js = ["/js/snake.js", "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.
 
 <style>
 input[type=checkbox], input[type=radio] {
-	  display: inline;
-		opacity: 1;
-		float: none;
-		-webkit-appearance: radio;
-		margin-right: 0;
+	display: inline;
+	opacity: 1;
+	float: none;
+	-webkit-appearance: radio;
+	margin-right: 0;
 }
 
 input[type=text] {
-	  margin-top: 0.1em;
+    margin-top: 0.1em;
     margin-bottom: 0.1em;
-		height: 1.5em;
-		width: 15em;
-		margin-right: 0px;
-		margin-left: auto;
+    height: 1.5em;
+    width: 15em;
+    margin-right: 0px;
+    margin-left: auto;
 }
 
 table td {
-	  padding: 0.1em;
+	padding: 0.1em;
 }
 </style>
 
@@ -45,7 +45,7 @@ This is my modification of the HTML5 snake game seen in [thecodeplayer.com](http
 <div><input type="radio" name="shape" value="square" checked="checked"> Square</div>
 <input type="radio" name="shape" value="circle"> Circle
 <div>
-<table style="margin:0;">
+<table style="margin:0;width:100%">
 <tr><td>Width (in blocks):</td><td><input type="text" name="canvaswidth" value="30" size="5"></input></td></tr>
 <tr><td>Height (in blocks):</td><td><input type="text" name="canvasheight" value="30" size="5"></input></td></tr>
 <tr><td>Size of blocks (px):</td><td><input type="text" name="size" value="10" size="5"></input></td></tr>
@@ -53,7 +53,7 @@ This is my modification of the HTML5 snake game seen in [thecodeplayer.com](http
 </div>
 
 <div>
-<table style="margin:0;">
+<table style="margin:0;width:100%">
 <tr><td>Background colour:</td><td><input type="text" name="bgcol" value="#DDD" size="10"></input></td></tr>
 <tr><td>Snake colour:</td><td><input type="text" name="snakecol" value="#3C7" size="10"></input></td></tr>
 <tr><td>Food colour:</td><td><input type="text" name="foodcol" value="#A73" size="10"></input></td></tr>
@@ -61,7 +61,7 @@ This is my modification of the HTML5 snake game seen in [thecodeplayer.com](http
 </div>
 
 <div>
-<table style="margin:0;">
+<table style="margin:0;width:100%">
 <tr><td>Velocity (higher is slower):</td><td><input type="text" name="velocity" value="150" size="5"></input></td></tr>
 </table>
 </div>
@@ -246,8 +246,10 @@ $(document).ready(
 			})
 });
 function updateCanvasSize(){
-	w = parseInt($('#snakeoptions input:text[name="canvaswidth"]').val()) * parseInt($('#snakeoptions input:text[name="size"]').val());
-	h = parseInt($('#snakeoptions input:text[name="canvasheight"]').val()) * parseInt($('#snakeoptions input:text[name="size"]').val());
+	w = parseInt($('#snakeoptions input:text[name="canvaswidth"]').val()) 
+       * parseInt($('#snakeoptions input:text[name="size"]').val());
+	h = parseInt($('#snakeoptions input:text[name="canvasheight"]').val()) 
+       * parseInt($('#snakeoptions input:text[name="size"]').val());
 	canvas.width = w;
 	canvas.height = h;
 }

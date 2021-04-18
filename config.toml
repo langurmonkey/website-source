@@ -95,6 +95,10 @@ uglyurls = false
 # Properties of the markdown render engine (goldmark)
 [markup]
   [markup.goldmark]
+    [markup.goldmark.tableOfContents]
+      endLevel = 3
+      ordered = false
+      startLevel = 2
     [markup.goldmark.extensions]
       definitionList = true
       footnote = true
