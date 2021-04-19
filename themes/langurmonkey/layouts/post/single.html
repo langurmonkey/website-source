@@ -1,13 +1,29 @@
-{{ partial "header" . }}
-    {{ $.Scratch.Set "shareNav" true }}
-    {{ partial "navbar" . }}
-    {{ partial "share-menu" . }}
-    <!-- Main -->
-    <div id="main">
-        <!-- Post -->
-        {{ $.Scratch.Set "h1" true }}
-        {{ .Render "content-single" }}
-    </div>
-     <!-- {{ partial "sidebar" . }} -->
-     <!-- {{ partial "toc" . }} -->
+{{ if gt (len .TableOfContents) 80}}
+    {{ partial "header" . }}
+        {{ $.Scratch.Set "shareNav" true }}
+        {{ partial "navbar" . }}
+        {{ partial "share-menu" . }}
+        <!-- Main -->
+        {{ partial "toc" . }}
+        <main>
+            <div id="top-of-site-pixel-anchor"></div>
+            <!-- Post -->
+            {{ $.Scratch.Set "h1" true }}
+            {{ .Render "content-single" }}
+        </main>
+        <script>
+                window.addEventListener('DOMContentLoaded', () => { const observerForTableOfContentActiveState = new IntersectionObserver(entries => { entries.forEach(entry => { const id = entry.target.getAttribute('id'); if (entry.intersectionRatio > 0) { clearActiveStatesInTableOfContents(); document.querySelector(`aside nav li a[href="#${id}"]`).parentElement.classList.add('active'); } }); }); document.querySelectorAll('h1[id],h2[id],h3[id],h4[id]').forEach((section) => { observerForTableOfContentActiveState.observe(section); }); }); function clearActiveStatesInTableOfContents() { document.querySelectorAll('aside nav li').forEach((section) => { section.classList.remove('active'); }); }
+        </script>
+{{ else }}
+    {{ partial "header" . }}
+        {{ $.Scratch.Set "shareNav" true }}
+        {{ partial "navbar" . }}
+        {{ partial "share-menu" . }}
+        <!-- Main -->
+        <main>
+            <!-- Post -->
+            {{ $.Scratch.Set "h1" true }}
+            {{ .Render "content-single" }}
+        </main>
+{{ end }}
 {{ partial "footer" . }}

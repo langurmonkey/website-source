@@ -588,3 +588,52 @@ a.footnote-ref {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
+@media screen and (max-width: 1280px) {
+aside#toc {
+    display: none;
+}
+}
+@media screen and (min-width: 1280px) {
+aside#toc {
+    position: sticky;
+    top: 3rem;
+    align-self: start;
+    font-size: 1rem;
+    width: 16em;
+    padding-left: 1.5em;
+    font-family: sans-serif;
+    border-left: solid 2px rgba(127, 127, 127, .2);
+}
+#toc ol, ul {
+    padding-inline-start: 0px;
+    list-style: none;
+}
+#toc ol ol{
+    font-size: 0.7rem;
+}
+#toc ul ul{
+    font-size: 0.7rem;
+}
+#toc li {
+    padding-left: 0.3em;
+}
+#toc a {
+    color: rgba(127, 127, 127, .7);
+    text-decoration: none;
+    padding-left: 0;
+}
+#toc a > code {
+    color: rgba(127, 127, 127, .7) !important;
+    border: 0;
+    background: none;
+}
+#toc li.active {
+    font-weight: 800;
+}
+#toc li.active:before {
+    content: "→";
+    display: inline-block;
+    margin-left: -20px;
+    width: 20px;
+}
+}

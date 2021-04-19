@@ -14,15 +14,15 @@ It's been a while since I last talked about new Gaia Sky releases. Today I'm doi
 
 Jump to the analysis for each of the versions directly:
 
-*  [3.0.0]({{< relref "gaia-sky-30x#300" >}})
-*  [3.0.1]({{< relref "gaia-sky-30x#301" >}})
-*  [3.0.2]({{< relref "gaia-sky-30x#302" >}})
-*  [3.0.3]({{< relref "gaia-sky-30x#303" >}})
+*  [3.0.0](#300)
+*  [3.0.1](#301)
+*  [3.0.2](#302)
+*  [3.0.3](#303)
 
 <!--more-->
 
-<a name="300"></a>
-# 3.0.0
+<a id="300"></a>
+## 3.0.0
 
 This version came out the same day as eDR3, and it was released along with the catalogs based on this data release. With a development cycle of almost 5 months since ``2.3.1``, it contains by far the most new features and improvements, but it does not lag behind when it comes to bug fixes. Below is a list of features, fixes, build changes and refactorings.  This is a major version, so I made a flashy teaser trailer, as it is customary:
 
@@ -120,8 +120,8 @@ Find here a [full commit list between 2.3.1 and 3.0.0](https://gitlab.com/langur
 - move RenderGroup to render package for consistency 
 
 
-<a name="301"></a>
-# 3.0.1
+<a id="301"></a>
+## 3.0.1
 
 This was released some 10 days after the previous release, and it contains fixes to some bugs that were introduced in ``3.0.0``, along a few small new features that address configuration issues and improved compatibility. The ``safemode`` flag was introduced in this version. This flag forces OpenGL 3.x instead of 4.x, avoiding the usage of advanced buffer formats which may cause performance issues on older devices. The full commit list can be found [here](https://gitlab.com/langurmonkey/gaiasky/compare/3.0.0...3.0.1).
 
@@ -155,8 +155,8 @@ This was released some 10 days after the previous release, and it contains fixes
 ### 3.0.1 - Documentation
 - update pointers to documentation 
 
-<a name="302"></a>
-# 3.0.2
+<a id="302"></a>
+## 3.0.2
 
 This version contains about a month worth of work. The highlight of this release is the addition of a new, more compact binary format for the level-of-detail catalogs, which enables faster loading and streaming. It also adds new color conversion algorithms, an improved interface with the Wikipedia API and fractional UI scaling. This last item allowed us to do away with the HiDPI (``-x2``) themes. In the bugfix department, I could finally knock down a weird issue that had been plaguing some users since the beginning. This issue produced micro-stutters when loading new data in rather large octrees.
 
@@ -235,8 +235,8 @@ See the full commit history [here](https://gitlab.com/langurmonkey/gaiasky/compa
 - fix missing coma in night-red theme JSON file 
 - update thread names, fix monitor objects, increase scene graph update time interval 
 
-<a name="303"></a>
-# 3.0.3
+<a id="303"></a>
+## 3.0.3
 
 This version was released only a few days ago. Amongst its most important features are the upgrade to Java 15 with the use by default of the Shenandonah GC or the improvement of VRAM memory usage for star groups. The full commit list is [here](https://gitlab.com/langurmonkey/gaiasky/compare/3.0.2...3.0.3).
 

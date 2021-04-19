@@ -2,7 +2,7 @@
 {{ $.Scratch.Set "shareNav" true }}
 {{ partial "navbar" . }}
 <!-- Main -->
-<div id="main">
+<main>
     <article class="post">
     {{ range where .Data.Pages "Title" "Hi there!" }}
     <header>
@@ -33,6 +33,6 @@
                 {{ end }}
         </div>
     </div>
-</div>
+</main>
 <!--  {{ partial "sidebar" . }} -->
 {{ partial "footer" . }}

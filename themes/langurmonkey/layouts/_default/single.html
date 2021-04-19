@@ -3,7 +3,7 @@
 {{ partial "header" . }}
     {{ partial "navbar" . }}
     <!-- Main -->
-    <div id="main">
+    <main>
         <article class="post single">
             {{ $.Scratch.Set "h1" true }}
             {{ .Render "header" }}
@@ -11,6 +11,6 @@
                 {{ .Content }}
             </div>
         </article>
-    </div>
+    </main>
     <!--  {{ partial "sidebar" . }} -->
 {{ partial "footer" . }}
