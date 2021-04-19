@@ -1,18 +1,20 @@
-> +++
-> author = "Toni Sagrista Selles"
-> categories = ["Computers"]
-> tags = ["computer architecture", "emulation", "programming"]
-> date = 2021-04-18
-> linktitle = ""
-> title = "CHIP-8 virtual machine specification"
-> description = ""
-> featuredpath = "date"
-> type = "post"
-> +++
++++
+author = "Toni Sagrista Selles"
+categories = ["Computers"]
+tags = ["computer architecture", "emulation", "programming"]
+date = 2021-04-18
+linktitle = ""
+title = "CHIP-8 virtual machine specification"
+description = ""
+featuredpath = "date"
+type = "post"
++++
 
 Looking for new projects to sharpen my Rust skills, I came across a Reddit post where someone mentioned [CHIP-8](https://en.wikipedia.org/wiki/CHIP-8). **CHIP-8 is an interpreted low-level programming language and virtual machine** specification that is very commonly used as a "Hello world!" project of sorts for people to get their feet wet with emulator programming. It is simple enough to be able to implement a fully-featured emulator in a couple of sessions, but it has all the key parts of a real machine, to the point that are many [projects](https://www.instructables.com/CHIP-8-and-the-Pocket-Mini-Computer/) that implement CHIP-8 directly in hardware.
 
-I have since implemented my own CHIP-8 emulator in Rust (see [repository here](https://gitlab.com/langurmonkey/rchip8)), but this post is not about it (I'll write about my implementation in a future post). Today I want to fully describe the CHIP-8 machine. Because it is fun. The CHIP-8 specification document I used to implement my version is [Cowgod's Chip-8 technical reference](http://devernay.free.fr/hacks/chip8/C8TECH10.HTM). In this post I'll do something similar. 
+I have since implemented my own CHIP-8 emulator in Rust (see [repository here](https://gitlab.com/langurmonkey/rchip8)) with support for sound, display scaling, configurable colors, and more. But this text is not about it (I'll write about my implementation in a future post). Today I want to fully describe the CHIP-8 machine. Because I had fun implementing it, and I think it may help understand some of the instructions better with a little bit of pseudo-code. In this guide, every instruction comes with a pseudo-code block. 
+
+The CHIP-8 specification document I used as reference to implement my version is [Cowgod's Chip-8 technical reference](http://devernay.free.fr/hacks/chip8/C8TECH10.HTM). In this post I'll do something similar. 
 
 <!--more-->
 
@@ -31,11 +33,13 @@ Here are the contents of this post:
 9. [Instruction set](#instructions) 
 10. [Conclusion](#conclusion) 
 
-## Some history <a id="history"></a>
+<a id="history"></a>
+## Some history
 
 CHIP-8 was initially designed and developed by Joseph Weisbecker in 1977 in order to enable easy game development for the COSMAC VIP kit computer. The instruction set is quite simple, based on hexadecimal codes, and it is suited for machines with very scarce memory and computing power. It has enjoyed different levels of success over the decades, and today it has a community of people who write games and other programs for it. It is considered one of the easiest machines to emulate, and mostly everyone who is interested in emulator development starts with CHIP-8.
 
-## Bird's eye view <a id="birdseye"></a>
+<a id="birdseye"></a>
+## Bird's eye view
 
 The programs (or ROMS) are strictly hexadecimal based. This means that the bytes themselves are written directly into a file in binary form, and are readable only through a Hex editor or any other type of utility that allows for binary inspection. The programs are not, then, written in text file as it is commonly done with more common programming languages such as ASM, C or Rust.
 
@@ -56,12 +60,13 @@ Here are the **main components** of CHIP-8, summarized and itemized:
 
 In the following sections I describe each of this components in enough detail that you should be able to write a full CHIP-8 emulator with just the information conveyed here.
 
-## Memory <a id="memory"></a>
+<a id="memory"></a>
+## Memory
 
 CHIP-8 has 4 kB (4096 B) of RAM. It is indexed from location `0x000` to `0xFFF`. 
 
 * The addresses from `0x000` to `0x200` are reserved for the system. Nowadays, this area contains fonts for the 16 Hex characters. Originally, this space contained the interpreter code.
-* The addresses from `0x200` up are where the user programs are located. Most programs start at `0x200`, and that's where your emulator should put the code read from ROM files. User programs intended for the ETI 660 computer begin at `0x600`. 
+* The addresses from `0x200` up are where the user programs are located. Most programs start at `0x200`, and that's where your emulator should put the code read from ROM files. User programs intended for the ETI 660 computer begin at `0x600`. By convention, all instructions start at even addresses.
 
 Here is a shitty diagram of the memory layout:
 
@@ -117,7 +122,8 @@ Some programs expect fonts to be available starting at the `0x000` address. My i
     0xF0, 0x80, 0xF0, 0x80, 0x80, // F
 ```
 
-## Registers <a id="registers"></a>
+<a id="registers"></a>
+## Registers
 
 CHIP-6 programs can use 16 general purpose 8-bit registers which can be accessed and manipulated directly with some of the instructions.
 
@@ -129,44 +135,43 @@ The program counter `PC` is 16-bit and contains the memory address of the curren
 
 The stack pointer `SP` is either 8 or 16-bit (depending on the size of your stack), and points to the top of the stack.
 
-## Stack <a id="stack"></a>
+<a id="stack"></a>
+## Stack
 
 The stack is a LIFO array of 16-bit values used mainly to store addresses the interpreter should return to after subroutines have finished. I think the CHIP-8 specification allows for 16 levels of nested subroutine calls, so your stack should at least contain 16 places. In that case, an 8-bit `SP` is enough.
 
-## Input <a id="input"></a>
+<a id="input"></a>
+## Input
 
 The original CHIP-8 implementations used a **keypad with 16 keys**, labeled with the hexadecimals 0 to F:
 
-| | | | |
-|-|-|-|-|
-|1|2|3|C|
-|4|5|6|D|
-|7|8|9|E|
-|A|0|B|F|
+{{< sp guilabel >}}1{{</ sp >}}{{< sp guilabel >}}2{{</ sp >}}{{< sp guilabel >}}3{{</ sp >}}{{< sp guilabel >}}C{{</ sp >}}\
+{{< sp guilabel >}}4{{</ sp >}}{{< sp guilabel >}}5{{</ sp >}}{{< sp guilabel >}}6{{</ sp >}}{{< sp guilabel >}}D{{</ sp >}}\
+{{< sp guilabel >}}7{{</ sp >}}{{< sp guilabel >}}8{{</ sp >}}{{< sp guilabel >}}9{{</ sp >}}{{< sp guilabel >}}E{{</ sp >}}\
+{{< sp guilabel >}}A{{</ sp >}}{{< sp guilabel >}}0{{</ sp >}}{{< sp guilabel >}}B{{</ sp >}}{{< sp guilabel >}}F{{</ sp >}}
 
 Of course, nowadays nobody expects anyone to have one of these physical keypads, so emulators typically map it to the keyboard. Usually, the map is done like this:
 
-| | | | |
-|-|-|-|-|
-|1|2|3|4|
-|Q|W|E|R|
-|A|S|D|F|
-|Z|X|C|V|
+{{< sp guilabel >}}1{{</ sp >}}{{< sp guilabel >}}2{{</ sp >}}{{< sp guilabel >}}3{{</ sp >}}{{< sp guilabel >}}4{{</ sp >}}\
+{{< sp guilabel >}}Q{{</ sp >}}{{< sp guilabel >}}W{{</ sp >}}{{< sp guilabel >}}E{{</ sp >}}{{< sp guilabel >}}R{{</ sp >}}\
+{{< sp guilabel >}}A{{</ sp >}}{{< sp guilabel >}}S{{</ sp >}}{{< sp guilabel >}}D{{</ sp >}}{{< sp guilabel >}}F{{</ sp >}}\
+{{< sp guilabel >}}Z{{</ sp >}}{{< sp guilabel >}}X{{</ sp >}}{{< sp guilabel >}}C{{</ sp >}}{{< sp guilabel >}}V{{</ sp >}}
 
-## Display <a id="display"></a>
+<a id="display"></a>
+## Display
 
 The display is a monochrome setup with a resolution of 64x32 pixels. The pixel at [0, 0] corresponds to the top-left corner, and the pixel [63, 31] corresponds to the bottom-right.
 
 ```
-  [0,0]                   [63,0]     
-  ┌────────────────────────────┐
-  │                            │
-  │                            │
-  │       64x32 DISPLAY        │
-  │                            │
-  │                            │
-  └────────────────────────────┘
-  [0,31]                 [63,31]     
+  [0,0]                      [63,0]     
+  ┌───────────────────────────────┐
+  │                               │
+  │                               │
+  │         64x32 DISPLAY         │
+  │                               │
+  │                               │
+  └───────────────────────────────┘
+  [0,31]                    [63,31]     
 ```
 
 The graphics are drawn to the screen using 8x15 sprites which reside in memory as 15 consecutive bytes. Each of the bytes is interpreted as a row of bits that encode the on/off state of each of the pixels. We could draw a window with something this:
@@ -188,7 +193,8 @@ The figure below shows the display after running this [test ROM](https://github.
 
 {{< figure src="/img/2021/04/chip8-test.jpg" title="CHIP-8 display with test ROM" width="50%" class="fig-center" >}}
 
-## Timers <a id="timers"></a>
+<a id="timers"></a>
+## Timers
 
 There are two special 8-bit registers used as timers, the `DT` and the `ST`.
 
@@ -196,13 +202,14 @@ The **delay timer** `DT` is automatically decremented with a frequency of 60 Hz 
 
 The **sound timer** `ST` is also automatically decremented with a frequency of 60 Hz when its value is greater than zero. Additionally, when this happens (ST > 0) the system sounds the buzzer to produce a beep. So, for example, if you want your program to sound the buzzer for one second, you need to write `0x3C` to `ST`. It can be set with `FX18` but it can't be read.
 
-## Instruction set <a id="instructions"></a>
+<a id="instructions"></a>
+## Instruction set
 
-This section describes each of the 36 instructions available in CHIP-8. It is by far the longest section, but most of the instructions are actually quite simple. 
+This section describes each of the 36 instructions available in CHIP-8. It is by far the longest section, but most of the instructions are actually quite simple. By convention, all instructions start at even addresses. 
 
 Each instruction is **2 bytes long** and are stored with the most-significant byte first. Instructions have the one of the format `CXYN`, `CXNN` or `CNNN`, where each of the characters is 4 bits. `C` is the code or group. `X` and `Y` are typically used to refer to register numbers. `N`, `NN` and `NNN` are 4, 8 and 12-bit literal numbers used to set values or for further instruction identification within a group (since 4 bits would only allow for 16 instructions). Instructions are decoded by splitting them into chunks and grouping them accordingly.
 
-In the descriptions below I will use pseudocode blocks to illustrate exactly the actions that the interpreter must take to execute the instruction.
+In the descriptions below I will use pseudo-code blocks to illustrate exactly the actions that the interpreter must take to execute the instruction.
 
 #### CLS --- `00E0`
 
@@ -349,10 +356,168 @@ VF := VX & 0x80
 VX := VX * 2
 ```
 
-#### Rest of instructions
+#### SNE VX, VY --- `9XY0`
 
-TBD
+Skip the next instruction if the values of `VX` and `VY` are not equal.
+```
+if VX != VY:
+    PC := PC + 2
+```
 
-## Conclusion <a id="conclusion"></a>
+#### LD I, NNN --- `ANNN`
 
-We have seen a complete specification of CHIP-8, from the memory layout to the registers, the display and finally the instruction set. You can find loads of sites with ROMS available to download and test your CHIP-8 emulator. Additionally, there are a lot of extensions and variations like the CHIP-8X, the CHIP-8X or the S-CHIP (also called Super-Chip). These are not so simple but also very fun to implement and play around.
+Set the value of `I` to the address `NNN`.
+```
+I := NNN
+```
+
+#### JMP V0, NNN --- `BNNN`
+
+Jump to the location `NNN` + `V0`.
+```
+PC := V0 + NNN
+```
+
+#### RND VX, NN
+
+Generate a random byte (from 0 to 255), do a bitwise AND with `NN` and store the result to `VX`.
+```
+VX := random() & NN
+```
+
+#### DRW VX, VY, N --- `DXYN`
+
+The draw instruction. This is arguably the most involved operation. The *n*-byte sprite starting at the address `I` is drawn to the display at the coordinates  [`VX`, `VY`]. Then, set `VF` to 1 if there has been a collision (a display bit was changed from 1 to 0).
+
+The interpreter must read `N` bytes from the `I` address in memory. These bytes are interpreted as a sprite and drawn at the display coordinates [`VX`, `VY`]. The bits are set using an XOR with the current display state.
+```
+xcoord := VX % DISPLAY_WIDTH
+ycoord := VY % DISPLAY_WIDTH
+
+// iterate over bytes
+for row in 0..N:
+    bits := RAM[I + row]
+    cy := (ycoord + row) % DISPLAY_HEIGHT
+
+    // iterate over bits
+    for col in 0..8:
+        cx := (xcoord + col) % DISPLAY_WIDTH
+        curr_col := DISPLAY[cx, cy]
+        // get value of bit
+        col := bits & (0x01 << 7 - col)
+        // do XOR
+        if col > 0:
+            if curr_col > 0:
+                DISPLAY[cx, cy] := 0
+                VF = 1
+            else:
+                DISPLAY[cx, cy] := 1
+    
+        if cx == DISPLAY_WIDTH - 1:
+            break
+    
+    if cy == DISPLAY_HEIGTH - 1:
+        break
+        
+update_display()
+```
+
+Phew, that was long. You can implement it differently, but in this pseudo-code chunk all the necessary steps are explicitly laid out. Basically, loop over the `N` bytes starting at memory address `I`. Then for each bit in each byte, do the XOR with the current display, taking care of setting `VF` to 1 if there was a collision.
+
+#### SKP VX --- `EX9E`
+
+Skip the next instruction if the key with the value of `VX` is currently pressed. Basically, increase `PC` by two if the key corresponding to the value in `VX` is pressed.
+```
+if keys[VX] == 1:
+    PC := PC + 2
+```
+The snippet assumes that the vector `keys[]` has a length of 16, and contains 1 if the key corresponding to the index is pressed, 0 otherwise.
+
+#### SKNP VX --- `EXA1`
+
+Skip the next instruction if the key with the value of `VX` is currently **not** pressed. Basically, increase `PC` by two if the key corresponding to the value in `VX` is not pressed.
+```
+if keys[VX] == 0:
+    PC := PC + 2
+```
+The snippet assumes that the vector `keys[]` has a length of 16, and contains 1 if the key corresponding to the index is pressed, 0 otherwise.
+
+#### LD VX, DT --- `FX07`
+
+Read the delay timer register value into `VX`.
+```
+VX := DT
+```
+
+#### LD VX, K --- `FX0A`
+
+Wait for a key press, and then store the value of the key to `VX`.
+```
+K := wait_input()
+VX := K
+```
+
+#### LD DT, VX --- `FX15`
+
+Load the value of `VX` into the delay timer `DT`.
+```
+DT := VX
+```
+
+#### LD ST, VX --- `FX18`
+
+Load the value of `VX` into the sound time `ST`.
+```
+ST := VX
+```
+
+#### ADD I, VX --- `FX1E`
+
+Add the values of `I` and `VX`, and store the result in `I`.
+```
+I := I + VX
+```
+
+#### LD F, VX --- `FX29`
+
+Set the location of the sprite for the digit `VX` to `I`. The font sprites start at address `0x000`, and contain the hexadecimal digits from 1..F. Each font has a length of `0x05` bytes. The memory address for the value in `VX` is put in `I`. See the [display](#display) section.
+```
+I := VX * 0x05
+```
+
+#### LD B, VX --- `FX33`
+
+Store the binary-coded decimal in `VX` and put it in three consecutive memory slots starting at `I`.
+`VX` is a byte, so it is in 0...255. The interpreter takes the value in `VX` (for example the decimal value 174, or `0xAE` in hex), converts it into a decimal and separates the hundreds, the tens and the ones (1, 7 and 4 respectively). Then, it stores them in three memory locations starting at `I` (1 to `I`, 7 to `I`+1 and 4 to `I`+2).
+```
+// get hundreds, tens and ones
+h := VX / 100
+t := (VX - h * 100) / 10
+o := VX - h * 100 - t * 10
+
+// store to memory
+RAM[I] := h
+RAM[I + 1] := t
+RAM[I + 2] := o
+```
+
+#### LD [I], VX --- `FX55`
+
+Store registers from `V0` to `VX` in the main memory, starting at location `I`. Note that `X` is the number of the register, so we can use it in the loop. In the following pseudo-code, `V[i]` allows for indexed register access, so that `VX` == `V[X]`.
+```
+for reg in 0..X:
+   RAM[I + reg] := V[reg]
+```
+
+#### LD VX, [I] --- `FX65`
+
+Load the memory data starting at address `I` into the registers `V0` to `VX`.
+```
+for reg in 0..X:
+   V[reg] := RAM[I + reg]
+```
+
+<a id="conclusion"></a>
+## Conclusion 
+
+We have seen a complete specification of CHIP-8, from the memory layout to the registers, the display and finally the instruction set. You can find loads of sites with ROMS available to download and test your CHIP-8 emulator. Additionally, there are many extensions and variations like the CHIP-8X, the CHIP-8X or the S-CHIP (also called Super-Chip). These add different features like new instructions or additional display modes. They are a bit more complex, but also very fun to implement and play around.
