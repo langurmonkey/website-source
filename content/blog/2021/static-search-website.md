@@ -227,12 +227,6 @@ This is the last piece of the puzzle, and that's pretty much it. If you have set
 
 In this post we have seen a simple way to add a privacy-respecting offline search functionality to a statically-generated website. The search method is based on a pre-generated JSON index file which are parsed using `lunr.js` and a few lines of JavaScript code that run on the browser.
 
-```
-this code block
-does not 
-have a
-language set
-```
 
 [^hugo]: Hugo is a popular static site generator: https://gohugo.io
 [^lunr]: `lunr.js` is a JavaScript search library https://lunrjs.com
