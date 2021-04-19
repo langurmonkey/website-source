@@ -622,12 +622,12 @@ aside#toc {
     padding-left: 0.3em;
 }
 #toc a {
-    color: rgba(127, 127, 127, .6);
+    color: rgba(127, 127, 127, .4);
     text-decoration: none;
     padding-left: 0;
 }
 #toc a > code {
-    color: rgba(127, 127, 127, .6) !important;
+    color: rgba(127, 127, 127, .4) !important;
     border: 0;
     background: none;
 }
