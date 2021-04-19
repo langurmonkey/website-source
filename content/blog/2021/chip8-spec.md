@@ -14,7 +14,7 @@ Looking for new projects to sharpen my Rust skills, I came across a Reddit post 
 
 I have since implemented my own CHIP-8 emulator in Rust (see [repository here](https://gitlab.com/langurmonkey/rchip8)) with support for sound, display scaling, configurable colors, and more. But this text is not about it (I'll write about my implementation in a future post). Today I want to fully describe the CHIP-8 machine, because I had fun implementing it, and I like it so much that I want to have it here for my future reference. In this guide, every instruction is accompanied with a small pseudo-code block to help understand the interpreter's intended behavior to the more technically inclined reader. 
 
-The CHIP-8 specification document I used as reference to implement my version is [Cowgod's Chip-8 technical reference](http://devernay.free.fr/hacks/chip8/C8TECH10.HTM). 
+The CHIP-8 specification document I used as reference to implement my version is Cowgod's Chip-8 technical reference[^cowdog], and I also had a look at a guide by Tobias V. Langhoff.[^tobiasl]
 
 <!--more-->
 
@@ -521,3 +521,6 @@ for reg in 0..X:
 ## Conclusion 
 
 We have seen a complete specification of CHIP-8, from the memory layout to the registers, the display and finally the instruction set. You can find loads of sites with ROMS available to download and test your CHIP-8 emulator. Additionally, there are many extensions and variations like the CHIP-8X, the CHIP-8X or the S-CHIP (also called Super-Chip). These add different features like new instructions or additional display modes. They are a bit more complex, but also very fun to implement and play around.
+
+[^cowdog]: Cowgod's Chip-8 technical reference: http://devernay.free.fr/hacks/chip8/C8TECH10.HTM
+[^tobiasl]: Guide to making a CHIP-8 emulator: https://tobiasvl.github.io/blog/write-a-chip-8-emulator/
