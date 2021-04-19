@@ -633,7 +633,6 @@ aside#toc {
 }
 #toc li.active {
     color: rgba(127, 127, 127, 1) !important;
-    font-weight: 800;
 }
 #toc li.active:before {
     content: "→";
