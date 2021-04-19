@@ -12,9 +12,9 @@ type = "post"
 
 Looking for new projects to sharpen my Rust skills, I came across a Reddit post where someone mentioned [CHIP-8](https://en.wikipedia.org/wiki/CHIP-8). **CHIP-8 is an interpreted low-level programming language and virtual machine** specification that is very commonly used as a "Hello world!" project of sorts for people to get their feet wet with emulator programming. It is simple enough to be able to implement a fully-featured emulator in a couple of sessions, but it has all the key parts of a real machine, to the point that are many [projects](https://www.instructables.com/CHIP-8-and-the-Pocket-Mini-Computer/) that implement CHIP-8 directly in hardware.
 
-I have since implemented my own CHIP-8 emulator in Rust (see [repository here](https://gitlab.com/langurmonkey/rchip8)) with support for sound, display scaling, configurable colors, and more. But this text is not about it (I'll write about my implementation in a future post). Today I want to fully describe the CHIP-8 machine. Because I had fun implementing it, and I think it may help understand some of the instructions better with a little bit of pseudo-code. In this guide, every instruction comes with a pseudo-code block. 
+I have since implemented my own CHIP-8 emulator in Rust (see [repository here](https://gitlab.com/langurmonkey/rchip8)) with support for sound, display scaling, configurable colors, and more. But this text is not about it (I'll write about my implementation in a future post). Today I want to fully describe the CHIP-8 machine, because I had fun implementing it, and I like it so much that I want to have it here for my future reference. In this guide, every instruction is accompanied with a small pseudo-code block to help understand the interpreter's intended behavior to the more technically inclined reader. 
 
-The CHIP-8 specification document I used as reference to implement my version is [Cowgod's Chip-8 technical reference](http://devernay.free.fr/hacks/chip8/C8TECH10.HTM). In this post I'll do something similar. 
+The CHIP-8 specification document I used as reference to implement my version is [Cowgod's Chip-8 technical reference](http://devernay.free.fr/hacks/chip8/C8TECH10.HTM). 
 
 <!--more-->
 
