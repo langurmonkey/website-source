@@ -2213,8 +2213,8 @@ input[type="radio"] + label:before {
 /* List */
 
 ol {
-    padding-inline-start: 40px;
-    list-style-position: inside;
+    padding-inline-start: 20px;
+    list-style-position: outside;
     list-style: decimal;
 }
 

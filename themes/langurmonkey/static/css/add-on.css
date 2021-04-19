@@ -369,9 +369,12 @@ body.is-share-visible #share-menu {
     border-bottom-style: solid !important;
 }
 
-#content blockquote, #content p, #content ul{
+#content blockquote, #content p, #content ul, main ul {
     margin: 1em 0 1em 0;
-    list-style-type: square;
+    list-style: outside square;
+}
+#content ul, main ul {
+    padding-left: 1em;
 }
 
 ul.pagination li {
@@ -606,28 +609,30 @@ aside#toc {
 }
 #toc ol, ul {
     padding-inline-start: 0px;
+    margin-bottom: 0;
     list-style: none;
 }
-#toc ol ol{
+#toc ol ol {
     font-size: 0.7rem;
 }
-#toc ul ul{
+#toc ul ul {
     font-size: 0.7rem;
 }
 #toc li {
     padding-left: 0.3em;
 }
 #toc a {
-    color: rgba(127, 127, 127, .7);
+    color: rgba(127, 127, 127, .6);
     text-decoration: none;
     padding-left: 0;
 }
 #toc a > code {
-    color: rgba(127, 127, 127, .7) !important;
+    color: rgba(127, 127, 127, .6) !important;
     border: 0;
     background: none;
 }
 #toc li.active {
+    color: rgba(127, 127, 127, 1) !important;
     font-weight: 800;
 }
 #toc li.active:before {
@@ -635,5 +640,8 @@ aside#toc {
     display: inline-block;
     margin-left: -20px;
     width: 20px;
+}
+#toc li.active a {
+    color: rgba(127, 127, 127, 1) !important;
 }
 }
