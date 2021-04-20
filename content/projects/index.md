@@ -9,7 +9,7 @@ showpagemeta = "false"
 ## Software and scripts
 
 <article>
-<strong><a href="https://gitlab.com/langurmonkey/dotfiles">dotfiles</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-git-square"></i></strong> &mdash; My dotfiles project. Contains the configuration, bootstrapping and deploying of my `i3wm` environment.
+<strong><a href="https://gitlab.com/langurmonkey/dotfiles">dotfiles</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-git-square"></i></strong> &mdash; My dotfiles project. Contains the configuration, bootstrapping and deploying of my <code>i3wm</code> environment.
 </article>
 <br />
 <article>
@@ -29,7 +29,7 @@ showpagemeta = "false"
 </article>
 <br />
 <article>
-<strong><a href="https://github.com/langurmonkey/rchip8">rCHIP8</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-git-square"></i></strong> &mdash; A <a href="https://en.wikipedia.org/wiki/CHIP-8">CHIP-8</a> emulator/VM written in <a href="https://rust-lang.org">Rust</a>, with arbitrary display scaling, debug mode, emulation speed control and much more.
+<strong><a href="https://gitlab.com/langurmonkey/rchip8">rCHIP8</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-git-square"></i></strong> &mdash; A <a href="/blog/2021/chip8-spec">CHIP-8</a> emulator/VM written in <a href="https://rust-lang.org">Rust</a>, with arbitrary display scaling, debug mode, emulation speed control and much more.
 </article>
 <br />
 <article>
