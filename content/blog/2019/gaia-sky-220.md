@@ -25,7 +25,7 @@ If you are impatient, go ahead and [download Gaia Sky 2.2.0](https://zah.uni-hei
 
 
 <video width="60%" style="display: block; margin: auto;" controls>
-  <source src="/img/2019/08/teaser-20200.mp4" type="video/mp4">
+  <source src="/img/2019/08/teaser-20200.mp4" type="video/mp4"></source>
 Your browser does not support the video tag.
 </video>
 
