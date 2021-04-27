@@ -399,7 +399,7 @@ ul.pagination .button {
 
 div.recent-posts-item {
     list-style-type: none;
-    min-width: 23em;
+    min-width: 26em;
     display: inline-block;
 }
 @media screen and (max-width: 736px) {

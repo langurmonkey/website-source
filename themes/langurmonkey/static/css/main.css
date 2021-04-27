@@ -2483,9 +2483,11 @@ div.post-in-list time{
 @media screen and (max-width: 680px) {
     div.post-in-list time{
         font-size: 0.5em;
+        display: contents;
     }
     div.post-in-list a {
         font-size: 0.6em;
+        display: block;
     }
 }
 
@@ -2617,7 +2619,7 @@ dl dd {
 }
 
 .mini-posts {
-    padding: 0.4em 4em 0.4em 4em;
+    padding: 0.4em 1em 0.4em 1em;
     margin: 0 auto 0 auto;
     max-width: 70em;
 }
