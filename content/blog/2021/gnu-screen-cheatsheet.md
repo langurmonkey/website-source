@@ -10,7 +10,7 @@ featuredpath = "date"
 type = "post"
 +++
 
-[GNU screen](https://www.gnu.org/software/screen/) is a terminal multiplexer that allows for different virtual windows and panes running different processes within the same terminal session, being it local or remote. This post contains a quick reference to the most used **default** key bindings of GNU screen. In contrast to other terminal multiplexers like tmux, GNU screen is probably already installed in your server of choice.
+[GNU screen](https://www.gnu.org/software/screen/) is a terminal multiplexer that allows for different virtual windows and panes running different processes within the same terminal session, being it local or remote. This post contains a quick reference to the most used **default** key bindings of GNU screen. In contrast to other terminal multiplexers like tmux, GNU screen is *probably* already installed in your server of choice.
 
 <!--more-->
 
@@ -70,3 +70,9 @@ Clibpoard
 |{{< sp guilabel >}}space{{</ sp >}}|toggle selection and copy|
 |{{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}a{{</ sp >}} {{< sp guilabel >}}]{{</ sp >}}|paste|
 
+Configuration
+-------------
+
+Finally, I just want to share my `.screenrc` configuration. It starts with 5 windows by default and adds a window bar at the bottom with the host, the window list and the time so that you never miss your appointments. Find it [here](https://gitlab.com/langurmonkey/dotfiles/-/tree/master/screen).
+
+{{< figure src="/img/2021/05/gnu-screen-config.jpg" link="/img/2021/05/gnu-screen-config.jpg" title="GNU screen with the configuration above" class="fig-center" width="70%" >}}
