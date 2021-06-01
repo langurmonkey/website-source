@@ -544,6 +544,20 @@ img.inline {
     padding: 2.4px 6px;
     margin: auto 2px;
 }
+kbd {
+    background-color: #eee;
+    border-radius: 3px;
+    border: 1px solid #cdcdcd;
+    box-shadow: 2px 2px 1px rgba(150, 150, 150, 1.0);
+    color: #333;
+    display: inline-block;
+    font-family: monospace;
+    font-size: .85em;
+    font-weight: 700;
+    line-height: 1;
+    padding: 2px 4px;
+    white-space: nowrap;
+   }
 .gray {
     color: gray;
 }

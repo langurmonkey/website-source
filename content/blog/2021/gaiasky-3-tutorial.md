@@ -64,7 +64,7 @@ This tutorial does **not** deal with the following items:
 In order to follow the course it is recommended, albeit not required, to have a local installation of Gaia Sky so that you can explore and try out the teachings for yourself. In order to install Gaia Sky, follow the instructions for your operating system in [the installation section](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/Installation.html#installation) of the Gaia Sky documentation.
 
 
-When you start Gaia Sky for the first time, you will be greeted with the welcome screen pictured below. Initially the {{< sp guilabel >}}Start Gaia Sky{{</ sp >}} button will be {{< sp gray >}}grayed out{{</ sp >}}, as you need to download the data packages before Gaia Sky can start. To do so, click on the {{< sp guilabel >}}Dataset manager{{</ sp >}} button.
+When you start Gaia Sky for the first time, you will be greeted with the welcome screen pictured below. Initially the <kbd>Start Gaia Sky</kbd> button will be {{< sp gray >}}grayed out</kbd>, as you need to download the data packages before Gaia Sky can start. To do so, click on the <kbd>Dataset manager</kbd> button.
 
 
 {{< figure src="/img/2021/03/gs-tut/welcome-initial.jpg" link="/img/2021/03/gs-tut/welcome-initial.jpg" title="Welcome window at the first start of Gaia Sky" class="fig-center" width="60%" >}}
@@ -72,7 +72,7 @@ When you start Gaia Sky for the first time, you will be greeted with the welcome
 Then select at least the following data packages:
 
 - ``Base data pack`` -- Should be selected by default, contains the Solar System and some other basic data
-- ``Gaia eDR3 small``, ``Hipparcos`` or another star catalog -- The star catalog. Note that usually only one star catalog should be loaded at once. {{< sp blue >}}The Gaia eDR3 catalogs for Gaia Sky already contain Hipparcos!{{</ sp >}}
+- ``Gaia eDR3 small``, ``Hipparcos`` or another star catalog -- The star catalog. Note that usually only one star catalog should be loaded at once. {{< sp blue >}}The Gaia eDR3 catalogs for Gaia Sky already contain Hipparcos!</kbd>
 - ``NBG catalog`` -- Nearby Galaxies Catalog
 - ``SDSS DR12`` (small) or ``SDSS DR14`` (large) -- Sloan Digital Sky Survey catalog, distant galaxies
 - ``Open Clusters DR2`` -- Open clusters catalog based on DR2 data
@@ -80,10 +80,10 @@ Then select at least the following data packages:
 
 {{< figure src="/img/2021/03/gs-tut/welcome-download.jpg" link="/img/2021/03/gs-tut/welcome-download.jpg" title="The download manager of Gaia Sky" class="fig-center" width="60%" >}}
 
-Then click on {{< sp guilabel >}}Download selected{{</ sp >}} and wait for Gaia Sky to download and extract your catalogs. Once the downloads have finished, close the window  with {{< sp guilabel >}}Ok{{</ sp >}}. Then you can go ahead and start Gaia Sky by clicking on {{< sp guilabel >}}Start Gaia Sky{{</ sp >}}. 
+Then click on <kbd>Download selected</kbd> and wait for Gaia Sky to download and extract your catalogs. Once the downloads have finished, close the window  with <kbd>Ok</kbd>. Then you can go ahead and start Gaia Sky by clicking on <kbd>Start Gaia Sky</kbd>. 
 
 {{< hint >}}
-By default **Gaia Sky automatically selects all downloaded packages** for you. However, you can override this by selecting/unselecting packages each session using the {{< sp guilabel >}}Dataset selection{{</ sp >}} button in the welcome screen.
+By default **Gaia Sky automatically selects all downloaded packages** for you. However, you can override this by selecting/unselecting packages each session using the <kbd>Dataset selection</kbd> button in the welcome screen.
 {{</ hint >}}
 
 
@@ -93,25 +93,25 @@ When Gaia Sky is ready to go, you will be presented with this screen:
 
 {{< figure src="/img/2021/03/gs-tut/ui-initial.jpg" link="/img/2021/03/gs-tut/ui-initial.jpg" title="Gaia Sky default scene" class="fig-center" width="60%" >}}
 
-In it you can see a few things already. To the right the **focus panel** tells you that you are in focus mode, meaning that all our movement is relative to the focus object. The default focus of Gaia Sky is the Earth. You can also see in the **quick info bar** at the top that our focus is the {{< sp green >}}Earth{{</ sp >}}, and that the closest object to our location is also the {{< sp blue >}}Earth{{</ sp >}}. Additionally you see that your home object is again the {{< sp orange >}}orange{{</ sp >}}. Finally the **control panel** is collapsed at the top left. If you click on it, the panel opens. We will use it later.
+In it you can see a few things already. To the right the **focus panel** tells you that you are in focus mode, meaning that all our movement is relative to the focus object. The default focus of Gaia Sky is the Earth. You can also see in the **quick info bar** at the top that our focus is the {{< sp green >}}Earth</kbd>, and that the closest object to our location is also the {{< sp blue >}}Earth</kbd>. Additionally you see that your home object is again the {{< sp orange >}}orange</kbd>. Finally the **control panel** is collapsed at the top left. If you click on it, the panel opens. We will use it later.
 
 ### Movement
 
 But right now let's try some movement. In **focus mode** the camera will by default orbit around the focus object. **Try clicking and dragging with your left mouse button**. The camera should orbit around the Earth showing parts of the surface which were previously hidden. You will notice that the whole scene rotates. Now **try scrolling with your mouse wheel**. The camera will move either farther away from (scroll down) or closer up to (scroll up) the Earth. Now, if you **click and drag with your right mouse button**, you can offset the focus object from the center, but your movement will still be relative to it.
 
-You can also use your keyboard arrows {{< sp guilabel >}}←{{</ sp >}} {{< sp guilabel >}}↑{{</ sp >}} {{< sp guilabel >}}→{{</ sp >}} {{< sp guilabel >}}↓{{</ sp >}} to orbit left or right around the focus object, or move closer to or away from it.
+You can also use your keyboard arrows <kbd>←</kbd> <kbd>↑</kbd> <kbd>→</kbd> <kbd>↓</kbd> to orbit left or right around the focus object, or move closer to or away from it.
 
-You can use {{< sp guilabel >}}shift{{</ sp >}} with a **mouse drag** in order to roll the camera. 
+You can use <kbd>shift</kbd> with a **mouse drag** in order to roll the camera. 
 
 More information on the controls is available in the [controls section](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/Controls.html#controls) of the Gaia Sky user manual.
 
 ### Selection
 
-You can change the focus by simply **double clicking** on any object on the scene. You can also press {{< sp guilabel >}}f{{</ sp >}} to bring up the **search** dialog where you can look up objects by name. Try it now. Press {{< sp guilabel >}}f{{</ sp >}} and type in "mars", without the quotes, and hit {{< sp guilabel >}}esc{{</ sp >}}. You should see that the camera now points in the direction of {{< sp red >}}Mars{{</ sp >}}. To actually go to {{< sp red >}}Mars{{</ sp >}} simply scroll up until you reach it, or click on the {{< img "/img/2021/03/gs-tut/go-to.png" >}} icon next to the name in the focus info panel. If you do so, Gaia Sky takes control of the camera and brings you to {{< sp red >}}Mars{{</ sp >}}. 
+You can change the focus by simply **double clicking** on any object on the scene. You can also press <kbd>f</kbd> to bring up the **search** dialog where you can look up objects by name. Try it now. Press <kbd>f</kbd> and type in "mars", without the quotes, and hit <kbd>esc</kbd>. You should see that the camera now points in the direction of {{< sp red >}}Mars</kbd>. To actually go to {{< sp red >}}Mars</kbd> simply scroll up until you reach it, or click on the {{< img "/img/2021/03/gs-tut/go-to.png" >}} icon next to the name in the focus info panel. If you do so, Gaia Sky takes control of the camera and brings you to {{< sp red >}}Mars</kbd>. 
 
-If you want to move instantly to your current focus object, hit {{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}g{{</ sp >}}.
+If you want to move instantly to your current focus object, hit <kbd>ctrl</kbd> + <kbd>g</kbd>.
 
-At any time you can use the {{< sp guilabel >}}home{{</ sp >}} key in your keyboard to return back to Earth or whatever {{< sp orange >}}home{{</ sp >}} object you have defined in the [configuration file](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/Properties-file.html#properties-file).
+At any time you can use the <kbd>home</kbd> key in your keyboard to return back to Earth or whatever {{< sp orange >}}home</kbd> object you have defined in the [configuration file](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/Properties-file.html#properties-file).
 
 ## The User Interface
 
@@ -138,12 +138,12 @@ To the bottom of the control panel we can find a few buttons to perform special 
 
 ### Quick info bar
 
-To the top of the screen you can see the **quick info bar** which provides information on the current time, the {{< sp green >}}current focus{{</ sp >}} object (if any), the {{< sp blue >}}current closest{{</ sp >}} object to our location and the {{< sp orange >}}current home{{</ sp >}} object. The colors of these objects ({{< sp green >}}green{{</ sp >}}, {{< sp green >}}blue{{</ sp >}}, {{< sp green >}}orange{{</ sp >}}) correspond to the colors of the crosshairs. The crosshairs can be enabled or disabled from the interface tab in the preferences window (use {{< sp guilabel >}}p{{</ sp >}} to bring it up).
+To the top of the screen you can see the **quick info bar** which provides information on the current time, the {{< sp green >}}current focus</kbd> object (if any), the {{< sp blue >}}current closest</kbd> object to our location and the {{< sp orange >}}current home</kbd> object. The colors of these objects ({{< sp green >}}green</kbd>, {{< sp green >}}blue</kbd>, {{< sp green >}}orange</kbd>) correspond to the colors of the crosshairs. The crosshairs can be enabled or disabled from the interface tab in the preferences window (use <kbd>p</kbd> to bring it up).
 
 
 ### Debug panel
 
-Gaia Sky has a built-in debug information panel that provides system information and is hidden by default. You can bring it up with {{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}d{{</ sp >}}, or by ticking the "*Show debug info*" check box in the system tab of the preferences window. By default, the debug panel is collapsed.
+Gaia Sky has a built-in debug information panel that provides system information and is hidden by default. You can bring it up with <kbd>ctrl</kbd> + <kbd>d</kbd>, or by ticking the "*Show debug info*" check box in the system tab of the preferences window. By default, the debug panel is collapsed.
 
 {{< figure src="/img/2021/03/gs-tut/debug-collapsed.jpg" link="/img/2021/03/gs-tut/debug-collapsed.jpg" title="Collapsed debug panel" class="fig-center" >}}
 
@@ -153,16 +153,16 @@ You can expand it with the ``+`` symbol to get additional information.
 
 As you can see, the debug panel shows information on the current graphics device, system and graphics memory, the amount of objects loaded and on display, the octree (if a LOD dataset is in use) or the SAMP status.
 
-Additional debug information can be obtained in the system tab of the help dialog ({{< sp guilabel >}}?{{</ sp >}} or {{< sp guilabel >}}h{{</ sp >}}).
+Additional debug information can be obtained in the system tab of the help dialog (<kbd>?</kbd> or <kbd>h</kbd>).
 
 ## Time controls
 
-Gaia Sky can simulate time. Play and pause the simulation using the {{< img "/img/2021/03/gs-tut/play-icon.png">}}/{{< img "/img/2021/03/gs-tut/pause-icon.png">}} `Play`/`Pause` buttons in the time pane, or toggle using {{< sp guilabel >}}Space{{</ sp >}}. You can also change the time warp, which is expressed as a scaling factor, using the provided **Warp factor** slider. Use {{< sp guilabel >}},{{</ sp >}} or {{< img "/img/2021/03/gs-tut/minus-icon.png">}} and {{< sp guilabel >}}.{{</ sp >}} or {{< img "/img/2021/03/gs-tut/plus-icon.png">}} to divide by 2 and double the value of the time warp, respectively.
+Gaia Sky can simulate time. Play and pause the simulation using the {{< img "/img/2021/03/gs-tut/play-icon.png">}}/{{< img "/img/2021/03/gs-tut/pause-icon.png">}} `Play`/`Pause` buttons in the time pane, or toggle using <kbd>Space</kbd>. You can also change the time warp, which is expressed as a scaling factor, using the provided **Warp factor** slider. Use <kbd>,</kbd> or {{< img "/img/2021/03/gs-tut/minus-icon.png">}} and <kbd>.</kbd> or {{< img "/img/2021/03/gs-tut/plus-icon.png">}} to divide by 2 and double the value of the time warp, respectively.
 
 {{< figure src="/img/2021/03/gs-tut/warp-factor.jpg" link="/img/2021/03/gs-tut/warp-factor.jpg" title="Warp factor slider" class="fig-center" >}}
 
 
-Now, go ahead and press {{< sp guilabel >}}home{{</ sp >}}. This will bring us back to Earth. Now, start the time with {{< img "/img/2021/03/gs-tut/play-icon.png">}} or {{< sp guilabel >}}space{{</ sp >}} and **drag the slider slightly to the right** to increase its speed. You will see that the Earth rotates faster and faster as you move the slider to the right. Now, **drag it to the left** until time is reversed and the Earth starts rotating in the opposite direction. Now time is going backwards!
+Now, go ahead and press <kbd>home</kbd>. This will bring us back to Earth. Now, start the time with {{< img "/img/2021/03/gs-tut/play-icon.png">}} or <kbd>space</kbd> and **drag the slider slightly to the right** to increase its speed. You will see that the Earth rotates faster and faster as you move the slider to the right. Now, **drag it to the left** until time is reversed and the Earth starts rotating in the opposite direction. Now time is going backwards!
 
 If you set the time warp high enough you will notice that as the bodies in the Solar System start going crazy, the stars start to slightly move. That's right: Gaia Sky also simulates proper motions.
 
@@ -170,23 +170,23 @@ If you set the time warp high enough you will notice that as the bodies in the S
 
 We have already talked about the **focus camera mode**, but Gaia Sky provides many more [camera modes](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/Camera-modes.html#camera-modes):
 
-- {{< sp guilabel >}}0{{</ sp >}} - **Free mode**: the camera is not locked to a focus object and can roam freely. The movement is achieved with the scroll wheel of your mouse, and the view is controlled by clicking and draggin the left and right mouse buttons
-- {{< sp guilabel >}}1{{</ sp >}} - **Focus mode**: the camera is locked to a focus object and its movement depends on it
-- {{< sp guilabel >}}2{{</ sp >}} - **Game mode**: similar to free mode but the camera is moved with {{< sp guilabel >}}w{{</ sp >}}{{< sp guilabel >}}a{{</ sp >}}{{< sp guilabel >}}s{{</ sp >}}{{< sp guilabel >}}d{{</ sp >}} and the view (pitch and yaw) is controlled with the mouse. This control system is commonly found in FPS (First-Person Shooter) games on PC
-- {{< sp guilabel >}}3{{</ sp >}} - **Gaia mode**: the camera can't be controlled, as it follows Gaia only
-- {{< sp guilabel >}}4{{</ sp >}} - **Spacecraft mode**: take control of a spacecraft (outside the scope of this tutorial)
-- {{< sp guilabel >}}5{{</ sp >}}, {{< sp guilabel >}}6{{</ sp >}}, {{< sp guilabel >}}7{{</ sp >}}  - **Fov modes**: project the fields of view of Gaia on the screen
+- <kbd>0</kbd> - **Free mode**: the camera is not locked to a focus object and can roam freely. The movement is achieved with the scroll wheel of your mouse, and the view is controlled by clicking and draggin the left and right mouse buttons
+- <kbd>1</kbd> - **Focus mode**: the camera is locked to a focus object and its movement depends on it
+- <kbd>2</kbd> - **Game mode**: similar to free mode but the camera is moved with <kbd>w</kbd><kbd>a</kbd><kbd>s</kbd><kbd>d</kbd> and the view (pitch and yaw) is controlled with the mouse. This control system is commonly found in FPS (First-Person Shooter) games on PC
+- <kbd>3</kbd> - **Gaia mode**: the camera can't be controlled, as it follows Gaia only
+- <kbd>4</kbd> - **Spacecraft mode**: take control of a spacecraft (outside the scope of this tutorial)
+- <kbd>5</kbd>, <kbd>6</kbd>, <kbd>7</kbd>  - **Fov modes**: project the fields of view of Gaia on the screen
 
-The most interesting mode is **free mode** which lets us roam freely. Go ahead and press {{< sp guilabel >}}0{{</ sp >}} to try it out. The controls are a little different from those of **focus mode**, but they should not be to hard to get used too. Basically, use your **left mouse button** to yaw and pitch the view, use {{< sp guilabel >}}shift{{</ sp >}} to roll, and use the **right mouse button** to pan.
+The most interesting mode is **free mode** which lets us roam freely. Go ahead and press <kbd>0</kbd> to try it out. The controls are a little different from those of **focus mode**, but they should not be to hard to get used too. Basically, use your **left mouse button** to yaw and pitch the view, use <kbd>shift</kbd> to roll, and use the **right mouse button** to pan.
 
 
 ## Special render modes
 
 There are three special render modes: [3D mode](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/Stereoscopic-mode.html#d-mode), [planetarium mode](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/Planetarium-mode.html#planetarium-mode) and [panorama mode](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/Panorama-mode.html#panorama-mode). You can access these modes using the buttons at the bottom of the camera pane or the following shortcuts:
 
-- {{< img "/img/2021/03/gs-tut/3d-icon.png" >}} or {{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}s{{</ sp >}} - 3D mode
-- {{< img "/img/2021/03/gs-tut/dome-icon.png" >}} or {{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}p{{</ sp >}} - Planetarium mode
-- {{< img "/img/2021/03/gs-tut/cubemap-icon.png" >}} or {{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}k{{</ sp >}} - Panorama mode
+- {{< img "/img/2021/03/gs-tut/3d-icon.png" >}} or <kbd>ctrl</kbd> + <kbd>s</kbd> - 3D mode
+- {{< img "/img/2021/03/gs-tut/dome-icon.png" >}} or <kbd>ctrl</kbd> + <kbd>p</kbd> - Planetarium mode
+- {{< img "/img/2021/03/gs-tut/cubemap-icon.png" >}} or <kbd>ctrl</kbd> + <kbd>k</kbd> - Panorama mode
 
 ## Toggle visibility of components
 
@@ -263,11 +263,11 @@ The datasets loaded in Gaia Sky at a certain moment can be found in the [dataset
 
 There are three main ways to load new datasets into Gaia Sky:
 
-* Directly from the UI, using the <i class="fa fa-folder-open"></i> button or pressing {{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}o{{</ sp >}}
+* Directly from the UI, using the <i class="fa fa-folder-open"></i> button or pressing <kbd>ctrl</kbd> + <kbd>o</kbd>
 * Through SAMP, via a connection to another astronomy software package such as Topcat or Aladin
 * Via a script (addressed later on in the workshop if time allows)
 
-**Loading a dataset from the UI** -- Go ahead and remove the current star catalog (either eDR3 or hipparcos) by clicking on the <i class="fa fa-trash"></i> icon in the datasets pane. Now, download a raw [Hipparcos dataset VOTable](https://gaia.ari.uni-heidelberg.de/gaiasky/files/catalogs/hip/hipparcos.vot), click on the <i class="fa fa-folder-open"></i> icon (or press {{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}o{{</ sp >}}) and select the file. In the next dialog just click {{< sp guilabel >}}Ok{{</ sp >}} to start loading the catalog. In a few moments the Hipparcos new reduction dataset should be loaded into Gaia Sky.
+**Loading a dataset from the UI** -- Go ahead and remove the current star catalog (either eDR3 or hipparcos) by clicking on the <i class="fa fa-trash"></i> icon in the datasets pane. Now, download a raw [Hipparcos dataset VOTable](https://gaia.ari.uni-heidelberg.de/gaiasky/files/catalogs/hip/hipparcos.vot), click on the <i class="fa fa-folder-open"></i> icon (or press <kbd>ctrl</kbd> + <kbd>o</kbd>) and select the file. In the next dialog just click <kbd>Ok</kbd> to start loading the catalog. In a few moments the Hipparcos new reduction dataset should be loaded into Gaia Sky.
 
 **Loading a dataset via SAMP** -- This section presupposes that Topcat is installed on the machine and that the user knows how to use it to connect to the VO to get some data. The following video demonstrates how to do this ([mirror](https://youtu.be/sc0q-VbeoPE)):
 
@@ -288,17 +288,17 @@ A few useful tips for working with datasets:
     2.  Select the radio button "Color map"
     3.  Select the *rainbow* color map
     4.  Choose your attriubte. In this case, we will use the number of transits, *ntr*
-    5.  Click {{< sp guilabel >}}Ok{{</ sp >}}
+    5.  Click <kbd>Ok</kbd>
     6.  Click on the highlight dataset {{< img "/img/2021/03/gs-tut/highlight-s-off.png" >}} icon to apply the color map
 
 -  You can **define basic filters** on the objects of the dataset using their attributes from the dataset preferences window <i class="fa fa-gear"></i>. For example, we can filter out all stars with \\(\delta > 50^{\circ}\\):
 
     1.  Click on the dataset preferences button <i class="fa fa-gear"></i>
-    2.  Click on {{< sp guilabel >}}Add filter{{</ sp >}}
+    2.  Click on <kbd>Add filter</kbd>
     3.  Select your attribute (declination \\(\delta\\)
     4.  Select your comparator (\\(<\\))
     5.  Enter your value, in this case 50
-    6.  Click {{< sp guilabel >}}Ok{{</ sp >}}
+    6.  Click <kbd>Ok</kbd>
     7.  The stars with a declination greater than 50 degrees should be filtered out
 
 Multiple filters can be combined with the **AND** and **OR** operators
@@ -309,8 +309,8 @@ Gaia Sky offers three ways to display external information on the current focus 
 
 {{< figure src="/img/2021/03/gs-tut/external-info.jpg" link="/img/2021/03/gs-tut/external-info.jpg" title="Wikipedia, Gaia archive and Simbad connections" class="fig-center" width="60%" >}}
 
--  When the {{< sp guilabel >}}+Info{{</ sp >}} button appears in the focus info pane, it means that there is a Wikipedia article on this object ready to be pulled and displayed in Gaia Sky
--  When the {{< sp guilabel >}}Archive{{</ sp >}} button appears in the focus info pane, it means that the full table information of selected star can be pulled from the Gaia archive
+-  When the <kbd>+Info</kbd> button appears in the focus info pane, it means that there is a Wikipedia article on this object ready to be pulled and displayed in Gaia Sky
+-  When the <kbd>Archive</kbd> button appears in the focus info pane, it means that the full table information of selected star can be pulled from the Gaia archive
 -  When the ``Simbad`` link appears in the focus info pane, it means that the objects has been found on Simbad, and you can click the link to open it in your web browser
 
 ## Camera paths
@@ -341,7 +341,7 @@ More information on the keyframe system can be found in the [keyframe system sub
 
 In order to create high-quality videos, Gaia Sky offers the possibility to export every single still frame to an image file. The resolution of these still frames can be set independently of the current screen resolution.
 
-You can start the frame output system by pressing {{< sp guilabel >}}F6{{</ sp >}}. Once active, the frame rate will go down (each frame is being saved to disk). The save location of the still frame images is, by default, ``$GS_DATA/frames/[prefix]_[num].jpg``, where ``[prefix]`` is an arbitrary string that can be defined in the preferences. The save location, mode (simple or advanced), and the resolution can also be defined in the preferences.
+You can start the frame output system by pressing <kbd>F6</kbd>. Once active, the frame rate will go down (each frame is being saved to disk). The save location of the still frame images is, by default, ``$GS_DATA/frames/[prefix]_[num].jpg``, where ``[prefix]`` is an arbitrary string that can be defined in the preferences. The save location, mode (simple or advanced), and the resolution can also be defined in the preferences.
 
 {{< figure src="/img/2021/03/gs-tut/frameoutput.jpg" link="/img/2021/03/gs-tut/frameoutput.jpg" title="The configuration screen for the frame output system" class="fig-center" width="60%" >}}
 

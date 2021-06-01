@@ -29,46 +29,46 @@ Basics
 
 |Keys |Action  |
 | --- | --- |
-|{{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}a{{</ sp >}}|escape key (used to access all other key bindings)|
-|{{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}a{{</ sp >}} {{< sp guilabel >}}d{{</ sp >}}|detach and go back to original terminal session|
-|{{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}a{{</ sp >}} {{< sp guilabel >}}D{{</ sp >}} {{< sp guilabel >}}D{{</ sp >}}|detach and log out|
-|{{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}a{{</ sp >}} {{< sp guilabel >}}\{{</ sp >}}|exit all programs in screen|
-|{{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}a{{</ sp >}} {{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}\{{</ sp >}}|force exit (not recommended)|
-|{{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}a{{</ sp >}} `:quit`|close session and quit screen|
-|{{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}a{{</ sp >}} {{< sp guilabel >}}?{{</ sp >}}|help|
+|<kbd>ctrl</kbd> + <kbd>a</kbd>|escape key (used to access all other key bindings)|
+|<kbd>ctrl</kbd> + <kbd>a</kbd> <kbd>d</kbd>|detach and go back to original terminal session|
+|<kbd>ctrl</kbd> + <kbd>a</kbd> <kbd>D</kbd> <kbd>D</kbd>|detach and log out|
+|<kbd>ctrl</kbd> + <kbd>a</kbd> <kbd>\</kbd>|exit all programs in screen|
+|<kbd>ctrl</kbd> + <kbd>a</kbd> <kbd>ctrl</kbd> + <kbd>\\</kbd>|force exit (not recommended)|
+|<kbd>ctrl</kbd> + <kbd>a</kbd> `:quit`|close session and quit screen|
+|<kbd>ctrl</kbd> + <kbd>a</kbd> <kbd>?</kbd>|help|
 
 Window management
 -----------------
 
 |Keys |Action  |
 | --- | --- |
-|{{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}a{{</ sp >}} {{< sp guilabel >}}c{{</ sp >}}|create new window|
-|{{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}a{{</ sp >}} {{< sp guilabel >}}A{{</ sp >}}|rename current window|
-|{{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}a{{</ sp >}} {{< sp guilabel >}}"{{</ sp >}}|show window list and choose window|
-|{{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}a{{</ sp >}} {{< sp guilabel >}}w{{</ sp >}}|display window bar|
-|{{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}a{{</ sp >}} {{< sp guilabel >}}1{{</ sp >}}\|{{< sp guilabel >}}2{{</ sp >}}\|...|switch to window number|
-|{{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}a{{</ sp >}} {{< sp guilabel >}}n{{</ sp >}}|move to next window|
-|{{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}a{{</ sp >}} {{< sp guilabel >}}p{{</ sp >}}|move to previous window|
+|<kbd>ctrl</kbd> + <kbd>a</kbd> <kbd>c</kbd>|create new window|
+|<kbd>ctrl</kbd> + <kbd>a</kbd> <kbd>A</kbd>|rename current window|
+|<kbd>ctrl</kbd> + <kbd>a</kbd> <kbd>"</kbd>|show window list and choose window|
+|<kbd>ctrl</kbd> + <kbd>a</kbd> <kbd>w</kbd>|display window bar|
+|<kbd>ctrl</kbd> + <kbd>a</kbd> <kbd>1</kbd>,<kbd>2</kbd>,...|switch to window number|
+|<kbd>ctrl</kbd> + <kbd>a</kbd> <kbd>n</kbd>|move to next window|
+|<kbd>ctrl</kbd> + <kbd>a</kbd> <kbd>p</kbd>|move to previous window|
 
 Splits
 ------
 
 |Keys |Action  |
 |--- | --- |
-|{{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}a{{</ sp >}} {{< sp guilabel >}}S{{</ sp >}}|horizontal split|
-|{{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}a{{</ sp >}} {{< sp guilabel >}}V{{</ sp >}} or {{< sp guilabel >}}\|{{</ sp >}}|vertical split|
-|{{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}a{{</ sp >}} {{< sp guilabel >}}tab{{</ sp >}}|jump to next region|
-|{{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}a{{</ sp >}} {{< sp guilabel >}}Xab{{</ sp >}}|close current region|
-|{{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}a{{</ sp >}} {{< sp guilabel >}}Qab{{</ sp >}}|close all regions but current|
+|<kbd>ctrl</kbd> + <kbd>a</kbd> <kbd>S</kbd>|horizontal split|
+|<kbd>ctrl</kbd> + <kbd>a</kbd> <kbd>V</kbd> or <kbd>\|</kbd>|vertical split|
+|<kbd>ctrl</kbd> + <kbd>a</kbd> <kbd>tab</kbd>|jump to next region|
+|<kbd>ctrl</kbd> + <kbd>a</kbd> <kbd>X</kbd>|close current region|
+|<kbd>ctrl</kbd> + <kbd>a</kbd> <kbd>Q</kbd>|close all regions but current|
 
 Clibpoard
 ---------
 
 |Keys |Action  |
 |--- | --- |
-|{{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}a{{</ sp >}} {{< sp guilabel >}}[{{</ sp >}}|enter copy mode|
-|{{< sp guilabel >}}space{{</ sp >}}|toggle selection and copy|
-|{{< sp guilabel >}}ctrl{{</ sp >}} + {{< sp guilabel >}}a{{</ sp >}} {{< sp guilabel >}}]{{</ sp >}}|paste|
+|<kbd>ctrl</kbd> + <kbd>a</kbd> <kbd>[</kbd>|enter copy mode|
+|<kbd>space</kbd>|toggle selection and copy|
+|<kbd>ctrl</kbd> + <kbd>a</kbd> <kbd>]</kbd>|paste|
 
 Configuration
 -------------

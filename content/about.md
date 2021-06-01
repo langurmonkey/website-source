@@ -26,6 +26,8 @@ While you are here, you may want to:
 - have a look at my [CV](/resume), just in case you want to offer me my dream job
 - find me on [mastodon](https://mastodont.cat/@jumpinglangur) and (on a professional capacity) on [twitter](https://twitter.com/GaiaSky_dev)
 
+Press <kbd>Ctrl</kbd> + <kbd>A</kbd> to do it.
+
 
 
 #### Privacy matters!

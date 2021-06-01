@@ -147,17 +147,17 @@ The stack is a LIFO array of 16-bit values used mainly to store addresses the in
 
 The original CHIP-8 implementations used a **keypad with 16 keys**, labeled with the hexadecimals 0 to F:
 
-{{< sp guilabel >}}1{{</ sp >}}{{< sp guilabel >}}2{{</ sp >}}{{< sp guilabel >}}3{{</ sp >}}{{< sp guilabel >}}C{{</ sp >}}\
-{{< sp guilabel >}}4{{</ sp >}}{{< sp guilabel >}}5{{</ sp >}}{{< sp guilabel >}}6{{</ sp >}}{{< sp guilabel >}}D{{</ sp >}}\
-{{< sp guilabel >}}7{{</ sp >}}{{< sp guilabel >}}8{{</ sp >}}{{< sp guilabel >}}9{{</ sp >}}{{< sp guilabel >}}E{{</ sp >}}\
-{{< sp guilabel >}}A{{</ sp >}}{{< sp guilabel >}}0{{</ sp >}}{{< sp guilabel >}}B{{</ sp >}}{{< sp guilabel >}}F{{</ sp >}}
+<kbd>1</kbd><kbd>2</kbd><kbd>3</kbd><kbd>C</kbd>\
+<kbd>4</kbd><kbd>5</kbd><kbd>6</kbd><kbd>D</kbd>\
+<kbd>7</kbd><kbd>8</kbd><kbd>9</kbd><kbd>E</kbd>\
+<kbd>A</kbd><kbd>0</kbd><kbd>B</kbd><kbd>F</kbd>
 
 Of course, nowadays nobody expects anyone to have one of these physical keypads, so emulators typically map it to the keyboard. Usually, the map is done like this:
 
-{{< sp guilabel >}}1{{</ sp >}}{{< sp guilabel >}}2{{</ sp >}}{{< sp guilabel >}}3{{</ sp >}}{{< sp guilabel >}}4{{</ sp >}}\
-{{< sp guilabel >}}Q{{</ sp >}}{{< sp guilabel >}}W{{</ sp >}}{{< sp guilabel >}}E{{</ sp >}}{{< sp guilabel >}}R{{</ sp >}}\
-{{< sp guilabel >}}A{{</ sp >}}{{< sp guilabel >}}S{{</ sp >}}{{< sp guilabel >}}D{{</ sp >}}{{< sp guilabel >}}F{{</ sp >}}\
-{{< sp guilabel >}}Z{{</ sp >}}{{< sp guilabel >}}X{{</ sp >}}{{< sp guilabel >}}C{{</ sp >}}{{< sp guilabel >}}V{{</ sp >}}
+<kbd>1</kbd><kbd>2</kbd><kbd>3</kbd><kbd>4</kbd>\
+<kbd>Q</kbd><kbd>W</kbd><kbd>E</kbd><kbd>R</kbd>\
+<kbd>A</kbd><kbd>S</kbd><kbd>D</kbd><kbd>F</kbd>\
+<kbd>Z</kbd><kbd>X</kbd><kbd>C</kbd><kbd>V</kbd>
 
 <a id="display"></a>
 ## Display
