@@ -33,9 +33,9 @@ function darkModeToggle() {
 }
 function updateLightsButton(is_dark) {
     var lights = document.getElementById('lights');
-    lights.classList.remove("fa-sun", "fa-moon");
+    lights.classList.remove("fa-sun-o", "fa-moon");
     if(is_dark) {
-       lights.classList.add("fa-sun"); 
+       lights.classList.add("fa-sun-o"); 
     } else {
        lights.classList.add("fa-moon"); 
     }
