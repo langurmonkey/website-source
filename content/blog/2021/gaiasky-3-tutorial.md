@@ -64,7 +64,7 @@ This tutorial does **not** deal with the following items:
 In order to follow the course it is recommended, albeit not required, to have a local installation of Gaia Sky so that you can explore and try out the teachings for yourself. In order to install Gaia Sky, follow the instructions for your operating system in [the installation section](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/Installation.html#installation) of the Gaia Sky documentation.
 
 
-When you start Gaia Sky for the first time, you will be greeted with the welcome screen pictured below. Initially the <kbd>Start Gaia Sky</kbd> button will be {{< sp gray >}}grayed out</kbd>, as you need to download the data packages before Gaia Sky can start. To do so, click on the <kbd>Dataset manager</kbd> button.
+When you start Gaia Sky for the first time, you will be greeted with the welcome screen pictured below. Initially the <kbd>Start Gaia Sky</kbd> button will be {{< sp gray >}}grayed out{{</ sp >}}, as you need to download the data packages before Gaia Sky can start. To do so, click on the <kbd>Dataset manager</kbd> button.
 
 
 {{< figure src="/img/2021/03/gs-tut/welcome-initial.jpg" link="/img/2021/03/gs-tut/welcome-initial.jpg" title="Welcome window at the first start of Gaia Sky" class="fig-center" width="60%" >}}
@@ -72,7 +72,7 @@ When you start Gaia Sky for the first time, you will be greeted with the welcome
 Then select at least the following data packages:
 
 - ``Base data pack`` -- Should be selected by default, contains the Solar System and some other basic data
-- ``Gaia eDR3 small``, ``Hipparcos`` or another star catalog -- The star catalog. Note that usually only one star catalog should be loaded at once. {{< sp blue >}}The Gaia eDR3 catalogs for Gaia Sky already contain Hipparcos!</kbd>
+- ``Gaia eDR3 small``, ``Hipparcos`` or another star catalog -- The star catalog. Note that usually only one star catalog should be loaded at once. {{< sp blue >}}The Gaia eDR3 catalogs for Gaia Sky already contain Hipparcos!{{</ sp >}}
 - ``NBG catalog`` -- Nearby Galaxies Catalog
 - ``SDSS DR12`` (small) or ``SDSS DR14`` (large) -- Sloan Digital Sky Survey catalog, distant galaxies
 - ``Open Clusters DR2`` -- Open clusters catalog based on DR2 data
@@ -93,7 +93,7 @@ When Gaia Sky is ready to go, you will be presented with this screen:
 
 {{< figure src="/img/2021/03/gs-tut/ui-initial.jpg" link="/img/2021/03/gs-tut/ui-initial.jpg" title="Gaia Sky default scene" class="fig-center" width="60%" >}}
 
-In it you can see a few things already. To the right the **focus panel** tells you that you are in focus mode, meaning that all our movement is relative to the focus object. The default focus of Gaia Sky is the Earth. You can also see in the **quick info bar** at the top that our focus is the {{< sp green >}}Earth</kbd>, and that the closest object to our location is also the {{< sp blue >}}Earth</kbd>. Additionally you see that your home object is again the {{< sp orange >}}orange</kbd>. Finally the **control panel** is collapsed at the top left. If you click on it, the panel opens. We will use it later.
+In it you can see a few things already. To the right the **focus panel** tells you that you are in focus mode, meaning that all our movement is relative to the focus object. The default focus of Gaia Sky is the Earth. You can also see in the **quick info bar** at the top that our focus is the {{< sp green >}}Earth{{</ sp >}}, and that the closest object to our location is also the {{< sp blue >}}Earth{{</ sp >}}. Additionally you see that your home object is again the {{< sp orange >}}orange{{</ sp >}}. Finally the **control panel** is collapsed at the top left. If you click on it, the panel opens. We will use it later.
 
 ### Movement
 
@@ -107,11 +107,11 @@ More information on the controls is available in the [controls section](https://
 
 ### Selection
 
-You can change the focus by simply **double clicking** on any object on the scene. You can also press <kbd>f</kbd> to bring up the **search** dialog where you can look up objects by name. Try it now. Press <kbd>f</kbd> and type in "mars", without the quotes, and hit <kbd>esc</kbd>. You should see that the camera now points in the direction of {{< sp red >}}Mars</kbd>. To actually go to {{< sp red >}}Mars</kbd> simply scroll up until you reach it, or click on the {{< img "/img/2021/03/gs-tut/go-to.png" >}} icon next to the name in the focus info panel. If you do so, Gaia Sky takes control of the camera and brings you to {{< sp red >}}Mars</kbd>. 
+You can change the focus by simply **double clicking** on any object on the scene. You can also press <kbd>f</kbd> to bring up the **search** dialog where you can look up objects by name. Try it now. Press <kbd>f</kbd> and type in "mars", without the quotes, and hit <kbd>esc</kbd>. You should see that the camera now points in the direction of {{< sp red >}}Mars{{</ sp >}}. To actually go to {{< sp red >}}Mars{{</ sp >}} simply scroll up until you reach it, or click on the {{< img "/img/2021/03/gs-tut/go-to.png" >}} icon next to the name in the focus info panel. If you do so, Gaia Sky takes control of the camera and brings you to {{< sp red >}}Mars{{</ sp >}}. 
 
 If you want to move instantly to your current focus object, hit <kbd>ctrl</kbd> + <kbd>g</kbd>.
 
-At any time you can use the <kbd>home</kbd> key in your keyboard to return back to Earth or whatever {{< sp orange >}}home</kbd> object you have defined in the [configuration file](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/Properties-file.html#properties-file).
+At any time you can use the <kbd>home</kbd> key in your keyboard to return back to Earth or whatever {{< sp orange >}}home{{</ sp >}} object you have defined in the [configuration file](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/Properties-file.html#properties-file).
 
 ## The User Interface
 
@@ -138,7 +138,7 @@ To the bottom of the control panel we can find a few buttons to perform special 
 
 ### Quick info bar
 
-To the top of the screen you can see the **quick info bar** which provides information on the current time, the {{< sp green >}}current focus</kbd> object (if any), the {{< sp blue >}}current closest</kbd> object to our location and the {{< sp orange >}}current home</kbd> object. The colors of these objects ({{< sp green >}}green</kbd>, {{< sp green >}}blue</kbd>, {{< sp green >}}orange</kbd>) correspond to the colors of the crosshairs. The crosshairs can be enabled or disabled from the interface tab in the preferences window (use <kbd>p</kbd> to bring it up).
+To the top of the screen you can see the **quick info bar** which provides information on the current time, the {{< sp green >}}current focus{{</ sp >}} object (if any), the {{< sp blue >}}current closest{{</ sp >}} object to our location and the {{< sp orange >}}current home{{</ sp >}} object. The colors of these objects ({{< sp green >}}green{{</ sp >}}, {{< sp blue >}}blue{{</ sp >}}, {{< sp orange >}}orange{{</ sp >}}) correspond to the colors of the crosshairs. The crosshairs can be enabled or disabled from the interface tab in the preferences window (use <kbd>p</kbd> to bring it up).
 
 
 ### Debug panel

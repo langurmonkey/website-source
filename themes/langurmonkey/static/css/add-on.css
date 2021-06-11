@@ -545,11 +545,11 @@ img.inline {
     margin: auto 2px;
 }
 kbd {
-    background-color: #eee;
+    background-color: var(--kbd-bg);
     border-radius: 3px;
-    border: 1px solid #cdcdcd;
+    border: 1px solid var(--kdb-border);
     box-shadow: 2px 2px 1px rgba(150, 150, 150, 1.0);
-    color: #333;
+    color: var(--kbd-fg);
     display: inline-block;
     font-family: monospace;
     font-size: .85em;

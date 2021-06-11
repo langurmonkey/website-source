@@ -15,4 +15,8 @@
     --bg-hint-body: #7f9;
     --fg-hint-title: #f3f3f3;
     --fg-hint-body: #222;
+
+    --kbd-bg: #ccc;
+    --kbd-fg: #333;
+    --kbd-border: #ababab;
 }
