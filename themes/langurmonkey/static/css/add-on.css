@@ -95,7 +95,7 @@ article.post footer .stats {
 }
 article.post footer .tags {
     font-family: courier,monospace;
-    padding-left: 1em;
+    padding-left: 1.4em;
 }
 article.post header .meta p {
     font-size: 0.9em;
@@ -637,7 +637,7 @@ aside#toc {
 }
 #toc a {
     color: rgba(127, 127, 127, .4);
-    text-decoration: none;
+    border-bottom-style: none;
     padding-left: 0;
 }
 #toc a > code {
