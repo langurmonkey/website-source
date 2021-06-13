@@ -52,7 +52,9 @@ We want to control the name and content of the fields in the JSON index file, so
 {{< highlight json "linenos=table" >}}
 {{- $.Scratch.Add "index" slice -}}
 {{- range .Site.RegularPages -}}
-    {{- $.Scratch.Add "index" (dict "title" .Title "tags" .Params.tags "categories" .Params.categories "content" .Plain "href" .Permalink) -}}
+    {{- $.Scratch.Add "index" (dict "title" .Title "tags" 
+            .Params.tags "categories" .Params.categories 
+            "content" .Plain "href" .Permalink) -}}
 {{- end -}}
 {{- $.Scratch.Get "index" | jsonify -}}
 {{</ highlight >}}
