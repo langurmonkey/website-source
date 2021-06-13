@@ -1495,6 +1495,7 @@ a[href$=gif]:hover {
 }
 
 a {
+    color: var(--fg-color);
     -moz-transition: color 0.2s ease, border-bottom-color 0.2s ease;
     -webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
     -ms-transition: color 0.2s ease, border-bottom-color 0.2s ease;
@@ -1503,12 +1504,12 @@ a {
     border-bottom: 2px solid var(--link-color);
 }
 
-.stats a {
-    border-style: none;
-}
-
 .dark-mode a {
     color: var(--fg-color-dark);
+}
+
+.stats a {
+    border-style: none;
 }
 
 a.mainlogo {
@@ -2491,7 +2492,7 @@ ul.posts article {
 div.post-in-list time{
     font-family: courier,monospace;
     letter-spacing: -0.07em;
-    color: #aaa;
+    color: var(--time-color);
     font-size: 0.8em;
     display: inline-block;
     width: 13.5em;
@@ -3124,7 +3125,7 @@ body {
     border-bottom: 0;
     font-family: courier,monospace;
     font-size: 0.8em;
-    font-weight: 400;
+    font-weight: 200;
     letter-spacing: 0.1em;
     text-transform: lowercase;
 }
@@ -3509,6 +3510,7 @@ main, #main {
 #menu .links > li a {
     display: block;
     text-decoration: none;
+    border-bottom-style: none;
     color: inherit;
 }
 

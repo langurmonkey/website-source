@@ -1,9 +1,10 @@
 :root {
     --title-color: #f35888;
     --title-color-hover: #95bf0d;
-    --link-color: #008fb3;
-    --link-color-hover: #4ddbff;
+    --link-color: #39c8ec;
+    --link-color-hover: #39c8ec;
     --code-color: #669900;
+    --time-color: #999;
 
     --bg-color: #fcfcfc;
     --fg-color: #333;

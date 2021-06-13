@@ -55,32 +55,32 @@ uglyurls = false
 # You can use identifier to prepend a font awesome icon to your text
 
 [[menu.main]]
-    name = "/home"
+    name = "~/"
     url = "/"
     weight = 1
 
 [[menu.main]]
-    name = "/blog"
+    name = "~/blog"
     url = "/blog"
     weight = 2
 
 [[menu.main]]
-    name = "/projects"
+    name = "~/projects"
     url = "/projects"
     weight = 3
 
 [[menu.main]]
-    name = "/publications"
+    name = "~/publications"
     url = "/papers"
     weight = 4
 
 [[menu.main]]
-    name = "/cv"
+    name = "~/cv"
     url = "/resume"
     weight = 5
 
 [[menu.main]]
-    name = "/photo"
+    name = "~/photo"
     url = "/photography"
     weight = 6
 
