@@ -1582,8 +1582,8 @@ h5:before,
 h6:before {
     content: "$";
     color: var(--code-color);
-    margin-left: -0.9em;
-    padding-right: 0.2em;
+    position: absolute;
+    left: -0.1em;
     font-family: sans-serif,monospace;
 }
 #menu h1:before, 
