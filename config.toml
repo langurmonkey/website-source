@@ -27,7 +27,7 @@ uglyurls = false
     description          = "Personal website and portfolio"
     # This will appear on the top left of the navigation bar
     #navbarTitle          = "Toni Sagristà Sellés"
-    navbarTitle          = "Jumping Langur"
+    navbarTitle          = "jumping@langur"
     # Social media buttons that appear on the sidebar
     socialAppearAtTop    = true
     socialAppearAtBottom = false
@@ -54,10 +54,10 @@ uglyurls = false
 # Set up your menu items in the navigation bar
 # You can use identifier to prepend a font awesome icon to your text
 
-[[menu.main]]
-    name = "~/"
-    url = "/"
-    weight = 1
+# [[menu.main]]
+#     name = "~/"
+#     url = "/"
+#     weight = 1
 
 [[menu.main]]
     name = "~/blog"
