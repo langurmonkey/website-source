@@ -148,6 +148,9 @@ article.post ul {
     margin-top: 0em;
     font-family: monospace;
 }
+#header h2:before {
+    content: none;
+}
 
 #header h2 a {
     font-size: 0.8em;
