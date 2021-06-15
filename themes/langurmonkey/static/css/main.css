@@ -1583,7 +1583,7 @@ h6:before {
     content: "$";
     color: var(--code-color);
     position: absolute;
-    left: -0.1em;
+    left: -0.25em;
     font-family: sans-serif,monospace;
 }
 #menu h1:before, 
@@ -1591,7 +1591,13 @@ h6:before {
 #menu h3:before,
 #menu h4:before,
 #menu h5:before, 
-#menu h6:before {
+#menu h6:before,
+#cv-wrap h1:before, 
+#cv-wrap h2:before, 
+#cv-wrap h3:before,
+#cv-wrap h4:before,
+#cv-wrap h5:before, 
+#cv-wrap h6:before {
     content: none;
 }
 

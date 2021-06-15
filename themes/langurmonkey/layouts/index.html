@@ -4,35 +4,34 @@
 <!-- Main -->
 <main>
     <article class="post">
-    {{ range where .Data.Pages "Title" "Hi there!" }}
-    <header>
-    <div class="title"><h1><a href="">{{ .Title }}</a></h1></div>
-    </header>
-    {{ .Content }}
-    {{ end }}
-    </article>
-    <!-- Posts List -->
-    <div class="mini-posts">
+        {{ range where .Data.Pages "Title" "Hi there!" }}
         <header>
-            <h4 class="latest-posts-bottom">Latest Posts</h4>
-            {{ if ge (len (where .Site.Pages "Type" "post")) ($.Scratch.Get "postLimit") }}
-            <span class="latest-posts-viewall">[<a href="/posts-list" class="button" style="">View all</a>]</span>
-            {{ end }}
+            <div class="title"><h1><a href="">{{ .Title }}</a></h1></div>
         </header>
+        {{ .Content }}
+        {{ end }}
+
+        <!-- Posts List -->
+        <section class="latest-posts">
+        <h4 id="latest-posts" class="latest-posts-bottom">Latest Posts</h4>
+        {{ if ge (len (where .Site.Pages "Type" "post")) ($.Scratch.Get "postLimit") }}
+        <span class="latest-posts-viewall">[<a href="/posts-list" class="button" style="">View all</a>]</span>
+        {{ end }}
         <div class="posts-container">
             {{ $.Scratch.Set "recentPosts" .Site.Pages }}
             {{ $.Scratch.Set "postLimit" 8 }}
-                {{ range first ($.Scratch.Get "postLimit") (where ($.Scratch.Get "recentPosts") "Type" "post") }}
-                <div class="recent-posts-item">
-                    <a href="{{ .RelPermalink }}">{{ .Title | truncate 45 }}</a>&nbsp;
-                    {{ $.Scratch.Set "dateType" .Date }}
-                    <time class="published" datetime='{{ ($.Scratch.Get "dateType").Format "2006-01-02" }}'>
-                       [ {{ ($.Scratch.Get "dateType").Format "January 2, 2006" }} ]
-                    </time>
-                </div>
-                {{ end }}
+            {{ range first ($.Scratch.Get "postLimit") (where ($.Scratch.Get "recentPosts") "Type" "post") }}
+            <div class="recent-posts-item">
+                <a href="{{ .RelPermalink }}">{{ .Title | truncate 45 }}</a>&nbsp;
+                {{ $.Scratch.Set "dateType" .Date }}
+                <time class="published" datetime='{{ ($.Scratch.Get "dateType").Format "2006-01-02" }}'>
+                    [ {{ ($.Scratch.Get "dateType").Format "January 2, 2006" }} ]
+                </time>
+            </div>
+            {{ end }}
         </div>
-    </div>
+        </section>
+    </article>
 </main>
 <!--  {{ partial "sidebar" . }} -->
 {{ partial "footer" . }}

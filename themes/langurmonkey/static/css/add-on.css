@@ -14,7 +14,6 @@ pre {
     /*width: 100%*/
 }
 
-
 #header .links a {
     /* Theoretically for IE 8 & 9 (more valid) */
     /* ...but not required as filter works too */
@@ -674,4 +673,7 @@ aside#toc {
 #toc li.active a {
     color: rgba(127, 127, 127, 1) !important;
 }
+}
+section.latest-posts {
+    margin-top: 4em;
 }
