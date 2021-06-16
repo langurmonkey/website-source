@@ -45,13 +45,13 @@ pre {
 }
 #header .shell {
     font-size: 0.8em;
-    color: var(--code-color);
+    color: var(--link-color);
     padding-left: 0.4em;
     font-weight: 800;
 }
 #header .homefolder {
     font-size: 0.8em;
-    color: var(--link-color);
+    color: var(--code-color);
     padding-left: 0.2em;
     font-weight: 600;
 }

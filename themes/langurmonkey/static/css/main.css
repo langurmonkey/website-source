@@ -1580,11 +1580,11 @@ h3:before,
 h4:before,
 h5:before, 
 h6:before {
-    content: "$";
-    color: var(--code-color);
+    content: "~/";
+    color: var(--link-color);
     position: absolute;
-    left: -0.25em;
-    font-family: sans-serif,monospace;
+    left: -0.75em;
+    font-family: monospace;
 }
 #menu h1:before, 
 #menu h2:before, 
