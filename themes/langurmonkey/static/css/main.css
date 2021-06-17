@@ -1591,6 +1591,28 @@ h6:before {
     left: -0.75em;
     font-family: monospace;
 }
+
+@media screen and (max-width: 1280px) {
+h1:before, 
+h2:before, 
+h3:before,
+h4:before,
+h5:before, 
+h6:before {
+    content: none;
+}
+}
+
+@media screen and (max-width: 736px) {
+h1:before, 
+h2:before, 
+h3:before,
+h4:before,
+h5:before, 
+h6:before {
+    content: none;
+}
+}
 #menu h1:before, 
 #menu h2:before, 
 #menu h3:before,
