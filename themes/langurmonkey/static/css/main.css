@@ -1503,14 +1503,19 @@ a {
     text-decoration: none;
     border-bottom: 2px dotted var(--link-color);
 }
-@media screen and (max-width: 736px) {
-a {
-    border-bottom: 1px dotted var(--link-color);
-}
-}
 
 .dark-mode a {
     color: var(--fg-color-dark);
+}
+
+@media screen and (max-width: 736px) {
+a {
+    color: var(--link-color);
+    border-bottom: 1px dotted var(--link-color);
+}
+.dark-mode a {
+    color: var(--link-color);
+}
 }
 
 .stats a {
@@ -1578,54 +1583,6 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     color: var(--title-color) !important;
     text-decoration: none;
     border-bottom-style: none;
-}
-h1:before, 
-h2:before, 
-h3:before,
-h4:before,
-h5:before, 
-h6:before {
-    content: "~/";
-    color: var(--link-color);
-    position: absolute;
-    left: -0.75em;
-    font-family: monospace;
-}
-
-@media screen and (max-width: 1280px) {
-h1:before, 
-h2:before, 
-h3:before,
-h4:before,
-h5:before, 
-h6:before {
-    content: none;
-}
-}
-
-@media screen and (max-width: 736px) {
-h1:before, 
-h2:before, 
-h3:before,
-h4:before,
-h5:before, 
-h6:before {
-    content: none;
-}
-}
-#menu h1:before, 
-#menu h2:before, 
-#menu h3:before,
-#menu h4:before,
-#menu h5:before, 
-#menu h6:before,
-#cv-wrap h1:before, 
-#cv-wrap h2:before, 
-#cv-wrap h3:before,
-#cv-wrap h4:before,
-#cv-wrap h5:before, 
-#cv-wrap h6:before {
-    content: none;
 }
 
 h1 a:hover, 
