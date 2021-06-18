@@ -10,7 +10,7 @@ featuredpath = "date"
 type = "post"
 +++
 
-Over the last two weeks I have released the feature-packed version `3.1.0` of the open source 3D universe software [Gaia Sky](https://zah.uni-heidelberg.de/gaia/outreach/gaiasky), along with successive bugfix releases `3.1.1` and `3.1.2`, which fix regressions introduced in the former. This post contains a rundown of the most interesting [features and bug fixes introduced in these three versions](https://gitlab.com/langurmonkey/gaiasky/-/releases), from global positioning to per-object visibility. Let's get started.
+Over the last two weeks I have released the feature-packed version `3.1.0` of [Gaia Sky](https://zah.uni-heidelberg.de/gaia/outreach/gaiasky). Two bugfix releases (`3.1.1` and `3.1.2`) followed shortly to fix bugs and regressions introduced in the former. This post contains a small rundown of the most interesting [features in these three new versions](https://gitlab.com/langurmonkey/gaiasky/-/releases). Let's get started.
 
 <!--more-->
 
@@ -19,7 +19,7 @@ Over the last two weeks I have released the feature-packed version `3.1.0` of th
 
 ## Enabling absolute positioning
 
-The first and most important feature is the re-implementation of the core positioning module of Gaia Sky to work with arbitrary-precision floating point numbers. This allows to put objects at any location in the Universe without loss of precision. This feature has actually been sitting in a branch since before the submission of the paper [Gaia Sky: Navigating the Gaia Catalog](https://ieeexplore.ieee.org/document/8440086), but it wasn't merged into the main branch due to some minor problems (mainly performance) that needed some ironing out. This is under-the-hood work, so you won't readily notice anything visually at first. However, this eventually enables the addition of extrasolar systems (Kepler), or the spacecraft to wander off from the Solar System without hacks.
+The first and most important feature is the re-implementation of the core positioning module of Gaia Sky. We have moved the arithmetics to arbitrary-precision floating point numbers. This enables global positioning anywhere in the Universe without loss of precision. This feature has actually been sitting in a branch since before the submission of the paper [Gaia Sky: Navigating the Gaia Catalog](https://ieeexplore.ieee.org/document/8440086), but it never quite made into the main branch due to some minor problems. This is mainly under-the-hood work, invisible to the user. Yet, it enables the eventual addition of extrasolar systems, or the spacecraft to wander off from the Solar System without hacks.
 
 {{< figure src="/img/2021/06/kepler-exoplanets.jpg" link="/img/2021/06/kepler-exoplanets.jpg" title="An exoplanet in Gaia Sky 3.1, orbiting a double system" class="fig-center" width="60%" >}}
 
