@@ -10,11 +10,13 @@ featuredpath = "date"
 type = "post"
 +++
 
-{{< sp orange >}}Edit (2020-06-16):{{</ sp >}} use dd to create swap file instead of fallocate*
+{{< sp orange >}}Edit (2020-06-16):{{</ sp >}} use dd to create swap file instead of fallocate
+<br />
+{{< sp orange >}}Edit (2021-07-01):{{</ sp >}} fix typo in `GRUB_CMDLINE`: cryptodevice -> cryptdevice
 
 It is well known that Arch Linux does not have the easiest install process of all Linux distributions. In my opinion, for technical users this is a big plus, as you get to know your system better simply by having to set it up from scratch. This comes with the perk that you only install the packages you need, leading to a smaller and arguably snappier system.
 
-In this guide, I'm documenting my latest Arch Linux installation on my laptop, where I used full disk encryption with LUKS over LVM. BTW, you should **always** encrypt your disks on your mobile devices, either laptops or phones.It comes virtually for free, and it provides countless benefits. 
+In this guide, I'm documenting my latest Arch Linux installation on my laptop, where I used full disk encryption with LUKS over LVM. Encrypting your disk in your mobile devices should be a requirement if you value your security and/or privacy. Nowadays it has almost no performance penalties and it provides countless benefits. 
 
 <!--more-->
 
