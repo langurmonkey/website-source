@@ -34,7 +34,7 @@ We need a few plugins to achieve a pleasant experience, but first, a word about 
 
 ### Conquer of Completion
 
-Conquer of Completion, or [`coc.vim`](github.com/neoclide/coc.nvim) provides the framework for instant increment completion. Very useful for auto-completing variables, methods and so on. But we need CoC to understand Rust, and for that we need to install `rust-analyzer` and then the CoC extension, [`coc-rust-analyzer`](https://github.com/fannheyward/coc-rust-analyzer).
+Conquer of Completion, or [`coc.vim`](https://github.com/neoclide/coc.nvim) provides the framework for instant increment completion. Very useful for auto-completing variables, methods and so on. But we need CoC to understand Rust, and for that we need to install `rust-analyzer` and then the CoC extension, [`coc-rust-analyzer`](https://github.com/fannheyward/coc-rust-analyzer).
 
 {{< figure src="/img/2021/02/vim-rust-completion.jpg" link="/img/2021/02/vim-rust-completion.jpg" title="Rust completion in neovim" width="70%" class="fig-center" >}}
 
@@ -74,4 +74,4 @@ The great thing about this kind of configuration is that it is very easy to tail
 {{< figure src="/img/2021/02/rust-devenv.jpg" link="/img/2021/02/rust-devenv.jpg" title="The mouseless development environment" width="80%" class="fig-center" >}}
 
 
-The dotfiles for this configuration are all stored in [this repository](gitlab.com/langurmonkey/dotfiles). [Here](https://gitlab.com/langurmonkey/dotfiles/-/tree/master/vim) are my `vim` dotfiles, and [here](https://gitlab.com/langurmonkey/dotfiles/-/tree/master/i3) are my `i3` dotfiles.
+The dotfiles for this configuration are all stored in [this repository](https://gitlab.com/langurmonkey/dotfiles). [Here](https://gitlab.com/langurmonkey/dotfiles/-/tree/master/vim) are my `vim` dotfiles, and [here](https://gitlab.com/langurmonkey/dotfiles/-/tree/master/i3) are my `i3` dotfiles.
