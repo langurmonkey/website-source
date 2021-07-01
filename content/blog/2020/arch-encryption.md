@@ -279,7 +279,7 @@ And edit `/etc/default/grub` and edit it so that the following lines are present
 /etc/default/grub
 -----------------
 [...]
-GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 cryptodevice=/dev/nvme0n1p3:volumegroup:allow-discards quiet"
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 cryptdevice=/dev/nvme0n1p3:volumegroup:allow-discards quiet"
 [...]
 GRUB_ENABLE_CRYPTODISK=y
 [...]
