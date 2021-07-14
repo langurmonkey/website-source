@@ -137,6 +137,8 @@ The program counter `PC` is 16-bit and contains the memory address of the curren
 
 The stack pointer `SP` is either 8 or 16-bit (depending on the size of your stack), and points to the top of the stack.
 
+Finally, we have the index register `I`, which is a 16-bit register typically used to store memory addresses.
+
 <a id="stack"></a>
 ## Stack
 
@@ -380,7 +382,7 @@ Jump to the location `NNN` + `V0`.
 PC := V0 + NNN
 ```
 
-### RND VX, NN
+### RND VX, NN -- `CXNN`
 
 Generate a random byte (from 0 to 255), do a bitwise AND with `NN` and store the result to `VX`.
 ```
