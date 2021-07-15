@@ -32,7 +32,7 @@ Basics
 |<kbd>ctrl</kbd> + <kbd>a</kbd>|escape key (used to access all other key bindings)|
 |<kbd>ctrl</kbd> + <kbd>a</kbd> <kbd>d</kbd>|detach and go back to original terminal session|
 |<kbd>ctrl</kbd> + <kbd>a</kbd> <kbd>D</kbd> <kbd>D</kbd>|detach and log out|
-|<kbd>ctrl</kbd> + <kbd>a</kbd> <kbd>\</kbd>|exit all programs in screen|
+|<kbd>ctrl</kbd> + <kbd>a</kbd> <kbd>\\</kbd>|exit all programs in screen|
 |<kbd>ctrl</kbd> + <kbd>a</kbd> <kbd>ctrl</kbd> + <kbd>\\</kbd>|force exit (not recommended)|
 |<kbd>ctrl</kbd> + <kbd>a</kbd> `:quit`|close session and quit screen|
 |<kbd>ctrl</kbd> + <kbd>a</kbd> <kbd>?</kbd>|help|
@@ -49,6 +49,8 @@ Window management
 |<kbd>ctrl</kbd> + <kbd>a</kbd> <kbd>1</kbd>,<kbd>2</kbd>,...|switch to window number|
 |<kbd>ctrl</kbd> + <kbd>a</kbd> <kbd>n</kbd>|move to next window|
 |<kbd>ctrl</kbd> + <kbd>a</kbd> <kbd>p</kbd>|move to previous window|
+|Close all processes (incl. shell)          |close window|
+|<kbd>ctrl</kbd> + <kbd>a</kbd> <kbd>k</kbd>|force close window|
 
 Splits
 ------
