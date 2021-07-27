@@ -366,4 +366,4 @@ This module contains some debugging utilities that are used when `rchip8` is sta
 
 In this post I have presented a Rust implementation of the CHIP-8 machine. We have seen each of the different modules and their responsibilities. There are many extensions and variations that could be added, like the CHIP-8X, the CHIP-8X or the S-CHIP (also called Super-Chip). These add different features like new instructions or additional display modes. I may implement some of them into `rchip8` in the future.
 
-[^drw]: Drawing sprites to the screen: https://github.com/mattmikolay/chip-8/wiki/Mastering-CHIP‐8#drawing-sprites-to-the-screen
+[^drw]: [Drawing sprites to the screen](https://github.com/mattmikolay/chip-8/wiki/Mastering-CHIP‐8#drawing-sprites-to-the-screen)
