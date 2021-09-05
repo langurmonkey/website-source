@@ -10,7 +10,7 @@ featuredpath = "date"
 type = "post"
 +++
 
-I've written about the [CHIP-8](https://en.wikipedia.org/wiki/Chip-8) machine [before](/blog/2021/chip8-spec). It is a very simple interpreted programming language that can be implemented very easily as a "Hello world" of sorts by people interested in getting their feet wet with emulators.
+I've written about the [CHIP-8](https://en.wikipedia.org/wiki/Chip-8) machine [before](/blog/2021/chip8-spec). It is a very simple interpreted programming language that can be implemented without much hassle by anyone interested in getting their feet wet with emulators. It is commonly regarded as the "hello world" of emulators.
 
 Some time ago I decided to implement a CHIP-8 emulator in Rust as my second project written in that language. My first foray into the language was the porting of the [Gaia Sky LOD catalog generation](https://gitlab.com/gaiasky/gaiasky-catgen) tool from Java. This allowed us to substantially increase the generation speed and dramatically (really) decrease the memory consumption of the processing, to the point where a processing that previously needed more than 2 TB of RAM could now be done with less than a hundred gigs. Back to the topic at hand, I called my implementation [`rchip8`](https://gitlab.com/langurmonkey/rchip8) (very creative). This post describes the process and structure of such an emulator with more or less detail.
 
