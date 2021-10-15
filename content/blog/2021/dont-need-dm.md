@@ -12,30 +12,30 @@ type = "post"
 
 In the Linux world, a display manager is a little GUI program that presents the user with a login screen right after boot, allows her to enter her login credentials and choose the desired desktop environment or window manager. The most common ones are `gdm` (the default in Gnome), `kdm` (same for KDE), `lightdm` (originally written for Ubuntu's Unity DE) and `lxdm` (for LXDE). There also exist a bunch of arguably simpler terminal-based display managers like `ly`, `cdm` or `nodm`.
 
-But for most users a full featured display manager may be a bit too much bloat. You can achieve the same functionality by using the default shell login and a single command. Everything in this post applies only to **X11**.
+But for most users a fully featured display manager may be a bit too much bloat. You can achieve the exact same functionality by simply using the default shell login and a single command. Everything in this post applies only to **X11** (sorry Wayland users).
 
 <!--more-->
 
-If you are the only user of your computer, you may not need a display manager at all. This has the advantages of removing complexity, sparing a few MB from your drive, getting rid of an `init` or `systemd` task, and being in control of what exactly happens when X starts.
+If you are the only user of your computer, you may not need a display manager at all. Not using one has the advantages of removing complexity, sparing a few MB from your drive, getting rid of an `init` or `systemd` task, and being in control of what exactly happens when X starts.
 
-If you have no display manager configured in your init system, after boot you will be presented with the default login shell. Use that to perform your login. After that you enter your system in terminal mode, in one of the `tty`s.
+If you have no display manager configured in your init system, after boot you will be presented with the default login shell. Use it to log in normally and access a terminal `tty` with your default shell.
 
-Now we need to start the X window system, and our desktop environment or window manager of choice with it. To do so, we need to look at the `~/.xinitrc` file.
+Now you need to start the X window system, and your desktop environment or window manager of choice with it. To do so, look at the `~/.xinitrc` file.
 
 ## The `~/.xinitrc` script
 
-We have two utilities that will launch the X server for us. The first is `xinit`, and the second is `startx`. In reality, `startx` is nothing but a wrapper script around `xinit` that adds a few bells and whistles, so I suggest you use only `startx` and leave `xinit` alone. You can inspect the `startx` script easily:
+There are a couple of utilities that can launch the X server for you. The first is `xinit`, the second is `startx`. In reality, `startx` is nothing but a wrapper script around `xinit` that adds a few bells and whistles, so I suggest you use only `startx` and leave `xinit` alone. You can inspect the `startx` script easily:
 
 ```bash
 less $(where startx)
 ```
 
-So the login sequence goes like this:
+The login sequence goes like this:
 
 1. Login using the default shell
 2. run `startx`
 
-As we mentioned before, `startx` calls `xinit`, which looks up the `~/.xinitrc` file to know what to execute.
+As we mentioned above, `startx` calls `xinit`, which reads the `~/.xinitrc` file to know what to execute.
 
 `~/.xinitrc` is a regular script that contains the commands to run when starting X. The final command should run the DE or WM. An example of `~/.xinitrc` that starts `i3wm` file follows:
 
