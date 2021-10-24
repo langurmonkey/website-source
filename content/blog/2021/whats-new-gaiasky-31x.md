@@ -1,7 +1,7 @@
 +++
 author = "Toni Sagrista Selles"
 categories = ["Gaia Sky"]
-tags = ["programming", "opengl", "release", "version", "english", "gaia sky"]
+tags = ["programming", "opengl", "release", "version", "english", "gaiasky"]
 date = 2021-06-17
 linktitle = ""
 title = "What's new in Gaia Sky 3.1"

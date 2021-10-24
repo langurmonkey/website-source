@@ -37,11 +37,43 @@ The login sequence goes like this:
 
 As we mentioned above, `startx` calls `xinit`, which reads the `~/.xinitrc` file to know what to execute.
 
-`~/.xinitrc` is a regular script that contains the commands to run when starting X. The final command should run the DE or WM. An example of `~/.xinitrc` that starts `i3wm` file follows:
+`~/.xinitrc` is a regular script that contains the commands to run when starting X. You can get the default from `/etc/X11/xinit/xinitrc`, and copy that one over to your home directory. The final command should run the DE or WM. An example of `~/.xinitrc` that starts `i3wm` file follows:
 
 
 {{< highlight bash "linenos=table" >}}
+#!/bin/sh
+
 # This is an ~/.xinitrc example file
+
+userresources=$HOME/.Xresources
+usermodmap=$HOME/.Xmodmap
+sysresources=/etc/X11/xinit/.Xresources
+sysmodmap=/etc/X11/xinit/.Xmodmap
+
+# merge in defaults and keymaps
+if [ -f $sysresources ]; then
+    xrdb -merge $sysresources
+fi
+
+if [ -f $sysmodmap ]; then
+    xmodmap $sysmodmap
+fi
+
+if [ -f "$userresources" ]; then
+    xrdb -merge "$userresources"
+fi
+
+if [ -f "$usermodmap" ]; then
+    xmodmap "$usermodmap"
+fi
+
+# start some nice programs
+if [ -d /etc/X11/xinit/xinitrc.d ] ; then
+ for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+  [ -x "$f" ] && . "$f"
+ done
+ unset f
+fi
 
 # Start compositor
 # picom blah blah ...
@@ -50,9 +82,6 @@ As we mentioned above, `startx` calls `xinit`, which reads the `~/.xinitrc` file
 # diskie
 # nm-applet
 # ...
-
-# Apply .Xresources settings (dpi)
-[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
 # Start i3wm
 exec i3
