@@ -17,7 +17,7 @@ type = "post"
 ## Overview
 
 In this post I'm documenting the current (March 2019) system setup I use in my development machines. This has been converging for a long time already, and It will surely evolve in the future. However, right now, it works well for me.
-I the machines mostly for development work ([Gaia Sky](https://zah.uni-heidelberg.de/institutes/ari/gaia/outreach/gaiasky/), Gaia First Look, Ph.D., etc.). I also use my personal computers for the occasional light gaming session (Terraria, C&C remastered, or whatever I feel like at the moment) and as all-around computing devices to manage stuff.
+I use the machines mostly for development work ([Gaia Sky](https://zah.uni-heidelberg.de/institutes/ari/gaia/outreach/gaiasky/), Gaia First Look, Ph.D., etc.). I also use my personal computers for the occasional light gaming session (Terraria, C&C remastered, or whatever I feel like at the moment) and as all-around computing devices to manage stuff.
 
 The setup is based around the keyboard and command-line tools (CLI), that run in the terminal. Of course, I use also plenty of GUI applications, but the basic workflow is just optimized to minimal mouse use. It is just faster to get around and get things done quickly.
 
