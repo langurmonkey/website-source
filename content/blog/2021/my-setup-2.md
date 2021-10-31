@@ -16,7 +16,7 @@ A couple of years ago I wrote a [blog post](/blog/2019/my-setup/) about my Linux
 
 In this post I'm documenting the current (November 2021) system setup I use in my development machines. This is a snapshot of the current state of things, and needless to say, it will evolve, meander and transform in unexpected ways.
 
-The setup is still based around the keyboard and the foundation are some crazy useful command-line tools (CLI). Of course, I use also plenty of GUI applications, but the basic workflow is just optimized to minimize mouse usage.
+The setup is still based around the keyboard and the foundation are some crazy useful command-line tools (CLI). Of course, I also use plenty of GUI applications, but the basic workflow is just optimized to minimize mouse usage.
 
 I use this configuration in the following machines. Before, I had my main work machine running Ubuntu, another one running Antergos and some other with Manjaro. Note that hey have all moved to Arch Linux by now. Feels good man, so much simpler.
 
@@ -43,6 +43,10 @@ Please, see the [README](https://gitlab.com/langurmonkey/dotfiles/blob/master/RE
 
 I use [`i3wm`](https://i3wm.org/), and in particular, Airblader's fork [`i3-gaps`](https://github.com/Airblader/i3) in every computer I have to do work with. I genearally do not keep other window managers or desktop environments installed anymore, as i3 does everything I need it to do.
 
+## Display manager
+
+None. I use [`startx` with `.xinitrc`](/blog/2021/dont-need-dm/), and that's enough.
+
 ## Shell
 
 I use [`zsh`](www.zsh.org) (no longer with `oh-my-zsh`, as I just have the few scripts I used directly cloned into my dotfiles repository) because I'm used to lots of its features that I otherwise miss when using `bash`.
@@ -61,7 +65,7 @@ I am back to square one with the bar. After deeming `polybar` overkill for my pu
 <a href="/img/2021/10/i3blocks.jpg">
 <img src="/img/2021/10/i3blocks.jpg"
      alt="Sexy sexiness"
-     style="width: 100%;" />
+     style="width: 80%;" />
 </a>
 <em style="color: gray">Look at that sexy bar!</em>
 </p>
@@ -97,6 +101,7 @@ call plug#end()
 ```
 
 You can find more about each plugin by visiting the corresponding github page if you're really interested.
+Also, I wrote about my [mouseless Rust development environment](/blog/2021/rust-devenv/) based on vim a few months ago, in case that is the kind of thing that turns you on.
 
 ## File manager
 
@@ -138,7 +143,7 @@ There is a [qutebrowser script](https://github.com/qutebrowser/qutebrowser/blob/
 
 ## Mail client
 
-Right now I'm using [Thunderbird](https://thunderbird.net) and `mutt`, even though I'm not as comfortable with `mutt` as I would like. I need to invest some more time to really consolidate a workflow, as I have it fully configured with my work and personal mail already.
+Right now I'm using [Thunderbird](https://thunderbird.net) and `mutt`, even though I'm not as comfortable with `mutt` as I would like. I need to invest some more time to really consolidate a workflow, as I have it fully configured and ready to go with my work and personal mail accounts already. It just need some more love I reckon.
 
 ## Music player
 
@@ -148,11 +153,11 @@ I just use `ncmpcpp` with `mpd`. Read more about them [here](/blog/2020/mpd/).
 
 By now I've ditched [RawTherapee](https://rawtherapee.com) and use [darktable](https://www.darktable.org) exclusively. I've grown more and more fond of this amazing piece of software and how well thought out it is. Granted, it hits you hard at start, but it is worth investing some time to learn its ins and outs.
 
-At the end of the day, both are very capable and produce good results. Also, both support `.CR2` and `.RW2` from my Canon 40D and my Panasonic Lumix LX10/15 respectively (see the [photo section](/photography)).
+At the end of the day, both are very capable and produce good results. Also, both support `.CR2` and `.RW2` from my Canon 40D and my Panasonic Lumix LX10 respectively (see the [photo section](/photography)).
 
 ## Scripting
 
-Most of my scripts are written in POSIX shell, even though for more complex things or when I get lazy and don't remember some of the weird POSIX syntax I also use `python` from time to time.
+Most of my scripts are written in POSIX shell, even though for more complex things or when I get lazy and don't remember some of the weird POSIX syntax I also use Python from time to time.
 
 ## Weather in terminal
 
@@ -167,8 +172,8 @@ weather () {
 Which I call with a location to check the weather:
 
 ```bash
-$ weather ottawa
-Weather report: ottawa
+$ weather Ottawa
+Weather report: Ottawa
 
                 Mist
    _ - _ - _ -  +9(7) °C
