@@ -504,6 +504,9 @@ ul.posts-list-button {
     width: 12em;
     margin: 1em auto 0 auto;
 }
+ul.posts-list-button li {
+    margin-bottom: -0.3em;
+}
 ul.posts-list-button a {
     border-bottom-style: none;
 }

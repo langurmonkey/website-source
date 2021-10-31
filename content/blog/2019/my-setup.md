@@ -81,7 +81,7 @@ I tried a few bars: `i3bar`, `i3blocks`, `bumblebee-status`, you name it. The on
 <a href="/img/2019/03/polybar.jpg">
 <img src="/img/2019/03/polybar.jpg"
      alt="My polybar"
-     style="width: 100%;" />
+     style="width: 60%;" />
 </a>
 <em style="color: gray">This is what my Polybar looks like in my main monitor</em>
 </p>
@@ -103,8 +103,11 @@ map gw cd ~/.dotfiles/assets/wallpaper
 Then, I can select a wallpaper and I can either use `bg` to set as background or `bw` to set as background, generate a new palette and apply the theme.
 
 ```
-map bg shell cp %f ~/Pictures/wallpaper.jpg && feh --bg-fil ~/Pictures/wallpaper.jpg
-map bw shell cp %f ~/Pictures/wallpaper.jpg && ~/.local/bin/wal -c && ~/.local/bin/wal -a 85 -i ~/Pictures/wallpaper.jpg
+map bg shell cp %f ~/Pictures/wallpaper.jpg \
+&& feh --bg-fil ~/Pictures/wallpaper.jpg
+
+map bw shell cp %f ~/Pictures/wallpaper.jpg \
+&& ~/.local/bin/wal -c && ~/.local/bin/wal -a 85 -i ~/Pictures/wallpaper.jpg
 ```
 
 Additionally, I use this wee script to launch a new instance of ranger inside a terminal with a specific working directory:

@@ -180,7 +180,8 @@ arch-chroot /mnt
 We are now already operating from our installed system. We need to install some additionaly goodies. I've listed here some essentials. Particularly, you need the `lvm2` package.
 
 ```bash
-pacman -S linux-headers intel-ucode base-devel neovim networkmanager wpa_supplicant wireless-tools netctl dialog lvm2
+pacman -S linux-headers intel-ucode base-devel neovim \
+networkmanager wpa_supplicant wireless-tools netctl dialog lvm2
 ```
 
 Install as many shit as your heart desires. You can feel guilty later when `neofetch` lists the number of packages in the thousands.
