@@ -1436,7 +1436,7 @@ body.is-loading *, body.is-loading *:before, body.is-loading *:after {
 body, input, select, textarea {
     color: #646464;
     font-family: noto,sans-serif;
-    font-size: 15pt;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 1.75;
 }
@@ -1444,7 +1444,7 @@ body, input, select, textarea {
 @media screen and (max-width: 1680px) {
 
     body, input, select, textarea {
-        font-size: 15pt;
+        font-size: 1rem;
     }
 
 }
@@ -1452,7 +1452,7 @@ body, input, select, textarea {
 @media screen and (max-width: 1280px) {
 
     body, input, select, textarea {
-        font-size: 14pt;
+        font-size: 0.9rem;
     }
 
 }
@@ -1460,7 +1460,7 @@ body, input, select, textarea {
 @media screen and (max-width: 980px) {
 
     body, input, select, textarea {
-        font-size: 13pt;
+        font-size: 0.8rem;
     }
 
 }
@@ -1468,7 +1468,7 @@ body, input, select, textarea {
 @media screen and (max-width: 736px) {
 
     body, input, select, textarea {
-        font-size: 12pt;
+        font-size: 0.7rem;
     }
 
 }
@@ -1476,7 +1476,7 @@ body, input, select, textarea {
 @media screen and (max-width: 480px) {
 
     body, input, select, textarea {
-        font-size: 12pt;
+        font-size: 0.7rem;
     }
 
 }
@@ -1572,7 +1572,7 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
     color: var(--title-color);
-    font-size: 2em;
+    font-size: 2rem;
     font-family: open sans, sans-serif;
     font-weight: 400;
     line-height: 1.2;
@@ -1605,42 +1605,42 @@ h1 {
 
 h2 {
     margin-top: 1.9em;
-    font-size: 1.75em;
+    font-size: 1.75rem;
     font-weight: 400;
 }
 
 h3 {
     margin-top: 1.4em;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     font-weight: 400;
 }
 
 h4 {
     margin-top: 1.0em;
-    font-size: 1.25em;
+    font-size: 1.25rem;
     font-weight: 400;
 }
 
 h5 {
     margin-top: 0.8em;
-    font-size: 1.15em;
+    font-size: 1.15rem;
     font-weight: 400;
 }
 
 h6 {
     margin-top: 0.5em;
-    font-size: 1.05em;
+    font-size: 1.05rem;
     font-weight: 400;
 }
 
 sub {
-    font-size: 0.8em;
+    font-size: 0.8rem;
     position: relative;
     top: 0.5em;
 }
 
 sup {
-    font-size: 0.8em;
+    font-size: 0.8rem;
     position: relative;
     top: -0.5em;
 }
@@ -1659,7 +1659,7 @@ a code {
 code {
     background: rgba(100, 100, 100, 0.3);
     font-family: courier,monospace;
-    font-size: 0.9em;
+    font-size: 0.9rem;
     margin: 0 0;
     padding: 0.25em 0.25em;
     color: var(--code-color);
@@ -1676,7 +1676,7 @@ div.highlight {
 pre {
     -webkit-overflow-scrolling: touch;
     font-family: courier,monospace;
-    font-size: 0.9em;
+    font-size: 0.9rem;
     margin: 0 0 0 0;
 }
 
@@ -1732,7 +1732,7 @@ hr.major {
     justify-content: flex-end;
     border-bottom: 0;
     font-family: open sans, sans-serif;
-    font-size: 0.6em;
+    font-size: 0.6rem;
     font-weight: 400;
     letter-spacing: 0.25em;
     text-transform: uppercase;
@@ -1767,12 +1767,12 @@ hr.major {
 }
 
 .blurb h2 {
-    font-size: 0.8em;
+    font-size: 0.8rem;
     margin: 0 0 1.5em 0;
 }
 
 .blurb p {
-    font-size: 0.9em;
+    font-size: 0.9rem;
 }
 
 /* Box */
@@ -1807,7 +1807,7 @@ button,
     cursor: pointer;
     display: inline-block;
     font-family: open sans, sans-serif;
-    font-size: 0.7em;
+    font-size: 0.7rem;
     font-weight: 400;
     height: 2.8125em;
     line-height: 2.8125em;
@@ -1879,7 +1879,7 @@ input[type="reset"].big,
 input[type="button"].big,
 button.big,
 .button.big {
-    font-size: 0.7em;
+    font-size: 0.7rem;
 }
 
 input[type="submit"].small,
@@ -1887,7 +1887,7 @@ input[type="reset"].small,
 input[type="button"].small,
 button.small,
 .button.small {
-    font-size: 0.5em;
+    font-size: 0.5rem;
 }
 
 input[type="submit"].disabled, input[type="submit"]:disabled,
@@ -1958,7 +1958,7 @@ form.search > input:first-child {
 label {
     color: #3c3b3b;
     display: block;
-    font-size: 0.9em;
+    font-size: 0.9rem;
     font-weight: 700;
     margin: 0 0 1em 0;
 }
@@ -2067,7 +2067,7 @@ input[type="radio"] + label {
     color: #646464;
     cursor: pointer;
     display: inline-block;
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: 400;
     padding-left: 2.4em;
     padding-right: 0.75em;
@@ -2297,7 +2297,7 @@ ul.icons li:last-child {
 }
 
 ul.icons li > * {
-    font-size: 0.7em;
+    font-size: 0.7rem;
     font-family: monospace;
 }
 
@@ -2503,13 +2503,13 @@ div.post-in-list time{
     font-family: courier,monospace;
     letter-spacing: -0.07em;
     color: var(--time-color);
-    font-size: 0.8em;
+    font-size: 0.8rem;
     display: inline-block;
     width: 13.5em;
 }
 @media screen and (max-width: 680px) {
     div.post-in-list time{
-        font-size: 0.5em;
+        font-size: 0.5rem;
         display: contents;
     }
     div.post-in-list a {
@@ -2543,14 +2543,14 @@ ul.posts article header a {
 }
 
 ul.posts article header h3 {
-    font-size: 0.7em;
+    font-size: 0.7rem;
     margin-top: 0.125em;
 }
 
 ul.posts article header .published {
     display: block;
     font-family: open sans, sans-serif;
-    font-size: 0.6em;
+    font-size: 0.6rem;
     font-weight: 400;
     letter-spacing: 0.25em;
     margin: -0.625em 0 1.7em 0;
@@ -2626,13 +2626,13 @@ dl dd {
 }
 
 .mini-post header h3 {
-    font-size: 0.7em;
+    font-size: 0.7rem;
 }
 
 .mini-post header .published {
     display: block;
     font-family: open sans, sans-serif;
-    font-size: 0.6em;
+    font-size: 0.6rem;
     font-weight: 400;
     letter-spacing: 0.25em;
     margin: -0.625em 0 1.7em 0;
@@ -2724,7 +2724,7 @@ dl dd {
 
 .post > header .title h2 {
     font-weight: 400;
-    font-size: 1.7em;
+    font-size: 1.7rem;
 }
 
 .post > header .title > :last-child {
@@ -2755,7 +2755,7 @@ dl dd {
 .post > header .meta .published {
     display: block;
     font-family: open sans, sans-serif;
-    font-size: 0.9em;
+    font-size: 0.9rem;
     font-weight: 300;
     white-space: nowrap;
 }
@@ -2805,7 +2805,7 @@ dl dd {
 .post > footer .stats li {
     display: inline-block;
     font-family: courier,monospace;
-    font-size: 0.6em;
+    font-size: 0.6rem;
     font-weight: 400;
     letter-spacing: 0.1em;
     line-height: 1;
@@ -2919,7 +2919,7 @@ dl dd {
     }
 
     .post > header .title h2 {
-        font-size: 1.5em;
+        font-size: 1.5rem;
     }
 
 }
@@ -2971,7 +2971,7 @@ section.special, article.special {
 }
 
 header p {
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: 400;
     letter-spacing: -0.03em;
     margin-top: -0.5em;
@@ -3005,7 +3005,7 @@ table td {
 
 table th {
     color: #3c3b3b;
-    font-size: 0.9em;
+    font-size: 0.9rem;
     font-weight: 700;
     padding: 0 0.75em 0.75em 0.75em;
     text-align: left;
@@ -3063,7 +3063,7 @@ body {
     justify-content: space-between;
     border-bottom: solid 1px rgba(160, 160, 160, 0.3);
     box-shadow: 0px 0px 3px black;
-    height: 1.8em;
+    height: 2em;
     left: 0;
     line-height: 1.8em;
     position: fixed;
@@ -3092,7 +3092,7 @@ body {
     height: inherit;
     line-height: inherit;
     padding: 0 0 0 1.5em;
-    font-size: 1em;
+    font-size: 1rem;
     white-space: nowrap;
     margin-top: 0;
 }
@@ -3100,11 +3100,11 @@ body {
 #header h1 a {
     font-family: courier,monospace;
     letter-spacing: -0.07em;
-    font-size: 0.8em;
+    font-size: 0.8rem;
 }
 #header h2 a {
     letter-spacing: normal;
-    font-size: 0.8em;
+    font-size: 0.8rem;
 }
 
 #header .links {
@@ -3134,7 +3134,7 @@ body {
 #header .links ul li a {
     border-bottom: 0;
     font-family: courier,monospace;
-    font-size: 0.8em;
+    font-size: 0.8rem;
     font-weight: 800;
     text-transform: lowercase;
 }
@@ -3270,7 +3270,7 @@ body {
     max-width: 100%;
     opacity: 1;
     padding: 1.5em;
-    width: 65em;
+    width: 75em;
 }
 
 body.is-menu-visible #wrapper {
@@ -3384,14 +3384,14 @@ main, #main {
 }
 
 #intro header h2 {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     font-weight: 400;
     text-transform: none;
 }
 
 #intro header p {
     font-family: open sans, sans-serif;
-    font-size: 0.8em;
+    font-size: 0.8rem;
 }
 
 @media screen and (max-width: 1280px) {
@@ -3402,11 +3402,11 @@ main, #main {
     }
 
     #intro header h2 {
-        font-size: 2em;
+        font-size: 2rem;
     }
 
     #intro header p {
-        font-size: 0.7em;
+        font-size: 0.7rem;
     }
 
 }
@@ -3427,7 +3427,7 @@ main, #main {
     }
 
     #intro header h2 {
-        font-size: 1em;
+        font-size: 1rem;
     }
 
     #intro header > :last-child {
@@ -3459,7 +3459,7 @@ main, #main {
 #footer .copyright {
     color: #999;
     font-family: open sans, sans-serif;
-    font-size: 0.6em;
+    font-size: 0.6rem;
     font-weight: 400;
     letter-spacing: 0.25em;
     text-transform: lowercase;
@@ -3528,7 +3528,7 @@ main, #main {
     -webkit-transition: color 0.2s ease;
     -ms-transition: color 0.2s ease;
     transition: color 0.2s ease;
-    font-size: 1.0em;
+    font-size: 1.0rem;
     text-transform: lowercase;
     font-weight: 100;
     font-family: courier,monospace;
@@ -3537,7 +3537,7 @@ main, #main {
 
 #menu .links > li a p {
     font-family: open sans, sans-serif;
-    font-size: 0.6em;
+    font-size: 0.6rem;
     font-weight: 400;
     letter-spacing: 0.25em;
     margin-bottom: 0;
@@ -3577,7 +3577,7 @@ figcaption, figcaption > h4 {
     margin: 0.5em 0 1em 0;
     color: gray;
     text-align: center;
-    font-size: 16px;
+    font-size: 1em;
     font-weight: 200;
 }
 
