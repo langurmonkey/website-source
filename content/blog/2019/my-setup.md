@@ -13,6 +13,7 @@ type = "post"
 {{< sp orange >}}Edit (2020-10-02):{{</ sp >}} change termite to kitty due to font ligatures support.\
 {{< sp orange >}}Edit (2020-06-01):{{</ sp >}} change urxvt to termite, update info on qutebrowser with tor.*
 
+---
 
 ## Overview
 
