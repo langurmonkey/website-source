@@ -15,8 +15,12 @@ type = "post"
 {{< sp orange >}}Edit (2021-07-01):{{</ sp >}} fix typo in `GRUB_CMDLINE`: cryptodevice -> cryptdevice
 <br />
 {{< sp orange >}}Edit (2021-11-04):{{</ sp >}} fix terminology mess-up: LUKS on LVM -> LVM on LUKS
-<br />
+
+---
+
 *{{< sp green >}}Disclaimer:{{</ sp >}} some of the steps in the Arch Linux installation procedure change from time to time, so I would recommend to check out the awesome [Arch Linux installation guide](https://wiki.archlinux.org/title/Installation_guide) in the Arch wiki to get a fully up-to-date picture of the process.*
+
+---
 
 It is well known that Arch Linux does not have the easiest install process of all Linux distributions. In my opinion, for technical users this is a big plus, as you get to know your system better simply by having to set it up from scratch. This comes with the perk that you only install the packages you need, leading to a smaller and arguably snappier system.
 
