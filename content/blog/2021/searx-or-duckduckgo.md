@@ -1,7 +1,7 @@
 +++
 author = "Toni Sagrista Selles"
-categories = []
-tags = []
+categories = ["Privacy"]
+tags = ["search", "linux", "privacy", "english", "qutebrowser", "open-source", "archlinux"]
 date = 2021-11-04
 linktitle = ""
 title = "Searx: moving away from DuckDuckGo"
