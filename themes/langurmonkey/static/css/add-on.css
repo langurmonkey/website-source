@@ -167,7 +167,7 @@ article.post ul {
 
 .post > header .title h1 {
     font-weight: 400;
-    font-size: 2.8em;
+    font-size: 2.6em;
 }
 @media screen and (max-width: 736px) {
     .post > header .title h1 {
@@ -176,6 +176,9 @@ article.post ul {
 }
 
 @media screen and (max-width: 480px) {
+    .post > header .title h1 {
+        font-size: 2.1em;
+    }
     .post > .image.featured {
         margin-top: 0;
     }
