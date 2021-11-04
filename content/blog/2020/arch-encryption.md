@@ -24,16 +24,15 @@ type = "post"
 
 It is well known that Arch Linux does not have the easiest install process of all Linux distributions. In my opinion, for technical users this is a big plus, as you get to know your system better simply by having to set it up from scratch. This comes with the perk that you only install the packages you need, leading to a smaller and arguably snappier system.
 
-In this guide, I'm documenting my latest Arch Linux installation on my laptop, where I set up an LVM logical volume manager over a fully-encrypted disk with LUKS. Encrypting your disk in your mobile devices should be a requirement if you value your security and/or privacy. Nowadays it has almost no performance penalties and it provides countless benefits. 
+In this guide, I'm documenting my latest Arch Linux installation on my laptop, where I set up a logical volume with LVM on top of a fully-encrypted disk with LUKS. Encrypting your disk in your mobile devices should be a requirement if you value your security and/or privacy. Nowadays it has almost no performance penalties and it provides countless benefits. 
 
 <!--more-->
 
 There is a video version of a very similar installation process by LearnLinuxTV [here](https://invidio.us/watch?v=Lq4cbp5AOZM). You may want to use that instead if you'd rather follow a video tutorial.
 
-Please note that this may become obsolete quickly, as the install process may change over time.
-When we are done, we will have a system with a LUKS-encrypted physical volume with two logical partitions, `/` and `/home`. We will use `grub2` as a bootloader.
+When we are done, we will have a system with a LUKS-encrypted physical volume with two logical partitions, `/` and `/home`. We will use GRUB 2 as our bootloader.
 
-So, assuming you have the archiso USB ready, just plug it in, select it in your boot menu and start it.
+So, assuming you have an USB burnt with an [Arch image](https://archlinux.org/download/) ready to go, just plug it in, select it in your boot menu and start it.
 
 ## Network configuration
 
@@ -46,7 +45,7 @@ wifi-menu
 ```
 Select your wifi, enter your password and select 'connect'.
 
-*The archiso I used (downloaded some time during the last half of May 2020) was broken and did not manage to connect to my wifi with `wifi-menu`. To solve that, I switched down the interface. Not sure why this worked, but keep it in mind in case you can't get a connection either.*
+*The image I used (downloaded some time during the last half of May 2020) was broken and did not manage to connect to my wifi with `wifi-menu`. To solve that, I switched down the interface. Not sure why this worked, but keep it in mind in case you can't get a connection either.*
 
 ```bash
 ip link set wlan0 down
@@ -72,7 +71,7 @@ Check your drives:
 fdisk -l
 ```
 
-We'll be installing Arch on the SSD `/dev/nvme0n1`. This will probably be different for you. et's now prepare the dist. We'll be creating two 500 MB partitions (for EFI and `/boot`), and another `ext4` partition for the logical volume.
+We'll be installing Arch on the SSD `/dev/nvme0n1`. This will probably be different for you. Let's now prepare the disk. We'll be creating two 500 MB partitions (for EFI and `/boot`), and another `ext4` partition for the logical volume.
 
 ```bash
 fdisk /dev/nvme0n1
