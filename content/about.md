@@ -17,6 +17,8 @@ Anyway, my name is **Toni Sagristà Sellés** and I am a computer scientist and 
 
 I'm currently working in the Gaia[^gaia] group of the Astronomisches Rechen-Institut[^ari] in Heidelberg, and doing research in scientific visualization in the Visual Computing Group[^viscomp] of the Interdisciplinary Center for Scientific Computing[^iwr], also in Heidelberg.
 
+This site is accessible from [tonisagrista.com](https://tonisagrista.com) and [sagrista.info](https://sagrista.info).
+
 While you are here, you may want to:
 
 - read some of my [blog posts](/blog) ([full list](/posts-list))
