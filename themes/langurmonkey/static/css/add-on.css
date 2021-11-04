@@ -680,3 +680,10 @@ aside#toc {
 section.latest-posts {
     margin-top: 4em;
 }
+
+#lights {
+    line-height: 1.8em;
+}
+#icon-menu {
+    line-height: 1.2em;
+}
