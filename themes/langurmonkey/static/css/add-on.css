@@ -171,13 +171,13 @@ article.post ul {
 }
 @media screen and (max-width: 736px) {
     .post > header .title h1 {
-        font-size: 2.3em;
+        font-size: 2.1em;
     }
 }
 
 @media screen and (max-width: 480px) {
     .post > header .title h1 {
-        font-size: 2.1em;
+        font-size: 1.8em;
     }
     .post > .image.featured {
         margin-top: 0;
