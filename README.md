@@ -31,6 +31,7 @@ If any of the CSS files are modified, re-generate the bundle with:
 cd $WEB/themes/langurmonkey/static/css
 uglifycss theme-pink-blue.css main.css add-on.css fork-awesome.css > site-bundle.css
 ```
+
 Same with the JavaScript files:
 
 ```bash
@@ -43,6 +44,8 @@ To minify everything, do:
 ```bash
 scripts/minify-all.sh
 ```
+
+Note that you **need** to run this script in order for the CSS to be applied, as the website itself only links the minified bundle file!
 
 Gallery
 -------

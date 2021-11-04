@@ -3,9 +3,9 @@ author = "Toni Sagrista Selles"
 categories = ["Linux", "Privacy"]
 tags = [ "security", "anonymity", "archlinux", "encryption", "luks", "dm-crypt", "lvm" ]
 date = 2020-06-08
-description = "Arch Linux installation with LUKS on LVM encryption"
+description = "Arch Linux installation with LVM on a LUKS-encrypted drive"
 linktitle = ""
-title = "Arch with LUKS on LVM"
+title = "Arch with LVM on LUKS"
 featuredpath = "date"
 type = "post"
 +++
@@ -14,9 +14,12 @@ type = "post"
 <br />
 {{< sp orange >}}Edit (2021-07-01):{{</ sp >}} fix typo in `GRUB_CMDLINE`: cryptodevice -> cryptdevice
 
+
+{{< sp green >}}Disclaimer:{{</ sp >}} some of the steps in the Arch Linux installation procedure change from time to time, so I would recommend to check out the awesome [Arch Linux installation guide](https://wiki.archlinux.org/title/Installation_guide) in the Arch wiki to get a fully up-to-date picture of the process.
+
 It is well known that Arch Linux does not have the easiest install process of all Linux distributions. In my opinion, for technical users this is a big plus, as you get to know your system better simply by having to set it up from scratch. This comes with the perk that you only install the packages you need, leading to a smaller and arguably snappier system.
 
-In this guide, I'm documenting my latest Arch Linux installation on my laptop, where I used full disk encryption with LUKS over LVM. Encrypting your disk in your mobile devices should be a requirement if you value your security and/or privacy. Nowadays it has almost no performance penalties and it provides countless benefits. 
+In this guide, I'm documenting my latest Arch Linux installation on my laptop, where I set up an LVM logical volume manager over a fully-encrypted disk with LUKS. Encrypting your disk in your mobile devices should be a requirement if you value your security and/or privacy. Nowadays it has almost no performance penalties and it provides countless benefits. 
 
 <!--more-->
 
@@ -103,7 +106,9 @@ mkfs.fat -F32 /dev/nvme0n1p1
 mkfs.ext4 /dev/nvme0n1p2
 ```
 
-## LUKS encryption on LVM partition
+## Set up LVM on top of a LUKS drive
+
+In this part, we set up the disk encryption using LUKS, and then we prepare the Logical Volume Manager with a couple of partitions on top of it.
 
 Now we need to set up encryption in the third disk. 
 
