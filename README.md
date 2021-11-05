@@ -64,6 +64,6 @@ $  thumbsup --input ./folder-with-photos --output ./output-folder --embed-exif -
 ```
 
 The original photos are hosted in `gaiasandbox`'s ARI page.
-Since HUGO in Gitlab caps any folder called `/public` within `/static`, rename it to `/assets`. The generated `index.html` file already points to the renamed folder, so no need to replace any strings.
+Since HUGO in Gitlab Pages does not allow any folder called `/public` within `/static`, rename it to `/assets`. The generated `index.html` file already points to the renamed folder, so no need to replace any strings.
 
 You can then copy the contents of ``./output-folder`` to ``$WEB/static/photo-gallery/`` and commit.
