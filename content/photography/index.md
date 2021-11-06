@@ -5,13 +5,15 @@ tags = ["photo","gear","gallery"]
 date = "2021-04-07"
 +++
 
-Since I got my first DSLR camera towards the end of 2007, I have been in a sort of relationship with photography that has had its ups and downs. I've combined periods where I'm very excited to go out and shoot with others where I've felt quite apathetic about it. Anyway, below you can find a list of my gear and a link to a gallery with some of my photos.
+Since I got my first DSLR camera in the latter half of 2007, I have been in a sort of relationship with photography that has had its ups and downs. I've combined periods where I'm very excited to go out and shoot with others where I've felt quite apathetic about it. This page contains a description of my gear and a link to a photo gallery containing some of my photos that I've captured over the years.
 
 ## Photo gallery
 
-From time to time I publish some of my pictures in my gallery here in this website.
+From time to time I publish some of my pictures in the photo gallery linked below.
 
-*  [**Photo gallery**](/photo-gallery)
+* <i class="fa fa-camera" aria-hidden="true"></i>&nbsp;&nbsp;  [**PHOTO GALLERY**](/photo-gallery)
+
+You can find a write up about the process I use to generate the photo gallery in [this blog post](/blog/2021/static-photo-gallery).
 
 ## My gear
 
@@ -27,3 +29,6 @@ Below is a list of my gear (to be completed):
 *  Lowepro Nova 170 AW DSLR Camera Shoulder Bag
 *  Manfrotto Compact Advanced Smart 65" Tripod
 
+## Processing software
+
+I usually shoot raw only. I process all of my photos using [darktable](https://www.darktable.org), a free and open source photography workflow manager and raw processor.
