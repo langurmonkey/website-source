@@ -65,9 +65,11 @@ c.url.searchengines = {'DEFAULT': 'http://localhost:8888?q={}'}
 
 If all of this is too much for you, and you are fine trusting someone else, just replace the URL with one of the public instances.
 
-## Conclusion
+## Final remarks
 
-Searx is an awesome project that offers a true private search engine that is, in my opinion, superior to anything else. Installing a local instance is easy-peasy, but you can also use one of the publicly available instances if you prefer to.
+I myself use the private local installation in all my computers listed above. I'm almost always connected to a VPN via wireguard, which adds a slight anonymity layer (not even very good, but it's there anyways) by hiding my true location and routing all traffic via an encrypted tunnel. In my phone, I just trust [searx.be](https://searx.be), which is currently the top listed instance in the [Searx instance list](https://searx.space/#help-country) page.
+
+All in all, Searx is an awesome project that offers a true private search engine that is, in my opinion, superior to anything else. You do not need to trust third parties to keep you private and not track your every move, which is awesome. Installing a local instance is easy-peasy, but you can also use one of the publicly available instances if you prefer to.
 
 Some Searx resources:
 
