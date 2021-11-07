@@ -554,6 +554,9 @@ img.inline {
     border-radius: 0 0 0.3em 0.3em;
     margin-top: 0 !important;
 }
+.hint-body > code {
+    color: var(--fg-color);
+}
 .guilabel {
     border: 1px solid #7fbbe3;
     background: #e7f2fa;

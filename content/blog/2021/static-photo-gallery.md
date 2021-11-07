@@ -54,6 +54,11 @@ $  thumbsup --input ./folder-with-photos --output ./output-folder \
 --link-prefix "http://where-your-photos-are-hosted.online/"
 ```
 
+{{< hint >}}
+Add the arguments `--sort-albums-by end-date`, `--sort-albums-direction desc` and `--sort-media-direction desc` to the command line script to make the latest photos and albums appear at the top of your gallery.
+{{</ hint >}}
+
+
 Find the available built-in with screenshots and demo sites [here](https://thumbsup.github.io/docs/4-themes/built-in/).
 
 Once the script is run, you need to copy the contents of `./output-folder` to your preferred server location for it to be available online.
