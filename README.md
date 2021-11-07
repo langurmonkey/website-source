@@ -60,7 +60,7 @@ pacman -S gifsicle dcraw imagemagick perl-image-exiftool ffmpeg
 The gallery theme is in the ``gallery-theme/`` directory of this repository. Generate the gallery from a set of static files using:
 
 ```bash
-$  thumbsup --input ./folder-with-photos --output ./output-folder --embed-exif --title "Toni Sagrista Selles - Photo gallery" --theme-path $WEB/gallery-theme --photo-preview link --photo-download link --link-prefix "http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/"
+$  thumbsup --input ./folder-with-photos --output ./output-folder --embed-exif --title "Toni Sagrista Selles - Photo gallery" --theme-path $WEB/gallery-theme --photo-preview link --photo-download link --link-prefix "http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/" --sort-albums-by end-date
 ```
 
 The original photos are hosted in `gaiasandbox`'s ARI page.
