@@ -17,17 +17,24 @@ You can find a write up about the process I use to generate the photo gallery in
 
 ## My gear
 
-Below is a list of my gear (to be completed):
+[This album](/photo-gallery/gear.html) in the photo gallery contains the photos of my cameras, lenses and more.
 
-*  {{< sp accent >}}Cameras{{</ sp >}}
-    *  Canon EOS 40D {{< sp accent >}}[[pic1](/img/photography/canon40d.webp)]{{</ sp >}}
-    *  Panasonic LUMIX DMC-LX10/15 {{< sp accent >}}[[pic1](/img/photography/lumix-lx15-1.webp), [pic2](/img/photography/lumix-lx15-2.webp)]{{</ sp >}}
-*  {{< sp accent >}}Lenses{{</ sp >}}
-    *  Canon EF 28-105mm f/3.5-4.5 II USM {{< sp accent >}}[[pic1](/img/photography/canon28-105.webp)]{{</ sp >}}
-    *  Canon EF 50mm f/1.8 II {{< sp accent >}}[[pic1](/img/photography/canon50-1.webp), [pic2](/img/photography/canon50-2.webp)]{{</ sp >}}
-    *  Sigma 10-20mm f/4-5.6 EX DC HSM {{< sp accent >}}[[pic1](/img/photography/sigma10-20.webp)]{{</ sp >}}
+Below is a list of all the material I regularly use to take photos:
+
+#### Cameras
+
+*  Canon EOS 40D {{< sp accent >}}[[`wide1`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/40D_wide.webp), [`wide2`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/40D_wide_view.jpg), [`back1`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/40D_back.jpg), [`back2`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/40D_back_low.jpg), [`top1`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/40D_top_1.jpg), [`top2`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/40D_top_1.jpg), [`top display`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/40D_top_display_view.jpg), [`front`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/40D_front.jpg), [`side`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/40D_detail_side.jpg), [`model`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/40D_logo.jpg), [`top dial`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/40D_dial.jpg), [`wheel`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/40D_wheel.jpg), [`top display side`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/40D_top_display.jpg), [`back display buttons`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/40D_screen_buttons.jpg), [`viewfinder`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/40D_viewfinder.jpg), [`top display buttons`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/40D_top_display_buttons.jpg), [`logo`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/40D_canon_logo.jpg)]{{</ sp >}}
+*  Panasonic LUMIX DMC-LX10/15 {{< sp accent >}}[[`front`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/lumix-lx15-1.webp), [`back`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/lumix-lx15-2.webp)]{{</ sp >}}
+
+#### Lenses
+*  Canon EF 28-105mm f/3.5-4.5 II USM {{< sp accent >}}[[`wide`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/28-105_tall.webp), [`top`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/28-105_top.jpg), [`filter detail`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/28-105_cap.jpg)]{{</ sp >}}
+*  Canon EF 50mm f/1.8 II {{< sp accent >}}[[`top`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/50mm_top.webp), [`wide`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/50mm_wide.webp)]{{</ sp >}}
+*  Sigma 10-20mm f/4-5.6 EX DC HSM {{< sp accent >}}[[`wide`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/10-20_wide.webp)]{{</ sp >}}
+
+#### Other stuff
 *  Lowepro Nova 170 AW DSLR Camera Shoulder Bag
 *  Manfrotto Compact Advanced Smart 65" Tripod
+
 
 ## Processing software
 
