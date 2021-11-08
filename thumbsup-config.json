@@ -6,5 +6,6 @@
     "embed-exif": true,
     "sort-albums-by": "end-date",
     "sort-albums-direction": "desc",
+    "link-prefix": "http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/",
     "sort-media-direction": "desc"
 }
