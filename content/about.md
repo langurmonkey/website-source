@@ -11,7 +11,7 @@ How the hell did you end up here?
 
 <img src="/img/myself_v3.webp"
      alt="My photo"
-     style="float: right; margin-left: 50px; width: 15%" />
+     style="float: right; margin-left: 50px; width: 25%" />
 
 Anyway, my name is **Toni Sagristà Sellés** and I am a computer scientist and M.Sc. in Astrophysics and Cosmology. I like computer graphics and visualization, astronomy, photography (sometimes), snowboarding, playing and watching football, drawing horribly, playing with my kids, and occasionally gaming. I sometimes use the aliases `jumpinglangur` and `langurmonkey`.
 
