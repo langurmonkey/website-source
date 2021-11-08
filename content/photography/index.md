@@ -5,7 +5,7 @@ tags = ["photo","gear","gallery"]
 date = "2021-04-07"
 +++
 
-Since I got my first DSLR camera in the latter half of 2007, I have been in a sort of relationship with photography that has had its ups and downs. I've combined periods where I'm very excited to go out and shoot with others where I've felt quite apathetic about it. This page contains a description of my gear and a link to a photo gallery containing some of my photos that I've captured over the years.
+I got my first DSLR camera in the latter half of 2007 and I have been interested in photography ever since. In all this time, I've combined periods where I'm very excited to go out and shoot with others where I've felt quite apathetic about it. My guess is that that's a quite common pattern among enthusiasts, and even a healthy one. Anyway, this page contains a description of my gear and a link to a photo gallery containing some of the photos that I've captured over the years.
 
 ## Photo gallery
 
