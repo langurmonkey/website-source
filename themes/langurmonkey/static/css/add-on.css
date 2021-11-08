@@ -693,3 +693,18 @@ section.latest-posts {
 #icon-menu {
     line-height: 1.2em;
 }
+table.menu-table-index {
+    width: 100%;
+}
+table.menu-table-index tr {
+    background-color: #00000000 !important;
+    border: 0px #00000000 none;
+}
+table.menu-table-index td {
+    text-align: center;
+    width: 33%;
+}
+table.menu-table-index i {
+    font-size: 3em;
+    color: var(--fg-color);
+}

@@ -11,7 +11,7 @@ How the hell did you end up here?
 
 <img src="/img/myself_v3.webp"
      alt="My photo"
-     style="float: right; margin-left: 50px; width: 30%" />
+     style="float: right; margin-left: 50px; width: 15%" />
 
 Anyway, my name is **Toni Sagristà Sellés** and I am a computer scientist and M.Sc. in Astrophysics and Cosmology. I like computer graphics and visualization, astronomy, photography (sometimes), snowboarding, playing and watching football, drawing horribly, playing with my kids, and occasionally gaming. I sometimes use the aliases `jumpinglangur` and `langurmonkey`.
 
@@ -19,14 +19,42 @@ I'm currently working in the Gaia[^gaia] group of the Astronomisches Rechen-Inst
 
 This site is accessible from [tonisagrista.com](https://tonisagrista.com) and [sagrista.info](https://sagrista.info).
 
-While you are here, you may want to:
 
-- read some of my [blog posts](/blog) ([full list](/posts-list))
-- check out some of my [current and past projects](/projects)
-- explore my [publications](/papers)
-- chillax watching [some of my photos](/photo-gallery)
-- have a look at my [CV](/resume), just in case you want to offer me my dream job
-- find me on [mastodon](https://mastodont.cat/@jumpinglangur) and (on a professional capacity) on [twitter](https://twitter.com/GaiaSky_dev)
+<br/>
+Here is a summary of the content in this site:
+
+<br/>
+<table class="menu-table-index">
+<tr>
+<td> 
+<i class="fa fa-file-word-o" aria-hidden="true"></i><br/>
+<a href="/blog">Blog</a>
+</td>
+<td> 
+<i class="fa fa-list-ul" aria-hidden="true"></i><br/>
+<a href="/posts-list">All posts</a>
+</td>
+<td> 
+<i class="fa fa-superscript" aria-hidden="true"></i><br/>
+<a href="/projects">Projects</a>
+</td>
+</tr>
+<tr>
+<td> 
+<i class="fa fa-file-text-o" aria-hidden="true"></i><br/>
+<a href="/papers">Publications</a>
+</td>
+<td> 
+<i class="fa fa-camera" aria-hidden="true"></i><br/>
+<a href="/photography">Photos</a>
+</td>
+<td> 
+<i class="fa fa-address-card-o" aria-hidden="true"></i><br/>
+<a href="/resume">Résumé</a>
+</td>
+</tr>
+</table>
+<br/>
 
 #### Privacy matters!
 
