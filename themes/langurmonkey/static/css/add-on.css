@@ -696,6 +696,13 @@ section.latest-posts {
 table.menu-table-index {
     width: 100%;
 }
+table.menu-table-index a {
+    border-bottom-style: none;
+}
+table.menu-table-index a:hover i {
+    color: var(--title-color);
+    border-bottom-style: none;
+}
 table.menu-table-index tr {
     background-color: #00000000 !important;
     border: 0px #00000000 none;

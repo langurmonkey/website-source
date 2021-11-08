@@ -27,30 +27,30 @@ Here is a summary of the content in this site:
 <table class="menu-table-index">
 <tr>
 <td> 
-<i class="fa fa-file-word-o" aria-hidden="true"></i><br/>
-<a href="/blog">Blog</a>
+<a href="/blog"><i class="fa fa-file-word-o" aria-hidden="true"></i><br/>
+Blog</a>
 </td>
 <td> 
-<i class="fa fa-list-ul" aria-hidden="true"></i><br/>
-<a href="/posts-list">All posts</a>
+<a href="/posts-list"><i class="fa fa-list-ul" aria-hidden="true"></i><br/>
+All posts</a>
 </td>
 <td> 
-<i class="fa fa-superscript" aria-hidden="true"></i><br/>
-<a href="/projects">Projects</a>
+<a href="/projects"><i class="fa fa-superscript" aria-hidden="true"></i><br/>
+Projects</a>
 </td>
 </tr>
 <tr>
 <td> 
-<i class="fa fa-file-text-o" aria-hidden="true"></i><br/>
-<a href="/papers">Publications</a>
+<a href="/papers"><i class="fa fa-file-text-o" aria-hidden="true"></i><br/>
+Publications</a>
 </td>
 <td> 
-<i class="fa fa-camera" aria-hidden="true"></i><br/>
-<a href="/photography">Photos</a>
+<a href="/photography"><i class="fa fa-camera" aria-hidden="true"></i><br/>
+Photos</a>
 </td>
 <td> 
-<i class="fa fa-address-card-o" aria-hidden="true"></i><br/>
-<a href="/resume">Résumé</a>
+<a href="/resume"><i class="fa fa-address-card-o" aria-hidden="true"></i><br/>
+Résumé</a>
 </td>
 </tr>
 </table>
