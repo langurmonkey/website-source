@@ -1,0 +1,10 @@
+{
+    "title": "Toni Sagrista Selles - Photo gallery",
+    "theme-path": "/home/tsagrista/Projects/langurmonkey.gitlab.io/gallery-theme",
+    "photo-preview": "link",
+    "photo-download": "link",
+    "embed-exif": true,
+    "sort-albums-by": "end-date",
+    "sort-albums-direction": "desc",
+    "sort-media-direction": "desc"
+}

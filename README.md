@@ -57,7 +57,13 @@ npm install thumbsup exiftool-json-db --unsafe-perm=true
 pacman -S gifsicle dcraw imagemagick perl-image-exiftool ffmpeg
 ```
 
-The gallery theme is in the ``gallery-theme/`` directory of this repository. Generate the gallery from a set of static files using:
+The gallery theme is in the ``gallery-theme/`` directory of this repository. Generate the gallery from a set of static files using the provided configuration file:
+
+```bash
+$  thumbsup --input ./folder-with-photos --output ./output-folder --config $WEB/thubmsup-config.json
+```
+
+Or use the full version with all the attributes:
 
 ```bash
 $  thumbsup --input ./folder-with-photos --output ./output-folder --embed-exif --title "Toni Sagrista Selles - Photo gallery" --theme-path $WEB/gallery-theme --photo-preview link --photo-download link --link-prefix "http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/" --sort-albums-by end-date --sort-albums-direction desc --sort-media-direction desc
