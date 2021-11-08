@@ -32,7 +32,7 @@ less $(where startx)
 
 The login sequence goes like this:
 
-1. Login using the default shell
+1. login using the default shell
 2. run `startx`
 
 As we mentioned above, `startx` calls `xinit`, which reads the `~/.xinitrc` file to know what to execute.
