@@ -695,8 +695,10 @@ section.latest-posts {
 }
 table.menu-table-index {
     width: 100%;
+    font-size: 0.9em;
 }
 table.menu-table-index a {
+    font-family: monospace;
     border-bottom-style: none;
 }
 table.menu-table-index a:hover i {
@@ -714,12 +716,13 @@ table.menu-table-index td {
 table.menu-table-index i {
     font-size: 3em;
     color: var(--fg-color);
+    margin-bottom: 0.2em;
 }
 div.menu-table-item {
     border: 1px solid var(--fg-color);
     border-radius: 20px;
     margin: 0 auto 0 auto;
-    max-width: 8em;
+    max-width: 9em;
     padding: 1em;
     white-space: nowrap;
 }
