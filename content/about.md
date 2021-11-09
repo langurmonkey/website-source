@@ -28,30 +28,54 @@ Here is a summary of the content in this site:
 <table class="menu-table-index">
 <tr>
 <td> 
+<div class="menu-table-item">
 <a href="/blog"><i class="fa fa-file-word-o" aria-hidden="true"></i><br/>
 Blog</a>
+</div>
 </td>
 <td> 
-<a href="/posts-list"><i class="fa fa-list-ul" aria-hidden="true"></i><br/>
+<div class="menu-table-item">
+<a href="/posts-list"><i class="fa fa-list-alt" aria-hidden="true"></i><br/>
 All posts</a>
+</div>
 </td>
 <td> 
-<a href="/projects"><i class="fa fa-superscript" aria-hidden="true"></i><br/>
+<div class="menu-table-item">
+<a href="/projects"><i class="fa fa-cube" aria-hidden="true"></i><br/>
 Projects</a>
+</div>
+</td>
+<td> 
+<div class="menu-table-item">
+<a href="/tags"><i class="fa fa-tags" aria-hidden="true"></i><br/>
+Tags</a>
+</div>
 </td>
 </tr>
 <tr>
 <td> 
-<a href="/papers"><i class="fa fa-file-text-o" aria-hidden="true"></i><br/>
+<div class="menu-table-item">
+<a href="/papers"><i class="fa fa-newspaper-o" aria-hidden="true"></i><br/>
 Publications</a>
+</div>
 </td>
 <td> 
-<a href="/photography"><i class="fa fa-camera" aria-hidden="true"></i><br/>
+<div class="menu-table-item">
+<a href="/photography"><i class="fa fa-camera-retro" aria-hidden="true"></i><br/>
 Photos</a>
+</div>
 </td>
 <td> 
+<div class="menu-table-item">
 <a href="/resume"><i class="fa fa-address-card-o" aria-hidden="true"></i><br/>
 Résumé</a>
+</div>
+</td>
+<td> 
+<div class="menu-table-item">
+<a href="/categories"><i class="fa fa-flag-checkered" aria-hidden="true"></i><br/>
+Categories</a>
+</div>
 </td>
 </tr>
 </table>

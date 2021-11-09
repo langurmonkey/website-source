@@ -709,9 +709,50 @@ table.menu-table-index tr {
 }
 table.menu-table-index td {
     text-align: center;
-    width: 33%;
+    width: 25%;
 }
 table.menu-table-index i {
     font-size: 3em;
     color: var(--fg-color);
+}
+div.menu-table-item {
+    border: 1px solid var(--fg-color);
+    border-radius: 20px;
+    margin: 0 auto 0 auto;
+    max-width: 8em;
+    padding: 1em;
+    white-space: nowrap;
+}
+@media screen and (max-width: 550px) {
+    div.menu-table-item {
+        border-radius: 0.9em;
+    }
+    table.menu-table-index i {
+        font-size: 2.8em;
+    }
+    table.menu-table-index td {
+        font-size: 0.9em;
+    }
+}
+@media screen and (max-width: 480px) {
+    table.menu-table-index i {
+        font-size: 1.5em;
+    }
+    table.menu-table-index td {
+        font-size: 0.7em;
+    }
+    div.menu-table-item {
+        padding: 0.5em;
+    }
+}
+@media screen and (max-width: 350px) {
+    table.menu-table-index i {
+        font-size: 1em;
+    }
+    table.menu-table-index td {
+        font-size: 0.5em;
+    }
+    div.menu-table-item {
+        padding: 0.2em;
+    }
 }

@@ -1411,7 +1411,15 @@ body {
 @media screen and (max-width: 480px) {
 
     html, body {
-        min-width: 320px;
+        min-width: 300px;
+    }
+
+}
+
+@media screen and (max-width: 350px) {
+
+    html, body {
+        min-width: 250px;
     }
 
 }
@@ -1477,6 +1485,14 @@ body, input, select, textarea {
 
     body, input, select, textarea {
         font-size: 11pt;
+    }
+
+}
+
+@media screen and (max-width: 350px) {
+
+    body, input, select, textarea {
+        font-size: 8pt;
     }
 
 }
@@ -3297,6 +3313,15 @@ body.is-menu-visible #wrapper {
 
     #wrapper {
         padding: 1.5em;
+        padding-top: 0;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    #wrapper {
+        padding: 1.2em;
         padding-top: 0;
     }
 
