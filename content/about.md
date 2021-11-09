@@ -26,54 +26,54 @@ Here is a summary of the content in this site:
 <table class="menu-table-index">
 <tr>
 <td> 
-<div class="menu-table-item">
-<a href="/blog"><i class="fa fa-file-word-o" aria-hidden="true"></i><br/>
-/blog</a>
-</div>
+<a href="/blog"><div class="menu-table-item">
+<i class="fa fa-file-word-o" aria-hidden="true"></i><br/>
+/blog
+</div></a>
 </td>
 <td> 
-<div class="menu-table-item">
-<a href="/posts-list"><i class="fa fa-list-alt" aria-hidden="true"></i><br/>
-/all-posts</a>
-</div>
+<a href="/posts-list"><div class="menu-table-item">
+<i class="fa fa-list-alt" aria-hidden="true"></i><br/>
+/all-posts
+</div></a>
 </td>
 <td> 
-<div class="menu-table-item">
-<a href="/projects"><i class="fa fa-cube" aria-hidden="true"></i><br/>
-/projects</a>
-</div>
+<a href="/projects"><div class="menu-table-item">
+<i class="fa fa-cube" aria-hidden="true"></i><br/>
+/projects
+</div></a>
 </td>
 <td> 
-<div class="menu-table-item">
-<a href="/tags"><i class="fa fa-tags" aria-hidden="true"></i><br/>
-/tags</a>
-</div>
+<a href="/tags"><div class="menu-table-item">
+<i class="fa fa-tags" aria-hidden="true"></i><br/>
+/tags
+</div></a>
 </td>
 </tr>
 <tr>
 <td> 
-<div class="menu-table-item">
-<a href="/papers"><i class="fa fa-newspaper-o" aria-hidden="true"></i><br/>
-/papers</a>
-</div>
+<a href="/papers"><div class="menu-table-item">
+<i class="fa fa-newspaper-o" aria-hidden="true"></i><br/>
+/papers
+</div></a>
 </td>
 <td> 
-<div class="menu-table-item">
-<a href="/photography"><i class="fa fa-camera-retro" aria-hidden="true"></i><br/>
-/photos</a>
-</div>
+<a href="/photography"><div class="menu-table-item">
+<i class="fa fa-camera-retro" aria-hidden="true"></i><br/>
+/photos
+</div></a>
 </td>
 <td> 
-<div class="menu-table-item">
-<a href="/resume"><i class="fa fa-address-card-o" aria-hidden="true"></i><br/>
-/résumé</a>
-</div>
+<a href="/resume"><div class="menu-table-item">
+<i class="fa fa-address-card-o" aria-hidden="true"></i><br/>
+/résumé
+</div></a>
 </td>
 <td> 
-<div class="menu-table-item">
-<a href="/categories"><i class="fa fa-flag-checkered" aria-hidden="true"></i><br/>
-/categories</a>
-</div>
+<a href="/categories"><div class="menu-table-item">
+<i class="fa fa-flag-checkered" aria-hidden="true"></i><br/>
+/categories
+</div></a>
 </td>
 </tr>
 </table>
