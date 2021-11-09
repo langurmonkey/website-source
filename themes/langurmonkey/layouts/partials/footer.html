@@ -25,6 +25,7 @@
         <!-- If the value "default" is passed into the param then we will first
              load the standard js files associated with the theme -->
         {{ if or (in ($.Scratch.Get "jsFiles") "default") (eq ($.Scratch.Get "jsFiles") false) }}
+            <!--
             <script src="/js/darkmode.js"></script>
             <script src="/js/extlinks.js"></script>
             <script src="/js/jquery.min.js"></script>
@@ -32,7 +33,7 @@
             <script src="/js/codeblock.js"></script>
             <script src="/js/util.js"></script>
             <script src="/js/main.js"></script>
-            <!-- Convert links which point outside to open in new window -->
+            -->
         {{ end }}
 
         {{ if ne ($.Scratch.Get "jsFiles") false }}

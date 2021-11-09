@@ -425,9 +425,14 @@ div.recent-posts-item {
         min-width: 21em;
     }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 680px) {
     div.recent-posts-item {
+        display: grid;
+        margin-bottom: 0.4em;
         min-width: 5em;
+    }
+    div.recent-posts-item a {
+        border-bottom-style: none;
     }
 }
 
@@ -440,6 +445,7 @@ div.recent-posts-item time {
     letter-spacing: -0.05em;
     color: #aaa;
     font-size: 0.6em;
+    margin-right: 0.5em;
 }
 
 p.caption {

@@ -1,8 +1,9 @@
 :root {
     --title-color: #f35888;
     --title-color-hover: #95bf0d;
-    --link-color: #39c8ec;
-    --link-color-hover: #39c8ec;
+    --link-color: #1989a4;
+    --link-color-dark: #39c8ec;
+    --link-color-hover: #097994;
     --code-color: #669900;
     --time-color: #999;
 

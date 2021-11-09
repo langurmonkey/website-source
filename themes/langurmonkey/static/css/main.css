@@ -1511,7 +1511,7 @@ a[href$=gif]:hover {
 }
 
 a {
-    color: var(--fg-color);
+    color: var(--link-color);
     -moz-transition: color 0.2s ease, border-bottom-color 0.2s ease;
     -webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
     -ms-transition: color 0.2s ease, border-bottom-color 0.2s ease;
@@ -1521,16 +1521,15 @@ a {
 }
 
 .dark-mode a {
-    color: var(--fg-color-dark);
+    color: var(--link-color-dark);
 }
 
 @media screen and (max-width: 736px) {
 a {
-    color: var(--link-color);
     border-bottom: 1px dotted var(--link-color);
 }
 .dark-mode a {
-    color: var(--link-color);
+    color: var(--link-color-dark);
 }
 }
 
@@ -2531,6 +2530,7 @@ div.post-in-list time{
     div.post-in-list a {
         font-size: 0.6em;
         display: block;
+        border-bottom-style: none;
     }
 }
 

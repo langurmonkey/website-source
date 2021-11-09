@@ -47,6 +47,16 @@ scripts/minify-all.sh
 
 Note that you **need** to run this script in order for the CSS to be applied, as the website itself only links the minified bundle file!
 
+Choose CSS theme
+----------------
+
+The minifcation step includes the theme. By default, `theme-pink-blue` is used. If you want to change it, just pass it as an argument to `minify-all.sh`:
+
+```bash
+# The theme is the file name without the .css extension
+scripts/minify-all.sh theme-name
+```
+
 Gallery
 -------
 
