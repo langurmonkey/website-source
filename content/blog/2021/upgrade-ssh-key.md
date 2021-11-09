@@ -46,7 +46,7 @@ First, you need to copy your key to all the servers you need to SSH into:
 ssh-copy-id -i ~/.ssh/id_ed25519.pub user@host
 ```
 
-Then, you may want to add the key to your SSH agent so that it is cached during your session and you only need to enter the passphrase once. First, make sure your SSH agent is up and running:
+Then, you may want to add the key to your SSH agent so that it is cached during your session and you only need to enter the passphrase once. Otherwise, you will be prompted to enter your passphrase every time you invoke `ssh`, `scp` or do a remote `rsync`, as well as when you try to push your git repository (if you are using SSH authentication instead of GPG). First, make sure your SSH agent is up and running:
 
 ```bash
 eval "$(ssh-agent -s)"
@@ -60,7 +60,7 @@ Run the following to add the key to the agent:
 ssh-add ~/.ssh/id_ed25519
 ```
 
-If you want a long-running SSH agent, you may want to use `keychain` to manager your keys. This program runs the SSH agent and makes sure that it keeps on running even after your session is closed. This may come in handy to easily share a single SSH agent process for all your shells and cron jobs.
+If you want a long-running SSH agent, you may want to use `keychain` to manager your keys. This program runs the SSH agent and makes sure that it keeps on running even after your session is closed, so that you only need to enter your key *once* when the machine is booted. It is designed to manage your SSH keys with minimal user interaction. This may come in handy to easily share a single SSH agent process for all your shells and cron jobs.
 
 To add the keys to the SSH agent managed by `keychain`, add the following to your shell startup script (`~/.bashrc`, `~/.zshrc` or whatever):
 
