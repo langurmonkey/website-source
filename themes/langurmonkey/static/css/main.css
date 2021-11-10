@@ -3242,7 +3242,7 @@ body {
     padding: 0 0.5em 0 0;
 }
 
-@media screen and (max-width: 870px) {
+@media screen and (max-width: 780px) {
 
     #header .links {
         display: none;
