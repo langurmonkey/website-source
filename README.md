@@ -83,3 +83,13 @@ The original photos are hosted in `gaiasandbox`'s ARI page.
 Since HUGO in Gitlab Pages does not allow any folder called `/public` within `/static`, rename it to `/assets`. The generated `index.html` file already points to the renamed folder, so no need to replace any strings.
 
 You can then copy the contents of ``./output-folder`` to ``$WEB/static/photo-gallery/`` and commit.
+
+Mathematical formulas
+---------------------
+
+The MathJax JavaScript library is not included by default in the pages. If you need to use Latex-like formulas in a post, you must include the JavaScript file in the post source like this:
+
+```html
+<!-- Loading MathJax -->
+<script type="text/javascript" id="MathJax-script" async src="/js/mathjax3.js"></script>
+```
