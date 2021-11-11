@@ -15,7 +15,7 @@ Over the last two weeks I have released the feature-packed version `3.1.0` of [G
 <!--more-->
 
 <!-- Loading MathJax -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+<script type="text/javascript" id="MathJax-script" async src="/js/mathjax3.js"></script>
 
 ## Enabling absolute positioning
 

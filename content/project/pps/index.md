@@ -8,7 +8,7 @@ showpagemeta = "false"
 +++
 
 <!-- Loading MathJax -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+<script type="text/javascript" id="MathJax-script" async src="/js/mathjax3.js"></script>
 
 The **Particle Physics Simulator** is a physics application for [Android](http://www.android.com/) devices (v2.2+) in which real gravitational systems of particles can be created, simulated and interacted with in real time. It is an [N-body particle simulator](http://en.wikipedia.org/wiki/N-body_simulation) where the behaviour of the system is driven only by each particle's gravity and its interaction with all the other particles in it. It is turning more into a physics playground lately though, with the addition of accelerometer support, elastic collisions, ability to create walls, anti-particles and more.
 

@@ -13,7 +13,7 @@ type = "post"
 +++
 
 <!-- Loading MathJax -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+<script type="text/javascript" id="MathJax-script" async src="/js/mathjax3.js"></script>
 
 The new version 3.0 of the **Particle Physics Simulator** has been out for almost a month now, but I just had no time to write a post about it. I guess most of you already got the automatic update via the Android Market. The most notorious feature added is the incorporation of a **new force calculator method** which is selectable from the preferences screen. The force calculator method is the first of two steps in any *simplified* n-body code, where forces acting on each particle are calculated. Then, the integrator comes in to derive new accelerations, velocities and, ultimately, positions, which are conveniently updated and displayed in screen to create the illusion of a smooth animation.
 
