@@ -55,6 +55,10 @@ Then, point your browser to [localhost:8888](http://localhost:8888) and you shou
 
 Edit the file `/etc/searx/settings.yml` for some configuration options.
 
+## Docker installation
+
+Searx can also be installed on the isolated environment of a Docker container using the [searx/searx image](https://hub.docker.com/r/searx/searx). You can find a full guide on how to do that [here](https://searx.github.io/searx/admin/installation-docker.html).
+
 ## Qutebrowser setup
 
 You can set up qutebrowser to use your newly installed private Searx instance by replacing the `DEFAULT` search engine in the `config.py` configuration file:
