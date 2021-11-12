@@ -30,7 +30,7 @@ This is the first mirrorless camera I hold for more than 5 minutes, and compared
 
 ## Connectivity
 
-It has a sound input port and it charges through a USB-C port. This is a welcome feature compared to the Micro-USB in the LX10 or the Mini-USB in the 40D. The camera also supports Bluetooth and WiFi to transfer images wirelessly. I still haven't checked whether they implement open protocols or a proprietary app is needed to transfer the files. I fear the second option is the correct one though.
+It has a 3.5 mm mic input jack and it charges through a USB-C port. This is a welcome feature compared to the Micro-USB in the LX10 or the Mini-USB in the 40D. The camera also supports Bluetooth and WiFi to transfer images wirelessly. I still haven't checked whether they implement open protocols or a proprietary app is needed to transfer the files. I fear the second option is the correct one though.
 
 ## Shooting
 
