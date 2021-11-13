@@ -10,9 +10,9 @@ featuredpath = "date"
 type = "post"
 +++
 
-I've been using the compact point-and-shoot Panasonic Lumix DMC-LX10 as my main camera of choice for the past few years. Make no mistake, it captures very high-quality pictures taking into account its 1-inch sensor size. My old DSLR, the Canon EOS 40D, still works fairly well, but it's starting to show its age: The trigger button is hit-or-miss--even after cleaning it thoroughly with isopropyl alcohol--and downloading the images is quite cumbersome as it uses a Mini-USB port and a Compact Flash memory card. Both are ancient technology by today's standards.
+I've been using the compact point-and-shoot Panasonic Lumix DMC-LX10 as my main camera of choice for the past few years. Make no mistake, it captures very high-quality pictures taking into account its 1-inch sensor size. My old DSLR, the Canon EOS 40D, still works fairly well, but it's starting to show its age: The trigger button is hit-or-miss---even after cleaning it thoroughly with isopropyl alcohol, the camera no longer establishes a connection to a PC via USB and downloading the images is quite cumbersome as I need a special card reader for Compact Flash memory cards. Both are ancient technology by today's standards.
 
-So I decided to treat myself with an early Christmas present and got a mirrorless Fujifilm X-S10 with the Fujinon XC 15-45mm f/3.5-5.6 OIS PZ lens and the Viltros EF-FX1 adatper, which just came in the mail yesterday afternoon. In this post I'm documenting my very first impressions with the camera and the accessories.
+So I decided to treat myself with an early Christmas present and got a mirrorless Fujifilm X-S10 with the Fujinon XC 15-45mm f/3.5-5.6 OIS PZ lens and the Viltrox EF-FX1 adatper, which just came in the mail yesterday afternoon. In this post I'm documenting my very first impressions with the camera and the accessories.
 
 <!--more-->
 
