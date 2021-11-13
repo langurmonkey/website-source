@@ -26,7 +26,7 @@ It does not look *as gorgeous* as other Fuji models like the X-T4, but it's stil
 
 ## The body
 
-This is the first mirrorless camera I hold for more than 5 minutes, and compared to my Canon EOS 40D, which is much larger and heavier, it feels like a little toy. I guess it will take some time to get used to the new feel, but I love the small package and compact form factor.
+This is the first mirrorless camera I hold for more than 5 minutes, and compared to my Canon EOS 40D, which is much larger and heavier, it feels *small*. I guess it will take some time to get used to the new feel, but I love the small package and compact form factor. Just by holding it you know it is very well built. The button disposition is okay. I'm not used to it yet, and I miss the little back quick control dial on my 40D, but I gain a touchscreen.
 
 ## Connectivity
 
