@@ -61,7 +61,7 @@ Add the arguments `--sort-albums-by end-date`, `--sort-albums-direction desc` an
 
 Find the available built-in themes with screenshots and demo sites [here](https://thumbsup.github.io/docs/4-themes/built-in/).
 
-Once the script is run, you need to copy the contents of `./output-folder` to your preferred server location for it to be available online.
+Once the script is done, you can find the generated gallery files in `./output-folder`.
 
 ## Linking vs including the photos
 
