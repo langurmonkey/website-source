@@ -29,14 +29,7 @@ I use this configuration in the following machines:
 - **Home laptop** - *simian*, Dell XPS 13 9370 13", i7-8550U, 16 Gb RAM, Intel UHD 620, Arch Linux
 - **Home desktop** - *bonobo*, i5-4460, 16 Gb RAM, GTX 970, Antergos Linux
 
-<p style="text-align: center; width: 70%; margin: 0 auto;">
-<a href="/img/2019/03/ari-rice.jpg">
-<img src="/img/2019/03/ari-rice_s.jpg"
-     alt="My work PC"
-     style="width: 100%" />
-</a>
-<em style="color: gray;">That is what my work PC looks like. On the left is a 4K monitor, on the right is a FHD monitor in portrait orientation and with an xrandr scale of x1.5</em>
-</p>
+{{< fig src="/img/2019/03/ari-rice_s.jpg" link="/img/2019/03/ari-rice.jpg" title="This is what my work PC looks like. On the left is a 4K monitor, on the right is a FHD monitor in portrait orientation and with an xrandr scale of x1.5" width="75%" class="fig-center" loading="lazy" >}}
 
 ## Dotfiles project
 
@@ -78,14 +71,8 @@ I've played around with [`st`](https://st.suclkess.org) but I'm a fan of having 
 
 I tried a few bars: `i3bar`, `i3blocks`, `bumblebee-status`, you name it. The only one which worked with very little quirks and easy config with my two-monitor setup with different DPI is [`polybar`](https://github.com/jaagr/polybar). Also, it looks gorgeous, and it is very easy to write modules for. Check out this [post](/blog/2019/polybar-cpu-memory) for an example of a script which shows CPU and memory usage. 
 
+{{< fig src="/img/2019/03/polybar.jpg" link="/img/2019/03/polybar.jpg" title="The Polybar in my main monitor" width="70%" class="fig-center" loading="lazy" >}}
 <p style="text-align: center">
-<a href="/img/2019/03/polybar.jpg">
-<img src="/img/2019/03/polybar.jpg"
-     alt="My polybar"
-     style="width: 60%;" />
-</a>
-<em style="color: gray">This is what my Polybar looks like in my main monitor</em>
-</p>
 
 My polybar displays the workspaces, the current keyboard layout, available updates, memory usage, CPU and temperature, the current wireless network, the screen brightness, the battery, the volume,  date and time and the systray.
 
@@ -158,14 +145,7 @@ I have used [`cmus`](https://cmus.github.io) with [`vis`](https://github.com/dpa
 I've been mostly using [RawTherapee](https://rawtherapee.com) (please, disregard the name) for years, but lately I've been playing around more and more with [darktable](https://www.darktable.org). Both have their strong points. I think I prefer RawTherapee's user interface, but darktable has more options and is better at memory management. One of the killer features that might end up tipping the balance for me in darktable's favour is the GPU acceleration support via OpenCL which makes editing operations lightning fast. Also, darktable supports masks, which RawTherapee does not.
 
 
-<p style="text-align: center">
-<a href="/img/2019/03/darktable-rawtherapee.jpg">
-<img src="/img/2019/03/darktable-rawtherapee.jpg"
-     alt="Darktable (left) and RawTherapee (right)"
-     style="width: 70%;" />
-</a>
-<em style="color: gray">Darktable (left) and RawTherapee (rigtht)</em>
-</p>
+{{< fig src="/img/2019/03/darktable-rawtherapee.jpg" link="/img/2019/03/darktable-rawtherapee.jpg" title="Darktable (left) and RawTherapee (rigtht)" width="70%" class="fig-center" loading="lazy" >}}
 
 At the end of the day, both are very capable and produce good results. Also, both support `.CR2` and `.RW2` from my Canon 40D and my Panasonic Lumix LX10/15 respectively.
 

@@ -73,7 +73,7 @@ where `<port>` is the port listed on the droidcam interface in your phone. Again
 mpv av://v4l2:/dev/video0
 ```
 
-{{< figure src="/img/2020/06/droidcam-ss.jpg" link="/img/2020/06/droidcam-ss.jpg" title="Smartphone camera feed playing on mpv" width="60%" class="fig-center" >}}
+{{< fig src="/img/2020/06/droidcam-ss.jpg" link="/img/2020/06/droidcam-ss.jpg" title="Smartphone camera feed playing on mpv" width="60%" class="fig-center" loading="lazy" >}}
 
 ## Final notes
 

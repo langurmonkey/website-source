@@ -20,7 +20,6 @@ This is quite straightforward. Instead of representing a star with a single stat
 
 Star time series in the Gaia DR2 catalog can be pretty big, with some having over 50 data points. GLSL only guarantees 16 4-component attributes per vertex. That is 64 floating-pont values per vertex. If we subtract all the data we need for position, proper motion, color, etc. we're left with roughly 10 `vec4` attributes, or 20 data points (each data point has a time and a magnitude). This means that we need to re-sample the light curves of all stars with more than 20 data points, and that is an overwhelming majority of them. Note that this is only done once when the catalog is being loaded. Below is a video of what the final feature looks like ([source](https://gaia.ari.uni-heidelberg.de/gaiasky/files/videos/20211019_variables_static)).
 
-
 <video width="60%" style="display: block; margin: auto;" controls>
   <source src="https://gaia.ari.uni-heidelberg.de/gaiasky/files/videos/20211019_variables_static/20211019_variables_static.mp4" type="video/mp4"></source>
 Your browser does not support the video tag.

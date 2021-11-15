@@ -87,14 +87,7 @@ We only ever draw the map in two situations: when the game starts and when the w
 
 This is what the map produced by the code above looks like:
 
-<p style="text-align: center; width: 70%; margin: 0 auto;">
-<a href="/img/2019/03/tsnake-map-0.jpg">
-<img src="/img/2019/03/tsnake-map-0.jpg"
-     alt="tsnake map 0"
-     style="width: 100%" />
-</a>
-<p style="text-align: center;" class="caption">The first map of tsnake, a simple pool surrounded by a few walls.</p>
-</p>
+{{< fig src="/img/2019/03/tsnake-map-0.jpg" link="/img/2019/03/tsnake-map-0.jpg" title="The first map of tsnake, a simple pool surrounded by a few walls" width="60%" class="fig-center" loading="lazy" >}}
 
 ## The game loop
 

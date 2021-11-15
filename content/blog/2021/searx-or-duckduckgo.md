@@ -44,14 +44,7 @@ systemctl enable uwsgi@searx.service
 
 Then, point your browser to [localhost:8888](http://localhost:8888) and you should get the default Searx landing page running on your machine:
 
-<p style="text-align: center; width: 70%; margin: 0 auto;">
-<a href="/img/2021/11/local-searx-instance.jpg">
-<img src="/img/2021/11/local-searx-instance.jpg"
-     alt="Searx landing page running on my laptop"
-     style="width: 100%" />
-</a>
-<em style="color: gray;">The default Searx interface as running on my laptop after a fresh install.</em>
-</p>
+{{< fig src="/img/2021/11/local-searx-instance.jpg" link="/img/2021/11/local-searx-instance.jpg" title="The default Searx interface as running on my laptop after a fresh install" width="60%" class="fig-center" loading="lazy" >}}
 
 Edit the file `/etc/searx/settings.yml` for some configuration options.
 

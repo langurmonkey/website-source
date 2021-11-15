@@ -25,14 +25,7 @@ I use this configuration in the following machines. Before, I had my main work m
 - **Home laptop** - *simian*, Dell XPS 13 9370 13", i7-8550U, 16 Gb RAM, Intel UHD 620, Arch Linux
 - **Home desktop** - *bonobo*, i5-4460, 16 Gb RAM, GTX 970, Arch Linux
 
-<p style="text-align: center; width: 70%; margin: 0 auto;">
-<a href="/img/2021/10/simian-config.jpg">
-<img src="/img/2021/10/simian-config_s.jpg"
-     alt="Simian, my laptop"
-     style="width: 100%" />
-</a>
-<em style="color: gray;">That is what my laptop looks like as of now. Nothing particularly interesting with it, really.</em>
-</p>
+{{< fig src="/img/2021/10/simian-config_s.jpg" link="/img/2021/10/simian-config.jpg" title="That is what my laptop looks like as of now. Nothing particularly interesting with it, really" width="60%" class="fig-center" loading="lazy" >}}
 
 ## Dotfiles project
 
@@ -61,14 +54,7 @@ I've played around with [`st`](https://st.suclkess.org) but I'm a fan of having 
 
 I am back to square one with the bar. After deeming `polybar` overkill for my purposes, I went back to `i3blocks`. I had to write some [scripts myself](https://gitlab.com/langurmonkey/dotfiles/-/tree/master/i3blocks/scripts) and took some others from the interwebs, but pretty much everything that I found useful in my `polybar` configuration is still here in `i3blocks`. 
 
-<p style="text-align: center">
-<a href="/img/2021/10/i3blocks.jpg">
-<img src="/img/2021/10/i3blocks.jpg"
-     alt="Sexy sexiness"
-     style="width: 80%;" />
-</a>
-<em style="color: gray">Look at that sexy bar!</em>
-</p>
+{{< fig src="/img/2021/10/i3blocks.jpg" link="/img/2021/10/i3blocks.jpg" title="Look at that sexy bar!" width="100%" class="fig-center" loading="lazy" >}}
 
 My bar now displays the workspaces all the way to the left, the current audio track via `playerctl`, a CPU bar per core, the used and total RAM, the keyboard layout, the available pacman updates, the screen brightness, the volume level, the battery level, the time and date and the systray.
 

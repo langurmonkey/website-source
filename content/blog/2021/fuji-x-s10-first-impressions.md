@@ -20,7 +20,7 @@ So I decided to treat myself with an early Christmas present and got a mirrorles
 
 First, the camera looks stunning. 
 
-{{< figure src="/img/2021/11/X-S10_right_s.jpg" link="/img/2021/11/X-S10_right_s.jpg" title="The Fujifilm X-S10 with the Fujinon XC 15-45mm" width="50%" class="fig-center" >}}
+{{< fig src="/img/2021/11/X-S10_right_s.jpg" link="/img/2021/11/X-S10_right_s.jpg" title="The Fujifilm X-S10 with the Fujinon XC 15-45mm" width="50%" class="fig-center" loading="lazy" >}}
 
 It does not look *as gorgeous* as other Fuji models like the X-T4, but it's still a looker. It is very compact and feels quite sturdy. Surprisingly, it is not weather-sealed, but by just holding it into your hands you would think it is.
 
@@ -47,7 +47,7 @@ I got this adapter in hopes of using my Canon lenses with the new Fuji body. I c
 * The **Sigma EF-S 10-20mm f/3.5 EX DC HSM** also seemed to work, but the focus was off most of the times. More tests with better light incoming. This is the only EF-S lens in the set, so it only works with cropped sensors (APS-C). It is also on the official compatibility list.
 * The **Canon EF 28-105mm USM II** did not seem to be able to autofocus at all. This lens is, however, **not** on the compatibility list, so I didn't expect for it to just work. Maybe a new firmware update will add support, but I'm not very optimistic. The lens was introduced more than 20 years ago, after all.
 
-    {{< figure src="/img/2021/11/viltrox-ef-fx1-compat.jpg" title="Lens compatibility list for the Viltrox EF-FX1 adapter" width="50%" class="fig-center" >}}
+{{< fig src="/img/2021/11/viltrox-ef-fx1-compat.jpg" title="Lens compatibility list for the Viltrox EF-FX1 adapter" width="50%" class="fig-center" loading="lazy" >}}
 
 ## Firmware updates
 

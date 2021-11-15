@@ -636,6 +636,10 @@ a.footnote-ref {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
+p.fig-attribution {
+    margin-top: -0.6em !important;
+    font-size: 0.8em;
+}
 @media screen and (max-width: 1280px) {
 aside#toc {
     display: none;

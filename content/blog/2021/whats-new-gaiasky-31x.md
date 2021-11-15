@@ -21,7 +21,7 @@ Over the last two weeks I have released the feature-packed version `3.1.0` of [G
 
 The first and most important feature is the re-implementation of the core positioning module of Gaia Sky. We have moved the arithmetics to arbitrary-precision floating point numbers. This enables global positioning anywhere in the Universe without loss of precision. This feature has actually been sitting in a branch since before the submission of the paper [Gaia Sky: Navigating the Gaia Catalog](https://ieeexplore.ieee.org/document/8440086), but it never quite made into the main branch due to some minor problems. This is mainly under-the-hood work, invisible to the user. Yet, it enables the eventual addition of extrasolar systems, or the spacecraft to wander off from the Solar System without hacks.
 
-{{< figure src="/img/2021/06/kepler-exoplanets.jpg" link="/img/2021/06/kepler-exoplanets.jpg" title="An exoplanet in Gaia Sky 3.1, orbiting a double system" class="fig-center" width="60%" >}}
+{{< fig src="/img/2021/06/kepler-exoplanets.jpg" link="/img/2021/06/kepler-exoplanets.jpg" title="An exoplanet in Gaia Sky 3.1, orbiting a double system" class="fig-center" width="60%" loading="lazy" >}}
 
 ### Catastrophic cancellation
 
@@ -35,13 +35,13 @@ In the image below, both \\(\vec{C}\\), the position of the camera, and \\(\vec{
 
 When trying to work out \\(\vec{V}\\) as \\(\vec{V}=\vec{G} - \vec{C}\\) we encounter this cancellation problem, which manifests as heavy vertex jittering. Pictured below is that jittering, but since the original position at 1 AU completely broke down the rendering, we had to be more conservative and put Gaia at some 1200 kilometers from it.
 
-{{< figure src="/img/2021/06/float_jitter.gif" link="/img/2021/06/float_jitter_origin.mp4" title="Jittering occuring in Gaia when it is positioned only a thousand kilometers from the origin." class="fig-center" >}}
+{{< fig src="/img/2021/06/float_jitter.gif" link="/img/2021/06/float_jitter_origin.mp4" title="Jittering occuring in Gaia when it is positioned only a thousand kilometers from the origin." class="fig-center" loading="lazy" >}}
 
 ### The solution: floating camera
 
 The solution we have adopted is to use the method known as floating camera. You see, instead of having a fixed position for the reference system origin and moving the objects in the scene around, we always keep the origin at the camera. Practically, we offset the whole scene graph by the inverse of the camera position at every frame.
 
-{{< figure src="/img/2021/06/cancellation2.png" link="/img/2021/06/cancellation2.png" title="The same example as before, but now with a floating camera. Note that the camera is at the origin and Gaia is very close to it." class="fig-center" width="30%" >}}
+{{< fig src="/img/2021/06/cancellation2.png" link="/img/2021/06/cancellation2.png" title="The same example as before, but now with a floating camera. Note that the camera is at the origin and Gaia is very close to it." class="fig-center" width="30%" loading="lazy" >}}
 
 The trick is to send the transformation matrices to the GPU from the point of view of the camera, being it at the origin. This ensures maximum precision around the area of interest, which is, of course, close to the camera. But still, we need to compute the position of the object with respect to the position of the camera with sufficient accuracy. Doing so using single or double precision numbers in the CPU will just nod to. Instead, our system uses **arbitrary precision** floating point numbers, with a configurable number of significant digits. This allow us to mitigate or eliminate the devastating effects of catastrophic cancellation. Since arbitrary precision floating point operations are typically not hardware-accelerated even in modern CPUs, they are much slower than their native counterparts. Due to that, Gaia Sky only uses them in very few key points in our processing pipeline. For instance, only objects which are close by get this special treatment. Objects which are far away from the camera do not need it and do not get it. This allows us to still provide high frame rates while keeping the global positioning pipeline working.
 
@@ -55,7 +55,7 @@ We have also implemented proper per-object visibility, so that it is now possibl
 
 We have also introduced a location log, which keeps track of the visited locations during a session. This is so far a feature preview containing only a basic implementation. For instance, the log is not persisted between sessions, and location addition is totally automated (no manual 'add' button). This will be built upon in future releases.
 
-{{< figure src="/img/2021/06/location-log.jpg" link="/img/2021/06/location-log.jpg" title="The new location log panel." class="fig-center" >}}
+{{< fig src="/img/2021/06/location-log.jpg" link="/img/2021/06/location-log.jpg" title="The new location log panel." class="fig-center" loading="lazy" >}}
 
 ## Bulgarian translation
 

@@ -12,7 +12,7 @@ type = "post"
 
 A while back I changed my bar from Polybar to `i3bar` with `i3blocks`. One of the things I missed about Polybar is its internal CPU module, which can produce a core load graph directly in your bar by adding the right `ramp` characters. In this post I'm sharing a simple POSIX shell script I've written that does the same and can be used with any text-based bar. Here is what it looks like:
 
-{{< figure src="/img/2021/04/cpu-levels.gif" title="CPU core load graph in my bar" width="35%" class="fig-center" >}}
+{{< fig src="/img/2021/04/cpu-levels.gif" title="CPU core load graph in my bar" width="35%" class="fig-center" loading="lazy" >}}
 
 <!--more-->
 
