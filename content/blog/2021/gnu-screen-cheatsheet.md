@@ -77,4 +77,4 @@ Configuration
 
 Finally, I just want to share my `.screenrc` configuration. It starts with 5 windows by default and adds a window bar at the bottom with the host, the window list and the time so that you never miss your appointments. Find it [here](https://gitlab.com/langurmonkey/dotfiles/-/tree/master/screen).
 
-{{< fig src="/img/2021/05/gnu-screen-config.jpg" link="/img/2021/05/gnu-screen-config.jpg" title="GNU screen with the configuration above" class="fig-center" width="70%" loading="lazy" >}}
+{{< fig src="/img/2021/05/gnu-screen-config.jpg" link="/img/2021/05/gnu-screen-config.jpg" title="GNU screen with the configuration above." class="fig-center" width="70%" loading="lazy" >}}

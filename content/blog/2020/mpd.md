@@ -70,7 +70,7 @@ bindsym $mod+comma exec mpc prev
 The two lines above bind `$mod`+`.` and `$mod`+`,` to play the next and previous song respectively. So easy.
 
 
-{{< fig src="/img/2020/10/ncmpcpp.jpg" link="/img/2020/10/ncmpcpp.jpg" title="Glorious ncmpcpp is glorious. Below, cli-visualizer" width="70%" class="fig-center" loading="lazy" >}}
+{{< fig src="/img/2020/10/ncmpcpp.jpg" link="/img/2020/10/ncmpcpp.jpg" title="Glorious ncmpcpp is glorious. Below, cli-visualizer." width="70%" class="fig-center" loading="lazy" >}}
 
 My `~/.config/ncmpcpp/config` file is pretty basic. I mostly go with the defaults, but here it is in case you need it:
 

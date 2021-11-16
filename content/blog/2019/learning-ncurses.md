@@ -87,7 +87,7 @@ We only ever draw the map in two situations: when the game starts and when the w
 
 This is what the map produced by the code above looks like:
 
-{{< fig src="/img/2019/03/tsnake-map-0.jpg" link="/img/2019/03/tsnake-map-0.jpg" title="The first map of tsnake, a simple pool surrounded by a few walls" width="60%" class="fig-center" loading="lazy" >}}
+{{< fig src="/img/2019/03/tsnake-map-0.jpg" link="/img/2019/03/tsnake-map-0.jpg" title="The first map of tsnake, a simple pool surrounded by a few walls." width="60%" class="fig-center" loading="lazy" >}}
 
 ## The game loop
 

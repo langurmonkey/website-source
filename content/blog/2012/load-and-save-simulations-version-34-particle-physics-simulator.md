@@ -11,7 +11,7 @@ type = "post"
 
 The new version of the Particle Physics Simulator (v3.4) is now out. This version brings us the capability to load and save simulations to XML files. Now you can export your simulation to a file and load it later on.
 
-![Load and save](/img/2012/07/loadsave.png)
+{{< fig src="/img/2012/07/loadsave.png" link="/img/2012/07/loadsave.png" class="fig-center" title="Load and save buttons on the menu." width="20%" loading="lazy" >}}
 
 In order to save the current simulation, just open the menu and then tap the "Save file" entry. In the file dialog that pops up select the folder you want to save your simulation and the name of your new file if you want to create one, or the file to overwrite, and tap "select". It is done, your simulation has been exported to an XML file!
 

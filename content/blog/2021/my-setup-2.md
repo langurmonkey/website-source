@@ -25,7 +25,7 @@ I use this configuration in the following machines. Before, I had my main work m
 - **Home laptop** - *simian*, Dell XPS 13 9370 13", i7-8550U, 16 Gb RAM, Intel UHD 620, Arch Linux
 - **Home desktop** - *bonobo*, i5-4460, 16 Gb RAM, GTX 970, Arch Linux
 
-{{< fig src="/img/2021/10/simian-config_s.jpg" link="/img/2021/10/simian-config.jpg" title="That is what my laptop looks like as of now. Nothing particularly interesting with it, really" width="60%" class="fig-center" loading="lazy" >}}
+{{< fig src="/img/2021/10/simian-config_s.jpg" link="/img/2021/10/simian-config.jpg" title="That is what my laptop looks like as of now. Nothing particularly interesting with it, really." width="60%" class="fig-center" loading="lazy" >}}
 
 ## Dotfiles project
 

@@ -272,7 +272,7 @@ Note that at the end we set the display flag to true so that the main module can
 
 ## The display
 
-{{< fig src="/img/2021/07/rchip8-test-results.jpg" title="rCHIP8 display output with test ROM" width="50%" class="fig-center" loading="lazy" >}}
+{{< fig src="/img/2021/07/rchip8-test-results.jpg" title="rCHIP8 display output with test ROM." width="50%" class="fig-center" loading="lazy" >}}
 
 The display is in charge of drawing stuff. It is implemented with [SDL2](https://www.libsdl.org) using the [`sdl2` Rust bindings](https://docs.rs/sdl2/0.32.2/sdl2/). 
 

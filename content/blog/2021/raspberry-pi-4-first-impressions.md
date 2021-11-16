@@ -11,7 +11,7 @@ type = "post"
 
 In the last months, `chimp`, my old 2013 [ZOTAC ZBOX ID42](https://www.zotac.com/us/product/mini_pcs/id42-plus) HTPC, has been struggling more and more to decode and transcode high-resolution video on the fly, especially when encoded in H.265/HEVC. Thus, I set out to find a worthy successor to act as a squire to my TV. The ZOTAC still works, mind you, but it has become slow, loud and it takes ages to boot Arch Linux.
 
-{{< fig src="/img/2021/03/rpi-kit-box.jpg" link="/img/2021/03/rpi-kit-box.jpg" title="Raspberry Pi NinkBox kit" width="50%" class="fig-center" loading="lazy" >}}
+{{< fig src="/img/2021/03/rpi-kit-box.jpg" link="/img/2021/03/rpi-kit-box.jpg" title="Raspberry Pi NinkBox kit." width="50%" class="fig-center" loading="lazy" >}}
 
 In my crusade to find the perfect replacement, I have considered recent off-the-shelf HTPCs, options with a Mini PC form factor like the intel NUCs, and some of the affordable single-board computers. It is in this last category that we find the Raspberry Pi. I have been interested in the Pi since its inception, following its developments and the various versions with mild curiosity. Finally, emboldened by its low price point, I bit the bullet and got a NinkBox Raspberry Pi 4 (4 GB) kit which comes with a 64 GB SD card, a power supply, an HDMI cable and a case with a fan and three heat sinks. In this post I dump my first impressions of the little thing after a couple of days of tinkering.
 
@@ -21,7 +21,7 @@ In my crusade to find the perfect replacement, I have considered recent off-the-
 
 The [kit I got](https://smile.amazon.de/Raspberry-Original-Processor-Supports-Bluetooth/dp/B07ZV9C6QF/ref=sr_1_1_sspa?crid=1MONBQR78RKLK&dchild=1&keywords=ninkbox+raspberry+pi+4&qid=1616344555) contains the Raspberry Pi 4b (4 GB version), a cheap plastic case, a noisy little fan (30x30x7 mm) with screws, three heat sinks (one for the GPU/CPU, one for the RAM module and the last for the USB controller unit), an HDMI cable, a power supply and a 64 GB microSD card with raspbian pre-installed. 
 
-{{< figure src="/img/2021/03/rpi-kit-parts.jpg" link="/img/2021/03/rpi-kit-parts.jpg" title="All the parts on the table" width="50%" class="fig-center" >}}
+{{< figure src="/img/2021/03/rpi-kit-parts.jpg" link="/img/2021/03/rpi-kit-parts.jpg" title="All the parts on the table." width="50%" class="fig-center" >}}
 
 The thing itself is *very* straightforward to set up. Just drop the Pi in the case, apply the heat sinks, screw the fan to the top lid and close the box. Now you are ready to plug it in and set up raspbian, the Debian-based default Operating System for the Rasbperry Pi.
 
@@ -60,7 +60,7 @@ Another thing I had my eye on for a while is [Pi-hole](https://pi-hole.net). The
 
 It comes with a very nice web interface which provides lots of info and statistics on the ad-blocking and the service.
 
-{{< fig src="/img/2021/03/rpi-pihole.webp" link="/img/2021/03/rpi-pihole.webp" title="The Ph-hole web interface as I'm writing this article" width="50%" class="fig-center" loading="lazy" >}}
+{{< fig src="/img/2021/03/rpi-pihole.webp" link="/img/2021/03/rpi-pihole.webp" title="The Ph-hole web interface as I'm writing this article." width="50%" class="fig-center" loading="lazy" >}}
 
 You can even set up local DNS records, so I naturally gave each of my systems a name. A device using the Pi-hole as its DNS server can access the devices by these names. Neat!
 
@@ -68,7 +68,7 @@ You can even set up local DNS records, so I naturally gave each of my systems a 
 
 I have a Super NES 8Bitdo bluetooth controller, so obviously I had to set up an emulator station on the Pi for retro gaming. RetroPie seems to be the default choice of sorts when it comes to retro gaming in the small device. I must say that everything older than the Nintendo 64 runs well. I have tested ZX Spectrum, NES, GB, GBC, SNES, NDS, PSX and Dreamcast so far, without problems in any of the systems. Even some N64 games are more than playable, but I have not tested many so far. An interesting option might be overclocking the CPU and GPU to get some more juice out of the Raspberry to get some of those N64 games into playable territory, but I haven't tried it out so far.
 
-{{< fig src="/img/2021/03/rpi-8bitdo.jpg" link="/img/2021/03/rpi-8bitdo.jpg" title="The Raspberry Pi 4 sitting next to the TV, with the 8Bitdo SF30 Pro controller" width="50%" class="fig-center" loading="lazy" >}}
+{{< fig src="/img/2021/03/rpi-8bitdo.jpg" link="/img/2021/03/rpi-8bitdo.jpg" title="The Raspberry Pi 4 sitting next to the TV, with the 8Bitdo SF30 Pro controller." width="50%" class="fig-center" loading="lazy" >}}
 
 ## Conlusion and future
 

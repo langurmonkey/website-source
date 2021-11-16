@@ -43,7 +43,7 @@ This has been a long and arduous path, entailing the introduction of a new pipel
 In all cases, a map is also generated in CPU memory, so that the elevation data is also available to the camera to avoid clips into the planets and moons.
 
 
-{{< fig src="/img/2019/08/tess_s.jpg" link="/img/2019/08/tess.jpg" title="The surface of Earth" width="60%" class="fig-center" loading="lazy" >}}
+{{< fig src="/img/2019/08/tess_s.jpg" link="/img/2019/08/tess.jpg" title="The surface of Earth." width="60%" class="fig-center" loading="lazy" >}}
 
 Check out the videos [here](https://www.youtube.com/watch?v=RDkA3MWbpz8) and [here](https://www.youtube.com/watch?v=BWD4OyE87qo) for tessellation, and [here](https://www.youtube.com/watch?v=sf3ya8uHXIw) for parallax mapping.
 
@@ -59,11 +59,11 @@ $$d = {log(K * z + 1) \over log(K * z_f + 1)}$$
 
 where \\(K\\) is a constant that controls the resolution close to the viewer.
 
-{{< fig src="/img/2019/08/zdepth.png" link="/img/2019/08/zdepth.png" title="Logarithmic depth function (red) and the regular depth function (green)" width="60%" class="fig-center" loading="lazy" >}}
+{{< fig src="/img/2019/08/zdepth.png" link="/img/2019/08/zdepth.png" title="Logarithmic depth function (red) and the regular depth function (green)." width="60%" class="fig-center" loading="lazy" >}}
 
 This allows us to better utilize the depth buffer at galactic and extracgalactic scales. In particular, paired with a few [dither shaders](https://en.wikipedia.org/wiki/Dither), it enabled us to update the old, image-based Milky Way model to a new particle-based one sporting different components for gas, dust, HII regions and stars:
 
-{{< fig src="/img/2019/08/gs_mw_s.jpg" link="/img/2019/08/gs_mw.jpg" title="The new Milky Way" width="50%" class="fig-center" loading="lazy" >}}
+{{< fig src="/img/2019/08/gs_mw_s.jpg" link="/img/2019/08/gs_mw.jpg" title="The new Milky Way." width="50%" class="fig-center" loading="lazy" >}}
 
 Also, using the new z-buffer we could rework the mesh rendering to better represent the galactic dust. Here is a video:
 
@@ -83,14 +83,14 @@ A new game mode has been implemented. This mode uses the default `WASD` + `Mouse
 
 We have implemented skydome reflections into the shaders to be able to represent the metallic materials of Gaia with more fidelity. The skydome cubemap has been generated using the 360 mode of Gaia Sky. See [this tweet](https://twitter.com/GaiaSky_Dev/status/1154715483888902145) for a video, or the image below to a debug showcase.
 
-{{< fig src="/img/2019/08/reflections_s.jpg" link="/img/2019/08/reflections.jpg" title="Debugging the reflections shader" width="70%" class="fig-center" loading="lazy" >}}
+{{< fig src="/img/2019/08/reflections_s.jpg" link="/img/2019/08/reflections.jpg" title="Debugging the reflections shader." width="70%" class="fig-center" loading="lazy" >}}
 
 
 ## Orbits
 
 The orbits have been revamped. In addition to a new fading orbit trail rendering mode, we have a background updater which recomputes the orbits when they get outdated. This ensures the planetary orbits based on a sampled VSOP87 stay up to date at all times.
 
-{{< fig src="/img/2019/08/orbits_s.jpg" link="/img/2019/08/orbits.jpg" title="New orbit trails" width="50%" class="fig-center" loading="lazy" >}}
+{{< fig src="/img/2019/08/orbits_s.jpg" link="/img/2019/08/orbits.jpg" title="New orbit trails." width="50%" class="fig-center" loading="lazy" >}}
 
 Check out this [twitter thread](https://twitter.com/GaiaSky_Dev/status/1142042076915412992) for more information and videos of the new orbits.
 

@@ -27,7 +27,7 @@ where \\(n\\) is the number of particles and \\(q_i\\), \\(\dot q_i\\) and \\(\d
 
 Now, the new **Particle-Mesh** (PM) force calculator method uses a whole different approach.
 
-![Partricle-mesh method](/img/2011/10/particle-mesh.png)
+{{< fig src="/img/2011/10/particle-mesh.png" class="fig-center" width="30%" title="Particle-mesh method in the app. The background colors represent the grid weights." loading="lazy" >}}
 
 The simulation are is divided into zones using a static grid, whose vertices are assigned at each time step a density value using the cloud-in-cell method, where particles are modeled as density areas whose contribution to a vertex depends on the particle's area inside the vertex's influence region. Once we have a density function, create a bicubic spline 3D surface so that potential wells are actually represented by craters, and low-potential zones are represented by humps. In a serious code, one should go from density to potential energy using Poisson's equation ([FFT](http://en.wikipedia.org/wiki/Fast_Fourier_transform)), but we adopted a fastest albeit physically inaccurate approach. This PM method reduces the computational complexity of the problem to \\(\sim O(n + n_g \cdot log n_g)\\) where \\(n_g\\) is the number of vertices in the grid.
 

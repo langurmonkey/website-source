@@ -23,9 +23,9 @@ During the last months I have been working on a QOL improvement for Gaia Sky vid
 
 In the next version, Gaia Sky will get a brand new keyframe-based camera path mode. This mode enables the interactive definition of camera paths in the scene space. Basically, the user defines a set of locations, or keyframes, which must be hit by the camera at a certain time. Each keyframe contains the position and orientation of the camera, in addition to the simulation timestamp and time delay. Keyframes can be saved to keyframe files `.gkf`, which can later be loaded directly from the keyframes mode UI, and exported to regular Gaia Sky camera path files `.gsc` to be played back.
 
-{{< fig src="/img/2019/03/keyframes.jpg" link="/img/2019/03/keyframes.jpg" title="Keyframe-based camera paths in Gaia Sky" width="60%" class="fig-center" loading="lazy" >}}
+{{< fig src="/img/2019/03/keyframes.jpg" link="/img/2019/03/keyframes.jpg" title="Keyframe-based camera paths in Gaia Sky." width="60%" class="fig-center" loading="lazy" >}}
 
-The conversion from keyframes to camera path is done using either linear interpolation or Catmull-Rom splines (depending on the configuration settings). In the latter case, keyframes can be set to act as seams. Seam keyframes effectively *break* the path into two. In spline mode, this allows us to define subpaths and avoid spline overshooting.
+The conversion from keyframes to camera path is done using either linear interpolation or Catmull-Rom splines (depending on the configuration settings). In the latter case, keyframes can be set to act as seams. Seam keyframes effectively *break* the path into two. In spline mode, this allows us to define sub-paths and avoid spline overshooting.
 
 About the user interface, we put some effort into making sure the addition and edition of keyframes is easy from either the GUI or the 3D scene space itself. Individual keyframes are focusable (right click) and dragged around in the scene 3D space. Whenever a keyframe is in focus, the camera can rotate around it a zoom in/out as if it were any other scene object. Also, the orientation of every keyframe can be rotated around the direction vector (hold CTRL and drag mouse right), the up vector (hold SHIFT and drag mouse right), and around cross(direction, up) (hold ALT while dragging mouse right).
 

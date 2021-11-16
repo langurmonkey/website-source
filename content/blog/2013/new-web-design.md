@@ -14,14 +14,6 @@ As you may have noted, **I updated the look and feel of the website** to a more 
 <!--more-->
 Here there's a side-by-side comparison between the old and the new styles.
 
-
-<p>
-<a href="/img/2013/07/old-new.jpg">
-<img src="/img/2013/07/old-new.jpg"
-     alt="Old vs new design"
-     style="width: 100%" />
-</a>
-</p>
-<p style="text-align: center" class="caption">Old vs new design</p>
+{{< fig src="/img/2013/07/old-new.jpg" link="/img/2013/07/old-new.jpg" class="fig-center" width="100%" title="Old vs new design side by side." loading="lazy" >}}
 
 More design tweaks are expected in the coming days.

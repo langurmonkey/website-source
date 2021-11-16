@@ -61,7 +61,7 @@ The system service can be accessed with the name `synchting.service`.
 
 Once Syncthing is running, it exposes its default interface via HTTP at the local port 8384. Fire up your browser and point it to `http://localhost:8384`. You will be greeted with the default web UI of Syncthing. From here, you can administer the shared directories and add additional 'partners', other devices to share files with.
 
-{{< fig src="/img/2021/11/syncthing-webui_s.jpg" link="/img/2021/11/syncthing-webui.jpg" title="The default web UI of Syncthing with the dark theme and some folders" width="60%" class="fig-center" loading="lazy" >}}
+{{< fig src="/img/2021/11/syncthing-webui_s.jpg" link="/img/2021/11/syncthing-webui.jpg" title="The default web UI of Syncthing with the dark theme and some folders." width="60%" class="fig-center" loading="lazy" >}}
 
 You can find more information on the UI in the [official documentation of the project](https://docs.syncthing.net/intro/gui.html).
 

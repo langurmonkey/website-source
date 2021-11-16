@@ -65,4 +65,6 @@ We also need to modify the shortcode source, the `fig.html` file. The snippet be
 </figure>
 {{</ highlight >}}
 
-That's it. With this little trick the images on your site can be set to load lazily.
+That's it. With this little trick the images on your site can be set to load lazily. The results are shown in the gif below.
+
+{{< fig src="/img/2021/11/lazy-img-loading.gif" class="fig-center" width="500px" title="Lazy image loading at work using the shortcode above. Note how images are requested on demand as the user scrolls down the page." loading="lazy" >}}

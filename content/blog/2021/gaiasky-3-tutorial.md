@@ -67,7 +67,7 @@ In order to follow the course it is recommended, albeit not required, to have a 
 When you start Gaia Sky for the first time, you will be greeted with the welcome screen pictured below. Initially the <kbd>Start Gaia Sky</kbd> button will be {{< sp gray >}}grayed out{{</ sp >}}, as you need to download the data packages before Gaia Sky can start. To do so, click on the <kbd>Dataset manager</kbd> button.
 
 
-{{< fig src="/img/2021/03/gs-tut/welcome-initial.jpg" link="/img/2021/03/gs-tut/welcome-initial.jpg" title="Welcome window at the first start of Gaia Sky" class="fig-center" width="60%" loading="lazy" >}}
+{{< fig src="/img/2021/03/gs-tut/welcome-initial.jpg" link="/img/2021/03/gs-tut/welcome-initial.jpg" title="Welcome window at the first start of Gaia Sky." class="fig-center" width="60%" loading="lazy" >}}
 
 Then select at least the following data packages:
 
@@ -78,7 +78,7 @@ Then select at least the following data packages:
 - ``Open Clusters DR2`` -- Open clusters catalog based on DR2 data
 - ``Nebulae`` -- Some nebulae textures
 
-{{< fig src="/img/2021/03/gs-tut/welcome-download.jpg" link="/img/2021/03/gs-tut/welcome-download.jpg" title="The download manager of Gaia Sky" class="fig-center" width="60%" loading="lazy" >}}
+{{< fig src="/img/2021/03/gs-tut/welcome-download.jpg" link="/img/2021/03/gs-tut/welcome-download.jpg" title="The download manager of Gaia Sky." class="fig-center" width="60%" loading="lazy" >}}
 
 Then click on <kbd>Download selected</kbd> and wait for Gaia Sky to download and extract your catalogs. Once the downloads have finished, close the window  with <kbd>Ok</kbd>. Then you can go ahead and start Gaia Sky by clicking on <kbd>Start Gaia Sky</kbd>. 
 
@@ -117,7 +117,7 @@ At any time you can use the <kbd>home</kbd> key in your keyboard to return back 
 
 The user interface of Gaia Sky consists of basically two components: keyboard shortcuts and a graphical user interface in the form of the **control panel**.
 
-{{< fig src="/img/2021/03/gs-tut/ui-all.jpg" link="/img/2021/03/gs-tut/ui-all.jpg" title="Gaia Sky user interface with the most useful functions" class="fig-center" width="60%" loading="lazy" >}}
+{{< fig src="/img/2021/03/gs-tut/ui-all.jpg" link="/img/2021/03/gs-tut/ui-all.jpg" title="Gaia Sky user interface with the most useful functions." class="fig-center" width="60%" loading="lazy" >}}
 
 ### Control panel
 
@@ -145,11 +145,11 @@ To the top of the screen you can see the **quick info bar** which provides infor
 
 Gaia Sky has a built-in debug information panel that provides system information and is hidden by default. You can bring it up with <kbd>ctrl</kbd> + <kbd>d</kbd>, or by ticking the "*Show debug info*" check box in the system tab of the preferences window. By default, the debug panel is collapsed.
 
-{{< fig src="/img/2021/03/gs-tut/debug-collapsed.jpg" link="/img/2021/03/gs-tut/debug-collapsed.jpg" title="Collapsed debug panel" class="fig-center" loading="lazy" >}}
+{{< fig src="/img/2021/03/gs-tut/debug-collapsed.jpg" link="/img/2021/03/gs-tut/debug-collapsed.jpg" title="Collapsed debug panel." class="fig-center" loading="lazy" >}}
 
 You can expand it with the ``+`` symbol to get additional information.
 
-{{< fig src="/img/2021/03/gs-tut/debug-expanded.jpg" link="/img/2021/03/gs-tut/debug-expanded.jpg" title="Expanded debug panel" class="fig-center" width="60%" loading="lazy" >}}
+{{< fig src="/img/2021/03/gs-tut/debug-expanded.jpg" link="/img/2021/03/gs-tut/debug-expanded.jpg" title="Expanded debug panel." class="fig-center" width="60%" loading="lazy" >}}
 
 As you can see, the debug panel shows information on the current graphics device, system and graphics memory, the amount of objects loaded and on display, the octree (if a LOD dataset is in use) or the SAMP status.
 
@@ -159,7 +159,7 @@ Additional debug information can be obtained in the system tab of the help dialo
 
 Gaia Sky can simulate time. Play and pause the simulation using the {{< img "/img/2021/03/gs-tut/play-icon.png">}}/{{< img "/img/2021/03/gs-tut/pause-icon.png">}} `Play`/`Pause` buttons in the time pane, or toggle using <kbd>Space</kbd>. You can also change the time warp, which is expressed as a scaling factor, using the provided **Warp factor** slider. Use <kbd>,</kbd> or {{< img "/img/2021/03/gs-tut/minus-icon.png">}} and <kbd>.</kbd> or {{< img "/img/2021/03/gs-tut/plus-icon.png">}} to divide by 2 and double the value of the time warp, respectively.
 
-{{< fig src="/img/2021/03/gs-tut/warp-factor.jpg" link="/img/2021/03/gs-tut/warp-factor.jpg" title="Warp factor slider" class="fig-center" loading="lazy" >}}
+{{< fig src="/img/2021/03/gs-tut/warp-factor.jpg" link="/img/2021/03/gs-tut/warp-factor.jpg" title="Warp factor slider." class="fig-center" loading="lazy" >}}
 
 
 Now, go ahead and press <kbd>home</kbd>. This will bring us back to Earth. Now, start the time with {{< img "/img/2021/03/gs-tut/play-icon.png">}} or <kbd>space</kbd> and **drag the slider slightly to the right** to increase its speed. You will see that the Earth rotates faster and faster as you move the slider to the right. Now, **drag it to the left** until time is reversed and the Earth starts rotating in the opposite direction. Now time is going backwards!
@@ -251,7 +251,7 @@ The **visual settings** pane contains a few options to control the shading of st
 -  **Label size** -- control the size of the labels
 -  **Elevation multiplier** -- scale the height representation for planets with elevation maps
 
-{{< fig src="/img/2021/03/gs-tut/visual-settings.jpg" link="/img/2021/03/gs-tut/visual-settings.jpg" title="The visual settings pane" class="fig-center" loading="lazy" >}}
+{{< fig src="/img/2021/03/gs-tut/visual-settings.jpg" link="/img/2021/03/gs-tut/visual-settings.jpg" title="The visual settings pane." class="fig-center" loading="lazy" >}}
 
 ## Loading external datasets
 
@@ -259,7 +259,7 @@ Gaia Sky supports the loading of external datasets at runtime. Right now, ``VOTa
 
 The datasets loaded in Gaia Sky at a certain moment can be found in the [datasets](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/Datasets.html#datasets) pane of the control panel.
 
-{{< fig src="/img/2021/03/gs-tut/ds-1.jpg" link="/img/2021/03/gs-tut/ds-1.jpg" title="Datasets pane of Gaia Sky" class="fig-center" width="60%" loading="lazy" >}}
+{{< fig src="/img/2021/03/gs-tut/ds-1.jpg" link="/img/2021/03/gs-tut/ds-1.jpg" title="Datasets pane of Gaia Sky." class="fig-center" width="60%" loading="lazy" >}}
 
 There are three main ways to load new datasets into Gaia Sky:
 
@@ -271,7 +271,7 @@ There are three main ways to load new datasets into Gaia Sky:
 
 **Loading a dataset via SAMP** -- This section presupposes that Topcat is installed on the machine and that the user knows how to use it to connect to the VO to get some data. The following video demonstrates how to do this ([mirror](https://youtu.be/sc0q-VbeoPE)):
 
-{{< fig src="/img/2021/03/gs-tut/samp.jpg" link="/img/2021/03/gs-tut/samp.jpg" title="Loading a dataset from Topcat through SAMP (click for video)" class="fig-center" width="50%" loading="lazy" >}}
+{{< fig src="/img/2021/03/gs-tut/samp.jpg" link="/img/2021/03/gs-tut/samp.jpg" title="Loading a dataset from Topcat through SAMP (click for video)." class="fig-center" width="50%" loading="lazy" >}}
 
 **Loading a dataset via scripting** -- Wait for the scripting section of this course.
 
@@ -307,7 +307,7 @@ Multiple filters can be combined with the **AND** and **OR** operators
 
 Gaia Sky offers three ways to display external information on the current focus object: **Wikipedia**, **Gaia archive** and **Simbad**.
 
-{{< fig src="/img/2021/03/gs-tut/external-info.jpg" link="/img/2021/03/gs-tut/external-info.jpg" title="Wikipedia, Gaia archive and Simbad connections" class="fig-center" width="60%" loading="lazy" >}}
+{{< fig src="/img/2021/03/gs-tut/external-info.jpg" link="/img/2021/03/gs-tut/external-info.jpg" title="Wikipedia, Gaia archive and Simbad connections." class="fig-center" width="60%" loading="lazy" >}}
 
 -  When the <kbd>+Info</kbd> button appears in the focus info pane, it means that there is a Wikipedia article on this object ready to be pulled and displayed in Gaia Sky
 -  When the <kbd>Archive</kbd> button appears in the focus info pane, it means that the full table information of selected star can be pulled from the Gaia archive
@@ -325,7 +325,7 @@ Gaia Sky includes a feature to record and play back camera paths. This comes in 
 **Mind the FPS!** The camera recording system stores the position of the camera for every frame! It is important that recording and playback are done with the same (stable) frame rate. To set the target recording frame rate, edit the "Target FPS" field in the camrecorder settings of the preferences window. That will make sure the camera path is using the right frame rate. In order to play back the camera file at the right frame rate, you can edit the "Maximum frame rate" input in the graphics settings of the preferences window.
 {{</ hint >}}
 
-{{< fig src="/img/2021/03/gs-tut/camerapaths.jpg" link="/img/2021/03/gs-tut/camerapaths.jpg" title="Location of the controls of the camcorder in Gaia Sky" class="fig-center" width="60%" loading="lazy" >}}
+{{< fig src="/img/2021/03/gs-tut/camerapaths.jpg" link="/img/2021/03/gs-tut/camerapaths.jpg" title="Location of the controls of the camcorder in Gaia Sky." class="fig-center" width="60%" loading="lazy" >}}
 
 More information on camera paths in Gaia Sky can be found in [the camera paths section](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/Camera-paths.html#camera-paths) of the Gaia Sky user manual.
 
@@ -343,7 +343,7 @@ In order to create high-quality videos, Gaia Sky offers the possibility to expor
 
 You can start the frame output system by pressing <kbd>F6</kbd>. Once active, the frame rate will go down (each frame is being saved to disk). The save location of the still frame images is, by default, ``$GS_DATA/frames/[prefix]_[num].jpg``, where ``[prefix]`` is an arbitrary string that can be defined in the preferences. The save location, mode (simple or advanced), and the resolution can also be defined in the preferences.
 
-{{< fig src="/img/2021/03/gs-tut/frameoutput.jpg" link="/img/2021/03/gs-tut/frameoutput.jpg" title="The configuration screen for the frame output system" class="fig-center" width="60%" loading="lazy" >}}
+{{< fig src="/img/2021/03/gs-tut/frameoutput.jpg" link="/img/2021/03/gs-tut/frameoutput.jpg" title="The configuration screen for the frame output system." class="fig-center" width="60%" loading="lazy" >}}
 
 Once we have the still frame images, we can convert them to a video using ``ffmpeg`` or any other encoding software. Additional information on how to convert the still frames to a video can be found in the [capturing videos section](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/Capturing-videos.html#capture-videos) of the Gaia Sky user manual.
 

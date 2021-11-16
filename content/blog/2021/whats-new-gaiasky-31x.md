@@ -21,7 +21,7 @@ Over the last two weeks I have released the feature-packed version `3.1.0` of [G
 
 The first and most important feature is the re-implementation of the core positioning module of Gaia Sky. We have moved the arithmetics to arbitrary-precision floating point numbers. This enables global positioning anywhere in the Universe without loss of precision. This feature has actually been sitting in a branch since before the submission of the paper [Gaia Sky: Navigating the Gaia Catalog](https://ieeexplore.ieee.org/document/8440086), but it never quite made into the main branch due to some minor problems. This is mainly under-the-hood work, invisible to the user. Yet, it enables the eventual addition of extrasolar systems, or the spacecraft to wander off from the Solar System without hacks.
 
-{{< fig src="/img/2021/06/kepler-exoplanets.jpg" link="/img/2021/06/kepler-exoplanets.jpg" title="An exoplanet in Gaia Sky 3.1, orbiting a double system" class="fig-center" width="60%" loading="lazy" >}}
+{{< fig src="/img/2021/06/kepler-exoplanets.jpg" link="/img/2021/06/kepler-exoplanets.jpg" title="An exoplanet in Gaia Sky 3.1, orbiting a double system." class="fig-center" width="60%" loading="lazy" >}}
 
 ### Catastrophic cancellation
 
