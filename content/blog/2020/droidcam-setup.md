@@ -46,10 +46,10 @@ Once that is done, install `adb` on your Linux box. Most distros will just have 
 pacman -S android-tools
 ```
 
-On Debian or derivatives, you will need something like:
+On Debian and derivatives, you would run:
 
 ```bash
-apd install adb
+apt install adb
 ```
 
 Once `adb` is installed, check that the device is connected correctly. You may need to confirm the connection in a pop-up dialog on your phone.
