@@ -34,11 +34,20 @@ We also need to modify the shortcode source, the `fig.html` file. The snippet be
 {{< highlight html "linenos=table,hl_lines=11" >}}
 <figure{{ with .Get "class" }} class="{{ . }}"{{ end }}>
     {{- if .Get "link" -}}
-        <a href="{{ .Get "link" }}"{{ with .Get "target" }} target="{{ . }}"{{ end }}{{ with .Get "rel" }} rel="{{ . }}"{{ end }}>
+        <a href="{{ .Get "link" }}"
+        {{ with .Get "target" }}
+            target="{{ . }}"
+        {{ end }}
+        {{ with .Get "rel" }}
+            rel="{{ . }}"
+        {{ end }}>
     {{- end -}}
     <img src="{{ .Get "src" }}"
          {{- if or (.Get "alt") (.Get "caption") }}
-         alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" | markdownify| plainify }}{{ end }}"
+            alt="{{ with .Get "alt" }}{{ . }}
+         {{ else }}
+            {{ .Get "caption" | markdownify | plainify }}
+         {{ end }}"
          {{- end -}}
          {{- with .Get "width" }} width="{{ . }}"{{ end -}}
          {{- with .Get "height" }} height="{{ . }}"{{ end -}}
