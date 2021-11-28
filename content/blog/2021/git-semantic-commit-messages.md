@@ -10,7 +10,7 @@ featuredpath = "date"
 type = "post"
 +++
 
-Do you often find yourself using "New feature", "More" or similar short and generic strings as your git commit messages? I know I did. Until I learned about semantic commit messages, that is. What are they and how can they exponentially improve your commit history and make it actually useful? I'm discussing it in this post.
+Do you often find yourself using "New feature", "More" or similar short, useless and generic strings as your git commit messages? I know I did. Until I learned about semantic commit messages, that is. What are they and how can they exponentially improve your commit history and make it actually useful? I'm discussing it in this post.
 
 <!--more-->
 
