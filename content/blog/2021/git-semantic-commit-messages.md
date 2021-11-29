@@ -42,7 +42,7 @@ footer (optional)
     - `perf` -- changes that improve or address performance issues.
     - `build` -- changes to the build and continuous integration systems, or to run scripts and installer files.
     - `none` -- minor changes that do not fit in any other category, or partial, non-finished commits.
-- The **description** is a summary written in present tense. This is important to keep a consistent format and avoid mixing tenses and styles. You'll thank me later. 
+- The **description** is a summary written in **present tense**. This is important to keep a consistent format and avoid mixing tenses, which looks and *feels* very bad and sloppy once you read all commit messages one after the other. "`refactor: move render system to render package`" is a correct description, while "`refactor: render system moved to render package`" is not. You'll thank me later.
  - In the **body** you can develop the topic to your heart's content, if you want.
 - The **footer** is usually reserved for annotations and references such as the issue number it fixes or the new feature it references.
 
