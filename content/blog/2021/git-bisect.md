@@ -10,7 +10,7 @@ featuredpath = "date"
 type = "post"
 +++
 
-When I started using git as my VCS I skimmed the docs and `git-bisect` caught my eye. I got acquainted with it rather quickly and have been using it rather heavily ever since. [`git-bisect`](https://git-scm.com/docs/git-bisect) is a little handy git sub-command typically used to quickly narrow down the commit where a bug was introduced in a code base. It uses a simple binary search tree algorithm (BST) to test out different revisions by parting the remaining search space in *half*.
+When I started using git as my VCS I skimmed the docs and `git-bisect` caught my eye. I got acquainted with it rather quickly and have been using it regularly ever since. [`git-bisect`](https://git-scm.com/docs/git-bisect) is a little handy git sub-command typically used to quickly narrow down the commit where a bug was introduced in a code base. It uses a simple binary search tree algorithm (BST) to test out different revisions by parting the remaining search space in *half*.
 
 <!--more-->
 
