@@ -10,7 +10,7 @@ featuredpath = "date"
 type = "post"
 +++
 
-I have recently implemented a procedural generation system for planetary surfaces and moons into [Gaia Sky](https://zah.uni-heidelberg.de/gaia/outreach/gaiasky). In this post, I ponder about different methods and techniques I have used to this purpose. The following image shows a procedurally generated planet using the process described in this article.
+I have recently implemented a procedural generation system for planetary surfaces into [Gaia Sky](https://zah.uni-heidelberg.de/gaia/outreach/gaiasky). In this post, I ponder about different methods and techniques for procedurally generating planets that *look* just right and explain the process behind it in somewhat detail. This is a rather technical post, so be warned. As a teaser, the following image shows a planet generated using the processes described in this article.
 
 {{< fig src="/img/2021/12/procedural-surfaces/teaser-s.png" link="/img/2021/12/procedural-surfaces/teaser.png" title="Left: a wide view of a procedurally generated planet. Right: the same planet viewed from the surface." class="fig-center" width="60%" loading="lazy" >}}
 
@@ -21,36 +21,41 @@ I have recently implemented a procedural generation system for planetary surface
 
 ## All is noise
 
-We start with a noise algorithm. A noise algorithm is essentially a function that returns a *random* value when sampled using coordinates. Obviously, a pure RNG (random number generator) won't cut it, as the noise we need to generate mountains and valleys and seas is not totally random. There needs to be some structure to it for it to successfully approximate reality. There are very many noise algorithms to choose from, but all essentially fall into one of these two categories:
+We start with a noise algorithm. A noise algorithm is essentially a function \\(f(\vec{x}) = v\\) that returns a *pseudo-random* value \\(v\\) for each coordinate \\(\vec{x}\\). The values are not totally random, as they are influenced by *where* the function is sampled. Obviously, a pure RNG (random number generator) won't cut it, as the noise we need to generate mountains and valleys and seas is not totally random. There needs to be some structure to it for it to successfully approximate reality. Single values can't live in isolation, but must depend on their surroundings. In other words, we need *smooth gradients*. There are very many noise algorithms that are up to the challenge to choose from, but all essentially fall into one of these two categories:
 
 1. **value noise**---based on the interpolation of random values assigned to a lattice of points.
 2. **gradient noise**---based on the interpolation of random gradients assigned to a lattice of points.
 
-One of the most common realization of gradient noise is Perlin noise, developed by Ken Perlin. Let\'s have a look at some noise generated with this algorithm.
+They are equally valid, but gradient noise is usually more appropriate and visually appealing for procedural generation. One of the most common realization of gradient noise is Perlin noise, developed by Ken Perlin. Let\'s have a look at some noise generated with this algorithm.
 
 {{< fig src="/img/2021/12/procedural-surfaces/maps/perlin-height.png" link="/img/2021/12/procedural-surfaces/maps/perlin-height.png" title="Good old Perlin noise." class="fig-center" width="20%" loading="lazy" >}}
 
-It looks alright, but something is not right. Let\'s interpret each pixel in that image as the elevation value at the coordinates of that pixel. This gives us an elevation map. Darker pixels have lower elevations, while brighter pixels have higher elevation. We can then map colors to elevation ranges. For example, black areas are assigned blues, for water. Gray areas are green, and bright areas are white, for snow. That would give us the following image:
+It looks alright, but it may not be enough for our purposes as it is now. Let\'s interpret each pixel in that image as the elevation value at the coordinates of that pixel. This gives us an elevation map. Darker pixels have lower elevations, while brighter pixels have higher elevation. We can then map colors to elevation ranges. Knowing that noise values are in \\([0,1]\\), we can apply the following mapping:
+
+$$
+\begin{align}
+[0.0, 0.1] &\mapsto blue \\\
+[0.1, 0.15] &\mapsto yellow \\\
+[0.15, 0.75] &\mapsto green \\\
+[0.75, 0.85] &\mapsto gray \\\
+[0.85, 1.0] &\mapsto white \\\
+\end{align}
+$$
+
+Blackish areas are assigned blue, for water. Areas immediately next to water are yellow, for beaches. Gray areas are green, and bright areas are gray and white, for snow. That gives us the following image:
 
 {{< fig src="/img/2021/12/procedural-surfaces/maps/perlin-diffuse.png" link="/img/2021/12/procedural-surfaces/maps/perlin-diffuse.png" title="Perlin noise colored with a simple mapping." class="fig-center" width="20%" loading="lazy" >}}
 
-Again, it is alright, but it is not super good. We can try with other kinds of noise. For example, (open) simplex noise is an evolution of Perlin noise with fewer artifacts. Its open implementation is multi-dimensional and it is also quite fast. Let\'s see:
+Again, it is alright, but it is not super good. It looks plain and not very natural. We can try with other noise algorithms.
 
-<table width="50%" style="margin: 0 auto 0 auto;">
-<tr style="background-color:#00000000;border-width: 0px;"><td>
-{{< fig src="/img/2021/12/procedural-surfaces/maps/simplex-height.png" link="/img/2021/12/procedural-surfaces/maps/simplex-height.png" title="Open simplex noise." class="fig-center" width="90%" loading="lazy" >}}
-</td><td>
-{{< fig src="/img/2021/12/procedural-surfaces/maps/simplex-diffuse.png" link="/img/2021/12/procedural-surfaces/maps/simplex-diffuse.png" title="Noise colored with same process." class="fig-center" width="90%" loading="lazy" >}}
-</td></tr></table>
+{{< fig src="/img/2021/12/procedural-surfaces/maps/noise-types-annotated.jpg" link="/img/2021/12/procedural-surfaces/maps/noise-types-annotated.jpg" class="fig-center" width="100%" loading="lazy" >}}
+{{< fig src="/img/2021/12/procedural-surfaces/maps/noise-types-diffuse.jpg" link="/img/2021/12/procedural-surfaces/maps/noise-types-diffuse.jpg" title="Above: different noise algorithms sampled in the same region. Below: the same noise types colored with the same mapping explained above." class="fig-center" width="100%" loading="lazy" >}}
 
-Maybe it's a bit better, but there's something missing. We can also generate the normal maps from the elevation data. Doing so involves computing the horizontal and vertical gradients at each point. The normal map encodes the direction of the surface normal vector at each point, and works a little better at visualizing the gradients.
+Simplex noise is an evolution of Perlin noise with fewer artifacts. Its open implementation is multi-dimensional and it is also quite fast. The others are also good if used properly.
 
-<table width="50%" style="margin: 0 auto 0 auto;">
-<tr style="background-color:#00000000;border-width: 0px;"><td>
-{{< fig src="/img/2021/12/procedural-surfaces/maps/perlin-normal.png" link="/img/2021/12/procedural-surfaces/maps/perlin-normal.png" title="Normal map for the Perlin noise above." class="fig-center" width="90%" loading="lazy" >}}
-</td><td>
-{{< fig src="/img/2021/12/procedural-surfaces/maps/simplex-normal.png" link="/img/2021/12/procedural-surfaces/maps/simplex-normal.png" title="Normal map for the Simplex noise." class="fig-center" width="90%" loading="lazy" >}}
-</td></tr></table>
+We can also generate the normal maps from the elevation data. Doing so involves computing the horizontal and vertical gradients for every coordinate. The normal map encodes the direction of the surface normal vector at each point, and works a little better at visualizing the gradients. Additionally, it will come in handy for the shading.
+
+{{< fig src="/img/2021/12/procedural-surfaces/maps/noise-types-normal.jpg" link="/img/2021/12/procedural-surfaces/maps/noise-types-normal.jpg" title="Normal maps generated for the same noise types. Left to right: gradval, perlin, simplex, value, white." class="fig-center" width="100%" loading="lazy" >}}
 
 At this point we can start playing around with fractals, and re-applying the noise algorithm at different scales with higher frequencies and lower amplitudes. These different scales or levels are called octaves. We compute them by sampling the same noise algorithm multiple times on top of each other and modulating its amplitude and frequency. If we compute 4 octaves with the simplex noise, we get something like this:
 
@@ -61,7 +66,7 @@ At this point we can start playing around with fractals, and re-applying the noi
 {{< fig src="/img/2021/12/procedural-surfaces/maps/simplex-4oct-diffuse.png" link="/img/2021/12/procedural-surfaces/maps/simplex-4oct-diffuse.png" title="Same noise colored with same process." class="fig-center" width="90%" loading="lazy" >}}
 </td></tr></table>
 
-If you zoom in into the left image, you will see that there are additional levels of detail at smaller scales compared to the regular simplex noise shown before. This is very good, as it mimics nature much more closely. How do we set up a surface generation process, then? Read on to the next section.
+If you zoom in into the left image, you will see that there are additional levels of detail at smaller scales compared to the regular simplex noise shown before. This is very good, as it mimics nature much more closely. We are now ready to start generating surfaces.
 
 ## Surface generation
 
@@ -75,10 +80,7 @@ for the coloring. But first, let\'s visit our sampling process.
 
 ### Seamless (tilable) noise
 
-Usually, noise sampled directly is not tileable. The features do not
-repeat, and you just can\'t extend the noise indefinitely because seams
-are visible. In the case of one dimension, usually one would sample the
-noise using the only dimension available, \\(x\\).
+Usually, noise sampled directly is not tileable. The features do not repeat, and you just can\'t extend the noise indefinitely because seams are visible. In the case of one dimension, usually one would sample the noise using a coordinate for the only dimension available, \\(x\\).
 
 {{< fig src="/img/2021/12/procedural-surfaces/figures/noise-sampling-1d.png" link="/img/2021/12/procedural-surfaces/figures/noise-sampling-1d.png" title="Sampling noise in 1D leads to seams." class="fig-center" width="50%" loading="lazy" >}}
 
@@ -118,11 +120,7 @@ for (phi = -PI / 2; phi < PI / 2; phi += PI / M){
 
 We carry out the generation by sampling configurable noise algorithms (Perlin, Open Simplex, etc.) at different levels of detail, or octaves. In Gaia Sky, we have some important noise parameters to adjust:
 
--   **seed**---a number which is used as a seed for the noise RNG.
--   **type**---the base noise type. Can be any algorithm, like **gradient (Perlin)
-    noise**[^1], **gradval noise**[^2], **simplex**[^3], **value**[^4]
-    or **white**[^5]. For examples, see
-    [here](https://joise.sudoplaygames.com/modules/#modulebasisfunction).
+-   **seed**---a number which is used as a seed for the noise RNG. **type**---the base noise type. Can be any algorithm, like **gradient (Perlin) noise**[^1], **simplex**[^2], **value**[^3], **gradval noise**[^4] or **white**[^5]. For examples, see [here](https://joise.sudoplaygames.com/modules/#modulebasisfunction).
 -   **fractal type**---the algorithm used to modify the noise in each
     octave. It determines the persistence (how the amplitude is
     modified) as well as the gain and the offset. Can be **billow**,
@@ -147,7 +145,6 @@ We carry out the generation by sampling configurable noise algorithms (Perlin, O
 -   **power**---power function exponent to apply to the output of the
     range stage.
 
-{{< fig src="/img/2021/12/procedural-surfaces/maps/noise-types-annotated.jpg" link="/img/2021/12/procedural-surfaces/maps/noise-types-annotated.jpg" title="Different noise types. Value and white noise are mostly useless for our purposes." class="fig-center" width="100%" loading="lazy" >}}
 
 The final stage of the procedural noise generation clamps the output to \\([0,1]\\) again, so that all negative values are mapped to 0, and all values greater than 1 are clamped to 1.
 
@@ -174,3 +171,9 @@ This article may be a bit rushed, but I believe all the right ingredients are in
 
 
 More information on the topic can be found in the [official documentation](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/Procedural-generation.html) of Gaia Sky.
+
+[^1]: https://en.wikipedia.org/wiki/Perlin_noise
+[^2]: https://en.wikipedia.org/wiki/Simplex_noise
+[^3]: https://en.wikipedia.org/wiki/Value_noise
+[^4]: A hybrid consisting of the sum of gradient and value noise.
+[^5]: https://en.wikipedia.org/wiki/White_noise
