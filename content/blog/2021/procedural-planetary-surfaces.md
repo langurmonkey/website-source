@@ -225,10 +225,13 @@ We can generate the clouds with the same algorithm and the same parameters as th
 
 ## Putting it all together
 
-In this article we have showed a bird's eye view of how to procedurally generate convincing planetary surfaces. As we said, in Gaia Sky we generate spherical maps which are then mapped to UV spheres, but we could as well produce cubemap faces and use cubemaps to do the texturing. Below you can see an example of what Gaia Sky currently generates.
+In this article we have showed a bird's eye view of how to procedurally generate convincing planetary surfaces. As we said, in Gaia Sky we generate spherical maps which are then mapped to UV spheres, but we could as well produce cubemap faces and use cubemaps to do the texturing. Below you can see an example of maps produced for a planet by Gaia Sky.
 
 {{< fig src="/img/2021/12/procedural-surfaces/maps/procedural-maps-s.png" link="/img/2021/12/procedural-surfaces/maps/procedural-maps.png" title="Left to right and top to bottom, clouds map, diffuse texture, elevation map, normal map and specular map procedurally generated with Gaia Sky." class="fig-center" width="80%" loading="lazy" >}}
 
+Additionally, we have added a separate step to generate a cloud layer, and we can also randomize the atmospheric scattering parameters to have a fully procedural planet. We have implemented a function which randomizes all parameters within some bounds. Hitting the <kbd>Randomize all</kbd> button produces some neat results:
+
+{{< fig src="/img/2021/12/procedural-surfaces/planets/randomize-all.jpg" link="/img/2021/12/procedural-surfaces/planets/randomize-all.jpg" title="Random planets created with Gaia Sky." class="fig-center" width="100%" loading="lazy" >}}
 
 More information on the topic can be found in the [official documentation](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/Procedural-generation.html) of Gaia Sky.
 
