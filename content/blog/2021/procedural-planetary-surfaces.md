@@ -57,7 +57,7 @@ We can also generate the normal maps from the elevation data. Doing so involves 
 
 {{< fig src="/img/2021/12/procedural-surfaces/maps/noise-types-normal.jpg" link="/img/2021/12/procedural-surfaces/maps/noise-types-normal.jpg" title="Normal maps generated for the same noise types. Left to right: gradval, perlin, simplex, value, white." class="fig-center" width="100%" loading="lazy" >}}
 
-At this point, we need something else. The noise looks too simple and plain. In nature, we have repeating features at different scales, but here we don\'t see this. These repeating features are called fractals, and we can also create them with the noise algorithms that we already know. The trick is re-sampling the noise function several times with higher frequencies and lower amplitudes. In the context of noise, the different levels are called octaves. The first octave is the regular noise map we have already seen. The second octave would be computing by multiplying the frequency of the first one by a number (called **lacunarity**) and multiplying its amplitude by another number (called **persistence**), typically a fraction of one. The third would apply the same principle to the parameters of the second, and so on.
+At this point, we need something else. The noise looks too simple and plain. In nature, we have repeating features at different scales, but here we don\'t see this. These repeating features are called fractals, and we can also create them with the noise algorithms that we already know. The trick is re-sampling the noise function several times with higher frequencies and lower amplitudes. In the context of noise, the different levels are called octaves. The first octave is the regular noise map we have already seen. The second octave would be computed by multiplying the frequency of the first one by a number (called **lacunarity**) and multiplying its amplitude by another number (called **persistence**), typically a fraction of one. The third would apply the same principle to the parameters of the second, and so on.
 
 
 ```c
@@ -101,15 +101,15 @@ They all are reasonable, except white. We'll proceed with simplex from now on.
 
 ### Colors
 
-In the previous sections we have only mapped colors to elevation ranges, but this produces very little variety. We can generate an additional map with the same parameters and interpret it as humidity data, that we can combine with the elevation to produce a color. 
+In the previous sections we have only mapped colors to elevation ranges, but this produces very little variety. We can generate an additional noise map with the same parameters and interpret it as humidity data, that we can combine with the elevation to produce a color. 
 The elevation data is a 2D array containing the elevation value in \\([0,1]\\) at each coordinate. The humidity data is the same but it contains the humidity value.
 We use the humidity, then, together with the elevation, to determine the color using a look-up table. This allows us to color different regions at the same elevation differently. We map the humidity value to the \\(x\\) coordinate and the elevation to \\(y\\). Both coordinates are normalized to \\([0,1]\\).
 
-Additionally, since the look-up table is just an image in disk, we can have many of them and use them in different situations, or even randomize which one is picked up. A simple look-up table would look like this. From left to right it maps less humidity (hence the yellows, to create deserts, and grays at the top, for rocky mountains) to more humidity (as we go right it gets greener, and the mountain tops get white snow).
+Additionally, since the look-up table is just an image in disk, we can have many of them and use them in different situations, or even randomize which one is picked up. A simple, discrete look-up table would look like this. From left to right it maps less humidity (hence the yellows, to create deserts, and grays at the top, for rocky mountains) to more humidity (as we go right it gets greener, and the mountain tops get white snow).
 
 {{< fig src="/img/2021/12/procedural-surfaces/figures/procedural-lut.png" link="/img/2021/12/procedural-surfaces/figures/procedural-lut.png" title="The look-up table mapping dimensions are elevation and humidity." class="fig-center" width="40%" loading="lazy" >}}
 
-If we use this look-up table with the ball using simplex noise above, we get the following.
+If we use this look-up table with the simplex noise ball above, we get the following.
 
 {{< fig src="/img/2021/12/procedural-surfaces/planets/discrete-simplex-0-1.jpg" link="/img/2021/12/procedural-surfaces/planets/discrete-simplex-0-1.jpg" title="Coloring the ball with the discrete look-up table above." class="fig-center" width="40%" loading="lazy" >}}
 
@@ -117,7 +117,7 @@ In this image, the noise is mapped to \\([0,1]\\). We can try extending it to ne
 
 {{< fig src="/img/2021/12/procedural-surfaces/planets/discrete-simplex--1-1.jpg" link="/img/2021/12/procedural-surfaces/planets/discrete-simplex--1-1.jpg" title="Mapping the noise to [-1, 1]." class="fig-center" width="40%" loading="lazy" >}}
 
-That is better. But the noise is too high frequency. We can lower it a lot to get larger lad masses. We'll use the higher octaves to add extra details. For now, let's lower the frequency a lot.
+That is better. But the noise is too high frequency. We can lower it a lot to get larger land masses. We'll use the higher octaves to add extra details. For now, let's lower the frequency a lot.
 
 {{< fig src="/img/2021/12/procedural-surfaces/planets/discrete-simplex-lowscale.jpg" link="/img/2021/12/procedural-surfaces/planets/discrete-simplex-lowscale.jpg" title="Lowering the frequency produces larger land masses, akin to continents." class="fig-center" width="40%" loading="lazy" >}}
 
@@ -133,9 +133,9 @@ Finally, we can enable additional octaves to produce detail at smaller scales. T
 
 {{< fig src="/img/2021/12/procedural-surfaces/planets/smooth-simplex-8octaves-inc-rangemax-freq.jpg" link="/img/2021/12/procedural-surfaces/planets/smooth-simplex-8octaves-inc-rangemax-freq.jpg" title="Same planet, but this time around using 8 octaves." class="fig-center" width="40%" loading="lazy" >}}
 
-Looks fine, right? In Gaia Sky we can add an atmosphere (an atmospheric scattering shader) and add a cloud layer to have this final look.
+Looks fine, right? In Gaia Sky we can add an atmosphere (computes atmospheric scattering of light in a shader) and add a cloud layer to have this final look.
 
-{{< fig src="/img/2021/12/procedural-surfaces/planets/smooth-simplex-8octaves-atmosphere-clouds.jpg" link="/img/2021/12/procedural-surfaces/planets/smooth-simplex-8octaves-atmosphere-clouds.jpg" title="Adding an atmosphere and clouds really sells it." class="fig-center" width="40%" loading="lazy" >}}
+{{< fig src="/img/2021/12/procedural-surfaces/planets/smooth-simplex-8octaves-atmosphere-clouds.jpg" link="/img/2021/12/procedural-surfaces/planets/smooth-simplex-8octaves-atmosphere-clouds.jpg" title="Adding an atmosphere and clouds improves the final result." class="fig-center" width="40%" loading="lazy" >}}
 
 
 ### Adding some variety
@@ -144,7 +144,7 @@ There are some tricks we can use to add some variety to the process.
 
 For example, we can hue-shift the look-up table by a value (in \\([0^{\circ}, 360^{\circ}]\\)) in order to produce additional colors. The shift must happen in the HSL color space, so we convert from RGB to HSL, modify the H (hue) value, and convert it back to RGB. Once the shift is established, we generate the diffuse texture by sampling the look-up table and shifting the hue. 
 
-We can also generate a specular texture where there is water. The specular texture is generated by assigning all heights less or equal to zero to a full specular value.
+We can also generate a specular texture where there is water. The specular texture is generated by assigning all heights less or equal to zero to a full specular value. All the planets we have seen so far already apply this specular data.
 
 ### Seamless (tilable) noise
 
