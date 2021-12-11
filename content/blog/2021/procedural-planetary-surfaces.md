@@ -57,7 +57,30 @@ We can also generate the normal maps from the elevation data. Doing so involves 
 
 {{< fig src="/img/2021/12/procedural-surfaces/maps/noise-types-normal.jpg" link="/img/2021/12/procedural-surfaces/maps/noise-types-normal.jpg" title="Normal maps generated for the same noise types. Left to right: gradval, perlin, simplex, value, white." class="fig-center" width="100%" loading="lazy" >}}
 
-At this point we can start playing around with fractals, and re-applying the noise algorithm at different scales with higher frequencies and lower amplitudes. These different scales or levels are called octaves. We compute them by sampling the same noise algorithm multiple times on top of each other and modulating its amplitude and frequency. If we compute 4 octaves with the simplex noise, we get something like this:
+At this point, we need something else. The noise looks too simple and plain. In nature, we have repeating features at different scales, but here we don\'t see this. These repeating features are called fractals, and we can also create them with the noise algorithms that we already know. The trick is re-sampling the noise function several times with higher frequencies and lower amplitudes. In the context of noise, the different levels are called octaves. The first octave is the regular noise map we have already seen. The second octave would be computing by multiplying the frequency of the first one by a number (called **lacunarity**) and multiplying its amplitude by another number (called **persistence**), typically a fraction of one. The third would apply the same principle to the parameters of the second, and so on.
+
+
+```c
+const int N_OCTAVES = 5;
+// Initial values
+float frequency = 2.5;
+float amplitude = 0.5;
+// Parameters
+float lacunarity = 2.0;
+float persistence = 0.5;
+
+// The noise value
+float n = 0;
+
+// x and y are the current coordinates
+for (int octave = 0; octave < N_OCTAVES; octave++) {
+    n += amplitude * noise(frequency * x, frequency * y);
+	frequency *= lacunarity;
+	amplitude *= persistence; 
+}
+```
+
+If we run this code with simplex noise, we get the following.
 
 <table width="50%" style="margin: 0 auto 0 auto;">
 <tr style="background-color:#00000000;border-width: 0px;"><td>
@@ -70,17 +93,62 @@ If you zoom in into the left image, you will see that there are additional level
 
 ## Surface generation
 
-The first thing that we need to address is the simplistic looks of the colored images. We see that simply assigning colors to elevation ranges won\'t cut it. We can improve the process by generating a humidity map in exactly the same way we are generating our elevation map. Then we can use this humidity data to manipulate the colors in a clever way to add an extra layer of randomness. We\'ll see about that later.
+From now on we'll interpret the generated noise as the terrain elevation and map it to a sphere. For instance, the noise types we saw before look as follows when mapped to a sphere.
 
-The surface generation process starts, then, with the generation of the
-elevation and humidity data. The elevation data is a 2D array containing
-the elevation value in \\([0,1]\\) at each coordinate. The humidity data is
-the same but it contains the humidity value, which will come in handy
-for the coloring. But first, let\'s visit our sampling process.
+{{< fig src="/img/2021/12/procedural-surfaces/planets/white-all.jpg" link="/img/2021/12/procedural-surfaces/planets/white-all.jpg" title="Noise interpreted as elevation and mapped to a sphere." class="fig-center" width="100%" loading="lazy" >}}
+
+They all are reasonable, except white. We'll proceed with simplex from now on.
+
+### Colors
+
+In the previous sections we have only mapped colors to elevation ranges, but this produces very little variety. We can generate an additional map with the same parameters and interpret it as humidity data, that we can combine with the elevation to produce a color. 
+The elevation data is a 2D array containing the elevation value in \\([0,1]\\) at each coordinate. The humidity data is the same but it contains the humidity value.
+We use the humidity, then, together with the elevation, to determine the color using a look-up table. This allows us to color different regions at the same elevation differently. We map the humidity value to the \\(x\\) coordinate and the elevation to \\(y\\). Both coordinates are normalized to \\([0,1]\\).
+
+Additionally, since the look-up table is just an image in disk, we can have many of them and use them in different situations, or even randomize which one is picked up. A simple look-up table would look like this. From left to right it maps less humidity (hence the yellows, to create deserts, and grays at the top, for rocky mountains) to more humidity (as we go right it gets greener, and the mountain tops get white snow).
+
+{{< fig src="/img/2021/12/procedural-surfaces/figures/procedural-lut.png" link="/img/2021/12/procedural-surfaces/figures/procedural-lut.png" title="The look-up table mapping dimensions are elevation and humidity." class="fig-center" width="40%" loading="lazy" >}}
+
+If we use this look-up table with the ball using simplex noise above, we get the following.
+
+{{< fig src="/img/2021/12/procedural-surfaces/planets/discrete-simplex-0-1.jpg" link="/img/2021/12/procedural-surfaces/planets/discrete-simplex-0-1.jpg" title="Coloring the ball with the discrete look-up table above." class="fig-center" width="40%" loading="lazy" >}}
+
+In this image, the noise is mapped to \\([0,1]\\). We can try extending it to negative values to add some water, as water is mapped to negatives. If we use \\([-1,1]\\), we get the following.
+
+{{< fig src="/img/2021/12/procedural-surfaces/planets/discrete-simplex--1-1.jpg" link="/img/2021/12/procedural-surfaces/planets/discrete-simplex--1-1.jpg" title="Mapping the noise to [-1, 1]." class="fig-center" width="40%" loading="lazy" >}}
+
+That is better. But the noise is too high frequency. We can lower it a lot to get larger lad masses. We'll use the higher octaves to add extra details. For now, let's lower the frequency a lot.
+
+{{< fig src="/img/2021/12/procedural-surfaces/planets/discrete-simplex-lowscale.jpg" link="/img/2021/12/procedural-surfaces/planets/discrete-simplex-lowscale.jpg" title="Lowering the frequency produces larger land masses, akin to continents." class="fig-center" width="40%" loading="lazy" >}}
+
+Now it is time to smooth things out. We said we can use any look-up table, so how about using one with smooth gradients:
+
+{{< fig src="/img/2021/12/procedural-surfaces/planets/biome-smooth-lookup.png" link="/img/2021/12/procedural-surfaces/planets/biome-smooth-lookup.png" title="Smooth version of the biome look-up table." class="fig-center" width="20%" loading="lazy" >}}
+
+And let's apply it to the last planet with the low frequency.
+
+{{< fig src="/img/2021/12/procedural-surfaces/planets/smooth-simplex-lowscale.jpg" link="/img/2021/12/procedural-surfaces/planets/smooth-simplex-lowscale.jpg" title="The smooth look-up table produces better-looking planets." class="fig-center" width="40%" loading="lazy" >}}
+
+Finally, we can enable additional octaves to produce detail at smaller scales. This step is crucial and is what really sells it. Have a look at this:
+
+{{< fig src="/img/2021/12/procedural-surfaces/planets/smooth-simplex-8octaves-inc-rangemax-freq.jpg" link="/img/2021/12/procedural-surfaces/planets/smooth-simplex-8octaves-inc-rangemax-freq.jpg" title="Same planet, but this time around using 8 octaves." class="fig-center" width="40%" loading="lazy" >}}
+
+Looks fine, right? In Gaia Sky we can add an atmosphere (an atmospheric scattering shader) and add a cloud layer to have this final look.
+
+{{< fig src="/img/2021/12/procedural-surfaces/planets/smooth-simplex-8octaves-atmosphere-clouds.jpg" link="/img/2021/12/procedural-surfaces/planets/smooth-simplex-8octaves-atmosphere-clouds.jpg" title="Adding an atmosphere and clouds really sells it." class="fig-center" width="40%" loading="lazy" >}}
+
+
+### Adding some variety
+
+There are some tricks we can use to add some variety to the process.
+
+For example, we can hue-shift the look-up table by a value (in \\([0^{\circ}, 360^{\circ}]\\)) in order to produce additional colors. The shift must happen in the HSL color space, so we convert from RGB to HSL, modify the H (hue) value, and convert it back to RGB. Once the shift is established, we generate the diffuse texture by sampling the look-up table and shifting the hue. 
+
+We can also generate a specular texture where there is water. The specular texture is generated by assigning all heights less or equal to zero to a full specular value.
 
 ### Seamless (tilable) noise
 
-Usually, noise sampled directly is not tileable. The features do not repeat, and you just can\'t extend the noise indefinitely because seams are visible. In the case of one dimension, usually one would sample the noise using a coordinate for the only dimension available, \\(x\\).
+In this article we have used a little trick that we have not yet talked about. Usually, noise sampled directly is not tileable, but the images in this article do not have seams. If sampled with \\(x\\) and \\(y\\) directly, the features do not repeat. In the case of one dimension, usually one would sample the noise using a coordinate for the only dimension available, \\(x\\).
 
 {{< fig src="/img/2021/12/procedural-surfaces/figures/noise-sampling-1d.png" link="/img/2021/12/procedural-surfaces/figures/noise-sampling-1d.png" title="Sampling noise in 1D leads to seams." class="fig-center" width="50%" loading="lazy" >}}
 
@@ -104,13 +172,13 @@ The process is outlined in this code snippet. If the final map
 resolution is \\(N \times M\\), we use N \\(\theta\\) steps and M \\(\varphi\\)
 steps.
 
-``` c
+```c
 // Map is NxM
-for (phi = -PI / 2; phi < PI / 2; phi += PI / M){
-    for (theta = 0; theta < 2 * PI; theta += 2 * PI / N) {
-        n = noise.sample(cos(phi) * cos(theta), // x
-                         cos(phi) * sin(theta), // y
-                         sin(phi));             // z
+for (float phi = -PI / 2; phi < PI / 2; phi += PI / M){
+    for (float theta = 0; theta < 2 * PI; theta += 2 * PI / N) {
+        n = noise(cos(phi) * cos(theta), // x
+                  cos(phi) * sin(theta), // y
+                  sin(phi));             // z
         theta += 2 * PI / N;
     }
 }
@@ -124,7 +192,7 @@ We carry out the generation by sampling configurable noise algorithms (Perlin, O
 -   **fractal type**---the algorithm used to modify the noise in each
     octave. It determines the persistence (how the amplitude is
     modified) as well as the gain and the offset. Can be **billow**,
-    **deCarpenterSwiss**, **FBM**, **hybrid multi**, **multi** or
+    **deCarpenterSwiss**, **fractal brownian motion (FBM)**, **hybrid multi**, **multi** or
     **ridge multi**. For examples, see
     [here](https://joise.sudoplaygames.com/modules/#modulefractal).
 -   **scale**---determines the scale of the sampling volume. The noise
@@ -146,15 +214,7 @@ We carry out the generation by sampling configurable noise algorithms (Perlin, O
     range stage.
 
 
-The final stage of the procedural noise generation clamps the output to \\([0,1]\\) again, so that all negative values are mapped to 0, and all values greater than 1 are clamped to 1.
-
-We use the elevation directly as the height texture for the tessellation or parallax mapping shaders (this is out of the scope of this article). We use the humidity, together with the elevation, to determine the color using a look-up table. This allows us to color different regions atthe same elevation differently depending on the humidity value. We map the humidity value to the \\(x\\) coordinate and the elevation to \\(y\\). Both coordinates are normalized to \\([0,1]\\).
-
-Additionally, since the look-up table is just an image in disk, we can have many of them and use them in different situations, or even randomize which one is picked up. A simple look-up table would look like this. From left to right it maps less humidity (hence the yellows, to create deserts, and grays at the top, for rocky mountains) to more humidity (as we go right it gets greener, and the mountain tops get white snow).
-
-{{< fig src="/img/2021/12/procedural-surfaces/figures/procedural-lut.png" link="/img/2021/12/procedural-surfaces/figures/procedural-lut.png" title="The look-up table mapping dimensions are elevation and humidity." class="fig-center" width="40%" loading="lazy" >}}
-
-We can also hue-shift the look-up table by an extra **hue shift** parameter (in \\([0^{\circ}, 360^{\circ}]\\)) in order to produce further variation. The shift happens in the HSL color space, so we convert from RGB to HSL, modify the H (hue) value, and convert it back to RGB. Once the shift is established, we generate the diffuse texture by sampling the look-up table and shifting the hue. The specular texture is generated by assigning all heights equal to zero to a full specular value. Remember that all negative values were clamped to zero, so zero essentially equals water in the final height map.
+The final stage of the procedural noise generation clamps the output to \\([0,1]\\) again, so that all negative values are mapped to 0, and all values greater than 1 are clamped to 1. This means that water is mapped to 0 instead of negative values, but that doesn\'t change anything.
 
 Finally, we can also generate a normal map from the height map by determining elevation gradients in both \\(x\\) and \\(y\\). We use the normal map only when tessellation is unavailable or disabled. Otherwise it is not generated at all. The generation of the normal map is out of the scope of this article.
 
@@ -165,7 +225,7 @@ We can generate the clouds with the same algorithm and the same parameters as th
 
 ## Putting it all together
 
-This article may be a bit rushed, but I believe all the right ingredients are in. Below you can see an example of what Gaia Sky currently generates.
+In this article we have showed a bird's eye view of how to procedurally generate convincing planetary surfaces. As we said, in Gaia Sky we generate spherical maps which are then mapped to UV spheres, but we could as well produce cubemap faces and use cubemaps to do the texturing. Below you can see an example of what Gaia Sky currently generates.
 
 {{< fig src="/img/2021/12/procedural-surfaces/maps/procedural-maps-s.png" link="/img/2021/12/procedural-surfaces/maps/procedural-maps.png" title="Left to right and top to bottom, clouds map, diffuse texture, elevation map, normal map and specular map procedurally generated with Gaia Sky." class="fig-center" width="80%" loading="lazy" >}}
 
