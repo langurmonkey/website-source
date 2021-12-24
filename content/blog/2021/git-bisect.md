@@ -5,7 +5,7 @@ tags = ["programming", "git", "vcs", "english"]
 date = 2021-12-01
 linktitle = ""
 title = "Git bisect"
-description = ""
+description = "Go bug hunting armed with a binary search tree"
 featuredpath = "date"
 type = "post"
 +++
