@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "better-sqlite3": "^7.4.6",
+    "exiftool-json-db": "^1.0.1",
     "thumbsup": "^2.16.0"
   }
 }
