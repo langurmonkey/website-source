@@ -28,12 +28,15 @@ Below is a list of all the material I regularly use to take photos:
 *  Panasonic LUMIX DMC-LX10/15 {{< sp accent >}}[[`front`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/lumix-lx15-1.jpg), [`back`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/lumix-lx15-2.jpg)]{{</ sp >}}
 
 #### Lenses
+
+*  TTartisan 35mm f/1.4 manual prime
 *  Fujinon XC 15-45mm f/3.5-5.6 OIS PZ
 *  Canon EF 28-105mm f/3.5-4.5 USM II {{< sp accent >}}[[`wide`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/28-105_tall.jpg), [`top`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/28-105_top.jpg), [`filter detail`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/28-105_cap.jpg)]{{</ sp >}}
 *  Canon EF 50mm f/1.8 II {{< sp accent >}}[[`top`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/50mm_top.jpg), [`wide`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/50mm_wide.jpg)]{{</ sp >}}
 *  Sigma 10-20mm f/4-5.6 EX DC HSM {{< sp accent >}}[[`wide`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/10-20_wide.jpg)]{{</ sp >}}
 
 #### Other stuff
+
 *  Viltrox EF-FX1 lens adapter to use Canon EF/EF-S lenses with Fujifilm X mounts
 *  Lowepro Nova 170 AW DSLR Camera Shoulder Bag
 *  Manfrotto Compact Advanced Smart 65" Tripod
