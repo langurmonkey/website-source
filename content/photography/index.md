@@ -29,8 +29,8 @@ Below is a list of all the material I regularly use to take photos:
 
 #### Lenses
 
-*  TTartisan 35mm f/1.4 manual prime
-*  Fujinon XC 15-45mm f/3.5-5.6 OIS PZ
+*  TTartisan 35mm f/1.4 manual prime {{< sp accent >}}[[`wide`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/35mm_wide.jpg), [`top`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/35mm_top.jpg), [`bottom`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/35mm_bottom.jpg), [`wide`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/35mm_side.jpg)]{{</ sp >}}
+*  Fujinon XC 15-45mm f/3.5-5.6 OIS PZ {{< sp accent >}}[[`attached`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/X-S10_right.jpg)]{{</ sp >}}
 *  Canon EF 28-105mm f/3.5-4.5 USM II {{< sp accent >}}[[`wide`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/28-105_tall.jpg), [`top`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/28-105_top.jpg), [`filter detail`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/28-105_cap.jpg)]{{</ sp >}}
 *  Canon EF 50mm f/1.8 II {{< sp accent >}}[[`top`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/50mm_top.jpg), [`wide`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/50mm_wide.jpg)]{{</ sp >}}
 *  Sigma 10-20mm f/4-5.6 EX DC HSM {{< sp accent >}}[[`wide`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/10-20_wide.jpg)]{{</ sp >}}
