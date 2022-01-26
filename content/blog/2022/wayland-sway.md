@@ -32,9 +32,9 @@ It also has some drawbacks, which are especially important because they are what
 
 - Still somewhat immature (see [here](https://arewewaylandyet.com)).
 - Many applications are not yet Wayland-ready (and some will never be).
-- Lack of support for proprietary driver stacks (NVIDIA).
+- Lack of support for the proprietary NVIDIA driver, at least in `wlroots` (the Wayland compositor library of Sway).
 
-I don't want to try it yet in my various desktop computers until NVIDIA support is there. Unfortunately, I use NVIDIA in all my desktops because CUDA. However, my laptop does not have a discrete GPU, and the Intel iGPU (mesa) should be very well supported.
+I don't want to try it yet in my various desktop computers until NVIDIA support is there. Unfortunately, I use NVIDIA in all my desktops because CUDA (yes, I know about OpenCL, but CUDA is arguably superior in performance and ease of use). However, my laptop does not have a discrete GPU, and the Intel iGPU (mesa) should be very well supported.
 
 So I installed [Sway](https://swaywm.org), which is close to a drop-in replacement for i3. I then copied my i3 configuration from `~/.config/i3/config` to `~/.config/sway/config` and started it.
 
