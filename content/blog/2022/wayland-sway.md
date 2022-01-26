@@ -10,7 +10,7 @@ featuredpath = "date"
 type = "post"
 +++
 
-**Wayland** is a modern display server protocol that will eventually replace X11. It is still not quite a 100% there, but it has been improving steadily and gaining ground over the past years. It is expected to become the new default display server on Linux systems at some point in the near future.
+**Wayland** is a modern display server protocol that will eventually replace X11. It is still not quite a hundred percent there, but it has been improving steadily and gaining ground over the past years. It is expected to become the new default display server on Linux systems at some point in the near future... Whatever near means in that context.
 
 This past weekend I had some time to play around with **Sway**, a window manager and Wayland compositor that mimics i3. How did it go?
 
@@ -21,27 +21,26 @@ Why even care
 
 Well, Wayland brings some advantages over X11:
 
-- Sane and clean code base, especially when compared to XOrg's convoluted hack pile.
+- Sane and clean code base, especially when compared to XOrg's convoluted pile of hacks.
 - Simpler and more constrained.
-- In Wayland the compositor is the display server, so compositing (use of off-screen buffers for rendering) is a given. No screen tearing.
-- Better security, so that clients can't know about each other by default. Keylogging is not possible.
+- In Wayland the compositor is the display server, so compositing (use of off-screen buffers for rendering) is the default. No screen tearing.
+- Better security. Clients don't and can't know about each other by default. Key-logging is not possible.
 - Better performance and battery life.
-- Native support for Freesync and the like.
+- Native support for FreeSync and the like.
 
 It also has some drawbacks, which are especially important because they are what's actively preventing more distros and users to adopt it by default:
 
-- Still somewhat immature (see [here](https://arewewaylandyet.com)).
-- Many applications are not yet Wayland-ready (and some will never be).
-- Lack of support for the proprietary NVIDIA driver, at least in `wlroots` (the Wayland compositor library of Sway).
-
-I don't want to try it yet in my various desktop computers until NVIDIA support is there. Unfortunately, I use NVIDIA in all my desktops because CUDA (yes, I know about OpenCL, but CUDA is arguably superior in performance and ease of use). However, my laptop does not have a discrete GPU, and the Intel iGPU (mesa) should be very well supported.
+- Most implementations are still somewhat immature (see [here](https://arewewaylandyet.com)). `wlroots`, used in Sway, certainly is.
+- Many applications are not yet Wayland-ready (and some will never be), even though that's not really Wayland's fault.
+- Lack of support for the proprietary NVIDIA driver, at least in `wlroots`. The authors are somewhat militant against even considering issues tangentially related to this topic, which is a clear downside for me.
 
 So I installed [Sway](https://swaywm.org), which is close to a drop-in replacement for i3. I then copied my i3 configuration from `~/.config/i3/config` to `~/.config/sway/config` and started it.
+
 
 Starting Sway
 -------------
 
-I do not use a [display manager](/blog/2021/dont-need-dm), so I need to start my graphical sessions manually from the `tty`. For i3/X11, it is as easy as running the following (provided your `.xinitrc` is handsome enough):
+I do not use a [display manager](/blog/2021/dont-need-dm), so I start my graphical sessions manually from the `tty`. For i3/X11, it is as easy as running the following command (provided your `.xinitrc` is handsome enough):
 
 ```shell
  $  startx
@@ -53,10 +52,14 @@ In the case of Sway, we can just run the command directly:
  $  sway
 ```
 
+I tried to run it in my work PC (NVIDIA GTX 1070) and it didn't even want to try. The error message hinted at using the *funny* flag `--my-next-gpu-wont-be-nvidia` to skip the check and attempt running Sway anyway. It did not work. The flag was changed to the less belligerent `--unsupported-gpu` some time in October 2021. Unfortunately, it still does not work. I also tried a fork of `wlroots` with support for EGLStream, the NVIDIA counterpart to GBM. No luck either. I won't get rid of my NVIDIA cards, as I need CUDA (yes, I know about OpenCL, but CUDA is arguably superior in performance and ease of use), so I will let it go for the time being. 
+
+My laptop, however, does not have a discrete GPU, and the Intel iGPU (mesa) is very well supported.
+
 Configuration
 -------------
 
-Sway is supposed to be a drop-in replacement where the same configuration file can be used with either, and in my experience, it is *mostly* true. However, some adjustments had to be made.
+As I mentioned, Sway is supposed to be a drop-in replacement for i3, where the same configuration file can be used with either, and in my experience, this is *mostly* true. However, some adjustments had to be made.
 
 {{< fig src="/img/2022/01/screen-i3-x11_s.jpg" link="/img/2022/01/screen-i3-x11.jpg" title="My setup running i3 on X11." class="fig-center" width="50%" loading="lazy" >}}
 
