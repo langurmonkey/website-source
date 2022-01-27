@@ -52,9 +52,9 @@ In the case of Sway, we can just run the command directly:
  $  sway
 ```
 
-I tried to run it in my work PC (NVIDIA GTX 1070) and it didn't even want to try. The error message hinted at using the *funny* flag `--my-next-gpu-wont-be-nvidia` to skip the check and attempt running Sway anyway. It did not work. The flag was changed to the less belligerent `--unsupported-gpu` some time in October 2021. Unfortunately, it still does not work. I also tried a fork of `wlroots` with support for EGLStream, the NVIDIA counterpart to GBM. No luck either. I won't get rid of my NVIDIA cards, as I need CUDA (yes, I know about OpenCL, but CUDA is arguably superior in performance and ease of use), so I will let it go for the time being. 
+I tried to run it in my work PC (NVIDIA GTX 1070) and it didn't even want to start trying. The error message that came out hinted at using the *funny* flag `--my-next-gpu-wont-be-nvidia` to skip the check and attempt running Sway anyway. It did not work. The flag was changed to the less belligerent `--unsupported-gpu` some time during October 2021. Unfortunately, it still does not work. I also tried a fork of `wlroots` with support for EGLStreams (see [here](https://github.com/danvd/wlroots-eglstreams)), the NVIDIA counterpart to the more standard GBM by Mesa. No luck either. I won't get rid of my NVIDIA cards, as I need CUDA (yes, I know about OpenCL, but CUDA is arguably superior in performance and ease of use), so I'll forget about it for the time being and pick it up again at some point in the future. 
 
-My laptop, however, does not have a discrete GPU, and the Intel iGPU (mesa) is very well supported.
+My laptop, however, does not have a discrete GPU, and the Intel iGPU (Mesa) is very well supported.
 
 Configuration
 -------------
