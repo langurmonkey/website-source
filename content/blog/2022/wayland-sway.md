@@ -91,7 +91,6 @@ Many other stuff works via translation layers (``xwayland``) and I didn't even r
 What doesn't work
 -----------------
 
-- **System tray**---for the life of me I could not get ``i3blocks`` or ``waybar`` to display the system tray with the tray icons, and it wasn't for lack of trying.
 - **Scrot** for screenshots. Using `grim` and `slurp` (with the [`grimshot`](https://gitlab.com/langurmonkey/dotfiles/-/blob/master/bin/grimshot) script).
 - **Opacity** was previously defined in the picom configuration file. Sway also acts as a compositor and does not support transparency. I am only interested in transparency for the terminal, so I just added it to the configuration of Alacritty. It's a shame that I lost the ability to blur the background provided by picom though.
 - I needed a new **exit script**. It is [here](https://gitlab.com/langurmonkey/dotfiles/-/blob/master/bin/sway-exit) (i3 version [here](https://gitlab.com/langurmonkey/dotfiles/-/blob/master/bin/i3exit)).
@@ -104,6 +103,11 @@ What doesn't work
 ```sway/config
 output "*" bg /path/to/image.jpg fill
 ```
+- **System tray**---for the life of me I could not get `i3blocks` or `waybar` to display the system tray with the tray icons, and it wasn't for lack of trying.
+
+{{< sp orange >}}Edit (2022-03-05):{{</ sp >}} turns out the system tray works with `waybar` now. I'm not exactly sure what changed, but it works, and that's what it looks like. ¯\(°_o)/¯
+
+{{< fig src="/img/2022/01/screen-waybar.jpg" link="/img/2022/01/screen-waybar.jpg" title="Waybar with the system tray to the right." class="fig-center" width="100%" loading="lazy" >}}
 
 Conclusion
 ----------
