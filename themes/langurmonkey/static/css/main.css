@@ -1444,7 +1444,7 @@ body.is-loading *, body.is-loading *:before, body.is-loading *:after {
 body, input, select, textarea {
     color: #646464;
     font-family: noto,sans-serif;
-    font-size: 15pt;
+    font-size: 14.5pt;
     font-weight: 400;
     line-height: 1.75;
 }
@@ -1452,7 +1452,7 @@ body, input, select, textarea {
 @media screen and (max-width: 1680px) {
 
     body, input, select, textarea {
-        font-size: 14pt;
+        font-size: 13.5pt;
     }
 
 }
@@ -1460,7 +1460,7 @@ body, input, select, textarea {
 @media screen and (max-width: 1280px) {
 
     body, input, select, textarea {
-        font-size: 13pt;
+        font-size: 12.5pt;
     }
 
 }
@@ -1484,7 +1484,7 @@ body, input, select, textarea {
 @media screen and (max-width: 480px) {
 
     body, input, select, textarea {
-        font-size: 11pt;
+        font-size: 10.5pt;
     }
 
 }
@@ -3289,7 +3289,7 @@ body {
     max-width: 100%;
     opacity: 1;
     padding: 1.5em;
-    width: 65em;
+    width: 75em;
 }
 
 body.is-menu-visible #wrapper {
