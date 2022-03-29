@@ -97,9 +97,9 @@ First we'll run with the fairly recent Java 17. This should give us a good estim
 
 <table width="100%" style="margin: 0 auto 0 auto;">
 <tr style="background-color:#00000000;border-width: 0px;"><td>
-{{< fig src="/img/2022/03/jdk17-normal.jpg" link="/img/2022/03/jdk17-normal.jpg" title="Wall-clock time in milliseconds for the six iteration counts and Java 17." class="fig-center" width="90%" loading="lazy" >}}
+{{< fig src="/img/2022/03/jdk17-normal.jpg" link="/img/2022/03/jdk17-normal.jpg" title="Wall-clock time in milliseconds for the six iteration counts and Java 17." class="fig-center" width="95%" loading="lazy" >}}
 </td><td>
-{{< fig src="/img/2022/03/jdk17-log.jpg" link="/img/2022/03/jdk17-log.jpg" title="Same plot with a logarithmic scale." class="fig-center" width="90%" loading="lazy" >}}
+{{< fig src="/img/2022/03/jdk17-log.jpg" link="/img/2022/03/jdk17-log.jpg" title="Same plot with a logarithmic scale." class="fig-center" width="95%" loading="lazy" >}}
 </td></tr></table>
 
 As we can see, we need to go to very high iteration counts (over a thousand million) to encounter statistically significative differences between for, while, foreach and the two iterators. The iterators seem to be the slowest, with the implicit variant faring a bit worse. However, this is only the case in the 1500 million iterations. The total differences are in the order of a couple hundred milliseconds, which is almost negligible, especially considering that these loops do absolutely nothing. I would expect that adding some logic in the loops would completely dominate the times, so we can conclude that with Java 17 it makes no significant difference what loop variant we use in terms of processing time.
@@ -110,9 +110,9 @@ As a point of comparison, we'll run the same tests with Java 8, which came out s
 
 <table width="100%" style="margin: 0 auto 0 auto;">
 <tr style="background-color:#00000000;border-width: 0px;"><td>
-{{< fig src="/img/2022/03/jdk8-normal.jpg" link="/img/2022/03/jdk8-normal.jpg" title="Wall-clock time in milliseconds for the six iteration counts and Java 8." class="fig-center" width="90%" loading="lazy" >}}
+{{< fig src="/img/2022/03/jdk8-normal.jpg" link="/img/2022/03/jdk8-normal.jpg" title="Wall-clock time in milliseconds for the six iteration counts and Java 8." class="fig-center" width="95%" loading="lazy" >}}
 </td><td>
-{{< fig src="/img/2022/03/jdk8-log.jpg" link="/img/2022/03/jdk8-log.jpg" title="Same plot with a logarithmic scale." class="fig-center" width="90%" loading="lazy" >}}
+{{< fig src="/img/2022/03/jdk8-log.jpg" link="/img/2022/03/jdk8-log.jpg" title="Same plot with a logarithmic scale." class="fig-center" width="95%" loading="lazy" >}}
 </td></tr></table>
 
 Woah. Right off the bat, we see that the performance of iterators has improved a lot between Java 8 and 17. Also, we see that `for`, `while` and `forEach()` are all almost always FASTER in Java 8! That is surprising and unexpected. I'm not sure what the reason for that is, but it could be attributed to runtime noise, since the differences are not very large. In Java 8 it may make more sense to avoid using iterators for very performance critical applications that iterate on stuff all the time. Otherwise, I think that this won't make much difference in a production environment. The rest of the application will also clearly dominate performance here, with an impact orders of magnitude larger than what the different loop variants might have.
