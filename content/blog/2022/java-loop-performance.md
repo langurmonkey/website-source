@@ -36,8 +36,8 @@ The classic, well-known `while` loop.
 
 ``` java
 int i = 0;
-while (i < DATA.size()) {
-    Byte s = DATA.get(i);
+while (i < array.size()) {
+    Byte s = array.get(i);
     i++;
 }
 ```
@@ -47,7 +47,7 @@ while (i < DATA.size()) {
 The `forEach()` method from the streams API. This is very compact and not using it requires some extra willpower.
 
 ``` java
-DATA.forEach((s) -> {});
+array.forEach((s) -> {});
 ```
 
 ### Iterator
@@ -55,7 +55,7 @@ DATA.forEach((s) -> {});
 An explicit iterator. Ugly, ugly.
 
 ``` java
-Iterator<Byte> iterator = DATA.iterator();
+Iterator<Byte> iterator = array.iterator();
 while (iterator.hasNext()) {
     Byte next = iterator.next();
 }
@@ -66,7 +66,7 @@ while (iterator.hasNext()) {
 This for loop uses an iterator implicitly under the hood.
 
 ``` java
-for (Byte next : DATA) {}
+for (Byte next : array) {}
 ```
 
 ## The code
