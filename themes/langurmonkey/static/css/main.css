@@ -1703,7 +1703,6 @@ pre code {
     display: block;
     line-height: 1.3em;
     padding: 1em 0.6em;
-    overflow-x: auto;
     color: var(--bg-color);
 }
 

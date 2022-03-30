@@ -22,31 +22,31 @@ In my case, since I only need to read text files line by line, reading is the ea
 The snippet below shows how to read a text file by memory mapping it (memory map creation highlighted).
 
 {{< highlight rust "linenos=table,hl_lines=5 6" >}}
-    pub fn load_file(&self, file: &str) {
-        let mut skipped: usize = 0;
-        let is_gz = file.ends_with(".gz") || file.ends_with(".gzip");
-        let f = File::open(file).expect("Error: file not found");
-        // Create the memory mapped buffer
-        let mmap = unsafe { Mmap::map(&f).expect(&format!("Error mapping file {}", file)) };
+pub fn load_file(&self, file: &str) {
+    let mut skipped: usize = 0;
+    let is_gz = file.ends_with(".gz") || file.ends_with(".gzip");
+    let f = File::open(file).expect("Error: file not found");
+    // Create the memory mapped buffer
+    let mmap = unsafe { Mmap::map(&f).expect(&format!("Error mapping file {}", file)) };
 
-        let mut reader: Box<dyn Read>;
-        if is_gz {
-            // pass buffer slice to GzDecoder if we're reading a gzip file
-            reader = Box::new(GzDecoder::new(&mmap[..]));
-        } else {
-            // otherwise, just box the slice!
-            reader = Box::new(&mmap[..]);
-        }
+    let mut reader: Box<dyn Read>;
+    if is_gz {
+        // pass buffer slice to GzDecoder if we're reading a gzip file
+        reader = Box::new(GzDecoder::new(&mmap[..]));
+    } else {
+        // otherwise, just box the slice!
+        reader = Box::new(&mmap[..]);
+    }
 
-        for line in io::BufReader::new(reader.as_mut()).lines() {
-            match self.parse_line(line.expect("Error reading line")) {
-                Some(part) => {
-                    // process line here
-                }
-                None => skipped += 1,
+    for line in io::BufReader::new(reader.as_mut()).lines() {
+        match self.parse_line(line.expect("Error reading line")) {
+            Some(part) => {
+                // process line here
             }
+            None => skipped += 1,
         }
     }
+}
 {{< /highlight >}}
 
 
