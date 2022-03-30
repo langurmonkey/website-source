@@ -117,6 +117,10 @@ As a point of comparison, we'll run the same tests with Java 8, which came out s
 
 Woah. Right off the bat, we see that the performance of iterators has improved a lot between Java 8 and 17. Also, we see that `for`, `while` and `forEach()` are all almost always FASTER in Java 8! That is surprising and unexpected. I'm not sure what the reason for that is, but it could be attributed to runtime noise, since the differences are not very large. In Java 8 it may make more sense to avoid using iterators for very performance critical applications that iterate on stuff all the time. Otherwise, I think that this won't make much difference in a production environment. The rest of the application will also clearly dominate performance here, with an impact orders of magnitude larger than what the different loop variants might have.
 
+Below is an animated gif to better compare the results of Java 17 vs Java 8.
+
+{{< fig src="/img/2022/03/jdk-comparison.gif" link="/img/2022/03/jdk-comparison.gif" title="Animation comparing the performance results between Java 8 and Java 17." class="fig-center" width="50%" loading="lazy" >}}
+
 ## Final notes
 
 You can find the raw data and the spreadsheets in the [`results`](https://gitlab.com/langurmonkey/java-loop-performance/-/tree/master/results) directory of the project.
