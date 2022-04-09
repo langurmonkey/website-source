@@ -34,6 +34,7 @@ showpagemeta = "false"
 
 ### Talks, seminars and lectures
 
+*   **2021-11-25**: CNES COMET OPS, "Outils 3D dans le spatial", Balma, France/Online --- Gaia Sky[^cometops]
 *   **2021-03-18**: DPAC Consortium Meeting 2021, Online --- Gaia Sky status update[^dpac2021]
 *   **2021-03-17**: DPAC Consortium Meeting 2021, Online --- [Gaia Sky tutorial](https://odysee.com/@GaiaSky:8/gaia-sky-tutorial-009-dpac-2021-online:3)[^dpac2021] [^gstut]
 *   **2020-05-27**: Eurographis&Eurovis 2020, Online --- Visual Analysis of the Finite-Time Lyapunov Exponent[^vaftle] [^eurovis2020]
@@ -73,6 +74,7 @@ simulations and SAMs](/pdf/GalaxyFormation.pdf).
 *   **2011** - _Cosmological Parameters and Primordial Nucleosynthesis_ course, [Classical Cosmological Tests](/pdf/PCNSP-ClassicalTestsPres.pdf).
 
 
+[^cometops]: CNES COMET OPS "Outils 3D dans le spatial": https://www.comet-cnes.fr/evenements/outils-3d-dans-le-spatial-bilan-sur-5-ans
 [^dpac2021]: DPAC Consortium Meeting 2021: https://zah.uni-heidelberg.de/talks-seminars-events/gaia-dpac-2021-153-1932021/
 [^gstut]: Gaia Sky tutorial (DPAC 2021): https://gaia.ari.uni-heidelberg.de/gaiasky/docs/workshops/dpac-plenary-online-2021.html
 [^eurovis2020]: Eurographics & Eurovis 2020 program: https://conferences.eg.org/egev20/program/#wednesday

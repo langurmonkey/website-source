@@ -28,7 +28,7 @@ You can get more information on how this is calculated in this <strong><a href="
 </table>
 <h3>Download</h3>
 <p>We provide a compressed file with the application ready to execute in full screen mode. It only works in Windows and Linux.</p>
-<ul><li><strong><a href="/pkg/ICRS.tar.gz">Celestial pole motion - v0.1 - TAR.GZ</a></strong>.</li></ul>
+<ul><li><strong><a href="/pkg/ICRS.tar.gz" download>Celestial pole motion - v0.1 - TAR.GZ</a></strong>.</li></ul>
 <h3>Run</h3>
 <p>In order to run follow the given instructions:</p>
 <ul><li><strong>Linux</strong> - Give execution permissions to the <em>run.sh</em> file and run it.</li>
