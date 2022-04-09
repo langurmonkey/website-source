@@ -2666,7 +2666,7 @@ dl dd {
 .mini-posts {
     padding: 0.4em 1em 0.4em 1em;
     margin: 0 auto 0 auto;
-    max-width: 70em;
+    max-width: 60em;
 }
 
 @media screen and (max-width: 980px) {
@@ -3288,7 +3288,7 @@ body {
     max-width: 100%;
     opacity: 1;
     padding: 1.5em;
-    width: 75em;
+    width: 68em;
 }
 
 body.is-menu-visible #wrapper {
