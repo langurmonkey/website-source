@@ -1,0 +1,24 @@
+:root {
+    --title-color: #d46a6a;
+    --title-color-hover: #801515;
+    --link-color: #407f7f;
+    --link-color-dark: #407f7f;
+    --link-color-hover: #226666;
+    --code-color: #7b9f35;
+    --time-color: #999;
+
+    --bg-color: #fefefe;
+    --fg-color: #033;
+
+    --bg-color-dark: #001717;
+    --fg-color-dark: #bbb;
+
+    --bg-hint-title: #f35888;
+    --bg-hint-body: #fa98c8;
+    --fg-hint-title: #f3f3f3;
+    --fg-hint-body: #222;
+
+    --kbd-bg: #ddd;
+    --kbd-fg: #333;
+    --kbd-border: #cdcdcd;
+}
