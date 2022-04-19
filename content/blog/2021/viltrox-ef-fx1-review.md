@@ -70,7 +70,7 @@ I was perplexed. Results are vastly different depending on the firmware version.
 I encountered two types of error. In the first, which I call `{{< sp red >}}"turn off" error{{</ sp >}}`, the camera displays a notice that reads "TURN OFF THE CAMERA AND TURN ON AGAIN", after a while. It does not happen when the camera is switched on, but rather at random when focusing. It happens more often with some versions than others too. Turning of the camera and on again seems to do the trick in this case.
 The second error, `{{< sp orange >}}black screen ERR{{</ sp >}}`, is a show stopper. The camera screen is frozen and all operations cease. I couldn't even turn it off with the switch button, so I had to take out the battery pack and put it back in again. Fortunately this only happened with firmware `2.28`.
 
-{{< fig src="/img/2021/11/viltrox-error_s.jpg" link="/img/2021/11/viltrox-error.jpg" title="The 'turn off' erro in the table looks like this." width="60%" class="fig-center" loading="lazy" >}}
+{{< fig src="/img/2021/11/viltrox-error_s.jpg" link="/img/2021/11/viltrox-error.jpg" title="The 'turn off' error in the table looks like this." width="60%" class="fig-center" loading="lazy" >}}
 
 As you can see in the table, I had to go pretty deep, all the way down to `2.14`, to find something minimally usable. This version works respectably with both Canons, and also with the Sigma, but from time to time the "turn off" error pops up and the camera needs to be restarted. Auto focus is pretty snappy and somewhat quick. Aperture controls work, and so does EXIF transmission.
 
