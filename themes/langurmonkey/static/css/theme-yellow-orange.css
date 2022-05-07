@@ -1,5 +1,5 @@
 :root {
-    --title-color: #e6b800;
+    --title-color: #d0a600;
     --title-color-hover: #997a00;
     --link-color: #008fb3;
     --link-color-dark: #008fb3;
@@ -7,7 +7,7 @@
     --code-color: #f67830;
     --time-color: #999;
 
-    --bg-color: #fff;
+    --bg-color: #fafaff;
     --fg-color: #1c3a72;
 
     --bg-color-dark: #010915;
