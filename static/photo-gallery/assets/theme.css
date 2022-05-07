@@ -11,8 +11,8 @@ body {
   margin: 0;
 }
 body {
-  background: #181818;
-  color: #bbb;
+  background: #010915;
+  color: #1c3a72;
   font-family: open sans, sans-serif;
   font-size: 16px;
   font-weight: lighter;
@@ -39,8 +39,8 @@ a {
   padding: 2em;
 }
 header {
-  background: #181818;
-  color: #f35888;
+  background: #010915;
+  color: #e6b800;
   font-size: 1.8em;
   margin-bottom: 1.1em;
 }
@@ -50,7 +50,7 @@ h1 {
   font-size: 1.5em;
 }
 h1 a {
-  color: #f35888;
+  color: #e6b800;
 }
 footer {
   color: #666;
