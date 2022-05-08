@@ -9,7 +9,7 @@ showpagemeta = "false"
 ## Software and scripts
 
 <article>
-<strong><a href="https://gitlab.com/langurmonkey/dotfiles">dotfiles</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-git-square"></i></strong> &mdash; My dotfiles project. Contains the configuration, bootstrapping and deploying of my <code>i3wm</code> environment.
+<strong><a href="https://gitlab.com/langurmonkey/dotfiles">dotfiles</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-git-square"></i></strong> &mdash; My dotfiles project. Contains the configuration, bootstrapping and deploying of my i3 (X11) and Sway (Wayland) environments.
 </article>
 <br />
 <article>
