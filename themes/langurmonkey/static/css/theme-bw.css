@@ -1,0 +1,25 @@
+:root {
+    --title-color: #d0a600;
+    --title-color-hover: #d0a600;
+    --link-color: #222;
+    --link-color-dark: #aaa;
+    --link-color-hover: #666;
+
+    --code-color: #888;
+    --time-color: #888;
+
+    --bg-color: #f0f0f0;
+    --fg-color: #111;
+
+    --bg-color-dark: #111;
+    --fg-color-dark: #f0f0f0;
+
+    --bg-hint-title: #e6b800;
+    --bg-hint-body: #ffe870;
+    --fg-hint-title: #f3f3f3;
+    --fg-hint-body: #222;
+
+    --kbd-bg: #ccc;
+    --kbd-fg: #333;
+    --kbd-border: #ababab;
+}

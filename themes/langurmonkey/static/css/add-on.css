@@ -443,7 +443,6 @@ div.recent-posts-item a {
 div.recent-posts-item time {
     font-family: courier,monospace;
     letter-spacing: -0.05em;
-    color: #aaa;
     font-size: 0.6em;
     margin-right: 0.5em;
 }
@@ -627,9 +626,7 @@ a.footnote-ref {
     font-family: monospace;
     font-size: 0.7em;
     display: inline-block;
-    background-color: #181818;
-    color: #aaa;
-    border: 1px #444 solid;
+    background: rgba(160,160,160,0.15);
     border-bottom: 0px;
     padding: 0 1.5em 0 1.5em;
     vertical-align: bottom;
@@ -654,7 +651,7 @@ aside#toc {
     width: 16em;
     padding-left: 1.5em;
     font-family: sans-serif;
-    border-left: solid 2px rgba(127, 127, 127, .2);
+    border-left: solid 1px rgba(127, 127, 127, .2);
 }
 #toc ol, ul {
     padding-inline-start: 0px;
@@ -709,7 +706,7 @@ table.menu-table-index {
 }
 table.menu-table-index a {
     font-family: monospace;
-    border-bottom-style: none;
+    text-decoration: none;
 }
 table.menu-table-index tr {
     background-color: #00000000 !important;
@@ -721,20 +718,16 @@ table.menu-table-index td {
 }
 table.menu-table-index i {
     font-size: 3em;
-    color: var(--fg-color);
     margin-bottom: 0.2em;
 }
 div.menu-table-item {
-    border: 1px solid var(--fg-color);
     border-radius: 20px;
     margin: 0 auto 0 auto;
     max-width: 18em;
     padding: 1em;
     white-space: nowrap;
-    background-color: #33333322;
 }
 div.menu-table-item:hover {
-    background-color: #33333366;
     color: var(--title-color);
 }
 div.menu-table-item:hover i {
