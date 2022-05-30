@@ -44,13 +44,12 @@ pre {
     color: #000000;
 }
 #header .shell {
-    font-size: 0.8em;
-    color: var(--link-color);
+    font-size: 1em;
     padding-left: 0.4em;
     font-weight: 800;
 }
 #header .homefolder {
-    font-size: 0.8em;
+    font-size: 1em;
     color: var(--code-color);
     padding-left: 0.2em;
     font-weight: 600;
@@ -149,10 +148,6 @@ article.post ul {
 }
 #header h2:before {
     content: none;
-}
-
-#header h2 a {
-    font-size: 0.8em;
 }
 
 @media screen and (max-width: 736px) {
