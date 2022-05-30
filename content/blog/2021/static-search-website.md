@@ -115,7 +115,7 @@ weight = -170
 +++
 
 <p>
-<input id="search" type="text" placeholder="Enter your search query here">
+<input id="search" type="text" placeholder="Search...">
 </p>
 
 <ul id="results"></ul>

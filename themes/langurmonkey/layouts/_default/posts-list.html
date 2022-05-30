@@ -1,39 +1,34 @@
-
 {{ partial "general-title" . }}
 
 {{ partial "header" . }}
-    {{ partial "navbar" . }}
-    <!-- Main -->
-    <main>
-        <article class="post">
-            {{ $.Scratch.Set "h1" true }}
-            {{ .Render "header" }}
-            <div id="content">
-                {{ .Content }}
-            </div>
-            {{ $.Scratch.Set "postsList" .Site.Pages }}
-            {{ $.Scratch.Set "postLimit" 400 }}
-            <div class="posts-list">
-                {{ range first ($.Scratch.Get "postLimit") (where ($.Scratch.Get "postsList") "Type" "post") }}
-                <div class="post-in-list">
-                    {{ $.Scratch.Set "dateType" .Date }}
-                    <time class="published" datetime='{{ ($.Scratch.Get "dateType").Format "2006-01-02" }}'>[ {{ ($.Scratch.Get "dateType").Format "January 2, 2006" }} ]</time>
-                    <a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title | truncate 55 }}</a>
-                </div>
-                {{ end }}
-            </div>
+{{ partial "navbar" . }}
+<!-- Main -->
+<main>
+  <article class="post">
+    {{ $.Scratch.Set "h1" true }}
+    {{ .Render "header" }}
+    <div id="content">
+      {{ .Content }}
+    </div>
+    {{ $.Scratch.Set "postsList" .Site.Pages }}
+    {{ $.Scratch.Set "postLimit" 400 }}
+    <div class="posts-list">
+      {{ range first ($.Scratch.Get "postLimit") (where ($.Scratch.Get "postsList") "Type" "post") }}
+      <div class="post-in-list">
+        {{ $.Scratch.Set "dateType" .Date }}
+        <time class="published" datetime='{{ ($.Scratch.Get "dateType").Format "2006-01-02" }}'>[ {{ ($.Scratch.Get
+          "dateType").Format "2006-01-02" }} ]</time>
+        <a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title | truncate 55 }}</a>
+      </div>
+      {{ end }}
+    </div>
 
-            {{ if ge (len (where .Site.Pages "Type" "post")) ($.Scratch.Get "postLimit") }}
-            <a href=
-               {{ with .Site.Params.viewMorePostLink }}
-               {{ . }}
-               {{ else }}
-               "/post/"
-               {{ end }}
-               class="button">View more posts</a>
-            {{ end }}
-            
-        </article>
-    </main>
-    <!--  {{ partial "sidebar" . }} -->
+    {{ if ge (len (where .Site.Pages "Type" "post")) ($.Scratch.Get "postLimit") }}
+    <a href={{ with .Site.Params.viewMorePostLink }} {{ . }} {{ else }} "/post/" {{ end }} class="button">View more
+      posts</a>
+    {{ end }}
+
+  </article>
+</main>
+<!--  {{ partial "sidebar" . }} -->
 {{ partial "footer" . }}

@@ -420,7 +420,7 @@ div.recent-posts-item {
         min-width: 21em;
     }
 }
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 450px) {
     div.recent-posts-item {
         display: grid;
         margin-bottom: 0.4em;
@@ -621,7 +621,7 @@ a.footnote-ref {
     font-family: monospace;
     font-size: 0.7em;
     display: inline-block;
-    background: rgba(160,160,160,0.15);
+    background-color: rgba(160,160,160,0.15);
     border-bottom: 0px;
     padding: 0 1.5em 0 1.5em;
     vertical-align: bottom;

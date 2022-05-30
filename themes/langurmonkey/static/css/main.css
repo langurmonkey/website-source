@@ -1696,6 +1696,27 @@ pre code {
     display: block;
     line-height: 1.3em;
     padding: 1em 0.6em;
+    overflow-x: auto;
+}
+
+/* code blocks with x-scroll if needed. */
+.highlight pre code {
+    overflow-x: auto;
+}
+
+/* force display grid for good x-sizing. */
+.highlight pre {
+    display: grid;
+}
+
+/* line numbers don't get scroll. */
+td pre code {
+    overflow-x: visible !important;
+}
+
+/* language blocks do get scroll. */
+.highlight pre code[class^='language-'] {
+    overflow-x: auto !important;
 }
 
 hr {
@@ -2514,7 +2535,7 @@ div.post-in-list time{
     color: var(--time-color);
     font-size: 0.8em;
     display: inline-block;
-    width: 13.5em;
+    width: 9.5em;
 }
 @media screen and (max-width: 680px) {
     div.post-in-list time{
@@ -3005,6 +3026,17 @@ table tbody tr {
     border-right: 0;
 }
 
+/* remove border from code blocks. */
+.highlight table tbody tr {
+    border-style: hidden;
+}
+
+
+/* remove white bg from code blocks. */
+.data-language-block + div {
+    background-color: #00000000 !important;
+    overflow-x: auto;
+}
 table tbody tr:nth-child(2n + 1) {
     background-color: rgba(160, 160, 160, 0.075);
 }

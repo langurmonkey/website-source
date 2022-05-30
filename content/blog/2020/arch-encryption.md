@@ -18,7 +18,7 @@ type = "post"
 
 ---
 
-*{{< sp green >}}Disclaimer:{{</ sp >}} some of the steps in the Arch Linux installation procedure change from time to time, so I would recommend to check out the awesome [Arch Linux installation guide](https://wiki.archlinux.org/title/Installation_guide) in the Arch wiki to get a fully up-to-date picture of the process.*
+*{{< sp blue >}}Disclaimer:{{</ sp >}} some of the steps in the Arch Linux installation procedure change from time to time, so I would recommend to check out the awesome [Arch Linux installation guide](https://wiki.archlinux.org/title/Installation_guide) in the Arch wiki to get a fully up-to-date picture of the process.*
 
 ---
 
