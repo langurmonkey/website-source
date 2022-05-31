@@ -68,16 +68,16 @@ I was perplexed. Results are vastly different depending on the firmware version.
 {{< fig src="/photo-gallery/media/small/gear/viltrox-ef-fx1-canon-50mm.jpg" link="http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/viltrox-ef-fx1-canon-50mm.jpg" title="The Viltrox EF-FX1 attached to the Canon 50mm f/1.8 II." width="30%" class="fig-center" loading="lazy" >}}
 
 I encountered two types of error. In the first, which I call `{{< sp red >}}"turn off" error{{</ sp >}}`, the camera displays a notice that reads "TURN OFF THE CAMERA AND TURN ON AGAIN", after a while. It does not happen when the camera is switched on, but rather at random when focusing. It happens more often with some versions than others too. Turning of the camera and on again seems to do the trick in this case.
-The second error, `{{< sp orange >}}black screen ERR{{</ sp >}}`, is a show stopper. The camera screen is frozen and all operations cease. I couldn't even turn it off with the switch button, so I had to take out the battery pack and put it back in again. Fortunately this only happened with firmware `2.28`.
+The second error, `{{< sp orange >}}black screen ERR{{</ sp >}}`, is a show stopper. The camera screen is frozen and all operations cease. I couldn't even turn it off with the switch button, so I had to take out the battery pack and put it back in again. Fortunately this only happened with firmware 2.28.
 
 {{< fig src="/img/2021/11/viltrox-error_s.jpg" link="/img/2021/11/viltrox-error.jpg" title="The 'turn off' error in the table looks like this." width="60%" class="fig-center" loading="lazy" >}}
 
-As you can see in the table, I had to go pretty deep, all the way down to `2.14`, to find something minimally usable. This version works respectably with both Canons, and also with the Sigma, but from time to time the "turn off" error pops up and the camera needs to be restarted. Auto focus is pretty snappy and somewhat quick. Aperture controls work, and so does EXIF transmission.
+As you can see in the table, I had to go pretty deep, all the way down to 2.14, to find something minimally usable. This version works respectably with both Canons, and also with the Sigma, but from time to time the "turn off" error pops up and the camera needs to be restarted. Auto focus is pretty snappy and somewhat quick. Aperture controls work, and so does EXIF transmission.
 
 The situation is not ideal, but I'm willing to trade off some focusing speed and the occasional error in order to be able to use my old EF/EF-S lenses with my new Fuji.
 
 ## Wrap-up
 
-I'm keeping the adapter. It might seem shocking, but It works well enough for me to justify its asking price. Also, I think---hope---a lot of the errors in my tests are due to the X-S10 being unsupported, as it's a relatively new body. Hopefully support will come in time via firmware updates, and life will be good again. I'll make sure to publish and update if this happens. In the mean time, I'll keep using this with firmware `2.14`.
+I'm keeping the adapter. It might seem shocking, but It works well enough for me to justify its asking price. Also, I think---hope---a lot of the errors in my tests are due to the X-S10 being unsupported, as it's a relatively new body. Hopefully support will come in time via firmware updates, and life will be good again. I'll make sure to publish and update if this happens. In the mean time, I'll keep using this with firmware 2.14.
 
 {{< fig src="/photo-gallery/media/small/gear/viltrox-ef-fx1-side.jpg" link="http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/viltrox-ef-fx1-side.jpg" title="Side view of the adapter. It does not look bad, does it?" width="50%" class="fig-center" loading="lazy" >}}
