@@ -1443,9 +1443,9 @@ body.is-loading *, body.is-loading *:before, body.is-loading *:after {
 
 body, input, select, textarea {
     color: #646464;
-    font-family: noto,sans-serif;
+    font-family: sans-serif;
     font-size: 14.5pt;
-    font-weight: 400;
+    font-weight: 200;
     line-height: 1.75;
 }
 
@@ -1569,7 +1569,7 @@ a:hover {
 
 
 strong, b {
-    font-weight: 700;
+    font-weight: 400;
 }
 
 em, i {
@@ -3312,7 +3312,7 @@ body {
     max-width: 100%;
     opacity: 1;
     padding: 1.5em;
-    width: 60em;
+    width: 55em;
 }
 
 body.is-menu-visible #wrapper {
