@@ -90,18 +90,19 @@ article.post header .title p,
 article.post header .meta p,
 article.post header .meta span,
 article.post footer .stats {
-    font-family: courier, monospace;
+    font-family: sans-serif;
+    font-weight: 600;
     /* Theoretically for IE 8 & 9 (more valid) */
     /* ...but not required as filter works too */
     /* should come BEFORE filter */
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
 
     /* This works in IE 8 & 9 too */
     /* ... but also 5, 6, 7 */
-    filter: alpha(opacity=70);
+    filter: alpha(opacity=30);
 
     /* Modern Browsers */
-    opacity: 0.60;
+    opacity: 0.30;
 }
 article.post footer .tags {
     font-family: courier,monospace;
@@ -109,6 +110,7 @@ article.post footer .tags {
 }
 article.post header .meta p {
     font-size: 0.9em;
+    font-weight: 400;
 }
 
 article.post p,
