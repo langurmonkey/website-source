@@ -9,7 +9,7 @@ title = "Review of Particle Physics Simulator"
 type = "post"
 +++
 
-Turns out the German physics educational journal [*Physik in unserer Zeit*](http://onlinelibrary.wiley.com/journal/10.1002/(ISSN)1521-3943) (Physics in our time) published a thorough review of one of my Android apps, the Particle Physics Simulator back in January 2014. One of the authors of the article, *Jan-Philipp Burde*, contacted me a while back to let me know that he was preparing the article and to ask some information on how the code works, which I gladly provided. Then, he kindly contacted me again when the article was published in the January 2014 issue of the journal.
+Turns out the German physics educational journal [*Physik in unserer Zeit*](https://onlinelibrary.wiley.com/journal/10.1002/(ISSN)1521-3943) (Physics in our time) published a thorough review of one of my Android apps, the Particle Physics Simulator back in January 2014. One of the authors of the article, *Jan-Philipp Burde*, contacted me a while back to let me know that he was preparing the article and to ask some information on how the code works, which I gladly provided. Then, he kindly contacted me again when the article was published in the January 2014 issue of the journal.
 
 For what I could understand with my still basic German, the article talks about how the app can aid in the **teaching of gas dynamics**, providing some hints on the configuration set-up (no gravity, elastic collisions, etc.) in order to simulate a gas. For example, it teaches how to illustrate the concept of [Brownian motion](http://en.wikipedia.org/wiki/Brownian_motion), removing the gravity and creating several small-sized particles along with one or two big-sized particles.
 
