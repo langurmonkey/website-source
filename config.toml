@@ -87,6 +87,7 @@ uglyurls = false
 # These go in the footer
 [social]
     rss             = "index.xml"
+    codeberg        = "langurmonkey"
     gitlab          = "langurmonkey"
     lbry            = "@GaiaSky"
     email           = "me@tonisagrista.com"

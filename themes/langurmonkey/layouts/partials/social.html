@@ -1,6 +1,9 @@
 {{ with .Site.Social.rss }}
 <li><a href="/{{.}}" target="_blank" alt="RSS" title="RSS feed for this website">RSS</a></li>
 {{ end }}
+{{ with .Site.Social.codeberg }}
+<li><a href="//codeberg.org/{{.}}" target="_blank" alt="Codeberg" title="Codeberg repository">Codeberg</a></li>
+{{ end }}
 {{ with .Site.Social.gitlab }}
 <li><a href="//gitlab.com/{{.}}" target="_blank" alt="GitLab" title="GitLab repository">GitLab</a></li>
 {{ end }}

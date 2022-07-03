@@ -9,7 +9,7 @@ showpagemeta = "false"
 ## Software and scripts
 
 <article>
-<strong><a href="https://gitlab.com/langurmonkey/dotfiles">dotfiles</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-git-square"></i></strong> &mdash; My dotfiles project. Contains the configuration, bootstrapping and deploying of my i3 (X11) and Sway (Wayland) environments.
+<strong><a href="https://codeberg.org/langurmonkey/dotfiles">dotfiles</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-gitea"></i></strong> &mdash; My dotfiles project. Contains the configuration, bootstrapping and deploying of my i3 (X11) and Sway (Wayland) environments.
 </article>
 <br />
 <article>
@@ -21,15 +21,15 @@ showpagemeta = "false"
 </article>
 <br />
 <article>
-<strong><a href="https://gitlab.com/gaiasky/gaiasky-catgen">Gaia Sky catgen</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-git-square"></i></strong> &mdash; LOD catalog generation for Gaia Sky written in <a href="https://rust-lang.org">Rust</a>. It supports the integration of multiple catalogs using cross-match information, additional columns cross-referenced by id, extinction and reddening corrections and much more.
+<strong><a href="https://codeberg.org/gaiasky/gaiasky-catgen">Gaia Sky catgen</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-gitea"></i></strong> &mdash; LOD catalog generation for Gaia Sky written in <a href="https://rust-lang.org">Rust</a>. It supports the integration of multiple catalogs using cross-match information, additional columns cross-referenced by id, extinction and reddening corrections and much more.
 </article>
 <br />
 <article>
-<strong><a href="/blog/2013/rts-engine-preview/">RTS Engine</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-git-square"></i></strong> &mdash; Real time strategy game engine written in Java. Very early stage, but already usable. There is a private fork which contains much more advanced AI based on behavior trees and state machines, original graphics, sound, heights, and uses an entity component system (ECS) internally.
+<strong><a href="/blog/2013/rts-engine-preview/">RTS Engine</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-gitea"></i></strong> &mdash; Real time strategy game engine written in Java. Very early stage, but already usable. There is a private fork which contains much more advanced AI based on behavior trees and state machines, original graphics, sound, heights, and uses an entity component system (ECS) internally.
 </article>
 <br />
 <article>
-<strong><a href="https://gitlab.com/langurmonkey/rchip8">rCHIP8</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-git-square"></i></strong> &mdash; A <a href="/blog/2021/chip8-spec">CHIP-8</a> emulator/VM written in <a href="https://rust-lang.org">Rust</a>, with arbitrary display scaling, debug mode, emulation speed control and much more. <a href="/blog/2021/chip8-implementation">Here a write-up</a>.
+<strong><a href="https://codeberg.org/langurmonkey/rchip8">rCHIP8</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-gitea"></i></strong> &mdash; A <a href="/blog/2021/chip8-spec">CHIP-8</a> emulator/VM written in <a href="https://rust-lang.org">Rust</a>, with arbitrary display scaling, debug mode, emulation speed control and much more. <a href="/blog/2021/chip8-implementation">Here a write-up</a>.
 </article>
 <br />
 <article>
@@ -37,7 +37,7 @@ showpagemeta = "false"
 </article>
 <br />
 <article>
-<strong><a href="https://gitlab.com/langurmonkey/tsnake">tsnake</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-git-square"></i></strong> &mdash; A terminal snake game written in C++ using the ncurses library with support for different maps and tons of options. <a href="/blog/2019/learning-ncurses">Here a write-up</a>.
+<strong><a href="https://codeberg.org/langurmonkey/tsnake">tsnake</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-gitea"></i></strong> &mdash; A terminal snake game written in C++ using the ncurses library with support for different maps and tons of options. <a href="/blog/2019/learning-ncurses">Here a write-up</a>.
 </article>
 <br />
 <article>
@@ -45,7 +45,7 @@ showpagemeta = "false"
 </article>
 <br />
 <article>
-<strong><a href="https://gitlab.com/langurmonkey/markov-nl">markov-nl</a> <i class="fa-tss fa fa-python"></i> <i class="fa-tss fa fa-git-square"></i></strong> &mdash; A very minimalistic first-order Markov model for natural language generation based on text input.
+<strong><a href="https://codeberg.org/langurmonkey/markov-nl">markov-nl</a> <i class="fa-tss fa fa-python"></i> <i class="fa-tss fa fa-gitea"></i></strong> &mdash; A very minimalistic first-order Markov model for natural language generation based on text input.
 </article>
 <br />
 <img src="/img/drawings/projects_col_s.jpg"
