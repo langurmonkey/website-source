@@ -25,6 +25,10 @@ if [ $len -ne $len_dom ]; then
   exit 1
 fi
 
+  echo "Running minify script."
+# First, minify using the default theme (theme-bw)
+scripts/minify-all.sh theme-bw
+
 # iterate over all branches and deploy to each one with the matching domain.
 for i in ${!build_branches[@]}; do
   step=0
@@ -32,7 +36,7 @@ for i in ${!build_branches[@]}; do
   build_branch=${build_branches[$i]}
   domain=${domains[$i]}
 
-  echo "($((i+1))/$len)   Deploying site to branch '$build_branch' with domain '$domain'"
+  echo "($((i+1))/$len)   Deploying site to branch '$build_branch' with domain '$domain'."
 
   # delete previous site built, if it exists.
   if [ -d "$build_directory" ]; then

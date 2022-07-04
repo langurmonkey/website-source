@@ -71,7 +71,7 @@ for (Byte next : array) {}
 
 ## The code
 
-I set up a [repository](https://gitlab.com/langurmonkey/java-loop-performance) with the code I'm gonna be using to run the tests. The utility in question computes the CPU and wall-clock times (plus standard deviation) of the different loop variants using a configurable number of rounds and iterations per round, after a warm-up period. The warm-up period defaults to 5 million iterations per variant, and is used to allow the JIT compiler to optimize the code if needed before the actual test. The number of rounds and iterations can also be passed in as CLI arguments. Check out the repository [`README.md`](https://gitlab.com/langurmonkey/java-loop-performance/-/blob/master/README.md) file for more information.
+I set up a [repository](https://codeberg.org/langurmonkey/java-loop-performance) with the code I'm gonna be using to run the tests. The utility in question computes the CPU and wall-clock times (plus standard deviation) of the different loop variants using a configurable number of rounds and iterations per round, after a warm-up period. The warm-up period defaults to 5 million iterations per variant, and is used to allow the JIT compiler to optimize the code if needed before the actual test. The number of rounds and iterations can also be passed in as CLI arguments. Check out the repository [`README.md`](https://codeberg.org/langurmonkey/java-loop-performance/-/blob/master/README.md) file for more information.
 
 For instance, if you want to run the tests with 20 rounds and 500 million iterations per round, you'd run(after building and extracting the distribution package):
 
@@ -123,10 +123,10 @@ Below is an animated gif to better compare the results of Java 17 vs Java 8.
 
 ## Final notes
 
-You can find the raw data and the spreadsheets in the [`results`](https://gitlab.com/langurmonkey/java-loop-performance/-/tree/master/results) directory of the project.
+You can find the raw data and the spreadsheets in the [`results`](https://codeberg.org/langurmonkey/java-loop-performance/-/tree/master/results) directory of the project.
 
--  Java 17 [ [`csv`](https://gitlab.com/langurmonkey/java-loop-performance/-/blob/master/results/data-17.csv), [`ods`](https://gitlab.com/langurmonkey/java-loop-performance/-/blob/master/results/data-17.ods) ]
--  Java 8 [ [`csv`](https://gitlab.com/langurmonkey/java-loop-performance/-/blob/master/results/data-8.csv), [`ods`](https://gitlab.com/langurmonkey/java-loop-performance/-/blob/master/results/data-8.ods) ]
+-  Java 17 [ [`csv`](https://codeberg.org/langurmonkey/java-loop-performance/-/blob/master/results/data-17.csv), [`ods`](https://codeberg.org/langurmonkey/java-loop-performance/-/blob/master/results/data-17.ods) ]
+-  Java 8 [ [`csv`](https://codeberg.org/langurmonkey/java-loop-performance/-/blob/master/results/data-8.csv), [`ods`](https://codeberg.org/langurmonkey/java-loop-performance/-/blob/master/results/data-8.ods) ]
 
 ## Conclusion
 

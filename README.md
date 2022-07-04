@@ -1,20 +1,13 @@
 tonisagrista.com
 ================
 
-My website project. Visit it in [tonisagrista.com](https://tonisagrista.com).
+My website project, online at [tonisagrista.com](https://tonisagrista.com).
 
-Letsencrypt certificate renewal
--------------------------------
+Deployment
+----------
 
-To renew the certificate, just do:
-
-```bash
-certbot certonly --manual -d tonisagrista.com
-```
-
-Then go to the [repo configuration](https://gitlab.com/jumpinglangur/jumpinglangur.gitlab.io/pages)
-and update the certificate and key with `/etc/letsencrypt/live/tonisagrista.com/fullchain.pem` and
-`/etc/letsencrypt/live/tonisagrista.com/privkey.pem` respectively.
+The website is deployed in [Codeberg pages](https://codeberg.page). The `master` branch of this repository contains the Hugo sources. These need to be generated into the static website using the `hugo` CLI program (i.e. `hugo --minify`).
+The deployed website lives in branches other than `master`. Each branch serves a different domain. Run the `/deploy.sh` to deploy the site with the configuration that sits at the top of the same file.
 
 Minify
 ------
@@ -39,7 +32,7 @@ cd $WEB/themes/langurmonkey/static/js
 uglifyjs darkmode.js jquery.min.js skel.min.js codeblock.js util.js main.js > site-bundle.js
 ```
 
-To minify everything, do:
+To minify everything at once, do:
 
 ```bash
 scripts/minify-all.sh
