@@ -31,7 +31,7 @@ rsync -avh $WEB/public/ $WEBDEPLOY/
 cd $WEBDEPLOY
 git add .
 git commit -m "none: new deployment."
-git push --all
+git push -f --all
 
 echo "Done!"
 
