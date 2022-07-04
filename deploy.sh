@@ -85,6 +85,6 @@ for i in ${!build_branches[@]}; do
   echo "    ($step) Force-pushing to remote '${remote_name}', branch '${build_branch}'."
   git -C "${build_directory}" push --force "${remote_name}" "${build_branch}" || echo "    ERROR: Can't git push."
 
-  echo "$((i+1)) / $len : Finished deploying ${build_branch}."
+  echo "($((i+1))/$len)   Finished deploying ${build_branch}."
 done
 
