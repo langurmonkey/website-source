@@ -502,8 +502,6 @@ ul.icons {
 ul.posts-list-button {
     font-family: courier,monospace;
     letter-spacing: -0.05em;
-    border: solid 1px #555;
-    border-radius: 0.5em;
     display: block;
     text-align: center;
     width: 12em;

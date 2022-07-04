@@ -31,7 +31,7 @@ Now, let's add the `loading` attribute to the shortcode. To do so, we can just p
 We also need to modify the shortcode source, the `fig.html` file. The snippet below contains the whole file. I added line 11, which accepts the `loading` attribute and passes it on to the image tag. I also added some extra styling for the attribution data, but other than that it is Hugo's default `figure` shortcode.
 
 
-{{< highlight html "linenos=table" >}}
+{{< highlight txt "linenos=table" >}}
 <figure{{ with .Get "class" }} class="{{ . }}"{{ end }}>
     {{- if .Get "link" -}}
         <a href="{{ .Get "link" }}"
