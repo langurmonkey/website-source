@@ -24,13 +24,11 @@ If you are impatient, go ahead and [download Gaia Sky 2.2.0](https://zah.uni-hei
 ## Teaser trailer
 
 
-<video width="60%" style="display: block; margin: auto;" controls>
-  <source src="/img/2019/08/teaser-20200.mp4" type="video/mp4"></source>
-Your browser does not support the video tag.
-</video>
-
+<div style="text-align: center;">
+<iframe id="odysee-iframe" width="560" height="315" src="https://odysee.com/$/embed/gaia-sky-2-2-0-teaser-trailer/afc7190e0349892a53be08808198431a2021c76f?r=621u1MynW1hV1p9kTVvSiB3pZyjj9tJW" allowfullscreen></iframe>
+</div>
 <figcaption><h4>
-Teaser trailer (<a href="https://www.youtube.com/watch?v=2faYAuKQ1cE">YouTube link</a>)
+Teaser trailer (<a href="https://odysee.com/@GaiaSky:8/gaia-sky-2-2-0-teaser-trailer:a">Odysee link</a>)
 </h4></figcaption>
 
 
@@ -67,10 +65,9 @@ This allows us to better utilize the depth buffer at galactic and extracgalactic
 
 Also, using the new z-buffer we could rework the mesh rendering to better represent the galactic dust. Here is a video:
 
-<video width="60%" style="display: block; margin: auto;" controls>
-  <source src="/img/2019/08/dust-map.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+<div style="text-align: center;">
+<iframe id="odysee-iframe" width="560" height="315" src="https://odysee.com/$/embed/gaia-sky-2-2-0-rc7-dust-map-test/ae35dcfc91c8e8121cb3f32a8dc77f0d8181ccaa?r=621u1MynW1hV1p9kTVvSiB3pZyjj9tJW" allowfullscreen></iframe>
+</div>
 <figcaption><h4>
 Galactic dust map (data: <a href="http://galaxymap.org">@galaxy_map</a>)
 </h4></figcaption>

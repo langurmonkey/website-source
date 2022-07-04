@@ -31,12 +31,13 @@ About the user interface, we put some effort into making sure the addition and e
 
 Below is an early video of the state as of a month ago:
 
-<video width="70%" style="display: block; margin: auto;" controls>
-  <source src="/img/2019/03/keyframes.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+<div style="text-align: center;">
+<iframe id="odysee-iframe" width="560" height="315" src="https://odysee.com/$/embed/gaia-sky-2-2-0-rc8-keyframed-camera/8b7d1536d219266667583c4b4bfa4731f7ebe3bf?r=621u1MynW1hV1p9kTVvSiB3pZyjj9tJW" allowfullscreen></iframe>
+</div>
+<figcaption><h4>
+Keyframed camera paths (<a href="https://odysee.com/@GaiaSky:8/gaia-sky-2-2-0-rc8-keyframed-camera:8">Odysee link</a>)
+</h4></figcaption>
 
-<br/>
 Obviously, this still need some work and polish, but It has the potential to be a much nicer and convenient way to define camera paths in certain situations. A couple of problems to be addressed come to mind:
 
 - **Keyframe timing** - It is very difficult to adjust the keyframe time, as it should ideally depend on the distance between the current keyframe and the last. But this does not awlays work, as setting a constant camera speed is problematic in high distance range situations. Think of orbiting the Earth and then moving to Mars. You want the transition to Mars to happen smoothly with an ideally exponential dependency of speed upon distance to closest object (detach from Earth and attach to Mars halfway through). For that, the granularity (number of keyrames per unit space) must be just right, since the speed between two keyframes is essentially constant.
