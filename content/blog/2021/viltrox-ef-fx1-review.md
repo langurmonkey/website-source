@@ -19,7 +19,6 @@ A few days ago [I got my new camera](/blog/2021/fuji-x-s10-first-impressions), a
 I have tested the adapter with only my equipment, which I list below:
 
 - **Body**: Fujifilm X-S10
-
 - **Lenses**:
     - Canon EF 28-105mm f/3.5-4.5 USM II
     - Canon EF 50mm f/1.8 II

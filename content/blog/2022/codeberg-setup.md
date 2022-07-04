@@ -20,21 +20,18 @@ As always, a very good starting point is the documentation pages. In this case, 
 
 1. Create a public repository named `pages`, **or** create a `pages` branch in an existing public repository.
 2. Push your static webiste content into that repo or branch.
-3. Done! Your repository should be accessible at `https://USERNAME.codeberg.page/[/REPO][/@BRANCH]`. However, if you want to use your own domain you need:
+3. Done! Your repository should be accessible at `https://USER.codeberg.page/[/REPO][/@BRANCH]`. However, if you want to use your own domain you need (a) a `.domains` file with the domain name, and (b), the following DNS configuration:
 
-    * A `.domains` file with the domain name.
-    * The following DNS configuration:
+    - `A 217.197.91.145`
+    - `@ TXT [[BRANCH.]REPO.]USER.codeberg.page`
 
-        1. `A 217.197.91.145`
-        2. `@ TXT [[branch.]repo.]user.codeberg.page`
-
-That works pretty well. In my experience, the DNS records took a while to update and the HTTPS certificate (via Let's Encrypt) returned certificate errors for a while.
+That works pretty well. In my experience, the DNS records took a while to update and the HTTPS certificate (via Let's Encrypt) returned certificate errors for a while. After that short period, all worked just fine.
 
 ## More than one domain, no redirection
 
 However, the issue comes when trying to add two domains without redirection. You see, the `.domains` file contains a domain name in each line. The first domain name is the main one, while all the others are redirected to the first. What if you do not want redirection? The solution is to deploy your site to different branches, one for each domain. This involves pushing a different `.domains` file to each of the branches, and using a different `TXT` record for each domain name, pointing to the relevant branch. 
 
-Again, in my case, I generate my static site using Hugo from a repository that contains the source files (which lives in the `master` branch). To actually generate it, I need to invoke the CLI program `hugo`. This generates the static site in a sub-directory (named `public` by default), which I need to push to a different branch for each of my domains.
+Again, in my case, I generate my static site using Hugo from a repository that contains the source files (which lives in the `master` branch). To actually generate it, I need to invoke the CLI program `hugo`. This generates the static site in a sub-directory (named `public` by default), which I need to push to a different branch for each of my domains. I'm using the following branches for the listed domains:
 
 | Domain               | Branch        |
 |----------------------|---------------|
