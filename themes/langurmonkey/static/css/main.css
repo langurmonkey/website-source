@@ -3037,6 +3037,10 @@ table tbody tr {
 .data-language-block + div {
     background-color: #00000000 !important;
     overflow-x: auto;
+    font-size: 0.83em;
+}
+.data-language-block + pre {
+    font-size: 0.83em;
 }
 table tbody tr:nth-child(2n + 1) {
     background-color: rgba(160, 160, 160, 0.075);
