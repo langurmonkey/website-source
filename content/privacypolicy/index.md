@@ -9,4 +9,4 @@ This site strives to be as bloat-free as possible. It does not use cookies, trac
 
 This site serves, along with the HTML, 1 JavaScript file, 1 font file (fork awesome) and 1 CSS file. Some special pages, like the [search page](/search), may need an additional JavaScript file download. The posts that contain mathematical formulas are less than a handful, and they get the MathJax 3 JavaScript from this very domain without requiring an external CDN.
 
-All content is served from this domain. You can check the source code in [this repository](https://gitlab.com/langurmonkey/langurmonkey.gitlab.io).
+All content is served from this domain, and is hosted on [Codeberg Pages](https://codeberg.org), a non-profit organization providing VCS services and hosting to free and open source projects. You can check the source code in [this repository](https://codeberg.org/langurmonkey/website-source).
