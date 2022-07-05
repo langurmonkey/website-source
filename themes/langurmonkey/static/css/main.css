@@ -3147,7 +3147,8 @@ body {
 }
 #header h2 a {
     letter-spacing: normal;
-    font-size: 1em;
+    font-size: 0.8em;
+    font-weight: bolder;
 }
 
 #header .links {

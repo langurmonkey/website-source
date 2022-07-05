@@ -44,15 +44,15 @@ pre {
     color: #000000;
 }
 #header .shell {
-    font-size: 1em;
+    font-size: 0.8em;
     padding-left: 0.4em;
-    font-weight: 800;
+    font-weight: 600;
 }
 #header .homefolder {
-    font-size: 1em;
+    font-size: 0.8em;
     color: var(--code-color);
     padding-left: 0.2em;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 #intro p,
