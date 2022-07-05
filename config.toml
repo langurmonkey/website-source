@@ -6,12 +6,6 @@ preserveTaxonomyNames = true
 paginate = 6
 enableRobotsTXT = true
 canonifyURLs = true
-pygmentsUseClassic = false
-pygmentsCodeFences = true
-pygmentsCodeFencesGuessSyntax = false
-pygmentsUseClasses = false
-pygmentsStyle = "lovelace"
-canonifyurls = false
 relativeurls = true
 uglyurls = false
 
@@ -93,8 +87,23 @@ uglyurls = false
     email           = "me@tonisagrista.com"
     pgp             = "0x2FD2A59C1D734C1F"
 
-# Properties of the markdown render engine (goldmark)
 [markup]
+  # code highlight with chroma
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ''
+    hl_inline = false
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    noHl = false
+    style = 'monokailight'
+    tabWidth = 4
+  # Properties of the markdown render engine (goldmark)
   [markup.goldmark]
     [markup.goldmark.tableOfContents]
       endLevel = 3

@@ -15,6 +15,15 @@
 h1, h2 {
     text-transform: none;
 }
+dd.cv h1:before,
+dd.cv h2:before,
+dd.cv h3:before,
+dd.cv h4:before,
+dd.cv h5:before,
+dd.cv h6:before {
+  content: "";
+  left: 0;
+}
 
 ul {
     list-style-type: circle;

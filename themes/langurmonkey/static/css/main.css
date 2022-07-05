@@ -1589,12 +1589,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 2.8em 0 0.5em 0;
 }
 
-h1, h2  {
-    color: var(--title-color);
-}
-
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-    color: var(--title-color) !important;
     text-decoration: none !important;
 }
 
@@ -1606,6 +1601,30 @@ h5 a:hover,
 h6 a:hover {
     color: var(--title-color-hover) !important;
 }
+
+h1:before,
+h2:before,
+h3:before,
+h4:before,
+h5:before,
+h6:before {
+  content: "#";
+  left: -0.5rem;
+  color: var(--title-color);
+  position: absolute;
+  font-weight: bold;
+}
+aside h1:before,
+aside h2:before,
+aside h3:before,
+aside h4:before,
+figcaption h4:before,
+aside h5:before,
+aside h6:before {
+  content: "";
+  left: 0;
+}
+
 @media screen and (max-width: 980px) {
     h1, h2, h3, h4, h5, h6 {
         margin: 0 0 0.25em 0;
@@ -1689,7 +1708,7 @@ pre {
     margin: 0 0 0 0;
 }
 .dark-mode pre {
-    filter: invert(1);
+    filter: invert(1) hue-rotate(180deg);
 }
 
 

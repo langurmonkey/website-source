@@ -34,9 +34,9 @@ Below is an early video of the state as of a month ago:
 <div style="text-align: center;">
 <iframe id="odysee-iframe" width="560" height="315" src="https://odysee.com/$/embed/gaia-sky-2-2-0-rc8-keyframed-camera/8b7d1536d219266667583c4b4bfa4731f7ebe3bf?r=621u1MynW1hV1p9kTVvSiB3pZyjj9tJW" allowfullscreen></iframe>
 </div>
-<figcaption><h4>
+<figcaption>
 Keyframed camera paths (<a href="https://odysee.com/@GaiaSky:8/gaia-sky-2-2-0-rc8-keyframed-camera:8">Odysee link</a>)
-</h4></figcaption>
+</figcaption>
 
 Obviously, this still need some work and polish, but It has the potential to be a much nicer and convenient way to define camera paths in certain situations. A couple of problems to be addressed come to mind:
 

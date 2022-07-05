@@ -4,13 +4,17 @@
     {{ partial "navbar" . }}
     <!-- Main -->
     <main>
-        <h1>{{ .Title }}</h1>
+      <article class="post">
+        <header><div class="title">
+        <h1>Tag: {{ .Title }}</h1>
+        </div></header>
         {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
         {{ range $paginator.Pages }}
             {{ .Render "content-list" }}
         {{ end }}
 
         {{ partial "pagination" . }}
+      </article>
     </main>
     <!-- {{ partial "sidebar" . }} -->
 {{ partial "footer" . }}

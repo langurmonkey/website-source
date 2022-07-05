@@ -4,6 +4,7 @@
     {{ partial "navbar" . }}
     <!-- Main -->
     <div id="main">
+      <article class="post">
         {{ if .Site.Params.categoriesByCount }}
             {{ $.Scratch.Set "categories" .Data.Terms.ByCount }}
         {{ else }}
@@ -26,6 +27,7 @@
                 </li>
             {{ end }}
         </ul>
+      </article>
     </div>
 
     {{ $.Scratch.Set "showCategories" false }}
