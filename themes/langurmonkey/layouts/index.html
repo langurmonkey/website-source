@@ -17,7 +17,7 @@
     <section class="latest-posts">
       <h4 id="latest-posts" class="latest-posts-bottom">Latest Posts</h4>
       {{ if ge (len (where .Site.Pages "Type" "post")) ($.Scratch.Get "postLimit") }}
-      <span class="latest-posts-viewall">[<a href="/posts-list" class="button" style="">View all</a>]</span>
+      <span class="latest-posts-viewall"><a href="/posts-list">View all</a></span>
       {{ end }}
       <div class="posts-container">
         {{ $.Scratch.Set "recentPosts" .Site.Pages }}
