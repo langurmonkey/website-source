@@ -1569,7 +1569,7 @@ a:hover {
 
 
 strong, b {
-  font-weight: 400;
+  font-weight: 600;
 }
 
 em, i {
@@ -1583,13 +1583,14 @@ p {
 h1, h2, h3, h4, h5, h6 {
   font-size: 2em;
   font-family: open sans, sans-serif;
-  font-weight: 400;
+  font-weight: 800;
   line-height: 1.2;
   margin: 2.8em 0 0.5em 0;
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   text-decoration: none !important;
+  font-weight: 800;
 }
 
 h1 a:hover, 
@@ -1646,31 +1647,26 @@ h1 {
 h2 {
   margin-top: 1.9em;
   font-size: 1.7em;
-  font-weight: 400;
 }
 
 h3 {
   margin-top: 1.4em;
   font-size: 1.5em;
-  font-weight: 400;
 }
 
 h4 {
   margin-top: 1.0em;
   font-size: 1.25em;
-  font-weight: 400;
 }
 
 h5 {
   margin-top: 0.8em;
   font-size: 1.15em;
-  font-weight: 400;
 }
 
 h6 {
   margin-top: 0.5em;
   font-size: 1.05em;
-  font-weight: 400;
 }
 
 sub {
