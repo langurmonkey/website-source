@@ -1475,7 +1475,7 @@ body, input, select, textarea {
 @media screen and (max-width: 736px) {
 
   body, input, select, textarea {
-    font-size: 12.8pt;
+    font-size: 12.5pt;
   }
 
 }
@@ -1483,7 +1483,7 @@ body, input, select, textarea {
 @media screen and (max-width: 480px) {
 
   body, input, select, textarea {
-    font-size: 12.4pt;
+    font-size: 12.2pt;
   }
 
 }
@@ -1581,7 +1581,6 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-size: 2em;
   font-family: open sans, sans-serif;
   font-weight: 800;
   line-height: 1.2;
@@ -1642,31 +1641,32 @@ aside h6:before {
 
 h1 {
   margin-top: 1.2em;
+  font-size: 1.6em;
 }
 
 h2 {
   margin-top: 1.9em;
-  font-size: 1.7em;
+  font-size: 1.4em;
 }
 
 h3 {
   margin-top: 1.4em;
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 h4 {
   margin-top: 1.0em;
-  font-size: 1.25em;
+  font-size: 1.2em;
 }
 
 h5 {
   margin-top: 0.8em;
-  font-size: 1.15em;
+  font-size: 1.1em;
 }
 
 h6 {
   margin-top: 0.5em;
-  font-size: 1.05em;
+  font-size: 1.0em;
 }
 
 sub {
@@ -2895,13 +2895,13 @@ margin-right: 0.75em;
   }
 
   .post > header {
--moz-flex-direction: column;
+    -moz-flex-direction: column;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
     padding: 0.75em 0 0.25em 2em ;
     border-left: 0;
-width: 100%;
+    width: 100%;
   }
 
   .post > header .title {
@@ -2975,7 +2975,7 @@ justify-content: center;
   }
 
   .post > header .title h2 {
-    font-size: 1.5em;
+    font-size: 1.4em;
   }
 
 }
@@ -3159,7 +3159,7 @@ body {
   height: inherit;
   line-height: inherit;
   padding: 0 0 0 1.5em;
-  font-size: 2.1em;
+  font-size: 2em;
   white-space: nowrap;
   margin-top: 0;
 }
