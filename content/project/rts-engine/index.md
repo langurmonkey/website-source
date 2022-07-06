@@ -7,7 +7,7 @@ description = "An real time strategy game engine written in Java"
 showpagemeta = "false"
 +++
 
-{{< notice "Disclaimer" >}}
+{{< notice Disclaimer >}}
 This is a work-in-progress. The master branch is up to date with the latest development and may very possibly crash. Use it at your own risk.
 {{</ notice >}}
 
