@@ -10,13 +10,18 @@ featuredpath = "date"
 type = "post"
 +++
 
-In their own words, taken from [the docs](https://docs.codeberg.org/getting-started/what-is-codeberg/), *"Codeberg is a democratic community-driven, non-profit software development platform operated by Codeberg e.V. and centered around Codeberg.org, a Gitea-based software forge."*. Essentially, it is a non-profit platform run on donations for sharing free and open source software by providing a collaborative VCS environment based on [Gitea](gitea.io). I decided to move all my open source repositories from GitLab over to Codeberg, and that includes the hosting of this very website. Codeberg offers a [Pages](https://codeberg.page) component where users can deploy, publish and host their own static sites, just like GitHub or GitLab pages. However, the configuration right now is a bit more barebones than in those proprietary options, as one can't rely on a CI system to deploy the site for you. Additionally, a valid HTTPS certificate needs to be set up, and in my case it needs to work with my two domains (tonisagrista.com and sagrista.info), which adds a grain of complexity to the whole thing. This post documents the set up.
+In their own words, taken from [the docs](https://docs.codeberg.org/getting-started/what-is-codeberg/), *"Codeberg is a democratic community-driven, non-profit software development platform operated by Codeberg e.V. and centered around Codeberg.org, a Gitea-based software forge."*. Essentially, it is a non-profit platform run on donations for sharing free and open source software by providing a collaborative VCS environment based on [Gitea](gitea.io). One good day I decided to move all my open source repositories from GitLab over to Codeberg, and that includes the hosting of this very website. This is the story of this migration.
 
 <!--more-->
 
+## Why Codeberg pages?
+
+Codeberg offers a [Pages](https://codeberg.page) component where users can deploy, publish and host their own static sites, just like GitHub or GitLab pages. However, the configuration right now is a bit more barebones than in those other proprietary options, as you can't rely on a CI system to deploy the site for you. I like that, as I feel like I'm more in control of the whole process. I can produce the static site locally and then push it to the remote host. Codeberg also supports HTTPS via certificates provided by *Let's Encrypt*. The process of setting this up is totally transparent and, to be frank, surprised me for the better. In my particular case, I need the site to be available at my two domains (tonisagrista.com and sagrista.info), which adds a grain of complexity to the whole thing. 
+
+
 ## Start with the docs
 
-As always, a very good starting point is the documentation pages. In this case, a quick visit to [codeberg.page](https://codeberg.page) provides us with all the essential information at a glance:
+As always, a very good starting point is the official documentation. In this case, a quick visit to [codeberg.page](https://codeberg.page) provides the essential information at a glance:
 
 1. Create a public repository named `pages`, **or** create a `pages` branch in an existing public repository.
 2. Push your static webiste content into that repo or branch.
