@@ -29,7 +29,7 @@ Your browser does not support the video tag.
 
 Since we started using `GL_POINTS` for rendering point clouds (stars, particles, etc.), I have been aware that there were problems with the projection and re-projection with the cubemap mode. The solution was to rewrite the rendering systems so that all objects that used point primitives use now triangles which are billboard-oriented in the shaders. This provides consistent geometry through any re-projection. In the video below I compare the old mode with the new one. Especially look at the transitions between cubemap faces (marked with yellow lines). In the old method, the seams are clearly visible and the orientation of stars changes from face to face. The new mode does not have this problem.
 
-<div style="text-align: center;">
+<div class="videowrapper">
 <iframe id="lbry-iframe" width="80%" height="500" src="https://odysee.com/$/embed/cubemap-quads/fe088e204f70dd93defd1829bb04cb08c6298e81?r=621u1MynW1hV1p9kTVvSiB3pZyjj9tJW" allowfullscreen></iframe>
 </div>
 

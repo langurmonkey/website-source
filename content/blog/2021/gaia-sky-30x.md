@@ -26,7 +26,7 @@ Jump to the analysis for each of the versions directly:
 
 This version came out the same day as eDR3, and it was released along with the catalogs based on this data release. With a development cycle of almost 5 months since ``2.3.1``, it contains by far the most new features and improvements, but it does not lag behind when it comes to bug fixes. Below is a list of features, fixes, build changes and refactorings.  This is a major version, so I made a flashy teaser trailer, as it is customary:
 
-<div style="text-align: center;">
+<div class="videowrapper">
 <iframe id="lbry-iframe" width="80%" height="500" src="https://odysee.com/$/embed/gaia-sky-3-0-0-teaser-trailer/65b1fd96c6c75bb86e701b129450c8917a4bf2b7?r=621u1MynW1hV1p9kTVvSiB3pZyjj9tJW" allowfullscreen></iframe>
 </div>
 

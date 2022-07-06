@@ -25,7 +25,7 @@ showpagemeta = "false"
 </article>
 <br />
 <article>
-<strong><a href="/blog/2013/rts-engine-preview/">RTS Engine</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-gitea"></i></strong> &mdash; Real time strategy game engine written in Java. Very early stage, but already usable. There is a private fork which contains much more advanced AI based on behavior trees and state machines, original graphics, sound, heights, and uses an entity component system (ECS) internally.
+<strong><a href="/project/rts-engine">RTS Engine</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-gitea"></i></strong> &mdash; Real time strategy game engine written in Java. Very early stage, but already usable. There is a private fork which contains much more advanced AI based on behavior trees and state machines, original graphics, sound, heights, and uses an entity component system (ECS) internally.
 </article>
 <br />
 <article>
