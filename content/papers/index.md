@@ -6,16 +6,19 @@ title = "Papers and Academic material"
 showpagemeta = "false"
 +++
 
-### Peer-reviewed Papers
+### Peer-reviewed Papers --- First Author
 
+*   [Visual Analysis of the Finite-Time Lyapunov Exponent](https://vcg.iwr.uni-heidelberg.de/publications/pubdetails/Sagrista2020vaftle/) --- A. Sagristà, S. Jordan, F. Sadlo -- 2020, Computer Graphics Forum, [10.1111/cgf.13984](https://onlinelibrary.wiley.com/doi/10.1111/cgf.13984)
+*   [Gaia Sky: Navigating the Gaia Catalog](https://vcg.iwr.uni-heidelberg.de/publications/pubdetails/Sagrista2019GaiaSky/) --- A. Sagristà, S. Jordan, T. Müller, F. Sadlo -- 2019, IEEE Transactions on Visualization and Computer Graphics, [10.1109/TVCG.2018.2864508](https://doi.org/10.1109/TVCG.2018.2864508)
+*   [Topological Analysis of Inertial Dynamics](https://vcg.iwr.uni-heidelberg.de/publications/pubdetails/Sagrista2017inertialTopo/) --- A. Sagristà, S. Jordan, A. Just, F. Dias, L. G. Nonato, F. Sadlo -- 2016, IEEE Transactions on Visualization and Computer Graphics, [10.1109/TVCG.2016.2599018](https://doi.org/10.1109/TVCG.2016.2599018)
+
+### Peer-reviewed Papers --- Coauthor
 
 *   [Gaia Early Data Release 3: Summary of the contents and survey properties](https://doi.org/10.1051/0004-6361/202039657) --- Gaia Collaboration... A. Sagristà... -- 2020, A&A, Forthcoming article, [arXiv:2012.01533](https://arxiv.org/abs/2012.01533)
 *   [Gaia Early Data Release 3: The Gaia Catalogue of Nearby Stars](https://www.aanda.org/component/article?access=doi&doi=10.1051/0004-6361/202039498) --- Gaia Collaboration, R.L. Smart, ... A. Sagristà... -- 2020, A&A, Forthcoming article, [arXiv:2012.02061](https://arxiv.org/abs/2012.01533)
 *   [Gaia Early Data Release 3: Structure and properties of the Magellanic Clouds](https://www.aanda.org/component/article?access=doi&doi=10.1051/0004-6361/202039588) --- Gaia Collaboration, X. Luri, ... A. Sagristà... -- 2020, A&A, Forthcoming article, [arXiv:2012.02061](https://arxiv.org/abs/2012.01771)
 *   [Gaia Early Data Release 3: The Galactic anticentre](https://www.aanda.org/component/article?access=doi&doi=10.1051/0004-6361/202039714) --- Gaia Collaboration, T. Antoja, ... A. Sagristà... -- 2020, A&A, Forthcoming article, [arXiv:2101.05811](https://arxiv.org/abs/2101.05811)
 *   [Gaia Early Data Release 3: Acceleration of the solar system from Gaia astrometry](https://www.aanda.org/component/article?access=doi&doi=10.1051/0004-6361/202039734) --- Gaia Collaboration, S. Klioner, F. Mignard, ... A. Sagristà... -- 2020, A&A, Forthcoming article, [arXiv:2012.02036](https://arxiv.org/abs/2101.05811)
-*   [Visual Analysis of the Finite-Time Lyapunov Exponent](https://vcg.iwr.uni-heidelberg.de/publications/pubdetails/Sagrista2020vaftle/) --- A. Sagristà, S. Jordan, F. Sadlo -- 2020, Computer Graphics Forum, [10.1111/cgf.13984](https://onlinelibrary.wiley.com/doi/10.1111/cgf.13984)
-*   [Gaia Sky: Navigating the Gaia Catalog](https://vcg.iwr.uni-heidelberg.de/publications/pubdetails/Sagrista2019GaiaSky/) --- A. Sagristà, S. Jordan, T. Müller, F. Sadlo -- 2019, IEEE Transactions on Visualization and Computer Graphics, [10.1109/TVCG.2018.2864508](https://doi.org/10.1109/TVCG.2018.2864508)
 *   [Visualization of Parameter Sensitivity of 2D Time-Dependent Flow](https://vcg.iwr.uni-heidelberg.de/publications/pubdetails/Hanser2018parameterSensitivity://vcg.iwr.uni-heidelberg.de/publications/pubdetails/Hanser2018parameterSensitivity/) --- K. Hanser, O. Klein, B. Rieck, B. Wiebe, T. Selz, M. Piatkowski, A. Sagristà, B. Zheng, M. Lukácová, G. Craig, H. Leitte, F. Sadlo -- 2018, Lecture Notes in Computer Science: Advances is Visual Computing (Proceedings of International Symposium on Visual Computing), pp. 359–370
 *   [Gaia Data Release 2: Observations of solar system objects](https://doi.org/10.1051/0004-6361/201832900) --- Gaia Collaboration... A. Sagristà... -- 2018, A&A, 616 (2018) A13
 *   [Gaia Data Release 2: The celestial reference frame (Gaia-CRF2)](https://doi.org/10.1051/0004-6361/201832916) --- Gaia Collaboration... A. Sagristà... -- 2018, A&A, 616 (2018) A14
@@ -27,7 +30,6 @@ showpagemeta = "false"
 *   [Gaia Data Release 1: Testing parallaxes with local Cepheids and RR Lyrae stars](https://ui.adsabs.harvard.edu/link_gateway/2017A&A...605A..79G/doi:10.1051/0004-6361/201629925) --- Gaia Collaboration... A. Sagristà... -- 2017, A&A, 605 (2017) A79
 *   [Gaia Data Release 1: Open cluster astrometry: performance, limitations, and future prospects](https://doi.org/10.1051/0004-6361/201730552) --- Gaia Collaboration... A. Sagristà... -- 2017, A&A, 601 (2017) A19
 *   [VizieR Online Data Catalog: Gaia DR1 open cluster members](http://adsabs.harvard.edu/abs/2017yCat..36010019G) --- Gaia Collaboration... A. Sagristà... -- 2017, VizieR Online Data Catalog, J/A+A/601/A19
-*   [Topological Analysis of Inertial Dynamics](https://vcg.iwr.uni-heidelberg.de/publications/pubdetails/Sagrista2017inertialTopo/) --- A. Sagristà, S. Jordan, A. Just, F. Dias, L. G. Nonato, F. Sadlo -- 2016, IEEE Transactions on Visualization and Computer Graphics, [10.1109/TVCG.2016.2599018](https://doi.org/10.1109/TVCG.2016.2599018)
 *   [Gaia Data Release 1: Summary of the astrometric, photometric, and survey properties](http://dx.doi.org/10.1051/0004-6361/201629512) --- Gaia Collaboration... A. Sagristà... -- 2016, A&A, 595 (2016) A2
 *   [The Gaia mission](http://www.aanda.org/component/article?access=doi&doi=10.1051/0004-6361/201629272) --- Gaia Collaboration... A. Sagristà... -- 2016, A&A, 595 (2016) A1 
 *   [Leaving the Dark Ages with AMIGA](http://iopscience.iop.org/0067-0049/216/1/13) --- A. Manrique, E. Salvador-Solé, E. Juan, E. Hatziminaoglou, J. María Rozas, A. Sagristà, K. Casteels, G. Bruzual, G. Magris -- 2016, ApJS 216 13 
