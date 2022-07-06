@@ -9,7 +9,7 @@ title = "From Slick to Libgdx"
 type = "post"
 +++
 
-A couple of posts ago I mentioned I would write a few lines about my experience with the **migration of my RTS engine from [Slick](http://slick.ninjacave.com/) to [Libgdx](http://libgdx.badlogicgames.com/)** and that's what I'll do in this post. I'll be talking very lightly on some issues such as the code structure, the rendering process, the camera, etc. **If you need a starting tutorial please refer to the official documentation**, this is not what you are looking for. I'm just trying to give my impressions in the migration process I had to undertake. But first I want to back up a little and give a **quick overview of both libraries**.
+A couple of posts ago I mentioned I would write a few lines about my experience with the **migration of my [RTS engine](/blog/2013/rts-engine-preview) from [Slick](http://slick.ninjacave.com/) to [Libgdx](http://libgdx.badlogicgames.com/)** and that's what I'll do in this post. I'll be talking very lightly on some issues such as the code structure, the rendering process, the camera, etc. **If you need a starting tutorial please refer to the official documentation**, this is not what you are looking for. I'm just trying to give my impressions in the migration process I had to undertake. But first I want to back up a little and give a **quick overview of both libraries**.
 
 <!--more-->
 
