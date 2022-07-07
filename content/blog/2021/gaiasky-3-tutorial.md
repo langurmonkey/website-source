@@ -295,8 +295,8 @@ A few useful tips for working with datasets:
 
     1.  Click on the dataset preferences button <i class="fa fa-gear"></i>
     2.  Click on <kbd>Add filter</kbd>
-    3.  Select your attribute (declination \\(\delta\\)
-    4.  Select your comparator (\\(<\\))
+    3.  Select your attribute (declination \\(\delta\\))
+    4.  Select your comparator (\\(>\\))
     5.  Enter your value, in this case 50
     6.  Click <kbd>Ok</kbd>
     7.  The stars with a declination greater than 50 degrees should be filtered out
