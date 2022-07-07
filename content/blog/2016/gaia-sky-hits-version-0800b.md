@@ -31,6 +31,6 @@ This time around we bring on loads of improvements, bug fixes and new features. 
 -  Implemented interface to Gaia archive (now using mockup data), Simbad and Wikipedia.
 -  Implemented responsive positioning giving `RA/DEC` or `Lat/Lon` of mouse position.
 -  Lots of bug fixes and other minor improvements.
--  As usual, check the [full changelog](https://github.com/ari-zah/gaiasandbox/compare/0.707b...0.800b) for more detailed info.
+-  As usual, check the [full changelog](https://codeberg.org/gaiasky/gaiasky/compare/0.707b...0.800b) for more detailed info.
 
-You can get the new version for **Linux**, **Windows** and **OS X** in the official [Gaia Sky page](https://zah.uni-heidelberg.de/gaia/outreach/gaiasandbox/downloads/).
+You can get the new version for **Linux**, **Windows** and **OS X** in the official [Gaia Sky page](https://zah.uni-heidelberg.de/gaia/outreach/gaiasky/downloads/).

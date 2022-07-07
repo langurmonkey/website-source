@@ -12,7 +12,7 @@ featuredpath = "date"
 type = "post"
 +++
 
-Today we have published the first public BETA version (**v0.703b**) of the [Gaia Sandbox](http://www.zah.uni-heidelberg.de/gaia/outreach/gaiasky/), a real-time, 3D, astronomy visualisation application that runs on **Linux**, **Windows** and **MacOSX** systems. Its main purpose is to serve as an outreach platform to [ESA](http://sci.esa.int/)'s [Gaia](http://sci.esa.int/gaia/) mission, and it is free (as in freedom and gratis). It is also open source under the LGPL, so go [try it out](http://www.zah.uni-heidelberg.de/gaia/outreach/gaiasky/)!
+Today we have published the first public BETA version (**v0.703b**) of the [Gaia Sandbox](https://zah.uni-heidelberg.de/gaia/outreach/gaiasky/), a real-time, 3D, astronomy visualisation application that runs on **Linux**, **Windows** and **MacOSX** systems. Its main purpose is to serve as an outreach platform to [ESA](http://sci.esa.int/)'s [Gaia](http://sci.esa.int/gaia/) mission, and it is free (as in freedom and gratis). It is also open source under the LGPL, so go [try it out](https://zah.uni-heidelberg.de/gaia/outreach/gaiasky/)!
 
 <!--more-->
 
@@ -33,4 +33,4 @@ The Gaia Sandbox is a real time simulation of [Gaia](http://sci.esa.int/gaia/), 
 -  Works on Windows, Linux and MacOSX.
 
 Download the application from its home page, where you can also get more information on it:
-[Gaia Sandbox home page](http://www.zah.uni-heidelberg.de/gaia/outreach/gaiasky/).
+[Gaia Sandbox home page](https://zah.uni-heidelberg.de/gaia/outreach/gaiasky/).

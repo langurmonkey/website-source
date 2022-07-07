@@ -15,23 +15,23 @@ type = "post"
 [Gaia Sky](http://www.zah.uni-heidelberg.de/gaia/outreach/gaiasky) is here again with a brand new release packed with new features and bug fixes. Here are the most important:
 
 - New **spacecraft camera** mode -- Game on!
-- New **lens glow** effect
-- Added brightness and contrast controls
-- Improved **search** functionality
-- Updated textures
-- Added optional **crosshair** in focus mode
-- Implemented **360° mode** for 360 VR videos and panormas. See [gallery here](https://goo.gl/photos/kn2MvugZHYcr5Fty8)
-- Brand new [**documentation** in readthedocs.org](http://gaia-sky.rtfd.io)
+- New **lens glow** effect.
+- Added brightness and contrast controls.
+- Improved **search** functionality.
+- Updated textures.
+- Added optional **crosshair** in focus mode.
+- Implemented **360° mode** for 360 VR videos and panormas. See [gallery here](https://goo.gl/photos/kn2MvugZHYcr5Fty8).
+- Brand new [**documentation** in readthedocs.org](http://gaia-sky.rtfd.io). **Edit:** since then the documentation has moved to [gaia.ari.uni-heidelberg.de/gaiasky/docs](https://gaia.ari.uni-heidelberg.de/gaiasky/docs).
 
 <!--more-->
 
 Fixed bugs:
 
-- Configuration dialog appears at the center of focused screen
-- Fixed stereoscopic mode for large distances/eye separations
-- Fixed vector pool null pointer when multithreading is on
-- Fixed resizing and full screen toggle
-- Fixed connection to archive for DR1 sources
-- Lots of other minor issues
+- Configuration dialog appears at the center of focused screen.
+- Fixed stereoscopic mode for large distances/eye separations.
+- Fixed vector pool null pointer when multithreading is on.
+- Fixed resizing and full screen toggle.
+- Fixed connection to archive for DR1 sources.
+- Lots of other minor issues.
 
 As always, you can **download** Gaia Sky for your operating system (Linux, Windows, OS X) from our [home page](http://www.zah.uni-heidelberg.de/gaia/outreach/gaiasky/downloads).

@@ -9,7 +9,7 @@ title = "Gaia Sandbox version 0.704b"
 type = "post"
 +++
 
-I have been working hard these last couple of months and today I'm proud to announce the release of the second beta version of the [Gaia Sandbox](http://www.zah.uni-heidelberg.de/gaia2/outreach/gaiasky), the open source, free, astronomy sandbox focused on the [Gaia mission](http://sci.esa.int/gaia/).
+I have been working hard these last couple of months and today I'm proud to announce the release of the second beta version of the [Gaia Sandbox](https://zah.uni-heidelberg.de/gaia/outreach/gaiasky), the open source, free, astronomy sandbox focused on the [Gaia mission](http://sci.esa.int/gaia/).
 
 <!--more-->
 
@@ -27,6 +27,6 @@ It comes with lots of **bug fixes**, **features** and **improvements**. But do n
 -  Camera speed limits.
 -  Camera path recording and playing.
 -  HDR atmospheric scattering.
--  Check the [full list of changes](https://github.com/ari-zah/gaiasandbox/compare/0.703b...0.704b) since the last version in GitHub.
+-  Check the [full list of changes](https://codeberg.org/gaiasky/gaiasky/compare/0.703b...0.704b) since the last version in GitHub.
 
-So, what are you waiting for? Go [try it out](http://www.zah.uni-heidelberg.de/gaia2/outreach/gaiasandbox/#c1191), and if you find bugs or have suggestions, do not hesitate to [report](https://github.com/ari-zah/gaiasandbox/issues)!
+So, what are you waiting for? Go [try it out](https://.zah.uni-heidelberg.de/gaia/outreach/gaiasky), and if you find bugs or have suggestions, do not hesitate to [report](https://codeberg.org/gaiasky/gaiasky/issues)!

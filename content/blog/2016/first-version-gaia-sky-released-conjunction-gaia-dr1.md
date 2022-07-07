@@ -20,13 +20,13 @@ Last September 14 the first [Gaia](http://sci.esa.int/gaia/) catalog, Gaia Data 
 
 Here is the changelog. As always, for a full list of changes see [here](https://github.com/ari-zah/gaiasandbox/blob/master/CHANGELOG.md).
 
--  TGAS is now the default catalog. HYG can still be selected from the data tab in the config dialog
--  We can now also lock the orientation of the camera to that of the focus
--  Added new options to control star appearance (point size, minimum opacity, etc.)
+-  TGAS is now the default catalog. HYG can still be selected from the data tab in the config dialog.
+-  We can now also lock the orientation of the camera to that of the focus.
+-  Added new options to control star appearance (point size, minimum opacity, etc.).
 -  Added sliders to control draw distance in Level-of-detail catalogues such as TGAS.
--  Added new Planetarium mode
--  Added new red-cyan anaglyphic 3D mode
--  Added distortion in VR-headset 3D mode
--  Lots of bug fixes and adjustments
+-  Added new Planetarium mode.
+-  Added new red-cyan anaglyphic 3D mode.
+-  Added distortion in VR-headset 3D mode.
+-  Lots of bug fixes and adjustments.
 
 You can download the Linux (`deb`, `rpm`, installer, `aur`), Windows (32 and 64 bit version) or MacOS X versions [here](https://zah.uni-heidelberg.de/gaia/outreach/gaiasky/downloads/).
