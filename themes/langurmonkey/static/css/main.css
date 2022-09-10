@@ -1613,6 +1613,9 @@ h6:before {
   position: absolute;
   font-weight: bold;
 }
+#menu h3:before {
+  display: none;
+}
 aside h1:before,
 aside h2:before,
 aside h3:before,
