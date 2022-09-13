@@ -1,0 +1,22 @@
+2022-09-13T07:41:24.918Z thumbsup:error Error: Theme does not exist: /home/tsagrista/Projects/langurmonkey.gitlab.io/gallery-theme
+2022-09-13T07:41:24.918Z thumbsup:error     at Theme.validateStructure (/media/tsagrista/NeuDaten/Projects/website-source/node_modules/thumbsup/src/website/theme.js:51:13)
+2022-09-13T07:41:24.918Z thumbsup:error     at Theme.prepare (/media/tsagrista/NeuDaten/Projects/website-source/node_modules/thumbsup/src/website/theme.js:24:10)
+2022-09-13T07:41:24.918Z thumbsup:error     at /media/tsagrista/NeuDaten/Projects/website-source/node_modules/thumbsup/src/website/website.js:36:19
+2022-09-13T07:41:24.918Z thumbsup:error     at /media/tsagrista/NeuDaten/Projects/website-source/node_modules/thumbsup/node_modules/async/dist/async.js:3674:28
+2022-09-13T07:41:24.918Z thumbsup:error     at replenish (/media/tsagrista/NeuDaten/Projects/website-source/node_modules/thumbsup/node_modules/async/dist/async.js:446:21)
+2022-09-13T07:41:24.918Z thumbsup:error     at iterateeCallback (/media/tsagrista/NeuDaten/Projects/website-source/node_modules/thumbsup/node_modules/async/dist/async.js:430:21)
+2022-09-13T07:41:24.918Z thumbsup:error     at /media/tsagrista/NeuDaten/Projects/website-source/node_modules/thumbsup/node_modules/async/dist/async.js:327:20
+2022-09-13T07:41:24.918Z thumbsup:error     at /media/tsagrista/NeuDaten/Projects/website-source/node_modules/thumbsup/node_modules/async/dist/async.js:3679:17
+2022-09-13T07:41:24.918Z thumbsup:error     at /media/tsagrista/NeuDaten/Projects/website-source/node_modules/thumbsup/node_modules/async/dist/async.js:3681:19
+2022-09-13T07:41:24.918Z thumbsup:error     at wrapper (/media/tsagrista/NeuDaten/Projects/website-source/node_modules/thumbsup/node_modules/async/dist/async.js:271:20)
+2022-09-13T07:45:33.310Z thumbsup:error Error: Theme does not exist: /home/tsagrista/Projects/langurmonkey.gitlab.io/gallery-theme
+2022-09-13T07:45:33.310Z thumbsup:error     at Theme.validateStructure (/media/tsagrista/NeuDaten/Projects/website-source/node_modules/thumbsup/src/website/theme.js:51:13)
+2022-09-13T07:45:33.310Z thumbsup:error     at Theme.prepare (/media/tsagrista/NeuDaten/Projects/website-source/node_modules/thumbsup/src/website/theme.js:24:10)
+2022-09-13T07:45:33.310Z thumbsup:error     at /media/tsagrista/NeuDaten/Projects/website-source/node_modules/thumbsup/src/website/website.js:36:19
+2022-09-13T07:45:33.310Z thumbsup:error     at /media/tsagrista/NeuDaten/Projects/website-source/node_modules/thumbsup/node_modules/async/dist/async.js:3674:28
+2022-09-13T07:45:33.310Z thumbsup:error     at replenish (/media/tsagrista/NeuDaten/Projects/website-source/node_modules/thumbsup/node_modules/async/dist/async.js:446:21)
+2022-09-13T07:45:33.310Z thumbsup:error     at iterateeCallback (/media/tsagrista/NeuDaten/Projects/website-source/node_modules/thumbsup/node_modules/async/dist/async.js:430:21)
+2022-09-13T07:45:33.310Z thumbsup:error     at /media/tsagrista/NeuDaten/Projects/website-source/node_modules/thumbsup/node_modules/async/dist/async.js:327:20
+2022-09-13T07:45:33.310Z thumbsup:error     at /media/tsagrista/NeuDaten/Projects/website-source/node_modules/thumbsup/node_modules/async/dist/async.js:3679:17
+2022-09-13T07:45:33.310Z thumbsup:error     at /media/tsagrista/NeuDaten/Projects/website-source/node_modules/thumbsup/node_modules/async/dist/async.js:3681:19
+2022-09-13T07:45:33.310Z thumbsup:error     at wrapper (/media/tsagrista/NeuDaten/Projects/website-source/node_modules/thumbsup/node_modules/async/dist/async.js:271:20)

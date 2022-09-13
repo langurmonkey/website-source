@@ -1,6 +1,6 @@
 {
     "title": "Toni Sagristà Sellés - Photo gallery",
-    "theme-path": "/home/tsagrista/Projects/langurmonkey.gitlab.io/gallery-theme",
+    "theme-path": "/home/tsagrista/Projects/website-source/gallery-theme",
     "photo-preview": "link",
     "photo-download": "link",
     "embed-exif": true,
