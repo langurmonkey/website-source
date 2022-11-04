@@ -9,9 +9,11 @@ I got my first DSLR camera in the latter half of 2007 and I have been interested
 
 ## Photo gallery
 
-From time to time I publish some of my pictures in the photo gallery linked below.
+From time to time I publish some of my pictures in my photo gallery and also in Pixelfed.
 
-* <i class="fa fa-camera" aria-hidden="true"></i>&nbsp;&nbsp;  [**PHOTO GALLERY**](/photo-gallery)
+* <i class="fa fa-camera" aria-hidden="true"></i>&nbsp;&nbsp;  [**Photo gallery**](/photo-gallery)
+* <i class="fa fa-camera" aria-hidden="true"></i>&nbsp;&nbsp;  [**Pixelfed portfolio**](https://portfolio.pixelfed.social/jumpinglangur)
+
 
 You can find a write up about the process I use to generate the photo gallery in [this blog post](/blog/2021/static-photo-gallery).
 
