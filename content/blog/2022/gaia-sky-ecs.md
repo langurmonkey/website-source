@@ -1,7 +1,7 @@
 +++
 author = "Toni Sagrista Selles"
-categories = []
-tags = []
+categories = ["Gaia Sky"]
+tags = ["gaiasky", "programming", "java", "design", "english"]
 date = 2022-10-19
 linktitle = ""
 title = "Huge refactoring in Gaia Sky: ECS"

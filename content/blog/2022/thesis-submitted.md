@@ -1,7 +1,7 @@
 +++
 author = "Toni Sagrista Selles"
-categories = []
-tags = []
+categories = ["Life"]
+tags = ["thesis", "phd", "education", "english"]
 date = 2022-11-03
 linktitle = ""
 title = "Thesis submitted"
