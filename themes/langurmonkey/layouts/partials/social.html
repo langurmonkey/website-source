@@ -16,3 +16,12 @@
 {{ with .Site.Social.email }}
 <li><a href="mailto:{{.}}" alt="Email" title="Email address">Email</a></li>
 {{ end }}
+{{ with .Site.Social.mastodon }}
+<li><a rel="me" href="//mastodon.social/{{.}}" alt="Mastodon" title="mastodon.social">Mastodon</a></li>
+{{ end }}
+{{ with .Site.Social.mastodont }}mastodon
+<li><a rel="me" href="//mastodont.cat/{{.}}" alt="Mastodont" title="mastodont.cat">Mastodont</a></li>
+{{ end }}
+{{ with .Site.Social.pixelfed }}
+<li><a rel="me" href="//pixelfed.social/{{.}}" alt="Pixelfed" title="pixelfed.social">Pixelfed</a></li>
+{{ end }}
