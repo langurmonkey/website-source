@@ -16,7 +16,7 @@ Anyway, my name is **Toni Sagristà Sellés** and I am a computer scientist and 
 
 I'm currently working in the Gaia[^gaia] group of the Astronomisches Rechen-Institut[^ari] in Heidelberg, and doing research in scientific visualization in the Visual Computing Group[^viscomp] of the Interdisciplinary Center for Scientific Computing[^iwr], also in Heidelberg.
 
-You can find me on <a rel="me" href="https://mastodont.cat/@jumpinglangur">mastodont.cat</a> (Catalan) and <a rel="me" href="https://mastodon.social/@jumpinglangur">mastodon.social</a> (English). This site is accessible from [tonisagrista.com](https://tonisagrista.com) and [sagrista.info](https://sagrista.info).
+You can find me on <a rel="me" href="https://mastodon.social/@jumpinglangur">mastodon.social</a> (English) and <a rel="me" href="https://mastodont.cat/@jumpinglangur">mastodont.cat</a> (Catalan). This site is accessible from [tonisagrista.com](https://tonisagrista.com) and [sagrista.info](https://sagrista.info).
 
 
 <br/>
