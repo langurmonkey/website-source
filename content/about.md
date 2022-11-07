@@ -60,7 +60,7 @@ Here is a summary of the content in this site:
 <td> 
 <a href="/photography"><div class="menu-table-item">
 <i class="fa fa-camera-retro" aria-hidden="true"></i><br/>
-/photos
+/photo
 </div></a>
 </td>
 <td> 
