@@ -531,7 +531,7 @@ div.flexbox {
   font-family: monospace;
   color: #777;
   text-align: center;
-  margin: 0em auto 0 auto;
+  margin: 0.1em auto 1em auto;
 }
 img.inline {
   display: inline;
