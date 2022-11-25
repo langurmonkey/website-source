@@ -735,6 +735,17 @@ div.menu-table-item:hover i {
   color: var(--title-color);
   border-bottom-style: none;
 }
+@media screen and (max-width: 650px) {
+  div.menu-table-item {
+    border-radius: 0.9em;
+  }
+  table.menu-table-index i {
+    font-size: 2.8em;
+  }
+  table.menu-table-index {
+    font-size: 0.8em;
+  }
+}
 @media screen and (max-width: 550px) {
   div.menu-table-item {
     border-radius: 0.9em;
@@ -743,7 +754,7 @@ div.menu-table-item:hover i {
     font-size: 2.8em;
   }
   table.menu-table-index td {
-    font-size: 0.9em;
+    font-size: 0.7em;
   }
 }
 @media screen and (max-width: 480px) {
@@ -751,7 +762,7 @@ div.menu-table-item:hover i {
     font-size: 1.5em;
   }
   table.menu-table-index td {
-    font-size: 0.7em;
+    font-size: 0.6em;
   }
   div.menu-table-item {
     padding: 0.5em;
