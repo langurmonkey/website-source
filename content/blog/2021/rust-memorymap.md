@@ -29,16 +29,16 @@ pub fn load_file(&self, file: &str) {
     // Create the memory mapped buffer
     let mmap = unsafe { Mmap::map(&f).expect(&format!("Error mapping file {}", file)) };
 
-    let mut reader: Box<dyn Read>;
+    let mut reader: Box<dyn io::BufRead>;
     if is_gz {
         // pass buffer slice to GzDecoder if we're reading a gzip file
-        reader = Box::new(GzDecoder::new(&mmap[..]));
+        reader = Box::new(io::BufReader::new(GzDecoder::new(&mmap[..])));
     } else {
         // otherwise, just box the slice!
         reader = Box::new(&mmap[..]);
     }
 
-    for line in io::BufReader::new(reader.as_mut()).lines() {
+    for line in reader.lines() {
         match self.parse_line(line.expect("Error reading line")) {
             Some(part) => {
                 // process line here
