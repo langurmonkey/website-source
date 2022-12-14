@@ -18,11 +18,11 @@ type = "post"
 
 ---
 
-*{{< sp blue >}}Disclaimer:{{</ sp >}} some of the steps in the Arch Linux installation procedure change from time to time, so I would recommend to check out the awesome [Arch Linux installation guide](https://wiki.archlinux.org/title/Installation_guide) in the Arch wiki to get a fully up-to-date picture of the process.*
+*{{< sp blue >}}Disclaimer:{{</ sp >}} some of the steps in the Arch Linux installation procedure change from time to time, so I would recommend checking out the awesome [Arch Linux installation guide](https://wiki.archlinux.org/title/Installation_guide) in the Arch wiki to get a fully up-to-date picture of the process.*
 
 ---
 
-It is well known that Arch Linux does not have the easiest install process of all Linux distributions. In my opinion, for technical users this is a big plus, as you get to know your system better simply by having to set it up from scratch. This comes with the perk that you only install the packages you need, leading to a smaller and arguably snappier system.
+It is well known that Arch Linux does not have the easiest installation process of all Linux distributions. In my opinion, for technical users this is a big plus, as you get to know your system better simply by having to set it up from scratch. This comes with the perk that you only install the packages you need, leading to a smaller and arguably snappier system.
 
 In this guide, I'm documenting my latest Arch Linux installation on my laptop, where I set up a logical volume with LVM on top of a fully-encrypted disk with LUKS. Encrypting your disk in your mobile devices should be a requirement if you value your security and/or privacy. Nowadays it has almost no performance penalties and it provides countless benefits. 
 
