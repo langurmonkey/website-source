@@ -136,4 +136,8 @@ The on-screen controls of the Particle Physics Simulator available are the follo
 <img src="/img/pps/velocity.png" title="Velocity" style="margin-left: 0; margin-right: 1em; float: left"></img>
 **Use the upper slider bar to adjust the simulation velocity** in real time.
 
+<a href="#privacy-polciy"></a>
 
+# Privacy policy
+
+The Particle Physics Simulator and the N-Body Live Wallpaper do not collect any user data or contain any trackers. It does not serve advertisements or start any internet connection. In this sense, it is a fully privacy respecting application. You can inspect the source code or build it yourself if you like.

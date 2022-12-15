@@ -23,3 +23,8 @@ The **N-Body Live Wallpaper** is an application for [Android](www.android.com) (
 
 Take into account we're talking about a real n-body simulation. I recommend keeping the number of particles reasonably low for the live wallpaper version (about 10-20), even though it only executes when the screen is on. Does not drain your battery keeping loops or listeners when sleeping. Give it a try, download it from the [Google Play](https://market.android.com/details?id=com.tss.nbody.livewallpaper).
 
+<a href="#privacy-polciy"></a>
+
+# Privacy policy
+
+The Particle Physics Simulator and the N-Body Live Wallpaper do not collect any user data or contain any trackers. It does not serve advertisements or start any internet connection. In this sense, it is a fully privacy respecting application. You can inspect the source code or build it yourself if you like.
