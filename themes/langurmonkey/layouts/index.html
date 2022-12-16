@@ -1,10 +1,9 @@
 {{ partial "header" . }}
-{{ $.Scratch.Set "shareNav" true }}
 {{ partial "navbar" . }}
 <!-- Main -->
 <main>
   <article class="post">
-    {{ range where .Data.Pages "Title" "Hi there!" }}
+    {{ range where .Site.Pages "Type" "homepage" }}
     <header>
       <div class="title">
         <h1><a href="">{{ .Title }}</a></h1>
@@ -35,5 +34,4 @@
     </section>
   </article>
 </main>
-<!--  {{ partial "sidebar" . }} -->
 {{ partial "footer" . }}

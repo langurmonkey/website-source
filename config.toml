@@ -22,9 +22,8 @@ uglyurls = false
     # This will appear on the top left of the navigation bar
     #navbarTitle          = "Toni Sagristà Sellés"
     navbarTitle          = "jumping@langur"
-    # Social media buttons that appear on the sidebar
-    socialAppearAtTop    = true
-    socialAppearAtBottom = false
+    # Social media buttons that appear in the footer
+    socialAppearAtBottom = true
     # Sets where 'View more posts' links
     viewMorePostLink     = "/blog"
 

@@ -6,7 +6,7 @@ title = "Projects"
 showpagemeta = "false"
 +++
 
-## Software and scripts
+## Applications and software
 
 <article>
 <strong><a href="https://codeberg.org/langurmonkey/dotfiles">dotfiles</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-gitea"></i></strong> &mdash; My dotfiles project. Contains the configuration, bootstrapping and deploying of my i3 (X11) and Sway (Wayland) environments.
@@ -30,6 +30,10 @@ showpagemeta = "false"
 <br />
 <article>
 <strong><a href="https://codeberg.org/langurmonkey/rchip8">rCHIP8</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-gitea"></i></strong> &mdash; A <a href="/blog/2021/chip8-spec">CHIP-8</a> emulator/VM written in <a href="https://rust-lang.org">Rust</a>, with arbitrary display scaling, debug mode, emulation speed control and much more. <a href="/blog/2021/chip8-implementation">Here is a write-up</a>.
+</article>
+<br />
+<article>
+<strong><a href="https://codeberg.org/langurmonkey/brainfuck">Langur's brainfuck interpreter</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-gitea"></i></strong> &mdash; A very compact <a href="http://brainfuck.org/">Brainfuck</a> interpreter written in <a href="https://rust-lang.org">Rust</a>.
 </article>
 <br />
 <article>
