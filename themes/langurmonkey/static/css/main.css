@@ -3652,6 +3652,19 @@ body.is-menu-visible #menu {
 
 }
 
+@media screen and (max-width: 420px) {
+  
+  #menu .links > li a h3 {
+    font-size: 0.8em;
+  }
+
+  #menu > :first-child {
+    border-top: 0;
+    padding: 1em;
+  }
+
+}
+
 figcaption, figcaption > h4 {
   font-family: open sans, sans-serif;
   opacity: 0.87;
