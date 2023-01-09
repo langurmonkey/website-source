@@ -20,7 +20,6 @@
 			$body = $('body'),
 			$menu = $('#menu'),
 			$shareMenu = $('#share-menu'),
-			$sidebar = $('#sidebar'),
 			$main = $('#main');
 
 		// Disable animations/transitions until the page has loaded.
@@ -42,10 +41,6 @@
 					skel.breakpoint('medium').active
 				);
 			});
-
-		// IE<=9: Reverse order of main and sidebar.
-			if (skel.vars.IEVersion <= 9)
-				$main.insertAfter($sidebar);
 
 		$menu.appendTo($body);
 		$shareMenu.appendTo($body);
@@ -125,18 +120,6 @@
 						$search.removeClass('visible');
 					}, 100);
 				});
-
-		// Intro.
-			var $intro = $('#intro');
-
-			// Move to main on <=large, back to sidebar on >large.
-				skel
-					.on('+large', function() {
-						$intro.prependTo($main);
-					})
-					.on('-large', function() {
-						$intro.prependTo($sidebar);
-					});
 
 	});
 

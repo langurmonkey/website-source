@@ -71,22 +71,6 @@ pre {
   opacity: 0.8;
 }
 
-#sidebar #recent-posts ul.posts time,
-#sidebar #categories ul.posts li header,
-#sidebar .blurb p {
-  /* Theoretically for IE 8 & 9 (more valid) */
-  /* ...but not required as filter works too */
-  /* should come BEFORE filter */
-  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=65)";
-
-  /* This works in IE 8 & 9 too */
-  /* ... but also 5, 6, 7 */
-  filter: alpha(opacity=65);
-
-  /* Modern Browsers */
-  opacity: 0.65;
-}
-
 article.post header .title p,
 article.post header .meta p,
 article.post header .meta span,
@@ -463,35 +447,6 @@ div.post-notice {
 
 }
 
-ul.sidebar-links {
-  /* text-align: justify; */
-  padding-left: 0em;
-}
-ul.sidebar-links:after {
-  content: '';
-  /* display: inline-block; */
-  width: 100%;
-}
-ul.sidebar-links:before {
-  content: '';
-  display: block;
-  margin-top: -2.25em;
-}
-ul.sidebar-links li {
-  color: #fff;
-  display: inline-block;
-  font: 1em/1.5 sans-serif;
-  padding: 0em 1.5em 0em 0em;
-  position: relative;
-  top: 1.25em;
-}
-ul.sidebar-links li a {
-  color: #333 !important;
-  font-family: Helvetica, sans-serif;
-  font-size: 0.7em;
-  letter-spacing: 0.25em;
-  font-weight: 400;
-}
 ul.icons {
   display: block;
   text-align: center;
