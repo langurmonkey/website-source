@@ -44,7 +44,7 @@
         {{ if ne ($.Scratch.Get "cssFiles") false }}
             {{ range $.Scratch.Get "cssFiles" }}
                 {{ if ne . "default" }}
-            <link rel="stylesheet" href="{{ . }}" />
+            <link rel="stylesheet" href="{{ . | absURL }}" />
                 {{ end }}
             {{ end }}
         {{ end }}

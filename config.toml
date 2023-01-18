@@ -39,8 +39,6 @@ uglyurls = false
     # minifiedFilesCSS and minifiedFilesJS. The variable is an array so that you
     # can load multiple files if necessary. You can also load the standard theme
     # files by adding the value, "default".
-    # customCSS            = ["default", "/css/theme-pink-blue.css"]
-    # customJS             = ["default", "/path/to/file"]
     customcss              = ["/css/site-bundle.css"]
     customjs               = ["/js/site-bundle.js"]
 

@@ -1,0 +1,14 @@
+<article class="post single">
+    {{ .Render "header" }}
+
+    {{ .Render "featured" }}
+    <div id="content">
+        {{ .Content }}
+    </div>
+
+    <footer>
+        {{ .Render "footer-category" }}
+        {{ .Render "footer-tag" }}
+    </footer>
+</article>
+{{ .Render "prev-next" }}
