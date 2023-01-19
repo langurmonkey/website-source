@@ -9,5 +9,8 @@
         <a href="{{ .Permalink }}" class="image featured">
             <img src="{{ $path }}/{{ .Params.featured }}" alt="{{ .Params.featuredalt }}" />
         </a>
+  <figcaption>
+    <h4>{{ .Params.featuredalt }}</h4>
+  </figcaption>
     {{ end }}
 {{ end }}

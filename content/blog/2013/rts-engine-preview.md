@@ -7,7 +7,7 @@ description = "Video preview of Real Time Strategy engine"
 linktitle = ""
 title = "RTS engine preview"
 featured = "rtspreview.jpg"
-featuredalt = "RTS engine preview"
+featuredalt = "Screenshot of my real-time strategy game engine featuring fog of war and several units."
 featuredpath = "date"
 type = "post"
 +++
