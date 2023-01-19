@@ -35,7 +35,112 @@ Virtual texturing requires some pre-processing to be done, as the large texture 
 3. **Indirection** -- after that, we update an *indirection (lookup) table* with the location of the tile in the cache, and also send it to graphics memory.
 4. **Rendering** -- finally, we can use the cache and indirection textures to render our scene.
 
-## Tile Determination Pass
+## Tile Visibility
+
+We can determine the observed tiles by rendering the scene to an off-screen frame buffer with a special shader that computes the tile for each fragment. Since we are only interested in the tile data, we can get away with rendering to a downsized frame buffer. In my implementation, the tile determination frame buffer is 4 times smaller than the main render buffer in width and height (16 times smaller in area). This is probably still too large. This factor will be important later.
+
+A first approach might be just outputting the \\((x,y)\\) coordinates of the tile, together with the tile id. In the following code we put the tile coordinates in the red and green channels, and the SVT id in the blue channel.
+
+```glsl
+uniform float u_svtId;
+uniform vec2 u_svtDimensionInTiles;
+
+in vec2 texCoords;
+
+out vec4 fragColor;
+
+void main() {
+  fragColor.xy = floor(texCoords * u_svtDimensionInTiles);
+  fragColor.z = u_svtId;
+}
+```
+
+{{< fig src="/img/2023/01/tiledetect-nomipmap-l4.jpg" class="fig-center" width="55%" title="The tile determination pass frame buffer of the Earth with a virtual texture with 2048 (64x32, with a 2:1 virtual texture) tiles." loading="lazy" >}}
+
+The image above shows the tile detection frame buffer (with channels scaled for visibility) for a virtual texture with 2048 tiles. This approach has some issues:
+
+- No matter how close to or away from each fragment we are, we always end up hitting the same tile. 
+- Since tiles are loaded on demand, when a tile is not yet available in the cache the system won't know what to render and leave a blank space.
+
+The solution to both these problems is introducing levels of detail. In textures, levels of detail are implemented through mipmaps.
+
+### Mipmapping
+
+We modify our original formulation, and instead of dividing the texture into only a bunch of tiles that all cover the same area, we will generate a tree, with the whole texture at the root. Each level contains 4 times the amount of tiles that the level above, and each tile covers 4 times less area. The resolution of all tiles in all levels is still the same though. We have a quadtree!
+
+{{< fig src="/img/2023/01/vt-lod.png" class="fig-center" width="65%" title="The different levels of subdivision in the virtual texture quadtree. Note that the first level (left) covers the whole area. Credit: Albert Julian Mayer." loading="lazy" >}}
+
+In our quadtree, level 0 contains one or two tiles (depending on SVT aspect ratio) which cover the whole area (left tile in the image), and the level numbers for each tile indicate its depth. In the image, pictured left to right are levels 0, 1, 2 and 3.
+
+If we incorporate the quadtree with different levels, the shader we showed before gets a bit more complicated. First of all, we need to determine the LOD level of the fragment. To do so, we could use the GLSL function `textureQueryLod(sampler2D s, vec2 texCoords)`, but we'd need a texture bound in that fragment shader, which we do not have. However, that function can be easily implemented with some partial derivatives,
+
+$$\begin{eqnarray} 
+D_x &=& \left(\frac{\partial u}{\partial x}, \frac{\partial v}{\partial x}\right), \\\\\\
+D_y &=& \left(\frac{\partial u}{\partial y}, \frac{\partial v}{\partial y}\right), \\\\\\\\
+L   &=& log_2(max(|D_x|, |D_y|)),
+\end{eqnarray}$$
+
+where \\(u\\) and \\(v\\) are the UV texture coordinates, and \\(x\\) and \\(y\\) are the window x and y coordinates. We can use `dFdx()` and `dFdy()`, which do precisely that, to get the mipmap level:
+
+```glsl
+float mipmapLevel(in vec2 texelCoord, in float bias) {
+    vec2  dxVtc        = dFdx(texelCoord);
+    vec2  dyVtc        = dFdy(texelCoord);
+    float deltaMaxSqr  = max(dot(dxVtc, dxVtc), dot(dyVtc, dyVtc));
+    return               0.5 * log2(deltaMaxSqr) + bias;
+}
+```
+
+And then, we can implement the tile detection like this:
+
+```glsl
+uniform float u_svtId;
+uniform float u_svtDepth;
+uniform vec2 u_svtResolution;
+
+in vec2 texCoords;
+
+out vec4 fragColor;
+
+// Scale factor of our tile detection frame buffer w.r.t. the window.
+const float svtDetectionScaleFactor = -log2(4.0);
+
+void main() {
+    // Aspect ratio of virtual texture.
+    vec2 ar = vec2(u_svtResolution.x / u_svtResolution.y, 1.0);
+
+    // Get mipmap LOD level.
+    float mip = clamp(floor(mipmapLevel(texCoords * u_svtResolution, svtDetectionScaleFactor)), 0.0, u_svtDepth);
+    // In our tree, level 0 is the root.
+    float svtLevel = u_svtDepth - mip;
+    fragColor.w = svtLevel;
+
+    // Compute tile XY at the current level.
+    float nTilesLevel = pow(2.0, svtLevel);
+    vec2 nTilesDimension =  ar * nTilesLevel;
+    fragColor.xy = floor(texCoords * nTilesDimension);
+
+    // ID.
+    fragColor.z = u_svtId;
+}
+```
+
+There are a few things to unpack here:
+
+- The mipmap LOD level 0 is the base level with the highest resolution. This is reversed in our quadtree, where the level 0 is the root with the lowest pixel/unit area ratio. That is why we convert from mip level to SVT level using the tree depth.
+- The `u_svtResolution` contains the base resolution of the SVT, i.e., the resolution of the deepest level.
+- `nTilesDimension` contains the size of the level in tiles.
+- Here, we put the tile coordinates in the red and green channels, the SVT id in the blue channel and the level in the alpha channel.
+- Finally, the `svnDetectionScaleFactor` is computed from the frame buffer reduction factor with respect to the window (4). The area of a frame buffer scales with the square of the sides, so we use `log2()`. The factor is negative because we need to move to more detailed levels (closer to 0 in the mipmap LOD level scale) when rendering to a larger frame buffer.
+
+{{< fig src="/img/2023/01/tiledetect-mipmap-l4.jpg" class="fig-center" width="55%" title="The tile determination pass frame buffer, with channels scaled for visibility, with LOD levels. The different levels show as rings on the Earth, starting with level 0 (outermost ring, darker), down to level 4 (innermost ring, brighter)." loading="lazy" >}}
+
+### Frame Buffer Format
+
+I use a frame buffer with a depth attachment and a floating point texture attachment with 32 bits per channel. This allows for \\(~2^{32}\\) values per channel, which provides ample precision to accommodate trees with up to 31 levels. To put this in perspective, if we map the Earth with a tree with 31 levels, each tile covers ~1cm. Any tile resolution greater than 100x100 provides sub-millimeter precision on the whole planet.
+
+Note that, in order to be able to read back the pixels cleanly, we need to disable alpha blending, especially if we have concave objects or we support more than one SVT. Also, it is important to enable depth testing and attach a depth buffer to our frame buffer so that the depth test is performed.
+
 
 ## Tile Cache
 
