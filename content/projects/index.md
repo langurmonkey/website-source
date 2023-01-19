@@ -29,6 +29,10 @@ showpagemeta = "false"
 </article>
 <br />
 <article>
+<strong><a href="https://codeberg.org/langurmonkey/virtualtexture-tools">Virtual texture tools</a> <i class="fa-tss fa fa-python"></i> <i class="fa-tss fa fa-gitea"></i></strong> &mdash; A collection of Python scripts to generate and process Sparse Virtual Texture datasets for Gaia Sky (and others).
+</article>
+<br />
+<article>
 <strong><a href="https://codeberg.org/langurmonkey/rchip8">rCHIP8</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-gitea"></i></strong> &mdash; A <a href="/blog/2021/chip8-spec">CHIP-8</a> emulator/VM written in <a href="https://rust-lang.org">Rust</a>, with arbitrary display scaling, debug mode, emulation speed control and much more. <a href="/blog/2021/chip8-implementation">Here is a write-up</a>.
 </article>
 <br />
