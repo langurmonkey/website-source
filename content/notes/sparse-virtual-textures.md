@@ -24,7 +24,7 @@ Implementing proper virtual texture support in Gaia Sky has been on my to-do lis
 
 This is a *relatively* new technique that aims at drastically increasing the size of usable textures in real time rendering applications by splitting them up in tiles and streaming only the *necessary* ones to graphics memory. It was initially described in a primitive form by Chris Hall in 1999[^1] and has subsequently been improved upon. My understanding is that most modern implementations are based on Sean Barret's [GDC 2008 talk](https://silverspaceship.com/src/svt/) on the topic[^2].
 
-## How do they work?
+## How Do They Work?
 
 Virtual texturing is the CG memory counterpart to the operating system virtual memory. In virtual memory, a process' memory address space is divided into pages, which are moved in and out of a cache space depending on whether and when they are needed. In virtual texturing, textures (images) are split up into smaller tiles and paged in and out of a cache texture when needed. 
 
@@ -35,18 +35,18 @@ Virtual texturing requires some pre-processing to be done, as the large texture 
 3. **Indirection** -- after that, we update an *indirection (lookup) table* with the location of the tile in the cache, and also send it to graphics memory.
 4. **Rendering** -- finally, we can use the cache and indirection textures to render our scene.
 
-## Tile determination pass
+## Tile Determination Pass
 
-## The tile cache
+## Tile Cache
 
-## The indirection table
+## Indirection Table
 
 Possibilities:
 
 - Updating all lower levels when a tile is added.
 - Use mipmaps with the indirection texture. Loop in the fragment shader, querying higher mipmap levels in the indirection table until a valid tile is found.
 
-## Additional coolness
+## Additional Coolness
 
 - Tessellation shaders to query the SVT for height data.
 - Structure to allow multiple SVTs on a single object for the different maps (diffuse, specular, normal, elevation, emissive, metallic, roughness, clouds).
