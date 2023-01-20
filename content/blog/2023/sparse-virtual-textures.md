@@ -241,8 +241,8 @@ vec2 svtTexCoords(sampler2D indirection, vec2 texCoords, float bias) {
     float reverseMipmapLevel = indirectionEntry.b;// blue channel has the reverse mipmap-level.
     float mipExp = exp2(reverseMipmapLevel);
     // Need to account for the aspect ratio of our virtual texture (2:1).
-    vec2 withinPageCoord = fract(texCoords * mipExp * vec2(2.0, 1.0));
-    return ((pageCoord + withinPageCoord) / cacheSizeInTiles);
+    vec2 withinTileCoord = fract(texCoords * mipExp * vec2(2.0, 1.0));
+    return ((pageCoord + withinTileCoord) / cacheSizeInTiles);
 }
 ```
 
@@ -257,11 +257,13 @@ However, when we inspect the results, we find seams! This is due to the use of b
 There are two possible solutions to this:
 
 - We just don't use linear filtering, and default to nearest-neighbour. This is unacceptable, especially in magnification, which displays the textures pixelated with clear boundaries between texels.
-- We prepare our tiles so that they include a 1-pixel border with the contents from adjacent tiles. This reduces the *usable* tile resolution from \\(N\times N\\) to \\(N-2\times N-2\\) (2 for left-right and top-bottom borders). We have to take this into account in our texturing shader when determining the within-page coordinate in the following way:
+- We prepare our tiles so that they include a 1-pixel border with the contents from adjacent tiles. This reduces the *usable* tile resolution from \\(N\times N\\) to \\(N-2\times N-2\\) (2 for left-right and top-bottom borders). We have to take this into account in our texturing shader when determining the within-tile coordinate, i.e., the coordinate of the texel we need to query in the tile, by updating its value using the tile size,
 
 $$
-pageWithinCoord = \frac{pageWithinCoord * tileSize * 2}{tileSize} + \frac{1}{tileSize}
+c = \frac{c_{xy} * s * 2}{s} + \frac{1}{s},
 $$
+
+where \\(c_{xy}\\) is the within-tile coordinate, and \\(s\\) is the tile size.
 
 We need to add the following line in our `svtTexCoords()` method, right before the `return` statement:
 
@@ -270,7 +272,7 @@ We need to add the following line in our `svtTexCoords()` method, right before t
 // being side-by-side in the cache.
 // For each tile, we sample an area (tile_resolution - 2)^2, leaving a 1-px border 
 // which should be filled with data from the adjacent tiles.
-withinPageCoord = ((withinPageCoord * (u_svtTileSize - 2.0)) / u_svtTileSize) 
+withinTileCoord = ((withinTileCoord * (u_svtTileSize - 2.0)) / u_svtTileSize) 
                   + (1.0 / u_svtTileSize);
 ```
 
