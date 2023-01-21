@@ -1,6 +1,6 @@
 baseurl = ""
 languageCode = "en-gb"
-title = "Jumping Langur - Toni Sagristà Sellés"
+title = "Langur Monkey - Toni Sagristà Sellés"
 theme = "langurmonkey"
 preserveTaxonomyNames = true
 paginate = 6
@@ -21,7 +21,7 @@ uglyurls = false
     description          = "Personal website and portfolio"
     # This will appear on the top left of the navigation bar
     #navbarTitle          = "Toni Sagristà Sellés"
-    navbarTitle          = "jumping@langur"
+    navbarTitle          = "langur@monkey"
     # Social media buttons that appear in the footer
     socialAppearAtBottom = true
     # Sets where 'View more posts' links

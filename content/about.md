@@ -10,7 +10,7 @@ type = "homepage"
      alt="My photo"
      style="float: right; margin-left: 50px; width: 25%" />
 
-Since you are already here, I think a short introduction is in order. My name is **Toni Sagristà Sellés** and I am a computer scientist and M.Sc. in Astrophysics and Cosmology. I like computer graphics and visualization, astronomy, photography (sometimes), snowboarding, playing and watching football, drawing horribly, playing with my kids, and occasionally gaming. I sometimes use the aliases `jumpinglangur` and `langurmonkey`.
+Since you are already here, I think a short introduction is in order. My name is **Toni Sagristà Sellés** and I am a computer scientist and M.Sc. in Astrophysics and Cosmology. I like computer graphics and visualization, astronomy, photography (sometimes), snowboarding, playing and watching football, drawing horribly, playing with my kids, and occasionally gaming. I sometimes use the aliases `langurmonkey` and `jumpinglangur`.
 
 I'm currently working in the Gaia[^gaia] group of the Astronomisches Rechen-Institut[^ari] in Heidelberg, and doing research in scientific visualization in the Visual Computing Group[^viscomp] of the Interdisciplinary Center for Scientific Computing[^iwr], also in Heidelberg.
 
