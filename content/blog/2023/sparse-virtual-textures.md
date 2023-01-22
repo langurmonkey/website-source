@@ -22,7 +22,7 @@ Implementing proper virtual texture support in [Gaia Sky](https://zah.uni-heidel
 
 **Sparse Virtual Textures** (SVT), also known as **MegaTextures**[^3], and **Partially Resident Textures** (PRT)[^4], have at their core the idea of splitting large textures into several tiles and only streaming the necessary ones (i.e. the ones required to render the current view) to graphics memory in order to optimize memory usage and enable the display of textures so large that they can't be handled effectively by the graphics hardware.
 
-This is a *relatively* new technique that aims at drastically increasing the size of usable textures in real time rendering applications by splitting them up in tiles and streaming only the *necessary* ones to graphics memory. It was initially described in a primitive form by Chris Hall in 1999[^1] and has subsequently been improved upon. My understanding is that most modern implementations are based on Sean Barret's [GDC 2008 talk](https://silverspaceship.com/src/svt/) on the topic[^2].
+This technique aims at drastically increasing the size of usable textures in real time rendering applications by splitting them up in tiles and streaming only the *necessary* ones to graphics memory. It was initially described in a primitive form by Chris Hall in 1999[^1] and has subsequently been improved upon. My understanding is that most modern implementations are based on Sean Barret's [GDC 2008 talk](https://silverspaceship.com/src/svt/) on the topic[^2].
 
 ## How Do They Work?
 
