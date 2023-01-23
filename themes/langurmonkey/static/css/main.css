@@ -302,48 +302,48 @@ aside h6:before {
     h4:before,
     h5:before,
     h6:before {
-      content: "";
-  }
+    content: "";
+}
 
-  h1, h2, h3, h4, h5, h6 {
-    margin: 0 0 0.25em 0;
-  }
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 0.25em 0;
+}
 }
 
 h1 {
-  margin-top: 1.2em;
-  font-size: 1.7em;
+margin-top: 1.2em;
+font-size: 1.7em;
 }
 
 h2 {
-  margin-top: 1.9em;
-  font-size: 1.5em;
+margin-top: 1.9em;
+font-size: 1.5em;
 }
 
 h3 {
-  margin-top: 1.4em;
-  font-size: 1.2em;
+margin-top: 1.4em;
+font-size: 1.2em;
 }
 
 h4 {
-  margin-top: 1.0em;
-  font-size: 1.0em;
+margin-top: 1.0em;
+font-size: 1.0em;
 }
 
 h5 {
-  margin-top: 0.8em;
-  font-size: 0.9em;
+margin-top: 0.8em;
+font-size: 0.9em;
 }
 
 h6 {
-  margin-top: 0.5em;
-  font-size: 0.8em;
+margin-top: 0.5em;
+font-size: 0.8em;
 }
 
 sub {
-  font-size: 0.8em;
-  position: relative;
-  top: 0.5em;
+font-size: 0.8em;
+position: relative;
+top: 0.5em;
 }
 
 sup {
@@ -1141,22 +1141,35 @@ ul.posts article {
   flex-direction: row-reverse;
 }
 
+div.post-in-list {
+  margin-bottom: 0.5em;
+  font-size: 1.3em;
+}
 div.post-in-list time{
   font-family: courier,monospace;
   letter-spacing: -0.07em;
   color: var(--time-color);
-  font-size: 0.8em;
+  font-size: 1em;
   display: inline-block;
-  width: 9.5em;
+  width: 5.5em;
+}
+div.post-in-list a {
+  text-decoration: none;
+  display: inline-block;
+}
+div.post-in-list:hover a {
+  text-decoration: underline;
+}
+div.post-in-list a::first-letter {
+  font-size: 110%;
+  font-weight: 600;
 }
 @media screen and (max-width: 680px) {
   div.post-in-list time{
-    font-size: 0.5em;
-    float: left;
-    padding-top: 0.2em;
+    display: none;
   }
   div.post-in-list a {
-    font-size: 0.6em;
+    font-size: 1em;
     display: block;
     border-bottom-style: none;
   }
@@ -1355,7 +1368,7 @@ dl dd {
 
 .post > footer .stats li .icon:before {
   color: rgba(160, 160, 160, 0.3);
-margin-right: 0.75em;
+  margin-right: 0.75em;
 }
 
 @media screen and (max-width: 980px) {
@@ -1391,7 +1404,7 @@ margin-right: 0.75em;
     -moz-justify-content: center;
     -webkit-justify-content: center;
     -ms-justify-content: center;
-justify-content: center;
+    justify-content: center;
     border-left: 0;
     margin: 0 0 0.5em 0;
     padding: 0;
@@ -1753,7 +1766,7 @@ body {
   max-width: 0;
   opacity: 0;
   overflow: hidden;
-padding: 0;
+  padding: 0;
   white-space: nowrap;
 }
 
@@ -2091,7 +2104,7 @@ body.is-menu-visible #menu {
 }
 
 @media screen and (max-width: 420px) {
-  
+
   #menu .links > li a h3 {
     font-size: 0.8em;
   }

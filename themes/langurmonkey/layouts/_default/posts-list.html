@@ -18,10 +18,10 @@
       <h2>{{ .Key }}</h2>
         {{ range .Pages }}
       <div class="post-in-list">
-        {{ $.Scratch.Set "dateType" .Date }}
-        <time class="published" datetime='{{ ($.Scratch.Get "dateType").Format "2006-01-02" }}'>[ {{ ($.Scratch.Get
-          "dateType").Format "2006-01-02" }} ]</time>
         <a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title | truncate 55 }}</a>
+        {{ $.Scratch.Set "dateType" .Date }}
+        <time class="published" datetime='{{ ($.Scratch.Get "dateType").Format "02-01" }}'>[ {{ ($.Scratch.Get
+          "dateType").Format "02-01" }} ]</time>
       </div>
         {{- end -}}
       {{ end }}
