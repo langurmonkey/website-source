@@ -414,11 +414,11 @@ a.recent-posts-link::first-letter {
 }
 
 div.recent-posts-item time {
-  font-family: courier,monospace;
   letter-spacing: -0.05em;
   margin-left: 0.1em;
   line-height: 2.1;
   color: var(--time-color);
+  font-weight: 100;
 }
 
 @media screen and (max-width: 736px) {
