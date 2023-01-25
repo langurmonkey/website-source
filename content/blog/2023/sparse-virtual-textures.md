@@ -324,7 +324,7 @@ If you want to read more on the topic or expand on what is described here, I sug
 
 [^1]: Hall, C. --- Virtual Textures: Texture Management in Silicon [[pdf](https://www.graphicshardware.org/previous/www_1999/presentations/v-textures.pdf)].
 [^2]: Barrett, S. --- Sparse Virtual Textures [[html](https://silverspaceship.com/src/svt/)].
-[^3]: https://en.wikipedia.org/wiki/Id_Tech_4#MegaTexture_rendering_technology
-[^4]: https://www.anandtech.com/show/5261/amd-radeon-hd-7970-review/6
+[^3]: [IdTech 4 MegaTexture rendering technology](https://en.wikipedia.org/wiki/Id_Tech_4#MegaTexture_rendering_technology)
+[^4]: [Partially Resident Textures, AnandTech](https://www.anandtech.com/show/5261/amd-radeon-hd-7970-review/6)
 [^20]: `ARB_sparse_texture` [extension documentation](https://registry.khronos.org/OpenGL/extensions/ARB/ARB_sparse_texture.txt).
 [^21]: `AMD_sparse_texture` [extension documentation](https://registry.khronos.org/OpenGL/extensions/AMD/AMD_sparse_texture.txt).

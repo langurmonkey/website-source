@@ -25,6 +25,12 @@
                     {{ end }}
                 {{ else }}
                     {{ $.Scratch.Set "tagUrl" "/tags/" }}
+
+                    {{ if gt $tagCount 1 }}
+                        Tags:
+                    {{ else }}
+                        Tag:
+                    {{ end }}
                 {{ end }}
             </li>
         {{ end }}
@@ -32,6 +38,6 @@
 
     <!-- Display the tags associated with this post -->
     {{ range .Params.tags }}
-        <li><a href='{{ add ($.Scratch.Get "tagUrl") . | urlize }}'>#{{ . }}</a></li>
+        <li><a class="tag" href='{{ add ($.Scratch.Get "tagUrl") . | urlize }}'>#{{ . }}</a></li>
     {{ end }}
 </ul>

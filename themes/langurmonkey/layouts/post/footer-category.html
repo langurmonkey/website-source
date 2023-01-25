@@ -1,4 +1,4 @@
-<ul class="stats">
+<ul class="stats category">
     {{ if isset .Params "categories" }}
         {{ $categoryCount := (len .Params.categories) }}
 
@@ -28,9 +28,9 @@
                     {{ $.Scratch.Set "categoryUrl" "/categories/" }}
 
                     {{ if gt $categoryCount 1 }}
-                        Categories
+                        Categories:
                     {{ else }}
-                        Category
+                        Category:
                     {{ end }}
                 {{ end }}
             </li>

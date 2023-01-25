@@ -1326,10 +1326,7 @@ dl dd {
 }
 
 .post > footer {
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
+  display: block;
   -moz-align-items: center;
   -webkit-align-items: center;
   -ms-align-items: center;
@@ -1349,19 +1346,32 @@ dl dd {
   padding: 0;
 }
 
+article.post > footer .category {
+  display: block;
+  margin: 0;
+  margin-top: 3em;
+}
+
+article.post > footer .tags {
+  display: block;
+  margin: 0;
+}
+
+article.post > footer a {
+  font-weight: 100 !important;
+  text-decoration: none !important;
+}
+
 .post > footer .stats li {
   display: inline-block;
-  font-family: courier,monospace;
   font-size: 0.6em;
-  font-weight: 400;
-  letter-spacing: 0.1em;
   line-height: 1;
-  margin: 0 0 0 0.4em;
-  padding: 0 0 0 0em;
+  margin: 0;
+  padding: 0;
 }
 
 .post > footer .stats li:first-child {
-  opacity: 0.5;
+  opacity: 0.7;
   border-left: 0;
   margin-left: 0;
   padding-left: 0;
