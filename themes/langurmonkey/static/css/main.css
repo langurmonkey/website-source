@@ -1358,6 +1358,7 @@ article.post > footer .tags {
 }
 
 article.post > footer a {
+  margin: 0 0.5em 0 0.5em;
   font-weight: 100 !important;
   text-decoration: none !important;
 }
