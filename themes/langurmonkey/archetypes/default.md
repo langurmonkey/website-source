@@ -1,6 +1,6 @@
 +++
 author = "Toni Sagristà Sellés"
-tilte = ""
+title = ""
 description = ""
 date = "2023-01-22"
 linktitle = ""
