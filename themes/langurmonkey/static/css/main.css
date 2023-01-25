@@ -418,10 +418,12 @@ hr {
   border: 0;
   border-bottom: solid 0.01em;
   margin: 2em 0;
+  opacity: 0.25;
 }
 
 hr.major {
   margin: 3em 0;
+  opacity: 0.25;
 }
 
 .align-left {
@@ -1146,16 +1148,17 @@ div.post-in-list {
   font-size: 1.3em;
 }
 div.post-in-list time{
-  font-family: courier,monospace;
   letter-spacing: -0.07em;
   color: var(--time-color);
   font-size: 1em;
+  font-weight: 100;
   display: inline-block;
   width: 5.5em;
 }
 div.post-in-list a {
   text-decoration: none;
   display: inline-block;
+  margin-right: 0.8em;
 }
 div.post-in-list:hover a {
   text-decoration: underline;
@@ -1234,6 +1237,8 @@ dl dd {
 
 .posts-container {
   width: 100%;
+  margin-top: 1em;
+  display: inline-block;
 }
 
 /* Post */

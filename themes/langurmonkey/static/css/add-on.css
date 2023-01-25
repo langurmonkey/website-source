@@ -401,8 +401,26 @@ ul.pagination .button {
 div.recent-posts-item {
   list-style-type: none;
   min-width: 26em;
-  display: inline-block;
+  display: inline-flex;
 }
+
+a.recent-posts-link {
+  text-decoration: none !important;
+  margin-right: 0.8em;
+}
+a.recent-posts-link::first-letter {
+  font-size: 110%;
+  font-weight: 600;
+}
+
+div.recent-posts-item time {
+  font-family: courier,monospace;
+  letter-spacing: -0.05em;
+  margin-left: 0.1em;
+  line-height: 2.1;
+  color: var(--time-color);
+}
+
 @media screen and (max-width: 736px) {
   div.recent-posts-item {
     min-width: 21em;
@@ -414,20 +432,6 @@ div.recent-posts-item {
     margin-bottom: 0.4em;
     min-width: 5em;
   }
-  div.recent-posts-item a {
-    border-bottom-style: none;
-  }
-}
-
-div.recent-posts-item a {
-  font-size: 0.7em;
-}
-
-div.recent-posts-item time {
-  font-family: courier,monospace;
-  letter-spacing: -0.05em;
-  font-size: 0.6em;
-  margin-right: 0.5em;
 }
 
 p.caption {
@@ -471,10 +475,11 @@ ul.posts-list-button a {
   border-bottom-style: none;
 }
 h4.latest-posts-bottom  {
-  float: left;
+  display: inline-block;
   margin: 0 1em 0 0;
 }
 .latest-posts-viewall  {
+  display: inline-block;
   font-size: 0.7em;
   color: #aaa;
 }
