@@ -25,25 +25,25 @@ Here is a summary of the content in this site:
 <tr>
 <td> 
 <a href="/blog"><div class="menu-table-item">
-<i class="fa fa-file-word-o" aria-hidden="true"></i><br/>
+{{< fa file-word-o >}}<br/>
 /blog
 </div></a>
 </td>
 <td> 
 <a href="/posts-list"><div class="menu-table-item">
-<i class="fa fa-list-alt" aria-hidden="true"></i><br/>
+{{< fa list-alt >}}<br/>
 /all-posts
 </div></a>
 </td>
 <td> 
 <a href="/projects"><div class="menu-table-item">
-<i class="fa fa-cube" aria-hidden="true"></i><br/>
+{{< fa cube >}}<br/>
 /projects
 </div></a>
 </td>
 <td> 
 <a href="/tags"><div class="menu-table-item">
-<i class="fa fa-tags" aria-hidden="true"></i><br/>
+{{< fa tags >}}<br/>
 /tags
 </div></a>
 </td>
@@ -51,25 +51,25 @@ Here is a summary of the content in this site:
 <tr>
 <td> 
 <a href="/papers"><div class="menu-table-item">
-<i class="fa fa-newspaper-o" aria-hidden="true"></i><br/>
+{{< fa newspaper-o >}}<br/>
 /papers
 </div></a>
 </td>
 <td> 
 <a href="/photography"><div class="menu-table-item">
-<i class="fa fa-camera-retro" aria-hidden="true"></i><br/>
+{{< fa camera-retro >}}<br/>
 /photo
 </div></a>
 </td>
 <td> 
 <a href="/resume"><div class="menu-table-item">
-<i class="fa fa-address-card-o" aria-hidden="true"></i><br/>
+{{< fa address-card-o >}}<br/>
 /résumé
 </div></a>
 </td>
 <td> 
 <a href="/categories"><div class="menu-table-item">
-<i class="fa fa-flag-checkered" aria-hidden="true"></i><br/>
+{{< fa flag-checkered >}}<br/>
 /categories
 </div></a>
 </td>
