@@ -12,7 +12,7 @@ featuredpath = "date"
 type = "post"
 +++
 
-Today I want to talk a bit about an initiative that I've been following for quite a long time now and I think deserves some attention. I'm talking about [**Astronomy Cast**](astronomycast.com). Astronomy Cast, in their own words, takes a **fact-based journey through the cosmos** as it offers listeners weekly discussions on astronomical topics ranging from planets to cosmology. Fraser Cane and Dr. Pamela Gay elaborate a high-quality podcast each week, where they discuss several astronomy, astrophysics, cosmology and particle physics topics. The span of their talks is just astounding, and they really have a gift for explaining complicated concepts in a very straightforward manner.
+Today I want to talk a bit about an initiative that I've been following for quite a long time now and I think deserves some attention. I'm talking about [**Astronomy Cast**](https://astronomycast.com). Astronomy Cast, in their own words, takes a **fact-based journey through the cosmos** as it offers listeners weekly discussions on astronomical topics ranging from planets to cosmology. Fraser Cane and Dr. Pamela Gay elaborate a high-quality podcast each week, where they discuss several astronomy, astrophysics, cosmology and particle physics topics. The span of their talks is just astounding, and they really have a gift for explaining complicated concepts in a very straightforward manner.
 
 <!--more-->
 
