@@ -183,15 +183,15 @@ Location: Ottawa, Ontario, Canada [45.4210328,-75.6900218]
 
 Here is a list of utilities I have installed and use regularly.
 
--  [`fd`](github.com/sharkdp/fd) -- Amazing replacement for `find`
--  [`fzf`](github.com/junegunn/fzf) -- Terminal fuzzy finder and vim plugin
+-  [`fd`](https://github.com/sharkdp/fd) -- Amazing replacement for `find`
+-  [`fzf`](https://github.com/junegunn/fzf) -- Terminal fuzzy finder and vim plugin
 -  [`mons`](https://github.com/Ventto/mons) -- Handy script to manage external displays
--  [`sshfs`](github.com/libfuse/sshfs) -- Mount file systems over SSH/SFTP
+-  [`sshfs`](https://github.com/libfuse/sshfs) -- Mount file systems over SSH/SFTP
 -  `apropos` -- Search the man pages
--  [`units`](www.gnu.org/software/units) -- Convert units on the terminal
--  [`tealdeer`](github.com/dbrgn/tealdeer) -- Access [`tldr-pages`](github.com/tldr-pages/tldr) with style
--  [`pdfpc`](github.com/phillipberndt/pdfpc) -- Presenter console for for PDF files
--  [`tig`](github.com/jonas/tig) -- Text interface for `git`
+-  [`units`](https://gnu.org/software/units) -- Convert units on the terminal
+-  [`tealdeer`](https://github.com/dbrgn/tealdeer) -- Access [`tldr-pages`](github.com/tldr-pages/tldr) with style
+-  [`pdfpc`](https://github.com/phillipberndt/pdfpc) -- Presenter console for for PDF files
+-  [`tig`](https://github.com/jonas/tig) -- Text interface for `git`
 -  `bc` -- Best calculator ;)
 -  [`screen`](/blog/2021/gnu-screen-cheatsheet/) -- GNU terminal multiplexer
 

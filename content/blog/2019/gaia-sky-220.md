@@ -138,7 +138,7 @@ We have moved away from Jython and to Py4J for scripting. Please see [this dedic
 - Integer mesh indices for larger meshes.
 - Sane crash reporting. If Gaia Sky crashes, you can find the crash log in `$GS_DATA/crashreports`, which is usually at `~/.local/share/gaiasky/crashreports` in Linux, and `[HOME]\.gaiasky\crashreports` in Windows/macOS.
 - Migration to Java 11. Please make sure you are using Java 11+ to run Gaia Sky. Windows and macOS versions already bundle their own JVM.
-- We have moved on to [LWJGL3](www.lwjgl.org) as the backend, fixing the issues present mostly in macOS due to pixel scaling.
+- We have moved on to [LWJGL3](https://lwjgl.org) as the backend, fixing the issues present mostly in macOS due to pixel scaling.
 - Scripting API parameter checks.
 - Many bug fixes and some code refactorings.
 
