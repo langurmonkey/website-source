@@ -22,15 +22,15 @@ But before we start, here's a short summary of the types of keys you may encount
 
 ## Generating an Ed25519 key
 
-First, you way want to check what keys are actually installed on your computer:
+First, you may want to check the SSH keys you already have. Fire up a terminal and type this:
 
 ```bash
 for key in ~/.ssh/id_*; do ssh-keygen -l -f "${key}"; done | uniq
 ```
 
-If you found out that you already have an Ed25519 key, then you are done. Otherwise, read on.
+If you are already using an Ed25519 key, then you are done. Otherwise, read on.
 
-Fire up a terminal and generate the key with `ssh-keygen`:
+Now, let's generate the key with `ssh-keygen`:
 
 ```bash
 ssh-keygen -t ed25519 -C "your@email.com"
@@ -40,13 +40,13 @@ Enter a strong passphrase when asked. Congrats! Your key is already generated. N
 
 ## Using your Ed25519 key
 
-First, you need to copy your key to all the servers you need to SSH into:
+First, you need to copy your (public) key to all the servers you need to SSH into:
 
 ```bash
 ssh-copy-id -i ~/.ssh/id_ed25519.pub user@host
 ```
 
-Then, you may want to add the key to your SSH agent so that it is cached during your session and you only need to enter the passphrase once. Otherwise, you will be prompted to enter your passphrase every time you invoke `ssh`, `scp` or do a remote `rsync`, as well as when you try to push your git repository (if you are using SSH authentication instead of GPG). First, make sure your SSH agent is up and running:
+Don't copy the secret key! This one never leaves your computer. Then, you may want to add the key to your SSH agent so that it is cached during your session and you only need to enter the passphrase once. Otherwise, you will be prompted to enter your passphrase every time you invoke `ssh`, `scp` or do a remote `rsync`, as well as when you try to push your git repository (if you are using SSH authentication instead of GPG). First, make sure your SSH agent is up and running:
 
 ```bash
 eval "$(ssh-agent -s)"
@@ -70,7 +70,7 @@ eval $(keychain --quiet --eval ~/.ssh/id_rsa ~/.ssh/id_ed25519)
 
 The first time you open your terminal, you will be prompted for a passphrase. Then, the keys are cached and ready to use.
 
-I have included the RSA key because I am keeping mine around for compatibility purposes. Sometimes I need to log into systems that use very old Operating Systems where Ed25519 is not supported. In this cases, having an RSA key around is good.
+I have included the RSA key because I am keeping mine around for compatibility purposes. Sometimes I need to log into systems that use very old Operating Systems where Ed25519 is not yet supported by the software stack. In these cases, having an RSA key around is good.
 
 ## Conclusion
 
