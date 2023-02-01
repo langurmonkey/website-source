@@ -6,8 +6,9 @@ My website project, online at [tonisagrista.com](https://tonisagrista.com).
 Deployment
 ----------
 
-The website is deployed in [Codeberg pages](https://codeberg.page). The `master` branch of this repository contains the Hugo sources. These need to be generated into the static website using the `hugo` CLI program (i.e. `hugo --minify`).
-The deployed website lives in branches other than `master`. Each branch serves a different domain. Run the `/deploy.sh` to deploy the site with the configuration that sits at the top of the same file.
+The `master` branch of this repository contains the Hugo sources. These need to be generated into the static website using the `hugo` CLI program (i.e. `hugo --minify`).
+
+The site is deployed to a [nearlyfreespeech](https://nearlyfreespeech.net) server. The `/deploy.sh` script deploys the site to the server. The `deploy-codeberg.sh` is the old deploy script, which deployed the site to different branches in Codeberg Pages.
 
 Minify
 ------
