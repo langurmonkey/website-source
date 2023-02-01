@@ -25,8 +25,8 @@
         <div class="recent-posts-item">
           <a class="recent-posts-link" href="{{ .RelPermalink }}">{{ .Title | truncate 50 }}</a>
           {{ $.Scratch.Set "dateType" .Date }}
-          <time class="published" datetime='{{ ($.Scratch.Get "dateType").Format "01 Jan 06" }}'>
-            {{ ($.Scratch.Get "dateType").Format "01 Jan 06" }}
+          <time class="published" datetime='{{ ($.Scratch.Get "dateType").Format "02 Jan 06" }}'>
+            {{ ($.Scratch.Get "dateType").Format "02 Jan 06" }}
           </time>
         </div>
         {{ end }}
