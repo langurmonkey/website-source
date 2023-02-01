@@ -52,6 +52,6 @@ hugo --destination "${build_directory}" --minify --quiet
 
 echo "## Copying data to server."
 # copy contents of ${build_directory} to server
-rsync -avh ${build_directory}/* ${ssh_server}:${server_dir}/
+rsync -avh --exclude='${build_directory}/.git' ${build_directory}/ ${ssh_server}:${server_dir}/
 
 echo "## Finished deploying site to ${ssh_server}:${server_dir}."
