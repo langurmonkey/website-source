@@ -1,59 +1,58 @@
 <!-- Header -->
 <header id="header">
-    <h2><a href="/">{{ .Site.Params.navbarTitle }}</a><span class="homefolder">:~/</span><span class="shell">$</span></h2>
+  <h2><a href="/">{{ .Site.Params.navbarTitle }}</a><span class="homefolder">:~/</span><span class="shell">$</span></h2>
 
-    <nav class="links">
-        <ul>
-            {{ range .Site.Menus.main }}
-            <li>
-                <a href="{{ .URL }}">
-                    {{ with .Identifier }}
-                    <i class="{{ . }}">&nbsp;</i>{{ end }}{{ .Name }}
-                </a>
-            </li>
-            {{ end }}
-        </ul>
-    </nav>
-    <nav class="main">
-        <ul>
-            <li class="menu">
-                <a href="javascript:darkModeToggle()" style="border: none;" title="Toggle dark mode">
-                    <i id="lights" class="fa fa-moon" aria-hidden="true"></i>
-                </a>
-            </li>
-            <li class="menu">
-                <a href="#menu" title="Menu">
-                    <i id="icon-menu" class="fa fa-bars fa-fw"></i></a>
-            </li>
-        </ul>
-    </nav>
+  <nav class="links">
+    <ul>
+      {{ range .Site.Menus.main }}
+      <li>
+        <a href="{{ .URL }}">
+          {{ with .Identifier }}
+          <i class="{{ . }}">&nbsp;</i>{{ end }}{{ .Name }}
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </nav>
+  <nav class="main">
+    <ul>
+      <li class="menu">
+        <a href="javascript:darkModeToggle()" style="border: none;" title="Toggle dark mode">
+          <i id="lights" class="fa fa-moon"></i><span style="display: none">Theme</span></a>
+      </li>
+      <li class="menu">
+        <a href="#menu" title="Menu">
+          <i id="icon-menu" class="fa fa-bars fa-fw"></i><span style="display: none">Menu</span></a>
+      </li>
+    </ul>
+  </nav>
 </header>
 
 <!-- Menu -->
 <section id="menu">
-    <!-- Links -->
-    <section>
-        <ul class="links">
-            {{ range .Site.Menus.main }}
-            <li>
-                <a href="{{ .URL }}">
-                    <h3>
-                        {{ with .Identifier }}
-                        <i class="{{ . }}">&nbsp;</i>
-                        {{ end }}
-                        {{ .Name }}
-                    </h3>
-                </a>
-            </li>
+  <!-- Links -->
+  <section>
+    <ul class="links">
+      {{ range .Site.Menus.main }}
+      <li>
+        <a href="{{ .URL }}">
+          <h3>
+            {{ with .Identifier }}
+            <i class="{{ . }}">&nbsp;</i>
             {{ end }}
-        </ul>
-    </section>
-    <!-- Search -->
-    <section>
-        <div id="search-link">
-        <i class="fa fa-search" aria-hidden="true" style="margin-right: 0.5em"></i>
-        <a href="/search">Search</a>
-        </div>
-    </section>
+            {{ .Name }}
+          </h3>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  <!-- Search -->
+  <section>
+    <div id="search-link">
+      <i class="fa fa-search" aria-hidden="true" style="margin-right: 0.5em"></i>
+      <a href="/search">Search</a>
+    </div>
+  </section>
 
 </section>
