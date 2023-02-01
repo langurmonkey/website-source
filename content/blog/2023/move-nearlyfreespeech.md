@@ -2,7 +2,7 @@
 author = "Toni Sagristà Sellés"
 title = "I'm moving"
 description = "From Codeberg Pages to NearlyFreeSpeech.NET."
-date = "2023-01-22"
+date = "2023-02-01"
 linktitle = ""
 featured = ""
 featuredpath = ""
