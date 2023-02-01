@@ -9,4 +9,5 @@ featuredpath = ""
 featuredalt = ""
 categories = []
 tags = []
+type = "post"
 +++
