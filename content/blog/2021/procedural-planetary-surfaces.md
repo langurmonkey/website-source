@@ -12,7 +12,7 @@ type = "post"
 
 I have recently implemented a procedural generation system for planetary surfaces into [Gaia Sky](https://zah.uni-heidelberg.de/gaia/outreach/gaiasky). In this post, I ponder about different methods and techniques for procedurally generating planets that *look* just right and explain the process behind it in somewhat detail. This is a rather technical post, so be warned. As a teaser, the following image shows a planet generated using the processes described in this article.
 
-{{< fig src="/img/2021/12/procedural-surfaces/teaser-s.png" link="/img/2021/12/procedural-surfaces/teaser.png" title="Left: a wide view of a procedurally generated planet. Right: the same planet viewed from the surface." class="fig-center" width="60%" loading="lazy" >}}
+{{< fig src="/img/2021/12/procedural-surfaces/teaser-s.webp" link="/img/2021/12/procedural-surfaces/teaser.webp" title="Left: a wide view of a procedurally generated planet. Right: the same planet viewed from the surface." class="fig-center" width="60%" loading="lazy" >}}
 
 <!--more-->
 
@@ -227,7 +227,7 @@ We can generate the clouds with the same algorithm and the same parameters as th
 
 In this article we have showed a bird's eye view of how to procedurally generate convincing planetary surfaces. As we said, in Gaia Sky we generate spherical maps which are then mapped to UV spheres, but we could as well produce cubemap faces and use cubemaps to do the texturing. Below you can see an example of maps produced for a planet by Gaia Sky.
 
-{{< fig src="/img/2021/12/procedural-surfaces/maps/procedural-maps-s.png" link="/img/2021/12/procedural-surfaces/maps/procedural-maps.png" title="Left to right and top to bottom, clouds map, diffuse texture, elevation map, normal map and specular map procedurally generated with Gaia Sky." class="fig-center" width="80%" loading="lazy" >}}
+{{< fig src="/img/2021/12/procedural-surfaces/maps/procedural-maps-s.webp" link="/img/2021/12/procedural-surfaces/maps/procedural-maps.webp" title="Left to right and top to bottom, clouds map, diffuse texture, elevation map, normal map and specular map procedurally generated with Gaia Sky." class="fig-center" width="80%" loading="lazy" >}}
 
 Additionally, we have added a separate step to generate a cloud layer, and we can also randomize the atmospheric scattering parameters to have a fully procedural planet. We have implemented a function which randomizes all parameters within some bounds. Hitting the <kbd>Randomize all</kbd> button produces some neat results:
 
