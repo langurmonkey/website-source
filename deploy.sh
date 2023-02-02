@@ -21,7 +21,7 @@ while getopts 'c' OPTION; do
 done
 
 # the local hugo build directory.
-build_directory="public"
+build_directory="./public/"
 # the ssh server name.
 # please, add an entry with the given name to ~/.ssh/config
 # Host nfs
@@ -52,6 +52,6 @@ hugo --destination "${build_directory}" --minify --quiet
 
 echo "## Copying data to server."
 # copy contents of ${build_directory} to server
-rsync -avh --exclude='${build_directory}/.git' ${build_directory}/ ${ssh_server}:${server_dir}/
+rsync -avhtu --delete ${build_directory}/ ${ssh_server}:${server_dir}/
 
 echo "## Finished deploying site to ${ssh_server}:${server_dir}."
