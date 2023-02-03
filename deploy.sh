@@ -40,10 +40,9 @@ scripts/minify-all.sh theme-bw
 # DEPLOY
 echo "## Deploying site to ${ssh_server}:${server_dir}."
 
+flags=""
 if [ ${clean_deploy} = true ]; then
-  echo "## Cleaning public directory in server."
-  # if clean-deploy, delete previous build.
-  ssh ${ssh_server} "rm -rf ${server_dir}/*" 
+  flags="--delete"
 fi
 
 echo "## Generating static site."
@@ -52,6 +51,6 @@ hugo --destination "${build_directory}" --minify --quiet
 
 echo "## Copying data to server."
 # copy contents of ${build_directory} to server
-rsync -avhtu --delete ${build_directory}/ ${ssh_server}:${server_dir}/
+rsync -avhtu ${flags} ${build_directory}/ ${ssh_server}:${server_dir}/
 
 echo "## Finished deploying site to ${ssh_server}:${server_dir}."

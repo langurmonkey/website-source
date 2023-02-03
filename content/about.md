@@ -14,7 +14,7 @@ Since you are already here, I think a short introduction is in order. My name is
 
 I'm currently working in the [Gaia](https://sci.esa.int/web/gaia) group of the Astronomisches Rechen-Institut (ARI) in Heidelberg, and doing research in scientific visualization in the Visual Computing Group (VCG) of the Interdisciplinary Center for Scientific Computing (IWR), also in Heidelberg. That should do it for the acronym fest.
 
-You can find me on <a rel="me" href="https://mastodon.social/@jumpinglangur">mastodon.social</a> (English) and <a rel="me" href="https://mastodont.cat/@jumpinglangur">mastodont.cat</a> (Catalan). This site is accessible from [tonisagrista.com](https://tonisagrista.com) and [sagrista.info](https://sagrista.info).
+You can find me on <a rel="me" href="https://mastodon.social/@jumpinglangur">mastodon</a> and [nostr](/.well-known/nostr.json). This site is accessible from [tonisagrista.com](https://tonisagrista.com) and [sagrista.info](https://sagrista.info).
 
 
 <br/>
