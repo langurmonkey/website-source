@@ -9,4 +9,4 @@ fi
 echo "   using theme $THEME"
 
 LOC=$WEB/themes/langurmonkey/static/css
-uglifycss $LOC/$THEME.css $LOC/main.css $LOC/add-on.css $LOC/fork-awesome.css > $LOC/site-bundle.css
+uglifycss $LOC/$THEME.css $LOC/main.css $LOC/add-on.css $LOC/fork-awesome.min.css > $LOC/site-bundle.css

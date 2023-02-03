@@ -1,24 +1,27 @@
 {{ partial "general-title" . }}
 
 {{ partial "header" . }}
-    {{ partial "navbar" . }}
-    <!-- Main -->
-    <main>
-    <ul class="actions posts-list-button">
-    <li><a href="/posts-list">Posts list</a></li>
-    </ul>
-        <!-- Please note that the param orderByPublishDate is no longer being used
-             since the pagination is not what is expected. Use at your own risk! -->
-        {{ if .Site.Params.orderByPublishDate }}
-            {{ $paginator := .Paginate (where .Data.Pages.ByPublishDate.Reverse "Type" "post") }}
-        {{ else }}
-            {{ $paginator := .Paginate (where .Site.Pages "Type" "post") }}
-        {{ end }}
+{{ partial "navbar" . }}
+<!-- Main -->
+<main>
+  <ul class="actions posts-list-button">
+    <li><a href="/posts-list" title="Blog posts full listing per year."><i class="fa fa-list" aria-hidden="true"></i>&nbsp;Posts list</a></li>
+  </ul>
+  <!-- Please note that the param orderByPublishDate is no longer being used
+since the pagination is not what is expected. Use at your own risk! -->
+  {{ if .Site.Params.orderByPublishDate }}
+  {{ $paginator := .Paginate (where .Data.Pages.ByPublishDate.Reverse "Type" "post") }}
+  {{ else }}
+  {{ $paginator := .Paginate (where .Site.Pages "Type" "post") }}
+  {{ end }}
 
-        {{ range .Paginator.Pages }}
-            {{ .Render "content-list" }}
-        {{ end }}
+  {{ range .Paginator.Pages }}
+  {{ .Render "content-list" }}
+  {{ end }}
+  <ul class="actions posts-list-button">
+    <li><a href="/posts-list" title="Blog posts full listing per year."><i class="fa fa-list" aria-hidden="true"></i>&nbsp;Posts list</a></li>
+  </ul>
 
-        {{ partial "pagination" . }}
-    </main>
+  {{ partial "pagination" . }}
+</main>
 {{ partial "footer" . }}

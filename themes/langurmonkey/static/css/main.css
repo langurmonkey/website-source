@@ -941,7 +941,7 @@ ul.icons li:last-child {
 }
 
 ul.icons li > * {
-  font-size: 0.9em;
+  font-size: 1em;
   font-family: monospace;
 }
 
@@ -962,6 +962,10 @@ ul.actions {
   cursor: default;
   list-style: none;
   padding-left: 0;
+}
+
+ul.actions.pagination {
+  padding: 0 0 0 1em;
 }
 
 ul.actions li {
@@ -1014,6 +1018,7 @@ ul.actions.pagination .previous:before {
 
   ul.actions.pagination {
     text-align: center;
+    padding: 0;
   }
 
   ul.actions.pagination .next, ul.actions.pagination .previous {
@@ -1358,7 +1363,6 @@ article.post > footer .tags {
 }
 
 article.post > footer a {
-  margin: 0 0.5em 0 0.5em;
   font-weight: 100 !important;
   text-decoration: none !important;
 }

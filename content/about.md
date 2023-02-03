@@ -31,7 +31,7 @@ Here is a summary of the content in this site:
 </td>
 <td> 
 <a href="/posts-list"><div class="menu-table-item">
-{{< fa list-alt >}}<br/>
+{{< fa list >}}<br/>
 /all-posts
 </div></a>
 </td>
@@ -51,7 +51,7 @@ Here is a summary of the content in this site:
 <tr>
 <td> 
 <a href="/papers"><div class="menu-table-item">
-{{< fa newspaper-o >}}<br/>
+{{< fa file-text-o >}}<br/>
 /papers
 </div></a>
 </td>
@@ -69,7 +69,7 @@ Here is a summary of the content in this site:
 </td>
 <td> 
 <a href="/categories"><div class="menu-table-item">
-{{< fa flag-checkered >}}<br/>
+{{< fa th >}}<br/>
 /categories
 </div></a>
 </td>

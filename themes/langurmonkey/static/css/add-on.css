@@ -76,18 +76,18 @@ article.post header .meta p,
 article.post header .meta span,
 article.post footer .stats {
   font-family: sans-serif;
-  font-weight: 600;
+  font-weight: 50;
   /* Theoretically for IE 8 & 9 (more valid) */
   /* ...but not required as filter works too */
   /* should come BEFORE filter */
-  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
 
   /* This works in IE 8 & 9 too */
   /* ... but also 5, 6, 7 */
-  filter: alpha(opacity=50);
+  filter: alpha(opacity=40);
 
   /* Modern Browsers */
-  opacity: 0.50;
+  opacity: 0.40;
 }
 article.post header .meta p {
   font-size: 0.9em;
@@ -444,7 +444,6 @@ div.post-notice {
   width: 78%;
   line-height: 1.2em;
   border-radius: 0.7em;
-
 }
 
 ul.icons {
@@ -457,8 +456,7 @@ ul.icons {
   margin-right: 2px;
 }
 ul.posts-list-button {
-  font-family: courier,monospace;
-  letter-spacing: -0.05em;
+  letter-spacing: 0.15em;
   display: block;
   text-align: center;
   width: 12em;
@@ -468,7 +466,7 @@ ul.posts-list-button li {
   margin-bottom: -0.3em;
 }
 ul.posts-list-button a {
-  border-bottom-style: none;
+  text-decoration: none !important;
 }
 h4.latest-posts-bottom  {
   display: inline-block;
@@ -483,8 +481,7 @@ div.flexbox {
   display: flex;
 }
 #license {
-  font-size: 0.5em;
-  font-family: monospace;
+  font-size: 0.8em;
   color: #777;
   text-align: center;
   margin: 0.1em auto 1em auto;
