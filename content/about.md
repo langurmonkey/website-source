@@ -6,9 +6,13 @@ date = "2019-02-28"
 type = "homepage"
 +++
 
-<img src="/img/myself_yellow-blue.webp"
+<picture>
+<source srcset="/img/myself_yellow-blue.jxl" type="image/jxl" />
+<source srcset="/img/myself_yellow-blue.avif" type="image/avif" />
+<img src="/img/myself_yellow-blue.png"
      alt="My photo"
      style="float: right; margin-left: 50px; width: 25%" />
+</picture>
 
 Since you are already here, I think a short introduction is in order. My name is **Toni Sagristà Sellés** and I am a computer scientist and M.Sc. in Astrophysics and Cosmology. I like computer graphics and visualization, astronomy, photography (sometimes), snowboarding, playing and watching football, drawing horribly, playing with my kids, and occasionally gaming. I sometimes use the aliases `langurmonkey` and `jumpinglangur`.
 
