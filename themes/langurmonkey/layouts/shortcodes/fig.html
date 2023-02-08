@@ -1,19 +1,48 @@
 <!-- 
     Same as Hugo's base 'figure' shortcode with the image loading attribute.
     This enables lazy loading of images.
+
+    Attributes:
+    - src      - path to default source image
+    - width    - width img attribute
+    - height   - height img attribute
+    - loading  - loading img attribute
+    - title    - description/caption
+    - src1     - alternative source (1)
+    - type1    - type of src1
+    - src2     - alternative source (2)
+    - type2    - type of src2
+    - src3     - alternative source (3)
+    - type3    - type of src3
+    - src4     - alternative source (4)
+    - type4    - type of src4
 -->
 <figure{{ with .Get "class" }} class="{{ . }}"{{ end }}>
     {{- if .Get "link" -}}
         <a href="{{ .Get "link" }}"{{ with .Get "target" }} target="{{ . }}"{{ end }}{{ with .Get "rel" }} rel="{{ . }}"{{ end }}>
     {{- end -}}
-    <img src="{{ .Get "src" }}"
+    <picture>
+      {{- if .Get "src1" }}
+      <source srcset="{{ .Get "src1" }}"{{ with .Get "type1" }} type="{{ . }}"{{ end }} />
+      {{ end -}}
+      {{- if .Get "src2" }}
+      <source srcset="{{ .Get "src2" }}"{{ with .Get "type2" }} type="{{ . }}"{{ end }} />
+      {{ end -}}
+      {{- if .Get "src3" }}
+      <source srcset="{{ .Get "src3" }}"{{ with .Get "type3" }} type="{{ . }}"{{ end }} />
+      {{ end -}}
+      {{- if .Get "src4" }}
+      <source srcset="{{ .Get "src4" }}"{{ with .Get "type4" }} type="{{ . }}"{{ end }} />
+      {{ end -}}
+      <img src="{{ .Get "src" }}"
          {{- if or (.Get "alt") (.Get "caption") }}
          alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" | markdownify| plainify }}{{ end }}"
          {{- end -}}
          {{- with .Get "width" }} width="{{ . }}"{{ end -}}
          {{- with .Get "height" }} height="{{ . }}"{{ end -}}
          {{- with .Get "loading" }} loading="{{ . }}"{{ end -}}
-    /><!-- Closing img tag -->
+         decoding="async" />
+    </picture>
     {{- if .Get "link" }}</a>{{ end -}}
     {{- if or (or (.Get "title") (.Get "caption")) (.Get "attr") -}}
         <figcaption

@@ -34,7 +34,7 @@ And I'm sure desktop and CLI clients are also around, but I have not checked.
 
 One of the NIPs, [NIP05](https://github.com/nostr-protocol/nips/blob/master/05.md), defines user identification within a domain name. This is similar to Twitter's checkmark, or Mastodon's verification ``rel="me"`` links. In nostr's case, all you need is your own domain and the ability to upload files and set the CORS policy. This requires access to the web server, so Codeberg Pages or similar won't work.
 
-{{< fig src="/img/2023/02/mastodon-verification.jpg" class="fig-center" width="55%" title="Mastodon implements verification by checking the websites listed in your profile for the anchors that link back to the profile. This method enables the verification with may sites for a single account." loading="lazy" >}}
+{{< fig src1="/img/2023/02/mastodon-verification.jxl" type1="image/jxl" src2="/img/2023/02/mastodon-verification.avif" type2="image/avif" src="/img/2023/02/mastodon-verification.jpg" class="fig-center" width="55%" title="Mastodon implements verification by checking the websites listed in your profile for the anchors that link back to the profile. This method enables the verification with may sites for a single account." loading="lazy" >}}
 
 First, you need to upload a `nostr.json` file to the `/.well-known` subdirectory in your site, so that the full URL reads like `https://yourdomain.com/.well-known/nostr.json`. The file must contain your verification username and your **public key formatted in hex**. Make sure that your key is in hex. If you have only the npub key, you can convert it with [key-convertr](https://github.com/rot13maxi/key-convertr). The format of the `nostr.json` is the following.
 
@@ -55,7 +55,7 @@ Header add Access-Control-Allow-Methods: "GET,POST,OPTIONS,DELETE,PUT"
 
 Once that is done, add the string `name@yourdomain.com` in the NIP05 field of your client, and you should be able to see the verification status in short. My NIP05 sits at [https://tonisagrista.com/.well-known/nostr.json](npub1kr5shpkaafvys2sg3j3ymhdxj0dkw0wynjqmktupk4ef2z3npw5qjjwt4f), so I entered `langurmonkey@tonisagrista.com` to the NIP05 field. Once you do this in one client, you don't need to do it again, and all other clients should be able to pick it up.
 
-{{< fig src="/img/2023/02/nostr-verification-snort.jpg" class="fig-center" width="55%" title="Successful verification status with NOP05 in snort.social." loading="lazy" >}}
+{{< fig src1="/img/2023/02/nostr-verification-snort.jxl" type1="image/jxl" src2="/img/2023/02/nostr-verification-snort.avif" type2="image/avif" src="/img/2023/02/nostr-verification-snort.jpg" class="fig-center" width="55%" title="Successful verification status with NOP05 in snort.social." loading="lazy" >}}
 
 If you don't have your own domain, or you don't manage it directly, you can still get verified with one of the many verification services available. [NostrPlebs](https://nostrplebs.com) is one such service, which offers verification on nostr for a few satoshis.
 

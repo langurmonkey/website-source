@@ -2146,10 +2146,15 @@ figcaption, figcaption > h4 {
   font-weight: 200;
 }
 
+figure.fig-center {
+  text-align: center
+}
+
 figure.fig-center > img, figure.fig-center > a > img, figure.fig-center > embed, figure.fig-center > video {
   display: block;
   margin: 0 auto 0 auto;
 }
+
 figure.fig-right {
   margin: 0 0 1em 1em;
   display: block;
