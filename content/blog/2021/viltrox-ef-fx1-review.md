@@ -5,7 +5,7 @@ tags = ["gear", "photo", "lens", "english"]
 date = 2021-11-16
 linktitle = ""
 title = "Viltrox EF-FX1 lens adapter review"
-description = "Does this adapter work well? Is auto focus usable? Is it worth it?"
+description = "Does this adapter work well? Is the auto focus it provides usable? Is the device worth it?"
 featuredpath = "date"
 type = "post"
 +++
@@ -30,7 +30,7 @@ Officially, the Fuji X-S10 is **not supported**, and **nor is the Canon 28-105mm
 
 ## Build quality
 
-The adapter is very well built. It feels durable and sturdy and it fits into the X mount perfectly. Canon lenses attach to the other end equally as handsomely. There is absolutely no wobbling once both the adapter and the lens have 'clicked'. It is made of metal with surface plating treatment and has a Micro-USB port to upgrade the firmware. It supports auto focus, aperture adjustment from the camera and EXIF data transmission.
+The adapter is very well built. It feels durable and sturdy and it fits into the X mount perfectly. Canon lenses attach to the other end equally as tightly. There is absolutely no wobbling once both the adapter and the lens have 'clicked'. It is made of metal with surface plating treatment and has a Micro-USB port to upgrade the firmware. It supports auto focus, aperture adjustment from the camera and EXIF data transmission.
 
 {{< fig src="/photo-gallery/media/small/gear/viltrox-ef-fx1-standing.jpg" link="http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/viltrox-ef-fx1-standing.jpg" title="The Viltrox EF-FX1 standing on the tripod mount. Note the Micro-USB port in the inner ring." width="50%" class="fig-center" loading="lazy" >}}
 
@@ -40,14 +40,14 @@ The first thing I did after receiving the adapter was test it quickly. It looked
 
 So obviously I had no alternative but to go on a quest to capture the old firmware versions. Maybe one of them would work *fine* with my body and lenses. I started at the [official website](http://viltrox.com) (on a side note, how on Earth is a website serving firmware files not using HTTPS in 2021?), but it wasn't gonna be that easy. The web only serves the latest version. So I sent them an email asking for old versions for testing purposes, but they ignored me. Then I found a Reddit comment thread where someone mentioned being able to get old firmware versions for the EF-FX1 from the manufacturer, so I contacted him and he was kind enough to send me a *zip* file with some firmware files. The zip contained versions 1.0, 1.10, 2.12, 2.14, 2.18, 2.21, 2.23, 2.26, 2.28 and 2.29.
 
-## Flashing firmwares like there's no tomorrow
+## Flashing firmware versions like there's no tomorrow
 
 Then I set up a table to methodically test and document my findings. I would rate the performance of each lens with each firmware version using a scale from 1 to 5:
 
-- **1** --- Not working, can't auto focus at all.
+- **1** --- Not working, can't get focus at all.
 - **2** --- Auto focus barely works, it hunts a lot.
 - **3** --- Almost usable. Focus still hunts, but it lands some good ones from time to time.
-- **4** --- Quite usable. It takes a bit more to focus than with native hardware, but it works.
+- **4** --- Quite usable. Focus takes longer than usual, but it works.
 - **5** --- Performance is like native.
 
 Here is the table.
