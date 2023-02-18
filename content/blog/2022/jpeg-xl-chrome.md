@@ -19,7 +19,7 @@ It is clear that whatever format succeeds in positioning itself as the new de-fa
 
 If we strictly go by each format's merits, it is quite apparent that JPEG XL comes out on top. WebP is not even a contender, as it offers, quite frankly, [shitty image quality](https://eng.aurelienpierre.com/2021/10/webp-is-so-great-except-its-not/) and sub-par compression ratios. Between AVIF and JPEG XL, the latter is faster at encoding and decoding, more parallelizable, offers better lossy compression ratios in most real-world use cases, and has more features. 
 
-Quoting a [cloudinary user](https://bugs.chromium.org/p/chromium/issues/detail?id=1178058#c56),
+Quoting a [cloudinary employee](https://bugs.chromium.org/p/chromium/issues/detail?id=1178058#c56),
 
 > Overall, JPEG XL achieves better lossy compression (quality vs filesize) than existing browser-supported formats (JPEG, JPEG 2000, WebP and AVIF). In particular for photographic images featuring nature, humans, clothes (which includes image content relevant for many web use cases), the gap between JPEG XL and the next-best available codec (typically AVIF) tends to be very significant. Overall, I estimate JPEG XL to be about 17% smaller than AVIF for the same visual quality, which is about the same gap as between AVIF and WebP and as the gap between WebP and (moz)JPEG. For some specific types of images like lossy non-photographic images, AVIF does perform better than JPEG XL, but on many types of photographic images, JPEG XL outperforms AVIF by over 20%.
 
