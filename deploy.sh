@@ -51,6 +51,6 @@ hugo --destination "${build_directory}" --minify --quiet
 
 echo "## Copying data to server."
 # copy contents of ${build_directory} to server
-rsync -avhtu ${flags} ${build_directory}/ ${ssh_server}:${server_dir}/
+rsync -avhtu --cvs-exclude ${flags} ${build_directory}/ ${ssh_server}:${server_dir}/
 
 echo "## Finished deploying site to ${ssh_server}:${server_dir}."
