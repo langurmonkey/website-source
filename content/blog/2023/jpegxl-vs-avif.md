@@ -10,7 +10,7 @@ featuredpath = "date"
 type = "post"
 +++
 
-JPEG XL and AVIF are arguably the two main contenders in the battle to replace JPEG as the next-generation image format. There are other formats in the race, like HEIC and WebP 2, but the former is subject to licensing patents (and possibly not royalty-free), and the second is still in development and seems that it [may never see the light of day](https://chromium.googlesource.com/codecs/libwebp2/+/1251ca748c17278961c0d0059b744595b35a4943^%21/) as a production-ready image format anyway. The original WebP is not even a contender as it is [inferior in all aspects](https://afosto.com/blog/avif-vs-webp-format/).
+JPEG XL and AVIF are arguably the two main contenders in the battle to replace JPEG as the next-generation image format. There are other formats in the race, like HEIC and WebP 2, but the former is subject to licensing patents (and possibly not royalty-free), and the second is still in development and seems that it [may never see the light of day](https://chromium.googlesource.com/codecs/libwebp2/+/1251ca748c17278961c0d0059b744595b35a4943^%21/) as a production-ready image format anyway. The original WebP is not even a contender as it is [inferior in all aspects](https://afosto.com/blog/avif-vs-webp-format/), and you should probably [**never** use it for photography](https://eng.aurelienpierre.com/2021/10/webp-is-so-great-except-its-not/) anyway.
 
 First, a quick browser support test:
 
