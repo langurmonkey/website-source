@@ -10,7 +10,7 @@ featuredpath = "date"
 type = "post"
 +++
 
-JPEG XL and AVIF are arguably the two main contenders in the battle to replace JPEG as the next-generation image format. There are other formats in the race, like HEIC and WebP 2, but the former is subject to licensing patents (and possibly not royalty-free), and the second is still in development and seems that it [may never see the light of day](https://chromium.googlesource.com/codecs/libwebp2/+/1251ca748c17278961c0d0059b744595b35a4943^%21/) as a production-ready image format anyway. The original WebP is not even a contender as it is inferior to AVIF in all aspects[^3], and you should probably **never** use it for photography anyway[^1], or at all if you are not ok with mediocre image quality[^2].
+JPEG XL and AVIF are arguably the two main contenders in the battle to replace JPEG as the next-generation image format. There are other formats in the race, like HEIC and WebP 2, but the former is subject to licensing patents (and possibly not royalty-free), and the second is still in development and seems that it [may never see the light of day](https://chromium.googlesource.com/codecs/libwebp2/+/1251ca748c17278961c0d0059b744595b35a4943^%21/) as a production-ready image format anyway. The original WebP is not even a contender as it is inferior to AVIF in all aspects,[^3] and you should probably **never** use it for photography anyway[^1], or at all if you are not ok with mediocre image quality.[^2]
 
 First, a quick browser support test:
 
@@ -144,7 +144,7 @@ According to the results presented above, we can conclude that JXL is the superi
 - Max image size is limited to 4K (3840x2160) in AVIF, which is a deal breaker to me. You can tile images, but seams are visible at the edges, which makes this unusable. JPEG XL supports image sizes of up to 1,073,741,823x1,073,741,824. You won't run out of image space anytime soon.
 - JXL offers lossless recompression of JPEG images. This is important for compatibility, as you can re-encode JPEG images into JXL for a 30% reduction in file size for free. AVIF has no such feature.
 - JXL has a maximum of 32 bits per channel. AVIF supports up to 10.
-- JXL is more resilient to generation loss[^4].
+- JXL is more resilient to generation loss.[^4]
 - AVIF is notoriously based on the AV1 video encoder. That makes it far superior for animated image sequences, outperforming JXL in this department by a wide margin. However, JXL also supports this feature.
 - AVIF is supported in most major browsers. This includes Chrome (and derivatives) and Firefox (and forks). JXL is supported by almost nobody right now. Only **Thorium**, **Pale Moon**, **LibreWolf**, **Waterfox**, **Basilisk** and **Firefox Nightly** incorporate it. Most of these are community-maintained forks of Firefox. That is a big downside for adoption, as I already ranted about in [this post](/blog/2022/jpeg-xl-chrome).
 - Both formats support transparency, wide gamut (HDR) and progressive decoding.
