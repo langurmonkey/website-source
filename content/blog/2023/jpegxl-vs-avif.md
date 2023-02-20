@@ -10,14 +10,14 @@ featuredpath = "date"
 type = "post"
 +++
 
-JPEG XL and AVIF are arguably the two main contenders in the battle to replace JPEG as the next-generation image format. There are other formats in the race, like HEIC and WebP 2, but the former is subject to licensing patents (and possibly not royalty-free), and the second is still in development and seems that it [may never see the light of day](https://chromium.googlesource.com/codecs/libwebp2/+/1251ca748c17278961c0d0059b744595b35a4943^%21/) as a production-ready image format anyway. The original WebP is not even a contender as it is [inferior in all aspects](https://afosto.com/blog/avif-vs-webp-format/), and you should probably [**never** use it for photography](https://eng.aurelienpierre.com/2021/10/webp-is-so-great-except-its-not/) anyway.
+JPEG XL and AVIF are arguably the two main contenders in the battle to replace JPEG as the next-generation image format. There are other formats in the race, like HEIC and WebP 2, but the former is subject to licensing patents (and possibly not royalty-free), and the second is still in development and seems that it [may never see the light of day](https://chromium.googlesource.com/codecs/libwebp2/+/1251ca748c17278961c0d0059b744595b35a4943^%21/) as a production-ready image format anyway. The original WebP is not even a contender as it is inferior to AVIF in all aspects[^3], and you should probably **never** use it for photography anyway[^1], or at all if you are not ok with mediocre image quality[^2].
 
 First, a quick browser support test:
 
 {{< fig src1="/img/2023/02/jxl-avif/support-jxl-yes.jxl" type1="image/jxl" src="/img/2023/02/jxl-avif/support-jxl-no.jpg" class="fig-center" width="50%" loading="lazy" >}}
 {{< fig src1="/img/2023/02/jxl-avif/support-avif-yes.avif" type1="image/avif" src="/img/2023/02/jxl-avif/support-avif-no.jpg" class="fig-center" width="50%" loading="lazy" >}}
 
-If you are browsing this page around 2023, chances are that your browser supports AVIF but does not support JPEG XL. This is mainly due to [the Chrome team dropping support for JPEGL XL](/blog/2022/jpeg-xl-chrome) against the opinion the community at large. In this post, I hope to convince you why this is a bad move. Below, I perform a quick analysis of lossless and lossy compression with JPEG XL and AVIF, and evaluate how they fare in terms of file size and visual quality.
+If you are browsing this page around 2023, chances are that your browser supports AVIF but does not support JPEG XL. This is mainly due to the [Chrome team dropping support for JPEGL XL](/blog/2022/jpeg-xl-chrome) against the opinion the community at large. In this post, I hope to convince you why this is a bad move. Below, I perform a quick analysis of lossless and lossy compression with JPEG XL and AVIF, and evaluate how they fare in terms of file size and visual quality.
 
 <!--more-->
 
@@ -144,10 +144,15 @@ According to the results presented above, we can conclude that JXL is the superi
 - Max image size is limited to 4K (3840x2160) in AVIF, which is a deal breaker to me. You can tile images, but seams are visible at the edges, which makes this unusable. JPEG XL supports image sizes of up to 1,073,741,823x1,073,741,824. You won't run out of image space anytime soon.
 - JXL offers lossless recompression of JPEG images. This is important for compatibility, as you can re-encode JPEG images into JXL for a 30% reduction in file size for free. AVIF has no such feature.
 - JXL has a maximum of 32 bits per channel. AVIF supports up to 10.
-- JXL is [more resilient to generation loss](https://youtu.be/qc2DvJpXh-A).
+- JXL is more resilient to generation loss[^4].
 - AVIF is notoriously based on the AV1 video encoder. That makes it far superior for animated image sequences, outperforming JXL in this department by a wide margin. However, JXL also supports this feature.
 - AVIF is supported in most major browsers. This includes Chrome (and derivatives) and Firefox (and forks). JXL is supported by almost nobody right now. Only **Thorium**, **Pale Moon**, **LibreWolf**, **Waterfox**, **Basilisk** and **Firefox Nightly** incorporate it. Most of these are community-maintained forks of Firefox. That is a big downside for adoption, as I already ranted about in [this post](/blog/2022/jpeg-xl-chrome).
 - Both formats support transparency, wide gamut (HDR) and progressive decoding.
 
 
 If I had to choose a format to re-encode all of my photos, I would for sure choose JXL. My image viewers of choice support it (Gnome image viewer, nsxiv, feh) and my image processors of choice support it (GIMP, DarkTable). As seen, it provides better image quality and better compression ratios than AVIF, more features and is generally faster.
+
+[^1]: https://eng.aurelienpierre.com/2021/10/webp-is-so-great-except-its-not/
+[^2]: https://siipo.la/blog/is-webp-really-better-than-jpeg
+[^3]: https://afosto.com/blog/avif-vs-webp-format/
+[^4]: https://youtu.be/qc2DvJpXh-A
