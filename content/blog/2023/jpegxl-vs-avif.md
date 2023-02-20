@@ -1,10 +1,10 @@
 +++
 author = "Toni Sagrista Selles"
-categories = ["Image formats"]
-tags = ["open source", "image", "visualization", "formats", "english"]
+categories = ["JPEG XL"]
+tags = ["open-source", "image", "visualization", "formats", "jpeg xl", "jxl", "avif", "jpeg", "png", "webp", "english"]
 date = 2023-02-19
 linktitle = ""
-title = "JPEG XL vs AVIF: Fight!"
+title = "Comparing JPEG XL and AVIF"
 description = "An unscientific analysis of these two image formats based on file size and image quality."
 featuredpath = "date"
 type = "post"
@@ -12,7 +12,12 @@ type = "post"
 
 JPEG XL and AVIF are arguably the two main contenders in the battle to replace JPEG as the next-generation image format. There are other formats in the race, like HEIC and WebP 2, but the former is subject to licensing patents (and possibly not royalty-free), and the second is still in development and seems that it [may never see the light of day](https://chromium.googlesource.com/codecs/libwebp2/+/1251ca748c17278961c0d0059b744595b35a4943^%21/) as a production-ready image format anyway. The original WebP is not even a contender as it is [inferior in all aspects](https://afosto.com/blog/avif-vs-webp-format/).
 
-In this post, I perform a quick analysis of lossless and lossy compression with JPEG XL and AVIF, and evaluate how they fare in terms of file size and visual quality.
+First, a quick browser support test:
+
+{{< fig src1="/img/2023/02/jxl-avif/support-jxl-yes.jxl" type1="image/jxl" src="/img/2023/02/jxl-avif/support-jxl-no.jpg" class="fig-center" width="50%" loading="lazy" >}}
+{{< fig src1="/img/2023/02/jxl-avif/support-avif-yes.avif" type1="image/avif" src="/img/2023/02/jxl-avif/support-avif-no.jpg" class="fig-center" width="50%" loading="lazy" >}}
+
+If you are browsing this page around 2023, chances are that your browser supports AVIF but does not support JPEG XL. This is mainly due to [the Chrome team dropping support for JPEGL XL](/blog/2022/jpeg-xl-chrome) against the opinion the community at large. In this post, I hope to convince you why this is a bad move. Below, I perform a quick analysis of lossless and lossy compression with JPEG XL and AVIF, and evaluate how they fare in terms of file size and visual quality.
 
 <!--more-->
 
@@ -63,12 +68,15 @@ It would have been easier to use `libvips`, which offers a unified interface for
 
 For the flag image I have used a crop around the small boat in the distance, to the very left of the scene. The crop is upscaled by 200%. Here are the results.
 
-| Image | Description  | 
+<center>
+
+| Image (200% crop) | Description  | 
 |-------|-------|
 | <img src="/img/2023/02/jxl-avif/crop-lossy/flag-png.jpg" loading="lazy" /> | Original, 6.9 Mb |
 | <img src="/img/2023/02/jxl-avif/crop-lossy/flag-jxl.jpg" loading="lazy" /> | JXL, 146 Kb |
 | <img src="/img/2023/02/jxl-avif/crop-lossy/flag-avif.jpg" loading="lazy" /> | AVIF, 146 Kb |
 
+</center>
 
 I used some pretty heavy compression in this one. This means that the quality parameter was rather low. We compressed the image from the original 6.9 Mb to only 146 Kb. Right off the bat, we see that the JXL version is **more true to the original**, being able to retain more of the detail in the original. Especially the sky looks washed in the AVIF version.
 
@@ -81,11 +89,15 @@ JXL wins this round, as it is able to provide a higher fidelity representation o
 In this case I did not upscale the crops, so they are shown at the original resolution.
 Compare cityscape black-and-white image.
 
-| Image | Description  | 
+<center>
+
+| Image (100% crop) | Description  | 
 |-------|-------|
 | <img src="/img/2023/02/jxl-avif/crop-lossy/city-png.jpg" loading="lazy" /> | Original, 7.8 Mb |
 | <img src="/img/2023/02/jxl-avif/crop-lossy/city-jxl.jpg" loading="lazy" /> | JXL, 224 Kb |
 | <img src="/img/2023/02/jxl-avif/crop-lossy/city-avif.jpg" loading="lazy" /> | AVIF, 235 Kb |
+
+</center>
 
 In this case the AVIF version is 11 Kb larger than the JXL version. I couldn't get it at the exact same size as the JXL version, so I erred on the side that favours AVIF. Here the results are closer, but we can see some artifacts on the sky surrounding the pointy structure in the AVIF, which are not present in the JXL. After carefully reviewing several spots I can say that this behaviour is consistent across the whole image. This, coupled with the fact that the AVIF image is larger, also gives the edge to JXL.
 
@@ -93,11 +105,15 @@ In this case the AVIF version is 11 Kb larger than the JXL version. I couldn't g
 
 This is a very simple image. I used a 500% upscale crop around a specific site which has a little hole at the top left. This hole is retained in both versions (see white pixels to the top-left).
 
-| Image | Description  | 
+<center>
+
+| Image (500% crop) | Description  | 
 |-------|-------|
 | <img src="/img/2023/02/jxl-avif/crop-lossy/plot-png.jpg" loading="lazy" /> | Original, 399 Kb |
 | <img src="/img/2023/02/jxl-avif/crop-lossy/plot-jxl.jpg" loading="lazy" /> | JXL, 173 Kb |
 | <img src="/img/2023/02/jxl-avif/crop-lossy/plot-avif.jpg" loading="lazy" /> | AVIF, 176 Kb |
+
+</center>
 
 Again, the AVIF version is a bit larger. Achieving a good compression ratio is much harder with this image. In general, both the AVIF and JXL present very few artifacts. I would say that the color artifacts in AVIF are a bit worse, but this is kind of subjective. I think this is a draw.
 
@@ -105,11 +121,15 @@ Again, the AVIF version is a bit larger. Achieving a good compression ratio is m
 
 Finally, I also took a look at lossless compression to evaluate the differences in file size when encoding mathematically identical images without any information loss.
 
+<center>
+
 | Image | Original | JXL     | AVIF     |
 |-------|----------|---------|----------|
 | Flag  | 6.9 Mb   | 2.0 Mb  | 2.7 Mb   |
 | BW cityscape  | 7.8 Mb   | 1.2 Mb  | 4.3 Mb   |
 | Plot  | 399 Kb   | 113 Kb  | 853 Kb   |
+
+</center>
 
 As you can see, there is no contest. JXL wins every time, with some abysmal results, like the BW cityscape, where the lossless JXL image is four times smaller than its AVIF counterpart. **If I had to store lots of lossless images I would definitely go for JXL**.
 
@@ -126,7 +146,7 @@ According to the results presented above, we can conclude that JXL is the superi
 - JXL has a maximum of 32 bits per channel. AVIF supports up to 10.
 - JXL is [more resilient to generation loss](https://youtu.be/qc2DvJpXh-A).
 - AVIF is notoriously based on the AV1 video encoder. That makes it far superior for animated image sequences, outperforming JXL in this department by a wide margin. However, JXL also supports this feature.
-- AVIF is supported in most major browsers. This includes Chrome (and derivatives) and Firefox (and forks). JXL is supported by almost nobody right now. Only Thorium, PaleMoon, LibreWolf, and some more obscure community-maintained forks incorporate it. That is a big downside for adoption, as I already ranted about in [this post](/blog/2022/jpeg-xl-chrome).
+- AVIF is supported in most major browsers. This includes Chrome (and derivatives) and Firefox (and forks). JXL is supported by almost nobody right now. Only **Thorium**, **Pale Moon**, **LibreWolf**, **Waterfox**, **Basilisk** and **Firefox Nightly** incorporate it. Most of these are community-maintained forks of Firefox. That is a big downside for adoption, as I already ranted about in [this post](/blog/2022/jpeg-xl-chrome).
 - Both formats support transparency, wide gamut (HDR) and progressive decoding.
 
 

@@ -1,7 +1,7 @@
 +++
 author = "Toni Sagrista Selles"
-categories = ["open-source"]
-tags = ["chromium", "chrome", "google", "programming", "open-source", "english"]
+categories = ["JPEG XL"]
+tags = ["chromium", "chrome", "google", "jpeg xl", "jxl", "avif", "webp", "jpeg", "png", "programming", "open-source", "image", "formats", "english"]
 date = 2022-12-14
 title = "Google kills JPEG XL"
 description = "Why Google controlling Chrome/Blink development is bad for everyone"
