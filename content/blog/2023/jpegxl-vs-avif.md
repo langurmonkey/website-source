@@ -47,7 +47,7 @@ In this section we analyze how well JXL and AVIF compress images, in relation to
 In order to encode the **JXL** versions, I have used the `cjxl` provided with `libjxl`. In general, I have not used options other than the quality. For instance, all JXL images use effort 7, which is the default.
 
 ```bash
-cjxl input.png output.jxl -q 60 --num_threads=-1
+cjxl input.png output.jxl -q 60 --num_threads=4
 ```
 
 Playing around with the quality setting (`-q`) produces larger, higher quality images for higher quality settings, and smaller, lower quality ones for lower quality settings. The `-q` goes from 0 to 100.
