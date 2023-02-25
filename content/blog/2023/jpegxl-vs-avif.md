@@ -3,7 +3,7 @@ author = "Toni Sagrista Selles"
 categories = ["JPEG XL"]
 tags = ["open-source", "image", "visualization", "formats", "jpeg xl", "jxl", "avif", "jpeg", "png", "webp", "english"]
 date = 2023-02-19
-title = "Image format battles: JPEG XL vs AVIF"
+title = "JPEG XL vs AVIF: A Comparison"
 description = "An unscientific analysis of these two image formats based on file size and image quality."
 featuredpath = "date"
 type = "post"
@@ -149,7 +149,7 @@ According to the results presented above, we can conclude that JXL is the superi
 - Both formats support transparency, wide gamut (HDR) and progressive decoding.
 
 
-If I had to choose a format to re-encode all of my photos, I would for sure choose JXL. My image viewers of choice support it (Gnome image viewer, nsxiv, feh) and my image processors of choice support it (GIMP, DarkTable). As seen, it provides better image quality and better compression ratios than AVIF, more features and is generally faster.
+If I had to choose a format to re-encode all of my photos, I would for sure choose JXL. My image viewers of choice support it (Gnome image viewer, nsxiv, feh) and my image processors of choice support it (GIMP, DarkTable). As seen, it provides better image quality and better compression ratios than AVIF, more features and is generally faster. That said, I don't think AVIF is completely useless. It is a better option to replace animated GIFs than JXL, and it is quite good at very lossy compressions targeting the smallest file sizes possible, which makes it a good contender for web delivery.
 
 [^1]: https://eng.aurelienpierre.com/2021/10/webp-is-so-great-except-its-not/
 [^2]: https://siipo.la/blog/is-webp-really-better-than-jpeg
