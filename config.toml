@@ -20,7 +20,6 @@ uglyurls = false
     # Sets the meta tag description, usually reserved for the main page
     description          = "Personal website and portfolio"
     # This will appear on the top left of the navigation bar
-    #navbarTitle          = "Toni Sagristà Sellés"
     navbarTitle          = "langur@monkey"
     # Social media buttons that appear in the footer
     socialAppearAtBottom = true
