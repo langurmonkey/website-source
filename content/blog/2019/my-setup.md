@@ -138,7 +138,7 @@ Right now I'm using [Thunderbird](https://thunderbird.net) with [Enigmail](https
 
 ## Music player
 
-I have used [`cmus`](https://cmus.github.io) with [`vis`](https://github.com/dpayne/cli-visualizer) for a long time, coupled with [`beets`](http://beets.io) to keep my library organised and my tags up to date. However, lately I've turned to the [`mdp`](https://musicpd.org) + [`ncmpcpp`](https://github.com/arybczak/ncmpcpp) tandem. The MPD service is running in the background and maintains the libary, playlists and player state. NCMPCPP connects to it and offers a terminal-based clean interface. Every day I like it more and more.
+I have used [`cmus`](https://cmus.github.io) with [`vis`](https://github.com/dpayne/cli-visualizer) for a long time, coupled with [`beets`](https://beets.io) to keep my library organised and my tags up to date. However, lately I've turned to the [`mdp`](https://musicpd.org) + [`ncmpcpp`](https://github.com/arybczak/ncmpcpp) tandem. The MPD service is running in the background and maintains the libary, playlists and player state. NCMPCPP connects to it and offers a terminal-based clean interface. Every day I like it more and more.
 
 ## RAW photo editing
 
@@ -165,7 +165,7 @@ Here is a list of utilities I have installed and use regularly.
 -  [`units`](https://gnu.org/software/units) - Convert units on the terminal
 -  [`translate-shell`](https://github.com/soimort/translate-shell) - Google translate terminal wrapper
 -  [`rtv`](https://github.com/michael-lazar/rtv) - Reddit Terminal Viewer
--  [`tealdeer`](https://github.com/dbrgn/tealdeer) - Access [`tldr-pages`](github.com/tldr-pages/tldr) with style
+-  [`tealdeer`](https://github.com/dbrgn/tealdeer) - Access [`tldr-pages`](https://github.com/tldr-pages/tldr) with style
 -  [`pdfpc`](https://github.com/phillipberndt/pdfpc) - Presenter console for for PDF files
 -  [`tig`](https://github.com/jonas/tig) - Text interface for `git`
 -  `bc` - Best calculator ;)
