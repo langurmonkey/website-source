@@ -1373,6 +1373,7 @@ article.post > footer a {
   line-height: 1;
   margin: 0;
   padding: 0;
+  margin-left: 0.2em;
 }
 
 .post > footer .stats li:first-child {
