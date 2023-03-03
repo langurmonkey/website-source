@@ -79,7 +79,7 @@ For the flag image I have used a crop around the small boat in the distance, to 
 
 </center>
 
-I used some pretty heavy compression in this one. This means that the quality parameter was rather low. We compressed the image from the original 6.9 Mb to only 146 Kb. Right off the bat, we see that the JXL version is **more true to the original**, being able to retain more of the detail in the original. Especially the sky looks washed in the AVIF version.
+I used some pretty heavy compression in this one. This means that the quality parameter was rather low. We compressed the image from the original 6.9 Mb to only 146 Kb. Right off the bat, we see that the JXL version is **more true to the original**, being able to retain more of the detail. For instance, the sky looks washed-out in the AVIF version when compared to the JXL, which retains some grain.
 
 Also, I find it very funny that in the AVIF version the mast at the front end of the boat is completely gone, and **a new, non-existing mast has appeared out of nowhere** on top of the bridge! This is not the case in the JXL version, which is able to retain the original mast.
 
@@ -132,11 +132,11 @@ Finally, I also took a look at lossless compression to evaluate the differences 
 
 </center>
 
-As you can see, there is no contest. JXL wins every time, with some abysmal results, like the BW cityscape, where the lossless JXL image is four times smaller than its AVIF counterpart. **If I had to store lots of lossless images I would definitely go for JXL**.
+As you can see, there is no contest. JXL wins every time, with some abysmal results, like the BW cityscape, where the lossless JXL image is four times smaller than its AVIF counterpart. Interestingly, the lossless AVIF is twice the size of the original PNG. I'm not sure what the deal with this is, but it is for sure bad. It may be obvious, but let's state it: **If I had to store lots of lossless images I would definitely go for JXL**.
 
 ## Encoding speed
 
-What about encoding speed? Well, I did not capture that data (reasons later), but my subjective impression is that, again JXL has the edge here as well. However, I understand there are many parameters that affect encoding speed, like effort, multithreading, etc. This is a multi-dimensional problem which requires a careful analysis, but that is the topic for another post. Cloudinary and Google both have assessed it, and they came up with contradicting results, so the battle's still on.
+What about encoding speed? Well, I did not capture that data (reasons later), but my totally subjective and unscientific impression is that, again JXL has the edge here as well. However, there are many parameters that affect encoding speed, like effort, multithreading, etc., and they are different for the different encoders. So finding a common comparison ground is not always easy. This is a multi-dimensional problem which requires a careful analysis and probably lots of time, so I'll leave it for another post. Cloudinary and Google both run similar tests concerning encoding speed, and they came up with contradicting results, so the battle's still on.
 
 ## Conclusion
 
