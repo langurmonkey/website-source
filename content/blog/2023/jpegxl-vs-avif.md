@@ -9,6 +9,8 @@ featuredpath = "date"
 type = "post"
 +++
 
+{{< sp orange >}}Edit (2023-03-03):{{</ sp >}} Fixed mistake, as [AVIF does in fact NOT support progressive decoding](https://avif.io/blog/comparisons/avif-vs-jpegxl/#speed).
+
 JPEG XL and AVIF are arguably the two main contenders in the battle to replace JPEG as the next-generation image format. There are other formats in the race, like HEIC and WebP 2, but the former is subject to licensing patents (and possibly not royalty-free), and the second is still in development and seems that it [may never see the light of day](https://chromium.googlesource.com/codecs/libwebp2/+/1251ca748c17278961c0d0059b744595b35a4943^%21/) as a production-ready image format anyway. The original WebP is not even a contender as it is inferior to AVIF in all aspects,[^3] and you should probably **never** use it for photography anyway[^1], or at all if you are not ok with mediocre image quality.[^2]
 
 First, a quick browser support test:
@@ -144,9 +146,10 @@ According to the results presented above, we can conclude that JXL is the superi
 - JXL offers lossless recompression of JPEG images. This is important for compatibility, as you can re-encode JPEG images into JXL for a 30% reduction in file size for free. AVIF has no such feature.
 - JXL has a maximum of 32 bits per channel. AVIF supports up to 10.
 - JXL is more resilient to generation loss.[^4]
+- JXL supports progressive decoding, which is essential in web delivery, IMO. AVIF has no such feature.
 - AVIF is notoriously based on the AV1 video encoder. That makes it far superior for animated image sequences, outperforming JXL in this department by a wide margin. However, JXL also supports this feature.
 - AVIF is supported in most major browsers. This includes Chrome (and derivatives) and Firefox (and forks). JXL is supported by almost nobody right now. Only **Thorium**, **Pale Moon**, **LibreWolf**, **Waterfox**, **Basilisk** and **Firefox Nightly** incorporate it. Most of these are community-maintained forks of Firefox. That is a big downside for adoption, as I already ranted about in [this post](/blog/2022/jpeg-xl-chrome).
-- Both formats support transparency, wide gamut (HDR) and progressive decoding.
+- Both formats support transparency and wide gamut (HDR).
 
 
 If I had to choose a format to re-encode all of my photos, I would for sure choose JXL. My image viewers of choice support it (Gnome image viewer, nsxiv, feh) and my image processors of choice support it (GIMP, DarkTable). As seen, it provides better image quality and better compression ratios than AVIF, more features and is generally faster. That said, I don't think AVIF is completely useless. It is a better option to replace animated GIFs than JXL, and it is quite good at very lossy compressions targeting the smallest file sizes possible, which makes it a good contender for web delivery.
