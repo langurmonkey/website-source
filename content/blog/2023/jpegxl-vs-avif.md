@@ -136,7 +136,7 @@ As you can see, there is no contest. JXL wins every time, with some abysmal resu
 
 ## Encoding speed
 
-What about encoding speed? Well, I did not capture that data (reasons later), but my totally subjective and unscientific impression is that, again JXL has the edge here as well. However, there are many parameters that affect encoding speed, like effort, multithreading, etc., and they are different for the different encoders. So finding a common comparison ground is not always easy. This is a multi-dimensional problem which requires a careful analysis and probably lots of time, so I'll leave it for another post. Cloudinary and Google both run similar tests concerning encoding speed ([here](https://cloudinary.com/blog/contemplating-codec-comparisons) and [here](https://storage.googleapis.com/avif-comparison/index.html)), and they came up with contradicting results, so the battle's still on.
+What about encoding speed? Well, I did not capture that data (reasons later), but my totally subjective and unscientific impression is that, again JXL has the edge here as well. However, there are many parameters that affect encoding speed, like effort, multithreading, etc., and they are different for the different encoders. So finding a common comparison ground is not always easy. This is a multi-dimensional problem which requires a careful analysis and probably lots of time, so I'll leave it for another post. Cloudinary and Google both run similar tests concerning encoding speed ([here](https://cloudinary.com/blog/contemplating-codec-comparisons) and [here](https://storage.googleapis.com/avif-comparison/index.html) respectively), and they came up with contradicting results, so the battle's still on.
 
 ## Conclusion
 
