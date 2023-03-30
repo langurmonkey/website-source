@@ -9,6 +9,8 @@ featuredpath = "date"
 type = "post"
 +++
 
+{{< sp orange >}}Edit (2023-03-30):{{</ sp >}} Added a couple extra images to test for high-quality encoding and illustrations. Introduce SSIM and MSE measures.
+
 {{< sp orange >}}Edit (2023-03-03):{{</ sp >}} Fixed mistake, as [AVIF does in fact NOT support progressive decoding](https://avif.io/blog/comparisons/avif-vs-jpegxl/#speed).
 
 JPEG XL and AVIF are arguably the two main contenders in the battle to replace JPEG as the next-generation image format. There are other formats in the race, like HEIC and WebP 2, but the former is subject to licensing patents (and possibly not royalty-free), and the second is still in development and seems that it [may never see the light of day](https://chromium.googlesource.com/codecs/libwebp2/+/1251ca748c17278961c0d0059b744595b35a4943^%21/) as a production-ready image format anyway. The original WebP is not even a contender as it is inferior to AVIF in all aspects,[^3] and you should probably **never** use it for photography anyway[^1], or at all if you are not ok with mediocre image quality.[^2]
@@ -24,7 +26,7 @@ If you are browsing this page around 2023, chances are that your browser support
 
 ## Methodology
 
-I have selected three different test images to run through both the JPEG XL and the AVIF encoders:
+I have selected five different test images to run through both the JPEG XL and the AVIF encoders:
 
 - **Flag** --- a sunset with a smooth red-yellow gradient in the sky and a quiet sea with lots of detail. There is a flag in the foreground, which is mostly black due to it being lit from behind.
 {{< fig src="/img/2023/02/jxl-avif/flag-s.jpg" class="fig-center" width="50%" title="Flag. Taken from free-images.com, downsampled to full HD and losslessly saved to PNG." loading="lazy" >}}
@@ -32,10 +34,16 @@ I have selected three different test images to run through both the JPEG XL and 
 - **BW cityscape** --- a black-and-white cityscape at night. It has a lot of contrast.
 {{< fig src="/img/2023/02/jxl-avif/city-s.jpg" class="fig-center" width="50%" title="BW cityscape. Taken from free-images.com, downsampled to full HD and losslessly saved to PNG." loading="lazy" >}}
 
+- **Red panda** --- a photo of a red panda with some green leaves on the foreground and a green bokeh in the background.
+{{< fig src="/img/2023/02/jxl-avif/redpanda-s.jpg" class="fig-center" width="50%" title="Red panda. Taken from free-images.com, at the original resolution of 4407x2919 and losslessly saved to PNG." loading="lazy" >}}
+
+- **Fireman wedding** --- a vector illustration of a newly wed couple.
+{{< fig src="/img/2023/02/jxl-avif/firemanwedding-s.jpg" class="fig-center" width="50%" title="Vector wedding. PNG created from the SVG at 1500x1380." loading="lazy" >}}
+
 - **Plot** --- a simple plot created with matplotlib.
 {{< fig src="/img/2023/02/jxl-avif/plot-s.jpg" class="fig-center" width="50%" title="Plot. Directly produced by matplotlib in lossless PNG at 5760x4320." loading="lazy" >}}
 
-The first two images (flag and cityscape) are in the public domain, CC0, and have been downloaded from [free-images.com](https://free-images.com). The originals are in 4K (or close) resolution and JPEG format. I loaded them in GIMP, downscaled them to full HD and saved them using lossless PNG. The final image, plot, was directly produced by matplotlib with a high resolution, which I kept, in lossless PNG.
+The first four images (flag, cityscape, red panda and vector wedding) are in the public domain, CC0, and have been downloaded from [free-images.com](https://free-images.com). For the first two, the originals are in 4K (or close) resolution and JPEG format. I loaded them in GIMP, downscaled them to full HD and saved them using lossless PNG. I kept the red panda image at the original resolution to test high quality JPEG XL and AVIF encoding. The fireman wedding image was encoded in lossless PNG from the SVG at 1500x1380. The final image, plot, was directly produced by matplotlib with a high resolution, which I kept, in lossless PNG.
 
 All the images used in this post (source `.png`, encoded `.jxl` and `.avif`) are available in [this repository](https://codeberg.org/langurmonkey/jpegxl-avif-comparison) for you to inspect. 
 
@@ -45,7 +53,7 @@ In this post we use upscaled crops of the images. The percentage by which they a
 
 In this section we analyze how well JXL and AVIF compress images, in relation to file size and visual quality compared to the PNG original inputs. 
 
-In order to encode the **JXL** versions, I have used the `cjxl` provided with `libjxl`. In general, I have not used options other than the quality. For instance, all JXL images use effort 7, which is the default.
+In order to encode the **JXL** versions, I have used the `cjxl` provided with `libjxl`. In general, I have not used options other than the quality. For instance, all JXL images use effort 7, which is the default. Increasing the effort setting would surely improve results at the expense of speed for the JXL encoder, but would add an extra dimensionality to the analysis, which I intend to keep as simple and default as possible. This is an *unscientific* first look, after all.
 
 ```bash
 cjxl input.png output.jxl -q 60 --num_threads=4
@@ -60,6 +68,8 @@ avifenc -j 4 --min 0 --max 63 -a end-usage=q -a cq-level=12 input.png output.avi
 ```
 
 The `--min` and `--max` set the minimum and maximum quantizer for color. We use the full range here. When paired with `-a end-usage=q`, the encoder uses the rate control mode to constant quality, given by `cq-level`. So, adjusting `cq-level`, in 0-63, adjust the quality for the color channels. Playing around with this quality, we can get images which are the same size as their JXL counterparts for comparison.
+
+Additionally, this analysis is purely subjective. I encode the images and then look at them, trying to compare them to the original PNGs. I could have used a formal comparison measure, like the [structural similarity](https://wikiless.northboot.xyz/wiki/Structural_similarity), but my understanding is that this is purely based on the image levels and disregards perceptual factors, which are very important in compression. A good overview on image quality assessment is provided by Wang et al.[^5] in their 2004 IEEE Image Processing paper. A Python utility which takes in two images and outputs the SSIM and the MSE, mean squared error is included in the repository for this post (`compare.py`).
 
 {{< notice "Note" >}}
 It would have been easier to use `libvips`, which offers a unified interface for JXL and AVIF encoding with `vips jxlsave -Q QUALITY` and `vips heifsave -Q QUALITY`, but I wanted to eliminate any hiccups or additional hidden processing introduced by vips itself, and thus went to the 'official' encoders directly.
@@ -102,6 +112,35 @@ Compare cityscape black-and-white image.
 
 In this case the AVIF version is 11 Kb larger than the JXL version. I couldn't get it at the exact same size as the JXL version, so I erred on the side that favours AVIF. Here the results are closer, but we can see some artifacts on the sky surrounding the pointy structure in the AVIF, which are not present in the JXL. After carefully reviewing several spots I can say that this behaviour is consistent across the whole image. This, coupled with the fact that the AVIF image is larger, also gives the edge to JXL.
 
+
+### Red panda
+
+I used a `cjxl` quality of 62, producing `redpanda.jxl` at 563 Kb. The `avifenc` uses a `cq-level` of 34, producing a slightly smaller image at 552 Kb. Both versions produce visible artifacts, but I could not decide on a single crop-in to compare, as both did pretty well with this image. Instead, I computed the SSIM and MSE for each image.
+
+- AVIF -- MSE: 35.33327184406321, SSIM: 0.7737482075763144
+- JXL -- MSE: 39.86481836605985, SSIM: 0.7504872295500076
+
+In this metric, the AVIF version is 0.02 percent closer to the original lossless image. Practically, this does not translate to a perceptible visual improvement in my opinion. 
+
+## Fireman wedding
+
+I used a quality setting of 50 for the JXL version, producing a file of 78 Kb, and a setting of 44 for the AVIF version, producing a 77 Kb file. This is an interesting one. The AVIF version presents some bad fuzziness in the transitions from the black outlines to the dark blue uniform, but the JXL version contains a weird gradient in the yellow part. The crops are at 200%.
+
+<center>
+
+| Image (200% crop) | Description  | 
+|-------|-------|
+| <img src="/img/2023/02/jxl-avif/crop-lossy/firemanwedding-png.jpg" loading="lazy" /> | Original, 312 Kb |
+| <img src="/img/2023/02/jxl-avif/crop-lossy/firemanwedding-jxl.jpg" loading="lazy" /> | JXL, 78 Kb |
+| <img src="/img/2023/02/jxl-avif/crop-lossy/firemanwedding-avif.jpg" loading="lazy" /> | AVIF, 77 Kb |
+
+</center>
+
+Curiously, the structural similarity in this case is a little bit in favour of JXL, when it is supposed to be worse than AVIF for illustrations. This only goes to show that the SSIM index is not very reliable for these kinds of comparisons.
+
+- JXL -- MSE: 18.794290338164252, SSIM: 0.9873632725975594
+- AVIF -- MSE: 11.44317922705314, SSIM: 0.9813691392049559
+
 ### Plot
 
 This is a very simple image. I used a 500% upscale crop around a specific site which has a little hole at the top left. This hole is retained in both versions (see white pixels to the top-left).
@@ -128,11 +167,13 @@ Finally, I also took a look at lossless compression to evaluate the differences 
 |-------|----------|---------|----------|
 | Flag  | 6.9 Mb   | 2.0 Mb  | 2.7 Mb   |
 | BW cityscape  | 7.8 Mb   | 1.2 Mb  | 4.3 Mb   |
+| Red panda  | 23 Mb   | 15 Mb  | 14 Mb   |
+| Fireman wedding  | 312 Kb   | 145 Kb  | 270 Kb   |
 | Plot  | 399 Kb   | 113 Kb  | 853 Kb   |
 
 </center>
 
-As you can see, there is no contest. JXL wins every time, with some abysmal results, like the BW cityscape, where the lossless JXL image is four times smaller than its AVIF counterpart. Interestingly, the lossless AVIF is twice the size of the original PNG. I'm not sure what the deal with this is, but it is for sure bad. It may be obvious, but let's state it: **If I had to store lots of lossless images I would definitely go for JXL**.
+As you can see, there is no contest. JXL wins every time but one, with some abysmal results, like the BW cityscape, where the lossless JXL image is four times smaller than its AVIF counterpart. Interestingly, the lossless AVIF is twice the size of the original PNG. I'm not sure what the deal with this is, but it is for sure bad. It may be obvious, but let's state it: **If I had to store lots of lossless images I would definitely go for JXL**.
 
 ## Encoding speed
 
@@ -140,7 +181,7 @@ What about encoding speed? Well, I did not capture that data (reasons later), bu
 
 ## Conclusion
 
-According to the results presented above, we can conclude that JXL is the superior format for both lossy and lossless operations. That is clear by only looking at the results, but we can also have a look at the features of each format. Some of them are very important.
+According to the results presented above, my subjective opinion is that JXL is the superior format for both lossy and lossless operations. It is indeed very hard to visually compare image formats by just compressing a bunch of images and looking at them, so we can also compare them by the features they offer. In this aspect, JXL is the clear winner. Let's see: 
 
 - Max image size is limited to 4K (3840x2160) in AVIF, which is a deal breaker to me. You can tile images, but seams are visible at the edges, which makes this unusable. JPEG XL supports image sizes of up to 1,073,741,823x1,073,741,824. You won't run out of image space anytime soon.
 - JXL offers lossless recompression of JPEG images. This is important for compatibility, as you can re-encode JPEG images into JXL for a 30% reduction in file size for free. AVIF has no such feature.
@@ -158,3 +199,4 @@ If I had to choose a format to re-encode all of my photos, I would for sure choo
 [^2]: https://siipo.la/blog/is-webp-really-better-than-jpeg
 [^3]: https://afosto.com/blog/avif-vs-webp-format/
 [^4]: https://youtu.be/qc2DvJpXh-A
+[^5]: https://ieeexplore.ieee.org/document/1284395
