@@ -268,6 +268,6 @@ pub fn write_particles_mmap(octree: &Octree, list: Vec<Particle>, output_dir: &s
 
 ## Conclusion
 
-That is all. The repository that contains this code is here: [``gaiasky-catgen``](https://gitlab.com/gaiasky/gaiasky-catgen). It constitutes my very first foray into Rust, so a lot of the code may not be fully idiomatic (or idiomatic at all), and I'm sure it's not the fastest also. However, it works well and performs much better than the Java counterpart, both in speed and in memory usage. 
+That is all. The repository that contains this code is here: [``gaiasky-catgen``](https://codeberg.org/gaiasky/gaiasky-catgen). It constitutes my very first foray into Rust, so a lot of the code may not be fully idiomatic (or idiomatic at all), and I'm sure it's not the fastest also. However, it works well and performs much better than the Java counterpart, both in speed and in memory usage. 
 
 In this post we have seen how to deal with memory mapped files in Rust to both read and write data faster, avoiding memory copies.
