@@ -1,7 +1,7 @@
 +++
 author = "Toni Sagristà Sellés"
-title = "OpenXR to the Rescue"
-description = "The tale of Gaia Sky's migration from one API to the other"
+title = "OpenXR to the rescue"
+description = "The tale of a migration from OpenVR to OpenXR"
 date = "2023-05-09"
 linktitle = ""
 featured = ""
