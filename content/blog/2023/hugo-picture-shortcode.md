@@ -30,7 +30,7 @@ The above snippet results in the following, once rendered. You should either see
 
 {{< fig src1="/img/2023/02/jxl-avif/support-jxl-yes.jxl" type1="image/jxl" src="/img/2023/02/jxl-avif/support-jxl-no.jpg" class="fig-center" width="50%" loading="lazy" >}}
 
-You can include up to four sources (``src1``, ``src2``, etc.), with its corresponding types. Here is the Hugo shortcode file. You need to save it in the file ``themes/[themename]/layouts/shortcodes/fig.html``.
+You can include up to four sources (``src1``, ``src2``, etc.), with their corresponding types. Here is the Hugo shortcode file. You need to save it in the file ``themes/[themename]/layouts/shortcodes/fig.html``.
 
 {{< highlight fig.html "linenos=table" >}}
 <!-- 
