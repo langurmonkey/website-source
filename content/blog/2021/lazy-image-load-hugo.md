@@ -1,11 +1,11 @@
 +++
 author = "Toni Sagrista Selles"
-categories = ["website"]
-tags = ["html5", "hugo", "english"]
 date = 2021-11-15
 linktitle = ""
 title = "HTML lazy image loading"
 description = "Adding lazy image loading to Hugo's figure shortcode"
+categories = ["website"]
+tags = ["html5", "hugo", "english"]
 featuredpath = "date"
 type = "post"
 +++

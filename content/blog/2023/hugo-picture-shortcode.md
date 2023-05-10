@@ -1,3 +1,38 @@
++++
+author = "Toni Sagristà Sellés"
+title = "Hugo picture shortcode with multiple sources"
+description = "A Hugo shortcode using the HTML picture element to enable different formats for the same image"
+date = "2023-05-10"
+linktitle = ""
+featured = ""
+featuredpath = "date"
+featuredalt = ""
+categories = ["website"]
+tags = ["html5", "hugo", "jpeg xl", "english"]
+type = "post"
++++
+
+A while ago I published [this post](/blog/2021/lazy-image-load-hugo) about a better figure shortcode for Hugo that enabled lazy loading. Today, I bring you yet another update on the same shortcode. This time around, the focus is on leveraging the HTML [`picture`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture) element, which enables alternative versions of the same image in different formats, leaving the browser to decide which one to use. You can serve the same image in, for instance, JPEG-XL and plain old JPEG at the same time. The browser will read the tag, and select the appropriate image depending on its capabilities. If you use a JPEG-XL-capable browser (Thorium, Pale Moon, Basilisk, Waterfox, LibreWolf, Firefox Nightly), you will be served the smaller JPEG-XL version, otherwise you will get the plain JPEG version.
+
+Here is how to use the shortcode in your Hugo posts and pages:
+
+```html
+{{</* fig 
+        src1="/img/2023/02/jxl-avif/support-jxl-yes.jxl"
+        type1="image/jxl" 
+        src="/img/2023/02/jxl-avif/support-jxl-no.jpg" 
+        class="fig-center" 
+        width="50%" 
+        loading="lazy" */>}}
+```
+
+The above snippet results in the following, once rendered. You should either see "Your browser does not support JPEG-XL" in black, or "Your browser supports JPEG-XL" in green:
+
+{{< fig src1="/img/2023/02/jxl-avif/support-jxl-yes.jxl" type1="image/jxl" src="/img/2023/02/jxl-avif/support-jxl-no.jpg" class="fig-center" width="50%" loading="lazy" >}}
+
+You can include up to four sources (``src1``, ``src2``, etc.), with its corresponding types. Here is the Hugo shortcode file. You need to save it in the file ``themes/[themename]/layouts/shortcodes/fig.html``.
+
+{{< highlight fig.html "linenos=table" >}}
 <!-- 
     Same as Hugo's base 'figure' shortcode with the image loading attribute.
     This enables lazy loading of images. Additionally, this uses the 'picture'
@@ -64,3 +99,6 @@
         </figcaption>
     {{- end }}
 </figure>
+{{</ highlight >}}
+
+Here is a link to the source file: [fig.html](https://codeberg.org/langurmonkey/website-source/src/branch/master/themes/langurmonkey/layouts/shortcodes/fig.html).
