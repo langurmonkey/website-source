@@ -13,7 +13,7 @@ type = "post"
 
 {{< sp orange >}}Edit (2023-03-03):{{</ sp >}} Fixed mistake, as [AVIF does in fact NOT support progressive decoding](https://avif.io/blog/comparisons/avif-vs-jpegxl/#speed).
 
-{{< notice "Note" >}}
+{{< notice "Disclaimer" >}}
 This is **a subjective look** at JPEG XL and AVIF. All comparisons in this post (except the ones using SSIM and MSE) are perceptual and based on my own opinion only. This is **not a scientific study**! I just grabbed a bunch of images, encoded them and looked at the results.
 For a more careful and methodical comparison between these formats (and more), have a look at [CID22](https://cloudinary.com/labs/cid22).
 {{</ notice >}}
