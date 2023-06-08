@@ -13,6 +13,12 @@ type = "post"
 
 {{< sp orange >}}Edit (2023-03-03):{{</ sp >}} Fixed mistake, as [AVIF does in fact NOT support progressive decoding](https://avif.io/blog/comparisons/avif-vs-jpegxl/#speed).
 
+{{< notice "Note" >}}
+This is **a subjective look** at JPEG XL and AVIF. All comparisons in this post (except the ones using SSIM and MSE) are perceptual and based on my own opinion only. This is **not a scientific study**! I just grabbed a bunch of images, encoded them and looked at the results.
+For a more careful and methodical comparison between these formats (and more), have a look at [CID22](https://cloudinary.com/labs/cid22).
+{{</ notice >}}
+
+
 JPEG XL and AVIF are arguably the two main contenders in the battle to replace JPEG as the next-generation image format. There are other formats in the race, like HEIC and WebP 2, but the former is subject to licensing patents (and possibly not royalty-free), and the second is still in development and seems that it [may never see the light of day](https://chromium.googlesource.com/codecs/libwebp2/+/1251ca748c17278961c0d0059b744595b35a4943^%21/) as a production-ready image format anyway. The original WebP is not even a contender as it is inferior to AVIF in all aspects,[^3] and you should probably **never** use it for photography anyway[^1], or at all if you are not ok with mediocre image quality.[^2]
 
 First, a quick browser support test:
