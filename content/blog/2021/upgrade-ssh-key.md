@@ -17,8 +17,8 @@ If you work regularly with remote machines or use online services like Gitlab, y
 But before we start, here's a short summary of the types of keys you may encounter in the wild:
 -  **DSA** --- unsafe and unsupported. It requires a parameters *k* to be completely random, secret and unique. This can make discovering your private key *easy*. **DO NOT USE**.
 -  **ECDSA** --- a tad better than DSA but has the same parameter problem. **DO NOT USE**.
--  **RSA** --- it's still alright, especially with 2048-bit an over. It is supported everywhere, but it is slower than Ed25519 though. You should upgrade if you can.
--  **Ed25519** --- the strongest key type mathematically, and also the fastest. The public key is very compact, at around 68 characters only. However, it may not be supported on embedded or aging systems. For your everyday use with your desktop and laptop computers, this is your best bet.
+-  **RSA** --- it's still alright, especially with 2048-bit or longer. It is supported everywhere, but it is slower than Ed25519. You should upgrade if you can.
+-  **Ed25519** --- the strongest key type mathematically, and also the fastest. The public key is very compact at around 68 characters long. However, it may not be supported on embedded or aging systems. For your everyday use with consumer computers, this is your best bet.
 
 ## Generating an Ed25519 key
 
