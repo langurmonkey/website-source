@@ -1,14 +1,14 @@
 +++
 author = "Toni Sagristà Sellés"
-title = "Upgrading the Steam Deck SSD"
-description = "A step-by-step guide to upgrade the internal drive of Valve's Steam Deck"
+title = "Replacing the Steam Deck SSD"
+description = "A step-by-step guide to upgrade the internal SSD drive of Valve's Steam Deck"
 date = "2023-07-10"
 linktitle = ""
 featured = ""
 featuredpath = ""
 featuredalt = ""
 categories = ["Steam Deck"]
-tags = ["technology", "graphics", "technical", "steam", "english"]
+tags = ["technology", "graphics", "technical", "steam", "ssd", "upgrade", "english"]
 type = "post"
 draft = false
 +++
