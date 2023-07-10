@@ -19,7 +19,6 @@
 		var	$window = $(window),
 			$body = $('body'),
 			$menu = $('#menu'),
-			$shareMenu = $('#share-menu'),
 			$main = $('#main');
 
 		// Disable animations/transitions until the page has loaded.
@@ -42,11 +41,8 @@
 				);
 			});
 
-		$menu.appendTo($body);
-		$shareMenu.appendTo($body);
-
 		$menu.panel({
-			delay: 500,
+			delay: 0,
 			hideOnClick: true,
 			hideOnEscape: true,
 			hideOnSwipe: true,
@@ -56,32 +52,6 @@
 			target: $body,
 			visibleClass: 'is-menu-visible'
 		});
-
-		$shareMenu.panel({
-			delay: 500,
-			hideOnClick: true,
-			hideOnEscape: true,
-			hideOnSwipe: true,
-			resetScroll: true,
-			resetForms: true,
-			side: 'right',
-			target: $body,
-			visibleClass: 'is-share-visible'
-		});
-
-		// Menu.
-			/*$menu
-				.appendTo($body)
-				.panel({
-					delay: 500,
-					hideOnClick: true,
-					hideOnSwipe: true,
-					resetScroll: true,
-					resetForms: true,
-					side: 'right',
-					target: $body,
-					visibleClass: 'is-menu-visible'
-				});*/
 
 		// Search (header).
 			var $search = $('#search'),

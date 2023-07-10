@@ -74,6 +74,12 @@ uglyurls = false
     url = "/photography"
     weight = 6
 
+[[menu.main]]
+    name = "~/search"
+    url = "/search"
+    weight = 7
+
+
 # These go in the footer
 [social]
     rss             = "index.xml"
