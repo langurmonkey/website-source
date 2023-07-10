@@ -1,0 +1,41 @@
+Listing
+
+➜ lsblk
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+sda      8:0    0 232.9G  0 disk 
+├─sda1   8:1    0   512M  0 part 
+├─sda4   8:4    0 108.3G  0 part /
+└─sda5   8:5    0 124.1G  0 part /home
+sdb      8:16   0 931.5G  0 disk 
+└─sdb1   8:17   0 931.5G  0 part /bigdata
+sdc      8:32   1     0B  0 disk 
+sdd      8:48   1     0B  0 disk 
+sde      8:64   1     0B  0 disk 
+sdf      8:80   1     0B  0 disk 
+sdg      8:96   0  57.6G  0 disk 
+├─sdg1   8:97   0    64M  0 part 
+├─sdg2   8:98   0    32M  0 part /run/media/tsagrista/efi
+├─sdg3   8:99   0    32M  0 part /run/media/tsagrista/efi1
+├─sdg4   8:100  0     5G  0 part /run/media/tsagrista/rootfs
+├─sdg5   8:101  0     5G  0 part /run/media/tsagrista/rootfs1
+├─sdg6   8:102  0   256M  0 part /run/media/tsagrista/var1
+├─sdg7   8:103  0   256M  0 part /run/media/tsagrista/var
+└─sdg8   8:104  0    47G  0 part /run/media/tsagrista/home
+sr0     11:0    1  1024M  0 rom  
+
+
+Create backup image from 64 GB SSD
+
+➜ sudo dd if=/dev/sdg of=./steamdeck-2230-64gb.img status=progress
+61733609984 bytes (62 GB, 57 GiB) copied, 925 s, 66.7 MB/s 
+120831998+0 records in
+120831998+0 records out
+61865982976 bytes (62 GB, 58 GiB) copied, 925.872 s, 66.8 MB/s
+
+Write to new 1TB SSD
+
+➜ sudo dd if=./steamdeck-2230-64gb.img of=/dev/sdg status=progress
+61831501312 bytes (62 GB, 58 GiB) copied, 1475 s, 41.9 MB/s
+120831998+0 records in
+120831998+0 records out
+61865982976 bytes (62 GB, 58 GiB) copied, 1478.01 s, 41.9 MB/s
