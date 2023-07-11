@@ -26,13 +26,5 @@ You can do that from the run configuration dialog in IDEA or Eclipse. Look for a
 
 Here is how to do it in IDEA:
 
+{{< vid src="/img/2023/05/idea-mangohud.mp4" class="fig-center" width="80%" title="Running Java application with MangoHud in IDEA" loading="lazy" >}}
 
-<figure class="fig-center">
-<video controls autoplay loop muted width="80%">
-  <source src="/img/2023/05/idea-mangohud.mp4" type="video/mp4">
-  This browser does not display the video tag.
-</video>
-<figcaption style="margin: 0 auto; width:60%;">
-  <h4>Running Java application with MangoHud in IDEA</h4>
-</figcaption>
-</figure>
