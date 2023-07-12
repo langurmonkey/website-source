@@ -7,9 +7,9 @@ type = "homepage"
 +++
 
 <picture>
-<source srcset="/img/myself_yellow-blue.jxl" type="image/jxl" />
-<source srcset="/img/myself_yellow-blue.avif" type="image/avif" />
-<img src="/img/myself_yellow-blue.png"
+<source srcset="/img/toni-funny-proc.jxl" type="image/jxl" />
+<source srcset="/img/toni-funny-proc.avif" type="image/avif" />
+<img src="/img/toni-funny-proc.png"
      alt="My photo"
      style="float: right; margin-left: 50px; width: 25%" />
 </picture>
