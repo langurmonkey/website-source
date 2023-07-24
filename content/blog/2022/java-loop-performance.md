@@ -102,7 +102,7 @@ First we'll run with the fairly recent Java 17. This should give us a good estim
 {{< fig src="/img/2022/03/jdk17-log.jpg" link="/img/2022/03/jdk17-log.jpg" title="Same plot with a logarithmic scale." class="fig-center" width="95%" loading="lazy" >}}
 </td></tr></table>
 
-As we can see, we need to go to very high iteration counts (over a thousand million) to encounter statistically significative differences between for, while, foreach and the two iterators. The iterators seem to be the slowest, with the implicit variant faring a bit worse. However, this is only the case in the 1500 million iterations. The total differences are in the order of a couple hundred milliseconds, which is almost negligible, especially considering that these loops do absolutely nothing. I would expect that adding some logic in the loops would completely dominate the times, so we can conclude that with Java 17 it makes no significant difference what loop variant we use in terms of processing time.
+Apparently, we need to go to very high iteration counts (over a thousand million) to encounter statistically significative differences between *for*, *while*, *for-each* and the two iterators. The iterators seem to be the slowest, with the implicit variant faring a bit worse. However, this is only the case in the 1500 million iterations. The total differences are in the order of a couple hundred milliseconds, which is almost negligible, especially considering that these loops do absolutely nothing. I would expect that adding some logic in the loops would completely dominate the times, so we can conclude that with Java 17 it makes no significant difference what loop variant we use in terms of processing time.
 
 ### Java 8
 
