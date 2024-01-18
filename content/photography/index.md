@@ -42,6 +42,7 @@ Below is a list of all the material I regularly use to take photos:
 
 #### Other stuff
 
+*  Soonpho RGB Video Light P10.
 *  Viltrox EF-FX1 lens adapter to use Canon EF/EF-S lenses on Fujifilm X mounts.
 *  Lowepro Nova 170 AW DSLR Camera Shoulder Bag.
 *  Manfrotto Compact Advanced Smart 65" Tripod.
