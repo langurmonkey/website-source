@@ -1163,7 +1163,7 @@ div.post-in-list time{
 div.post-in-list a {
   text-decoration: none;
   display: inline-block;
-  margin-right: 0.8em;
+  margin-right: 0.5em;
 }
 div.post-in-list:hover a {
   text-decoration: underline;
