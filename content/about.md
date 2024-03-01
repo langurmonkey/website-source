@@ -16,9 +16,9 @@ type = "homepage"
 
 Since you are already here, I think a short introduction is in order. My name is **Toni Sagristà Sellés** and I am a computer scientist and M.Sc. in Astrophysics and Cosmology. I like computer graphics and visualization, astronomy, photography (sometimes), snowboarding, playing and watching football, drawing horribly, playing with my kids, and occasionally gaming. I sometimes use the aliases `langurmonkey` and `jumpinglangur`.
 
-I'm currently working in the [Gaia](https://sci.esa.int/web/gaia) group of the Astronomisches Rechen-Institut (ARI) in Heidelberg, and doing research in scientific visualization in the Visual Computing Group (VCG) of the Interdisciplinary Center for Scientific Computing (IWR), also in Heidelberg. That should do it for the acronym fest.
+I'm currently working in the [Gaia](https://www.esa.int/Science_Exploration/Space_Science/Gaia) group of the Astronomisches Rechen-Institut (ARI) in Heidelberg, and doing research in scientific visualization in the Visual Computing Group (VCG) of the Interdisciplinary Center for Scientific Computing (IWR), also in Heidelberg. That should do it for the acronym fest.
 
-You can find me on <a rel="me" href="https://mastodon.social/@jumpinglangur">mastodon</a> and [nostr](/.well-known/nostr.json). This site is accessible from [tonisagrista.com](https://tonisagrista.com) and [sagrista.info](https://sagrista.info).
+You can find me on <a rel="me" href="https://mastodon.social/@jumpinglangur">mastodon</a>, but not very often. This site is accessible from [tonisagrista.com](https://tonisagrista.com) and [sagrista.info](https://sagrista.info).
 
 
 <br/>
