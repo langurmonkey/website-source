@@ -14,6 +14,15 @@ showpagemeta = "false"
 
 ### Peer-reviewed Papers --- Coauthor
 
+*   [Gaia Data Release 3: Mapping the asymmetric disc of the Milky Way](https://doi.org/10.1051/0004-6361/202243797) --- Gaia Collaboration, R. Drimmel, ... A. Sagristà... -- A&A 674, A35 (2023)
+*   [Gaia Data Release 3: Pulsations in main-sequence OBAF stars as observed by Gaia](https://doi.org/10.1051/0004-6361/202243767) --- Gaia Collaboration, J. De Ridder, ... A. Sagristà... -- A&A 674, A36 (2023)
+*   [Gaia Data Release 3: Reflectance spectra of solar system small bodies](https://doi.org/10.1051/0004-6361/202243791) --- Gaia Collaboration, L. Galluccio, ... A. Sagristà... -- A&A 674, A35 (2023)
+*   [Gaia Data Release 3: The Galaxy in your preferred colours. Synthetic photometry from Gaia low-resolution spectra](https://doi.org/10.1051/0004-6361/202243709) --- Gaia Collaboration, P. Montegriffo, ... A. Sagristà... -- A&A 674, A33 (2023)
+*   [Gaia Data Release 3: Stellar multiplicity, a teaser for the hidden treasure](https://doi.org/10.1051/0004-6361/202243782) --- Gaia Collaboration, F. Arenou, ... A. Sagristà... -- A&A 674, A34 (2023)
+*   [Gaia Data Release 3: The extragalactic content](https://doi.org/10.1051/0004-6361/202243232) --- Gaia Collaboration, C. A. L. Bailer-Jones, ... A. Sagristà... -- A&A 674, A41 (2023)
+*   [Gaia Data Release 3: Chemical Cartography of the Milky Way](https://doi.org/10.1051/0004-6361/202243511) --- Gaia Collaboration, A. Recio-Blanco, ... A. Sagristà... -- A&A 674, A38 (2023)
+*   [Gaia Data Release 3: A Golden Sample of Astrophysical Parameters](https://doi.org/10.1051/0004-6361/202243800) --- Gaia Collaboration, O. L. Creevey, ... A. Sagristà... -- A&A 674, A39 (2023)
+*   [Gaia Data Release 3: Exploring and Mapping the Diffuse Interstellar Band at 862 nm](https://doi.org/10.1051/0004-6361/202243283) --- Gaia Collaboration, M. Schultheis, ... A. Sagristà... -- A&A 674, A40 (2023)
 *   [Gaia Data Release 3: Summary of the Contents and Survey Properties](https://doi.org/10.1051/0004-6361/202243940) --- Gaia Collaboration... A. Sagristà... -- 2022, A&A
 *   [Gaia Early Data Release 3: Summary of the Contents and Survey Properties](https://doi.org/10.1051/0004-6361/202039657) --- Gaia Collaboration... A. Sagristà... -- 2020, A&A 649, A1 (2021)
 *   [Gaia Early Data Release 3: The Gaia Catalogue of Nearby Stars](https://www.aanda.org/component/article?access=doi&doi=10.1051/0004-6361/202039498) --- Gaia Collaboration, R.L. Smart, ... A. Sagristà... -- 2020, A&A 649, A6 (2021)
