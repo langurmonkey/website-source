@@ -15,5 +15,5 @@ After almost 2 years since the [submission of my Ph.D. thesis](/blog/2022/thesis
 I even got two Ph.D. hats, one from each research group (Gaia and Visual Computing) I'm part of. I accepted them with great honor and happiness.
 
 
-{{< fig src1="/img/2024/05/pdh-hats.jxl" type1="image/jxl" src2="/img/2024/05/phd-hats.avif" type2=="image/avif" src="/img/2024/05/phd-hats.jpg" class="fig-center" width="75%" title="The Ph.D. hats I was gifted by my colleagues from ARI (Gaia, Jasmine and Digital Twins groups), left, and from the IWR (Visual Computing group), right." loading="lazy" >}}
+{{< fig src1="/img/2024/05/pdh-hats.jxl" type1="image/jxl" src2="/img/2024/05/phd-hats.avif" type2="image/avif" src="/img/2024/05/phd-hats.jpg" class="fig-center" width="75%" title="The Ph.D. hats I was gifted by my colleagues from ARI (Gaia, Jasmine and Digital Twins groups), left, and from the IWR (Visual Computing group), right." loading="lazy" >}}
 
