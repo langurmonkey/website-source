@@ -10,6 +10,15 @@ featuredpath = "date"
 type = "post"
 +++
 
+{{< sp orange >}}Edit (2024-06-26):{{</ sp >}} *As of Gaia Sky 3.6.3, the procedural generation process has been moved to the GPU. Even though the base method is the same, a number of things have changed from what is described here. For instance:*
+- *The generation is now almost instantaneous, even with high resolutions.*
+- *Gradval and Value noise are no longer available.*
+- *Voronoi and Curl noise are now available.*
+- *The process takes into account a temperature layer.*
+- *We have introduced terraces, with the respective parametrization.*
+
+<hr>
+
 I have recently implemented a procedural generation system for planetary surfaces into [Gaia Sky](https://zah.uni-heidelberg.de/gaia/outreach/gaiasky). In this post, I ponder about different methods and techniques for procedurally generating planets that *look* just right and explain the process behind it in somewhat detail. This is a rather technical post, so be warned. As a teaser, the following image shows a planet generated using the processes described in this article.
 
 {{< fig src="/img/2021/12/procedural-surfaces/teaser-s.webp" link="/img/2021/12/procedural-surfaces/teaser.webp" title="Left: a wide view of a procedurally generated planet. Right: the same planet viewed from the surface." class="fig-center" width="60%" loading="lazy" >}}
