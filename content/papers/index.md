@@ -6,6 +6,10 @@ title = "Papers and Academic material"
 showpagemeta = "false"
 +++
 
+### Ph.D. Thesis
+
+*   [Visualization of Astrometric and Astrophysical Data](http://www.ub.uni-heidelberg.de/archiv/34797) --- A. Sagristà -- 2024. Published as [Open Access](https://open-access.network/en/home) in Heidelberg University library document server. [10.11588/heidok.00034797](https://doi.org/10.11588/heidok.00034797).
+
 ### Peer-reviewed Papers --- First Author
 
 *   [Visual Analysis of the Finite-Time Lyapunov Exponent](https://vcg.iwr.uni-heidelberg.de/publications/pubdetails/Sagrista2020vaftle/) --- A. Sagristà, S. Jordan, F. Sadlo -- 2020, Computer Graphics Forum, [10.1111/cgf.13984](https://onlinelibrary.wiley.com/doi/10.1111/cgf.13984)

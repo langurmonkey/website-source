@@ -12,11 +12,10 @@ showpagemeta = "false"
 <div id="cv-wrap">
 <img alt="Photo of Toni Sagristà Sellés" id="pic" src="/img/main/me.png">
 <div class="vcard" id="contact-info">
-  <!-- Microformats! -->
   <h1 class="fn">Toni Sagristà Sellés</h1>
-  <div class="subtitle">Software Engineer and M.Sc. in Astrophysics</div>
+  <div class="subtitle">Software Engineer, Ph.D. in Scientific Visualization and Astrophysics</div>
   <p class="pdflink">
-    [PDF:&nbsp;<a href="/pdf/Resume-ToniSagrista.pdf#overlay-context=resume" target="_blank" title="Resume inPDF">Basic version</a>&nbsp;&ndash; <a href="/pdf/Europass_CV.pdf#overlay-context=resume" title="Europass CV" target="_blank">Europass CV</a>]
+    [<a href="/pdf/Resume-ToniSagrista.pdf#overlay-context=resume" target="_blank" title="Resume in PDF">PDF version</a>]
   </p>
   <p class="contactinfo">
     Cell: <span class="tel">+49 (0)17683798752</span>, <span class="tel">+34 669724840</span>
@@ -32,17 +31,17 @@ showpagemeta = "false"
   <dt class="cv">Experience</dt>
   <dd class="cv">
     <h2 class="cv">
-      11/2013 &ndash; currently&nbsp;&nbsp;&nbsp;<a href="http://www.ari.uni-heidelberg.de/" title="ARI" target="_blank">ARI</a>/<a href="http://uni-heidelberg.de" title="University of Heidelberg" target="_blank">University of Heidelberg</a>, software engineer and researcher
+      11/2013 &ndash; currently&nbsp;&nbsp;&nbsp;<a href="http://www.ari.uni-heidelberg.de/" title="ARI" target="_blank">ARI</a>/<a href="http://uni-heidelberg.de" title="University of Heidelberg" target="_blank">University of Heidelberg</a>, software engineer, postdoc researcher
     </h2>
     <ul>
-      <li><strong>Gaia/CU9</strong> &ndash; Support for the scientific exploration of the Gaia data as well as its electronic publication. Support for the Gaia data visualization and public outreach.</li>
       <li><strong><a href="http://www.ari.uni-heidelberg.de/gaia/outreach/gaiasky">Gaia Sky</a></strong> &ndash; Lead designer and developer of Gaia Sky, a modern 3D Universe application.</li>
+      <li><strong>Gaia/CU9</strong> &ndash; Support for the scientific exploration of the Gaia data as well as its electronic publication. Support for the Gaia data visualization and public outreach.</li>
     </ul>
     <h2 class="cv">
-      04/2015 &ndash; currently&nbsp;&nbsp;&nbsp;<a href="http://iwr.uni-heidelberg.de/groups/viscomp" title="viscomp" target="_blank">Visual computing group</a>/<a href="http://iwr.uni-heidelberg.de" title="Interdisciplinary center for scientific computing" target="_blank">IWR</a>, researcher and Ph.D. candidate
+      05/2015 &ndash; 05/2024&nbsp;&nbsp;&nbsp;<a href="http://iwr.uni-heidelberg.de/groups/viscomp" title="viscomp" target="_blank">Visual computing group</a>/<a href="http://iwr.uni-heidelberg.de" title="Interdisciplinary center for scientific computing" target="_blank">IWR</a>, researcher and Ph.D. candidate
     </h2>
     <ul>
-      <li><strong>Scientific visualization</strong> &ndash; Research in scientific visualization for astronomy and astrophysics.</li>
+      <li><strong>Scientific visualization</strong> &ndash; Research in scientific visualization for astronomy and astrophysics. Ph.D. dissertation available <a href="https://archiv.ub.uni-heidelberg.de/volltextserver/34797/">here</a>.</li>
       <li><strong>HGS MathComp fellow</strong> &ndash; My grad school, check it out <a href="http://www.mathcomp.uni-heidelberg.de/" title="HGS MathComp" target="_blank">here</a>.</li>
     </ul>
     <h2 class="cv">

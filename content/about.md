@@ -14,7 +14,7 @@ type = "homepage"
      style="float: right; margin-left: 50px; width: 25%" />
 </picture>
 
-Since you are already here, I think a short introduction is in order. My name is **Toni Sagristà Sellés** and I am an informatics engineer and hold an interdisciplinary Ph.D. in Scientific Visualization and Astrophysics (pending final certificate) and an M.Sc. in Astrophysics, Particle Physics and Cosmology. I like computer graphics and visualization, astronomy, photography (sometimes), snowboarding, playing and watching football, drawing horribly, playing with my kids, and occasionally gaming. I sometimes use the aliases `langurmonkey` and `jumpinglangur`.
+Since you are already here, I think a short introduction is in order. My name is **Toni Sagristà Sellés** and I am an informatics engineer and hold a Ph.D. in Scientific Visualization and Astrophysics and an M.Sc. in Astrophysics, Particle Physics and Cosmology. I like computer graphics and visualization, astronomy, photography (sometimes), snowboarding, playing and watching football, drawing horribly, playing with my kids, and occasionally gaming. I sometimes use the aliases `langurmonkey` and `jumpinglangur`.
 
 I'm currently working in the [Gaia](https://www.esa.int/Science_Exploration/Space_Science/Gaia) group of the Astronomisches Rechen-Institut (ARI) in Heidelberg, and doing research in scientific visualization in the Visual Computing Group (VCG) of the Interdisciplinary Center for Scientific Computing (IWR), also in Heidelberg. That should do it for the acronym fest.
 
