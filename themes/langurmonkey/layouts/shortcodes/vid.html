@@ -1,6 +1,5 @@
 <!-- 
-    Same as Hugo's base 'figure' shortcode with the image loading attribute.
-    This enables lazy loading of images.
+  A video element for Hugo.
 -->
 <figure{{ with .Get "class" }} class="{{ . }}"{{ end }}>
     {{- if .Get "link" -}}
