@@ -1,0 +1,37 @@
+<!-- 
+    Embed a shader into a webpage. You need to add:
+
+    js = ["/js/GlslCanvas.js"]
+
+    in the header of the page for this to work.
+
+    Attributes:
+    - src      - path to the fragment shader
+    - width    - width img attribute
+    - height   - height img attribute
+    - title    - description/caption
+    - class    - figure class
+-->
+<figure{{ with .Get "class" }} class="{{ . }}"{{ end }}>
+    <canvas class="glslCanvas" 
+          data-fragment-url="{{ .Get "src" }}"
+         {{- with .Get "width" }} width="{{ . }}"{{ end -}}
+         {{- with .Get "height" }} height="{{ . }}"{{ end -}}></canvas>
+    {{- if or (or (.Get "title") (.Get "caption")) (.Get "attr") -}}
+        <figcaption
+         {{- with .Get "width" }} style="margin: 0 auto; width:{{ . }};"{{ end -}}
+            >
+            {{ with (.Get "title") -}}
+                <h4>{{ . }}</h4>
+            {{- end -}}
+            {{- if or (.Get "caption") (.Get "attr") -}}<p class="fig-attribution">
+                {{- .Get "caption" | markdownify -}}
+                {{- with .Get "attrlink" }}
+                    <a href="{{ . }}">
+                {{- end -}}
+                {{- .Get "attr" | markdownify -}}
+                {{- if .Get "attrlink" }}</a>{{ end }}</p>
+            {{- end }}
+        </figcaption>
+    {{- end }}
+</figure>

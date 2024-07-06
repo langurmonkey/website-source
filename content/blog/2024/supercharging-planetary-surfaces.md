@@ -8,7 +8,9 @@ title = "Supercharging Exoplanets"
 description = "A short report on the new developments in exoplanet datasets in Gaia Sky"
 featuredpath = "date"
 type = "post"
+js = ["/js/GlslCanvas.js"]
 +++
+
 
 A couple of years ago I wrote about the [procedural planetary surfaces generation process](/blog/2021/procedural-planetary-surfaces/) in Gaia Sky. In this post, I provided a more or less detailed technical overview of the process used in Gaia Sky to procedurally generate planetary surfaces (elevation, diffuse, specular and normal maps) and cloud layers.
 
@@ -27,7 +29,7 @@ Gaia Sky has supported a representation of exoplanets *locations* since 3.6.0, r
 {{< fig src1="/img/2024/07/exoplanet-glyphs.jxl" type1="image/jxl" src2="/img/2024/07/exoplanet-glyphs.avif" type2="image/avif" src="/img/2024/07/exoplanet-glyphs.jpg" class="fig-center" width="75%" title="The textures used for exoplanets, sorted from 1 to 8 candidates (1-4 top, 5-8 bottom)." loading="lazy" >}}
 
 Below is a view of the NASA Exoplanet Archive from the outside. The elongated arm to the left is the [Kepler field of view](https://science.nasa.gov/resource/kepler-field-of-view/).
-#
+
 {{< fig src1="/img/2024/07/nasa-exoplanets-gaiasky.jxl" type1="image/jxl" src2="/img/2024/07/nasa-exoplanets-gaiasky.avif" type2="image/avif" src="/img/2024/07/nasa-exoplanets-gaiasky.jpg" class="fig-center" width="75%" title="The NASA Exoplanet Archive in Gaia Sky, represented as a point cloud with glyphs." loading="lazy" >}}
 
 This representation is useful to indicate the position and number of planets of each system. It works using the *particle set* object, which is essentially a point cloud. An extension was necessary, in order to select a texture for each system according to the value of one of the table columns. In this case, the texture is selected according to the number of planets in the system.
@@ -89,7 +91,10 @@ Now, in the GPU we have two options:
 
 On the one hand, **pixel shaders** are ubiquitous and supported everywhere, but they are a bit difficult to use for compute operations, and typically require encoding and decoding information using textures. On the other hand, **compute shaders** are perfect for this task, as they accept data inputs directly, but they are only in OpenGL since version 4.3. This leaves out, for example, macOS (only supports 4.1) and many systems with older graphics cards.
 
-For the sake of compatibility, we decided to use pixel shaders in favor of compute shaders. They are more difficult to work with, but they should be universally compatible.
+For the sake of compatibility, we decided to use pixel shaders in favor of compute shaders. They are more difficult to work with, but they should be universally compatible. Moreover, we can embed them directly in this website for you to enjoy!
+
+{{< shader src="/shader/2024/curl.frag" class="fig-center" width="300" height="300" title="Curl noise shader, with turbulence and ridge, running in the browser." >}}
+
 
 
 ### Noise Parametrization
