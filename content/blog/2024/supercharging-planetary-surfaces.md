@@ -95,7 +95,7 @@ On the one hand, **pixel shaders** are ubiquitous and supported everywhere, but 
 
 For the sake of compatibility, we decided to use pixel shaders in favor of compute shaders. They are more difficult to work with, but they should be universally compatible. Moreover, we can embed them directly in a website, like this curl noise, which is pretty neat:
 
-{{< shader src="/shader/2024/curl.frag" class="fig-center" width="300" height="300" title="Curl noise shader, with turbulence and ridge, running in the browser." >}}
+{{< shader src="/shader/2024/curl.frag" class="fig-center" width="200" height="200" title="Curl noise shader, with turbulence and ridge, running in the browser." >}}
 
 {{< collapsedcode file="/static/shader/2024/curl.frag" language="glsl" summary="Snippet: curl.glsl" >}}
 
