@@ -91,10 +91,11 @@ Now, in the GPU we have two options:
 
 On the one hand, **pixel shaders** are ubiquitous and supported everywhere, but they are a bit difficult to use for compute operations, and typically require encoding and decoding information using textures. On the other hand, **compute shaders** are perfect for this task, as they accept data inputs directly, but they are only in OpenGL since version 4.3. This leaves out, for example, macOS (only supports 4.1) and many systems with older graphics cards.
 
-For the sake of compatibility, we decided to use pixel shaders in favor of compute shaders. They are more difficult to work with, but they should be universally compatible. Moreover, we can embed them directly in this website for you to enjoy!
+For the sake of compatibility, we decided to use pixel shaders in favor of compute shaders. They are more difficult to work with, but they should be universally compatible. Moreover, we can embed them directly in a website, like this curl noise, which is pretty neat:
 
 {{< shader src="/shader/2024/curl.frag" class="fig-center" width="300" height="300" title="Curl noise shader, with turbulence and ridge, running in the browser." >}}
 
+{{< collapsedcode file="/static/shader/2024/curl.frag" language="glsl" summary="Snippet: curl.glsl" >}}
 
 
 ### Noise Parametrization

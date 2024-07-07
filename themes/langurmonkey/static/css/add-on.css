@@ -143,11 +143,18 @@ article.post ul {
 #intro .intro-circle {
   border-radius: 50%;
 }
-
 .post > header .title h1 {
   font-weight: 400;
   font-size: 2em;
 }
+details.collapsedcode {
+  border: 1px solid rgb(80,80,80);
+}
+details.collapsedcode span.summary {
+  color: var(--title-color);
+  font-family: monospace;
+}
+
 @media screen and (max-width: 736px) {
   .post > header .title h1 {
     font-size: 1.8em;

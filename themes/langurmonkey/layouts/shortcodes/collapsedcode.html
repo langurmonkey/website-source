@@ -1,0 +1,18 @@
+{{- if .Get "summary" }}
+
+  <details class="collapsedcode">
+  <summary>
+    <span class="summary">{{ .Get "summary" }}</span>
+  </summary>
+  {{ $file := .Get "file" | readFile | safeHTML }}
+  {{ $lang := .Get "language" }}
+  {{ (print "```" $lang "\n" $file "\n```") | markdownify }}
+  </details>
+
+{{ else }}
+
+{{ $file := .Get "file" | readFile | safeHTML }}
+{{ $lang := .Get "language" }}
+{{ (print "```" $lang "\n" $file "\n```") | markdownify }}
+
+{{ end }}
