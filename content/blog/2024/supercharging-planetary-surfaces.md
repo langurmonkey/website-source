@@ -11,7 +11,6 @@ type = "post"
 js = ["/js/GlslCanvas.js"]
 +++
 
-
 A couple of years ago I wrote about the [procedural planetary surfaces generation process](/blog/2021/procedural-planetary-surfaces/) in Gaia Sky. In this post, I provided a more or less detailed technical overview of the process used in Gaia Sky to procedurally generate planetary surfaces (elevation, diffuse, specular and normal maps) and cloud layers.
 
 Since then, we have used the system to spice up the planets in the planetary systems for which Gaia could determine reasonable orbits (see the data [here](https://www.cosmos.esa.int/web/gaia/exoplanets), and some Gaia Sky datasets for some of those systems [here](https://gaia.ari.uni-heidelberg.de/gaiasky/repository/systems/dr3/), including HD81040, Gl876, and more). 
@@ -99,9 +98,9 @@ For the sake of compatibility, we decided to use pixel shaders in favor of compu
 
 {{< collapsedcode file="/static/shader/2024/curl.frag" language="glsl" summary="Snippet: curl.glsl" >}}
 
-But back to the topic:
 
-- [gl-Noise as base](https://github.com/FarazzShaikh/glNoise).
+But back to the topic, we based on the [gl-Noise](https://github.com/FarazzShaikh/glNoise) library, and fixed some issues and modified it a bit. We ended up implementing fractal Brownian motion (fBm) for all noise types, which is a way to add finer detail recursively by increasing the noise frequency and decreasing the amplitude each cycle. 
+
 - fBM as main method to do recursive detail.
 - Types: simplex, perlin, curl, voronoi, white.
 - Biome shader: elevation, moisture, (optional) temperature in RGB channels.
@@ -120,6 +119,8 @@ Finally, I want to write a few words about the way the procedural generation win
 - Presets.
 - Hide noise in collapsible pane.
 - More?
+
+### Results
 
 ## Conclusion
 
