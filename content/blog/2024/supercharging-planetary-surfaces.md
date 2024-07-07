@@ -22,6 +22,8 @@ However, with the upcoming Gaia DR4 release, the number of candidate exoplanets 
 
 So far, Gaia Sky has been able to represent extrasolar systems via additional datasets containing the system objects and metadata (barycentre, stars, planets, orbits, etc.). These datasets are distributed as standalone downloads via the integrated download manager, which serves data from our [data repository](https://gaia.ari.uni-heidelberg.de/gaiasky/repository). This approach was only good as far as the number of systems was kept low, which was true until now. However, with the advent of DR4, this number is expected to reach four digits, so a new solution is in order.
 
+{{< fig src1="/img/2024/07/planet-surface.jxl" type1="image/jxl" src2="/img/2024/07/planet-surface.avif" type2="image/avif" src="/img/2024/07/planet-surface.jpg" class="fig-center" width="75%" title="A screenshot from the surface of a procedurally generated planet, in Gaia Sky. In the picture we can see elevation, clouds, atmosphere and fog. This uses the new system." loading="lazy" >}}
+
 ## Representing Exoplanets
 
 Gaia Sky has supported a representation of exoplanets *locations* since 3.6.0, released in March 2024. It is based on the [NASA Exoplanet Archive](https://exoplanetarchive.ipac.caltech.edu/), which contains some 5600 confirmed planets. Up to now, this was implemented as a glorified point cloud, where the glyph for each system is chosen according to the number of candidate planets in said system. Broman et al. develop a more extensive use of glyphs in ExoplanetExplorer[^broman2023].
@@ -97,6 +99,13 @@ For the sake of compatibility, we decided to use pixel shaders in favor of compu
 
 {{< collapsedcode file="/static/shader/2024/curl.frag" language="glsl" summary="Snippet: curl.glsl" >}}
 
+But back to the topic:
+
+- [gl-Noise as base](https://github.com/FarazzShaikh/glNoise).
+- fBM as main method to do recursive detail.
+- Types: simplex, perlin, curl, voronoi, white.
+- Biome shader: elevation, moisture, (optional) temperature in RGB channels.
+- Surface generation: 3/4 render targets with diffuse, specular, normal and emissive maps.
 
 ### Noise Parametrization
 
@@ -108,12 +117,14 @@ Amplitude, persistence, terraces (w. coarseness), turbulence and ridge, civiliza
 
 Finally, I want to write a few words about the way the procedural generation window has changed in Gaia Sky as a result of this migration.
 
+- Presets.
+- Hide noise in collapsible pane.
+- More?
 
 ## Conclusion
 
 Here be the conclusion.
 
-{{< fig src1="/img/2024/07/planet-surface.jxl" type1="image/jxl" src2="/img/2024/07/planet-surface.avif" type2="image/avif" src="/img/2024/07/planet-surface.jpg" class="fig-center" width="75%" title="A screenshot from the surface of a procedurally generated planet, in Gaia Sky. In the picture we can see elevation, clouds, atmosphere and fog." loading="lazy" >}}
 
 <!---------------------------------------------------------------------------------->
 [^broman2023]: E. Broman et al., "ExoplanetExplorer: Contextual Visualization of Exoplanet Systems," 2023 IEEE Visualization and Visual Analytics (VIS), Melbourne, Australia, 2023, pp. 81-85, doi: [10.1109/VIS54172.2023.00025](https://ieeexplore.ieee.org/document/10360923).  
