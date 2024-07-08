@@ -10,6 +10,8 @@ featuredpath = "date"
 type = "post"
 +++
 
+{{< sp orange >}}Edit (2024-07-08):{{</ sp >}} *We have written a new post to expand on this one. Check it out [here](/blog/2024/supercharging-planetary-surfaces).*
+
 {{< sp orange >}}Edit (2024-06-26):{{</ sp >}} *As of Gaia Sky 3.6.3, the procedural generation process has been moved to the GPU. Even though the base method is the same, a number of things have changed from what is described here. For instance:*
 - *The generation is now almost instantaneous, even with high resolutions.*
 - *Gradval and Value noise are no longer available.*
