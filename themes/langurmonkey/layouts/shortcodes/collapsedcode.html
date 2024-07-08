@@ -2,7 +2,7 @@
 
   <details class="collapsedcode">
   <summary>
-    <span class="summary">{{ .Get "summary" }}</span>
+    <span class="code">Code: </span><span class="summary">{{ .Get "summary" }}</span>
   </summary>
   {{ $file := .Get "file" | readFile | safeHTML }}
   {{ $lang := .Get "language" }}

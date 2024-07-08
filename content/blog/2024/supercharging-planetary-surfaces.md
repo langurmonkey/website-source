@@ -2,7 +2,7 @@
 author = "Toni Sagrista Selles"
 categories = ["gaia sky"]
 tags = ["gaia sky", "simulation", "technical", "programming", "procedural", "astronomy", "exoplanets", "english"]
-date = 2024-06-11
+date = 2024-07-08
 linktitle = ""
 title = "Supercharging Exoplanets"
 description = "A short report on the new developments in exoplanet datasets in Gaia Sky"
@@ -96,37 +96,134 @@ For the sake of compatibility, we decided to use pixel shaders in favor of compu
 
 {{< shader src="/shader/2024/curl.frag" class="fig-center" width="200" height="200" title="Curl noise shader, with turbulence and ridge, running in the browser." >}}
 
-{{< collapsedcode file="/static/shader/2024/curl.frag" language="glsl" summary="Snippet: curl.glsl" >}}
+{{< collapsedcode file="/static/shader/2024/curl.frag" language="glsl" summary="curl.glsl" >}}
 
+But back to the topic, we based on the [gl-Noise](https://github.com/FarazzShaikh/glNoise) library, and fixed some issues and modified it a bit. We ended up implementing <abbr title="fractal Brownian motion">fBm</abbr> (fractal Brownian motion) for all noise types. fBm is a way to recursively add finer detail to our noise by increasing its frequency and decreasing its amplitude each cycle or *octave*. The code below shows how to add fBm to any noise function.
 
-But back to the topic, we based on the [gl-Noise](https://github.com/FarazzShaikh/glNoise) library, and fixed some issues and modified it a bit. We ended up implementing fractal Brownian motion (fBm) for all noise types, which is a way to add finer detail recursively by increasing the noise frequency and decreasing the amplitude each cycle. 
+```glsl
+#define N_OCTAVES 4
 
-- fBM as main method to do recursive detail.
-- Types: simplex, perlin, curl, voronoi, white.
-- Biome shader: elevation, moisture, (optional) temperature in RGB channels.
-- Surface generation: 3/4 render targets with diffuse, specular, normal and emissive maps.
+// Initial frequency.
+float frequency = 1.0;
+// Initial amplitude.
+float amplitude = 1.0;
+
+// Frequency increase factor.
+float lacunarity = 2.0;
+// Amplitude decrease factor.
+float persistence = 0.5;
+
+// The noise value.
+float val = 0;
+
+// x is the sampling coordinate.
+for (int octave = 0; octave < N_OCTAVES; octave++) {
+    val += amplitude * noise(frequency * x);
+	frequency *= lacunarity;
+	amplitude *= persistence; 
+}
+```
+
+Adding a couple of fBm octaves to the previous Curl noise shader, to get a total of 3 cycles, we get something with much finer detail and more convincing:
+
+{{< shader src="/shader/2024/curl-fbm.frag" class="fig-center" width="200" height="200" title="Curl noise with 3 octaves." >}}
+
+{{< collapsedcode file="/static/shader/2024/curl-fbm.frag" language="glsl" summary="curl-fbm.glsl" >}}
+
+We also changed the noise types from gradval, perlin, simplex, value and white to perlin, simplex, curl, voronoi and white.
+
+{{< fig src1="/img/2024/07/noise-types-annotated.jxl" type1="image/jxl" src2="/img/2024/07/noise-types-annotated.avif" type2="image/avif" src="/img/2024/07/noise-types-annotated.jpg" class="fig-center" width="85%" title="The types of noise supported in the new version." loading="lazy" >}}
+
+Since we are creating the noise using shaders, we need to render to an off-screen buffer. We do the process in two passes.
+
+1. The first pass generates two or three noise channels in a texture. We call it the **biome map**. The channels are:
+    - Red: Elevation.
+    - Green: Moisture.
+    - Blue (optional): Temperature.
+2. The second step uses a frame buffer with multiple render targets, gets the biome map generated in step 1 as input, together with some parameters like the [look-up table](/blog/2021/procedural-planetary-surfaces/#colors), and outputs the diffuse, specular, normal and emissive maps. Those are then used to texture the object.
+
+An example using simplex noise is shown below. Note the biome map only has the red and green channels active (for elevation and moisture) in this example.
+
+{{< fig src1="/img/2024/07/planet-maps-s.jxl" type1="image/jxl" src2="/img/2024/07/planet-maps-s.avif" type2="image/avif" src="/img/2024/07/planet-maps-s.jpg" class="fig-center" width="100%" title="Generated maps for a random planet. From left to right and top to bottom: biome (elevation and moisture) map, diffuse textrue, specular texture and normal texture." loading="lazy" >}}
+
+Note that the normal texture is only generated if needed, which is when 'elevation representation' is set to 'none' in the Gaia Sky settings. If elevation representation is set to either tessellation or vertex displacement, the normals are computed from the orientation of the surface itself, and the normal map is redundant.
+
+Additionally, we may choose to create an emissive texture using a combination of simplex and white noise. This is used to add 'civilization' to planets by means of lights that are visible during the night, on the dark side.
+
+The maps above correspond to the following planet:
+
+{{< fig src1="/img/2024/07/planet-whole.jxl" type1="image/jxl" src2="/img/2024/07/planet-whole.avif" type2="image/avif" src="/img/2024/07/planet-whole.jpeg" class="fig-center" width="60%" title="A view of the whole planet corresponding to the maps above. This render also contains a cloud layer, which is generated with the same process and by the same shader as the biome map." loading="lazy" >}}
 
 ### Noise Parametrization
 
-The noise parametrization changed a little bit in the migration process.
+The noise parametrization described in the [old post](/blog/2021/procedural-planetary-surfaces/#noise-parametrization) has also changed a bit since then. Essentially, we have now only one fractal type (fBM), the noise types are different, and we have introduced some missing parameters which are important, like the initial amplitude.
 
-Amplitude, persistence, terraces (w. coarseness), turbulence and ridge, civilization lights.
+-   **seed** -- a number which is used as a seed for the noise <abbr title="Random Number Generator">RNG</abbr>. 
+-   **type** -- the base noise type. One of **perlin**[^perlin], **simplex**[^simplex], **curl**[^curl], **voronoi**[^voronoi] or **white**[^white].
+-   **scale** -- determines the scale of the sampling volume. The noise
+    is sampled on the 2D surface of a sphere embedded in a 3D volume to
+    make it seamless. The scale stretches each of the dimensions of this
+    sampling volume.
+-   **amplitude** -- the initial noise amplitude.
+-   **persistence** -- factor by which the amplitude is reduced in each octave.
+-   **frequency** -- the initial noise frequency.
+-   **lacunarity** -- determines how much detail is added or removed at
+    each octave by modifying the frequency.
+-   **octaves** -- the number of fBm cycles. Each octave reduces
+    the amplitude and increases the frequency of the noise by using the
+    lacunarity parameter.
+-   **number of terraces** -- the number of terraces (steps) to use in the 
+    elevation profile. Set to 0 to not use terraces.
+-   **terrace coarseness** -- controls the steepness of the terrain in the transition between
+    different terrace levels.
+-   **range** -- the output of the noise generation stage is in \\([0,1]\\)
+    and gets map to the range specified in this parameter. Water gets
+    mapped to negative values, so adding a range of \\([-1,1]\\) will get
+    roughly half of the surface submerged in water.
+-   **power** -- power function exponent to apply to the output of the
+    range stage.
+-   **turbulence** -- if active, we use the absolute value of the noise, so that
+    deep valleys are formed.
+-   **ridge** -- only available when turbulence is active, it inverts the value 
+    of the noise, transforming the deep valleys into high mountain ridges.
 
 ### Presets and UI design
 
-Finally, I want to write a few words about the way the procedural generation window has changed in Gaia Sky as a result of this migration.
+Finally, I want to write a few words about the way the procedural generation UI, which exposes the functionality directly to the user, has changed in Gaia Sky as a result of this migration.
 
-- Presets.
-- Hide noise in collapsible pane.
-- More?
+**Parameter Presets** 
+
+First, we have added a series of presets that make it very straightforward to play with the surface generation. These are:
+
+- Earth-like planet.
+- Rocky planet.
+- Water world.
+- Gas giant.
+
+{{< fig src="/img/2024/07/ui-surface.jpg" class="fig-center" width="50%" title="Surface generation tab, wit the preset buttons at the top, in blue." loading="lazy" >}}
+
+Each of these is composed of a specific range or value set for each parameter (noise or otherwise), which get automatically applied when the user clicks on the button. So we may have a subset of look-up tables for Earth-like planets, together with a very low initial frequency, and high number of octaves and lacunarity. This is repeated for each of the parameter presets.
+
+**Hidden Noise**
+
+We have also hidden the noise parameters in a collapsible pane, which produces a cleaner, less cluttered UI.
+
+{{< fig src="/img/2024/07/ui-clouds.jpg" class="fig-center" width="50%" title="The clouds generation tab shows all noise parameters." loading="lazy" >}}
 
 ### Results
 
-## Conclusion
+Here are some results produced with the new procedural generation system in Gaia Sky:
 
-Here be the conclusion.
+{{< fig src="/img/2024/07/procedural.jpg" class="fig-center" width="100%" title="Some procedurally generate planets using the parameter presets, with Gaia Sky." loading="lazy" >}}
+
+The improvements described in this post will be released shortly with Gaia Sky 3.6.3 for everyone to enjoy.
 
 
 <!---------------------------------------------------------------------------------->
 [^broman2023]: E. Broman et al., "ExoplanetExplorer: Contextual Visualization of Exoplanet Systems," 2023 IEEE Visualization and Visual Analytics (VIS), Melbourne, Australia, 2023, pp. 81-85, doi: [10.1109/VIS54172.2023.00025](https://ieeexplore.ieee.org/document/10360923).  
 
+[^perlin]: https://en.wikipedia.org/wiki/Perlin_noise
+[^simplex]: https://en.wikipedia.org/wiki/Simplex_noise
+[^curl]: https://al-ro.github.io/projects/curl/
+[^voronoi]: https://en.wikipedia.org/wiki/Worley_noise
+[^white]: https://en.wikipedia.org/wiki/White_noise

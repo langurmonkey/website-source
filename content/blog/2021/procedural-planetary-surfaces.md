@@ -197,29 +197,30 @@ for (float phi = -PI / 2; phi < PI / 2; phi += PI / M){
 
 We carry out the generation by sampling configurable noise algorithms (Perlin, Open Simplex, etc.) at different levels of detail, or octaves. In Gaia Sky, we have some important noise parameters to adjust:
 
--   **seed**---a number which is used as a seed for the noise RNG. **type**---the base noise type. Can be any algorithm, like **gradient (Perlin) noise**[^1], **simplex**[^2], **value**[^3], **gradval noise**[^4] or **white**[^5]. For examples, see [here](https://joise.sudoplaygames.com/modules/#modulebasisfunction).
--   **fractal type**---the algorithm used to modify the noise in each
+-   **seed** -- a number which is used as a seed for the noise RNG.
+-   **type** -- the base noise type. Can be any algorithm, like **gradient (Perlin) noise**[^1], **simplex**[^2], **value**[^3], **gradval noise**[^4] or **white**[^5]. For examples, see [here](https://joise.sudoplaygames.com/modules/#modulebasisfunction).
+-   **fractal type** -- the algorithm used to modify the noise in each
     octave. It determines the persistence (how the amplitude is
     modified) as well as the gain and the offset. Can be **billow**,
     **deCarpenterSwiss**, **fractal brownian motion (FBM)**, **hybrid multi**, **multi** or
     **ridge multi**. For examples, see
     [here](https://joise.sudoplaygames.com/modules/#modulefractal).
--   **scale**---determines the scale of the sampling volume. The noise
+-   **scale** -- determines the scale of the sampling volume. The noise
     is sampled on the 2D surface of a sphere embedded in a 3D volume to
     make it seamless. The scale stretches each of the dimensions of this
     sampling volume.
--   **octaves**---the number of levels of detail. Each octave reduces
+-   **octaves** -- the number of levels of detail. Each octave reduces
     the amplitude and increases the frequency of the noise by using the
     lacunarity parameter.
--   **frequency**---the initial frequency of the first octave.
+-   **frequency** -- the initial frequency of the first octave.
     Determines how much detail the noise has.
--   **lacunarity**---determines how much detail is added or removed at
+-   **lacunarity** -- determines how much detail is added or removed at
     each octave by modifying the frequency.
--   **range**---the output of the noise generation stage is in \\([0,1]\\)
+-   **range** -- the output of the noise generation stage is in \\([0,1]\\)
     and gets map to the range specified in this parameter. Water gets
     mapped to negative values, so adding a range of \\([-1,1]\\) will get
     roughly half of the surface submerged in water.
--   **power**---power function exponent to apply to the output of the
+-   **power** -- power function exponent to apply to the output of the
     range stage.
 
 

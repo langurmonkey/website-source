@@ -134,6 +134,10 @@ article.post ul {
   content: none;
 }
 
+abbr {
+  color: var(--title-color);
+}
+
 @media screen and (max-width: 736px) {
   #header h2 {
     padding: 0 0 0 1em;
@@ -150,10 +154,18 @@ article.post ul {
 details.collapsedcode {
   border: 1px solid rgb(80,80,80);
 }
+details.collapsedcode span.code {
+  font-family: monospace;
+  font-variant-caps: small-caps;
+}
 details.collapsedcode span.summary {
   color: var(--title-color);
   font-family: monospace;
 }
+details.collapsedcode summary::marker {
+  color: var(--title-color);
+}
+
 
 @media screen and (max-width: 736px) {
   .post > header .title h1 {
