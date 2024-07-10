@@ -153,6 +153,7 @@ abbr {
 }
 details.collapsedcode {
   border: 1px solid rgb(80,80,80);
+  padding: 0.2em;
 }
 details.collapsedcode span.code {
   font-family: monospace;
@@ -164,6 +165,9 @@ details.collapsedcode span.summary {
 }
 details.collapsedcode summary::marker {
   color: var(--title-color);
+}
+details.collapsedcode div.highlight {
+  margin-bottom: 0em;
 }
 
 

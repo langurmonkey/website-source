@@ -8,7 +8,7 @@ title = "Supercharging Exoplanets"
 description = "A short report on the new developments in exoplanet datasets in Gaia Sky"
 featuredpath = "date"
 type = "post"
-js = ["/js/GlslCanvas.js", "/js/mathjax3.js"]
+js = ["/js/glslcanvas.min.js", "/js/mathjax3.js"]
 +++
 
 A couple of years ago I wrote about the [procedurally generated planets](/blog/2021/procedural-planetary-surfaces/) in Gaia Sky. In this post, I provided a more or less detailed technical overview of the process used to procedurally generate planetary surfaces and cloud layers.
@@ -96,9 +96,9 @@ On the one hand, **pixel shaders** are ubiquitous and supported everywhere, but 
 
 For the sake of compatibility, we decided to use pixel shaders in favor of compute shaders. They are more difficult to work with, but they should be universally compatible. Moreover, we can embed them directly in a website, like this curl noise, which is pretty neat:
 
-{{< shader src="/shader/2024/curl.frag" class="fig-center" width="200" height="200" title="Curl noise shader, with turbulence and ridge, running in the browser." >}}
+{{< shader src="/shader/2024/curl.glsl" class="fig-center" width="200" height="200" title="Curl noise shader, with turbulence and ridge, running in the browser." >}}
 
-{{< collapsedcode file="/static/shader/2024/curl.frag" language="glsl" summary="curl.glsl" >}}
+{{< collapsedcode file="/static/shader/2024/curl.glsl" language="glsl" summary="curl.glsl" >}}
 
 But back to the topic, we based our implementation on the [gl-Noise](https://github.com/FarazzShaikh/glNoise) library. We fixed some issues and modified it a bit to better suit our need. We ended up implementing <abbr title="fractal Brownian motion">fBm</abbr> for all noise types. fBm is a way to recursively add finer detail to our noise by increasing its frequency and decreasing its amplitude each cycle or *octave*. The code below shows how to add fBm to any noise function.
 
@@ -128,9 +128,9 @@ for (int octave = 0; octave < N_OCTAVES; octave++) {
 
 Adding a couple of fBm octaves to the previous Curl noise shader, to get a total of 3 cycles, we get something with much finer detail and more convincing:
 
-{{< shader src="/shader/2024/curl-fbm.frag" class="fig-center" width="200" height="200" title="Curl noise with 3 octaves." >}}
+{{< shader src="/shader/2024/curl-fbm.glsl" class="fig-center" width="200" height="200" title="Curl noise with 3 octaves." >}}
 
-{{< collapsedcode file="/static/shader/2024/curl-fbm.frag" language="glsl" summary="curl-fbm.glsl" >}}
+{{< collapsedcode file="/static/shader/2024/curl-fbm.glsl" language="glsl" summary="curl-fbm.glsl" >}}
 
 We also changed the noise types from gradval, perlin, simplex, value and white to perlin, simplex, curl, voronoi and white.
 
