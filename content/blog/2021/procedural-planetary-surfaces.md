@@ -8,6 +8,7 @@ title = "Procedural generation of planetary surfaces"
 description = "Generating realistic planet surfaces and moons"
 featuredpath = "date"
 type = "post"
+js = ["/js/mathjax3.js"]
 +++
 
 {{< sp orange >}}Edit (2024-07-08):{{</ sp >}} *We have written a new post to expand on this one. Check it out [here](/blog/2024/supercharging-planetary-surfaces).*
@@ -26,9 +27,6 @@ I have recently implemented a procedural generation system for planetary surface
 {{< fig src="/img/2021/12/procedural-surfaces/teaser-s.webp" link="/img/2021/12/procedural-surfaces/teaser.webp" title="Left: a wide view of a procedurally generated planet. Right: the same planet viewed from the surface." class="fig-center" width="60%" loading="lazy" >}}
 
 <!--more-->
-
-<!-- Loading MathJax -->
-<script type="text/javascript" id="MathJax-script" async src="/js/mathjax3.js"></script>
 
 ## All is noise
 

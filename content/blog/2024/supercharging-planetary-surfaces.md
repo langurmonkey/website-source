@@ -8,7 +8,7 @@ title = "Supercharging Exoplanets"
 description = "A short report on the new developments in exoplanet datasets in Gaia Sky"
 featuredpath = "date"
 type = "post"
-js = ["/js/GlslCanvas.js"]
+js = ["/js/GlslCanvas.js", "/js/mathjax3.js"]
 +++
 
 A couple of years ago I wrote about the [procedurally generated planets](/blog/2021/procedural-planetary-surfaces/) in Gaia Sky. In this post, I provided a more or less detailed technical overview of the process used to procedurally generate planetary surfaces and cloud layers.
@@ -18,7 +18,6 @@ Since then, we have used the system to spice up the planets in the planetary sys
 However, with the upcoming Gaia <abbr title="Data Release 4">DR4</abbr>, the number of candidate exoplanets is expected to [increase significantly](https://www.cosmos.esa.int/web/gaia/iow_20240422), rendering the "one dataset per system" approach unmaintainable. In this post I describe some of the improvements made with regards to exoplanets in Gaia Sky, in both the handling of large numbers of extrasolar systems seamlessly, and in the brand new, improved procedural generation of planetary surfaces and clouds.
 
 <!--more-->
-
 
 {{< fig src1="/img/2024/07/planet-surface.jxl" type1="image/jxl" src2="/img/2024/07/planet-surface.avif" type2="image/avif" src="/img/2024/07/planet-surface.jpg" class="fig-center" width="75%" title="A screenshot from the surface of a procedurally generated planet, in Gaia Sky. In the picture we can see elevation, clouds, atmosphere and fog. This uses the new system." loading="lazy" >}}
 
@@ -143,15 +142,17 @@ Since we are creating the noise using shaders, we need to render to an off-scree
     - Red: Elevation.
     - Green: Moisture.
     - Blue (optional): Temperature.
+
+    In this pass, we can additionally add another render target to create an **emissive map**. We'll cover this later.
 2. The second step uses a frame buffer with multiple render targets, gets the biome map generated in step 1 as input, together with some parameters like the [look-up table](/blog/2021/procedural-planetary-surfaces/#colors), and outputs the diffuse, specular, normal and emissive maps. Those are then used to texture the object.
 
 An example using simplex noise is shown below. Note the biome map only has the red and green channels active (for elevation and moisture) in this example.
 
 {{< fig src1="/img/2024/07/planet-maps-s.jxl" type1="image/jxl" src2="/img/2024/07/planet-maps-s.avif" type2="image/avif" src="/img/2024/07/planet-maps-s.jpg" class="fig-center" width="100%" title="Generated maps for a random planet. From left to right and top to bottom: biome (elevation and moisture) map, diffuse textrue, specular texture and normal texture." loading="lazy" >}}
 
-Note that the normal texture is only generated if needed, which is when 'elevation representation' is set to 'none' in the Gaia Sky settings. If elevation representation is set to either tessellation or vertex displacement, the normals are computed from the orientation of the surface itself, and the normal map is redundant.
+**Normal map** -- Note that the normal texture is only generated if needed, which is when 'elevation representation' is set to 'none' in the Gaia Sky settings. If elevation representation is set to either tessellation or vertex displacement, the normals are computed from the orientation of the surface itself, and the normal map is redundant.
 
-Additionally, we may choose to create an emissive texture using a combination of simplex and white noise. This is used to add 'civilization' to planets by means of lights that are visible during the night, on the dark side.
+**Emissive map** -- Additionally, we may choose to create an emissive map in an additional render target in the biome buffer using a combination of the base noise and white noise. This is used to add 'civilization' to planets by means of lights that are visible during the night, on the dark side. When the emissive map is active, the surface generation step (step 2) renders the regions with lights with black and gray colors, simulating cities or artificial structures.
 
 The maps above correspond to the following planet:
 
