@@ -81,7 +81,15 @@ You can then copy the contents of ``./output-folder`` to ``$WEB/static/photo-gal
 Mathematical formulas
 ---------------------
 
-The MathJax JavaScript library is not included by default in the pages. If you need to use Latex-like formulas in a post, you must include the JavaScript file in the post source like this:
+The MathJax JavaScript library is not included by default in the pages. If you need to use Latex-like formulas in a post, you must include the JavaScript file in the post source.
+
+Either do it in the header,
+
+```html
+js = ["/js/mathjax3.js"]
+```
+
+or using the script tag in the body,
 
 ```html
 <!-- Loading MathJax -->
