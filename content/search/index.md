@@ -1,7 +1,6 @@
 +++
 title = "Search"
 description = "Client-side search. No external servers involved."
-weight = -170
 +++
 
 <p>

@@ -16,6 +16,10 @@ uglyurls = false
     tag = "tags"
     category = "categories"
 
+[services.RSS]
+    limit = 15
+
+
 [params]
     # Sets the meta tag description, usually reserved for the main page
     description          = "Personal website and portfolio"
@@ -43,11 +47,6 @@ uglyurls = false
 
 # Set up your menu items in the navigation bar
 # You can use identifier to prepend a font awesome icon to your text
-
-# [[menu.main]]
-#     name = "~/"
-#     url = "/"
-#     weight = 1
 
 [[menu.main]]
     name = "~/blog"
