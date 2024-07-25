@@ -57,7 +57,10 @@ showpagemeta = "false"
 
 ### Talks, seminars and lectures
 
+*   **2024-03-18**: DPAC Consortium Meeting 2024, Nice, France --- [Gaia Sky Crash Course](https://gaia.ari.uni-heidelberg.de/gaiasky/presentation/gaiasky-crash-course/)
+*   **2024-02-02**: MWGaiaDN Induction School at PLNT, Leiden, Netherlands --- [Gaia Sky Tutorial](https://gaia.ari.uni-heidelberg.de/gaiasky/presentation/202402/mwgaiadn/)
 *   **2023-12-11**: AR/VR for Space Programmes, ESA/ESTEC, Noordwijk, Netherlands --- [Gaia Sky VR](https://gaia.ari.uni-heidelberg.de/gaiasky/presentation/202312/) [^arvrestec]
+*   **2023-03-13**: DPAC Consortium Meeting 2023, Heidelberg, Germany --- Gaia Sky Scripting Tutorial[^dpac2023]
 *   **2021-11-25**: CNES COMET OPS, "Outils 3D dans le spatial", Balma, France/Online --- Gaia Sky[^cometops]
 *   **2021-03-18**: DPAC Consortium Meeting 2021, Online --- Gaia Sky status update[^dpac2021]
 *   **2021-03-17**: DPAC Consortium Meeting 2021, Online --- [Gaia Sky tutorial](https://odysee.com/@GaiaSky:8/gaia-sky-tutorial-009-dpac-2021-online:3)[^dpac2021] [^gstut]
@@ -67,18 +70,18 @@ showpagemeta = "false"
 *   **2018-09-14**: IMPRS-HD Summer School 2018 --- Visualization of Gaia Data[^imprs]
 *   **2018-06-20**: Gaia Data Workshop 2018, Haus der Astronomy, Heidelberg --- Gaia Sky
 *   **2018-10-24**: VIS 2018, Berlin --- Gaia Sky: Navigating the Gaia Catalog[^gspaper] [^vis2018]
-*   **2018-02-21**: CU9 Plenary Meeting, Leiden, The Netherlands --- Gaia Sky, what's new
-*   **2017-01-22**: DPAC Consortium Meeting, Sitges --- Gaia Sky
+*   **2018-02-21**: CU9 Plenary Meeting, Leiden, The Netherlands --- Gaia Sky, What's New
+*   **2017-01-22**: DPAC Consortium Meeting 2017, Sitges --- Gaia Sky
 *   **2016-10-25**: VIS 2017, Baltimore, USA --- Topological Analysis of Inertial Dynamics[^vis2016]
 *   **2016-11-22**: Gaia Data Workshop 2016, Haus der Astronomie, Heidelberg, Germany --- Gaia Sky
 *   **2016-01-18**: PhD selection, IWR MathComp, Heidelberg, Germany --- Visualization of Astrometric and Astrophysical Data
-*   **2015-11-19**: DPAC Consortium Meeting, Leiden, The Netherlands --- Gaia Sandbox, what's new
+*   **2015-11-19**: DPAC Consortium Meeting 2015, Leiden, The Netherlands --- Gaia Sandbox, What's New
 *   **2015-09-22**: CU9 Plenary Meeting, Barcelona --- Gaia Sandbox
 *   **2015-09-17**: AG2015, Kiel, Germany --- Gaia Visualization
 *   **2015-01-22**: ARI colloquium, Heidelberg, Germany --- Gaia Sandbox
 *   **2014-12-11**: Gaia group seminar, Heidelberg, Germany --- Gaia Visualization for Outreach
-*   **2014-02-19**: Haus der Astronomie, Heidelberg, Germany --- Gaia visualization in the dome
-*   **2012-06-18**: Telemetry Validator talk, Barcelona --- Gaia/UB
+*   **2014-02-19**: Haus der Astronomie, Heidelberg, Germany --- Gaia Visualization in the Dome
+*   **2012-06-18**: Barcelona, Gaia/UB --- Gaia Telemetry Validator
 
 ### Documents and reports
 
@@ -100,6 +103,7 @@ simulations and SAMs](/pdf/GalaxyFormation.pdf).
 
 [^arvrestec]: AR/VR for Space Programmes, ESA/ESTEC: https://indico.esa.int/event/475/
 [^cometops]: CNES COMET OPS "Outils 3D dans le spatial": https://www.comet-cnes.fr/evenements/outils-3d-dans-le-spatial-bilan-sur-5-ans
+[^dpac2023]: DPAC Consortium Meeting 2023: https://zah.uni-heidelberg.de/talks-seminars-events/gaia-dpac-2021-153-1932021
 [^dpac2021]: DPAC Consortium Meeting 2021: https://zah.uni-heidelberg.de/talks-seminars-events/gaia-dpac-2021-153-1932021/
 [^gstut]: Gaia Sky tutorial (DPAC 2021): https://gaia.ari.uni-heidelberg.de/gaiasky/docs/workshops/dpac-plenary-online-2021.html
 [^eurovis2020]: Eurographics & Eurovis 2020 program: https://conferences.eg.org/egev20/program/#wednesday
