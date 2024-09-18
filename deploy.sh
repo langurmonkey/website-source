@@ -32,6 +32,8 @@ build_directory="./public/"
 ssh_server="nfs"
 # the public directory in the server where the site is.
 server_dir="/home/public"
+# stats update script in the server
+stats_update="/home/tmp/updatestats"
 
 echo "## Running minify script."
 # First, minify using the default theme (theme-bw)
@@ -52,5 +54,8 @@ hugo --destination "${build_directory}" --minify --quiet
 echo "## Copying data to server."
 # copy contents of ${build_directory} to server
 rsync -avhtu --cvs-exclude ${flags} ${build_directory}/ ${ssh_server}:${server_dir}/
+
+echo "## Updating stats by running awstats script."
+ssh ${ssh_server} -t "${stats_update}"
 
 echo "## Finished deploying site to ${ssh_server}:${server_dir}."
