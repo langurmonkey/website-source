@@ -1,27 +1,27 @@
-{{ with .Site.Social.rss }}
+{{ with .Site.Params.rss }}
 <li><a href="/{{.}}" target="_blank" alt="RSS" title="RSS feed"><i class="fa fa-rss" aria-hidden="true"></i><span style="display: none">RSS</span></a></li>
 {{ end }}
-{{ with .Site.Social.codeberg }}
+{{ with .Site.Params.codeberg }}
 <li><a href="//codeberg.org/{{.}}" target="_blank" alt="Codeberg" title="Codeberg repository"><i class="fa fa-code-fork" aria-hidden="true"></i><span style="display: none">Codeberg</span></a></li>
 {{ end }}
-{{ with .Site.Social.gitlab }}
+{{ with .Site.Params.gitlab }}
 <li><a href="//gitlab.com/{{.}}" target="_blank" alt="GitLab" title="GitLab repository"><i class="fa fa-gitlab" aria-hidden="true"></i><span style="display: none">GitLab</span></a></li>
 {{ end }}
-{{ with .Site.Social.mastodon }}
+{{ with .Site.Params.mastodon }}
 <li><a rel="me" href="//mastodon.social/{{.}}" alt="Mastodon" title="mastodon.social"><i class="fa fa-mastodon" aria-hidden="true"></i><span style="display: none">Mastodon.social</span></a></li>
 {{ end }}
-{{ with .Site.Social.mastodont }}
+{{ with .Site.Params.mastodont }}
 <li><a rel="me" href="//mastodont.cat/{{.}}" alt="Mastodont" title="mastodont.cat"><i class="fa fa-mastodon-alt" aria-hidden="true"></i><span style="display: none">Mastodont.cat</span></a></li>
 {{ end }}
-{{ with .Site.Social.pixelfed }}
+{{ with .Site.Params.pixelfed }}
 <li><a rel="me" href="//pixelfed.social/{{.}}" alt="Pixelfed" title="pixelfed.social"><i class="fa fa-pixelfed" aria-hidden="true"></i><span style="display: none">Pixelfed</span></a></li>
 {{ end }}
-{{ with .Site.Social.lbry }}
+{{ with .Site.Params.lbry }}
 <li><a href="//odysee.com/{{.}}" target="_blank" alt="Odysee" title="Odysee channel"><i class="fa fa-film" aria-hidden="true"></i><span style="display: none">Odysee</span></a></li>
 {{ end }}
-{{ with .Site.Social.pgp }}
+{{ with .Site.Params.pgp }}
 <li><a href="/pgp/tss_pubkey.asc" target="_blank" alt="PGP" title="PGP key"><i class="fa fa-lock" aria-hidden="true"></i><span style="display: none">PGP</span></a></li>
 {{ end }}
-{{ with .Site.Social.email }}
+{{ with .Site.Params.email }}
 <li><a href="mailto:{{.}}" alt="Email" title="Email address"><i class="fa fa-envelope" aria-hidden="true"></i><span style="display: none">Email</span></a></li>
 {{ end }}

@@ -18,7 +18,7 @@ showpagemeta = "false"
     [<a href="/pdf/Resume-ToniSagrista.pdf#overlay-context=resume" target="_blank" title="Resume in PDF">PDF version</a>]
   </p>
   <p class="contactinfo">
-    Cell: <span class="tel">+49 (0)17683798752</span>, <span class="tel">+34 669724840</span>
+    Cell: <span class="tel">+49 (0)17683798752</span>
     <br>Email: <a class="email" href="mailto:me@tonisagrista.com">me@tonisagrista.com</a>
     <br>PGP: <a href="/pgp/tss_pubkey.asc" target="_blank">0x2FD2A59C1D734C1F</a>
     <br>Born: August 5, 1983
@@ -35,6 +35,7 @@ showpagemeta = "false"
     </h2>
     <ul>
       <li><strong><a href="http://www.ari.uni-heidelberg.de/gaia/outreach/gaiasky">Gaia Sky</a></strong> &ndash; Lead designer and developer of Gaia Sky, a modern 3D Universe application.</li>
+      <li><strong>Gaia/CU3</strong> &ndash; The Gaia First Look system performs initial daily diagnostics and analyses of the science data quality and consistency of the telemetry of Gaia.</li>
       <li><strong>Gaia/CU9</strong> &ndash; Support for the scientific exploration of the Gaia data as well as its electronic publication. Support for the Gaia data visualization and public outreach.</li>
     </ul>
     <h2 class="cv">
@@ -82,11 +83,19 @@ showpagemeta = "false"
 
   <dt class="cv">Education</dt>
   <dd class="cv">
+    <h2 class="cv">Universität Heidelberg, <a href="http://vcg.iwr.uni-heidelberg.de" title="VisComp" target="_blank">Visual Computing Group</a></h2>
+    <p>May 2015 &ndash; May 2024 &nbsp; &nbsp;<strong>Ph.D. in Scientific Visualization and Astronomy (interdisciplinary)</strong>.</p>
+    <p></p>
+    <p>
+      <a href="https://archiv.ub.uni-heidelberg.de/volltextserver/34797/">Visualization of Astrometric And Astrophysical Data</a> (<a href="https://doi.org/10.11588/heidok.00034797">10.11588/heidok.00034797</a>).
+      Main topics: Vector Field Topology, unsteady flow visualization, inertial systems, scientific visualization, rendering, and computer graphics. Supervised by Prof. Dr. F. Sadlo and Prof. Dr. S. Jordan.
+    </p>
+    <p></p>
     <h2 class="cv">Universitat de Barcelona, <a href="http://am.ub.es" title="DAM" target="_blank">Department of Astronomy</a></h2>
     <p>February 2010 &ndash; September 2011 &nbsp; &nbsp;<strong>M.Sc. in Astrophysics, Particle Physics and Cosmology</strong> (ISCED 6). Qualification: 90/100, A.</p>
     <p></p>
     <p>
-      The Masters degree in Astrophysics, Particle Physics and Cosmology, pathway of Astrophysics and Space Sciences. It provides <strong>advanced academic training</strong> within the fields of <strong>astrophysics</strong>, <strong>space sciences</strong>, <strong>atomic, nuclear and particle physics</strong>, <strong>gravitation</strong> and <strong>cosmology</strong>. Awarded the <em>M.Sc. Honors Certificate</em> of the faculty of physics in 2011.
+      The Masters degree in Astrophysics, Particle Physics and Cosmology, pathway of Astrophysics and Space Sciences. It provides <strong>advanced academic training</strong> within the fields of <strong>astrophysics</strong>, <strong>space sciences</strong>, <strong>atomic, nuclear and particle physics</strong>, <strong>gravitation</strong> and <strong>cosmology</strong>. Awarded the <em>M.Sc. Honors Certificate</em> of the faculty of physics in 2011. Supervised by Prof. Dr. E. Salvador.
     </p>
     <p></p>
     <h2 class="cv">University of Aberdeen, <a href="http://www.abdn.ac.uk/ncs/" title="Computing Sciences" target="_blank">Computing Science Department</a>
@@ -127,14 +136,15 @@ showpagemeta = "false"
     <ul>
       <li><strong>CUDA</strong> &ndash; NVIDIA's GPGPU technology, used extensively during my Ph.D.
       </li>
+      <li><strong>OpenGL/GLSL</strong> &ndash; Open Graphics Library and shading language, used extensively in Gaia Sky and my Ph.D.
+      </li>
       <li><strong>Programming languages</strong> &ndash; Languages I know best.
         <ul>
         <li><strong>Rust</strong> &ndash; Used in personal and professional projects such as the Gaia Sky catalog generation tool and rCHIP8, a CHIP-8 emulator.</li>
         <li><strong>C, C++</strong> &ndash; Used in some personal projects and practical works done in both languages during my degree.</li>
         <li><strong>Java and J2EE</strong> &ndash; Expert in various J2EE technologies and frameworks.
-          <ul><li><strong>Application/web servers</strong> &ndash; Tomcat, jBoss, Apache.</li>
-          <li><strong>Frameworks</strong> &ndash; Struts 1&2, Spring, JSF, WebWorks, GWT, Hibernate, jBPM.</li>
-          <li><strong>Libraries</strong> &ndash; Apache commons, jetty, Eclipse GEF, GMF and SWF, libGDX, Quartz, Lucene, etc.</li>
+          <ul><li><strong>Application/web servers</strong> &ndash; Apache HTTP Server, Tomcat, jBoss, Jetty.</li>
+          <li><strong>Frameworks</strong> &ndash; LibGDX, LWJGL, Struts 1&2, Spring, JSF, WebWorks, GWT, Hibernate, jBPM.</li>
           <li><strong>Profiling</strong> &ndash; VisualVM, JProfile, JProbe, jmap, jhat, jstack.</li>
           </ul>
         <li><strong>Python</strong> &ndash; Used extensively during my Ph.D. and Gaia Sky.</li>
@@ -143,11 +153,11 @@ showpagemeta = "false"
         <li><strong>Shell scripting</strong> &ndash; POSIX sh, bash.</li>
         </ul>
       </li>
-      <li><strong>OpenGL/GLSL</strong> &ndash; Deep knowledge of OpenGL (2.x, 3.x, 4.x and ES).</li>
-      <li><strong>Databases</strong> &ndash; MySQL, PostgreSQL, OracleDB, HyperSQL and specific languages like ADQL.</li>
+      <li><strong>GLSL</strong> &ndash; Deep knowledge of OpenGL's shading lanugage.</li>
       <li><strong>vim</strong> &ndash; My main development tool, aided with handy plugins.</li>
       <li><strong>IntelliJ IDEA</strong> &ndash; I currently use it for Java development.</li>
-      <li><strong>Eclipse IDE</strong> &ndash; I used the Eclipse IDE as my main developing environment in the past&nbsp;and worked with<br>several Eclispe technologies such as GEF and GMF.</li>
+      <li><strong>Eclipse IDE</strong> &ndash; I used the Eclipse IDE as my main developing environment in the past&nbsp;and worked with<br>several Eclipse technologies such as GEF and GMF.</li>
+      <li><strong>Databases</strong> &ndash; MySQL, PostgreSQL, OracleDB, HyperSQL and specific languages like ADQL.</li>
       <li><strong>HPC</strong> &ndash; Tuning and profiling code for its execution in the supercomputers at <a href="http://cesca.cat" target="_blank">CESCA</a> and <a href="http://www.bsc.es">BSC</a>.</li>
       <li><strong>Android SDK</strong> &ndash; Expertise in the Android SDK. Two applications published in the Play store and F-Droid (see my <a href="/portfolio">Portfolio</a>).</li>
       <li><strong>LaTeX</strong> &ndash; I use LaTeX to format almost all the documents I produce, including technical work, science reports and my <a href="/sites/default/files/pdf/cv.pdf">resumé</a>.</li>
@@ -180,13 +190,13 @@ showpagemeta = "false"
   </dd>
   <dd class="clear">&nbsp;</dd>
   <dt class="cv">Hobbies</dt>
-  <dd class="cv"><p>Snowboarding, football, jogging, scuba diving, reading and above all, traveling the world.</p></dd>
+  <dd class="cv"><p>Running, playing football, snowboarding, scuba diving, reading, gaming.</p></dd>
   <dd class="clear">&nbsp;</dd>
   <dt class="cv">References</dt>
   <dd class="cv"><p>Available on request.</p></dd>
   <dd class="clear">&nbsp;</dd>
 </dl>
 <div class="clear">&nbsp;</div>
-Download my <a href="/pdf/Resume-ToniSagrista.pdf" title="Resume in PDF" target="_blank">resumé in PDF</a>, or my <a href="/pdf/Europass_CV.pdf" title="Europass CV" target="_blank">Europass CV</a>, also in PDF.
+Download my <a href="/pdf/Resume-ToniSagrista.pdf" title="Resume in PDF" target="_blank">résumé in PDF</a>.
 </div>
 <p>&nbsp;</p>

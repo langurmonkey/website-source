@@ -3,11 +3,13 @@ languageCode = "en-gb"
 title = "Langur Monkey - Toni Sagristà Sellés"
 theme = "langurmonkey"
 preserveTaxonomyNames = true
-paginate = 6
 enableRobotsTXT = true
 canonifyURLs = true
 relativeurls = true
 uglyurls = false
+
+[pagination]
+    pagerSize = 6
 
 [outputs]
     home = ["HTML", "RSS", "JSON"]
