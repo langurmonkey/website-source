@@ -53,7 +53,7 @@ hugo --destination "${build_directory}" --minify --quiet
 
 echo "## Copying data to server."
 # copy contents of ${build_directory} to server
-rsync -avhtu --cvs-exclude ${flags} ${build_directory}/ ${ssh_server}:${server_dir}/
+rsync -avh --cvs-exclude ${flags} ${build_directory}/ ${ssh_server}:${server_dir}/
 
 echo "## Updating stats by running awstats script."
 ssh ${ssh_server} -t "${stats_update}"
