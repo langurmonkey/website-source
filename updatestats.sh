@@ -18,6 +18,6 @@ stats_update="/home/tmp/updatestats"
 
 
 echo "## Updating stats by running awstats script."
-ssh ${ssh_server} -t "${stats_update}"
+ssh -i /home/tsagrista/.ssh/id_website ${ssh_server} -t "${stats_update}"
 
 echo "## Done."
