@@ -1,18 +1,18 @@
-(function($) {
+(function(cash) {
 
     /**
      * Generate an indented list of links from a nav. Meant for use with panel().
      * @return {cash} cash object.
      */
-    $.fn.navList = function() {
+    cash.fn.navList = function() {
 
-        var	$this = $(this);
+        var	$this = cash(this);
         $a = $this.find('a'),
             b = [];
 
         $a.each(function() {
 
-            var	$this = $(this),
+            var	$this = cash(this),
                 indent = Math.max(0, $this.parents('li').length - 1),
                 href = $this.attr('href'),
                 target = $this.attr('target');
@@ -39,7 +39,7 @@
      * @param {object} userConfig User config.
      * @return {cash} cash object.
      */
-    $.fn.panel = function(userConfig) {
+    cash.fn.panel = function(userConfig) {
 
         // No elements?
         if (this.length == 0)
@@ -49,21 +49,21 @@
         if (this.length > 1) {
 
             for (var i=0; i < this.length; i++)
-                $(this[i]).panel(userConfig);
+                cash(this[i]).panel(userConfig);
 
             return $this;
 
         }
 
         // Vars.
-        var	$this = $(this),
-            $body = $('body'),
-            $window = $(window),
+        var	$this = cash(this),
+            $body = cash('body'),
+            $window = cash(window),
             id = $this.attr('id'),
             config;
 
         // Config.
-        config = $.extend({
+        config = cash.extend({
 
             // Delay.
             delay: 0,
@@ -96,7 +96,7 @@
 
         // Expand "target" if it's not a cash object already.
         if (typeof config.target != 'cash')
-            config.target = $(config.target);
+            config.target = cash(config.target);
 
         // Panel.
 
@@ -149,7 +149,7 @@
             $this
                 .on('click', 'a', function(event) {
 
-                    var $a = $(this),
+                    var $a = cash(this),
                         href = $a.attr('href'),
                         target = $a.attr('target');
 
@@ -300,11 +300,11 @@
      * Apply "placeholder" attribute polyfill to one or more forms.
      * @return {cash} cash object.
      */
-    $.fn.placeholder = function() {
+    cash.fn.placeholder = function() {
 
         // Browser natively supports placeholders? Bail.
         if (typeof (document.createElement('input')).placeholder != 'undefined')
-            return $(this);
+            return cash(this);
 
         // No elements?
         if (this.length == 0)
@@ -314,20 +314,20 @@
         if (this.length > 1) {
 
             for (var i=0; i < this.length; i++)
-                $(this[i]).placeholder();
+                cash(this[i]).placeholder();
 
             return $this;
 
         }
 
         // Vars.
-        var $this = $(this);
+        var $this = cash(this);
 
         // Text, TextArea.
         $this.find('input[type=text],textarea')
             .each(function() {
 
-                var i = $(this);
+                var i = cash(this);
 
                 if (i.val() == ''
                     ||  i.val() == i.attr('placeholder'))
@@ -338,7 +338,7 @@
             })
             .on('blur', function() {
 
-                var i = $(this);
+                var i = cash(this);
 
                 if (i.attr('name').match(/-polyfill-field$/))
                     return;
@@ -351,7 +351,7 @@
             })
             .on('focus', function() {
 
-                var i = $(this);
+                var i = cash(this);
 
                 if (i.attr('name').match(/-polyfill-field$/))
                     return;
@@ -367,9 +367,9 @@
         $this.find('input[type=password]')
             .each(function() {
 
-                var i = $(this);
-                var x = $(
-                    $('<div>')
+                var i = cash(this);
+                var x = cash(
+                    cash('<div>')
                     .append(i.clone())
                     .remove()
                     .html()
@@ -437,7 +437,7 @@
                 $this.find('input[type=text],input[type=password],textarea')
                     .each(function(event) {
 
-                        var i = $(this);
+                        var i = cash(this);
 
                         if (i.attr('name').match(/-polyfill-field$/))
                             i.attr('name', '');
@@ -457,12 +457,12 @@
                 event.preventDefault();
 
                 $this.find('select')
-                    .val($('option:first').val());
+                    .val(cash('option:first').val());
 
                 $this.find('input,textarea')
                     .each(function() {
 
-                        var i = $(this),
+                        var i = cash(this),
                             x;
 
                         i.removeClass('polyfill-placeholder');
@@ -523,18 +523,18 @@
      * @param {cash} $elements Elements (or selector) to move.
      * @param {bool} condition If true, moves elements to the top. Otherwise, moves elements back to their original locations.
      */
-    $.prioritize = function($elements, condition) {
+    cash.prioritize = function($elements, condition) {
 
         var key = '__prioritize';
 
         // Expand $elements if it's not already a cash object.
         if (typeof $elements != 'cash')
-            $elements = $($elements);
+            $elements = cash($elements);
 
         // Step through elements.
         $elements.each(function() {
 
-            var	$e = $(this), $p,
+            var	$e = cash(this), $p,
                 $parent = $e.parent();
 
             // No parent? Bail.

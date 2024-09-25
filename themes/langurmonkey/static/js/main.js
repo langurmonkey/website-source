@@ -4,7 +4,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-(function($) {
+(function(cash) {
 
 	skel.breakpoints({
 		xlarge:	'(max-width: 1680px)',
@@ -14,12 +14,12 @@
 		xsmall:	'(max-width: 480px)'
 	});
 
-	$(function() {
+	cash(function() {
 
-		var	$window = $(window),
-			$body = $('body'),
-			$menu = $('#menu'),
-			$main = $('#main');
+		var	$window = cash(window),
+			$body = cash('body'),
+			$menu = cash('#menu'),
+			$main = cash('#main');
 
 		// Disable animations/transitions until the page has loaded.
 			$body.addClass('is-loading');
@@ -31,11 +31,11 @@
 			});
 
 		// Fix: Placeholder polyfill.
-			$('form').placeholder();
+			cash('form').placeholder();
 
 		// Prioritize "important" elements on medium.
 			skel.on('+medium -medium', function() {
-				$.prioritize(
+				cash.prioritize(
 					'.important\\28 medium\\29',
 					skel.breakpoint('medium').active
 				);
@@ -54,7 +54,7 @@
 		});
 
 		// Search (header).
-			var $search = $('#search'),
+			var $search = cash('#search'),
 				$search_input = $search.find('input');
 
 			$body
