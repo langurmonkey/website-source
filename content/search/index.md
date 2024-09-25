@@ -1,6 +1,7 @@
 +++
 title = "Search"
 description = "Client-side search. No external servers involved."
+js = ["/js/jquery.min.js"]
 +++
 
 <p>
@@ -9,6 +10,7 @@ description = "Client-side search. No external servers involved."
 
 <ul id="results"></ul>
 
+<!-- For some reason, we need to include jQuery twice... -->
 <script src="/js/jquery.min.js"></script>
 <script src="/js/lunr.js"></script>
 <script>

@@ -2,7 +2,7 @@
 
     /**
      * Generate an indented list of links from a nav. Meant for use with panel().
-     * @return {Zepto} Zepto object.
+     * @return {cash} cash object.
      */
     $.fn.navList = function() {
 
@@ -37,7 +37,7 @@
     /**
      * Panel-ify an element.
      * @param {object} userConfig User config.
-     * @return {Zepto} Zepto object.
+     * @return {cash} cash object.
      */
     $.fn.panel = function(userConfig) {
 
@@ -94,8 +94,8 @@
 
         }, userConfig);
 
-        // Expand "target" if it's not a Zepto object already.
-        if (typeof config.target != 'Zepto')
+        // Expand "target" if it's not a cash object already.
+        if (typeof config.target != 'cash')
             config.target = $(config.target);
 
         // Panel.
@@ -298,7 +298,7 @@
 
     /**
      * Apply "placeholder" attribute polyfill to one or more forms.
-     * @return {Zepto} Zepto object.
+     * @return {cash} cash object.
      */
     $.fn.placeholder = function() {
 
@@ -520,15 +520,15 @@
 
     /**
      * Moves elements to/from the first positions of their respective parents.
-     * @param {Zepto} $elements Elements (or selector) to move.
+     * @param {cash} $elements Elements (or selector) to move.
      * @param {bool} condition If true, moves elements to the top. Otherwise, moves elements back to their original locations.
      */
     $.prioritize = function($elements, condition) {
 
         var key = '__prioritize';
 
-        // Expand $elements if it's not already a Zepto object.
-        if (typeof $elements != 'Zepto')
+        // Expand $elements if it's not already a cash object.
+        if (typeof $elements != 'cash')
             $elements = $($elements);
 
         // Step through elements.
@@ -584,5 +584,5 @@
 
     };
 
-})(Zepto);
+})(cash);
 
