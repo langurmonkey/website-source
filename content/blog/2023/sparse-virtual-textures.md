@@ -14,7 +14,7 @@ type = "post"
 <!-- Loading MathJax -->
 <script type="text/javascript" id="MathJax-script" async src="/js/mathjax3.js"></script>
 
-Implementing proper virtual texture support in [Gaia Sky](https://zah.uni-heidelberg.de/gaia/outreach/gaiasky) has been on my to-do list for many years. And for many years I have feared that very item, as the virtual texture mechanism is notoriously complex and hard to implement. However, once working, they are very cool and bring a lot of value to software like Gaia Sky. In this post, I describe and discuss my implementation of virtual textures in Gaia Sky in detail, and provide a thorough examination of some of its most interesting points. If you are looking for the specifics of how to define or use virtual texture datasets in Gaia Sky, please refer to the [official documentation](https://gaia.ari.uni-heidelberg.de/gaiasky/docs). Here I provide only a general technical description.
+Implementing proper virtual texture support in [Gaia Sky](https://zah.uni-heidelberg.de/gaia/outreach/gaiasky) has been on my to-do list for many years. And for many years I have feared that very item, as the virtual texture mechanism is notoriously complex and hard to implement. However, once working, they are very cool and bring a lot of value to a Universe visualization platform such as Gaia Sky. In this post, I describe and discuss my implementation of virtual textures in Gaia Sky in detail, and provide a thorough examination of some of its most interesting points. If you are looking for the specifics of how to define or use virtual texture datasets in Gaia Sky, please refer to the [official documentation](https://gaia.ari.uni-heidelberg.de/gaiasky/docs). Here I provide only a general technical description.
 
 <!-- More -->
 
@@ -28,7 +28,7 @@ In this article we use VT and SVT interchangeably to refer to virtual textures.
 
 ## How Do They Work?
 
-Virtual texturing is the CG memory counterpart to the operating system virtual memory. In virtual memory, a process' memory address space is divided into pages, which are moved in and out of a cache space depending on whether and when they are needed. In virtual texturing, textures (images) are split up into smaller tiles and paged in and out of a cache texture when needed. 
+Virtual texturing is the <acronym title="Computer Graphics">CG</acronym> memory counterpart to the operating system virtual memory. In virtual memory, a process' memory address space is divided into pages, which are moved in and out of a cache space depending on whether and when they are needed. In virtual texturing, textures (images) are split up into smaller tiles and paged in and out of a cache texture when needed. 
 
 Virtual texturing requires some pre-processing to be done, as the large texture needs to be split up into tiles beforehand. The tiles in our implementation need to have a 1:1 aspect ratio (i.e. must be square). There are four main steps in every virtual texture implementation:
 
@@ -77,10 +77,10 @@ We modify our original formulation, and instead of dividing the texture into onl
 <a id="fig-svt"></a>
 {{< fig src="/img/2023/01/vt-quadtree.png" class="fig-center" width="65%" title="An example of a virtual texture with 3 levels (0 to 2) for the Earth laid out as a quadtree. Note that the root (level 0, top), covers the whole area, while successive levels have equally-sized tiles that cover less and less area each. This VT has an aspect ratio of 2:1, so it has two root nodes at the top." loading="lazy" >}}
 
-In our quadtree, level 0 contains one or two tiles (depending on SVT aspect ratio) which cover the whole area (left tile in the image), and the level numbers for each tile indicate its depth. In the image, pictured top to bottom are levels 0, 1, 2 and 3.
+In our quadtree, level 0 contains one or two tiles (depending on SVT aspect ratio) which cover the whole area (left tile in the image), and the level numbers for each tile indicate its depth. In the image, pictured top to bottom are levels 0, 1, and 2.
 
 {{< notice "Note" >}}
-**Mip levels** and **quadtree levels** are not the same! In our tree, the level 0 is the root, which contains the lowest-resoltuion tiles. In mipmaps, mip level 0 is the base level, containing the texture at its full resolution!
+**Mip levels** and **quadtree levels** are not the same! In our tree, level 0 is the root, which contains the lowest-resoltuion tiles. In mipmaps, mip level 0 is the base level, containing the texture at its full resolution!
 {{</ notice >}}
 
 If we incorporate the quadtree with different levels, the shader we showed before gets a bit more complicated. First of all, we need to determine the LOD level of the fragment. To do so, we could use the GLSL function `textureQueryLod(sampler2D s, vec2 texCoords)`, but we'd need a texture bound in that fragment shader, which we do not have. However, that function can be easily implemented with some partial derivatives,
@@ -293,8 +293,8 @@ Here are some videos of the system working at full strength, with different chan
 
 We did not find any open-source tools to our liking to create virtual textures from high-resolution texture data, so we created our own. You can find them in the [virtual texture tools repository](https://codeberg.org/langurmonkey/virtualtexture-tools). This repository contains two scripts:
 
-- `split-tiles` --- can split a texture into square tiles of a given resolution, and names the tiles in the format expected by Gaia Sky (and also Celestia), which is `tx_[col]_[row].ext`. The output format, quality and starting column and row are configurable via arguments.
-- `generate-lod` --- given a bunch of tiles and a level number, this script generates all the upper levels by stitching and resizing tiles. It lays them out in directories with the format `levelN`, where N is the zer-based level. The input tiles are also expected in a directory. The output format and quality are configurable.
+- `split-tiles` --- can split a texture into square tiles of a given resolution, and names the tiles in the format expected by Gaia Sky (and also Celestia), which is `tx_[col]_[row].ext`. The output format, quality, and starting column and row are configurable via arguments.
+- `generate-lod` --- given a bunch of tiles and a level number, this script generates all the upper levels by stitching and resizing tiles. It lays them out in directories with the format `levelN`, where N is the zero-based level. The input tiles are also expected in a directory. The output format and quality are configurable.
 
 ## Additional Considerations
 
