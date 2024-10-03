@@ -20,7 +20,7 @@
         {{ $.Scratch.Set "postLimit" 8 }}
         {{ range first ($.Scratch.Get "postLimit") (where ($.Scratch.Get "recentPosts") "Type" "post") }}
         <div class="recent-posts-item">
-          <a class="recent-posts-link" href="{{ .RelPermalink }}">{{ .Title | title | truncate 50 }}</a>
+          <a class="recent-posts-link" href="{{ .RelPermalink }}">{{ .Title | markdownify | truncate 50 }}</a>
           {{ $.Scratch.Set "dateType" .Date }}
           <time class="published" datetime='{{ ($.Scratch.Get "dateType").Format "02 Jan 06" }}'>
             {{ ($.Scratch.Get "dateType").Format "02 Jan 06" }}

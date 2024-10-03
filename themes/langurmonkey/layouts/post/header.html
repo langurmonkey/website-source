@@ -1,12 +1,12 @@
 <header>
     <div class="title">
         {{ if $.Scratch.Get "h1" }}
-            <h1><a href="{{ .Permalink }}">{{ .Title | title }}</a></h1>
+            <h1><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
             {{ $.Scratch.Set "h1" false }}
         {{ else }}
-            <h2><a href="{{ .Permalink }}">{{ .Title | title }}</a></h2>
+            <h2><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
         {{ end }}
-        {{ with .Description }}
+        {{ with .Description | markdownify }}
             <p>{{ . }}</p>
         {{ end }}
     </div>
