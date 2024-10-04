@@ -36,7 +36,7 @@ uglifyjs darkmode.js jquery.min.js skel.min.js codeblock.js util.js main.js > si
 To minify everything at once, do:
 
 ```bash
-scripts/minify-all.sh
+just minify
 ```
 
 Note that you **need** to run this script in order for the CSS to be applied, as the website itself only links the minified bundle file!
