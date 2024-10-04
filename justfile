@@ -1,7 +1,7 @@
-css:
+minify:
   $WEB/scripts/minify-all.sh theme-bw
 
-deploy: css
+deploy: minify
   $WEB/deploy.sh
 
 hugo:

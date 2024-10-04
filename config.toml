@@ -107,7 +107,7 @@ uglyurls = false
     lineNumbersInTable = true
     noClasses = true
     noHl = false
-    style = 'monokailight'
+    style = 'hrdark'
     tabWidth = 4
   # Properties of the markdown render engine (goldmark)
   [markup.goldmark]
