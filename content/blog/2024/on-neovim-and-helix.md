@@ -40,7 +40,7 @@ In contrast, borrowing from Kakoune's model, **Helix** inverts the paradigm. Ins
 
 In both Neovim and Helix we have **`NORMAL`**,  **`INSERT`**, and **`VISUAL`** modes, with the `:` command mode on top. Additionally, Helix has some minor modes, or sub-modes, that are accessible from normal mode and revert back to it after one command. These are **`GOTO`** mode, **`MATCH`** mode, **`VIEW`** mode or **`SPACE`** mode. For instance, space mode, accessed by typing <kbd>Space</kbd>, offers a set of mappings to different actions, shown in a popup, such as a fuzzy file picker (akin to `telescope.nvim`), a buffer picker, or a jumplist picker. It is similar to what you achieve in Neovim by using `whichkey.nvim`. But in Helix, all of this is built in.
 
-Helix does a very good job of communicating the key bindings to the user. When entering space, match or goto modes a popup appears, with the further bindings and a small explanation. This helps a lot with the on-ramp.
+Helix has a very discoverable UI, which is quite rare for a terminal application. It does a very good job of communicating the key bindings to the user. When entering space, match or goto modes a popup appears, with the further bindings and a small explanation. This helps a lot with the on-ramp.
 
 {{< fig src="/img/2024/10/helix-gotomode.jpg" class="fig-center" width="55%" title="Goto mode popup in Helix." loading="lazy" >}}
 
