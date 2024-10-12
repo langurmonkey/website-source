@@ -108,7 +108,7 @@ Here are some cool and handy tricks you can do with helix.
   ```bash
   hx --health
   ```
-  to get a listing of all the supported languages, and whether their language server is available or not. Below is an excrept of its output:
+  to get a listing of all the supported languages, and whether their language server is available or not. Below is an excerpt of its output:
   ```bash
   Language                      LSP                           DAP                           Formatter                     Highlight                     Textobject                    Indent                        
   [...]
@@ -138,6 +138,14 @@ Here are some cool and handy tricks you can do with helix.
 - `gw` lets you jump instantly to a two-character label, similar to what qutebrowser does with links. Write `gw` and then type in the label of the location where you want to jump to. Jump labels appear at almost every word in view.
 
 Of course, there are many more functions and features, but these are the ones I like the most.
+
+## Helix Pain Points
+
+There are a couple of issues with Helix.
+
+- To my knowledge, there is no integrated spell checker yet, so if you want this functionality, you need to configure a spell checker LSP, like `typo-lsp`, in your `languages.toml` file for each language. Clearly a pain point.
+- A lot of editors nowadays offer a vim mode, either built-in or as a plugin. I myself use it in IntelliJ IDEA when I need to do some heavy refactoring of Java. If I ever get as comfortable using the Helix editing mode as I am with vim's, this could become a drawback.
+- I have the impression that some actions take more key strokes in Helix than they do in Neovim. I'm still not sure about that though.
 
 
 ## Conclusions
