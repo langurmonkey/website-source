@@ -1159,7 +1159,13 @@ div.post-in-list time{
   font-size: 1em;
   font-weight: 100;
   display: inline-block;
-  width: 5.5em;
+}
+div.post-in-list i.last-update{
+  letter-spacing: -0.07em;
+  color: var(--title-color);
+  opacity: 0.5;
+  font-size: 0.6em;
+  display: inline-block;
 }
 div.post-in-list a {
   text-decoration: none;
@@ -1175,6 +1181,9 @@ div.post-in-list a::first-letter {
 }
 @media screen and (max-width: 680px) {
   div.post-in-list time{
+    display: none;
+  }
+  div.post-in-list i.last-update{
     display: none;
   }
   div.post-in-list a {
@@ -1317,6 +1326,7 @@ dl dd {
 .post > header .meta .post-info-last-mod {
   font-size: 0.6em;
   color: var(--title-color);
+  opacity: 0.7;
 }
 
 .post > .image.featured {

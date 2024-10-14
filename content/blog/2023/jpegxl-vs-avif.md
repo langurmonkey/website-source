@@ -3,7 +3,6 @@ author = "Toni Sagrista Selles"
 categories = ["JPEG XL"]
 tags = ["open-source", "image", "visualization", "formats", "jpeg xl", "jxl", "avif", "jpeg", "png", "webp", "english"]
 date = 2023-02-19
-lastmod = 2024-01-24
 title = "JPEG XL vs AVIF: a comparison"
 description = "An unscientific analysis of these two image formats based on file size and image quality."
 featuredpath = "date"

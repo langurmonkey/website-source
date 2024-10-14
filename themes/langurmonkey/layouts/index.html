@@ -22,9 +22,17 @@
         <div class="recent-posts-item">
           <a class="recent-posts-link" href="{{ .RelPermalink }}">{{ .Title | markdownify | truncate 50 }}</a>
           {{ $.Scratch.Set "dateType" .Date }}
-          <time class="published" datetime='{{ ($.Scratch.Get "dateType").Format "02 Jan 06" }}'>
+          <time class="published" datetime='{{ ($.Scratch.Get "dateType") }}'
+            title='Posted: {{ ($.Scratch.Get "dateType") }}'>
             {{ ($.Scratch.Get "dateType").Format "02 Jan 06" }}
           </time>
+          {{- if .Lastmod }}
+          {{- $pubdate := ($.Scratch.Get "dateType").Format "02 Jan" }}
+          {{- $lastmod := .Lastmod.Format "02 Jan" }}
+          {{- if ne $lastmod $pubdate }}
+          <i class="fa fa-arrow-circle-o-up last-update" aria-hidden="true" title="Updated: {{ .Lastmod }}"></i>
+          {{- end }}
+          {{- end }}
         </div>
         {{ end }}
         <div class="recent-posts-item">

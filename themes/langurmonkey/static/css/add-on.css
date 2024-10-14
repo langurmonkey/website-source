@@ -439,10 +439,25 @@ div.recent-posts-item time {
   color: var(--time-color);
   font-weight: 100;
 }
+div.recent-posts-item i {
+  letter-spacing: -0.05em;
+  margin-left: 0.4em;
+  font-size: 0.7em;
+  line-height: 3.1;
+  color: var(--title-color);
+  opacity: 0.5;
+  font-weight: 100;
+}
 
 @media screen and (max-width: 736px) {
   div.recent-posts-item {
     min-width: 21em;
+  }
+  div.recent-posts-item time {
+    display: none;
+  }
+  div.recent-posts-item i {
+    display: none;
   }
 }
 @media screen and (max-width: 450px) {

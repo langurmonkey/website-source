@@ -7,6 +7,7 @@ enableRobotsTXT = true
 canonifyURLs = true
 relativeurls = true
 uglyurls = false
+enableGitInfo = true
 
 [pagination]
     pagerSize = 6
