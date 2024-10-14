@@ -9,6 +9,10 @@ relativeurls = true
 uglyurls = false
 enableGitInfo = true
 
+[frontmatter]
+  # Use article lastmod, otherwise use git
+  lastmod = ["lastmod", ":git", "date", "publishDate"]
+
 [pagination]
     pagerSize = 6
 
