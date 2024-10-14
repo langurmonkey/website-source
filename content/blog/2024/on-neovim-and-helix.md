@@ -3,6 +3,7 @@ author = "Toni Sagrista Selles"
 categories = ["texteditor"]
 tags = ["vim","helix","kakoune","modal","English"]
 date = 2024-10-12
+lastmod = 2024-10-14 08:48:58
 linktitle = ""
 title = "On Neovim and Helix"
 description = "My thoughts on where Helix stands in the modal text editor landscape"
@@ -57,6 +58,7 @@ line-number = "relative"
 cursorline = true
 mouse = true
 color-modes = true
+bufferline = "always" # Enable tab bar at the top
 
 [editor.cursor-shape]
 insert = "bar"
@@ -89,6 +91,9 @@ display-signature-help-docs	= true
 # Key mappings
 [keys.normal]
 D = "kill_to_line_end"
+# Use Shift-l and -h to move through tabs
+S-l = ":buffer-next"
+S-h = ":buffer-previous"
 ```
 
 ## Plugins
