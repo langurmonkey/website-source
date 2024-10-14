@@ -3,6 +3,7 @@ author = "Toni Sagrista Selles"
 categories = ["Linux"]
 tags = [ "programming", "scripts", "i3wm", "polybar", "rice", "qutebrowser", "pass", "neovim" ]
 date = 2019-03-02
+lastmod = 2020-10-02
 description = "Description of my daily Linux setup as of October 2019"
 linktitle = ""
 title = "My Linux setup (as of 10/2020)"

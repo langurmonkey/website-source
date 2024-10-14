@@ -3,17 +3,18 @@ author = "Toni Sagrista Selles"
 categories = ["JPEG XL"]
 tags = ["open-source", "image", "visualization", "formats", "jpeg xl", "jxl", "avif", "jpeg", "png", "webp", "english"]
 date = 2023-02-19
+lastmod = 2024-01-24
 title = "JPEG XL vs AVIF: a comparison"
 description = "An unscientific analysis of these two image formats based on file size and image quality."
 featuredpath = "date"
 type = "post"
 +++
 
+{{< sp orange >}}Edit (2024-01-24):{{</ sp >}} Following a [comment](https://mastodon.social/@cking@mastodon.world/111807707018032003) on Mastodon, I have added a reference on the good performance of lossless WebP.
+
 {{< sp orange >}}Edit (2023-03-30):{{</ sp >}} Added a couple extra images to test for high-quality encoding and illustrations. Introduce SSIM and MSE measures.
 
 {{< sp orange >}}Edit (2023-03-03):{{</ sp >}} Fixed mistake, as [AVIF does in fact NOT support progressive decoding](https://avif.io/blog/comparisons/avif-vs-jpegxl/#speed).
-
-{{< sp orange >}}Edit (2024-01-24):{{</ sp >}} Following a [comment](https://mastodon.social/@cking@mastodon.world/111807707018032003) on Mastodon, I have added a reference on the good performance of lossless WebP.
 
 {{< notice "Disclaimer" >}}
 This is **a subjective look** at JPEG XL and AVIF. All comparisons in this post (except the ones using SSIM and MSE) are perceptual and based on my own opinion only. This is **not a scientific study**! I just grabbed a bunch of images, encoded them and looked at the results.

@@ -1,27 +1,42 @@
 <header>
-    <div class="title">
-        {{ if $.Scratch.Get "h1" }}
-            <h1><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
-            {{ $.Scratch.Set "h1" false }}
-        {{ else }}
-            <h2><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
-        {{ end }}
-        {{ with .Description | markdownify }}
-            <p>{{ . }}</p>
-        {{ end }}
-    </div>
-    <div class="meta">
-        {{ if .Site.Params.orderByPublishDate }}
-            {{ $.Scratch.Set "dateType" .PublishDate }}
-        {{ else }}
-            {{ $.Scratch.Set "dateType" .Date }}
-        {{ end }}
+  <div class="title">
+    {{ if $.Scratch.Get "h1" }}
+    <h1><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
+    {{ $.Scratch.Set "h1" false }}
+    {{ else }}
+    <h2><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
+    {{ end }}
+    {{ with .Description | markdownify }}
+    <p>{{ . }}</p>
+    {{ end }}
+  </div>
+  <div class="meta">
+    <!-- Published date -->
+    {{ if .Site.Params.orderByPublishDate }}
+    {{ $.Scratch.Set "dateType" .PublishDate }}
+    {{ else }}
+    {{ $.Scratch.Set "dateType" .Date }}
+    {{ end }}
+    {{- $pubdate := ($.Scratch.Get "dateType").Format "Jan 2, 2006" }}
 
-        <time class="published"
-            datetime='{{ ($.Scratch.Get "dateType").Format "2006-01-02" }}'>
-            {{ ($.Scratch.Get "dateType").Format "January 2, 2006" }}</time>
-        {{ if .Site.Params.includeReadingTime }}
-            <p>{{ .ReadingTime }} minute read</p>
-        {{ end }}
+    <time class="published" datetime='{{ ($.Scratch.Get "dateType") }}' title='{{ ($.Scratch.Get "dateType") }}'>
+      {{ $pubdate }}</time>
+    {{ if .Site.Params.includeReadingTime }}
+
+    <!-- Last Updated Date -->
+    {{- if .Lastmod }}
+    {{- $lastmod := .Lastmod.Format "Jan 2, 2006" }}
+    {{- if ne $lastmod $pubdate }}
+    <div class="post-info-last-mod">
+      <i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Last update date"> Updated</i>:
+      <time datetime="{{ .Lastmod }}" title="{{ .Lastmod }}">
+        {{ $lastmod }}
+      </time>
     </div>
+    {{- end }}
+    {{- end }}
+    <p>{{ .ReadingTime }} minute read</p>
+  </div>
+  {{ end }}
+
 </header>

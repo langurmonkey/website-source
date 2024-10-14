@@ -1314,6 +1314,11 @@ dl dd {
   white-space: nowrap;
 }
 
+.post > header .meta .post-info-last-mod {
+  font-size: 0.6em;
+  color: var(--title-color);
+}
+
 .post > .image.featured {
   overflow: hidden;
 }

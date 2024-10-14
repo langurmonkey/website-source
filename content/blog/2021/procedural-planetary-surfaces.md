@@ -3,6 +3,7 @@ author = "Toni Sagrista Selles"
 categories = ["Programming"]
 tags = ["programming", "procedural", "graphics", "opengl", "english"]
 date = 2021-12-09
+lastmod = 2024-07-08
 linktitle = ""
 title = "Procedural generation of planetary surfaces"
 description = "Generating realistic planet surfaces and moons"

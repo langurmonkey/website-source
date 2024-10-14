@@ -3,6 +3,7 @@ author = "Toni Sagrista Selles"
 categories = ["Linux", "Privacy"]
 tags = [ "security", "anonymity", "archlinux", "encryption", "luks", "dm-crypt", "lvm" ]
 date = 2020-06-08
+lastmod = 2021-11-04
 description = "Arch Linux installation with LVM on a LUKS-encrypted drive"
 linktitle = ""
 title = "Arch with LVM on LUKS"
@@ -10,11 +11,11 @@ featuredpath = "date"
 type = "post"
 +++
 
-{{< sp orange >}}Edit (2020-06-16):{{</ sp >}} use dd to create swap file instead of fallocate
+{{< sp orange >}}Edit (2021-11-04):{{</ sp >}} fix terminology mess-up: LUKS on LVM -> LVM on LUKS
 <br />
 {{< sp orange >}}Edit (2021-07-01):{{</ sp >}} fix typo in `GRUB_CMDLINE`: cryptodevice -> cryptdevice
 <br />
-{{< sp orange >}}Edit (2021-11-04):{{</ sp >}} fix terminology mess-up: LUKS on LVM -> LVM on LUKS
+{{< sp orange >}}Edit (2020-06-16):{{</ sp >}} use dd to create swap file instead of fallocate
 
 ---
 
