@@ -23,9 +23,16 @@ Neovim is a modal text editor that is notoriously barebones by default. This is 
 
 When starting with Neovim you are *expected* to copy someone else's configuration, or even better, to just use one of the multiple pre-packaged distributions like LunarVim, AstroNVim, or CosmicNVim. These projects exist only to mitigate the complexity of creating a functional and modern Neovim configuration, and to ease its maintenance. My own [neovim configuration](https://codeberg.org/langurmonkey/dotfiles/nvim) was initially copied from one of those projects (can't remember which) and I've been tailoring it to my needs ever since.
 
-This approach tends to work well though, but it is time-consuming. If you start with a clean slate, things can get complex quickly. Need cool syntax highlighting? Use the treesitter plugin (`nvim-treesitter`). Need to use LSP? It is included by default in Neovim (not in Vim), but configuring it is hell, so you may want to use a plugin (`nvim-lspconfig`) just for its configuration. Wait, I have so many plugins, this is getting difficult to maintain! Don't fret, use a *plugin manager* plugin, like `lazy.nvim`, to simplify the process. And so on and so forth. Sometimes this feels like an amalgamation of plugins duct taped together that barely work.
+This approach tends to work well though, but it is time-consuming. If you start with a clean slate, things can get complex quickly. Need cool syntax highlighting? Use the treesitter plugin (`nvim-treesitter`). Need to use LSP? It is included by default in Neovim (not in Vim), but configuring it is hell, so you may want to use a plugin (`nvim-lspconfig`) just for its configuration. Wait, I have so many plugins, this is getting difficult to maintain! Don't fret, use a *plugin manager* plugin, like `lazy.nvim`, to simplify the process. And so on and so forth. Sometimes this whole thing feels like an amalgamation of pieces duct taped together that barely work.
 
-So, we must ask ourselves, what else is there?
+Here's a non exhaustive list of things I dislike about plugins:
+
+- They usually break with new upstream versions.
+- Their documentation is often spotty at best.
+- It's difficult to *discover* them. Reddit discussions? Github search?
+- Sometimes their cross-interactions are unexpected and/or weird.
+
+At this point we must ask ourselves, what else is there?
 
 ## Other Modal Text Editors
 
