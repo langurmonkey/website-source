@@ -28,7 +28,7 @@
     {{- $lastmod := .Lastmod.Format "Jan 2, 2006" }}
     {{- if ne $lastmod $pubdate }}
     <div class="post-info-last-mod">
-      <i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Last update date"> Updated</i>:
+      <i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Last update date"> &nbsp;Updated</i>:
       <time datetime="{{ .Lastmod }}" title="{{ .Lastmod }}">
         {{ $lastmod }}
       </time>
