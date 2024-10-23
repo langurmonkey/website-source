@@ -50,7 +50,7 @@
         <figcaption
          {{- with .Get "width" }} style="margin: 0 auto; width:{{ . }};"{{ end -}}
             >
-            {{ with (.Get "title") -}}
+            {{ with (.Get "title" | markdownify) -}}
                 <h4>{{ . }}</h4>
             {{- end -}}
             {{- if or (.Get "caption") (.Get "attr") -}}<p class="fig-attribution">
