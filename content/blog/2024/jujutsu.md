@@ -619,10 +619,74 @@ For instance, the **symbol** `@` describes the current working change.
  
 **Functions** are where most of the strength resides. We have `root()` to get the root change, or `all()` to get all of them. But also `ancestors(x)` to get all ancestors of a change, or `description(x)`, to get all changes with `x` in their description.
 
+You can use revsets with any `jj` command. For instance, we can use this in our test repo:
+
+```sh
+$ jj log -r 'description(Create)'
+○  ulvzlnov me@tonisagrista.com 2024-10-23 14:20:03 2d5b6567
+│  Create branch.txt
+│ ○  orytlsoz me@tonisagrista.com 2024-10-23 14:05:11 186df778
+├─╯  Create the file b.txt
+○  swkvvrku me@tonisagrista.com 2024-10-23 14:05:11 b1f00d10
+│  Create the file a.txt, and then edit it
+~
+```
+
 ### Bookmarks
 
+Bookmarks are a way to attach *named* tags to changes. They are most typically used to mimic named branches. We can `create`, `delete`, `list`, `move` and `rename` bookmarks (and more).
 
-### Operations Log
+If we want to create a bookmark on the current change, we just do this.
+
+```sh
+$ jj bookmark create my-bookmark
+Created 1 bookmarks pointing to mmwylxnr 96f65e19 my-bookmark | Conflict between Athens and Sparta
+```
+
+The log also represents the bookmark.
+
+```sh
+$ jj log --limit 3
+@    mmwylxnr me@tonisagrista.com 2024-10-23 14:53:16 my-bookmark 96f65e19
+├─╮  Conflict between Athens and Sparta
+│ ○  rvmypmmr me@tonisagrista.com 2024-10-23 14:41:24 22ff369c
+│ │  Add sparta to branch.txt
+○ │  mnrotqpk me@tonisagrista.com 2024-10-23 14:44:23 b4f9dc97
+├─╯  Add athens to branch.txt
+```
+
+### Operation Log
+
+Finally, I want to show off a very cool feature. This is the operation log. `jj` records every operation performed in a repository (commits, pulls, statuses, etc.) in a log that can be listed. To show it, do:
+
+```sh
+$ jj op log
+@  3f2c2cfcef27 tsagrista@hidalgo 2 minutes ago, lasted 1 millisecond
+│  create bookmark my-bookmark pointing to commit 96f65e197e0c6a0f00dd12f9997d01c5c92da1b1
+│  args: jj bookmark create my-bookmark
+○  ff0c76c87309 tsagrista@hidalgo 22 minutes ago, lasted 236 milliseconds
+│  snapshot working copy
+│  args: jj st
+○  8a9de7322915 tsagrista@hidalgo 25 minutes ago, lasted less than a microsecond
+│  edit commit 0fbc6b529843406e738b1f4797a31c0a9ce47e41
+│  args: jj edit mm
+○  cf6ef8049f34 tsagrista@hidalgo 26 minutes ago, lasted 227 milliseconds
+│  new empty commit
+│  args: jj new
+○  78c72f845d2d tsagrista@hidalgo 26 minutes ago, lasted 227 milliseconds
+│  describe commit 7efe8ac031cee611a16363d4d8585fd8988d5556
+│  args: jj desc -m 'Conflict between Athens and Sparta'
+○  71072e960de2 tsagrista@hidalgo 29 minutes ago, lasted 231 milliseconds
+│  new empty commit
+│  args: jj new m r
+○  43acab9baa1e tsagrista@hidalgo 31 minutes ago, lasted 226 milliseconds
+│  snapshot working copy
+│  args: jj log
+○  c8d850d703e1 tsagrista@hidalgo 31 minutes ago, lasted 225 milliseconds
+[...]
+```
+
+This allows `jj` to undo and redo operations with easy to go back and forth in the repo history, with the help of `jj undo`. Super handy.
 
 ## Conclusions
 
