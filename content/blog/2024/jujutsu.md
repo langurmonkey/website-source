@@ -10,15 +10,15 @@ featuredpath = "date"
 type = "post"
 +++
 
-I first discovered [Jujutsu](https://github.com/martinvonz/jj) a few weeks ago, and I was immediately intrigued. At first glance, it looked like a simple wrapper around Git, but the deeper I looked, the more impressed I became with its capabilities. In reality, Jujutsu transforms the usual distributed version control system paradigm, by offering a new design that leads to *cleaner* and simpler workflows.
+I first discovered [Jujutsu](https://github.com/martinvonz/jj) a few weeks ago, and I was immediately intrigued. At first glance, it looked like a simple wrapper around Git, but the deeper I looked, the more impressed I became with its design. Jujutsu, I discovered, offers a new and fresh spin to <acronym title="Distributed Version Control System">DVCS</acronym>es that leads to *cleaner* and simpler workflows.
 
-In this post, I have a look at what Jujutsu has to offer, and I dive into its command line interface and usage workflows. My goal is that, by the end of this post, you can understand a little bit why I find this tool so cool.
+In this post, I have a look at what Jujutsu has to offer, and I dive into its command line interface and workflow. My goal is that, by the end of this post, you can understand a little bit why I find this tool so cool.
 
 <!--more-->
 
-## Best Resources
+## Where to Learn
 
-I haven't found many user guides or tutorials on Jujutsu so far. Even the official repository of the project contains a *getting started* tutorial that is outdated (as per their own notice). However, there is an excellent guide written by Steve Klabnik, the author behind no starch press' *The Rust Programming Language*[^1] book, which I [read](/blog/2021/rust-devenv) and enjoyed a few years ago. Anyway, it seems like Steve's guide on Jujutsu is the go-to tutorial to read if you want get started, so here it is:
+I haven't found a whole lot of content on Jujutsu so far. To be frank, I wasn't able to find almost anything. Even the official repository of the project contains a *getting started* tutorial that is outdated (as per their own notice). However, there is an excellent guide written by Steve Klabnik, the author behind no starch press' *The Rust Programming Language*[^1] book, which I [read](/blog/2021/rust-devenv) and enjoyed a few years ago. Anyway, it seems like Steve's guide on Jujutsu is the go-to tutorial to read if you want get started, so here it is:
 
 - [Steve's Jujutsu Tutorial](https://steveklabnik.github.io/jujutsu-tutorial)
 
@@ -29,38 +29,38 @@ If you are the kind of person that would rather watch a video than read a text, 
 
 ## Jujutsu Overview
 
-Jujutsu is a simple, modern, easy to use, and change-centric distributed control system that is compatible with Git. This means that it *currently* uses Git as a backend, and you can start using it now with your pre-existing Git repositories. 
+Jujutsu is a simple, modern, easy to use, and change-centric <acronym title="Distributed Version Control System">DVCS</acronym> that is compatible with Git. This means that it *currently* uses Git as a backend, and you can start using it right now with your pre-existing Git repositories, if you are so inclined.
 
-This is similar to what Git did in its early days with the `git svn` bridge. This drove initial adoption because it was easy to communicate changesets between Subversion and Git. However, it is also different, because Git never used SVN as a backend, like Jujutsu does with Git. This last part is probably driven by the immense adoption of GitHub and similar services, and by Git being the *de facto* standard as <acronym title="Distributed Version Control System">DVCS</acronym>es go.
+This is similar to what Git did in its early days with the `git svn` bridge. This drove initial adoption because it was easy to communicate changesets between Subversion and Git. However, it is also different, because Git never used SVN as a backend, like Jujutsu does with Git. This last part is probably driven by the immense adoption of GitHub and similar services, and by Git being the *de facto* standard among developers worldwide.
 
-More interesting is Jujutsu's design, which contains some interesting points. 
+More interesting is Jujutsu's design, which can be summarized by the following items: 
 
-- **Changes** -- we have *changes* in addition to our usual *revisions*. The *change model* is borrowed from Mercurial, and identify units of work that may span several revisions. 
-- **Committed working copy** -- everything within a change is committed automatically, so you don't actually need to explicitly run a counterpart to `git commit`. This is achieved in other ways, as we'll see in a moment. 
-- **Branches are anonymous** -- branches are identified by the descriptions in their commits, but they are anonymous by default. However, since the backend is Git, there exist named *bookmarks*, which can act as branch names.
-- **Automatic conflict resolution** -- conflicts are not scary here. In Git, conflicts are something that you need to get rid of before going on with your life, but in Jujutsu, they are accepted and even committed to the repository. You get an annotation on the change reminding you that the conflict is there, and that you probably need to address it at some point. But in your own time, no need to panic.
-- **No staging** -- there is no index or staging area. The working copy itself is committed as it evolves, and amended on every change.
-- **Awesome CLI** -- the command line interface is so damn comfy to use. If using the Git CLI is bumping into a wall with your shoulder at full speed, using `jj` is like getting a gentle and pleasant back massage. 
+- **Awesome CLI** -- the command line interface is so damn comfy to use. If using the Git CLI is bumping into a wall with your shoulder at full speed, using `jj` (which is what Jujutsu's binary is called) is like getting a gentle and pleasant back massage. 
+- **Change-centric** -- we have *changes* in addition to our usual *revisions*. The *change model* is borrowed from Mercurial, where changes and identify units of work that may span several revisions, or commits. 
+- **Always-committed working copy** -- your working copy is committed automatically, so you don't actually need to explicitly run a counterpart to `git commit`. The repository is automatically and continuously amended whenever a `jj` command runs, so you never actually lose anything. 
+- **Anonymous branches** -- also known as *branchless design*, branches are identified by the descriptions in their commits, but they are anonymous by default. However, since the backend is Git, there exist named *bookmarks* that can act as branch names.
+- **Happy conflicts** -- conflicts are not scary in Jujutsu's world. In Git, conflicts are something that you need to get rid of before going on with your life. In Jujutsu, they are accepted and even committed to the repository. You get an annotation label reminding you that the conflict is there, and needs to be dealt with at some point. But in your own time, no need to panic.
+- **No staging** -- there is no index or staging area. The working copy itself is committed as it evolves, and amended on every change. You can still get the same functionality, but in an easier, more organic manner.
 
 
-Before you ask, yes, the name 'Jujutsu' is weird indeed. My understanding is that this is purely anecdotical. The binary was first, and it was named `jj` because it is easy to type and remember. They then assigned the name Jujutsu simply because it matches `jj`.
+Also, before you ask, yes, the name 'Jujutsu' is weird. My understanding is that this is purely anecdotical. The binary was first, and it was named `jj` because it is easy to type and remember. They then assigned the name Jujutsu simply because it matches `jj`.
 
-For the rest of this post I'll be using both Jujutsu and `jj` interchangeably.
+In the next few sections we'll be playing around with Jujutu's CLI, and illustrating how things are done in this new world. The rest of this post uses the terms 'Jujutsu' and '`jj`' interchangeably.
 
-## The Jujutsu Workflow
+## Quick Start Guide
 
 Let's get our hands dirty. In this section we'll be creating a repository and performing some operations to illustrate a typical workflow. Before starting, install and setup `jj`. More info on how to do so for your operating system can be found [here](https://martinvonz.github.io/jj/latest/install-and-setup/). 
 
 ### Initialize a Repository
 
-First, we need to create an initialize a repository. We create a directory, let's call it `jjtest`, and then `cd` into it. The native `jj` backend is there, but it is disallowed by default, as it is still being worked on, so we'll create a new repository backed by Git:
+First, we need to create and initialize a repository. We create a directory, let's call it `jjtest`, and then `cd` into it. There exists a native `jj` backend, but it is disallowed by default, as it is still being worked on. The command itself tells you so if you try to use `jj init`. We'll create a new repository backed by Git instead:
 
 ```sh
 $ jj git init
 Initialized repor in "."
 ```
 
-Looks good. If we had a pre-existing Git repository that we want to use `jj` with, we'd use `--git-repo`. For instance, I can do this in my Gaia Sky repository:
+Looks good. If we want to use `jj` with a pre-existing Git repository, we'd use `jj git init` with the flag `--git-repo`. For instance, I can do this in my [Gaia Sky repository](https://codeberg.org/gaiasky/gaiasly):
 
 ```sh
 $ cd $GS && jj git init --git-repo
@@ -77,7 +77,7 @@ As you can see, `jj` detects the existing remotes (`origin` at Codeberg and `git
 
 ### Our First Change
 
-We have now a new empty repository. We can see the current status of the repository with `jj st`.
+We have now a new empty repository. We can see its current status with `jj st`.
 
 ```sh
 $ jj st
@@ -85,7 +85,7 @@ The working copy is clean
 Working copy : swkvvrku a47b8f33 (empty) (no description set)
 Parent commit: zzzzzzzz 00000000 (empty) (no description set)
 ```
-In the response we see that our current working copy is empty. In the same line, we see the current change ID (`swkvvrku`) and the current commit ID (`a47b8f33`). The change ID won't change until we create a new change with `jj new`, but the commit ID changes every time we modify something in the working copy. As we mentioned earlier, the working copy is **committed by default**.
+The output shows that our current working copy is clean. Below, we see it is empty. In the same line, we see the current change ID (`swkvvrku`) and the current commit ID (`a47b8f33`). The change ID won't change until we create a new change with `jj new`, but the commit ID changes every time we modify something in the working copy. As we mentioned earlier, the working copy is **committed by default**.
 
 In the second line we see the parent of our current change. Every repository starts with a root commit with the same change ID (`zzzzzzzz`) and commit ID (`00000000`). This root commit is present in every repository.
 
@@ -97,8 +97,8 @@ Working copy now at: swkvvrku ee981442 (empty) Create the file a.txt
 Parent commit      : zzzzzzzz 00000000 (empty) (no description set)
 ```
 
-Interesting. Now, our change is still empty, but it lists the description we just entered. This makes sense. Also, note that since we added a description, which requires amending a commit, we get a new commit ID, from `a47b8f33` to `ee981442`.
-In the last command, we could have used `jj desc` without the `-m` argument. Then, a new editor would pop up to edit the description. In my case, this editor is [Helix](/blog/2024/on-neovim-and-helix), and this is what it would have shown:
+Interesting. Now, our change is still empty, but it lists the description we just entered. This makes sense. Also, note that since we added a description, which requires amending a commit, we get a new commit ID. We went from `a47b8f33` to `ee981442`.
+In the last command, we could have used `jj desc` without the `-m` argument. Then, a new editor would pop up to edit the description. In my case, this editor is [Helix](/blog/2024/on-neovim-and-helix) (as configured in `$EDITOR`), and this is what it would have shown:
 ```hx
 
 JJ: This commit contains the following changes:
@@ -145,17 +145,17 @@ $ jj log
 ◆  zzzzzzzz root() 00000000
 ```
 
-Woah, this is nice. This is the default output log format, and it is so much nicer than most other CLI tools. Wee see three changes:
+Woah, this is nice. This is the default output log format, and it is so much nicer than Git's default `git log` output. Wee see three changes:
 
-- The first belongs to the root commit (`zzzzzzzz`)
+- The first line shows the current (empty) change (`nxlokovw`)
 - The second, the one we just made, where we added `a.txt` (`swkvvrku`)
-- The current (empty) change (`nxlokovw`)
+- The last line belongs to the root commit (`zzzzzzzz`)
 
-Something else to note is that the current change is always annotated with `@`. Moreover, the highlight script in this website does not show this, but if I show you a screenshot of my terminal, you may notice something cool:
+Something else to note is that the current change is always annotated with `@`. Moreover, the highlight script in this website does not show this, but have a look at the real output as shown in a terminal and you may notice something cool:
 
 {{< fig src="/img/2024/10/jj-log-1.jpg" type="image/jpg" class="fig-center" width="85%" title="A screenshot of a terminal showing the output of `jj log`." loading="lazy" >}}
 
-See the purple letters at the beginning of each change ID? These highlight the minimum prefix that can be used to identify this particular change. In this case, `z` identifies the first change, `s` the second and `n` the third. Once the repository grows, this won't be one-letter prefixes anymore, but they will keep reasonably short for an average number of changes.
+See the purple letters at the beginning of each change ID? These highlight the minimum unique prefix that can be used to identify this particular change. In this case, `z` identifies the first change, `s` the second and `n` the third. Once the repository grows, they won't be one-letter prefixes anymore, but they will keep reasonably short for an average number of changes.
 
 What if we want to go and edit the change where we created `a.txt`? Easy, we just use `jj edit`, followed by the change identifier. In this case, the minimum prefix for that change is `s`, so we use that.
 
@@ -165,7 +165,7 @@ Working copy now at: swkvvrku b53a1563 Create the file a.txt
 Parent commit      : zzzzzzzz 00000000 (empty) (no description set)
 ```
 
-The output suggests that our working copy now is the change `swkvvrku`. If we show the log, we see that the `@` has changed, but the top change is no more:
+The output suggests that our working copy now is the change `swkvvrku`. If we now show the log, we see that the `@` has changed, but the top change is no more:
 
 ```sh
 $ jj log
@@ -196,7 +196,6 @@ $ jj log
 │  Create the file a.txt
 ◆  zzzzzzzz root() 00000000
 ```
-
 Let's actually create the file.
 
 ```sh
@@ -226,7 +225,7 @@ $ jj log
 ◆  zzzzzzzz root() 00000000
 ```
 
-We are now in the middle change. If we do `ls`, we'll see that our file `b.txt` is not there. This makes sense, as we are back at the previous change. We can now even edit this change and get away with it! Let's do it.
+ Notice how there are no "detached HEAD" messages here, as `jj` is fine with modifying history. Even more, it will automatically rebase changes we make in the middle of our graph. If we do `ls`, we'll see that our file `b.txt` is not there. This makes sense, as we are back at the previous change. We can now even edit this change and get away with it! Let's do it.
 
 ```sh
 $ echo "More content for A." >> a.txt
@@ -689,5 +688,10 @@ $ jj op log
 This allows `jj` to undo and redo operations with easy to go back and forth in the repo history, with the help of `jj undo`. Super handy.
 
 ## Conclusions
+
+I was surprised when I could find almost no content on Jujutsu in the web, especially given how good it is. This may be due to the project still being worked on, and/or its adoption being super low, almost non-existent. I myself have only used it in testing or personal projects, where I'm the only committer. I think the native workflow is super clean, but I'm not entirely convinced by the `jj git pus/pull` stuff. That's why I did not cover it here. That said, I'm waiting for the native backend to be ready for prime time, as I would like to give it a spin then, when its power bar is full.
+
+All in all, I think either Jujutsu, or something very similar, will eventually replace Git as the de facto <acronym title="Distributed Version Control System">DVCS</acronym>. Its compatibility with the latter will certainly help in that regard. To me, going back to the Git workflow after playing around with Jujutsu for some days feels *wrong*. I hope you give it a try, and maybe you'll also become a convinced *Jujutser*. 
+
 
 [^1]: https://doc.rust-lang.org/book
