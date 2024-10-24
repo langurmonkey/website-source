@@ -606,7 +606,7 @@ $ jj log
 Right, gone for good.
 
 
-In the next few sections I will touch on other aspects of `jj`, but without entering in much detail. First, we'll have a look at the revsets feature, then we'll see how to create named branches with bookmarks, and then we'll touch on the operations log.
+In the next few sections I will touch on other aspects of `jj`, but without entering in much detail. First, we'll have a look at the revsets feature, then we'll see how to create named branches with bookmarks, followed by some quick tips as to how to push/pull from remotes, and then we'll touch on the operations log feature.
 
 ### Revsets
 
@@ -642,7 +642,7 @@ $ jj bookmark create my-bookmark
 Created 1 bookmarks pointing to mmwylxnr 96f65e19 my-bookmark | Conflict between Athens and Sparta
 ```
 
-The log also represents the bookmark.
+The log also displays the `my-bookmark` bookmark.
 
 ```sh
 $ jj log --limit 3
@@ -654,44 +654,191 @@ $ jj log --limit 3
 ├─╯  Add athens to branch.txt
 ```
 
+We may add the `master` bookmark to the current change as well.
+
+```sh
+$ jj bookmark create master
+Created 1 bookmarks pointing to mmwylxnr 96f65e19 master my-bookmark | Conflict between Athens and Sparta
+```
+
+### Remotes
+
+Most probably, you host your code on one of the various git hosting services like GitHub or GitLab. With `jj`, you can keep doing it. But before starting, let's make sure that our repository is fine:
+
+```sh
+$ jj log --limit 3
+@    mmwylxnr me@tonisagrista.com 2024-10-23 14:53:16 master my-bookmark 96f65e19
+├─╮  Conflict between Athens and Sparta
+│ ○  rvmypmmr me@tonisagrista.com 2024-10-23 14:41:24 22ff369c
+│ │  Add sparta to branch.txt
+○ │  mnrotqpk me@tonisagrista.com 2024-10-23 14:44:23 b4f9dc97
+├─╯  Add athens to branch.txt
+```
+
+Notice that there is no empty change at the tip of our current `@`. First, we add our remote to the repository. I myself use [Codeberg](https://codeberg.org/langurmonkey), so that's what we'll use here too. You need to create a new empty repository through the web interface of your hosting service of choice (or the provided CLI), and then add it as a remote to your project.
+
+```sh
+$ jj git remote add origin git@codeberg.org:langurmonkey/jjtest.git
+```
+And now we can just push.
+
+```sh
+$ jj git push
+Changes to push to origin:
+  Add bookmark master to 96f65e197e0c
+  Add bookmark my-bookmark to 96f65e197e0c
+Warning: The working-copy commit in workspace 'default' became immutable, so a new commit has been created on top of it.
+Working copy now at: zpyzrunn 68487cde (empty) (no description set)
+Parent commit      : mmwylxnr 96f65e19 master my-bookmark | Conflict between Athens and Sparta
+```
+Good. It pushed the two named bookmarks, `my-bookmark` and `master`, which right now point to the same commit (`96f65e197e0c`).
+
+To get the changes from a remote, we need to use `fetch`.
+
+```sh
+$ jj git fetch
+```
+
+After a fetch, remember to check where the our working copy `@` is, and to create a new change below your desired parent to start new work.
+
+You can find this project at [https://codeberg.org/langurmonkey/jjtest](https://codeberg.org/langurmonkey/jjtest). I created a `README.md` file to make the landing page a bit more informative. Before pushing the new change that adds the readme file, I needed to move the `master` bookmark to the current change with:
+
+```sh
+$ jj bookmark move master
+Moved 1 bookmarks to zpyzrunn 2d499da8 master* | Add readme file.
+```
+If you don't do that, the remote detects that the tracked branch `master` has not changed, so nothing is pushed.
+
 ### Operation Log
 
-Finally, I want to show off a very cool feature. This is the operation log. `jj` records every operation performed in a repository (commits, pulls, statuses, etc.) in a log that can be listed. To show it, do:
+Finally, I want to show off a very cool feature. This is the operation log. `jj` records every operation performed in a repository (commits, pulls, statuses, etc.) in a log that can be listed. Here is the full operation log of the `jjtest` repository.
 
 ```sh
 $ jj op log
-@  3f2c2cfcef27 tsagrista@hidalgo 2 minutes ago, lasted 1 millisecond
-│  create bookmark my-bookmark pointing to commit 96f65e197e0c6a0f00dd12f9997d01c5c92da1b1
-│  args: jj bookmark create my-bookmark
-○  ff0c76c87309 tsagrista@hidalgo 22 minutes ago, lasted 236 milliseconds
+@  66578060f394 tsagrista@hidalgo 1 minute ago, lasted 1 second
+│  push bookmark master to git remote origin
+│  args: jj git push
+○  4acc4fea988e tsagrista@hidalgo 2 minutes ago, lasted less than a microsecond
+│  point bookmark master to commit 2d499da8da283ae09d1cc9b4afa327b1eae57dac
+│  args: jj bookmark move master
+○  495e91f592d4 tsagrista@hidalgo 4 minutes ago, lasted 229 milliseconds
+│  describe commit e0b4971900b14a296efa6f2c571e2062ed8e7f13
+│  args: jj desc -m 'Add readme file.'
+○  828c3e7bc008 tsagrista@hidalgo 4 minutes ago, lasted 227 milliseconds
 │  snapshot working copy
 │  args: jj st
-○  8a9de7322915 tsagrista@hidalgo 25 minutes ago, lasted less than a microsecond
+○  d3bc13d09c57 tsagrista@hidalgo 10 minutes ago, lasted 1 second
+│  push bookmarks master, my-bookmark to git remote origin
+│  args: jj git push
+○  6b36fd7c5acc tsagrista@hidalgo 24 minutes ago, lasted 1 millisecond
+│  create bookmark master pointing to commit 96f65e197e0c6a0f00dd12f9997d01c5c92da1b1
+│  args: jj bookmark create master
+○  3f2c2cfcef27 tsagrista@hidalgo 17 hours ago, lasted 1 millisecond
+│  create bookmark my-bookmark pointing to commit 96f65e197e0c6a0f00dd12f9997d01c5c92da1b1
+│  args: jj bookmark create my-bookmark
+○  ff0c76c87309 tsagrista@hidalgo 17 hours ago, lasted 236 milliseconds
+│  snapshot working copy
+│  args: jj st
+○  8a9de7322915 tsagrista@hidalgo 17 hours ago, lasted less than a microsecond
 │  edit commit 0fbc6b529843406e738b1f4797a31c0a9ce47e41
 │  args: jj edit mm
-○  cf6ef8049f34 tsagrista@hidalgo 26 minutes ago, lasted 227 milliseconds
+○  cf6ef8049f34 tsagrista@hidalgo 17 hours ago, lasted 227 milliseconds
 │  new empty commit
 │  args: jj new
-○  78c72f845d2d tsagrista@hidalgo 26 minutes ago, lasted 227 milliseconds
+○  78c72f845d2d tsagrista@hidalgo 17 hours ago, lasted 227 milliseconds
 │  describe commit 7efe8ac031cee611a16363d4d8585fd8988d5556
 │  args: jj desc -m 'Conflict between Athens and Sparta'
-○  71072e960de2 tsagrista@hidalgo 29 minutes ago, lasted 231 milliseconds
+○  71072e960de2 tsagrista@hidalgo 17 hours ago, lasted 231 milliseconds
 │  new empty commit
 │  args: jj new m r
-○  43acab9baa1e tsagrista@hidalgo 31 minutes ago, lasted 226 milliseconds
+○  43acab9baa1e tsagrista@hidalgo 17 hours ago, lasted 226 milliseconds
 │  snapshot working copy
 │  args: jj log
-○  c8d850d703e1 tsagrista@hidalgo 31 minutes ago, lasted 225 milliseconds
-[...]
+○  c8d850d703e1 tsagrista@hidalgo 17 hours ago, lasted 225 milliseconds
+│  describe commit 82d153896f52bdb7b3562fb6a78845fd5fdd8cba
+│  args: jj desc -m 'Add athens to branch.txt'
+○  174e22aadb14 tsagrista@hidalgo 17 hours ago, lasted 229 milliseconds
+│  new empty commit
+│  args: jj new st
+○  587bbbade03a tsagrista@hidalgo 17 hours ago, lasted 214 milliseconds
+│  describe commit 3507049e200b5e2b31e4c0efc14c1945283f358e
+│  args: jj desc -m 'Add sparta to branch.txt'
+○  4fab8e61c53f tsagrista@hidalgo 17 hours ago, lasted 226 milliseconds
+│  snapshot working copy
+│  args: jj desc -m 'Add sparta to branch.txt'
+○  90c012854ea7 tsagrista@hidalgo 18 hours ago, lasted 227 milliseconds
+│  new empty commit
+│  args: jj new
+○  3fd61da55d2e tsagrista@hidalgo 18 hours ago, lasted 222 milliseconds
+│  describe commit 5eaeba8522927958293e9c2602e6908b2abb5b40
+│  args: jj desc -m 'My merge'
+○  09854bfa073b tsagrista@hidalgo 18 hours ago, lasted 229 milliseconds
+│  new empty commit
+│  args: jj new o u
+○  3deba605073c tsagrista@hidalgo 18 hours ago, lasted less than a microsecond
+│  edit commit 186df778fd57a19c8735b51f5eeca579ccbee0c5
+│  args: jj edit o
+○  eeb8306d399d tsagrista@hidalgo 18 hours ago, lasted 225 milliseconds
+│  snapshot working copy
+│  args: jj log
+○  d778107027de tsagrista@hidalgo 18 hours ago, lasted 1 second
+│  describe commit 2f751477806d6a4d8cafcdab0867d4ea8df87f13
+│  args: jj desc -m 'Create branch.txt'
+○  5fbe56a02db2 tsagrista@hidalgo 18 hours ago, lasted 228 milliseconds
+│  new empty commit
+│  args: jj new s
+○  fc6d7aded28f tsagrista@hidalgo 18 hours ago, lasted 225 milliseconds
+│  new empty commit
+│  args: jj new
+○  87d3fa9306e3 tsagrista@hidalgo 18 hours ago, lasted less than a microsecond
+│  edit commit 186df778fd57a19c8735b51f5eeca579ccbee0c5
+│  args: jj edit o
+○  261787928a7e tsagrista@hidalgo 18 hours ago, lasted 436 milliseconds
+│  describe commit 214154bff9412e0cc11e71c74937c7f84193b958
+│  args: jj desc -m 'Create the file a.txt, and then edit it'
+○  17fd769aafb1 tsagrista@hidalgo 18 hours ago, lasted 444 milliseconds
+│  snapshot working copy
+│  args: jj st
+○  c9708d9532a1 tsagrista@hidalgo 18 hours ago, lasted less than a microsecond
+│  edit commit b53a1563b1f3fc9f586d653b85afc5a65d7e5072
+│  args: jj edit s
+○  59b1373f0111 tsagrista@hidalgo 18 hours ago, lasted 222 milliseconds
+│  snapshot working copy
+│  args: jj st
+○  602bb194bf05 tsagrista@hidalgo 18 hours ago, lasted 226 milliseconds
+│  describe commit 3905ce5e82bf53afa9790b22d63f1f120d612f8e
+│  args: jj desc -m 'Create the file b.txt'
+○  5032ec4726fa tsagrista@hidalgo 18 hours ago, lasted 227 milliseconds
+│  new empty commit
+│  args: jj new
+○  8fdec169b918 tsagrista@hidalgo 18 hours ago, lasted less than a microsecond
+│  edit commit b53a1563b1f3fc9f586d653b85afc5a65d7e5072
+│  args: jj edit s
+○  f964dcd67ec5 tsagrista@hidalgo 19 hours ago, lasted 229 milliseconds
+│  new empty commit
+│  args: jj new
+○  939b10cb5826 tsagrista@hidalgo 19 hours ago, lasted 234 milliseconds
+│  snapshot working copy
+│  args: jj st
+○  29819672aa45 tsagrista@hidalgo 19 hours ago, lasted 227 milliseconds
+│  describe commit a47b8f33de73d4e9b1435799726ec56df93bcbb3
+│  args: jj desc -m 'Create the file a.txt'
+○  2f40f4f37cc3 tsagrista@hidalgo 19 hours ago, lasted 214 milliseconds
+│  add workspace 'default'
+○  9c98c0605f71 tsagrista@hidalgo 19 hours ago, lasted less than a microsecond
+│  initialize repo
+○  000000000000 root()
 ```
 
-This allows `jj` to undo and redo operations with easy to go back and forth in the repo history, with the help of `jj undo`. Super handy.
+How cool is that! It tracks all the operations that we've run on the repository, even the `log`s and the `st`atuses. This allows us to to undo and redo operations to go back and forth in the repository action history, with the help of `jj undo`. Whenever you messed up, but don't remember exactly what you did, use `jj op log`.  Super handy.
+
+With this I conclude this short tutorial. Hopefully, this helped illustrate the power and simplicity of Jujutsu.
 
 ## Conclusions
 
-I was surprised when I could find almost no content on Jujutsu in the web, especially given how good it is. This may be due to the project still being worked on, and/or its adoption being super low, almost non-existent. I myself have only used it in testing or personal projects, where I'm the only committer. I think the native workflow is super clean, but I'm not entirely convinced by the `jj git pus/pull` stuff. That's why I did not cover it here. That said, I'm waiting for the native backend to be ready for prime time, as I would like to give it a spin then, when its power bar is full.
+I was surprised when I could find almost no content on Jujutsu in the web, especially given how good this tool already is. This may be due to the project still being worked on, and/or its adoption being super low, almost non-existent. I myself have only used it in testing or personal projects, where I'm the only committer. I think the native workflow is super clean, and I would absolutely recommend everyone interested to, at least, try it. That said, I'm waiting for the native backend to be ready for prime time, as I would like to give it a spin then, when its power bar is full.
 
-All in all, I think either Jujutsu, or something very similar, will eventually replace Git as the de facto <acronym title="Distributed Version Control System">DVCS</acronym>. Its compatibility with the latter will certainly help in that regard. To me, going back to the Git workflow after playing around with Jujutsu for some days feels *wrong*. I hope you give it a try, and maybe you'll also become a convinced *Jujutser*. 
+All in all, I think either Jujutsu, or something very similar, most probably will eventually end up replacing Git as the de facto <acronym title="Distributed Version Control System">DVCS</acronym>. Its compatibility with the latter will certainly help in that regard. Of course, I'll keep using Git in my production repositories, but going back to it after playing around with Jujutsu for some days feels *clunky*. I hope you give it a try, and maybe you'll also become a convinced *Jujutser*. 
 
 
 [^1]: https://doc.rust-lang.org/book
