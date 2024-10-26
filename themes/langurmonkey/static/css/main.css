@@ -1165,6 +1165,7 @@ div.post-in-list i.last-update{
   opacity: 0.3;
   font-size: 0.6em;
   display: inline-block;
+  margin-left: 0.3em;
 }
 div.post-in-list a {
   text-decoration: none;
