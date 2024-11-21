@@ -54,7 +54,7 @@ A nice video guide on how to open the deck for SSD replacement can be found [her
 ## Step 2: Clone the drive
 <div id="step2"></div>
 
-In this step we clone the partitions (and data) in old SSD to the new one. To that effect, we'll use a computer with Linux. Look into [CloneZilla](https://clonezilla.org) if you don't have access to one. Since I only have one one M.2 USB case, **I'm using a 2-step process**: first, I clone the old 64 GB drive into an image file in the internal HDD of my computer, and second, I restore this image file to the new 1 TB SSD.
+In this step we clone the partitions (and data) in the old SSD to the new one. To that effect, we'll use a computer with Linux. Look into [CloneZilla](https://clonezilla.org) if you don't have access to one. Since I only have one one M.2 USB case, **I'm using a 2-step process**: first, I clone the old 64 GB drive into an image file in the internal HDD of my computer, and second, I restore this image file to the new 1 TB SSD.
 
 First, we insert the old SSD into the case, and use `lsblk` find out the device name assigned to it by the OS. We need this to know the input device to create the image from.
 
