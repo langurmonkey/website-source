@@ -2,9 +2,9 @@
 author = "Toni Sagrista Selles"
 categories = ["gaia sky"]
 tags = ["rendering", "opengl", "glsl", "aurora", "northern lights", "nebulae", "gaia sky", "programming", "volume rendering", "astronomy", "english"]
-date = 2024-12-13
+date = 2029-12-13
 linktitle = ""
-title = "Rendering Volume Aurorae and Nebulae"
+title = "Rendering volume aurorae and nebulae"
 description = "Some notes on my trials and tribulations adding aurorae to Gaia Sky"
 featuredpath = "date"
 type = "post"
