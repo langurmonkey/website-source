@@ -12,6 +12,7 @@
          {{- with .Get "type" }} type="{{ . }}"{{ end -}}
          {{- with .Get "width" }} width="{{ . }}"{{ end -}}
          {{- with .Get "height" }} height="{{ . }}"{{ end -}}
+         {{- with .Get "poster" }} poster="{{ . }}" preload="none"{{ end -}}
          controls="controls"
     >
       <source src="{{ .Get "src" }}" autostart="false">
