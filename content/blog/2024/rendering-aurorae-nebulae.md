@@ -28,11 +28,11 @@ Typically, volumes are rendered using an in-scene model (normally a box) that en
 
 To get started, I browsed through [shadertoy](https://shadertoy.com) in search for a good implementation of a ray-marched shader that I could use as a base for my nebulae. I found several, like the [Dusty Nebula 4](https://www.shadertoy.com/view/MsVXWW) by Duke, and the [Supernova Remnant](https://www.shadertoy.com/view/MdKXzc), also by Duke. This [Duke](https://www.shadertoy.com/user/Duke) guy seems to be the most prolific shadertoy author when it comes to large-scale dusty objects, and by a large margin. It's not even close, so props to him and thank you very much for your work. All of his shaders seem to be licensed under [CC-BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/deed.en), which is perfect for modification and reuse in Gaia Sky.
 
-So, taking some of these shaders as a baseline, I created new ones for the *Cat's Eye* nebula, the *Hourglass* nebula, the *Trifid* nebula, the *Butterfly* nebula, and the *Crab* nebula, among others.
+So, taking some of these shaders as a baseline, I created new ones for the *Cat's Eye* nebula, the *Hourglass* nebula, the *Trifid* nebula, the *Butterfly* nebula, and the *Crab* nebula, among others. You can see some of them [here](https://www.shadertoy.com/user/toninoni/sort=newest).
 
 <figure class="fig-center">
-<iframe width="640" height="360" frameborder="0" src="https://www.shadertoy.com/embed/MfcBzH?gui=true&t=10&paused=true&muted=false" allowfullscreen></iframe>
-<figcaption>My implementation of Crab nebula (M1) in shadertoy.</figcaption>
+<iframe width="640" height="360" frameborder="0" src="https://www.shadertoy.com/embed/4cVcz3?gui=true&t=10&paused=true&muted=false" allowfullscreen></iframe>
+<figcaption>My implementation of Cat's Eye nebula (NGC 6543) in shadertoy.</figcaption>
 </figure>
 
 Once the Shadertoy shaders were ready, I did a little more work on the post-processing ray-marching infrastructure to accommodate the new members. So far, I had only ever used it for the black holes. The final step was translating the shaders from Shadertoy to Gaia Sky. This was not too difficult, as they were already created with that step in mind.
