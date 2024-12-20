@@ -30,10 +30,7 @@ To get started, I browsed through [shadertoy](https://shadertoy.com) in search f
 
 So, taking some of these shaders as a baseline, I created new ones for the *Cat's Eye* nebula, the *Hourglass* nebula, the *Trifid* nebula, the *Butterfly* nebula, and the *Crab* nebula, among others. You can see some of them [here](https://www.shadertoy.com/user/toninoni/sort=newest).
 
-<figure class="fig-center">
-<iframe width="640" height="360" frameborder="0" src="https://www.shadertoy.com/embed/4cVcz3?gui=true&t=10&paused=true&muted=false" allowfullscreen></iframe>
-<figcaption>My implementation of Cat's Eye nebula (NGC 6543) in shadertoy.</figcaption>
-</figure>
+{{< fig src="/img/2024/12/crab-nebula.jpg" class="fig-center" width="60%" title="My implementation of the Crab nebula as a volume. See it live on [Shadertoy](https://www.shadertoy.com/view/MfcBzH)." loading="lazy" >}}
 
 Once the Shadertoy shaders were ready, I did a little more work on the post-processing ray-marching infrastructure to accommodate the new members. So far, I had only ever used it for the black holes. The final step was translating the shaders from Shadertoy to Gaia Sky. This was not too difficult, as they were already created with that step in mind.
 
@@ -74,12 +71,7 @@ Aurorare are, then, purely volumetric and perfectly emissive phenomena. This fac
 
 I like to simplify problems to their very basics. Even though aurora curtains have volume (width), their extent is limited when compared to their height or their footprint length. So, obviously, my first thought was to implement aurorae as a curved mesh with a special shader to render the curtain elements. I knew it wouldn't look super good, but maybe it was **good enough**.
 
-I set up the infrastructure and created the object. At first, I used an uncapped cylinder mesh. The faces are unculled, since they need to be visible from both sides. Once the mesh was in place, I created the fragment shader which would render the actual emissive elements. This shader is shown below in its shadertoy frame:
-
-<figure class="fig-center">
-<iframe width="640" height="360" frameborder="0" src="https://www.shadertoy.com/embed/MfdBW4?gui=true&t=10&paused=true&muted=false" allowfullscreen></iframe>
-<figcaption>The base aurora shader is meant to be directly applied to a polygonal mesh. I created it from a more complex scene called "Aurora Lights".</figcaption>
-</figure>
+I set up the infrastructure and created the object. At first, I used an uncapped cylinder mesh. The faces are unculled, since they need to be visible from both sides. Once the mesh was in place, I created the fragment shader which would render the actual emissive elements. This shader is available on Shadertoy: [Base Aurora Shader](https://www.shadertoy.com/view/MfdBW4).
 
 I loaded the shader and applied it to the mesh. The results were... underwhelming. The shader itself is ok, but when applied to the flat surface of the cylinder, it just does not cut it. When the camera moves the effect is totally shattered and you can tell right away that this is a flat object.
 
@@ -93,12 +85,9 @@ It was clear to me that this wasn't good enough. So I went browsing on shadertoy
 
 I'll start by saying that this second effort went nowhere, but had the pleasant side effect of having implemented the true in-scene, bounding box-based volume infrastructure.
 
-The base idea was to adapt a pre-existing ray-marching shader to be rendered as a volume in Gaia Sky. The shader in question is this one:
+The base idea was to adapt a pre-existing ray-marching shader to be rendered as a volume in Gaia Sky. The shader in question is [here](https://www.shadertoy.com/view/MfdfR2).
 
-<figure class="fig-center">
-<iframe width="640" height="360" frameborder="0" src="https://www.shadertoy.com/embed/MfdfR2?gui=true&t=10&paused=true&mute=false" allowfullscreen></iframe>
-<figcaption>The isolated aurora shader ray-marches an aurora using fractal brownian motion noise as footprints. Looks good in shadertoy, not so much in Gaia Sky.</figcaption>
-</figure>
+{{< fig src="/img/2024/12/isolated-volume-aurora.jpg" class="fig-center" width="60%" title="The isolated aurora shader ray-marches an aurora using fractal brownian motion noise as footprints. Looks good in shadertoy, not so much in Gaia Sky. See it live on [Shadertoy](https://www.shadertoy.com/view/MfdfR2)." loading="lazy" >}}
 
 That shader contains some code to to intersect the ray with an axis-aligned bounding box (AABB), so naturally I implemented the necessary infrastructure to be able to ship external volume rendering shaders on *bounding meshes*. And it kind of worked, but I could never make it behave exactly the way I wanted. I had several problems with the integration in Gaia Sky, so instead of spending lots of time and effort into solving them only to end up with a half-assed, bad-looking aurora, I decided to try the next approach.
 
