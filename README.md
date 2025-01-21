@@ -54,23 +54,24 @@ scripts/minify-all.sh theme-name
 Gallery
 -------
 
-In order to generate the static gallery you will need [thumbsup](https://thumbsup.github.io) and also [exiftool-json-db](https://github.com/thumbsup/exiftool-json-db) in your path (for EXIF data). Additionally, install the following packages with pacman.
+In order to generate the static gallery I use [thumbsup](https://thumbsup.github.io). To run it, I use the docker method. Make sure that you have docker installed first, and then start the service.
 
 ```bash
-npm install thumbsup exiftool-json-db --unsafe-perm=true
-pacman -S gifsicle dcraw imagemagick perl-image-exiftool ffmpeg
+pacman -S docker
+systemctl start docker
 ```
 
-The gallery theme is in the ``gallery-theme/`` directory of this repository. Generate the gallery from a set of static files using the provided configuration file:
+Then, just run the provided `thumbsup-run.sh` script. If you get a permission error, you need to add your user to the docker group:
 
 ```bash
-$  thumbsup --input ./folder-with-photos --output ./output-folder --config $WEB/thubmsup-config.json
-```
+sudo usermod -aG $USER
+newgrp docker
+````
 
-Or use the full version with all the attributes:
+Now you can run the script.
 
 ```bash
-$  thumbsup --input ./folder-with-photos --output ./output-folder --embed-exif --title "Toni Sagrista Selles - Photo gallery" --theme-path $WEB/gallery-theme --photo-preview link --photo-download link --link-prefix "http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/" --sort-albums-by end-date --sort-albums-direction desc --sort-media-direction desc
+./thumbsup-run.sh
 ```
 
 The original photos are hosted in `gaiasandbox`'s ARI page.

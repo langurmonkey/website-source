@@ -1,11 +1,10 @@
 {
-    "title": "Toni Sagristà Sellés - Photo gallery",
-    "theme-path": "/home/tsagrista/Projects/website-source/gallery-theme",
-    "photo-preview": "link",
-    "photo-download": "link",
-    "embed-exif": true,
-    "sort-albums-by": "end-date",
-    "sort-albums-direction": "desc",
-    "link-prefix": "http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/",
-    "sort-media-direction": "desc"
+  "title": "Toni Sagristà Sellés - Photo gallery",
+  "photo-preview": "link",
+  "photo-download": "link",
+  "embed-exif": true,
+  "sort-albums-by": "end-date",
+  "sort-albums-direction": "desc",
+  "link-prefix": "http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/",
+  "sort-media-direction": "desc"
 }
