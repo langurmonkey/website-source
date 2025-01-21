@@ -71,7 +71,10 @@ newgrp docker
 Now you can run the script.
 
 ```bash
+# Run directly
 ./thumbsup-run.sh
+# You can also run it with just
+just thumbsup
 ```
 
 The original photos are hosted in `gaiasandbox`'s ARI page.

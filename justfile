@@ -6,3 +6,6 @@ deploy: minify
 
 hugo:
   hugo server
+
+thumbsup:
+  $WEB/thumbsup-run.sh
