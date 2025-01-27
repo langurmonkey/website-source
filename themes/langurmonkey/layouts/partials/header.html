@@ -1,55 +1,57 @@
 <!DOCTYPE HTML>
-<html>
-    <head>
-        {{ with $.Scratch.Get "generalTitle" }}
-        <title>{{ . }}</title>
-        {{ else }}
-            {{ with .Title }}
-        <title>{{ . }}</title>
-            {{ else }}
-        <title>{{ .Site.Title }}</title>
-            {{ end }}
-        {{ end }}
+<html lang="en">
 
-        <meta name="color-scheme" content="dark light">
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {{ partial "favicon" . }}
+<head>
+  {{ with $.Scratch.Get "generalTitle" }}
+  <title>{{ . }}</title>
+  {{ else }}
+  {{ with .Title }}
+  <title>{{ . }}</title>
+  {{ else }}
+  <title>{{ .Site.Title }}</title>
+  {{ end }}
+  {{ end }}
 
-        {{ with .Params.author }}
-        <meta name="author" content="{{ . }}">
-        {{ end }}
-        {{ with .Description }}
-        <meta name="description" content="{{ . }}">
-        {{ else }}
-            {{ with .Site.Params.description }}
-        <meta name="description" content="{{ . }}">
-            {{ end }}
-        {{ end }}
+  <meta name="color-scheme" content="dark light">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  {{ partial "favicon" . }}
+
+  {{ with .Params.author }}
+  <meta name="author" content="{{ . }}">
+  {{ end }}
+  {{ with .Description }}
+  <meta name="description" content="{{ . }}">
+  {{ else }}
+  {{ with .Site.Params.description }}
+  <meta name="description" content="{{ . }}">
+  {{ end }}
+  {{ end }}
 
 
-        {{ if isset .Site.Params "minifiedcss" }}
-            {{ $.Scratch.Set "cssFiles" .Site.Params.minifiedFilesCSS }}
-        {{ else if isset .Site.Params "customcss" }}
-            {{ $.Scratch.Set "cssFiles" .Site.Params.customCSS }}
-        {{ else }}
-            {{ $.Scratch.Set "cssFiles" false }}
-        {{ end }}
+  {{ if isset .Site.Params "minifiedcss" }}
+  {{ $.Scratch.Set "cssFiles" .Site.Params.minifiedFilesCSS }}
+  {{ else if isset .Site.Params "customcss" }}
+  {{ $.Scratch.Set "cssFiles" .Site.Params.customCSS }}
+  {{ else }}
+  {{ $.Scratch.Set "cssFiles" false }}
+  {{ end }}
 
-        <!-- If the value "default" is passed into the param then we will first
+  <!-- If the value "default" is passed into the param then we will first
              load the standard css files associated with the theme -->
-        {{ if or (in ($.Scratch.Get "cssFiles") "default") (eq ($.Scratch.Get "cssFiles") false) }}
-        {{ end }}
+  {{ if or (in ($.Scratch.Get "cssFiles") "default") (eq ($.Scratch.Get "cssFiles") false) }}
+  {{ end }}
 
-        {{ if ne ($.Scratch.Get "cssFiles") false }}
-            {{ range $.Scratch.Get "cssFiles" }}
-                {{ if ne . "default" }}
-            <link rel="stylesheet" href="{{ . | absURL }}" />
-                {{ end }}
-            {{ end }}
-        {{ end }}
-            <link rel="canonical" href="{{ .Permalink }}">
-    </head>
-    <body>
-      <script src="/js/darkmode.js"></script>
-    <div id="wrapper">
+  {{ if ne ($.Scratch.Get "cssFiles") false }}
+  {{ range $.Scratch.Get "cssFiles" }}
+  {{ if ne . "default" }}
+  <link rel="stylesheet" href="{{ . | absURL }}" />
+  {{ end }}
+  {{ end }}
+  {{ end }}
+  <link rel="canonical" href="{{ .Permalink }}">
+</head>
+
+<body>
+  <script src="/js/darkmode.js"></script>
+  <div id="wrapper">
