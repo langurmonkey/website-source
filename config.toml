@@ -1,7 +1,6 @@
 baseurl = "https://tonisagrista.com"
 languageCode = "en-gb"
 title = "Langur Monkey - Toni Sagristà Sellés"
-theme = "langurmonkey"
 preserveTaxonomyNames = true
 enableRobotsTXT = true
 canonifyURLs = true
