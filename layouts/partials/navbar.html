@@ -6,9 +6,8 @@
     <ul>
       {{ range .Site.Menus.main }}
       <li>
-        <a href="{{ .URL }}">
-          {{ with .Identifier }}
-          <i class="{{ . }}">&nbsp;</i>{{ end }}{{ .Name }}
+        <a class="{{ if $.Page.IsMenuCurrent .Menu . }}active{{ end }}" href="{{ .URL }}">
+          {{ .Name }}
         </a>
       </li>
       {{ end }}
@@ -35,7 +34,7 @@
     <ul class="links">
       {{ range .Site.Menus.main }}
       <li>
-        <a href="{{ .URL }}">
+        <a class="{{ if $.Page.IsMenuCurrent .Menu . }}active{{ end }}" href="{{ .URL }}">
           <h3>
             {{ with .Identifier }}
             <i class="{{ . }}">&nbsp;</i>

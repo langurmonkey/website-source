@@ -3,8 +3,6 @@ languageCode = "en-gb"
 title = "Langur Monkey - Toni Sagristà Sellés"
 preserveTaxonomyNames = true
 enableRobotsTXT = true
-canonifyURLs = true
-relativeurls = true
 uglyurls = false
 enableGitInfo = true
 
@@ -56,32 +54,32 @@ enableGitInfo = true
 
 [[menu.main]]
     name = "~/blog"
-    url = "/blog"
+    pageRef = "blog"
     weight = 2
 
 [[menu.main]]
     name = "~/projects"
-    url = "/projects"
+    pageRef = "projects"
     weight = 3
 
 [[menu.main]]
     name = "~/publications"
-    url = "/papers"
+    pageRef = "papers"
     weight = 4
 
 [[menu.main]]
     name = "~/cv"
-    url = "/resume"
+    pageRef = "resume"
     weight = 5
 
 [[menu.main]]
     name = "~/photo"
-    url = "/photography"
+    pageRef = "photography"
     weight = 6
 
 [[menu.main]]
     name = "~/search"
-    url = "/search"
+    pageRef = "search"
     weight = 7
 
 

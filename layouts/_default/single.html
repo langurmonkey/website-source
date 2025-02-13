@@ -2,14 +2,14 @@
 
 {{ partial "header" . }}
 {{ partial "navbar" . }}
-    <!-- Main -->
-    <main>
-        <article class="post single">
-            {{ $.Scratch.Set "h1" true }}
-            {{ .Render "header" }}
-            <div id="content">
-                {{ .Content }}
-            </div>
-        </article>
-    </main>
+<!-- Main -->
+<main>
+  <article class="post single">
+    {{ $.Scratch.Set "h1" true }}
+    {{ .Render "header" }}
+    <div id="content">
+      {{ .Content }}
+    </div>
+  </article>
+</main>
 {{ partial "footer" . }}

@@ -1730,6 +1730,10 @@ body {
   font-weight: 800;
   text-transform: lowercase;
 }
+#header .links ul li a.active {
+  color: var(--title-color);
+  opacity: 1;
+}
 
 #header .main {
   height: inherit;
@@ -2082,6 +2086,9 @@ body {
   text-decoration: none;
   border-bottom-style: none;
   color: inherit;
+}
+#menu .links > li a.active {
+  color: var(--link-color-hover);
 }
 
 #menu .links > li a h3 {
