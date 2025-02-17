@@ -13,11 +13,11 @@ showpagemeta = "false"
 </article>
 <br />
 <article>
-<strong><a href="https://zah.uni-heidelberg.de/gaia/outreach/gaiasky/">Gaia Sky</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-apple"></i> <i class="fa-tss fa fa-windows"></i></strong> &mdash; A real-time 3D visualisation application developed in OpenGL in the framework of Gaia outreach. Gestated in the Astronomisches Rechen-Institut of Heidelberg University.
+<strong><a href="https://gaiasky.space">Gaia Sky</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-apple"></i> <i class="fa-tss fa fa-windows"></i></strong> &mdash; A real-time 3D visualisation application developed in OpenGL in the framework of Gaia outreach. Gestated in the Astronomisches Rechen-Institut of Heidelberg University.
 </article>
 <br />
 <article>
-<strong><a href="https://gaia.ari.uni-heidelberg.de/gaiasky/docs">Gaia Sky docs</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-book"></i></strong> &mdash; Documentation pages of Gaia Sky, written in reSyncText with <a href="https://www.spninx-doc.org">Sphinx</a>.
+<strong><a href="https://docs.gaiasky.space">Gaia Sky docs</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-book"></i></strong> &mdash; Documentation pages of Gaia Sky, written in reSyncText with <a href="https://www.spninx-doc.org">Sphinx</a>.
 </article>
 <br />
 <article>
