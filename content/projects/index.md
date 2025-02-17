@@ -17,7 +17,7 @@ showpagemeta = "false"
 </article>
 <br />
 <article>
-<strong><a href="https://docs.gaiasky.space">Gaia Sky docs</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-book"></i></strong> &mdash; Documentation pages of Gaia Sky, written in reSyncText with <a href="https://www.spninx-doc.org">Sphinx</a>.
+<strong><a href="http://docs.gaiasky.space">Gaia Sky docs</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-book"></i></strong> &mdash; Documentation pages of Gaia Sky, written in reSyncText with <a href="https://www.spninx-doc.org">Sphinx</a>.
 </article>
 <br />
 <article>

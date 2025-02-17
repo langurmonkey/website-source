@@ -1,7 +1,7 @@
 minify:
   $WEB/scripts/minify-all.sh theme-bw
 
-deploy: minify
+deploy: stop minify
   $WEB/deploy.sh
 
 # Serve the hugo site locally in http://localhost:1313
