@@ -3,7 +3,7 @@ categories = ["Projects"]
 date = "2016-10-02T22:55:05-04:00"
 tags = ["projects"]
 title = "Projects"
-showpagemeta = "false"
+showpagemeta = false
 +++
 
 ## Applications and software
@@ -25,7 +25,7 @@ showpagemeta = "false"
 </article>
 <br />
 <article>
-<strong><a href="/project/rts-engine">RTS Engine</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-gitea"></i></strong> &mdash; Real time strategy game engine written in Java. Very early stage, but already usable. There is a private fork which contains much more advanced AI based on behavior trees and state machines, original graphics, sound, heights, and uses an entity component system (ECS) internally.
+<strong><a href="/projects/rts-engine">RTS Engine</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-gitea"></i></strong> &mdash; Real time strategy game engine written in Java. Very early stage, but already usable. There is a private fork which contains much more advanced AI based on behavior trees and state machines, original graphics, sound, heights, and uses an entity component system (ECS) internally.
 </article>
 <br />
 <article>
@@ -61,25 +61,25 @@ alt="Projects"
 style="float: right; margin-left: 50px; width: 40%" />
 
 <article>
-<strong><a href="/project/pps/">Particle Physics Simulator</a> <i class="fa-tss fa fa-android"></i></strong> &mdash; A gravitational physics playground application for Android (v2.1+) devices.
+<strong><a href="/projects/pps/">Particle Physics Simulator</a> <i class="fa-tss fa fa-android"></i></strong> &mdash; A gravitational physics playground application for Android (v2.1+) devices.
 </article>
 <br />
 <article>
-<strong><a href="/project/nblw/">N-Body Live Wallpaper</a> <i class="fa-tss fa fa-android"></i></strong>&mdash; A physics live wallpaper for Android (v2.1+) devices.
+<strong><a href="/projects/nblw/">N-Body Live Wallpaper</a> <i class="fa-tss fa fa-android"></i></strong>&mdash; A physics live wallpaper for Android (v2.1+) devices.
 </article>
 <br />
 <article>
-<strong><a href="/project/celestial-pole/">Celestial Pole Motion</a> <i class="fa-tss fa fa-star"></i> <i class="fa-tss fa fa-git-square"></i></strong> &mdash; Tracks the motion of the mean celestial poles with respect to the ICRS due to the Earth's precession and nutation.
+<strong><a href="/projects/celestial-pole/">Celestial Pole Motion</a> <i class="fa-tss fa fa-star"></i> <i class="fa-tss fa fa-git-square"></i></strong> &mdash; Tracks the motion of the mean celestial poles with respect to the ICRS due to the Earth's precession and nutation.
 </article>
 <br />
 <article>
-<strong><a href="/project/snake/">HTML5 Snake Game</a> <i class="fa-tss fa fa-html5"></i></strong> &mdash; A modified version of an HTML5 snake game.
+<strong><a href="/projects/snake/">HTML5 Snake Game</a> <i class="fa-tss fa fa-html5"></i></strong> &mdash; A modified version of an HTML5 snake game.
 </article>
 <br/>
 <br/>
 <br/>
 
-## Achivements
+## Achievements
 
 -  [Mapping and Visualising Gaia DR2](https://www.cosmos.esa.int/web/gaia/iow_20180614) &mdash; **Gaia Image of the Week** (*2018-06-14*)
 -  [Visualising the gaia data with Gaia Sky](https://www.cosmos.esa.int/web/gaia/gaiadr2_gaiasky) &mdash; **Gaia Image of the Week** (*2018-04-25*)

@@ -10,7 +10,12 @@ serve:
 
 # Stop the local server
 stop:
-    pkill hugo
+    pkill hugo || true
+
+# Cleans the generated site
+clean:
+    rm -rf public/*
+
 
 thumbsup:
   $WEB/thumbsup-run.sh

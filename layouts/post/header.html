@@ -10,6 +10,7 @@
     <p>{{ . }}</p>
     {{ end }}
   </div>
+  {{ if not (isset .Params "showpagemeta") | or (ne .Params.showpagemeta false) }}
   <div class="meta">
     <!-- Published date -->
     {{ if .Site.Params.orderByPublishDate }}
@@ -28,15 +29,15 @@
     {{- $lastmod := .Lastmod.Format "Jan 2, 2006" }}
     {{- if ne $lastmod $pubdate }}
     <div class="post-info-last-mod">
-      <i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Last update date"> &nbsp;Updated</i>:
-      <time datetime="{{ .Lastmod }}" title="{{ .Lastmod }}">
+      <i class="fa fa-pencil" aria-hidden="true" title="Updated: {{ .Lastmod }}"></i>
+      <time datetime="{{ .Lastmod }}" title="Updated: {{ .Lastmod }}">
         {{ $lastmod }}
       </time>
     </div>
     {{- end }}
     {{- end }}
     <p>{{ .ReadingTime }} minute read</p>
+    {{ end }}
   </div>
   {{ end }}
-
 </header>

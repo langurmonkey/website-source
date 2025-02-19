@@ -4,7 +4,6 @@ date = "2014-11-12"
 tags = ["astronomy", "java", "astrophysics", "programming"]
 title = "Celestial Pole Motion"
 description = "Motion of the celestial poles with respect to the ICRS"
-showpagemeta = "false"
 +++
 
 

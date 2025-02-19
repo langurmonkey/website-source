@@ -12,7 +12,7 @@ featuredpath = "date"
 type = "post"
 +++
 
-Lately, I have been kicking the dust off my C++ skills, and decided to start by learning to use a library which I have been eyeing for a while, `ncurses`. `ncurses` is a C library which lets you create text-based UI programs for the terminal, in the same fashion as the gif above. Basically, you can use the terminal to implement text-based user interfaces. Since I seem to have an [obsession with snake games](/project/snake), I figured I'd create a snake game for the terminal.
+Lately, I have been kicking the dust off my C++ skills, and decided to start by learning to use a library which I have been eyeing for a while, `ncurses`. `ncurses` is a C library which lets you create text-based UI programs for the terminal, in the same fashion as the gif above. Basically, you can use the terminal to implement text-based user interfaces. Since I seem to have an [obsession with snake games](/projects/snake), I figured I'd create a snake game for the terminal.
 
 <!--more-->
 
@@ -20,7 +20,7 @@ The project I'm sharing today is [`tsnake`](https://gitlab.com/langurmonkey/tsna
 
 ## How to start
 
-Let's see how it works. The game itself is initialised and run within the function `start_game(int, int)`. This function gets two paramters: the starting length of the snake and the map identifier. When a game finishes either because the user won or because she crashed, a window pops up displaying the final score and the user is given a couple of options. Either quit or keep playing. If she chooses to keep playing, the game resets with a new map. That is implemented in a simple loop in the main function:
+Let's see how it works. The game itself is initialised and run within the function `start_game(int, int)`. This function gets two parameters: the starting length of the snake and the map identifier. When a game finishes either because the user won or because she crashed, a window pops up displaying the final score and the user is given a couple of options. Either quit or keep playing. If she chooses to keep playing, the game resets with a new map. That is implemented in a simple loop in the main function:
 
 {{< highlight cpp "linenos=table" >}}
 int ret;

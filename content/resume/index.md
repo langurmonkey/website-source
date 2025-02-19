@@ -3,7 +3,7 @@ categories = ["Resume"]
 date = "2016-11-07T23:34:05-04:00"
 tags = ["resume"]
 title = "Résumé"
-showpagemeta = "false"
+showpagemeta = false
 +++
 
 <p>

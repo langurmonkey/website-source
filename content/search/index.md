@@ -1,6 +1,7 @@
 +++
 title = "Search"
 description = "Client-side search. No external servers involved."
+showpagemeta = false
 +++
 
 <p>

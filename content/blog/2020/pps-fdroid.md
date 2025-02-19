@@ -9,7 +9,7 @@ title = "Particle Physics Simulator available on F-Droid"
 type = "post"
 +++
 
-I found some time to update the [Particle Physics Simulator](/project/pps) android application (version `3.7.4`) in order to fix some bugs and add a hardcoded menu button, since terminals do not have a dedicated physical button these days. Additionally, my merge request to the [F-Droid](https://f-droid.org) data repository was accepted, so now the app is also available via the F-Droid store.
+I found some time to update the [Particle Physics Simulator](/projects/pps) android application (version `3.7.4`) in order to fix some bugs and add a hardcoded menu button, since terminals do not have a dedicated physical button these days. Additionally, my merge request to the [F-Droid](https://f-droid.org) data repository was accepted, so now the app is also available via the F-Droid store.
 
 <!--more-->
 

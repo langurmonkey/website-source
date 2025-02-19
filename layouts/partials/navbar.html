@@ -6,7 +6,7 @@
     <ul>
       {{ range .Site.Menus.main }}
       <li>
-        <a class="{{ if $.Page.IsMenuCurrent .Menu . }}active{{ end }}" href="{{ .URL }}">
+        <a class="{{ if or ($.Page.IsMenuCurrent .Menu .) (and (ne .URL " /") (hasPrefix $.Page.RelPermalink .URL)) }}active{{ end }}" href="{{ .URL }}">
           {{ .Name }}
         </a>
       </li>
@@ -34,7 +34,7 @@
     <ul class="links">
       {{ range .Site.Menus.main }}
       <li>
-        <a class="{{ if $.Page.IsMenuCurrent .Menu . }}active{{ end }}" href="{{ .URL }}">
+        <a class="{{ if or ($.Page.IsMenuCurrent .Menu .) (and (ne .URL " /") (hasPrefix $.Page.RelPermalink .URL)) }}active{{ end }}" href="{{ .URL }}">
           <h3>
             {{ with .Identifier }}
             <i class="{{ . }}">&nbsp;</i>
