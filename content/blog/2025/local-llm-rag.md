@@ -72,7 +72,7 @@ This should install `python-ollama`, Langchain together with the `-ollama` hook,
 
 ## Ollama model setup
 
-Now, let's create a file, `rag-chat.py`.
+The code in this post is available [here](https://codeberg.org/langurmonkey/rag-llm). Now, let's create a file, `rag-chat.py`.
 
 First, our chatbot will list all the available models and will ask for the model we want to use. This part is simple:
 
