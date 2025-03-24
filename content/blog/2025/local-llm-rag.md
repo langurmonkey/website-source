@@ -10,7 +10,8 @@ featuredpath = "date"
 type = "post"
 +++
 
-Over the past few months I have been running local <abbr title="Large Language Model">LLMs</abbr> on my computer with various results, ranging from 'unusable' to 'pretty good'. However, a major pain point is that usually you can't really give them any context in the form of files or documents to base their answers on. The technique known as <abbr title="Retrieval Augmented Generation">RAG</abbr> that aims to bridge this problem by embedding context information into a vector database that is later used to provide context to the LLM. In this short article we'll see how to build a very *primitive* local AI chatbot powered by Ollama with RAG capabilities.
+Over the past few months I have been running local <abbr title="Large Language Model">LLMs</abbr> on my computer with various results, ranging from 'unusable' to 'pretty good'.
+Local LLMs are becoming more powerful, but they don't inherently "know" everything. They're trained on massive datasets, but those are typically static. To make LLMs truly useful for specific tasks, you often need to augment them with *your own* data--data that's constantly changing, specific to your domain, or not included in the LLM's original training. The technique known as <abbr title="Retrieval Augmented Generation">RAG</abbr> aims to bridge this problem by embedding context information into a vector database that is later used to provide context to the LLM, so that it can *expand* its knowledge beyond the original training dataset. In this short article, we'll see how to build a very *primitive* local AI chatbot powered by Ollama with RAG capabilities.
 
 <!--more-->
 
