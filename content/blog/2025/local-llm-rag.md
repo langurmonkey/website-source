@@ -311,3 +311,5 @@ As you can see, even this small 8B parameter model pretty much nails all three a
 ## Conclusion
 
 As we've seen, with very little effort we can build a rudimentary RAG system on top of Ollama. This enables us to use context information in our queries in an automated manner, with the help of Chroma DB. In our small test, we've used the Llama3.1 8B model, which is rather small. Using a larger model, like the Mistral-small (24B), or even the Gemma3 (12B) should improve the results at the expense of performance.
+
+The code in this post is partially based on [this medium article](https://medium.com/@arunpatidar26/rag-chromadb-ollama-python-guide-for-beginners-30857499d0a0).
