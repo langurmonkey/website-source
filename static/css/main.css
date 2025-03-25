@@ -2208,3 +2208,7 @@ figure.fig-right {
   width: 100%;
   height: 100%;
 }
+.ai-box {
+  padding-left: 20px;
+  border-left: 1px solid var(--fg-color-dark);
+}
