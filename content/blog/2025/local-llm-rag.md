@@ -10,8 +10,12 @@ featuredpath = "date"
 type = "post"
 +++
 
+{{< sp orange >}}Edit (2025-03-25):{{</ sp >}} *I re-ran the example with a clean database and the results are better. I also cleaned up the code a bit.*
+
 Over the past few months I have been running local <abbr title="Large Language Model">LLMs</abbr> on my computer with various results, ranging from 'unusable' to 'pretty good'.
 Local LLMs are becoming more powerful, but they don't inherently "know" everything. They're trained on massive datasets, but those are typically static. To make LLMs truly useful for specific tasks, you often need to augment them with *your own* data--data that's constantly changing, specific to your domain, or not included in the LLM's original training. The technique known as <abbr title="Retrieval Augmented Generation">RAG</abbr> aims to bridge this problem by embedding context information into a vector database that is later used to provide context to the LLM, so that it can *expand* its knowledge beyond the original training dataset. In this short article, we'll see how to build a very *primitive* local AI chatbot powered by Ollama with RAG capabilities.
+
+The source code used in this post is available [here](https://codeberg.org/langurmonkey/rag-llm).
 
 <!--more-->
 
@@ -75,13 +79,12 @@ This should install `python-ollama`, Langchain together with the `-ollama` hook,
 
 ## Ollama model setup
 
-The code in this post is available [here](https://codeberg.org/langurmonkey/rag-llm). Now, let's create a file, `rag-chat.py`.
+The code we display below is available [in this repository](https://codeberg.org/langurmonkey/rag-llm). Now, let's create a file, `rag-chat.py`.
 
 First, our chatbot will list all the available models and will ask for the model we want to use. This part is simple:
 
 ```python
 #!python
-# Import required libraries
 from langchain_ollama import OllamaEmbeddings, OllamaLLM
 import chromadb, requests, os, ollama
 
@@ -95,8 +98,7 @@ for m in models.models:
 print("Available models:\n -", '\n - '.join(model_names))
 
 # Ask the user the LLM model to use
-llm_model = input("Model to use: ")
-
+llm_model = input("\nModel to use: ")
 ```
 
 [^1]: https://artificialanalysis.ai/models/llama-3-1-instruct-8b
@@ -136,7 +138,7 @@ embedding = ChromaDBEmbeddingFunction(
 )
 
 # Define a collection for the RAG workflow
-collection_name = "rag_collection_1"
+collection_name = "rag_collection_demo"
 collection = chroma_client.get_or_create_collection(
     name=collection_name,
     metadata={"description": "A collection for RAG with Ollama"},
@@ -168,9 +170,40 @@ def add_documents_to_collection(documents, ids):
 
 # Example: Add sample documents to the collection
 documents = [
-    "The Mittius is a sphere of radius 2 that is used to disperse light in all directions. The Mittius is very powerful and sometimes emits light in various wavelengths on its own. It is a completely fictional object whose only purpose is testing RAG in a local LLM.",
-    "The newly accessible mid-infrared (MIR) window offered by the James Webb Space Telescope (JWST) for exoplanet imaging is expected to provide valuable information to characterize their atmospheres. In particular, coronagraphs on board the JWST Mid-InfraRed instrument (MIRI) are capable of imaging the coldest directly imaged giant planets at the wavelengths where they emit most of their flux. The MIRI coronagraphs have been specially designed to detect the NH3 absorption around 10.5 microns, which has been predicted by atmospheric models. We aim to assess the presence of NH3 while refining the atmospheric parameters of one of the coldest companions detected by directly imaging GJ 504 b. Its mass is still a matter of debate and depending on the host star age estimate, the companion could either be placed in the brown dwarf regime or in the young Jovian planet regime. We present an analysis of MIRI coronagraphic observations of the GJ 504 system. We took advantage of previous observations of reference stars to build a library of images and to perform a more efficient subtraction of the stellar diffraction pattern. We detected the presence of NH3 at 12.5 sigma in the atmosphere, in line with atmospheric model expectations for a planetary-mass object and observed in brown dwarfs within a similar temperature range. The best-fit model with Exo-REM provides updated values of its atmospheric parameters, yielding a temperature of Teff = 512 K and radius of R = 1.08 RJup. These observations demonstrate the capability of MIRI coronagraphs to detect NH3 and to provide the first MIR observations of one of the coldest directly imaged companions. Overall, NH3 is a key molecule for characterizing the atmospheres of cold planets, offering valuable insights into their surface gravity. These observations provide valuable information for spectroscopic observations planned with JWST.",
-    "Gaia Sky has a new website built with Hugo. It contains download pages for all new and old versions of the software, and a full listing of all the catalogs and datasets offered with the software. The datasets can be downloaded in-app with the provided dataset manager."
+    "The Mittius is a sphere of radius 2 that is used to disperse light in all
+    directions. The Mittius is very powerful and sometimes emits light in various
+    wavelengths on its own. It is a completely fictional object whose only purpose
+     is testing RAG in a local LLM.",
+    
+    "The newly accessible mid-infrared (MIR) window offered by the James Webb Space
+    Telescope (JWST) for exoplanet imaging is expected to provide valuable information to
+    characterize their atmospheres. In particular, coronagraphs on board the JWST
+    Mid-InfraRed instrument (MIRI) are capable of imaging the coldest directly
+    imaged giant planets at the wavelengths where they emit most of their flux. The
+    MIRI coronagraphs have been specially designed to detect the NH3 absorption
+    around 10.5 microns, which has been predicted by atmospheric models. We aim to
+    assess the presence of NH3 while refining the atmospheric parameters of one of the
+    coldest companions detected by directly imaging GJ 504 b. Its mass is still a matter
+    of debate and depending on the host star age estimate, the companion could either
+    be placed in the brown dwarf regime or in the young Jovian planet regime. We present
+    an analysis of MIRI coronagraphic observations of the GJ 504 system. We took advantage
+    of previous observations of reference stars to build a library of images and to
+    perform a more efficient subtraction of the stellar diffraction pattern. We detected
+    the presence of NH3 at 12.5 sigma in the atmosphere, in line with atmospheric model
+    expectations for a planetary-mass object and observed in brown dwarfs within a
+    similar temperature range. The best-fit model with Exo-REM provides updated values
+    of its atmospheric parameters, yielding a temperature of Teff = 512 K and radius of
+    R = 1.08 RJup. These observations demonstrate the capability of MIRI coronagraphs to
+    detect NH3 and to provide the first MIR observations of one of the coldest directly
+    imaged companions. Overall, NH3 is a key molecule for characterizing the atmospheres
+    of cold planets, offering valuable insights into their surface gravity. These
+    observations provide valuable information for spectroscopic observations planned
+    with JWST.",
+    
+    "Gaia Sky has a new website built with Hugo. It contains download pages for all new
+    and old versions of the software, and a full listing of all the catalogs and datasets
+    offered with the software. The datasets can be downloaded in-app with the provided
+    dataset manager."
 
 ]
 doc_ids = ["doc_mittius", "doc_paper_jwst", "doc_gaiasky_web"]
@@ -180,7 +213,7 @@ doc_ids = ["doc_mittius", "doc_paper_jwst", "doc_gaiasky_web"]
 add_documents_to_collection(documents, doc_ids)
 ```
 
-## Finally, the chat logic
+## Finally, the chatbot logic
 
 Now we have our vector storage set up. Let's build the chat logic!
 
@@ -234,25 +267,26 @@ def rag_pipeline(query_text):
 
     # Step 2: Send the query along with the context to Ollama
     augmented_prompt = f"Context: {context}\nQuestion: {query_text}\nAnswer: "
-    print(augmented_prompt)
+    # Uncomment next line if you want to see the context
+    # print(augmented_prompt)
 
     response = query_ollama(augmented_prompt)
     return response
 
-# Example usage
-# Define a query to test the RAG pipeline
-query = input("Query: ")
-while query != "/bye":
+# User query loop
+while True:
+    query = input("Ask a question (or type 'exit' to quit): ")
+    if query.lower() == "exit":
+        break
     response = rag_pipeline(query)
     print(response)
-    query = input("Query: ")
 ```
 
 That's it! In this part, we ask the user to provide a query. Then, the script uses this query to fetch some context from our local Chroma DB, adds the context to the prompt (in `augmented_prompt`), and sends the query to Ollama. Then, we wait for the response and print it out.
 
-Here is an example output (I'm omitting the context print). I ask it about JWST and exoplanets, the imaginary object Mittius, and the new Gaia Sky website. I have highlighted the response lines:
+Here is an example output. I ask it about JWST and exoplanets, the imaginary object 'Mittius', and the new Gaia Sky website. I have highlighted the response lines:
 
-```bash {hl_lines=["22-36","43-48",54]}
+```bash {hl_lines=["19-35",38,39,"42-46",49]}
 $ rag-chat.py
 Available models:
  - llama3.1:8b
@@ -270,10 +304,7 @@ Add of existing embedding ID: doc_mittius
 Add of existing embedding ID: doc_paper_jwst
 Add of existing embedding ID: doc_gaiasky_web
 
-Query: JWST and exoplanets.
-Context: [...]
-Question: JWST and exoplanets.
-Answer: 
+Ask a question (or type 'exit' to quit): JWST and exoplanets.
 The James Webb Space Telescope (JWST) will play a significant role in exoplanet
 research by providing new capabilities for characterizing their atmospheres.
 The telescope\'s Mid-InfraRed instrument (MIRI) coronagraphs are capable of
@@ -289,33 +320,31 @@ In the provided text, JWST is mentioned in the context of:
 3. Future spectroscopic observations planned with JWST will be guided by the
    valuable information obtained from these observations.
 
-Overall, JWST is expected to provide new insights into exoplanet atmospheres and help scientists refine their understanding of these distant worlds.
+Overall, JWST is expected to provide new insights into exoplanet atmospheres
+and help scientists refine their understanding of these distant worlds.
 
-Query: What is the radius of the Mittius?
-Context: [...]
-Question: What is the radius of the Mittius?
-Answer:
-The question doesn't relate to the provided text at all (about Gaia Sky
-and MIRI coronagraphs) but rather mentions a fictional object called
-"Mittius" which was mentioned in a separate context. The answer should
-be taken directly from that initial context.
+Ask a question (or type 'exit' to quit): What is the mittius?
+A completely fictional object used to test Reasoning and Argument Generation
+(RAG) in a local Large Language Model (LLM).
 
-According to the initial description, the radius of the Mittius is 2.
+Ask a question (or type 'exit' to quit): What is the radius of the Mittius?
+The answer can be found in the first sentence of the text:
 
-Query: How was the new Gaia Sky website built?
-Context: [...]
-Question: How was the new Gaia Sky website built?
-Answer: 
+"The Mittius is a sphere of radius 2 that is used to disperse light in all directions."
+
+So, the radius of the Mittius is 2.
+
+Ask a question (or type 'exit' to quit): How was the new Gaia Sky website built?
 The new Gaia Sky website was built with Hugo.
 
-Query: /bye
+Ask a question (or type 'exit' to quit): exit
 ```
 
-As you can see, even this small 8B parameter model pretty much nails all three answers. There is a weird rambling in the second question about the given context not including the Mittius info, but it still gets the answer right but referencing the 'initial' context.
+As you can see, even this small 8B parameter model pretty much nails all three answer. In the third question (radius of the Mittius), it even provides the exact sentence that it sourced the subsequent answer from. Good work, Llama3.1!
 
 
 ## Conclusion
 
-As we've seen, with very little effort we can build a rudimentary RAG system on top of Ollama. This enables us to use context information in our queries in an automated manner, with the help of Chroma DB. In our small test, we've used the Llama3.1 8B model, which is rather small. Using a larger model, like the Mistral-small (24B), or even the Gemma3 (12B) should improve the results at the expense of performance.
+As we've seen, with very little effort we can build a rudimentary RAG system on top of Ollama. This enables us to use context information in our queries in an automated manner, with the help of Chroma DB. In our small test, we've used the Llama3.1 8B model, which is rather small. Using a larger model, like Gemma3 (12B), DeepSeek-R1 (14B), or even Mistral-small (24B), should improve the results at the expense of performance.
 
 The code in this post is partially based on [this medium article](https://medium.com/@arunpatidar26/rag-chromadb-ollama-python-guide-for-beginners-30857499d0a0).
