@@ -690,16 +690,18 @@ p.fig-attribution {
   line-height: 1.2em;
 }
 div.content-table {
-  display: inline-block;
+  text-align: center;
+  display: table;
 }
 div.menu-table-item {
-  float: left;
+  display: table-cell;
+  padding: 1em;
   text-align: center;
   margin: 1.3em;
   font-size: 0.8em;
   font-family: monospace;
   font-weight: 800;
-  width: 4.4em;
+  width: 4em;
   height: 7em;
 }
 div.menu-table-item i {
@@ -731,11 +733,11 @@ div.menu-table-item:hover i {
 }
 @media screen and (max-width: 480px) {
   div.menu-table-item {
-    padding: 0.5em;
+    padding: 0.8em;
   }
 }
 @media screen and (max-width: 350px) {
   div.menu-table-item {
-    padding: 0.2em;
+    padding: 0.7em;
   }
 }

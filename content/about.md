@@ -55,4 +55,8 @@ tags
 {{< fa th >}}<br/>
 categs
 </div></a>
+<a href="/search"><div class="menu-table-item">
+{{< fa search >}}<br/>
+search
+</div></a>
 </div>
