@@ -82,6 +82,13 @@ enableGitInfo = true
     pageRef = "search"
     weight = 7
 
+    
+
+[[menu.content]]
+    name = "/blog"
+    pageRef = "blog"
+    icon = "file-word-o"
+
 
 # These go in the footer
 [social]

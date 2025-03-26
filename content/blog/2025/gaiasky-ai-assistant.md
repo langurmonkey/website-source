@@ -10,28 +10,28 @@ featuredpath = "date"
 type = "post"
 +++
 
-In my last [post](/blog/2025/local-llm-rag), I explored the concept of Retrieval-Augmented Generation (RAG). It enabled a locally running generative AI model to access and incorporate new information, that was later accessed during inference. To achieve this, I used hardcoded documents as context, which were then embedded as vectors and sent into Chroma DB. The data were finally retrieved for context when using the chatbot.
-But using a few sentences hardcoded strings is not very elegant or particularly exciting. It's alright for educational purposes, but that's it. However, if we need to build a *minimally useful system*, we need to be more sophisticated than this. In this new post, I set out to create a local Gaia Sky assistant by feeding Chroma DB with the official [Gaia Sky documentation](http://docs.gaiasky.space) and [our homepage](https://gaiasky.space), and leveraging Ollama to generate context-aware responses. So, let’s dive into the code and explain how it all works.
+In my last [post](/blog/2025/local-llm-rag), I explored the concept of Retrieval-Augmented Generation (RAG) to enable a locally running generative AI model to access and incorporate new information. To achieve this, I used hardcoded documents as context, which were then embedded as vectors and persisted into Chroma DB. These vectors are used during inference to use as context for a local LLM chatbot.
+But using a few hardcoded sentences is hardly elegant or particularly exciting. It's alright for educational purposes, but that's as far as it goes. However, if we need to build a *minimally useful system*, we need to be more sophisticated than this. In this new post, I set out to create a local Gaia Sky assistant by using the [Gaia Sky documentation site](http://docs.gaiasky.space) and the [Gaia Sky homepage](https://gaiasky.space) as supplementary information, and leveraging Ollama to generate context-aware responses. So, let’s dive into the topic and explain how it all works.
 
-The source code used in this post is available [here](https://codeberg.org/langurmonkey/gaiasky-ai).
+The source code used in this post is available [in this repository](https://codeberg.org/langurmonkey/gaiasky-ai).
 
 <!--more-->
 
 ## Scraping the Websites
 
-The first thing we need to do is extract useful content from the web. This is where web scraping comes into play:
+The first thing we need to do is extract useful content from our sources. Since we use websites, this is where web scraping comes into play:
 
 - We’re using the `requests` library to fetch the HTML content from a given URL.
 
 - First, we get all the internal links for every URL by recursively scraping the content (with `BeautifulSoup`) and looking for all `a` tags (anchors) that don't point to internal anchors. This happens in `get_all_doc_links(base_url)`.
 
-- ~~Then, we extract the text from every page by extracting the tags `h1`, `h2`, `h3`, `h4`, `h5`, `p`, `li`, `td`, and `article`. This step required a little bit of trial and error. Once we have the text for each page, we concatenate everything and return it. This is implemented mostly in `extract_text_from_page(url)`~~. On a first instance, I wrote my own code to retrieve content from a URL. Of course, this code was less than impressive, and even though it worked, the results were not optimal. Since then I experimented with other methods to extract text from websites, like `newspaper3K`, `goose3`, and `html2text`. I settled for the latter, as it produces Markdown-formatted documents which are particularly well suited for LLMs. You can see the very different results from the previous method by inspecting the [history of this post](https://codeberg.org/langurmonkey/website-source/commits/branch/master/content/blog/2025/gaiasky-ai-assistant.md). The initial behavior can still be accessed with the flag ``--local-scraper``.
+- ~~Then, we extract the text from every page by extracting the tags `h1`, `h2`, `h3`, `h4`, `h5`, `p`, `li`, `td`, and `article`. This step required a little bit of trial and error. Once we have the text for each page, we concatenate everything and return it. This is implemented mostly in `extract_text_from_page(url)`~~. At first, I wrote my own code to retrieve content from a URL and convert it to text. Of course, this code was less than impressive, and even though it worked, the results were not optimal. Since then I experimented with other methods to extract text from websites, like the libraries `newspaper3K`, `goose3`, and `html2text`. I settled for the latter, as it produces Markdown-formatted documents which are particularly well suited for LLMs. You can see the very different results from the previous method by inspecting the [history of this post](https://codeberg.org/langurmonkey/website-source/commits/branch/master/content/blog/2025/gaiasky-ai-assistant.md). The initial scraping behavior can still be accessed in the application with the flag ``--local-scraper``.
 
-- As we mentioned earlier, we make sure to avoid non-HTML files and internal page anchors (those pesky # URLs that only point to a specific section). This ensures that we only scrape actual web pages that contain relevant data.
+- As we mentioned earlier, we make sure to avoid non-HTML files and internal page anchors (those pesky # URLs that only point to a specific section). This ensures that we only scrape actual webpages that contain relevant data.
 
-With this method, we capture all the relevant documentation — every corner of the site. Since the process is recursive, we don’t miss any pages (unless they’re blocked or have weird redirect loops, but that's a discussion for another time).
+With this method, we capture all the relevant documentation---every corner of the site. Since the process is recursive, we don’t miss any pages (unless they’re blocked or have weird redirect loops, but that's a discussion for another time).
 
-Below is the relevant code.
+The code box below shows the link gathering, scraping, and text extraction.
 
 ```python
 import os
@@ -121,6 +121,7 @@ def scrape_urls(base_urls, local_scraper=False):
 ```
 
 ## Storing Embeddings with ChromaDB
+
 Once we've scraped the content, it’s time to turn that raw text into something that the machine can understand. This is where embeddings come into play.
 
 

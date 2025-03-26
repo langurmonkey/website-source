@@ -29,15 +29,11 @@ Here is a summary of the content in this site:
 </div></a>
 <a href="/posts-list"><div class="menu-table-item">
 {{< fa list >}}<br/>
-/all-posts
+/list
 </div></a>
 <a href="/projects"><div class="menu-table-item">
 {{< fa cube >}}<br/>
 /projects
-</div></a>
-<a href="/tags"><div class="menu-table-item">
-{{< fa tags >}}<br/>
-/tags
 </div></a>
 <a href="/papers"><div class="menu-table-item">
 {{< fa file-text-o >}}<br/>
@@ -51,8 +47,12 @@ Here is a summary of the content in this site:
 {{< fa address-card-o >}}<br/>
 /résumé
 </div></a>
+<a href="/tags"><div class="menu-table-item">
+{{< fa tags >}}<br/>
+/tags
+</div></a>
 <a href="/categories"><div class="menu-table-item">
 {{< fa th >}}<br/>
-/categories
+/categs
 </div></a>
 </div>

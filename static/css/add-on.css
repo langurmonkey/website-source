@@ -699,6 +699,8 @@ div.menu-table-item {
   font-size: 0.8em;
   font-family: monospace;
   font-weight: 800;
+  width: 4.4em;
+  height: 7em;
 }
 div.menu-table-item i {
   font-size: 4.0em;
