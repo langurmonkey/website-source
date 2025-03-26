@@ -25,34 +25,34 @@ Here is a summary of the content in this site:
 <div class="content-table">
 <a href="/blog"><div class="menu-table-item">
 {{< fa file-word-o >}}<br/>
-/blog
+blog
 </div></a>
 <a href="/posts-list"><div class="menu-table-item">
 {{< fa list >}}<br/>
-/list
+list
 </div></a>
 <a href="/projects"><div class="menu-table-item">
 {{< fa cube >}}<br/>
-/projects
+projects
 </div></a>
 <a href="/papers"><div class="menu-table-item">
 {{< fa file-text-o >}}<br/>
-/papers
+papers
 </div></a>
 <a href="/photography"><div class="menu-table-item">
 {{< fa camera-retro >}}<br/>
-/photo
+photo
 </div></a>
 <a href="/resume"><div class="menu-table-item">
 {{< fa address-card-o >}}<br/>
-/résumé
+résumé
 </div></a>
 <a href="/tags"><div class="menu-table-item">
 {{< fa tags >}}<br/>
-/tags
+tags
 </div></a>
 <a href="/categories"><div class="menu-table-item">
 {{< fa th >}}<br/>
-/categs
+categs
 </div></a>
 </div>
