@@ -703,7 +703,20 @@ In the global picture, I like the responses of Llama better than those provided 
 
 ## Performance
 
-In my case, I'm pretty limited by my hardware, and responses tend to be slow with the larger model (Mistral). The speed is quite good with Llama (8B) though. True, I'm running this a very old computer for today's standards (Intel(R) Core(TM) i7-7700 (8) @ 4.20 GHz, NVIDIA GeForce GTX 1070 8 GB, 32 GB RAM), so it is what it is. On smaller models (1B to 5B), I found the responses to be mostly garbage. On larger instruct models with decent quantization, accuracy is greatly improved at the expense of your precious time.
+In my case, I'm pretty limited by my hardware, and responses tend to be slow with the larger model (Mistral). The speed is quite good with Llama (8B) though. True, I'm running this a very old computer for today's standards (Intel(R) Core(TM) i7-7700 (8) @ 4.20 GHz, NVIDIA GeForce GTX 1070 8 GB, 32 GB RAM), so it is what it is. 
+
+Here are the performance stats for both models. I asked them both to generate a short text (~100 words) about the meaning of life.
+
+<span style="font-size: small">
+
+| Model                      | Total Duration       | Prompt Eval Rate | Eval Count   | Eval Duration      | Eval Rate |
+| -------------------------- | -------------------- | ---------------- | ------------ | ------------------ | --------- |
+| `mistral-small:22b-instruct-2409-q4_K_M` | 24.575599226s        | 53.56 tokens/s    | 67 token(s)   | 23.194348749s      | 2.89 tokens/s |
+| `llama3.1:8b-instruct-q5_K_M`    | 7.825027246s         | 109.12 tokens/s   | 119 token(s)  | 7.526260082s       | 15.81 tokens/s |
+
+</span>
+
+I found the responses provided by smaller models (1B to 5B) to be mostly garbage. On larger instruct models with decent quantization, accuracy is greatly improved at the expense of your precious time.
 
 ## Conclusion
 
