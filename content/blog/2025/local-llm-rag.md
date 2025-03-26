@@ -10,6 +10,8 @@ featuredpath = "date"
 type = "post"
 +++
 
+{{< sp orange >}}Edit (2025-03-26):{{</ sp >}} *Added some words about next steps in conclusion.*
+
 {{< sp orange >}}Edit (2025-03-25):{{</ sp >}} *I re-ran the example with a clean database and the results are better. I also cleaned up the code a bit.*
 
 Over the past few months I have been running local <abbr title="Large Language Model">LLMs</abbr> on my computer with various results, ranging from 'unusable' to 'pretty good'.
@@ -345,6 +347,8 @@ As you can see, even this small 8B parameter model pretty much nails all three a
 
 ## Conclusion
 
-As we've seen, with very little effort we can build a rudimentary RAG system on top of Ollama. This enables us to use context information in our queries in an automated manner, with the help of Chroma DB. In our small test, we've used the Llama3.1 8B model, which is rather small. Using a larger model, like Gemma3 (12B), DeepSeek-R1 (14B), or even Mistral-small (24B), should improve the results at the expense of performance.
+As we've seen, with very little effort we can build a rudimentary RAG system on top of Ollama. This enables us to use context information in our queries in an automated manner, with the help of Chroma DB. This post only highlights the very basic notions required to get RAG to work in a very bare-bones manner. Further concepts to explore include different embedding models, quantization, system prompts, and more.
+
+In our small test, we've used the Llama3.1 8B model, which is rather small. Using a larger model, like Gemma3 (12B), DeepSeek-R1 (14B), or even Mistral-small (24B), should improve the results at the expense of performance.
 
 The code in this post is partially based on [this medium article](https://medium.com/@arunpatidar26/rag-chromadb-ollama-python-guide-for-beginners-30857499d0a0).

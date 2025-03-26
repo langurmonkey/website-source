@@ -2,7 +2,7 @@
 author = "Toni Sagrista Selles"
 categories = ["AI"]
 tags = ["LLM", "AI", "ollama", "RAG"]
-date = 2025-03-25
+date = 2025-03-26
 linktitle = ""
 title = "Building a local AI assistant with user context"
 description = "We use Ollama and Chroma DB to build a personalized assistant from scraped web content"
@@ -17,7 +17,7 @@ The source code used in this post is available [here](https://codeberg.org/langu
 
 <!--more-->
 
-## Step 1: Scraping the Websites
+## Scraping the Websites
 
 The first thing we need to do is extract useful content from the web. This is where web scraping comes into play:
 
@@ -127,13 +127,13 @@ def scrape_urls(base_urls):
 
 ```
 
-## Step 2: Storing Embeddings with ChromaDB
+## Storing Embeddings with ChromaDB
 Once we've scraped the content, it’s time to turn that raw text into something that the machine can understand. This is where embeddings come into play.
 
 
 - We use the `langchain` library to split the scraped text into manageable chunks. This is done using the `RecursiveCharacterTextSplitter`, which splits the content into chunks of a predefined size (to avoid overloading the model). I tuned this by trial and error, and ended up with a chunk size of 1000, and a chunk overlap of 200.
 
-- The text is then passed through an embedding model, specifically the "BAAI/bge-base-en-v1.5" model from [HuggingFace](https://huggingface.co/BAAI/bge-base-en-v1.5), which transforms it into a high-dimensional vector representation.
+- The text is then passed through an embedding model, specifically the "sentence-transformers/all-MiniLM-L6-v2" model from [HuggingFace](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2), which transforms it into a high-dimensional vector representation. It is super compact and performs well. I have tried other embed models (see commented out lines at the top of [this code block](#code-embed)), but in my experience they did not perform better than `all-MiniLM-L6-v2`.
 
 - Finally, we store these vectors in a vector database, Chroma DB. The vectors are indexed so that when we query the database, it can efficiently retrieve the most relevant pieces of text. For the retrieval, I'm using 5 results (`search_kwargs` in `as_retriever()` method). I tried with 2 and 3, but it seemed that most models didn't get enough context.
 
@@ -141,7 +141,13 @@ This is where the magic happens. By converting text into vectors, we enable the 
 
 The relevant code consists of the concatenated texts we produced in the previous step (we called it `doc_text`), and the location for our disk database:
 
+<a name="code-embed"></a>
 ```python
+embed_model = "sentence-transformers/all-MiniLM-L6-v2"
+# embed_model = "BAAI/bge-base-en-v1.5"
+# embed_model = "HIT-TMG/KaLM-embedding-multilingual-mini-v1"
+# embed_model = "Linq-AI-Research/Linq-Embed-Mistral"
+
 def store_embeddings(texts, db_path):
     """Tokenizes, embeds, and stores the texts in a ChromaDB vector store."""
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
@@ -149,7 +155,7 @@ def store_embeddings(texts, db_path):
     if not documents:
         raise ValueError("No documents found to embed. Check the scraper output.")
     
-    embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-base-en-v1.5")
+    embeddings = HuggingFaceEmbeddings(model_name=embed_model)
     vector_store = Chroma.from_documents(documents, embeddings, persist_directory=db_path)
     return vector_store
 
@@ -158,60 +164,125 @@ db_path = "chroma_db"
 vector_store = store_embeddings(doc_text, db_path)
 ```
 
-## Step 3: Querying with Ollama
+## Querying with Ollama
 
 Now that we’ve got our indexed data, it’s time to query it. But instead of just returning raw search results, we want to use an LLM (Large Language Model) to generate smart, context-aware answers. Enter Ollama.
 
-- We use `langchain`’s `RetrievalQA` chain to combine the Chroma vector store with an LLM.
+- We use `langchain`’s `create_stuff_documents_chain` and `create_retrieval_chain` to first create a chain to retrieve documents from our vector store and pass them on to the model.
 
-- The LLM we’re using is locally hosted through Ollama. The model takes the relevant text retrieved from Chroma and uses that context to generate responses to user queries.
+- The LLM we’re using is locally hosted through Ollama. The model takes the relevant text retrieved from Chroma and uses that context to generate responses to user queries. The actual model is user-selected at the beginning of the program.
 
 - We use a simple interface where the user can ask questions, and the chatbot pulls from the stored content to generate an answer. If it doesn’t have enough context to answer, it will graciously let you know, but more often than not, it’s ready to impress with its knowledge.
 
 By combining Chroma with an LLM, we ensure that the chatbot not only returns raw text but generates contextually appropriate answers. The power of an LLM with RAG lies in its ability to take a set of relevant documents and provide a coherent, informative response. So, when you ask, “What’s the internal reference system of Gaia Sky?” the chatbot can retrieve the most relevant content and synthesize it into a helpful response.
 
-The relevant code lives in the `query_with_ollama(vector_store, llm_model)` method.
+### System prompt
+
+One of the key elements in ensuring a Retrieval-Augmented Generation (RAG) system behaves as expected is the **system prompt**—a set of initial instructions that guide how the language model responds to queries. In our application, the system prompt is designed to enforce a structured and helpful interaction:
 
 ```python
+system_prompt = (
+    "You are a customer support agent, helping users by following directives and answering questions. "
+    "Use the given context to answer the question. "
+    "If you don't know the answer, say you don't know. "
+    "Keep the answer concise and to the point. "
+    "Context: {context}"
+)
+```
+
+The prompt explicitly states that the LLM is a *customer support agent* to steer its behavior towards professional responses. It also includes a sentence about context awareness so that it actually uses information given in the context. Then, we ask it to not invent something it does not find in the context, and we demand short and concise answers.
+
+By fine-tuning this system prompt, we set clear boundaries for how the model should behave, ensuring it delivers accurate, relevant, and trustworthy responses based on the retrieved knowledge.
+
+### Other parameters
+
+- **Temperature** -- The temperature controls the randomness of the model's responses, with lower values making answers more deterministic and factual, while higher values increase creativity and variability.We use a low temperature value to get more correct and less creative responses.
+- **Number of results** -- The number of results parameter (`n_results` or `k`) determines how many relevant documents are retrieved from the vector database to provide context for the model's response, with higher values increasing the available information but potentially adding noise. We use a fine-tuned value of 10.
+
+The relevant code that does the actual querying lives in the `query_with_ollama(vector_store, llm_model)` method. The code below includes the relevant parameters at the top.
+
+```python
+
+system_prompt = (
+    "You are a customer support agent, helping users by following directives and answering questions. "
+    "Use the given context to answer the question. "
+    "If you don't know the answer, say you don't know. "
+    "Keep the answer concise and to the point. "
+    "Context: {context}"
+)
+# Number of results to retrieve from the vector store
+n_results = 10
+# Low temperature to get less creative and more correct responses
+temp = 0.3
+
 def query_with_ollama(vector_store, model_name):
     """Uses an Ollama model to retrieve and answer user queries based on stored embeddings."""
-    retriever = vector_store.as_retriever(search_kwargs={"k": n_results})  # Avoid exceeding stored docs
-    qa_chain = RetrievalQA.from_chain_type(llm=OllamaLLM(model=model_name), retriever=retriever)
+    retriever = vector_store.as_retriever(search_kwargs={"k": n_results})
+    prompt = ChatPromptTemplate.from_messages(
+    [
+        ("system", system_prompt),
+        ("human", "{input}"),
+    ])
+    qa_chain = create_stuff_documents_chain(OllamaLLM(model=model_name, temperature=temp, stream=True), prompt)
+    chain = create_retrieval_chain(retriever, qa_chain)
     
     while True:
         query = input(colored("Ask a question (type 'exit' to quit): ", "yellow", attrs=["bold"]))
-        if query.lower() == "exit" or query.lower() == "quit" or query.lower() == "bye":
+        if query.lower() in ["exit", "quit", "bye"]:
             break
-        answer = qa_chain.invoke({"query": query})
-        print(answer["result"])
+
+        for chunk in chain.stream({"input": query}):
+            if "answer" in chunk:
+                print(chunk["answer"], end="", flush=True)
+    
+        print("\n")
 
 print("Connecting to Ollama for queries...")
 query_with_ollama(vector_store, llm_model)
 ```
-This method contains the context retrieval code and the question-answer loop. The actual model to use is pulled from the user (code not shown). After starting, the program presents the available models, and the user needs to select one of them.
+This method contains the context retrieval code and the question-answer loop. The actual **LLM model** to use, stored in `llm_model`, is **user-defined** (code not shown here). After starting, the program presents the available models, and the user needs to select one of them.
 
-## Step 4: Implementation details
-This is not actually a step, but hey. One of the coolest aspects of this setup is the flexibility it provides. You can scrape the website and generate embeddings only when needed by using a command-line flag (`--scrape`). If you’ve already scraped the site and generated embeddings, the system will load the existing embeddings from disk, saving you time and resources. It’s efficient, and you don’t have to redo the work every time you launch the chatbot.
+## Implementation details
 
-## Testing -- Mistral 24B
+One of the coolest aspects of this setup is the flexibility it provides. You can scrape the website and generate embeddings only when needed by using a command-line flag (`--scrape`). If you’ve already scraped the site and generated embeddings, the system will load the existing embeddings from disk, saving you time and resources. It’s efficient, and you don’t have to redo the work every time you launch the chatbot.
 
-This time around I tested the program with the [Mistral-small 24B](https://ollama.com/library/mistral-small) model. I think this is at the limit of what my computer can handle (see [conclusion](#conclusion)).
+Also, by using `stream=True` in the creation of `OllamaLLM`, and calling `chain.stream()` instead of `chain.query()`, we can stream the response as it is generated, token-by-token.
 
-On a first pass, we run the program with the `--scrape` flag to gather the information from the websites and create the embeddings.
+## Testing
+
+In this section we test the system with [`mistral-small:22b-instruct-2409-q4_K_M`](https://ollama.com/library/mistral-small:22b-instruct-2409-q4_K_M), a small instruct LLM with capabilities comparable to larger models, and with [`llama3.1:8b-instruct-q5_K_M`](https://ollama.com/library/llama3.1:8b-instruct-q5_K_M), a much smaller but better quantized model(Q5-K-M vs Q4-K-M), also specifically trained for instruct.
+
+{{< notice "Note" >}}
+You can install these models directly with Ollama:
+```
+ollama pull mistral-small:22b-instruct-2409-q4_K_M llama3.1:8b-instruct-q5_K_M
+```
+{{</ notice >}}
+
+Remember, if you want to try out the chatbot yourself, download it from [this repository](https://codeberg.org/langurmonkey/gaiasky-ai).
+
+### Mistral Small 3 instruct, 22B Q4-K-M
+
+Here we use the general [Mistral Small 3 instruct (22B, Q4-K-M)](https://ollama.com/library/mistral-small:22b-instruct-2409-q4_K_M) model. It uses Q4_K_M quantization and features 22.2B parameters. I think this is around the limit of what my computer can handle (see [conclusion](#conclusion)).
+
+On a first pass, we run the program with the `--scrape` flag to gather the information from the websites and create the embeddings. This corresponds to the output shown below, where all the URLs are fetched and scraped.
 
 ```bash
 $ gsai.py --scrape
 Welcome to the Gaia Sky AI assistant! We connect to Ollama to use a local LLM.
 
 Available models:
- [0] gemma3:12b
- [1] qwen2.5:7b
- [2] deepseek-r1:14b
- [3] llama3.1:8b
- [4] mistral-small:24b
+ [0] mistral-small:22b-instruct-2409-q4_K_M
+ [1] llama3.1:8b-instruct-q5_K_M
+ [2] gemma3:12b
+ [3] qwen2.5:7b
+ [4] deepseek-r1:14b
+ [5] llama3.1:8b
+ [6] mistral-small:24b
 
-Select model (default 0): 4
-Using model: mistral-small:24b
+Select model (default 0): 0
+Using model: mistral-small:22b-instruct-2409-q4_K_M
+Embed model: sentence-transformers/all-MiniLM-L6-v2
 
 Starting scraping...
 Scraping https://gaia.ari.uni-heidelberg.de/gaiasky/docs/master/
@@ -244,130 +315,214 @@ First, I asked about the main features of Gaia Sky:
 
 > **Q: What are the main features of Gaia Sky?**
 >
-> According to the provided text, the main features of Gaia Sky are:
+ > Gaia Sky is a powerful and versatile visualization tool designed to explore and analyze astronomical data, particularly from the Gaia mission. Here are some of its main features:
 > 
-> *   It's a real-time, 3D astronomy visualization platform for desktop and VR.
-> *   It runs on Windows, Linux, and macOS.
-> *   It's open source and free.
-> *   It enables exploration of the universe using scientific datasets.
-> *   It has a high object count.
+> 1. **3D Visualization**: Gaia Sky allows users to view astronomical data in three dimensions, providing a more intuitive understanding of spatial relationships between celestial objects.
+> 
+> 2. **Data Integration**: It supports integration with various astronomical databases and catalogs, including but not limited to Gaia, allowing for comprehensive analysis and visualization.
+> 
+> 3. **Interactive Interface**: The software offers an interactive interface that enables users to zoom, rotate, and pan through the celestial sphere, making it easier to explore specific regions of interest.
+> 
+> 4. **Customizable Views**: Users can customize their views by selecting different color schemes, adjusting opacity levels, and filtering data based on various parameters such as magnitude, distance, or spectral type.
+> 
+> 5. **Scripting Capabilities**: Gaia Sky includes a scripting engine that supports JavaScript, enabling users to automate tasks, create complex visualizations, and perform custom analyses.
+> 
+> 6. **Virtual Reality (VR) Support**: The software offers VR support, allowing for immersive exploration of the cosmos using VR headsets. This feature is particularly useful for educational purposes and outreach activities.
+> 
+> 7. **Augmented Reality (AR) Support**: In addition to VR, Gaia Sky also supports AR, enabling users to overlay astronomical data onto real-world views through compatible devices.
+> 
+> 8. **Educational Tools**: The software includes a variety of educational tools and resources, such as pre-defined tours and tutorials, making it an excellent resource for teaching and learning about astronomy.
+> 
+> 9. **Cross-Platform Compatibility**: Gaia Sky is designed to run on multiple operating systems, including Windows, macOS, and Linux, ensuring broad accessibility.
+> 
+> 10. **Community and Support**: The developers of Gaia Sky maintain an active community and provide support through various channels, such as forums and documentation, to help users make the most of the software.
+>
+> These features collectively make Gaia Sky a valuable tool for astronomers, educators, and enthusiasts interested in exploring and understanding the universe.
 
-The answer, although incomplete, is fairly decent. It contains a nice summary of the *most important* features.
+This answer is not concise, but it is quite alright. It captures all important features of Gaia Sky and gives a short description for each. However, it includes imaginary features, like AR... Also, this model is quite slow on my computer. The whole answer must have taken about 3-4 minutes to generate.
+
+Next, I ask how to install Gaia Sky on Linux. We have several options to install the software on Linux, including APT, DEB and AUR packages, Flatpak, AppImage, and tarballs. Let's see if the model captures these well.
+
+> **Q: How do I install Gaia Sky on Linux?**
+>
+> To install Gaia Sky on a Linux system, you can follow these steps. There are multiple methods to install it, including using the package manager (if available), downloading the tarball, or building from source.
+> 
+> **Method 1: Using Package Manager (if available)**
+>
+> Some distributions may have Gaia Sky in their repositories. You can check and install it using your package manager.
+> 
+> For example, on Debian-based systems:
+>   ```sh
+>   sudo apt update
+>   sudo apt install gaiasky
+>   ```
+> 
+> On Fedora-based systems:
+>   ```sh
+>   sudo dnf install gaiasky
+>   ```
+> 
+> **Method 2: Downloading the Tarball**
+>
+> 1. **Download the tarball:**
+>    - Visit the [Gaia Sky download page](https://gaiasky.space/downloads/) and download the latest Linux version (usually a `.tar.gz` file).
+> 
+> 2. **Extract the tarball:**
+>    ```sh
+>    tar -xzvf gaiasky-<version>.tar.gz
+>    ```
+> 
+> 3. **Navigate to the extracted directory:**
+>    ```sh
+>    cd gaiasky-<version>
+>    ```
+> 
+> 4. **Run Gaia Sky:**
+>    ```sh
+>    ./gaiasky
+>    ```
+> 
+> **Method 3: Building from Source**
+>
+> 1. **Install dependencies:**
+> Ensure you have the necessary build tools and libraries installed. You can usually do this with:
+>   ```sh
+>   sudo apt-get update
+>   sudo apt-get install git cmake g++ libglfw3-dev libglew-dev libassimp-dev libboost-all-dev
+>   ```
+> 
+> 2. **Clone the repository:**
+>   ```sh
+>   git clone https://github.com/gaia-sky/gaiasky.git
+>   cd gaiasky
+>   ```
+> 
+> 3. **Build Gaia Sky:**
+>   ```sh
+>   mkdir build
+>   cd build
+>   cmake ..
+>   make
+>   ```
+> 
+> 4. **Run Gaia Sky:**
+>   ```sh
+>   ./gaiasky
+>   ```
+> 
+> **Additional Configuration**
+>
+> - **Configuration File:** The configuration file for Gaia Sky is located at `~/.config/gaiasky/config.yaml`. You can edit this file to customize your settings.
+> 
+> - **Data Directory:** Ensure that the data directory (`$GS_DATA`) contains all necessary datasets. This directory is usually located in `~/.gaiasky/data`.
+> 
+> **Troubleshooting**
+>
+> - **Crashes at Start-up:** If Gaia Sky crashes at start-up, check the logs for any error messages and ensure you have all dependencies installed.
+> - **Memory Issues:** If you run out of memory, try closing other applications or increasing your system's swap space.
+> 
+> By following these steps, you should be able to install and run Gaia Sky on your Linux system.
 
 
-Then, I asked for something more technical. Specifically, I asked the model to explain how cubemaps are used in Gaia Sky.
+Wow, lots of awesome info here. It gets some things right. There are also a few errors:
+
+- It shows how to install Gaia Sky on `apt` and `dnf` systems as if Gaia Sky was in the official repositories. It is not, you need to download the packages.
+- The "building from source" section is completely bullshit. It instructs to use `cmake` and `make`, but Gaia Sky is a Java application that uses `gradle`.
+- It missed Flatpak and AppImage.
+
+To be fair, this was a rather open question, so it would be surprising that such a small model were able to capture all the info perfectly.
+
+Finally, I asked for something much more technical and specific---I asked it to explain how cubemaps are used in Gaia Sky.
     
 > **Q: How does Gaia Sky use cubemaps?**
 > 
-> Gaia Sky uses cubemaps in several ways:
+>  Cubemaps are used in Gaia Sky to provide detailed and realistic textures for various objects, particularly planets and other celestial bodies. They offer a more immersive experience by allowing the rendering of different views of an object from multiple angles. Here's how cubemaps are utilized in Gaia Sky:
 > 
-> 1. **Skyboxes**: Cubemaps are implemented in skyboxes to create immersive backgrounds.
-> 2. **Reflections**: Cubemaps are used for reflections, but there is a noted issue with reflection directions that needs fixing.
-> 3. **Planetarium Mode**: The planetarium mode also works with the cubemap system used in Panorama mode, allowing users to adjust the cubemap side resolution.
+> 1. **Detailed Texturing**: Cubemaps consist of six individual textures that represent the up, down, right, left, front, and back views of an object. This allows for highly detailed and realistic texturing of surfaces.
 > 
-> Additionally, Gaia Sky supports spherical mirror projection by defining a warp mesh file, which contains distortion data to compensate for the non-planar nature of the projection surface.
+> 2. **Realistic Lighting and Reflections**: By using cubemaps, Gaia Sky can simulate realistic lighting and reflections on objects. This is particularly useful for rendering planets with atmospheres or other complex surfaces where light interacts in a variety of ways.
+> 
+> 3. **Volumetric Effects**: Cubemaps are also used to create volumetric effects, such as the aurora borealis and australis. These effects are rendered using ray-marching algorithms, which produce a volumetric object that appears more realistic.
+> 
+> 4. **Multiple Channels**: Gaia Sky supports multiple channels for cubemaps, including diffuse, specular, normal, emissive, metallic, roughness, and height maps. This allows for a wide range of visual effects to be applied to objects.
+> 
+> 5. **Ease of Generation**: Equirectangular images can be easily converted into cubemaps using provided scripts. This makes it straightforward for users to create their own custom textures for use in Gaia Sky.
+> 
+> 6. **Integration with Gaia Sky Properties**: To use a cubemap in Gaia Sky, you need to set the appropriate property (e.g., "diffuseCubemap") to the location of the six cubemap sides. Gaia Sky will then automatically select the correct image for each side based on the file name suffixes.
+> 
+> By leveraging cubemaps, Gaia Sky enhances the visual quality and realism of its simulations, providing users with a more engaging and immersive experience.
 
-This is a very good answer. It nails all the places where cubemaps are used, so 10/10. Extra point for brevity.
+This is an ok answer. Save for the volumetric grabage (point 3), all the other points are correct.So 5/6, I guess?
 
 
-I asked again about the main features of Gaia Sky, just to see if the answer would be different.
+I think this Mistral model is too verbose. You can see specks of larger models, like the good formatting, or the effort to produce complete and exhaustive answers. However, the accuracy is not always on point. I wonder if using a model with better quantization (Q6?) would solve this.
+
+
+### Llama 3.1 instruct, 8B Q5-K-M
+
+Now we test the [Llama 3.1 instruct (8B, Q5-K-M)](https://ollama.com/library/llama3.1:8b-instruct-q5_K_M) model, an instruct-specific model that is much smaller than Mistral Small 3 (24B). However, this time around I stepped up the quantization a bit by using Q5_K_M, which should improve accuracy over the basic Q4_0.
+
+First, features:
 
 > **Q: What are the main features of Gaia Sky?**
 > 
-> Based on the provided context, the main features of Gaia Sky version 3.5.6 include:
+> Based on the provided text, here are the main features of Gaia Sky:
 > 
-> 1. **Film Grain Filter**: A new filter that is disabled by default.
-> 2. **Maximum Age for Download Files**: Users can set a maximum age limit of 6 hours for downloaded files.
-> 3. **Improved Recursive Grid**: Enhanced with traveling pulses and a noise mask, along with an 'animate' setting to toggle animation on and off.
-> 4. **Initial Notice**: A notice about Gaia Sky contacting the server to get dataset updates list.
-> 5. **Shader Compilation Error Handling**: Improved handling of shader compilation errors.
-> 6. **Elevation Representation**: Added a new ‘regular’ mode for elevation representation without tessellation, which is now the default mode.
-> 7. **Discontinued Parallax Mapping**: The parallax mapping elevation type has been discontinued in favor of vertex displacement.
-> 8. **Full Support for Point Lights**: Full support for point lights, including their use for stars and true depth-tested close-by stars with light glow enabled.
+> 1. **Real-time Space Simulation**: Gaia Sky is a real-time space simulation software that allows users to explore the universe in 3D.
+> 2. **Astrophysical Data**: It includes astrophysical data from various sources, such as the European Space Agency's (ESA) Gaia mission, which provides precise positions and distances of stars in the Milky Way galaxy.
+> 3. **Interactive Interface**: The software has an interactive interface that allows users to navigate through the universe, explore different celestial objects, and customize their viewing experience.
+> 4. **Real-time Rendering**: Gaia Sky uses real-time rendering techniques to provide a smooth and immersive experience, allowing users to see the universe in stunning detail.
+> 5. **Customization Options**: Users can customize their view by selecting specific objects, adjusting the zoom level, and choosing from various display options.
+> 6. **Scripting Capabilities**: The software has scripting capabilities that allow developers to create custom scenarios, simulations, and visualizations using a Python-based scripting language.
+> 7. **VR Support**: Gaia Sky also supports Virtual Reality (VR) and Augmented Reality (AR) experiences, allowing users to immerse themselves in the universe like never before.
 > 
-> These features highlight the enhancements and improvements made to Gaia Sky in version 3.5.6.
-
-And different it was, indeed. It seemed to source these features directly from the Gaia Sky 3.5.6 [release notes](http://gaiasky.space/downloads/releases/v3.5.6/). This version was published in October 2023, and I have no idea why this was provided as context. Almost every release has a 'features' section, so I reckon this was due to chance. Maybe increasing the number of results would help here?
-
-Finally, I asked for Gaia Sky VR. A pretty general question.
+> Overall, Gaia Sky is a powerful tool for astronomers, scientists, educators, and anyone interested in exploring the universe in an interactive and immersive way.
 
 
-> **Q: What is Gaia Sky VR?**
+This looks very good. It is shorter than the answer given by the previous model, but just as informative. Also, the response was generated much faster than with Mistral, probably due to the difference in model sizes.
+
+The next question is about the Linux installation.
+
+>**Q: How do I install Gaia Sky on Linux?**
+>
+> According to the text, you can install Gaia Sky on Linux using one of the following methods:
 > 
-> Based on the provided context, Gaia Sky VR refers to the virtual reality (VR) capabilities of Gaia Sky, a real-time, 3D astronomy visualization platform. The updates mentioned include features like an in-scene VR user interface with mouse interaction, support for gamepad and VR controller interactions, and specific mappings for Valve Index VR controllers. These enhancements allow users to explore the universe in VR using Gaia Sky on Windows, Linux, and macOS.
-
-And again, a weird answer. I'm not sure what it refers to with 'the updates mentioned'. However, the text is almost correct, with some quirkiness (mouse interaction, gamepad).
-
-## Testing -- Gemma3 12B
-
-[Gemma 3 (12B)](https://ollama.com/library/gemma3) by Google features half the number of parameters of Mistral-small. It is built on Gemini technology for text and image processing. Let's see how it performs.
-
-First, the main features of Gaia Sky. Here, I missed the question mark at the end.
-
-> **Q: What are the main features of Gaia Sky**
+> 1. **Flatpak**: You can download and install the Flatpak package from the Gaia Sky downloads page.
+> 2. **AppImage**: You can download and run the AppImage file, which will create a new directory with the exported application.
+> 3. **Tar.gz archive**: You can export Gaia Sky into a tar.gz archive file by running a script, and then extract it to a directory.
 > 
-> Here's a summary of the main features of Gaia Sky, based on the provided context:
+> Additionally, you can also build the source code from scratch using the instructions provided on the Gaia Sky downloads page.
 > 
-> **Gaia Sky 3.5.6 Features:**
-> 
-> *   Film grain filter (disabled by default)
-> *   Improved recursive grid with travelling pulses and a noise mask
-> *   Option to toggle animation on/off for the recursive grid
-> *   Elevation representation without tessellation (new default mode)
-> *   Full support for point lights for stars
-> *   True depth-tested close-by stars
-> *   Contacting the server for dataset updates
-> 
-> **Gaia Sky 3.5.5 Features:**
-> 
-> *   New user interface mode (old UI still available)
-> *   "Play camera path" action (bound to Alt+C)
-> *   Better star close-up shader
-> *   Option to render stars as spheres
-> *   Revamped shader include directive
-> *   Shader libraries moved to shader/lib
-> *   Retire Gaia FOV camera modes
-> *   Adjusted default atmosphere exposure value
-> *   Disabled fading scrollbars
-> *   Prepared PBR shaders (iridescence, transmission, thickness - still inactive)
+> It's worth noting that these installation methods are distro-agnostic, meaning they should work on most Linux distributions.
 
-It selects two *seemingly random* versions and lists their features. This looks like an error in the context selection, clearly. So I increased the number of results from 5 to 10, and ask again. Same result 🤷‍♂️.
+This time around, it got Flatpaks and AppImages right, but not the distro packages for Debian, Fedora or Arch. It looks like it only listed distro-agnostic installation methods because I was not specific about what Linux distribution I was using. I'm liking this instruct model more and more. It is quite fast too.
 
-Then, for the cubemaps question.
+Finally, cubemaps:
 
-> **Q: How does Gaia Sky use cubemaps?**
+> **Q: How are cubemaps used in Gaia Sky?**
 > 
-> Here's a breakdown of how Gaia Sky utilizes cubemaps, synthesized from the provided text:
+> According to the text, cubemaps are used in Gaia Sky to enhance 3D rendering and provide more realistic textures for objects. Specifically:
 > 
-> **What are Cubemaps?**
+> * Cubemaps can be generated from equirectangular images using a Python script.
+> * In Gaia Sky, cubemaps are composed of six individual textures for the up, down, right, left, front, and back directions.
+> * The "diffuseCubemap" property in Gaia Sky's configuration file points to the location of these six cubemap sides.
+> * Gaia Sky automatically selects the appropriate image for each cubemap side based on the file name suffixes (e.g. _ft.jpg, _bk.jpg, etc.).
 > 
-> *   Cubemaps are an alternative to traditional equirectangular textures (the standard spherical projection) for rendering surfaces like planets and moons in Gaia Sky.
-> *   They help eliminate visual artifacts (distortions) that appear at the poles when using regular textures on spherical models. Alternatives like icospheres or octahedronspheres can introduce seams instead.
-> 
-> **How Gaia Sky Uses Them:**
-> 
-> *   **Artifact Reduction:** The primary benefit is avoiding the "stretched" look at the poles.
-> *   **Supported Channels:** Gaia Sky supports using cubemaps for multiple texture channels:
->     *   Diffuse (main color)
->     *   Specular (highlights/reflections)
->     *   Normal (surface details/bumps)
->     *   Emissive (glow)
->     *   Metallic
->     *   Roughness
->     *   Height (for parallax/depth effect)
-> *   **Cloud Layers:** The diffuse cubemap can be specifically applied to the cloud layer, enhancing their appearance.
-> 
-> Essentially, Gaia Sky uses cubemaps to achieve more realistic and visually appealing renderings of celestial bodies by eliminating texture distortion and offering flexibility in how surface details and lighting are represented.
+> By using cubemaps, Gaia Sky can provide more realistic and detailed textures for objects in 3D space, enhancing the overall visual experience of the application.
 
-This is fine, but misses reflections and sky boxes entirely.
+This answer is much more specific than the one given by Mistral. It touches some right keys, but, I think, misses the global picture. However, this is very promising.
 
-I wonder whether embedding is the problem here. It seemed to work well enough with Mistral, so maybe the differences come down to the size of the models.
+In the global picture, I like the compact responses of Llama better than those provided by Mistral. Also, Mistral is almost 3 times larger than Llama (22B vs 8B), so it is much slower on my machine.
 
-<!-- I tried the *Linq-Embed-Mistral* embedding model, which is currently listed [second](Linq-AI-Research/Linq-Embed-Mistral) on HuggingFace's MTEB leaderboard. -->
+## Performance
 
+In my case, I'm pretty limited by my hardware, and responses tend to be slow with the larger model (Mistral). The speed is quite good with Llama (8B) though. True, I'm running this a very old computer for today's standards (Intel(R) Core(TM) i7-7700 (8) @ 4.20 GHz, NVIDIA GeForce GTX 1070 8 GB, 32 GB RAM), so it is what it is. On smaller models (1B to 5B), I found the responses to be mostly garbage. On larger instruct models with decent quantization, accuracy is greatly improved at the expense of your precious time.
 
 ## Conclusion
 
-With the power of web scraping, embeddings, and Ollama, you can bring any website or documentation to life with smart, context-aware interactions. No more endless searches for answers. Instead, you’ll have a chatbot that knows exactly where to look and can provide concise, relevant responses. So go ahead and try it out — who knew scraping could be this useful?
+In this post, we've expanded on our previous post and developed an AI chatbot able to answer questions on Gaia Sky. The information is sourced from the Gaia Sky homepage and documentation. With the power of web scraping, embeddings, and Ollama, we've brought the Gaia Sky website and docs to life with smart, context-aware interactions. No more endless searches for answers. Instead, we now have a chatbot that knows exactly where to look and can provide concise, relevant responses. So go ahead and try it out---who knew scraping could be this useful?
 
-However, this is *slow*. True, I'm running this on a very old computer for today's standards (Intel(R) Core(TM) i7-7700 (8) @ 4.20 GHz, NVIDIA GeForce GTX 1070 8 GB, 32 GB RAM), but the performance is far from ideal. On small models (1 to 5 billion parameters), the responses are almost useless. On larger models like the Mistral 24B, accuracy is greatly improved, but it takes its time to generate long responses.
+It's pretty obvious to me that such small models are able to get most of the questions *almost* right, but they are most definitely not suited for professional settings. In this case, larger models (at least 70B, I reckon) would be required. For our purposes here, Mistral Small 3 instruct (22B) and Llama 3.1 instruct (8B) are enough.
+
+Of course, you can always use an off-the-shelf no-code application like [AnythingLLM](https://anythingllm.com/) or [Open WebUI](https://openwebui.com/). Both support local models via Ollama, and both integrate RAG. I actually recommend using these if you are not too interested in the details.
+
