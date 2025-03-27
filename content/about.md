@@ -7,9 +7,9 @@ type = "homepage"
 +++
 
 <picture>
-<source srcset="/img/profile/myself_v4_outline.jxl" type="image/jxl" />
-<source srcset="/img/profile/myself_v4_outline.avif" type="image/avif" />
-<img src="/img/profile/myself_v4_outline.png"
+<source srcset="/img/profile/toni-funny-edit.jxl" type="image/jxl" />
+<source srcset="/img/profile/toni-funny-edit.avif" type="image/avif" />
+<img src="/img/profile/toni-funny-edit.png"
      alt="My photo"
      style="float: right; margin-left: 50px; width: 25%" />
 </picture>
