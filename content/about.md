@@ -9,7 +9,7 @@ type = "homepage"
 <picture>
 <source srcset="/img/profile/toni-funny-edit.jxl" type="image/jxl" />
 <source srcset="/img/profile/toni-funny-edit.avif" type="image/avif" />
-<img src="/img/profile/toni-funny-edit.png"
+<img src="/img/profile/toni-funny-edit.jpg"
      alt="My photo"
      style="float: right; margin-left: 50px; width: 25%" />
 </picture>
