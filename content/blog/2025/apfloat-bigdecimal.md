@@ -4,8 +4,8 @@ categories = ["Java"]
 tags = ["java", "benchmarking", "performance", "JMH", "arithmetics"]
 date = 2025-05-07
 linktitle = ""
-title = "Benchmarking `ApFloat` vs `BigDecimal`"
-description = "A surprising outcome"
+title = "Benchmarking arbitrary precision libraries in Java"
+description = "`ApFloat` vs `BigDecimal`, a surprising outcome"
 featuredpath = "date"
 type = "post"
 +++
@@ -33,7 +33,20 @@ Here is the full implementation:
 
 ### The Results
 
-Below are the benchmark results:
+I have run the benchmark with Java 21 and JMH 1.37. Below are the system specs and the specific versions.
+
+```
+# JMH version: 1.37
+# VM version: JDK 21.0.7, OpenJDK 64-Bit Server VM, 21.0.7+6
+
+CPU: Intel(R) Core(TM) i7-7700 (8) @ 4.20 Gz
+GPU 1: NVIDIA GeForce GTX 1070 [Discrete]
+GPU 2: Intel HD Graphics 630 [Integrated]
+Memory: 32.00 GiB
+Swap: 8.00 GiB
+```
+
+And here are the benchmark results:
 
 ```
 Benchmark                                        (precision)  Mode  Cnt  Score    Error  Units
