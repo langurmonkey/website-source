@@ -59,25 +59,26 @@ And here are the benchmark results.
 
 **Addition**
 
-{{< fig src="/img/2025/05/jmh-result-Addition.svg" class="fig-center" width="100%" title="Addition results" loading="lazy" >}}
+{{< fig src="/img/2025/05/jmh-result-Addition.svg" class="fig-center" width="100%" title="Addition results -- [Interactive view](https://jmh.morethan.io/?source=https://tonisagrista.com/files/2025/apfloat-bigdecimal/jmh-result-Addition.json)" loading="lazy" >}}
+
 
 We already see that `BigDecimal` is much faster in all precisions. It is not even close.
 
 **Subtraction**
 
-{{< fig src="/img/2025/05/jmh-result-Subtraction.svg" class="fig-center" width="100%" title="Subtraction results" loading="lazy" >}}
+{{< fig src="/img/2025/05/jmh-result-Subtraction.svg" class="fig-center" width="100%" title="Subtraction results -- [Interactive view](https://jmh.morethan.io/?source=https://tonisagrista.com/files/2025/apfloat-bigdecimal/jmh-result-Subtraction.json)" loading="lazy" >}}
 
 In the subtraction benchmark `BigDecimal` comes out on top as well.
 
 **Multiplication**
 
-{{< fig src="/img/2025/05/jmh-result-Multiplication.svg" class="fig-center" width="100%" title="Multiplication results" loading="lazy" >}}
+{{< fig src="/img/2025/05/jmh-result-Multiplication.svg" class="fig-center" width="100%" title="Multiplication results -- [Interactive view](https://jmh.morethan.io/?source=https://tonisagrista.com/files/2025/apfloat-bigdecimal/jmh-result-Multiplication.json)" loading="lazy" >}}
 
 The same story repeats for multiplication.
 
 **Division**
 
-{{< fig src="/img/2025/05/jmh-result-Division.svg" class="fig-center" width="100%" title="Division results" loading="lazy" >}}
+{{< fig src="/img/2025/05/jmh-result-Division.svg" class="fig-center" width="100%" title="Division results -- [Interactive view](https://jmh.morethan.io/?source=https://tonisagrista.com/files/2025/apfloat-bigdecimal/jmh-result-Division.json)" loading="lazy" >}}
 
 Again. Division is a notoriously costly operation, but `BigDecimal` still comes out comfortably on top.
 
@@ -85,19 +86,19 @@ Now, let's test some more involved arithmetic operations, like the natural logar
 
 **Log**
 
-{{< fig src="/img/2025/05/jmh-result-Log.svg" class="fig-center" width="100%" title="Log results" loading="lazy" >}}
+{{< fig src="/img/2025/05/jmh-result-Log.svg" class="fig-center" width="100%" title="Log results -- [Interactive view](https://jmh.morethan.io/?source=https://tonisagrista.com/files/2025/apfloat-bigdecimal/jmh-result-Log.json)" loading="lazy" >}}
 
 The logarithm is faster with `Apfloat` at the higher precision settings, but it `BigDecimal` still wins in the lower precisions.
 
 **Sin**
 
-{{< fig src="/img/2025/05/jmh-result-Sin.svg" class="fig-center" width="100%" title="Sin results" loading="lazy" >}}
+{{< fig src="/img/2025/05/jmh-result-Sin.svg" class="fig-center" width="100%" title="Sin results -- [Interactive view](https://jmh.morethan.io/?source=https://tonisagrista.com/files/2025/apfloat-bigdecimal/jmh-result-Sin.json)" loading="lazy" >}}
 
 The sine is much faster in `BigDecimal` in all precision settings.
 
 **Pow**
 
-{{< fig src="/img/2025/05/jmh-result-Pow.svg" class="fig-center" width="100%" title="Pow results" loading="lazy" >}}
+{{< fig src="/img/2025/05/jmh-result-Pow.svg" class="fig-center" width="100%" title="Pow results -- [Interactive view](https://jmh.morethan.io/?source=https://tonisagrista.com/files/2025/apfloat-bigdecimal/jmh-result-Pow.json)" loading="lazy" >}}
 
 And finally, the power repeats the same story, with `BigDecimal` sitting comfortably on the throne again.
 
@@ -106,7 +107,7 @@ And finally, the power repeats the same story, with `BigDecimal` sitting comfort
 
 For science, I thought it would be cool to test the allocation overhead, so I prepared the **Allocation** test, which allocates two instances of either `Apfloat` or `BigDecimal` and consumes them.
 
-{{< fig src="/img/2025/05/jmh-result-Allocation.svg" class="fig-center" width="100%" title="Allocation results" loading="lazy" >}}
+{{< fig src="/img/2025/05/jmh-result-Allocation.svg" class="fig-center" width="100%" title="Allocation results -- [Interactive view](https://jmh.morethan.io/?source=https://tonisagrista.com/files/2025/apfloat-bigdecimal/jmh-result-Allocation.json)" loading="lazy" >}}
 
 We see that allocation is very costly in both libraries. However, while `Apfloat` seems to be roughly constant with the precision, `BigDecimal` shows a higher cost with 25 digits, the lowest precision setting. I though this was very sus, so I re-ran the test a bunch of times and with more iterations and longer times, and got back the same result. I'm not sure what's the root cause for this, but it is surprising and intriguing.
 
