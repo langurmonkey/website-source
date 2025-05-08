@@ -1,26 +1,24 @@
 @BenchmarkMode(Mode.AverageTime)
-@OutputTimeUnit(TimeUnit.MILLISECONDS)
+@OutputTimeUnit(TimeUnit.NANOSECONDS)
 @Fork(value = 1)
-@Warmup(iterations = 2, time = 2)
-@Measurement(iterations = 2, time = 2)
+@Warmup(iterations = 1, time = 1)
+@Measurement(iterations = 3, time = 5)
 public abstract class BaseBenchmark {
-
-  protected static final int ITERATIONS = 200;
 
   @State(Scope.Thread)
   public static class BenchmarkState {
     MathContext mc;
-    BigDecimal aBD;
-    Apfloat aAF;
+    BigDecimal aBD, bBD;
+    Apfloat aAF, bAF;
 
-    @Param({ "25", "1000" }) // Add different precision levels here
+    @Param({ "25", "50", "500", "1000" }) // Add different precision levels here
     int precision;
 
     @Setup(Level.Trial)
     public void setUp() {
       mc = new MathContext(precision);
-      aBD = new BigDecimal("12345.6789012345678901234567890123456789", mc);
-      aBD = new Apfloat("12345.6789012345678901234567890123456789", precision);
+      aBD = new BigDecimal("12345.678901234567890123456789012345678934343434343434343434343434343434", mc);
+      aAF = new Apfloat("12345.678901234567890123456789012345678934343434343434343434343434343434", precision);
     }
   }
 }
@@ -28,19 +26,14 @@ public abstract class BaseBenchmark {
 public class Sin extends BaseBenchmark {
 
   @Benchmark
-  public void testBigDecimalSin(BenchmarkState state, Blackhole bh) {
-    for (int i = 0; i < ITERATIONS; i++) {
-      var result = BigDecimalMath.sin(state.aBD, state.mc);
-      bh.consume(result);
-    }
+  public void BigDecimalSin(BenchmarkState state, Blackhole bh) {
+    var result = BigDecimalMath.sin(state.aBD, state.mc);
+    bh.consume(result);
   }
 
   @Benchmark
-  public void testApfloatSin(BenchmarkState state, Blackhole bh) {
-    for (int i = 0; i < ITERATIONS; i++) {
-      var result = ApfloatMath.sin(state.aBD);
-      bh.consume(result);
-    }
+  public void ApfloatSin(BenchmarkState state, Blackhole bh) {
+    var result = ApfloatMath.sin(state.aAF);
+    bh.consume(result);
   }
-
 }
