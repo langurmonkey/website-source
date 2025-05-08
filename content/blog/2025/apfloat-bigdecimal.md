@@ -108,7 +108,7 @@ For science, I thought it would be cool to test the allocation overhead, so I pr
 
 {{< fig src="/img/2025/05/jmh-result-Allocation.svg" class="fig-center" width="100%" title="Allocation results" loading="lazy" >}}
 
-We see that allocation is very costly in both libraries. However, while `Apfloat` seems to be roughly constant with the precision, `BigDecimal` shows a higher cost with 25 digits, the lowest precision setting. I though this was weird, so I re-ran the test a bunch of times with the same result. I'm not sure what's the root cause for this, but it is surprising nonetheless.
+We see that allocation is very costly in both libraries. However, while `Apfloat` seems to be roughly constant with the precision, `BigDecimal` shows a higher cost with 25 digits, the lowest precision setting. I though this was very sus, so I re-ran the test a bunch of times and with more iterations and longer times, and got back the same result. I'm not sure what's the root cause for this, but it is surprising and intriguing.
 
 Since both `Apfloat` and `BigDecimal` are immutable, allocation costs need to be factored in. New objects need to be allocated every time new operands are needed.
 
