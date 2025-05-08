@@ -10,7 +10,7 @@ featuredpath = "date"
 type = "post"
 +++
 
-*{{< sp orange >}}Edit (2025-05-08):{{</ sp >}} I changed some test parameters and re-run the tests. Adding bar plots.*
+*{{< sp orange >}}Edit (2025-05-08):{{</ sp >}} Changed some test parameters and re-run the tests. Also added bar plots.*
 
 I recently set out to compare the performance of [`Apfloat`](http://www.apfloat.org) and [`BigDecimal`](https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/math/BigDecimal.html) for arbitrary precision arithmetic in Java. I use arbitrary precision floating point numbers in key places of the update cycle in Gaia Sky, so it made sense to explore this. My initial approach was a naive benchmark: a simple `main()` method running arithmetic operations in a loop and measuring the time taken. The results were strongly in favor of `BigDecimal`, even for large precision values. This was unexpected, as the general consensus I [found](https://stackoverflow.com/questions/277309/java-floating-point-high-precision-library) [online](https://groups.google.com/g/javaposse/c/YDYDPbzxntc?pli=1) [suggested](http://www.apfloat.org/apfloat_java/) that `Apfloat` is more performant, especially for higher precision operations (hundreds of digits).
 
