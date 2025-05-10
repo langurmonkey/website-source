@@ -1,7 +1,7 @@
 +++
 author = "Toni Sagrista Selles"
 categories = ["Java"]
-tags = ["java", "benchmarking", "performance", "JMH", "arithmetics"]
+tags = ["java", "benchmarking", "performance", "JMH", "arithmetics", "Apfloat", "BigDecimal"]
 date = 2025-05-07
 linktitle = ""
 title = "Benchmarking arbitrary precision libraries in Java"
@@ -12,17 +12,19 @@ type = "post"
 
 *{{< sp orange >}}Edit (2025-05-08):{{</ sp >}} Changed some test parameters and re-run the tests. Also added bar plots.*
 
+**Note: I have since [written a new blog]({{< ref "/blog/2025/quadruple-joins-party" >}}) which includes [Quadruple](https://m-vokhm.github.io/Quadruple/) to the benchmarks, beating both `Apfloat` and `BigDecimal` consistently.**
+
 I recently set out to compare the performance of [`Apfloat`](http://www.apfloat.org) and [`BigDecimal`](https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/math/BigDecimal.html) for arbitrary precision arithmetic in Java. I use arbitrary precision floating point numbers in key places of the update cycle in Gaia Sky, so it made sense to explore this. My initial approach was a naive benchmark: a simple `main()` method running arithmetic operations in a loop and measuring the time taken. The results were strongly in favor of `BigDecimal`, even for large precision values. This was unexpected, as the general consensus I [found](https://stackoverflow.com/questions/277309/java-floating-point-high-precision-library) [online](https://groups.google.com/g/javaposse/c/YDYDPbzxntc?pli=1) [suggested](http://www.apfloat.org/apfloat_java/) that `Apfloat` is more performant, especially for higher precision operations (hundreds of digits).
 
 To get more accurate and reliable measurements, I decided to implement a proper [JMH](@ "Java Microbenchmark Harness") benchmark. The benchmark project source is available in [this repository](https://codeberg.org/langurmonkey/java-arbitrary-precision-benchmark). The benchmarks test addition, subtraction, multiplication, division, power, natural logarithm, and sine for both `Apfloat` and `BigDecimal` at different precision levels.
 
 <!--more-->
 
-### Why JMH?
+## Why JMH?
 
 JMH is a benchmarking framework specifically designed for measuring performance in Java applications. It is developed by the OpenJDK team and provides a robust methodology for generating reliable and reproducible benchmark results by accounting for JVM warm-up, runtime optimizations, and other factors that can skew measurements. Given the surprising results in the naive implementation, using JMH allowed me to get more accurate measurements and mitigate potential inaccuracies caused by JVM behavior.
 
-### The Benchmark Implementation
+## The Benchmark Implementation
 
 The JMH benchmark project is structured to measure the average time taken for each arithmetic operation over several iterations and precision levels. Here's the structure:
 - Separate benchmarks for **addition**, **subtraction**, **multiplication**, **division**, **natural logarithm**, **power**, and **sine**, additionally to an **allocation** test.
@@ -57,26 +59,26 @@ Swap: 8.00 GiB
 
 And here are the benchmark results.
 
-**Addition**
+### Addition
 
 {{< fig src="/img/2025/05/jmh-result-Addition.svg" class="fig-center" width="100%" title="Addition results -- [Interactive view](https://jmh.morethan.io/?source=https://tonisagrista.com/files/2025/apfloat-bigdecimal/jmh-result-Addition.json)" loading="lazy" >}}
 
 
 We already see that `BigDecimal` is much faster in all precisions. It is not even close.
 
-**Subtraction**
+### Subtraction
 
 {{< fig src="/img/2025/05/jmh-result-Subtraction.svg" class="fig-center" width="100%" title="Subtraction results -- [Interactive view](https://jmh.morethan.io/?source=https://tonisagrista.com/files/2025/apfloat-bigdecimal/jmh-result-Subtraction.json)" loading="lazy" >}}
 
 In the subtraction benchmark `BigDecimal` comes out on top as well.
 
-**Multiplication**
+### Multiplication
 
 {{< fig src="/img/2025/05/jmh-result-Multiplication.svg" class="fig-center" width="100%" title="Multiplication results -- [Interactive view](https://jmh.morethan.io/?source=https://tonisagrista.com/files/2025/apfloat-bigdecimal/jmh-result-Multiplication.json)" loading="lazy" >}}
 
 The same story repeats for multiplication.
 
-**Division**
+### Division
 
 {{< fig src="/img/2025/05/jmh-result-Division.svg" class="fig-center" width="100%" title="Division results -- [Interactive view](https://jmh.morethan.io/?source=https://tonisagrista.com/files/2025/apfloat-bigdecimal/jmh-result-Division.json)" loading="lazy" >}}
 
@@ -84,26 +86,25 @@ Again. Division is a notoriously costly operation, but `BigDecimal` still comes 
 
 Now, let's test some more involved arithmetic operations, like the natural logarithm, the sine, and the power function. In `Apfloat`, those are directly implemented in the library. For `BigDecimal`, we use the [`big-math` project](https://github.com/eobermuhlner/big-math).
 
-**Log**
+### Log
 
 {{< fig src="/img/2025/05/jmh-result-Log.svg" class="fig-center" width="100%" title="Log results -- [Interactive view](https://jmh.morethan.io/?source=https://tonisagrista.com/files/2025/apfloat-bigdecimal/jmh-result-Log.json)" loading="lazy" >}}
 
 The logarithm is faster with `Apfloat` at the higher precision settings, but it `BigDecimal` still wins in the lower precisions.
 
-**Sin**
+### Sin
 
 {{< fig src="/img/2025/05/jmh-result-Sin.svg" class="fig-center" width="100%" title="Sin results -- [Interactive view](https://jmh.morethan.io/?source=https://tonisagrista.com/files/2025/apfloat-bigdecimal/jmh-result-Sin.json)" loading="lazy" >}}
 
 The sine is much faster in `BigDecimal` in all precision settings.
 
-**Pow**
+### Pow
 
 {{< fig src="/img/2025/05/jmh-result-Pow.svg" class="fig-center" width="100%" title="Pow results -- [Interactive view](https://jmh.morethan.io/?source=https://tonisagrista.com/files/2025/apfloat-bigdecimal/jmh-result-Pow.json)" loading="lazy" >}}
 
 And finally, the power repeats the same story, with `BigDecimal` sitting comfortably on the throne again.
 
-
-**Allocation**
+### Allocation
 
 For science, I thought it would be cool to test the allocation overhead, so I prepared the **Allocation** test, which allocates two instances of either `Apfloat` or `BigDecimal` and consumes them.
 
@@ -114,7 +115,7 @@ We see that allocation is very costly in both libraries. However, while `Apfloat
 Since both `Apfloat` and `BigDecimal` are immutable, allocation costs need to be factored in. New objects need to be allocated every time new operands are needed.
 
 
-### Analysis
+## Analysis
 
 Contrary to expectations, `BigDecimal` consistently outperformed `Apfloat` across all operations and precision levels, including the higher precisions (500 and 1000 digits) where `Apfloat` was expected to excel. There is a single case when `Apfloat` is faster, and that is in the high precision natural logarithm benchmark. I think it's safe to say that this is due to the particular implementation or algorithm being used. Otherwise, the disparity is particularly noticeable in division and sine operations, where `Apfloat` is significantly slower than `BigDecimal`.
 Specifically, `BigDecimal` was several times faster than `Apfloat` in most operations and precisions. Those are, in my opinion, significant results.
@@ -122,6 +123,6 @@ Specifically, `BigDecimal` was several times faster than `Apfloat` in most opera
 Finally, allocation seems to be faster with `Apfloat`, and there's a weird dependency on the precision for `BigDecimal` which I found strange.
 
 
-### Questions and Next Steps
+## Questions and Next Steps
 
 I was genuinely surprised by the outcome of these benchmarks, as it contradicts the general consensus regarding `Apfloat`’s supposed performance advantage in high-precision arithmetic. I am reaching out to the community to validate my methodology and results. Are these findings trustworthy, or did I overlook something crucial in my benchmarking approach? Feedback and insights are very much welcome.
