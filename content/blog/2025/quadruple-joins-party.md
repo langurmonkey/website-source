@@ -29,7 +29,7 @@ d &= \log_{10} \left(\frac{R}{\text{precision}}\right) \\\ \\\
 \end{align}
 $$
 
-So, 27 digits are needed. In terms of bits, IEEE 754 double precision (64-bit) provides around 15–17 decimal digits of precision, which is enough for the Solar System, but insufficient for the whole universe. IEEE 754 quadruple precision (128-bit) provides around 34 decimal digits of precision, which is adequate for this level of precision. IEEE 754 quadruple precision numbers provides approximately 113 bits of significand precision, which is approximately \\(log_{10}(2^{113}) \approx 34\\) digits. The range of values we can precisely differentiate in the universe is \\(\approx \frac{4.4 \times 10^{26}}{10^{34}} = 4.4 \times 10^{-8}\\) meters. This is 4.4 nanometers! Of course, this is more than sufficient for our purposes.
+In terms of bits, IEEE 754 double precision (64-bit) provides around 15–17 decimal digits of precision, which is enough for the Solar System, but insufficient for the whole universe. In contrast, IEEE 754 quadruple precision (128-bit) provides around 34 decimal digits of precision, which is in fact more than enough. It uses 113 bits of significand precision, \\(log_{10}(2^{113}) \approx 34\\) digits. The range of values we can precisely represent in the universe is \\(\approx \frac{4.4 \times 10^{26}}{10^{34}} = 4.4 \times 10^{-8}\\) meters. This is 4.4 nanometers! As said, this is more than sufficient for our purposes.
 
 ## Enter Quadruple
 
@@ -91,13 +91,13 @@ Surprising. Let's analyze this. We use [JOL](@ "Java Object Layout") to find out
 - `BigDecimal` has an instance size of also 40 bytes (2 ints, 1 long, 2 references to `BigInteger` and `String`, plus header).
 - `Apfloat` has an instance size of 24 (3 references plus the object header).
 
-It is unlikely that the issue is the instance size. It most definitely comes down to the code to convert the string into the internal representation of each type. This code seems much slower for the `Quardruple` than it is for the others. Let's see how it fares allocating from a `double`.
+It is unlikely that the issue is the instance size. It most definitely comes down to the code to convert the string into the internal representation of each type. This code seems to be much slower for `Quardruple` than it is for the others. Let's see how it fares allocating from a `double`.
 
 ### Allocation (from double)
 
 {{< fig src="/img/2025/05/jmh-result-TWAllocationDouble.svg" class="fig-center" width="100%" title="Three-way Allocation results (from double) -- [Interactive view](https://jmh.morethan.io/?source=https://tonisagrista.com/files/2025/apfloat-bigdecimal/jmh-result-TWAllocationDouble.json)" loading="lazy" >}}
 
-The story is reversed. `Quadruple` is much faster than the others when allocating an object from a `double`.
+The story is reversed. `Quadruple` is much faster than the others when allocating an object from a `double`. I never allocate from strings, so this is not that bad actually.
 
 
 ## Analysis
