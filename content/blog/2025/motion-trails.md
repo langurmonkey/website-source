@@ -152,6 +152,12 @@ vec3 world_pos = s_obj_pos + qrot(s_quat, local_pos);
 gpos = s_proj_view * vec4(world_pos, 1.0);
 ```
 
+## Results
+
+You have already seen the image at the top of this post. But an image without motion is frankly unimpressive. You can see a video of the effect in this Bluesky post:
+
+<blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:lyzlck7lyaeo5g5xcu3raydh/app.bsky.feed.post/3lrq3hfuzt22y" data-bluesky-cid="bafyreia5ly3dthnl42xmu6aaglis75jfmt4eljndglpvdpa7iree35dcqe" data-bluesky-embed-color-mode="system"><p lang="en">#GaiaSky will get a star streaks shader in the next release. This effect elongates stars in the direction of motion to create a sort of Star Trek travel effect. Of course, this can be turned off in the settings.<br><br><a href="https://bsky.app/profile/did:plc:lyzlck7lyaeo5g5xcu3raydh/post/3lrq3hfuzt22y?ref_src=embed">[image or embed]</a></p>&mdash; Gaia Sky (<a href="https://bsky.app/profile/did:plc:lyzlck7lyaeo5g5xcu3raydh?ref_src=embed">@gaiasky.bsky.social</a>) <a href="https://bsky.app/profile/did:plc:lyzlck7lyaeo5g5xcu3raydh/post/3lrq3hfuzt22y?ref_src=embed">Jun 16, 2025 at 15:26</a></blockquote><script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
+
 ## Conclusion
 
 This vertex-based trail method avoids the cost and complexity of traditional post-processing while remaining physically intuitive and performant. This represents an ideal fit for real-time astronomical rendering, and for Gaia Sky in particular.
