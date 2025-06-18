@@ -17,7 +17,7 @@ The source code used in this post is available [in this repository](https://code
 
 <!--more-->
 
-## Scraping the Websites
+## Scraping the websites
 
 The first thing we need to do is extract useful content from our sources. Since we use websites, this is where web scraping comes into play:
 
@@ -120,7 +120,7 @@ def scrape_urls(base_urls, local_scraper=False):
 
 ```
 
-## Storing Embeddings with ChromaDB
+## Storing embeddings with ChromaDB
 
 Once we've scraped the content, it’s time to turn that raw text into something that the machine can understand. This is where embeddings come into play.
 
