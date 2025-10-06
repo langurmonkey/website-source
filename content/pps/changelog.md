@@ -6,6 +6,8 @@ title = "Changelog"
 showpagemeta = "false"
 +++
 
+Back to [Particle Physics Simulator page](/projects/pps)
+
 ##### **v3.8.2** (06/10/2025)
 - Add margins to bottom buttons, zoom-pan layout, velocity slider, and FPS counter. This prevents the UI from being obfuscated by the navigation bar in some devices.
 
