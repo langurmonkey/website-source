@@ -6,6 +6,14 @@ title = "Changelog"
 showpagemeta = "false"
 +++
 
+##### **v3.8.2** (06/10/2025)
+- Add margins to bottom buttons, zoom-pan layout, velocity slider, and FPS counter. This prevents the UI from being obfuscated by the navigation bar in some devices.
+
+##### **v3.8.1** (02/10/2025)
+- Update target SDK to 36
+- Upgrade to Gradle 8.13
+- Fix issues with build
+
 ##### **v3.7.4** (23/04/2020)
 - Fix double launcher issue
 - Rename app to "ParticleSim"
