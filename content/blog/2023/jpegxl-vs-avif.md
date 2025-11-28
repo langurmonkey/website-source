@@ -195,7 +195,7 @@ According to the results presented above, my subjective opinion is that JXL is t
 - JXL offers lossless recompression of JPEG images. This is important for compatibility, as you can re-encode JPEG images into JXL for a 30% reduction in file size for free. AVIF has no such feature.
 - JXL has a maximum of 32 bits per channel. AVIF supports up to 10.
 - JXL is more resilient to generation loss.[^4]
-- JXL supports progressive decoding, which is essential in web delivery, IMO. AVIF has no such feature.
+- JXL supports progressive decoding, which is essential for web delivery, IMO. AVIF has no such feature.
 - AVIF is notoriously based on the AV1 video encoder. That makes it far superior for animated image sequences, outperforming JXL in this department by a wide margin. However, JXL also supports this feature.
 - AVIF is supported in most major browsers. This includes Chrome (and derivatives) and Firefox (and forks). JXL is supported by almost nobody right now. Only **Thorium**, **Pale Moon**, **LibreWolf**, **Waterfox**, **Basilisk** and **Firefox Nightly** incorporate it. Most of these are community-maintained forks of Firefox. That is a big downside for adoption, as I already ranted about in [this post](/blog/2022/jpeg-xl-chrome).
 - Both formats support transparency and wide gamut (HDR).
