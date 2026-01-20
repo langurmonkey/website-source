@@ -1,6 +1,6 @@
 +++
 author = "Toni Sagrista Selles"
-categories = ["Computers"]
+categories = ["Emulators"]
 tags = ["emulator", "computer architecture", "programming", "english"]
 date = 2021-07-14
 linktitle = ""
@@ -129,7 +129,7 @@ Even though the main loop is in the main module, the actual timing of the machin
 The machine also sets some flags that are used in the main loop to operate the display and audio modules. These flags are the following:
 
 - `display_clear_flag` -- if up, the display must be cleared
-- `dispaly_update_flag` -- if up, the display must be updated using the `chip8.display` buffer
+- `display_update_flag` -- if up, the display must be updated using the `chip8.display` buffer
 - `beep_flag` -- if this flag is up, the machine must beep
 
 
@@ -189,7 +189,7 @@ The `cycle()` method in the `Chip8` structure of `chip8.rs` is called in every i
 2. Interprets the next instruction if the timing is right. The `Chip8` has the instruction time in nanoseconds. This is the number of nanoseconds between instructions. So, if the current time minus the *last time* is greater than this value, the next instruction is interpreted. 
 3. Updates the *last time* record with the current time, in preparation for the next call to `cycle()`.
 
-Each instruction is **2 bytes long** (4 hexadeciaml digits) and are stored with the most-significant byte first. Instructions have the one of the format `CXYN`, `CXNN` or `CNNN`, where each of the characters is 4 bits, or a hexadecimal digit. `C` is the code or group. `X` and `Y` are typically used to refer to register numbers. `N`, `NN` and `NNN` are 4, 8 and 12-bit literal numbers used to set values or for further instruction identification within a group (since 4 bits would only allow for 16 instructions). Instructions are decoded by splitting them into chunks and grouping them accordingly.
+Each instruction is **2 bytes long** (4 hexadecimal digits) and are stored with the most-significant byte first. Instructions have the one of the format `CXYN`, `CXNN` or `CNNN`, where each of the characters is 4 bits, or a hexadecimal digit. `C` is the code or group. `X` and `Y` are typically used to refer to register numbers. `N`, `NN` and `NNN` are 4, 8 and 12-bit literal numbers used to set values or for further instruction identification within a group (since 4 bits would only allow for 16 instructions). Instructions are decoded by splitting them into chunks and grouping them accordingly.
 
 First, we need to get the instruction from the RAM address of `PC`, and increase the `PC` two words:
 

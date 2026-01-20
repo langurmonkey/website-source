@@ -17,7 +17,7 @@ showpagemeta = false
 </article>
 <br />
 <article>
-<strong><a href="http://docs.gaiasky.space">Gaia Sky docs</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-book"></i></strong> &mdash; Documentation pages of Gaia Sky, written in reSyncText with <a href="https://www.spninx-doc.org">Sphinx</a>.
+<strong><a href="http://docs.gaiasky.space">Gaia Sky docs</a> <i class="fa-tss fa fa-book"></i></strong> &mdash; Documentation pages of Gaia Sky, written in reSyncText with <a href="https://www.spninx-doc.org">Sphinx</a>.
 </article>
 <br />
 <article>
@@ -25,7 +25,7 @@ showpagemeta = false
 </article>
 <br />
 <article>
-<strong><a href="/projects/rts-engine">RTS Engine</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-gitea"></i></strong> &mdash; Real time strategy game engine written in Java. Very early stage, but already usable. There is a private fork which contains much more advanced AI based on behavior trees and state machines, original graphics, sound, heights, and uses an entity component system (ECS) internally.
+<strong><a href="/projects/rts-engine">RTS Engine</a> <i class="fa-tss fa fa-gamepad"></i> <i class="fa-tss fa fa-gitea"></i></strong> &mdash; Real time strategy game engine written in Java. Very early stage, but already usable. There is a private fork which contains much more advanced AI based on behavior trees and state machines, original graphics, sound, heights, and uses an entity component system (ECS) internally.
 </article>
 <br />
 <article>
@@ -33,7 +33,11 @@ showpagemeta = false
 </article>
 <br />
 <article>
-<strong><a href="https://codeberg.org/langurmonkey/rchip8">rCHIP8</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-gitea"></i></strong> &mdash; A <a href="/blog/2021/chip8-spec">CHIP-8</a> emulator/VM written in <a href="https://rust-lang.org">Rust</a>, with arbitrary display scaling, debug mode, emulation speed control and much more. <a href="/blog/2021/chip8-implementation">Here is a write-up</a>.
+<strong><a href="/projects/playkid">Play Kid</a> <i class="fa-tss fa fa-gamepad"></i> <i class="fa-tss fa fa-gitea"></i></strong> &mdash; A Game Boy (DMG) emulator written in Rust and SDL2. It runs most Game Boy games, contains its own UI library, a full debug mode, and much more.
+</article>
+<br />
+<article>
+<strong><a href="https://codeberg.org/langurmonkey/rchip8">rCHIP8</a> <i class="fa-tss fa fa-gamepad"></i> <i class="fa-tss fa fa-gitea"></i></strong> &mdash; A <a href="/blog/2021/chip8-spec">CHIP-8</a> emulator/VM written in <a href="https://rust-lang.org">Rust</a>, with arbitrary display scaling, debug mode, emulation speed control and much more. <a href="/blog/2021/chip8-implementation">Here is a write-up</a>.
 </article>
 <br />
 <article>
