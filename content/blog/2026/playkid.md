@@ -5,7 +5,7 @@ tags = ["emulator", "game boy", "play kid", "computer architecture", "programmin
 date = 2026-01-20
 linktitle = "playkid-gameboy-emulator"
 title = "Implementing a Game Boy emulator"
-description = "I have written Play Kid, a Game Boy emulator"
+description = "Write-up about Play Kid, my own homegrown Game Boy emulator."
 featuredpath = "date"
 type = "post"
 +++
