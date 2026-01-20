@@ -1,11 +1,18 @@
 minify:
   $WEB/scripts/minify-all.sh theme-bw
 
-deploy: stop minify
+hugo: minify
+  hugo --destination "$WEB/public" --minify --quiet
+
+alias generate := pagefind
+pagefind: hugo
+  npx pagefind --site "$WEB/public"
+
+deploy: stop pagefind 
   $WEB/deploy.sh
 
 # Serve the hugo site locally in http://localhost:1313
-serve:
+serve: pagefind
     HUGO_BASEURL="http://localhost:1313/" nohup hugo server 2>&1 1>/dev/null &
 
 # Stop the local server

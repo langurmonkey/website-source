@@ -35,9 +35,6 @@ server_dir="/home/public"
 # stats update script in the server
 stats_update="/home/tmp/updatestats"
 
-echo "## Running minify script."
-# First, minify using the default theme (theme-bw)
-scripts/minify-all.sh theme-bw
 
 # DEPLOY
 echo "## Deploying site to ${ssh_server}:${server_dir}."
@@ -46,10 +43,6 @@ flags=""
 if [ ${clean_deploy} = true ]; then
   flags="--delete"
 fi
-
-echo "## Generating static site."
-# generate hugo static site to `build` directory.
-hugo --destination "${build_directory}" --minify --quiet
 
 echo "## Copying data to server."
 # copy contents of ${build_directory} to server

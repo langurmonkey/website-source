@@ -4,7 +4,7 @@
 {{ partial "navbar" . }}
 <!-- Main -->
 <main>
-  <article class="post single">
+  <article class="post single" data-pagefind-body>
     {{ $.Scratch.Set "h1" true }}
     {{ .Render "header" }}
     <div id="content">
