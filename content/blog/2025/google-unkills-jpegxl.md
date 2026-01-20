@@ -20,9 +20,10 @@ The latter post started with a quick support test:
 
 Well, here we are at the end of 2025, and this very sentence still holds true. Unless you are one of the 17% of users using Safari[^3], or are adventurous enough to use a niche browser like [Thorium](https://thorium.rocks), [LibreWolf](https://librewolf.net/) or the newer [Zen Browser](https://zen-browser.app), chances are you see the AVIF banner in green and the JPEG XL image in black/red.
 
+<!--more-->
+
 The good news is, this will change soon. In a dramatic turn of events, the Chromium team has reversed its `Obsolete` tag, and has decided to support the format in Blink (the engine behind Chrome/Chromium/Edge). Given Chrome's position in the browser market share, I predict the format will become a *de factor* standard for images in the near future.
 
-<!--more-->
 
 ## Let's recap
 

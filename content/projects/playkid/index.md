@@ -38,12 +38,17 @@ Here are the main features of Play Kid:
   - Uses own minimal UI library with horizontal/vertical layouts, labels, buttons, and text fields.
 - Save RAM to `.sav` files to emulate the battery-backed SRAM.
 - Automatically adapts to multi-DPI setups by scaling the UI.
-- Working games/roms:
+- Tested and working games/roms:
   - Passes `dmg-acid2`
   - Tetris
-  - Pokémon
+  - Pokémon Red
   - Super Mario Land
   - Super Mario Land 2: 6 Golden Coins
+  - Super Mario Land 3: Wario Land
+  - Wario Land II
+  - Bugs Bunny Crazy Castle
+  - The Amazing Spider-Man
+  - Kirby's Dream Land
   - Dr. Mario
   - Probably many more
 
