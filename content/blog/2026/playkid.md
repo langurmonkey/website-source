@@ -1054,22 +1054,29 @@ This feature is important for games like Pokémon and Super Mario Land 2, where 
 
 ## UI and debug mode
 
-Building a functional emulator is one thing; building one that helps you understand what's happening inside is another. I implemented a full debug mode with a custom immediate-mode UI library built on top of SDL2 rendering.
+Building a functional emulator is one thing; building one that helps you understand what's happening inside is another. I implemented a full debug mode with a custom immediate-mode UI library built on top of SDL2 rendering. You can enable it at any time with <kbd>d</kbd>.
 
-The UI library supports horizontal and vertical layouts, labels, buttons, and text fields—enough to build a useful debug interface without pulling in heavy dependencies. It's minimal but effective, and writing it deepened my understanding of how UI frameworks work under the hood.
+The UI library supports horizontal and vertical layouts, labels, buttons, and text fields. Enough to build a useful debug interface without pulling in a fat dependency. It's minimal but effective, and writing it was not trivial. I knew that UI libraries are complex and take a lot of work to get right, and this little spin-off sub-project only reaffirmed this.
+
+{{< fig src="/img/playkid/debug-mode.avif" class="fig-center" loading="lazy" caption="Super Mario Land 2 running in Play Kid with the debug UI." >}}
 
 The debug mode displays:
+
+- Current instruction, operand, and PC
+- Opcode
+- CPU status (either RUNNING or HALTED)
+- M- and T-cycles
 - CPU registers and flags
-- Current instruction and disassembly
-- Memory viewer
-- PPU state (current mode, LY register, scanline position)
+- PPU state (LCDC, STAT, LYC, LY, LX)
+- Joypad state for all inputs (U, D, L, R, A, B, START, SELECT)
 - Breakpoints
 
-You can step through execution one instruction or one scanline at a time, pause and resume, and set breakpoints at specific addresses. The FPS counter helps identify performance issues, and seeing the internal state update in real-time makes debugging far easier than blindly running games and hoping they work.
+You can step through execution one instruction (<kbd>F6</kbd>) or one scanline (<kbd>F7</kbd>) at a time, pause and continue (<kbd>F9</kbd>), and set breakpoints at specific addresses. You can also reset the CPU with <kbd>r</kbd>. The FPS counter (<kbd>f</kbd>) helps identify performance issues, and seeing the internal state update in real-time makes debugging far easier than blindly running games and hoping they work.
 
-One quality-of-life feature I'm proud of is automatic DPI scaling. On high-DPI displays, the UI scales appropriately so everything remains readable without manual configuration.
+One quality-of-life feature I'm proud of is automatic DPI scaling. On high-DPI displays, the UI scales appropriately so everything remains readable without manual configuration. This was a pain to handle manually. The emulator also respects the Game Boy's 160:144 aspect ratio by letterboxing the display. It's a small detail, but it ensures games look correct rather than stretched or squashed.
 
-The emulator also respects the Game Boy's 160:144 aspect ratio by letterboxing the display. It's a small detail, but it ensures games look correct rather than stretched or squashed.
+This debug UI was implemented at an advanced stage in development. During the actual development of most of the CPU and PPU, I used a terminal-based debug interface, also self-made, which looked very similar to the GUI. I kept it around for nostalgic reasons, in the `debugcli.rs` file in the repository.
+
 
 ## Future work
 
