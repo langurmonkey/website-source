@@ -7,7 +7,7 @@ description = "A DMG Game Boy emulator written in Rust"
 showpagemeta = "false"
 +++
 
-**Play Kid** is yet another Game Boy emulator, written in Rust. But hey, it is MY Game Boy emulator, and I'm proud of it.
+**Play Kid** is yet another Game Boy emulator, written in Rust. But hey, it is MY Game Boy emulator, and I'm proud of it. I wrote some words about its development [here](/blog/2026/playkid).
 
 
 {{< fig src="/img/playkid/logo-3x.avif" class="fig-center" >}}
