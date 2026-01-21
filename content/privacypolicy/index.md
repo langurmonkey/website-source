@@ -3,6 +3,7 @@ title = "Privacy Policy"
 categories = ["Privacy"]
 tags = ["website","privacy","principles"]
 date = "2021-04-06"
+showpagemeta = false
 +++
 
 This site strives to be as bloat-free as possible. It does not use cookies, tracking codes, analytics scripts or anything else that can be used to invade personal privacy. We use, however, the privacy-respecting `sessionStorage`[^dark-theme-blog] to store the user's theme preference, if any.

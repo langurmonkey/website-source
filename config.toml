@@ -49,6 +49,17 @@ enableGitInfo = true
     customcss              = ["/css/site-bundle.css"]
     customjs               = ["/js/site-bundle.js"]
 
+# Contact info
+[params.social]
+    rss             = "index.xml"
+    codeberg        = "langurmonkey"
+    github          = "langurmonkey"
+    bluesky         = "@gaiasky.bsky.social"
+    mastodon        = "@jumpinglangur@mastodon.social"
+    pixelfed        = "@jumpinglangur"
+    email           = "me@tonisagrista.com"
+    pgp             = "0x2FD2A59C1D734C1F"
+
 # Set up your menu items in the navigation bar
 # You can use identifier to prepend a font awesome icon to your text
 
@@ -90,17 +101,6 @@ enableGitInfo = true
     icon = "file-word-o"
 
 
-# These go in the footer
-[social]
-    rss             = "index.xml"
-    codeberg        = "langurmonkey"
-    github          = "langurmonkey"
-    mastodon        = "@jumpinglangur@mastodon.social"
-    mastodont       = "@jumpinglangur@mastodont.cat"
-    pixelfed        = "@jumpinglangur"
-    lbry            = "@GaiaSky"
-    email           = "me@tonisagrista.com"
-    pgp             = "0x2FD2A59C1D734C1F"
 
 [markup]
   # code highlight with chroma

@@ -1,34 +1,34 @@
-    </div>
-    <div>
-        <ul class="icons">
-            {{ if .Site.Params.socialAppearAtBottom }}
-            {{ partial "social" . }}
-            {{ end }}
-        </ul>
-    </div>
-    <div id="license">
-      <a href="/index.xml" title="RSS"><i class="fa fa-rss" aria-hidden="true" title="RSS"></i></a>
-      <p>
-        Website design by myself. See the <a href="/privacypolicy">privacy policy</a>.<br />
-      Content licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA 4.0</a>
-      <i class="fa fa-cc-by" aria-hidden="true" title="CC-BY"></i><i class="fa fa-cc-nc" aria-hidden="true" title="CC-NC"></i><i class="fa fa-cc-sa" aria-hidden="true" title="CC-SA"></i>.<br />
-      </p>
-    </div>
-        <!-- Keeping the deprecated param, minifiedFilesJS, for now. The new param
+</div>
+<div>
+  <ul class="icons">
+    {{ if .Site.Params.socialAppearAtBottom }}
+    {{ partial "social" . }}
+    {{ end }}
+  </ul>
+</div>
+<div id="license">
+  <p>
+    Website design by myself. See the <a href="/privacypolicy">privacy policy</a>.<br />
+    Content licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA 4.0</a>
+    <i class="fa fa-cc-by" aria-hidden="true" title="CC-BY"></i><i class="fa fa-cc-nc" aria-hidden="true"
+      title="CC-NC"></i><i class="fa fa-cc-sa" aria-hidden="true" title="CC-SA"></i>.<br />
+  </p>
+</div>
+<!-- Keeping the deprecated param, minifiedFilesJS, for now. The new param
              that replaces this is customJS. Utilizing a scratch variable jsFiles
              to keep the deprecated param. -->
-        {{ if isset .Site.Params "minifiedjs" }}
-            {{ $.Scratch.Set "jsFiles" .Site.Params.customJS }}
-        {{ else if isset .Site.Params "customjs" }}
-            {{ $.Scratch.Set "jsFiles" .Site.Params.customJS }}
-        {{ else }}
-            {{ $.Scratch.Set "jsFiles" false }}
-        {{ end }}
+{{ if isset .Site.Params "minifiedjs" }}
+{{ $.Scratch.Set "jsFiles" .Site.Params.customJS }}
+{{ else if isset .Site.Params "customjs" }}
+{{ $.Scratch.Set "jsFiles" .Site.Params.customJS }}
+{{ else }}
+{{ $.Scratch.Set "jsFiles" false }}
+{{ end }}
 
-        <!-- If the value "default" is passed into the param then we will first
+<!-- If the value "default" is passed into the param then we will first
              load the standard js files associated with the theme -->
-        {{ if or (in ($.Scratch.Get "jsFiles") "default") (eq ($.Scratch.Get "jsFiles") false) }}
-            <!--
+{{ if or (in ($.Scratch.Get "jsFiles") "default") (eq ($.Scratch.Get "jsFiles") false) }}
+<!--
             <script src="/js/darkmode.js"></script>
             <script src="/js/extlinks.js"></script>
             <script src="/js/jquery.min.js"></script>
@@ -37,19 +37,20 @@
             <script src="/js/util.js"></script>
             <script src="/js/main.js"></script>
             -->
-        {{ end }}
+{{ end }}
 
-        {{ if ne ($.Scratch.Get "jsFiles") false }}
-            {{ range $.Scratch.Get "jsFiles" }}
-                {{ if ne . "default" }}
-                    <script src="{{ . | absURL }}"></script>
-                {{ end }}
-            {{ end }}
-        {{ end }}
+{{ if ne ($.Scratch.Get "jsFiles") false }}
+{{ range $.Scratch.Get "jsFiles" }}
+{{ if ne . "default" }}
+<script src="{{ . | absURL }}"></script>
+{{ end }}
+{{ end }}
+{{ end }}
 
 
-    {{- range .Params.js }}
-      <script src="{{ . | absURL }}"></script>
-    {{- end }}
-    </body>
+{{- range .Params.js }}
+<script src="{{ . | absURL }}"></script>
+{{- end }}
+</body>
+
 </html>
