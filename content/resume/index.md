@@ -18,7 +18,7 @@ showpagemeta = false
     [<a href="/pdf/Resume-ToniSagrista.pdf#overlay-context=resume" target="_blank" title="Resume in PDF">PDF version</a>]
   </p>
   <p class="contactinfo">
-    Cell: <span class="tel">+49 (0)17683798752</span>
+    <!-- Cell: <span class="tel">+49 (0)17683798752</span> -->
     <br>Email: <a class="email" href="mailto:me@tonisagrista.com">me@tonisagrista.com</a>
     <br>PGP: <a href="/pgp/tss_pubkey.asc" target="_blank">0x2FD2A59C1D734C1F</a>
     <br>Born: August 5, 1983

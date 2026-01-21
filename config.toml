@@ -53,8 +53,6 @@ enableGitInfo = true
 [params.social]
     rss             = "index.xml"
     codeberg        = "langurmonkey"
-    github          = "langurmonkey"
-    bluesky         = "@gaiasky.bsky.social"
     mastodon        = "@jumpinglangur@mastodon.social"
     pixelfed        = "@jumpinglangur"
     email           = "me@tonisagrista.com"
