@@ -1035,7 +1035,7 @@ When it comes to MBCs, I implemented ROM-only and MBC1/2/3 into Play Kid.
 
 : Pokémon and Wario Land II use MBC3.
 
-Finally, I implemented battery-backed SRAM. It meant saving the contents of cartridge RAM to `.sav` files when the emulator exits and loading them on startup, if they exist. I get the RAM from the cartridge, and then persist it (if not empty):
+Finally, I implemented battery-backed SRAM. It meant saving the contents of cartridge RAM to `.sav` files when the emulator exits and loading them on startup, if they exist. You can also trigger the save operation at any time with <kbd>w</kbd>. I get the RAM from the cartridge, and then persist it (if not empty):
 
 ```rust
     /// Save SRAM of current cartridge to `.sav` file.
