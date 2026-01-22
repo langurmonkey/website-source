@@ -12,7 +12,7 @@ showpagemeta = "false"
 
 {{< fig src="/img/playkid/logo-3x.avif" class="fig-center" >}}
 
-
+- [Download](https://codeberg.org/langurmonkey/playkid/releases)
 - [Repository (Codeberg)](https://codeberg.org/langurmonkey/rts-engine)
 - [Mirror (GitHub)](https://github.com/langurmonkey/rts-engine)
 
@@ -51,6 +51,7 @@ Here are the main features of Play Kid:
   - Kirby's Dream Land
   - Dr. Mario
   - Probably many more
+- For [Linux, macOS, and Windows](https://codeberg.org/langurmonkey/playkid/releases).
 
 # Run
 

@@ -57,6 +57,7 @@ I called my implementation [**Play Kid**](/projects/playkid). It is written in R
   - Kirby's Dream Land
   - Dr. Mario
   - Probably many more
+- Works on [Linux, macOS, and Windows](https://codeberg.org/langurmonkey/playkid/releases).
 
 In this post, I navigate the general architecture of the Game Boy, emphasize interesting hardware quirks that made it a challenge to emulate properly, and present my implementation. I won't go into too much detail, as I took care to make the code understandable and well-commented. In any case, for more details on a specific subject, you can refer to the code repository itself.
 
