@@ -14,10 +14,6 @@ pre {
   /*width: 100%*/
 }
 
-mark {
-  background-color: var(--title-color);
-}
-
 #header .links a {
   /* Theoretically for IE 8 & 9 (more valid) */
   /* ...but not required as filter works too */

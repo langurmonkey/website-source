@@ -49,6 +49,9 @@
   {{ end }}
   {{ end }}
   {{ end }}
+  {{- range .Params.css }}
+  <link rel="stylesheet" href="{{ . | absURL }}" />
+  {{- end }}
   <link rel="canonical" href="{{ .Permalink }}">
 </head>
 

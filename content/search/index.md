@@ -1,6 +1,7 @@
 +++
 title = "Search"
-description = "Fast, low-bandwidth client-side search."
+description = "Client-side search. No external servers involved."
+css = ["css/search.css"]
 showpagemeta = false
 +++
 

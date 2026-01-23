@@ -1,0 +1,64 @@
+
+mark {
+  background-color: var(--title-color);
+}
+.pagefind-ui__search-form {
+  position: relative;
+  display: block; /* Overrides Pagefind's flex */
+  width: 100%;
+}
+
+/* 2. Reset the input so it doesn't have its own border/bg */
+.pagefind-ui .pagefind-ui__search-input {
+  width: 100% !important;
+  font-size: 1.8em;
+  font-weight: 400;
+  border-radius: 0.5em;
+  padding: 0.4em 2.5em 0.4em 0.8em; /* Extra padding on right for the X */
+  box-sizing: border-box; /* Ensures padding doesn't break 100% width */
+  background-color: var(--bg-color-dark);
+  color: var(--text-color);
+}
+
+.pagefind-ui__search-clear {
+  display: none;
+}
+
+ol.pagefind-ui__results {
+  list-style: none;
+  margin-left: 0;
+}
+.pagefind-ui__result {
+  border: 2px solid var(--kbd-bg) !important;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  margin-bottom: 1em;
+  padding: 0.4em !important;
+}
+body.dark-mode .pagefind-ui__result {
+  border: 2px solid var(--kbd-fg) !important;
+}
+.pagefind-ui__result-title {
+  font-size: 1.2em;
+  font-weight: 800;
+  margin: 0.1em !important;
+  padding: 0px;
+} 
+.pagefind-ui__result-excerpt {
+  margin-top: 0em !important;
+} 
+.pagefind-ui__result-nested {
+  padding-left: 0.5em;
+} 
+
+.pagefind-ui__button {
+  background-image: linear-gradient(to bottom, var(--button1-color), var(--button2-color));
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  margin-top: 1em;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 20px;
+  text-shadow: 2px 2px 2px black;
+}
