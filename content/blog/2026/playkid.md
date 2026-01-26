@@ -10,9 +10,14 @@ featuredpath = "date"
 type = "post"
 +++
 
-{{< fig src="/img/playkid/logo-3x.avif" class="fig-center" >}}
+{{< notice Notice >}}
+This post is about Play Kid version `0.1.0`, which works with SDL2. Since then, version `0.2.0` has been released. This new version uses Rust native crates like `winit`, `egui`, `rodio`, and `pixels`. See [this write-up](/blog/2026/playkid-update) for more information on the new version.
+{{</ notice >}}
+
+
 
 When I was a kid my parents got me and my brothers a brand new Game Boy. I used to play it a lot, and I was mesmerized and amazed at how such a tiny brick could give life to so many wonderful worlds. Some of my favorite games were **Super Mario Land** (1, 2, and 3, Wario Land), **The Amazing Spider-Man**, and **Kirby's Dream Land**. We also had some other games, like **Bugs Bunny Crazy Castle** or **Tetris**, that I also played quite a lot. I remember fondly too.
+
 
 <!--more-->
 
@@ -23,6 +28,8 @@ The first Super Mario Land in particular was magical to me. I would complete it,
 Some time ago, I wrote a [CHIP-8 emulator](/blog/2021/chip8-implementation/) in Rust, and found the experience very rewarding. The consensus online seems to be that the recommended next step, as far as emulator development goes, is the original Game Boy. I know that the internet is flooded with "Implementing a Game Boy emulator" kind of articles, and (judging by the GitHub counts) this is a very unoriginal project, but I still wanted to try my hand at it. So I took the bait and started working on it. Today, I'm excited to share my very own Game Boy emulator.
 
 The original Game Boy, also referred to as [DMG](@ "Dot Matrix Game") in nerdy spaces and released in 1989, is an excellent target for emulation. Its hardware is rather well-documented, its architecture is relatively simple compared to modern systems, yet it's complex enough to present real challenges, which I for sure faced.
+
+{{< fig src="/img/playkid/logo-3x.avif" class="fig-center" >}}
 
 I called my implementation [**Play Kid**](/projects/playkid). It is written in Rust and uses [SDL2](@ "Simple DirectMedia Layer 2") for graphics, sound, and input. Here are the main features:
 

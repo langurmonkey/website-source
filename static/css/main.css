@@ -221,7 +221,7 @@ article a.share-btn:after {
 }
 
 .hint-body a {
-  color: var(--fg-hint-body);
+  color: var(--fg-hint-body) !important;
 }
 
 a:before {

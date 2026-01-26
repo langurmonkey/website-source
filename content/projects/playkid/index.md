@@ -12,9 +12,6 @@ showpagemeta = "false"
 
 {{< fig src="/img/playkid/logo-3x.avif" class="fig-center" >}}
 
-- [Download](https://codeberg.org/langurmonkey/playkid/releases)
-- [Repository (Codeberg)](https://codeberg.org/langurmonkey/rts-engine)
-- [Mirror (GitHub)](https://github.com/langurmonkey/rts-engine)
 
 {{< fig src="/img/playkid/grid.avif" title="Play Kid running different games with different color palettes." width="100%" class="fig-center" loading="lazy" >}}
 
@@ -24,60 +21,68 @@ Here are the main features of Play Kid:
 - Full memory map implemented.
 - Modes: ROM, MBC1, MBC2, MBC3.
 - Audio is implemented, with 4 channels, envelopes, sweep, and stereo.
-- Supports game controllers via SDL.
+- Supports game controllers.
 - Multiple color palettes.
 - Save screenshot of current frame buffer.
+- FPS counter.
 - Respects 160:144 aspect ratio by letter-boxing.
-- Debug mode:
+- Debug panel:
   - Step instruction.
   - Step scanline.
   - Pause/continue current execution.
-  - FPS counter.
-  - Displays internal state.
-  - Breakpoints.
-  - Uses own minimal UI library with horizontal/vertical layouts, labels, buttons, and text fields.
-- Save RAM to `.sav` files to emulate the battery-backed SRAM.
+  - Displays internal state of CPU, PPU, and Joypad.
+  - Full program disassembly, with breakpoints.
+- Save RAM to `.sav` files to emulate the battery-backed SRAM. Those are saved every minute.
 - Automatically adapts to multi-DPI setups by scaling the UI.
-- Tested and working games/roms:
+- Working games/roms:
   - Passes `dmg-acid2`
   - Tetris
-  - Pokémon Red
+  - Pokémon
   - Super Mario Land
   - Super Mario Land 2: 6 Golden Coins
-  - Super Mario Land 3: Wario Land
+  - Wario Land (Super Mario Land 3)
   - Wario Land II
   - Bugs Bunny Crazy Castle
   - The Amazing Spider-Man
-  - Kirby's Dream Land
   - Dr. Mario
-  - Probably many more
+  - Probably many, many more
 - For [Linux, macOS, and Windows](https://codeberg.org/langurmonkey/playkid/releases).
+
+# Downloads
+
+You can grab packages for Linux, macOS, and Windows here:
+
+- [Downloads](https://codeberg.org/langurmonkey/playkid/releases)
+- [Mirror (GitHub)](https://github.com/langurmonkey/rts-engine)
+
+# Build
+
+Build the project with `cargo build`.
 
 # Run
 
-The usual Rust stuff. Check out the repository and run with `cargo`.
+The usual Rust stuff.
 
-```
-git clone https://codeberg.org/langurmonkey/rts-engine.git
-cargo run -- [ROM_FILE]
+```bash
+  cargo run -- [ROM_FILE]
 ```
 
 Make the binary with:
 
-```
-cargo build --release
+```bash
+  cargo build --release
 ```
 
 # Operation
 
-Here are the keyboard mappings:
+Here are the Joypad keyboard mappings:
 
 - <kbd>enter</kbd> - Start button
 - <kbd>space</kbd> - Select button
 - <kbd>a</kbd> - A button
 - <kbd>b</kbd> - B button
 
-You can also use any game controller. The SDL2 usual mappings apply.
+The keyboard is clumsy for playing Game Boy games, so you can use any game controller. Controllers are detected when hot-plugged.
 
 Additionally, there are some more actions available:
 
@@ -88,11 +93,18 @@ Additionally, there are some more actions available:
 - <kbd>d</kbd> - enter debug mode
 - <kbd>Esc</kbd> - exit the emulator
 
-# Debug mode
+You can also use the provided UI.
 
-You can enter the debug mode any time by pressing `d`, or activate it at launch with the `-d`/`--debug` flag.
+# Debug panel
 
-{{< fig src="/img/playkid/debug-mode.avif" title="The debug mode." width="100%" class="fig-center" loading="lazy" >}}
+You can open the debug panel any time by pressing <kbd>d</kbd>, by clikcing on `Machine` > `Debug panel...`, or activate it at launch with the `-d`/`--debug` flag. The debug panel shows up in a translucent window. It provides a view of the internal state of the emulator, with:
+
+- Current address, instruction, operands, and opcode, to the top.
+- Internal state of CPU, PPU, and JOYP, to the left.
+- Disassembly of the program, to the right.
+- Breakpoints.
+
+{{< fig src="/img/playkid/debug-mode.avif" title="The debug panel, showing the machine state and a code disassembly." width="80%" class="fig-center" loading="lazy" >}}
 
 You can use the provided UI controls to work with debug mode. You can also use the keyboard. These are the key bindings:
 
@@ -103,7 +115,10 @@ You can use the provided UI controls to work with debug mode. You can also use t
 - <kbd>d</kbd> - exit debug mode and go back to normal full-speed emulation
 - <kbd>Esc</kbd> - exit the emulator
 
-You can also use breakpoints. A list with the current breakpoint addresses is provided in yellow. To create a breakpoint, enter the desired address (in `$abcd` format) into the text field and click <kbd>Add BR</kbd>. Remove a breakpoint with <kbd>Remove BR</kbd>. Clear all current breakpoints with <kbd>Clear all</kbd>.
+You can also use breakpoints. A list with the current breakpoint addresses is provided at the bottom. To create a breakpoint, either **click on the address** in the disassembly panel, or enter it (in `$abcd` format) into the text field and click <kbd>+</kbd>. Remove a breakpoint by clicking the <kbd>×</kbd> in the breakpoints list. Clear all current breakpoints with <kbd>Clear all</kbd>.
+
+
+{{< vid src="/img/playkid/playkid-ui.mp4" poster="/img/playkid/playkid-ui.jpg" class="fig-center" width="75%" title="Playing around with the Play Kid debug UI." >}}
 
 # CLI args
 
@@ -128,9 +143,17 @@ Options:
   -V, --version        Print version
 ```
 
+# SDL2 version
+
+Play Kid started as an SDL2 application, but it was moved to a pure Rust tech stack using `pixels`, `winit`, `egui`, and `rodio`. This makes it much easier to build for different targets (including WASM!). Additionally, the SDL2 version contains a minimalist homegrown UI library that I'm particularly proud about, but it can't hold a candle to `egui`. It looks like this:
+
+{{< fig src="/img/playkid/debug-mode-sdl2.avif" title="The debug mode." width="100%" class="fig-center" loading="lazy" >}}
+
+The SDL2 version is forever tagged `playkid-sdl2` ([playkid-sdl2@codeberg](https://codeberg.org/langurmonkey/playkid/src/tag/playkid-sdl2), [playkid-sdl2@github](https://github.com/langurmonkey/playkid/tree/playkid-sdl2)).
+
 # Useful links
 
 - Pandocs: https://gbdev.io/pandocs/
 - Complete tech reference: https://gekkio.fi/files/gb-docs/gbctr.pdf
 - Game Boy CPU manual: http://marc.rawer.de/Gameboy/Docs/GBCPUman.pdf
-- Game Boy instruction set: https://www.pastraiser.com/cpu/gameboy/gameboy_opcodes.html
+- Game Boy CPU instructions: https://meganesu.github.io/generate-gb-opcodes/
