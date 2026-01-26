@@ -28,6 +28,8 @@ One of the coolest additions is the **Code disassembly** panel. It decodes the R
 
 The rest of the debug panel shows what we already had: the state of the CPU, the PPU, and the joypad.
 
+{{< vid src="/img/playkid/playkid-ui.mp4" poster="/img/playkid/playkid-ui.jpg" class="fig-center" width="75%" title="Playing around with the new Play Kid UI based on egui." >}}
+
 ## Dependency hell
 
 Of course, no modern Rust migration is complete without a descent into **dependency hell**. This new stack comes with a major catch: `pixels` is a bit of a picky gatekeeper. Its latest version is 0.15 (January 2025). It is pinned to an older version of `wgpu` (0.19 vs the current 28.0), and it essentially freezes the rest of the project in a time capsule. 

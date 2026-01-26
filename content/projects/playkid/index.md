@@ -117,7 +117,6 @@ You can use the provided UI controls to work with debug mode. You can also use t
 
 You can also use breakpoints. A list with the current breakpoint addresses is provided at the bottom. To create a breakpoint, either **click on the address** in the disassembly panel, or enter it (in `$abcd` format) into the text field and click <kbd>+</kbd>. Remove a breakpoint by clicking the <kbd>×</kbd> in the breakpoints list. Clear all current breakpoints with <kbd>Clear all</kbd>.
 
-
 {{< vid src="/img/playkid/playkid-ui.mp4" poster="/img/playkid/playkid-ui.jpg" class="fig-center" width="75%" title="Playing around with the Play Kid debug UI." >}}
 
 # CLI args
