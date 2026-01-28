@@ -1,17 +1,15 @@
 +++
 categories = ["Projects"]
 date = "2026-01-20"
-tags = ["rust", "emulator", "game boy", "project"]
+tags = ["rust", "emulator", "game boy", "project", "play kid"]
 title = "Play Kid"
 description = "A DMG Game Boy emulator written in Rust"
 showpagemeta = "false"
 +++
 
-**Play Kid** is yet another Game Boy emulator, written in Rust. But hey, it is MY Game Boy emulator, and I'm proud of it. I wrote some words about its development [here](/blog/2026/playkid).
-
+**Play Kid** is yet another Game Boy emulator, written in Rust. But hey, it is MY Game Boy emulator, and I'm proud of it. I wrote some words about its development [here](/blog/2026/playkid). Find all posts about Play Kid [here](/tags/play-kid).
 
 {{< fig src="/img/playkid/logo-3x.avif" class="fig-center" >}}
-
 
 {{< fig src="/img/playkid/grid.avif" title="Play Kid running different games with different color palettes." width="100%" class="fig-center" loading="lazy" >}}
 
@@ -33,7 +31,6 @@ Here are the main features of Play Kid:
   - Displays internal state of CPU, PPU, and Joypad.
   - Full program disassembly, with breakpoints.
 - Save RAM to `.sav` files to emulate the battery-backed SRAM. Those are saved every minute.
-- Automatically adapts to multi-DPI setups by scaling the UI.
 - Working games/roms:
   - Passes `dmg-acid2`
   - Tetris

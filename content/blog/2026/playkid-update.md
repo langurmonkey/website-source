@@ -4,15 +4,21 @@ categories = ["Emulators"]
 tags = ["emulator", "game boy", "play kid", "computer architecture", "programming", "english"]
 date = 2026-01-26
 linktitle = "playkid-updates"
-title = "Play Kid v0.2.0"
-description = "Reimagining Play Kid: From SDL2 to a modern Rust stack"
+title = "Game Boy emulator tech stack update"
+description = "Play Kid update from SDL2 to a modern Rust stack using pixels, winit, and egui"
 featuredpath = "date"
 type = "post"
 +++
 
+{{< notice Notice >}}
+This post is about Play Kid version `0.2.0`, which uses `pixels` to create and manage the pixel frame buffer. Since then, versions `0.3.0` and `0.4.0` have been released, which dropped `pixels` in favor of rendering directly to a texture. See [this write-up](/blog/2026/playkid-update-again) for more information.
+{{</ notice >}}
+
 In my [previous post](/blog/2026/playkid/), I shared the journey of building [**Play Kid**](/projects/playkid), my Game Boy emulator. At the time, I was using **SDL2** to handle the "heavy lifting" of graphics, audio, and input. This was released as v0.1.0. It worked, and it worked well, but it always felt a bit like a "guest" in the Rust ecosystem. SDL2 is a C library at heart, and while the Rust wrappers are good, they bring along some baggage like shared library dependencies and difficult integration with Rust-native UI frameworks.
 
-So I decided to perform a heart transplant on Play Kid. For version v0.2.0 I’ve moved away from SDL2 entirely, replacing it with a stack of modern, native Rust libraries: **wgpu**, **pixels**, **egui**, **winit**, **rodio**, and **gilrs**:
+So I decided to perform a heart transplant on Play Kid. For version v0.2.0 I’ve moved away from SDL2 entirely, replacing it with a stack of modern, native Rust libraries: [**`wgpu`**](https://crates.io/crates/wgpu), [**`pixels`**](https://crates.io/crates/pixels), [**`egui`**](https://crates.io/crates/egui), [**`winit`**](https://crates.io/crates/winit), [**`rodio`**](https://crates.io/crates/rodio), and [**`gilrs`**](https://crates.io/crates/gilrs):
+
+<!--more-->
 
 * `winit` & `pixels`: These handle the windowing and the actual Game Boy frame buffer. `pixels` allows me to treat the 160x144 LCD as a simple pixel buffer while `wgpu` handles the hardware-accelerated scaling and aspect ratio correction behind the scenes.
 * `egui`: This was a big step-up. Instead of my minimal homegrown UI library from the SDL2 version, I now have access to a full-featured, immediate-mode GUI. This allowed me to build the debugger I had in mind from the beginning.
