@@ -22,7 +22,7 @@ So I decided to perform a heart transplant on Play Kid. For version v0.2.0 I’v
 
 The most visible change is the new **Debug Panel**.
 
-{{< fig src="/img/playkid/debug-mode.avif" title="The new integrated debugger features a real-time disassembly view and breakpoint management." width="75%" class="fig-center" loading="lazy" >}}
+{{< fig src="/img/playkid/debug-mode-2.avif" title="The new integrated debugger features a real-time disassembly view and breakpoint management." width="75%" class="fig-center" loading="lazy" >}}
 
 One of the coolest additions is the **Code disassembly** panel. It decodes the ROM instructions in real-time, highlighting the current `PC` and allowing me to toggle breakpoints just by clicking on a line. The breakpoints themselves are now managed in a dedicated list, shown in red at the bottom.
 

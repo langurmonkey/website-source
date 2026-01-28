@@ -1083,7 +1083,7 @@ When the emulator was already working quite well, I implemented a GUI debug mode
 
 The [UI](@ "User Interface") library supports horizontal and vertical layouts, labels, buttons, and text fields. Enough to build a useful debug interface without pulling in a fat dependency. It's minimal but effective. Writing it was not trivial. I knew that UI libraries are complex and take a lot of work to get right, and this little spin-off sub-project only confirmed this knowledge.
 
-{{< fig src="/img/playkid/debug-mode.avif" class="fig-center" loading="lazy" caption="Super Mario Land 2 running in Play Kid with the debug UI." >}}
+{{< fig src="/img/playkid/debug-mode-sdl2.avif" class="fig-center" loading="lazy" caption="Super Mario Land 2 running in Play Kid with the debug UI." >}}
 
 The debug mode features:
 
