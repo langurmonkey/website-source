@@ -32,6 +32,7 @@ Below is a list of all the material I regularly use to take photos:
 
 #### Lenses
 
+*  TTArtisan AF 27mm f/2.8
 *  7Artisans 7.5mm f/2.8 Mark II fisheye manual prime. {{< sp accent >}}[[`side`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/DSCF9839.JPG), [`front blue`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/DSCF9837.JPG), [`side yellow`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/DSCF9834.JPG)] {{</ sp >}}
 *  TTartisan 50mm f/1.2 manual prime. {{< sp accent >}}[[`side`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/DSCF9847.JPG), [`front`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/DSCF9844.JPG), [`top`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/DSCF9843.JPG)]{{</ sp >}}
 *  TTartisan 35mm f/1.4 manual prime. {{< sp accent >}}[[`wide`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/35mm_wide.jpg), [`top`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/35mm_top.jpg), [`bottom`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/35mm_bottom.jpg), [`wide`](http://wwwstaff.ari.uni-heidelberg.de/gaiasandbox/personal/images/gallery/gear/35mm_side.jpg)]{{</ sp >}}
@@ -44,7 +45,8 @@ Below is a list of all the material I regularly use to take photos:
 #### Other stuff
 
 *  Soonpho RGB Video Light P10.
-*  Viltrox EF-FX1 lens adapter to use Canon EF/EF-S lenses on Fujifilm X mounts.
+*  7artisans EF-FX AF lens adapter for Canon EF/EF-S to Fujifilm X mount.
+*  Viltrox EF-FX1 AF lens adapter for Canon EF/EF-S to Fujifilm X mount.
 *  Lowepro Nova 170 AW DSLR Camera Shoulder Bag.
 *  Manfrotto Compact Advanced Smart 65" Tripod.
 
