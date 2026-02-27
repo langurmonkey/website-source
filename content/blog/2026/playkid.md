@@ -1,5 +1,5 @@
 +++
-author = "Toni Sagrista Selles"
+author = "Toni Sagristà Sellés"
 categories = ["Emulators"]
 tags = ["emulator", "game boy", "play kid", "computer architecture", "programming", "english"]
 date = 2026-01-20

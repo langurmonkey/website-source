@@ -1,5 +1,5 @@
 +++
-author = "Toni Sagrista Selles"
+author = "Toni Sagristà Sellés"
 categories = ["AI"]
 tags = ["LLM", "AI", "ollama", "RAG"]
 date = 2025-03-24

@@ -5,7 +5,7 @@ minify:
 # Run hugo. This is not a final target! To generate the site
 # use 'generate'.
 hugo: minify
-  hugo --destination "$WEB/public" --minify --quiet
+  hugo --destination $WEB/public/ --minify --quiet
 
 # Generate the static site offline.
 alias generate := pagefind

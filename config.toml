@@ -23,8 +23,9 @@ enableGitInfo = true
 [services.RSS]
     limit = 15
 
-
 [params]
+    authorName = "Toni Sagristà Sellés"
+    authorEmail = "me@tonisagrista.com"
     # Sets the meta tag description, usually reserved for the main page
     description          = "Personal website and portfolio"
     # This will appear on the top left of the navigation bar
