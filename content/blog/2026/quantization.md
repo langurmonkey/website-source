@@ -11,7 +11,7 @@ type = "post"
 js = ["/js/mathjax3.js"]
 +++
 
-I like running my own LLMs locally. Open models are becoming more and more powerful, with exciting releases like the latest Qwen 3.5 family scoring highly in benchmarks even in their smaller variants. This makes managing and running your own models more viable, as it becomes increasingly easy to repurpose old hardware for local inference with progressively better results.
+I like running my own LLMs locally. Open models are becoming more and more powerful, with exciting releases like the latest Qwen 3.5 family scoring highly in benchmarks even in their smaller variants. This makes managing and running your own models more viable, as it becomes increasingly easy to repurpose old hardware for local inference with progressively better results. For local users and modest purposes, the GGUF format introduced by llama.cpp is the de-facto default.
 
 Since local inference is typically heavily restricted by the available hardware, several optimization techniques have been implemented to make the models leaner and faster. Perhaps the most important of these is quantization, which trims down the bit count per parameter to achieve lower memory usage and (sometimes) faster inference. The challenge is that there are many different formats and strategies for quantization. In this post, I summarize them, providing a bird's-eye view on the available techniques, their strengths, and their weaknesses.
 
@@ -32,7 +32,9 @@ Most GGUF quantization names follow this pattern: **`Q{bits}{method}{size}`**
 | `_XS` / `_XXS` / `_NL` | Extra-small / Non-linear variants for I-quants |
 
 
-## Unquantized formats (no compression)
+## Unquantized formats
+
+These are base formats with no compression. Usually, but not always, models are trained in these formats.
 
 | Format | Bits | Description | Notes |
 |--------|------|-------------|----------|
@@ -85,12 +87,12 @@ Use two-level block quantization (small blocks \\(\rightarrow\\) super-blocks) w
 
 ## I-Quant formats (aggressive compression)
 
-IQs use non-linear reconstruction, lookup tables, and importance-matrix calibration for maximum quality at very low bits. They trade-off speed for size.
+IQs use non-linear reconstruction, lookup tables, and importance-matrix calibration for maximum quality at very low bit counts. They trade decoding speed for size.
 
 | Format | Effective Bits | Size (7B) | Notes |
 |--------|---------------|-----------|-------|
 | **IQ4_NL** | ~4.5 | ~3.9 GB | Non-linear 4-bit; CPU-friendly speed |
-| **IQ4_XS** | ~4.25 | ~3.7 GB | ✅ Best quality/size at 4-bit; slightly slower decode |
+| **IQ4_XS** | ~4.25 | ~3.7 GB | Best quality/size at 4-bit; slightly slower decode |
 | **IQ3_M** | ~3.6 | ~3.2 GB | High-quality 3-bit I-quant |
 | **IQ3_S** | ~3.4 | ~3.0 GB | Balanced 3-bit aggressive |
 | **IQ3_XS** | ~3.2 | ~2.8 GB | Very small 3-bit |
@@ -98,7 +100,7 @@ IQs use non-linear reconstruction, lookup tables, and importance-matrix calibrat
 | **IQ2_M** | ~2.7 | ~2.4 GB | High-quality 2-bit (rare) |
 | **IQ2_S** | ~2.5 | ~2.2 GB | Aggressive 2-bit |
 | **IQ2_XS** | ~2.3 | ~2.0 GB | Very aggressive 2-bit |
-| **IQ2_XXS** | ~2.1 | ~1.9 GB | ❌ Extreme; significant quality loss |
+| **IQ2_XXS** | ~2.1 | ~1.9 GB | Extreme; significant quality loss |
 
 I-quants require **importance matrix (imatrix) calibration** during quantization for best results. Without it, quality can degrade noticeably.
 
@@ -107,7 +109,7 @@ I-quants require **importance matrix (imatrix) calibration** during quantization
 
 | Format | Bits | Description |
 |--------|------|-------------|
-| **TQ1_0** | ~1.6 | Ternary quantization ({-1, 0, +1}); for massive models like DeepSeek where fitting in VRAM is critical |
+| **TQ1_0** | ~1.6 | Ternary quantization \\(\\{-1, 0, +1\\}\\), for massive models like DeepSeek where fitting in VRAM is critical |
 
 
 ## Decision guide
@@ -132,4 +134,4 @@ As you see, this looks like the wild west at first glance, but this mess is not 
 5. **Test your use case**: Perplexity benchmarks are only guides. Always validate outputs for your specific tasks.
 
 
-For the latest format support and benchmarks, check the [llama.cpp repository](https://github.com/ggerganov/llama.cpp) or community hubs like Hugging Face, where curators like *bartowski* and *Unsloth* publish tested GGUF variants.
+For the latest format support and benchmarks, check the [llama.cpp repository](https://github.com/ggerganov/llama.cpp) or community hubs like Hugging Face, where curators like [bartowski](https://huggingface.co/bartowski) and [Unsloth](https://huggingface.co/unsloth) publish tested GGUF variants.
