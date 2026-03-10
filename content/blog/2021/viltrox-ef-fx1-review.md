@@ -10,6 +10,10 @@ featuredpath = "date"
 type = "post"
 +++
 
+{{< notice Notice >}}
+I have also reviewed the newer 7Artisans EF-FX and have found it much better. Check out my [review](/blog/2026/7artisans-ef-fx).
+{{</ notice >}}
+
 A few days ago [I got my new camera](/blog/2021/fuji-x-s10-first-impressions), a brand new Fujifilm X-S10. Since I'm coming from the [Canon ecosystem](/photography) I have a few EF and EF-S lenses which I like. In order to use them with my new system I also acquired the auto focus lens mount adapter Viltrox EF-FX1, which allows EF/EF-S Canon lenses to be used with Fuji-X mount mirrorless cameras. This is an adapter with electronics, so it enables not only auto focus but also aperture control and EXIF data transmission. But does it really work? Is it useful? And more importantly, is it worth the asking price of 120€? In this post I document my experience after some tests performed over a few days.
 
 <!--more-->
