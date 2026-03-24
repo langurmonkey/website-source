@@ -124,7 +124,6 @@ def scrape_urls(base_urls, local_scraper=False):
 
 Once we've scraped the content, it’s time to turn that raw text into something that the machine can understand. This is where embeddings come into play.
 
-
 - We use the `langchain` library to split the scraped text into manageable chunks. This is done using the `RecursiveCharacterTextSplitter`, which splits the content into chunks of a predefined size (to avoid overloading the model). I tuned this by trial and error, and ended up with a chunk size of 1000, and a chunk overlap of 200.
 
 - The text is then passed through an embedding model, specifically the "sentence-transformers/all-MiniLM-L6-v2" model from [HuggingFace](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2), which transforms it into a high-dimensional vector representation. It is super compact and performs well. I have tried other embed models (see commented out lines at the top of [this code block](#code-embed)), but in my experience they did not perform better than `all-MiniLM-L6-v2`.
