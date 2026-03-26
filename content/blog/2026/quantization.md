@@ -52,7 +52,7 @@ These preserve maximum accuracy but require significant VRAM. Most local users q
 
 Simple per-block linear quantization. Fast but less accurate at low bits.
 
-Following is a table that contains the format name, number of bits, size (for a 7B model), perplexity, and some notes/recommendations. The **perplexity** represents the difference between the quantized model and the base model, with lower scores indicating better accuracy and less uncertainty.
+Following is a table that contains the format name, number of bits, size (for a 7B model), perplexity, and some notes/recommendations. The **perplexity** represents the difference between the quantized model and the base model, with lower scores indicating better accuracy and less uncertainty.[^3]
 
 
 | Format | Bits | Size (7B) | Perplexity \\(\Delta\\) | Notes |
@@ -65,6 +65,7 @@ Following is a table that contains the format name, number of bits, size (for a 
 
 K-quants or I-quants are generally preferred over legacy formats at \\(\leq 5\\) bits. Q8_0 remains useful for compatibility.
 
+[^3]: A good technical explanation of perplexity is in [this section of this *ngrok* post](https://ngrok.com/blog/quantization#perplexity).
 
 ## K-Quant formats (modern default)
 
