@@ -13,7 +13,9 @@ js = ["/js/mathjax3.js"]
 
 I like running my own LLMs locally. Open models are becoming more and more powerful, with exciting releases like the latest Qwen 3.5 family scoring highly in benchmarks even in their smaller variants. This makes managing and running your own models more viable, as it becomes increasingly easy to repurpose old hardware for local inference with progressively better results. For local users and modest purposes, the GGUF format introduced by llama.cpp is the de-facto default.
 
-Since local inference is typically heavily restricted by the available hardware, several optimization techniques have been implemented to make the models leaner and faster. Perhaps the most important of these is quantization, which trims down the bit count per parameter to achieve lower memory usage and (sometimes) faster inference. The challenge is that there are many different formats and strategies for quantization. In this post, I summarize them, providing a bird's-eye view on the available techniques, their strengths, and their weaknesses.
+Since local inference is typically heavily restricted by the available hardware, several optimization techniques have been implemented to make the models leaner and faster. Perhaps the most important of these is **quantization**, which trims down the bit count per parameter to achieve lower memory usage and (sometimes) faster inference[^1]. The challenge is that there are many different formats and strategies for quantization. In this post, I summarize them, providing a bird's-eye view on the available techniques, their strengths, and their weaknesses.
+
+[^1]: For an exceptionally good (visual) guide as to how quantization is actually performed, I recommend reading this *ngrok* blog post: [Quantization from the ground up](https://ngrok.com/blog/quantization).
 
 <!--more-->
 
@@ -82,7 +84,7 @@ Use two-level block quantization (small blocks \\(\rightarrow\\) super-blocks) w
 | **Q3_K_S** | ~3.1 | ~2.75 GB | +0.5505 | Very small, high loss |
 | **Q2_K** | ~2.5 | ~2.67 GB | +0.8698 | Extreme compression, not recommended |
 
-**Q4_K_M** seems to be the community sweet spot, as it offers ~75% size reduction with minimal noticeable quality loss for most tasks.
+**`Q4_K_M`** seems to be the community sweet spot, as it offers \\(\sim 75\\%\\) size reduction with minimal noticeable quality loss for most tasks.
 
 
 ## I-Quant formats (aggressive compression)
@@ -107,27 +109,32 @@ I-quants require **importance matrix (imatrix) calibration** during quantization
 
 ## Special formats
 
+There are even more aggressive quantization methods, like ternary quantization, which converts weights to ternary values.[^2]
+
 | Format | Bits | Description |
 |--------|------|-------------|
 | **TQ1_0** | ~1.6 | Ternary quantization \\(\\{-1, 0, +1\\}\\), for massive models like DeepSeek where fitting in VRAM is critical |
 
+[^2]: *C. Zhu and S. Han and H. Mao and W. J. Dally*. "Trained Ternary Quantization." *arXiv preprint* [arXiv:1612.01064](https://arxiv.org/abs/1612.01064) (2016).
 
 ## Decision guide
 
-- Best balance \\(\rightarrow\\) Q4_K_M (default recommendation)
-- Maximum quality, still compressed \\(\rightarrow\\) Q5_K_M or Q6_K
-- Tight VRAM, acceptable quality loss \\(\rightarrow\\) Q4_K_S or IQ4_XS
-- Absolute smallest file \\(\rightarrow\\) IQ3_XS / Q3_K_S (test quality first)
-- Near-original accuracy \\(\rightarrow\\) Q8_0 or keep FP16/BF16
-- Running on CPU \\(\rightarrow\\) Q4_K_M or IQ4_NL for better decode speed
-- Fitting a 70B model on 24GB VRAM \\(\rightarrow\\) IQ3_S or Q3_K_M + CPU offload
+Below I attempt to provide some general rules as to what quant to choose in certain situations.
+
+- Best balance overall \\(\rightarrow\\) `Q4_K_M`
+- Max quality, still compressed \\(\rightarrow\\) `Q5_K_M` or `Q6_K`
+- Tight VRAM, acceptable quality loss \\(\rightarrow\\) `Q4_K_S` or `IQ4_XS`
+- Max compression \\(\rightarrow\\) `IQ3_XS` or `Q3_K_S` \\(\Delta\\) {{< sp red >}}test quality!{{</ sp >}}
+- Near-lossless accuracy \\(\rightarrow\\) `Q8_0` or keep `FP16`/`BF16`
+- CPU inference \\(\rightarrow\\) `Q4_K_M` or `IQ4_NL` \\(\because\\) {{< sp orange >}}better decode speed{{</ sp >}}
+- Fit a ~50B model on 16GB VRAM \\(\rightarrow\\) `IQ3_S` or `Q3_K_M` \\(+\\) CPU offload
 
 
 ## Conclusions
 
-As you see, this looks like the wild west at first glance, but this mess is not without order. Most importantly, there are good reasons behind every quantization type. Here are some takeaways.
+The set of quantization methods available may look like the wild west at first glance, but this mess is not without some order. There are always good reasons behind every quantization type. Here are some takeaways:
 
-1. **Bits \\(\neq\\) quality alone**: A well-designed 4-bit format (Q4_K_M, IQ4_XS) can outperform a naive 5-bit legacy format.
+1. **Bits \\(\neq\\) quality alone**: A well-designed 4-bit format (`Q4_K_M`, `IQ4_XS`) can outperform a naive 5-bit legacy format.
 2. **Suffixes matter**: `_M` variants selectively keep sensitive layers at higher precision, improving quality with minimal size cost.
 3. **Hardware matters**: I-quants compress more but decode slower on CPUs; K-quants often give better tokens/sec on consumer hardware.
 4. **Calibration helps**: Models quantized with an importance matrix (imatrix) retain more accuracy, especially at \\(\leq 3\\) bits.

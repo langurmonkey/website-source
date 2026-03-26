@@ -2,7 +2,7 @@
 author = "Toni Sagristà Sellés"
 title = "Fine-tuning Qwen3.5 for Gaia Sky"
 description = "How I fine-tuned Qwen3.5 4/9B models to become Gaia Sky experts"
-date = 2026-03-24
+date = 2029-03-24
 categories = ["AI"]
 tags = ["LLM", "AI", "LM Studio", "fine-tuning", "AI inference", "unsloth"]
 featuredpath = "date"
