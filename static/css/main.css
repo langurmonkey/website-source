@@ -353,10 +353,14 @@ sup {
 }
 
 blockquote {
-  border-left: solid 4px rgba(127, 127, 127, 0.2);
+  border-left: solid 4px #55555599;
+  opacity: 0.7;
   font-style: italic;
   margin: 0 0 2em 0;
   padding: 0.5em 0 0.5em 2em;
+}
+blockquote h1:before,h2:before,h3:before,h4:before,h5:before,h6:before {
+  content: none;
 }
 
 code {
@@ -1179,6 +1183,17 @@ div.post-in-list a::first-letter {
   font-size: 110%;
   font-weight: 600;
 }
+div.container-block {
+  background-color: #ccc;
+  border-radius: 1em;
+  padding: 1em;
+}
+.dark-mode div.container-block {
+  background-color: #333;
+}
+div.container-block h1:before,h2:before,h3:before,h4:before,h5:before,h6:before {
+  content: none;
+}
 @media screen and (max-width: 680px) {
   div.post-in-list time{
     display: none;
@@ -1386,7 +1401,7 @@ article.post > footer a {
 
 .post > footer .stats li {
   display: inline-block;
-  font-size: 0.6em;
+  font-size: 0.8em;
   line-height: 1;
   margin: 0;
   padding: 0;
@@ -1394,10 +1409,13 @@ article.post > footer a {
 }
 
 .post > footer .stats li:first-child {
-  opacity: 0.7;
+  opacity: 1.0;
   border-left: 0;
   margin-left: 0;
   padding-left: 0;
+}
+.darkmode .post > footer .stats li:first-child {
+  opacity: 0.7;
 }
 
 .post > footer .stats li .icon {

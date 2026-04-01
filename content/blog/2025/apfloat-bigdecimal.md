@@ -40,6 +40,7 @@ The JMH benchmark project is structured to measure the average time taken for ea
 Here is an example for the `Sin` benchmark:
 
 {{< collapsedcode file="/static/code/2025/SinBenchmark.java" language="java" summary="benchmark implementation" >}}
+{{</ collapsedcode >}}
 
 
 ### The Results

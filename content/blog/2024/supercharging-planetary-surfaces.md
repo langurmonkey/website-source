@@ -99,6 +99,7 @@ For the sake of compatibility, we decided to use pixel shaders in favor of compu
 {{< shader src="/shader/2024/curl.glsl" class="fig-center" width="200" height="200" title="Curl noise shader, with turbulence and ridge, running in the browser." >}}
 
 {{< collapsedcode file="/static/shader/2024/curl.glsl" language="glsl" summary="curl.glsl" >}}
+{{</ collapsedcode >}}
 
 But back to the topic, we based our implementation on the [gl-Noise](https://github.com/FarazzShaikh/glNoise) library. We fixed some issues and modified it a bit to better suit our need. We ended up implementing <abbr title="fractal Brownian motion">fBm</abbr> for all noise types. fBm is a way to recursively add finer detail to our noise by increasing its frequency and decreasing its amplitude each cycle or *octave*. The code below shows how to add fBm to any noise function.
 
@@ -131,6 +132,7 @@ Adding a couple of fBm octaves to the previous Curl noise shader, to get a total
 {{< shader src="/shader/2024/curl-fbm.glsl" class="fig-center" width="200" height="200" title="Curl noise with 3 octaves." >}}
 
 {{< collapsedcode file="/static/shader/2024/curl-fbm.glsl" language="glsl" summary="curl-fbm.glsl" >}}
+{{</ collapsedcode >}}
 
 We also changed the noise types from gradval, perlin, simplex, value and white to perlin, simplex, curl, voronoi and white.
 

@@ -42,16 +42,20 @@ All nebula shaders have the same main parts:
 
 - **Set up** -- here we prepare the data for the raymarching step. The ray direction, the camera position and the object position are all computed/fetched here. We also recover the depth for the current fragment from the depth buffer. The set-up is typically done in the ``main()`` function. In the following code we have an example of how the set-up stage is done.
 {{< collapsedcode file="/static/shader/2024/nebula/shader-setup.glsl" language="glsl" summary="set-up example" >}}
+{{</ collapsedcode >}}
 
 - **Ray marching** -- here is where the actual ray-marching happens. In ray marching, we shoot a ray for every pixel, divide it into samples, and gather information at every step. This information is usually the density and color of the medium we are rendering.
   - **Intersection check** -- since we implement this in image space (we shoot a ray for each pixel in our window), we first need to check whether our ray intersects the bounding volume containing the object or not. In nebulae, this volume is typically a sphere. Simply enough, this is done with a straightforward ray-sphere intersection function, which returns the intersection near and far distances if there is an intersection at all, or nothing if the ray does not hit the sphere. The code below shows how to do the ray-sphere intersection.
-{{< collapsedcode file="/static/shader/2024/nebula/shader-intersection.glsl" language="glsl" summary="ray-sphere intersection example" >}}
+    {{< collapsedcode file="/static/shader/2024/nebula/shader-intersection.glsl" language="glsl" summary="ray-sphere intersection example" >}}
+    {{</ collapsedcode >}}
 
   - **Main loop** -- here we loop over a maximum number of iterations and accumulate the density. Every cycle advances our position through the ray by a given step distance. The code below illustrates a rather typical main loop. The following code completes the ``main()`` function to include the call to the main loop (``raymarching()``) and the alpha blending at the very bottom.
-{{< collapsedcode file="/static/shader/2024/nebula/shader-mainloop.glsl" language="glsl" summary="main loop example" >}}
+    {{< collapsedcode file="/static/shader/2024/nebula/shader-mainloop.glsl" language="glsl" summary="main loop example" >}}
+    {{</ collapsedcode >}}
 
 - **Blending** -- finally, we have the blending. Most nebulae are blended using regular alpha blending, but implementing additive blending is trivial.
 {{< collapsedcode file="/static/shader/2024/nebula/shader-blend.glsl" language="glsl" summary="alpha blending example" >}}
+{{</ collapsedcode >}}
 
 This covers the basics of our nebulae shaders. The video below shows some of the nebulae that I have adapted for Gaia Sky and that will be available in the NGC2000 catalog when the next version is out, soon™.
 

@@ -85,3 +85,4 @@ That's it. Run your site and open your browser to admire your shader in all its 
 
 
 {{< collapsedcode file="/static/shader/2024/spiked-star.glsl" language="glsl" summary="spiked-star.glsl" >}}
+{{</ collapsedcode >}}

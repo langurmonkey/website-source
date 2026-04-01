@@ -265,7 +265,7 @@ def rag_pipeline(query_text):
     """
     # Step 1: Retrieve relevant documents from ChromaDB
     retrieved_docs, metadata = query_chromadb(query_text)
-    context = " ".join(retrieved_docs[0]) if retrieved_docs else "No relevant documents found."
+    context = " ".join(retrieved_docs[0]) if retrieved_docs else "No relevant docs found."
 
     # Step 2: Send the query along with the context to Ollama
     augmented_prompt = f"Context: {context}\nQuestion: {query_text}\nAnswer: "

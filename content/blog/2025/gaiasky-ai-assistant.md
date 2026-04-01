@@ -285,7 +285,7 @@ Finally, by using `stream=True` in the creation of `OllamaLLM`, and calling `cha
 
 ## Evaluation
 
-In this section we test the system with [`mistral-small:22b-instruct-2409-q4_K_M`](https://ollama.com/library/mistral-small:22b-instruct-2409-q4_K_M), a small instruct LLM with capabilities comparable to larger models, and with [`llama3.1:8b-instruct-q5_K_M`](https://ollama.com/library/llama3.1:8b-instruct-q5_K_M), a much smaller but better quantized model(Q5-K-M vs Q4-K-M), also specifically trained for instruct.
+In this section we test the system with [`mistral-small:22b-instruct-2409-q4_K_M`](https://ollama.com/library/mistral-small:22b-instruct-2409-q4_K_M), a small instruct LLM with capabilities comparable to larger models, and with [`llama3.1:8b-instruct-q5_K_M`](https://ollama.com/library/llama3.1:8b-instruct-q5_K_M), a much smaller but better quantized model(Q5_K_M vs Q4_K_M), also specifically trained for instruct.
 
 I ask each model 3 questions:
 
@@ -314,9 +314,9 @@ ollama pull mistral-small:22b-instruct-2409-q4_K_M llama3.1:8b-instruct-q5_K_M
 Remember, if you want to try out the chatbot yourself, download it from [this repository](https://codeberg.org/langurmonkey/gaiasky-ai).
 
 <a name="mistral-small"></a>
-### Mistral Small 3 instruct, 22B Q4-K-M
+### Mistral Small 3 instruct, 22B Q4_K_M
 
-Here we use the general [Mistral Small 3 instruct (22B, Q4-K-M)](https://ollama.com/library/mistral-small:22b-instruct-2409-q4_K_M) model. It uses Q4_K_M quantization and features 22.2B parameters. I think this is around the limit of what my computer can handle (see [conclusion](#conclusion)).
+Here we use the general [Mistral Small 3 instruct (22B, Q4_K_M)](https://ollama.com/library/mistral-small:22b-instruct-2409-q4_K_M) model. It uses Q4_K_M quantization and features 22.2B parameters. I think this is around the limit of what my computer can handle (see [conclusion](#conclusion)).
 
 On a first pass, we run the program with the `--scrape` flag to gather the information from the websites and create the embeddings. This corresponds to the output shown below, where all the URLs are fetched and scraped.
 
@@ -540,9 +540,9 @@ This is perhaps too detailed, and sources information from outside of the contex
 All in all, I think this Mistral model is a little too verbose. You can see specks of larger models, like the good formatting, or the effort to produce complete and exhaustive answers. However, the accuracy is not always on point. I wonder if using a model with better quantization (Q6?) would solve this.
 
 <a name="llama31"></a>
-### Llama 3.1 instruct, 8B Q5-K-M
+### Llama 3.1 instruct, 8B Q5_K_M
 
-Now we test the [Llama 3.1 instruct (8B, Q5-K-M)](https://ollama.com/library/llama3.1:8b-instruct-q5_K_M) model, an instruct-specific model that is much smaller than Mistral Small 3 (24B). However, this time around I stepped up the quantization a bit by using Q5_K_M, which should improve accuracy over the basic Q4_0.
+Now we test the [Llama 3.1 instruct (8B, Q5_K_M)](https://ollama.com/library/llama3.1:8b-instruct-q5_K_M) model, an instruct-specific model that is much smaller than Mistral Small 3 (24B). However, this time around I stepped up the quantization a bit by using Q5_K_M, which should improve accuracy over the basic Q4_0.
 
 First, let's ask about the usages:
 

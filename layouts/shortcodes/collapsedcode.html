@@ -1,18 +1,26 @@
+{{- $lang := .Get "language" -}}
+
+{{- /* Determine source of the code */ -}}
+{{- $code := "" -}}
+{{- if .Inner -}}
+{{- $code = .Inner -}}
+{{- else if .Get "file" -}}
+{{- $code = (.Get "file" | readFile) -}}
+{{- end -}}
+
 {{- if .Get "summary" }}
 
-  <details class="collapsedcode">
+<details class="collapsedcode">
   <summary>
     <span class="code">Code: </span><span class="summary">{{ .Get "summary" }}</span>
   </summary>
-  {{ $file := .Get "file" | readFile | safeHTML }}
-  {{ $lang := .Get "language" }}
-  {{ (print "```" $lang "\n" $file "\n```") | markdownify }}
-  </details>
+
+  {{ (print "```" $lang "\n" $code "\n```") | markdownify }}
+
+</details>
 
 {{ else }}
 
-{{ $file := .Get "file" | readFile | safeHTML }}
-{{ $lang := .Get "language" }}
-{{ (print "```" $lang "\n" $file "\n```") | markdownify }}
+{{ (print "```" $lang "\n" $code "\n```") | markdownify }}
 
 {{ end }}
