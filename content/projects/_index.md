@@ -41,6 +41,14 @@ showpagemeta = false
 </article>
 <br />
 <article>
+<strong><a href="https://codeberg.org/gaiasky/gaiasky-finetune">Gaia Sky LLM fine-tuning</a> <i class="fa-tss fa fa-cog"></i> <i class="fa-tss fa fa-gitea"></i></strong> &mdash; Fine-tuning Qwen 3.5 9B with a custom-made dataset curated from Gaia Sky data for local inference. <a href="/blog/2026/fine-tuning-qwen3.5-gaiasky">Here is a write-up</a>.
+</article>
+<br />
+<article>
+<strong><a href="https://codeberg.org/langurmonkey/gaiasky-ai">Local RAG pipeline</a> <i class="fa-tss fa fa-cog"></i> <i class="fa-tss fa fa-gitea"></i></strong> &mdash; A local RAG infrastructure with chatbot written on top of Ollama. <a href="/blog/2025/local-llm-rag">Here is a write-up</a>, and another <a href="/blog/2025/gaiasky-ai-assistant">post with an application for Gaia Sky</a>.
+</article>
+<br />
+<article>
 <strong><a href="https://codeberg.org/langurmonkey/brainfuck">Langur's brainfuck interpreter</a> <i class="fa-tss fa fa-linux"></i> <i class="fa-tss fa fa-gitea"></i></strong> &mdash; A very compact <a href="http://brainfuck.org/">Brainfuck</a> interpreter written in <a href="https://rust-lang.org">Rust</a>.
 </article>
 <br />
