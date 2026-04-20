@@ -1323,6 +1323,7 @@ dl dd {
 }
 
 .post > header .meta > * {
+  font-variant: small-caps;
   margin: 0;
 }
 
@@ -1463,7 +1464,8 @@ article.post > footer a {
     -ms-justify-content: center;
     justify-content: center;
     border-left: 0;
-    margin: 0 0 0.5em 0;
+    margin: 1em 0 0.5em 0;
+    font-size: 0.8rem;
     padding: 0;
     text-align: left;
     width: 98%;

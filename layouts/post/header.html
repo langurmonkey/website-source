@@ -36,6 +36,13 @@
     </div>
     {{- end }}
     {{- end }}
+
+    <!-- Author -->
+    {{- if .Params.author }}
+    <p>By {{ .Params.author }}</p>
+    {{- end }}
+
+    <!-- Read time -->
     <p>{{ .ReadingTime }} minute read</p>
     {{ end }}
   </div>

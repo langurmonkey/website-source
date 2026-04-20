@@ -1,5 +1,5 @@
 +++
-author = "Toni Sagrista Selles"
+author = "Toni Sagristà Sellés"
 categories = ["AI"]
 tags = ["llm", "ai", "local llm", "ai inference", "quantization"]
 date = 2026-03-04
