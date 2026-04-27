@@ -35,7 +35,7 @@ Here is the hardware I have used to create the dataset and fine-tune the model:
 
 - **Desktop PC** -- Arch Linux, Intel(R) Core(TM) i7-7700 (8) @ 4.20 GHz, 32 GB RAM, NVIDIA GeForce GTX 1070 8 GB.
 - **Laptop 1** -- Windows 11, WSL2 (Arch Linux), Intel(R) Core(TM) Ultra 9 275HX (24) @ @ 3.07 GHz, 32 GB RAM, NVIDIA GeForce RTX 5080 Mobile 16 GB.
-<a href="#laptop2" />
+<a href="#laptop2"></a>
 - **Laptop 2** -- Arch Linux, Intel(R) Core(TM) i7 8750H (12) @ 4.10 GHz, 16 GB RAM, NVIDIA GeForce GTX 1060 Mobile 6 GB.
 
 ## Training dataset creation
