@@ -12,7 +12,7 @@ js = ["/js/mathjax3.js"]
 
 A little over a year ago I set up a [local pipeline](/blog/2025/local-llm-rag) to use different [LLM](@ "Large Language Model")s to [respond to Gaia Sky questions](/blog/2025/gaiasky-ai-assistant) using [RAG](@ "Retrieval Augmented Generation"). In that post, I built a dynamic scrapper that parsed the Gaia Sky website and documentation and ingested the content it into a vector database. Then, I built a minimal terminal chatbot interface that received the user prompt, queried the database for semantically similar data, and built up the context for each LLM call. The results were promising, and I found that they (obviously) strongly depended on the model used.
 
-Fast forward a few months, and the Qwen 3.5 models were released by Alibaba. The general consensus is that they are quite good for their size. I've been testing them for local inference with a similar impression. I thought that it would be interesting to repeat the exercise of creating a Gaia Sky AI assistant, but using a radically different approach: Instead of RAG, I would **fine-tune the model** itself. In this post, I describe this fine-tuning project, from the creation and engineering of the training dataset to the fine-tuning and production of the final GGUF models.
+Fast forward a few months, and the Qwen 3.5 models were released by Alibaba. The general consensus is that they are quite good for their size. I've been testing them for local inference with a similar impression. I thought that it would be interesting to repeat the exercise of creating a Gaia Sky AI assistant, but using a radically different approach: Instead of RAG, I would **fine-tune the model** itself. In this post, I describe this fine-tuning project, from the creation and engineering of the training dataset to the fine-tuning and production of the final [GGUF](@ "GPT-Generated Unified Format") models.
 
 <!--more-->
 
@@ -25,18 +25,18 @@ At the end I quickly evaluate the results in the [testing](#testing) section.
 
 The source code, dataset, and models discussed in this post are in the following repositories:
 
-- Dataset creation and fine-tuning -- <i class="fa fa-gitea" aria-hidden="true" title="Codeberg"></i> [gaiasky-finetune](https://codeberg.org/gaiasky/gaiasky-finetune)
-- Gaia Sky training dataset repository -- <i class="fa fa-git-square" aria-hidden="true" title="Codeberg"></i> [gaiasky-training-dataset](https://hf.co/Langurmonkey/gaiasky-training-dataset)
-- Qwen3.5 Gaia Sky fine-tuned models -- <i class="fa fa-git-square" aria-hidden="true" title="Codeberg"></i> [gaiasky-qwen-3.5-gguf](https://hf.co/Langurmonkey/gaiasky-qwen-3.5-gguf)
+- Dataset creation and fine-tuning - <i class="fa fa-gitea" aria-hidden="true" title="Codeberg"></i> [gaiasky-finetune](https://codeberg.org/gaiasky/gaiasky-finetune)
+- Gaia Sky training dataset repository - <i class="fa fa-git-square" aria-hidden="true" title="Codeberg"></i> [gaiasky-training-dataset](https://hf.co/Langurmonkey/gaiasky-training-dataset)
+- Qwen3.5 Gaia Sky fine-tuned models - <i class="fa fa-git-square" aria-hidden="true" title="Codeberg"></i> [gaiasky-qwen-3.5-gguf](https://hf.co/Langurmonkey/gaiasky-qwen-3.5-gguf)
 
 ## Hardware
 
 Here is the hardware I have used to create the dataset and fine-tune the model:
 
-- **Desktop PC** -- Arch Linux, Intel(R) Core(TM) i7-7700 (8) @ 4.20 GHz, 32 GB RAM, NVIDIA GeForce GTX 1070 8 GB.
-- **Laptop 1** -- Windows 11, WSL2 (Arch Linux), Intel(R) Core(TM) Ultra 9 275HX (24) @ @ 3.07 GHz, 32 GB RAM, NVIDIA GeForce RTX 5080 Mobile 16 GB.
+- **Desktop PC** - Arch Linux, Intel(R) Core(TM) i7-7700 (8) @ 4.20 GHz, 32 GB RAM, NVIDIA GeForce GTX 1070 8 GB.
+- **Laptop 1** - Windows 11, WSL2 (Arch Linux), Intel(R) Core(TM) Ultra 9 275HX (24) @ @ 3.07 GHz, 32 GB RAM, NVIDIA GeForce RTX 5080 Mobile 16 GB.
 <a href="#laptop2"></a>
-- **Laptop 2** -- Arch Linux, Intel(R) Core(TM) i7 8750H (12) @ 4.10 GHz, 16 GB RAM, NVIDIA GeForce GTX 1060 Mobile 6 GB.
+- **Laptop 2** - Arch Linux, Intel(R) Core(TM) i7 8750H (12) @ 4.10 GHz, 16 GB RAM, NVIDIA GeForce GTX 1060 Mobile 6 GB.
 
 ## Training dataset creation
 
@@ -149,8 +149,8 @@ prompt = (
 
 It consists of the following parts:
 
-- Base text -- This is composed by the raw strings in the `prompt` variable.
-- The file hint (`{file_hint}`) -- We add hints depending on the filetype. The following table displays the hint for each type.
+- Base text - This is composed by the raw strings in the `prompt` variable.
+- The file hint (`{file_hint}`) - We add hints depending on the filetype. The following table displays the hint for each type.
 
   | Filetype   | Extensions   | Hint |
   |------------|--------------|------|
@@ -158,8 +158,8 @@ It consists of the following parts:
   | Python     | `.py`        | This is Python scripting code for the Gaia Sky API. Questions about usage and parameters are appropriate. |
   | Shader     | `.glsl`      | This is a GLSL shader. Focus on the rendering technique, uniforms, and mathematical operations. Do NOT generate Python scripting examples. |
   | Docs       | `.md` `.rst` | This is documentation. Focus on concepts, features, workflows, and user-facing features. |
-- The pair count (`{current_target}`) -- Contains the number of Q&A pairs to generate.
-- The previous Q&A pairs, if any (`{avoid_context}`) -- This is constructed by listing the existing pairs, as parsed by the program in the output, or accumulated in the current run.
+- The pair count (`{current_target}`) - Contains the number of Q&A pairs to generate.
+- The previous Q&A pairs, if any (`{avoid_context}`) - This is constructed by listing the existing pairs, as parsed by the program in the output, or accumulated in the current run.
   ```python
      instr_list = [p['instruction'] for p in existing_pairs]
      avoid_context = (
@@ -167,13 +167,13 @@ It consists of the following parts:
          + "\n".join(f"- {instr}" for instr in instr_list)
      )
   ``` 
-- The filepath and content (`{file_path}`, `{file_content}`) -- Contain the file name and the actual content, which is capped to fit within the context length.
+- The filepath and content (`{file_path}`, `{file_content}`) - Contain the filename and the actual content, which is capped to fit within the context length.
 
-However, LLMs are chatty. Even with such strict instructions, even the 27B model sometimes messes up. It would still sometimes leak its own reasoning into the output. It would start its response with `"The user asked to provide 34 Q&A pairs given the source material..."` or it would include meta-talk like `"This question is safe because it is derived from line 45."`
+However, local LLMs tend to be chatty. Even with such strict instructions, larger models like the 27B sometimes also mess up. From time to time, this model would leak its own reasoning into the output. It would start its response with `"The user asked to provide 34 Q&A pairs given the source material..."` or it would include meta-talk like `"This question is safe because it is derived from line 45."`
 
-This created "dirty" data that polluted the dataset and undermined the fine-tuning process. If I trained on this, the final model would start every answer by talking to itself.
+This created *dirty* data that polluted the dataset and undermined the fine-tuning process. If I trained on this, the final model would start every answer by talking to itself.
 
-To fix this, I built `sanitize-jsonl.py`. This script is a heavy-duty cleaner that uses regex to strip out training artifacts. It first tries to rescue bad rows, and if it fails, it deletes them. If the model accidentally put both the question and answer in the "output" field, the sanitizer attempts to detect the question mark and splits them back into the correct structure.
+To fix this, I built `sanitize-jsonl.py`. This script is a heavy-duty cleaner that uses regex to strip out training artifacts. It first tries to rescue bad rows, and if it fails, it deletes them. If the model accidentally put both the question and answer in the output field, the sanitizer attempts to detect the question mark and splits them back into the correct structure.
 
 Here is a look at what the data looked like before and after the sanitization process.
 
@@ -240,7 +240,7 @@ def extract_from_file(file_path):
 
 This process produces the `gaiasky-api-raw.jsonl`, which is used in the next step. It contains the API calls with their respective documentation.
 
-However, knowing a function exists isn't enough. The model needs to know how to script with it. To address this, I developed `generate-scripting-dataset.py` to transform those raw Java signatures into a diverse pedagogical dataset. As input, it gets all test and showcase scripts in the Gaia Sky repository, and the raw API JSONL file. It produces four types of output, termed A, B, C, and D:
+However, knowing a function exists isn't enough. The model needs to know how to script with it. To address this, I developed `generate-scripting-dataset.py` to transform those raw Java signatures into a diverse pedagogical dataset. As input, it gets all test and showcase scripts in the Gaia Sky repository, and the raw API [JSONL](@ "JSON Lines") file. It produces four types of output, termed A, B, C, and D:
 
 - **Type A:** The API reference
 
@@ -296,7 +296,9 @@ Once the dataset was ready, it was time for the actual fine-tuning.
 
 With a dataset of 3,800+ specialized Gaia Sky pairs ready, it was time for the actual training. For this, I leaned on two heavy hitters in the open-source world: **Unsloth** and **Qwen 3.5**. I started by training the 4B model, and then realized that I could also fit the 9B one in my GPU. In the post I'll focus on the larger version of the model. I went as high as my local hardware allowed. Otherwise, I would have tried the 27B model, or even the 122B-A10B.
 
-Training a model with 9 billion parameters typically requires a massive server cluster, but by using **4-bit LoRA (Low-Rank Adaptation)**, I was able to squeeze the entire process onto a single **RTX 5080 (16GB)**.
+Training a model with 9 billion parameters typically requires a massive server cluster, but by using **4-bit [LoRA](@ "Low-Rank Adaptation")**[^1], I was able to squeeze the entire process onto a single **RTX 5080 (16GB)**.
+
+[^1]: Low-Rank Adaptation is a fine-tuning technique that enables large models to gain additional domain knowledge and adapt to specific tasks with minimal computational and memory overhead. Recommended reading: [LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685), by E. J. Hu et. al.
 
 The RTX 5080 is a beast, but to get the most out of it, I enabled **TensorFloat-32 (TF32)**. This allows the GPU to handle the heavy matrix multiplications of deep learning much faster than standard `float32`, without the precision loss of `float16`.
 
