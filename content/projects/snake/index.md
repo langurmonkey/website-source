@@ -5,7 +5,7 @@ tags = ["snake", "html5"]
 title = "HTML5 Snake Game"
 description = "Snake game and javascript source code"
 showpagemeta = "false"
-js = ["/js/snake.js", "/js/jquery.min.js"]
+js = ["/js/jquery.min.js", "/js/snake.js"]
 +++
 
 <style>

@@ -4,11 +4,9 @@ date = "2016-11-07T23:34:05-04:00"
 tags = ["resume"]
 title = "Résumé"
 showpagemeta = false
+css = ["/css/resume.css"]
 +++
 
-<p>
-<link href="/css/resume.css" rel="stylesheet" type="text/css">
-</p>
 <div id="cv-wrap">
 <img alt="Photo of Toni Sagristà Sellés" id="pic" src="/img/main/me.png">
 <div class="vcard" id="contact-info">

@@ -1,0 +1,232 @@
+enable: true
+title: Projects
+subtitle: >
+  A collection of applications, tools, scripts, and experiments in software development, visualization, astronomy, and game design.
+content:
+
+  - name: Gaia Sky
+    url: https://gaiasky.space
+    image: /img/projects/gaiasky.avif
+    start_date: 2013
+    end_date: present
+    icons:
+      - fa-linux
+      - fa-apple
+      - fa-windows
+    text: >
+      A real-time 3D visualisation application developed in OpenGL in the framework of Gaia outreach. Gestated in the Astronomisches Rechen-Institut of Heidelberg University.
+
+  - name: dotfiles
+    url: https://codeberg.org/langurmonkey/dotfiles
+    image: /img/projects/dotfiles.avif
+    start_date: 2018
+    end_date: present
+    icons:
+      - fa-linux
+      - fa-gitea
+    text: >
+      My dotfiles project. Contains the configuration, bootstrapping and deploying of Arch Linux with Hyprland (Wayland) and i3 (X11).
+
+  - name: Play Kid
+    url: /projects/playkid
+    image: /img/projects/playkid.avif
+    start_date: 2019
+    end_date: 2026
+    icons:
+      - fa-gamepad
+      - fa-gitea
+    text: >
+      A Game Boy (DMG) emulator written in Rust and SDL2. It runs most Game Boy games, contains its own UI library, a full debug mode, and much more.
+
+  - name: rCHIP8
+    url: https://codeberg.org/langurmonkey/rchip8
+    image: /img/projects/rchip8.avif
+    date: 2021
+    icons:
+      - fa-gamepad
+      - fa-gitea
+    text: >
+      A [CHIP-8](blog/2021/chip8-spec) emulator/VM written in [Rust](https://rust-lang.org), with arbitrary display scaling, debug mode, emulation speed control and much more. [Here is a write-up](/blog/2021/chip8-implementation).
+
+  - name: Gaia Sky catgen
+    url: https://codeberg.org/gaiasky/gaiasky-catgen
+    image: /img/projects/catgen.avif
+    start_date: 2015
+    end_date: present
+    icons:
+      - fa-linux
+      - fa-gitea
+    text: >
+      LOD catalog generation for Gaia Sky written in [Rust](https://rust-lang.org). It supports the integration of multiple catalogs using cross-match information, additional columns cross-referenced by id, extinction and reddening corrections and much more.
+
+  - name: Gaia Sky LLM fine-tuning
+    url: https://codeberg.org/gaiasky/gaiasky-finetune
+    image: /img/projects/finetune.avif
+    date: 2026
+    icons:
+      - fa-cog
+      - fa-gitea
+    text: >
+      Fine-tuning Qwen 3.5 9B with a custom-made dataset curated from Gaia Sky data for local inference. [Here is a write-up](/blog/2026/fine-tuning-qwen3.5-gaiasky).
+
+  - name: Local RAG pipeline
+    url: https://codeberg.org/langurmonkey/gaiasky-ai
+    image: /img/projects/rag.avif
+    date: 2025
+    icons:
+      - fa-cog
+      - fa-gitea
+    text: >
+      A local RAG infrastructure with chatbot written on top of Ollama. [Here is a write-up](/blog/2025/local-llm-rag), and another [post with an application for Gaia Sky](/blog/2025/gaiasky-ai-assistant).
+
+  - name: RTS Engine
+    url: /projects/rts-engine
+    image: /img/projects/rts-engine.avif
+    start_date: 2013
+    end_date: present
+    icons:
+      - fa-gamepad
+      - fa-gitea
+    text: >
+      Real time strategy game engine written in Java. Very early stage, but already usable. There is a private fork which contains much more advanced AI based on behavior trees and state machines, original graphics, sound, heights, and uses an entity component system (ECS) internally.
+
+  - name: Virtual texture tools
+    url: https://codeberg.org/langurmonkey/virtualtexture-tools
+    image: /img/projects/vt-tools.avif
+    date: 2023
+    icons:
+      - fa-python
+      - fa-gitea
+    text: >
+      A collection of Python scripts to generate and process Sparse Virtual Texture datasets for Gaia Sky (and others).
+
+  - name: Gaia Sky docs
+    url: http://docs.gaiasky.space
+    image: /img/projects/docs.avif
+    start_date: 2016
+    end_date: present
+    icons:
+      - fa-book
+    text: >
+      Documentation pages of Gaia Sky, written in reStructuredText with [Sphinx](https://www.sphinx-doc.org).
+
+  - name: tsnake
+    url: https://codeberg.org/langurmonkey/tsnake
+    image: /img/projects/tsnake.avif
+    date: 2019
+    icons:
+      - fa-linux
+      - fa-gitea
+    text: >
+      A terminal snake game written in C++ using the ncurses library with support for different maps and tons of options. [Here a write-up](/blog/2019/learning-ncurses).
+
+  - name: Langur's brainfuck interpreter
+    url: https://codeberg.org/langurmonkey/brainfuck
+    image: /img/projects/brainfuck.avif
+    date: 2022
+    icons:
+      - fa-linux
+      - fa-gitea
+    text: >
+      A very compact [Brainfuck](http://brainfuck.org/) interpreter written in [Rust](https://rust-lang.org).
+
+  - name: langursh
+    url: https://gitlab.com/langurmonkey/langursh
+    image: /img/projects/langursh.avif
+    date: 2019
+    icons:
+      - fa-linux
+      - fa-git-square
+    text: >
+      A basic POSIX shell written in C. It offers only the basics, but it is fully functional and very light.
+
+  - name: mediaorganiser-py
+    url: https://gitlab.com/langurmonkey/mediaorganiser-py
+    image: /img/projects/mediaorg.avif
+    date: 2016
+    icons:
+      - fa-python
+      - fa-git-square
+    text: >
+      Very small script to organise media files into folders sorted by year and month (/YYYYMM). It scans the file name and the EXIF and RAW metadata. Very handy to keep your photos and videos automatically sorted. I also made a [C++ port](https://gitlab.com/langurmonkey/mediaorganiser), but it is kind of unmaintained.
+
+  - name: markov-nl
+    url: https://codeberg.org/langurmonkey/markov-nl
+    image: /img/projects/markov.avif
+    date: 2019
+    icons:
+      - fa-python
+      - fa-gitea
+    text: >
+      A very minimalistic first-order Markov model for natural language generation based on text input.
+
+  - name: Particle Physics Simulator
+    url: /projects/pps/
+    image: /img/projects/pps.avif
+    start_date: 2010
+    end_date: 2012
+    icons:
+      - fa-android
+    text: >
+      A gravitational physics playground application for Android (v2.1+) devices.
+
+  - name: N-Body Live Wallpaper
+    url: /projects/nblw/
+    image: /img/projects/nbody.avif
+    date: 2010
+    icons:
+      - fa-android
+    text: >
+      A physics live wallpaper for Android (v2.1+) devices.
+
+  - name: Celestial Pole Motion
+    url: /projects/celestial-pole/
+    image: /img/projects/pole.avif
+    date: 2012
+    icons:
+      - fa-star
+      - fa-git-square
+    text: >
+      Tracks the motion of the mean celestial poles with respect to the ICRS due to the Earth's precession and nutation.
+
+  - name: HTML5 Snake Game
+    url: /projects/snake/
+    image: /img/projects/snake.avif
+    date: 2013
+    icons:
+      - fa-html5
+    text: >
+      A modified version of an HTML5 snake game.
+
+  - name: Computer-aided Catalan learning application
+    url: https://codeberg.org/langurmonkey/catalan-learning-tutor
+    image: /img/projects/catalan.avif
+    date: 2007
+    icons:
+      - fa-java
+      - fa-gitea
+    text: >
+      Final year project of my Informatics engineering degree. University of Aberdeen, departament of Computer Science, 2007. You can find the report in the [publications section](/papers).
+
+achievements:
+  title: Achievements
+  items:
+    - name: Mapping and Visualising Gaia DR2
+      url: https://www.cosmos.esa.int/web/gaia/iow_20180614
+      badge: Gaia Image of the Week
+      date: 2018-06-14
+
+    - name: Visualising the gaia data with Gaia Sky
+      url: https://www.cosmos.esa.int/web/gaia/gaiadr2_gaiasky
+      badge: Gaia Image of the Week
+      date: 2018-04-25
+
+    - name: "Gaia: Here Comes the Sun"
+      url: http://apod.nasa.gov/apod/ap160926.html
+      badge: Astronomy Picture of the Day
+      date: 2016-09-26
+
+    - name: A Window to Gaia&#58; The Focal Plane
+      url: http://www.cosmos.esa.int/web/gaia/iow_20160422
+      badge: Gaia Image of the Week
+      date: 2016-04-22

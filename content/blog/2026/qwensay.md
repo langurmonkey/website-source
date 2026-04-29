@@ -1,0 +1,74 @@
++++
+author = "Toni Sagrista Selles"
+categories = ["AI"]
+tags = ["TTS", "AI", "Qwen3-tts", "AI inference", "KittenTTS"]
+date = 2026-04-29
+linktitle = ""
+title = "Local TTS is getting very capable and accessible"
+description = "It is now possible to do high-quality TTS on local hardware very easily."
+featuredpath = "date"
+type = "post"
++++
+
+Around 2007 I spent half a year in the [University of Aberdeen](https://abdn.ac.uk) working on my [final year project](/projects/#computer-aided-catalan-learning-application) involving [NLP](@ "Natural Language Processing"). The project consisted of an interactive game that was controlled by language input. It also had to produce speech. At that time, we managed to partner with a group at [La Salle University](https://www.lasalle.edu/) that were working on a TTS system for Catalan. It was a closed system that was accessible via a web API, but it was far too slow for real time use. I ended up preprocessing the audio of all dialog in the project. At that time, I was amazed that a computer could so easily convert text to an understandable audio file. The voice was very robotic, and the results were hit or miss, but it *worked*.
+
+Fast forward to today, TTS systems are everywhere. Several groups have released low-parameter TTS models that run very well on consumer hardware. I have been using the lightweight [Kitten TTS](https://github.com/KittenML/KittenTTS) for a while with fantastic results.
+
+<!--more-->
+
+The models are so lightweight that some websites are heavier than entire Kitten TTS models:
+
+| Model | Parameters | Size | Download |
+|---|---|---|---|
+| kitten-tts-mini | 80M | 80 MB | [KittenML/kitten-tts-mini-0.8](https://huggingface.co/KittenML/kitten-tts-mini-0.8) |
+| kitten-tts-micro | 40M | 41 MB | [KittenML/kitten-tts-micro-0.8](https://huggingface.co/KittenML/kitten-tts-micro-0.8) |
+| kitten-tts-nano | 15M | 56 MB | [KittenML/kitten-tts-nano-0.8](https://huggingface.co/KittenML/kitten-tts-nano-0.8-fp32) |
+| kitten-tts-nano (int8) | 15M | 25 MB | [KittenML/kitten-tts-nano-0.8-int8](https://huggingface.co/KittenML/kitten-tts-nano-0.8-int8) |
+
+Projects like [`puss-say`](https://github.com/Mic92/puss-say) streamline and trivialize Kitten TTS inference. I have a shell script in one of my `bin` directories that does everything in a single command:
+
+```bash
+#!/usr/bin/env bash
+uvx --from 'git+https://github.com/Mic92/puss-say' puss-say "$@"
+```
+
+This clones the project, pulls dependencies and models, and plays the audio. It is quite fast, especially when using cached data. Kitten TTS produces acceptable results, though the output usually lacks emotion and nuance. For simple use cases (reading notifications, generating voiceovers for scripts) it's more than sufficient.
+
+[Qwen3-TTS](https://github.com/QwenLM/Qwen3-TTS), which I've been recently testing, represents a step-up in quality. It's extremely good, and local inference is practical even on modest hardware given the model sizes. It offers three interesting variants:
+
+| Parameters | Hugging Face ID | Best for | VRAM |
+|---|---|---|---|
+| 1.7B | `Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign` | Free-form voice descriptions | ~6 GB |
+| 1.7B | `Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice` | Preset speakers + style instructions | ~6 GB |
+| 0.6B | `Qwen/Qwen3-TTS-12Hz-0.6B-Base` | Voice cloning from reference audio | ~2 GB |
+
+The voice design models are particularly clever: you describe the voice you want alongside the text to convert. Want a deep, gravelly voice with a Scottish accent? Or an excited teenager talking about a video game? Just describe it. It's remarkable that you can run this locally so easily. However, as far as I know there's no off-the-shelf CLI tool that handles dependencies, downloads the model, and runs inference out of the box.
+
+That's why I created [QwenSay](https://codeberg.org/langurmonkey/qwensay). With it, you can clone the repository and convert text to speech locally from your terminal without wrestling with dependencies or writing any code.
+
+Here's how it works. First, set it up:
+
+```bash
+# Clone the repo
+git clone ssh://git@codeberg.org/langurmonkey/qwensay.git
+cd qwensay
+
+# Default dependencies
+uv sync
+# For modern RTX cards, use flash attention
+uv sync --extra gpu
+# For Pascal (GTX 10x0 family), you need a special CUDA version
+uv sync --group torch-pascal --no-group torch-default
+```
+
+Now, you are ready to convert your text to speech with Qwen3-TTS:
+
+```bash
+uv run qwensay.py \
+    --text "Good morning! Today is going to be a great day." \
+    --voice "A cheerful, energetic young woman with a clear American accent"
+```
+
+This uses the default 1.7B voice design model. You can also specify the model with `--model`. There are many other CLI arguments that you can use to tune your output. Check out the [repository documentation](https://codeberg.org/langurmonkey/qwensay/src/branch/master/README.md) for more details.
+
+Whether you're building accessibility features, creating voiceovers for projects, or just experimenting, this is worth a try. I've made QwenSay my go-to TTS tool because it produces high-quality results and is genuinely fast.

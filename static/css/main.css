@@ -1415,7 +1415,7 @@ article.post > footer a {
   margin-left: 0;
   padding-left: 0;
 }
-.darkmode .post > footer .stats li:first-child {
+.dark-mode .post > footer .stats li:first-child {
   opacity: 0.7;
 }
 

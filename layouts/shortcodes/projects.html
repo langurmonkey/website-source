@@ -1,0 +1,84 @@
+<!-- Projects Start -->
+<section id="projects">
+  <div class="container">
+
+    <!-- Intro -->
+    <div class="row">
+      <div class="section-title">
+        <p>{{ .Site.Data.projects.subtitle }}</p>
+      </div>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="projects-container">
+      {{ range .Site.Data.projects.content }}
+      <div class="project-card">
+        <a id="{{ .name | anchorize }}"></a>
+        {{ if .image }}
+        <a href="{{ .url }}">
+          <img src="{{ .image }}" alt="{{ .name }}" class="project-image" />
+        </a>
+        {{ end }}
+        <div class="project-header">
+          <strong>
+            <a href="{{ .url }}">{{ .name }}</a>
+            {{ range .icons }}
+            <i class="fa-tss fa {{ . }}"></i>
+            {{ end }}
+          </strong>
+          {{ if or .date .start_date .end_date }}
+          <span class="project-date">
+            {{ if .date }}
+              <!-- Simple date format like "2013-present" -->
+              <time>{{ .date }}</time>
+            {{ else if .start_date }}
+              <!-- Date range: start_date to end_date (or present) -->
+              <time datetime="{{ .start_date }}">{{ .start_date }}</time>
+              {{ if .end_date }}
+                &ndash;
+                {{ if eq .end_date "present" }}
+                  <time>present</time>
+                {{ else }}
+                  <time datetime="{{ .end_date }}">{{ .end_date }}</time>
+                {{ end }}
+              {{ end }}
+            {{ end }}
+          </span>
+          {{ end }}
+        </div>
+        <p class="project-description">{{ .text | markdownify }}</p>
+      </div>
+      {{ end }}
+    </div>
+
+  </div>
+</section>
+
+<!-- Achievements Start -->
+{{ if .Site.Data.projects.achievements }}
+<section id="achievements">
+  <div class="container">
+
+    <!-- Section Title -->
+    <div class="row">
+      <div class="section-title">
+        <h2>{{ .Site.Data.projects.achievements.title }}</h2>
+      </div>
+    </div>
+
+    <!-- Achievements List -->
+    <div class="row">
+      <ul class="achievements-list">
+        {{ range .Site.Data.projects.achievements.items }}
+        <li>
+          <a href="{{ .url }}">{{ .name }}</a> — <strong>{{ .badge }}</strong>
+          <span class="achievement-year">({{ .date }})</span>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+
+  </div>
+</section>
+{{ end }}
+<!-- Achievements End -->
