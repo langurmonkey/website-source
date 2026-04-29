@@ -66,7 +66,7 @@ Now, you are ready to convert your text to speech with Qwen3-TTS:
 ```bash
 uv run qwensay.py \
     --text "Good morning! Today is going to be a great day." \
-    --voice "A cheerful, energetic young woman with a clear American accent"
+    --instruct "A cheerful, energetic young woman with a clear American accent"
 ```
 
 This uses the default 1.7B voice design model. You can also specify the model with `--model`. There are many other CLI arguments that you can use to tune your output. Check out the [repository documentation](https://codeberg.org/langurmonkey/qwensay/src/branch/master/README.md) for more details.
