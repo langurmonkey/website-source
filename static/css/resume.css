@@ -81,6 +81,9 @@ h1.fn{
     font-size: 1.5em;
     margin-bottom: 0px;
 }
+h1.fn:before {
+    content: ""
+}
 div.subtitle{
     color: #9A9A9A;
     margin-bottom: 10px;

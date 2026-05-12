@@ -148,7 +148,6 @@ abbr {
   border-radius: 50%;
 }
 .post > header .title h1 {
-  font-weight: 400;
   font-size: 2em;
 }
 details.collapsedcode {
