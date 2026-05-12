@@ -13,6 +13,7 @@ alias generate := pagefind
 pagefind: hugo
   npx pagefind --site "$WEB/public"
 
+alias publish := deploy
 # Generate and deploy the site to NFS.
 deploy: stop pagefind 
   $WEB/deploy.sh
