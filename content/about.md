@@ -18,7 +18,7 @@ I'm an informatics engineer specializing in scientific visualization and compute
 
 Outside of work, I'm fascinated by local LLMs and AI agents, and I spend my free time playing football, doing photography, and building things---like my Game Boy emulator, [Play Kid](/projects/playkid). I also enjoy snowboarding, drawing (terribly), and playing with my kids.
 
-I share more about these projects and my experiments with AI in the [blog](/blog).
+I share more about these projects and my experiments in the [blog](/blog).
 
 <!-- Since you are already here, I think a short introduction is in order. My name is **Toni Sagristà Sellés** and I am an informatics engineer and hold a Ph.D. in Scientific Visualization and Astronomy and an M.Sc. in Astrophysics, Particle Physics and Cosmology. -->
 
