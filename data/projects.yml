@@ -38,6 +38,19 @@ content:
     text: >
       A Game Boy (DMG) emulator written in Rust and SDL2. It runs most Game Boy games, contains its own UI library, a full debug mode, and much more.
 
+  - name: Langur Agent
+    url: /projects/langur-agent
+    image: /img/projects/languragent.png
+    start_date: 2026
+    end_date: present
+    icons:
+      - fa-linux
+      - fa-apple
+      - fa-gitea
+    text: >
+      A simple AI agent with sessions, memory management, tools, skills, and much more. For the Linux and macOS terminal.
+
+
   - name: rCHIP8
     url: https://codeberg.org/langurmonkey/rchip8
     image: /img/projects/rchip8.avif
