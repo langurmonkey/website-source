@@ -1,10 +1,8 @@
-tonisagrista.com
-================
+# tonisagrista.com
 
 My website project, online at [tonisagrista.com](https://tonisagrista.com).
 
-Deployment
-----------
+## Deployment
 
 The `master` branch of this repository contains the Hugo sources. These need to be generated into the static website using `hugo`. To do so, a handy `justfile` is provided, so you just need to do:
 
@@ -14,8 +12,7 @@ just generate
 
 The site is deployed to a [nearlyfreespeech](https://nearlyfreespeech.net) server. To generate and deploy the site, use `just deploy`. The `deploy.sh` script deploys the (generated) site to the server via `rsync`. The `deploy-codeberg.sh` is the old deploy script, which deployed the site to different branches in Codeberg Pages.
 
-Minify
-------
+## Minify
 
 In order to minify the JS and CSS, you need `minify`. It can be installed from the AUR.
 
@@ -44,8 +41,7 @@ just minify
 
 Note that you **need** to run this script in order for the CSS to be applied, as the website itself only links the minified bundle file!
 
-Choose CSS theme
-----------------
+## Choose CSS theme
 
 The minifcation step includes the theme. By default, `theme-pink-blue` is used. If you want to change it, just pass it as an argument to `minify-all.sh`:
 
@@ -54,8 +50,7 @@ The minifcation step includes the theme. By default, `theme-pink-blue` is used. 
 scripts/minify-all.sh theme-name
 ```
 
-Gallery
--------
+## Gallery
 
 In order to generate the static gallery I use [thumbsup](https://thumbsup.github.io). To run it, I use the docker method. Make sure that you have docker installed first, and then start the service.
 
@@ -85,8 +80,7 @@ Since HUGO in Codeberg Pages does not allow any folder called `/public` within `
 
 You can then copy the contents of ``./output-folder`` to ``$WEB/static/photo-gallery/`` and commit.
 
-Mathematical formulas
----------------------
+## Mathematical formulas
 
 The MathJax JavaScript library is not included by default in the pages. If you need to use Latex-like formulas in a post, you must include the JavaScript file in the post source.
 
@@ -101,4 +95,29 @@ or using the script tag in the body,
 ```html
 <!-- Loading MathJax -->
 <script type="text/javascript" id="MathJax-script" async src="/js/mathjax3.js"></script>
+```
+
+## Icon generation
+
+We generate our own icon font from the SVG icons in `/assets/icons`. You can get more icons at [Iconify](https://icon-sets.iconify.design). There is a `just` target that runs the whole thing and puts the output in the required directory. You first need to install `svgtofont` (see below).
+
+```bash
+just iconfont
+```
+
+If you need to add new icons, just put them in `/assets/icons` and re-run the target.
+
+### Details
+
+To generate the font, first install `svgtofont` in the `/script` directory.
+
+```bash
+cd script
+npm install --save-dev svgtofont
+```
+
+And then run:
+
+```bash
+npx svgtofont --config svgtofont.config.js --output ./font --sources .icons
 ```

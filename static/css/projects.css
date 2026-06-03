@@ -66,12 +66,18 @@
 }
 
 /* Project title and link styling */
-.project-card strong {
+.project-header a {
+  font-weight: 600;
+  text-decoration: none !important;
+  margin-bottom: -0.4em;
+}
+
+.project-header .iconline {
   display: flex;
-  align-items: center;
   gap: 0.5rem;
-  margin-bottom: 0.75rem;
+  align-items: center;
   flex-wrap: wrap;
+  margin-bottom: 0.4em;
 }
 
 .dark-mode .project-card strong {

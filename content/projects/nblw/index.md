@@ -7,9 +7,11 @@ description = "Fully-feature physics simulator in your desktop wall"
 showpagemeta = "false"
 +++
 
-<i class="fa fa-exclamation-triangle"></i> *This is a retired, unmaintained app!*
+{{< notice "Warning">}}
+N-Body Live Wallpaper is retired and unmaintained!
+{{</ notice >}}
 
-The **N-Body Live Wallpaper** is an application for [Android](www.android.com) (v2.1+) powered devices that enables the user to have a particle zoo of gravity interactions as a home screen wallpaper. The application is heavily based on the first version fo the [Particle Physics Simulator](/projects/pps), but adapted to suit a live wallaper needs. Features:
+The **N-Body Live Wallpaper** is an application for [Android](www.android.com) (v2.1+) powered devices that enables the user to have a particle zoo of gravity interactions as a home screen wallpaper. The application is heavily based on the first version of the [Particle Physics Simulator](/projects/pps), but adapted to suit a live wallpaper needs. Features:
 
 *   Real n-body simulation, pure gravitational interactions between particles.
 *   Allow or not physically realistic collisions and mergers between particles.

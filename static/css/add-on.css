@@ -1,3 +1,6 @@
+i.ln {
+  font-weight: 100;
+}
 body {
   color: var(--fg-color);
   background-color: var(--bg-color);
@@ -6,6 +9,10 @@ body {
 .dark-mode{
   color: var(--fg-color-dark) !important;
   background-color: var(--bg-color-dark) !important;
+}
+
+.dark-mode img.invert {
+  filter: invert(1);
 }
 
   /*display: table;*/
@@ -685,12 +692,12 @@ p.fig-attribution {
 #lights {
   line-height: 1.8em;
 }
-#icon-menu {
-  line-height: 1.2em;
-}
 div.content-table {
   text-align: center;
   display: table;
+}
+div.content-table a {
+  text-decoration: none;
 }
 div.menu-table-item {
   display: table-cell;

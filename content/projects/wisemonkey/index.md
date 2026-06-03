@@ -21,7 +21,7 @@ Wisemonkey is a simple, open, hackable CLI AI agent for Linux and macOS. It conn
 - autocompletion
 - interactive configuration
 
-The source is available in this <i class="fa fa-gitea"></i> [repository](https://codeberg.org/langurmonkey/wisemonkey).
+The source is available in this <i class="ln-codeberg"></i> [repository](https://codeberg.org/langurmonkey/wisemonkey).
 
 > Wisemonkey was formerly called Langur Agent
 

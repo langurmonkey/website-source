@@ -191,7 +191,6 @@ body.dark-mode a {
   text-decoration: underline;
 }
 
-
 .stats a {
   border-style: none;
 }
@@ -948,6 +947,7 @@ ul.icons li:last-child {
 ul.icons li > * {
   font-size: 1em;
   font-family: monospace;
+  text-decoration: none !important;
 }
 
 ul.icons li > *:before {

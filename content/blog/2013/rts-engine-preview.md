@@ -24,7 +24,7 @@ I recorded a **short video** demonstrating some unit movement and the real time 
 
 {{< youtube 17fDqcZ0mu8 >}}
 
-The source code is free software, published under the GPLv3 license. Find it in this <i class="fa fa-gitea"></i> [repository](https://codeberg.org/langurmonkey/rts-engine).
+The source code is free software, published under the GPLv3 license. Find it in this <i class="ln ln-codeberg"></i> [repository](https://codeberg.org/langurmonkey/rts-engine).
 
 *Edit March 2021:*
 

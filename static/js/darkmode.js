@@ -28,10 +28,10 @@ function darkModeToggle() {
 // Updates the theme toggle button icon.
 function updateThemeToggleButton(is_dark) {
   var toggle = document.getElementById("toggle-theme");
-  toggle.classList.remove("fa-sun-o", "fa-moon");
+  toggle.classList.remove("ln-light-mode", "ln-dark-mode");
   if(is_dark) {
-    toggle.classList.add("fa-sun-o"); 
+    toggle.classList.add("ln-light-mode"); 
   } else {
-    toggle.classList.add("fa-moon"); 
+    toggle.classList.add("ln-dark-mode"); 
   }
 }

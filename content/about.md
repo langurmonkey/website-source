@@ -34,39 +34,39 @@ Here is a summary of the content in this site:
 
 <div class="content-table">
 <a href="/blog"><div class="menu-table-item">
-{{< fa file-word-o >}}<br/>
+{{< icon ln-blog >}}<br/>
 blog
 </div></a>
 <a href="/posts-list"><div class="menu-table-item">
-{{< fa list >}}<br/>
+{{< icon ln-list-rounded >}}<br/>
 list
 </div></a>
 <a href="/projects"><div class="menu-table-item">
-{{< fa cube >}}<br/>
+{{< icon ln-project >}}<br/>
 projects
 </div></a>
 <a href="/papers"><div class="menu-table-item">
-{{< fa file-text-o >}}<br/>
+{{< icon ln-document >}}<br/>
 papers
 </div></a>
 <a href="/photography"><div class="menu-table-item">
-{{< fa camera-retro >}}<br/>
+{{< icon ln-camera >}}<br/>
 photo
 </div></a>
 <a href="/resume"><div class="menu-table-item">
-{{< fa address-card-o >}}<br/>
+{{< icon ln-card-account-mail >}}<br/>
 résumé
 </div></a>
 <a href="/tags"><div class="menu-table-item">
-{{< fa tags >}}<br/>
+{{< icon ln-tag >}}<br/>
 tags
 </div></a>
 <a href="/categories"><div class="menu-table-item">
-{{< fa th >}}<br/>
+{{< icon ln-category-rounded >}}<br/>
 categs
 </div></a>
 <a href="/search"><div class="menu-table-item">
-{{< fa search >}}<br/>
+{{< icon ln-search-rounded >}}<br/>
 search
 </div></a>
 </div>

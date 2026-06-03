@@ -28,7 +28,7 @@
         {{- $pubdate := ($.Scratch.Get "dateType").Format "02 Jan" }}
         {{- $lastmod := .Lastmod.Format "02 Jan" }}
         {{- if ne $lastmod $pubdate }}
-        <i class="fa fa-arrow-circle-o-up last-update" aria-hidden="true" title="Updated: {{ .Lastmod }}"></i>
+        <i class="ln-update last-update" aria-hidden="true" title="Updated: {{ .Lastmod }}"></i>
         {{- end }}
         {{- end }}
       </div>

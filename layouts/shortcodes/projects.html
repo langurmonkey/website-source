@@ -20,12 +20,26 @@
         </a>
         {{ end }}
         <div class="project-header">
-          <strong>
-            <a href="{{ .url }}">{{ .name }}</a>
-            {{ range .icons }}
-            <i class="fa-tss fa {{ . }}"></i>
+          <a href="{{ .url }}">{{ .name }}</a>
+          <div class="iconline">
+            {{ with .language }}
+            <i class="ln ln-{{ . }}" title="{{ title . }}"></i>
             {{ end }}
-          </strong>
+            {{ if .platforms }}
+            |
+            {{ end }}
+            {{ range .platforms }}
+            {{ $tags := split . ":" }}
+            <i class="ln ln-os-{{ index $tags 0 }}" title="{{ index $tags 1 }}"></i>
+            {{ end }}
+            {{ if .icons }}
+            |
+            {{ end }}
+            {{ range .icons }}
+            {{ $tags := split . ":" }}
+            <i class="ln ln-{{ index $tags 0 }}", title="{{ index $tags 1 }}"></i>
+            {{ end }}
+          </div>
           {{ if or .date .start_date .end_date }}
           <span class="project-date">
             {{ if .date }}

@@ -25,9 +25,9 @@ At the end I quickly evaluate the results in the [testing](#testing) section.
 
 The source code, dataset, and models discussed in this post are in the following repositories:
 
-- Dataset creation and fine-tuning - <i class="fa fa-gitea" aria-hidden="true" title="Codeberg"></i> [gaiasky-finetune](https://codeberg.org/gaiasky/gaiasky-finetune)
-- Gaia Sky training dataset repository - <i class="fa fa-git-square" aria-hidden="true" title="Codeberg"></i> [gaiasky-training-dataset](https://hf.co/Langurmonkey/gaiasky-training-dataset)
-- Qwen3.5 Gaia Sky fine-tuned models - <i class="fa fa-git-square" aria-hidden="true" title="Codeberg"></i> [gaiasky-qwen-3.5-gguf](https://hf.co/Langurmonkey/gaiasky-qwen-3.5-gguf)
+- Dataset creation and fine-tuning - <i class="ln-codeberg" aria-hidden="true" title="Codeberg"></i> [gaiasky-finetune](https://codeberg.org/gaiasky/gaiasky-finetune)
+- Gaia Sky training dataset repository - <i class="ln-huggingface" aria-hidden="true" title="Codeberg"></i> [gaiasky-training-dataset](https://hf.co/Langurmonkey/gaiasky-training-dataset)
+- Qwen3.5 Gaia Sky fine-tuned models - <i class="ln-huggingface" aria-hidden="true" title="Codeberg"></i> [gaiasky-qwen-3.5-gguf](https://hf.co/Langurmonkey/gaiasky-qwen-3.5-gguf)
 
 ## Hardware
 

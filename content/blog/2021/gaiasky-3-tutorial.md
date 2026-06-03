@@ -129,12 +129,12 @@ The control panel is made up of different panes: *Time*, *Camera*, *Type visibil
 
 To the bottom of the control panel we can find a few buttons to perform special actions like:
 
-- <i class="fa fa-map-o"></i> Toggle the minimap
-- <i class="fa fa-folder-open"></i> Load a dataset
-- <i class="fa fa-gear"></i> Open the preferences window
-- <i class="fa fa-file-o"></i> Show the session log
-- <i class="fa fa-question"></i> Show the help dialog
-- <i class="fa fa-close"></i> Exit Gaia Sky
+- <i class="ln ln-map"></i> Toggle the minimap
+- <i class="ln ln-folder-open"></i> Load a dataset
+- <i class="ln ln-gear"></i> Open the preferences window
+- <i class="ln ln-file"></i> Show the session log
+- <i class="ln ln-question"></i> Show the help dialog
+- <i class="ln ln-close"></i> Exit Gaia Sky
 
 ### Quick info bar
 
@@ -184,9 +184,9 @@ The most interesting mode is **free mode** which lets us roam freely. Go ahead a
 
 There are three special render modes: [3D mode](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/Stereoscopic-mode.html#d-mode), [planetarium mode](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/Planetarium-mode.html#planetarium-mode) and [panorama mode](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/Panorama-mode.html#panorama-mode). You can access these modes using the buttons at the bottom of the camera pane or the following shortcuts:
 
-- {{< img "/img/2021/03/gs-tut/3d-icon.png" >}} or <kbd>ctrl</kbd> + <kbd>s</kbd> - 3D mode
-- {{< img "/img/2021/03/gs-tut/dome-icon.png" >}} or <kbd>ctrl</kbd> + <kbd>p</kbd> - Planetarium mode
-- {{< img "/img/2021/03/gs-tut/cubemap-icon.png" >}} or <kbd>ctrl</kbd> + <kbd>k</kbd> - Panorama mode
+- {{< img "/img/2021/03/gs-tut/3d-icon.png" "invert" >}} or <kbd>ctrl</kbd> + <kbd>s</kbd> - 3D mode
+- {{< img "/img/2021/03/gs-tut/dome-icon.png" "invert" >}} or <kbd>ctrl</kbd> + <kbd>p</kbd> - Planetarium mode
+- {{< img "/img/2021/03/gs-tut/cubemap-icon.png" "invert" >}} or <kbd>ctrl</kbd> + <kbd>k</kbd> - Panorama mode
 
 ## Toggle visibility of components
 
@@ -194,33 +194,33 @@ The visibility of most graphical elements can be switched off and on using the b
 For example you can hide the stars by clicking on the
 ``stars`` {{< img "/img/2021/03/gs-tut/ct/icon-elem-stars.png" >}} button. The object types available are the following:
 
--  {{< img "/img/2021/03/gs-tut/ct/icon-elem-stars.png" >}} -- Stars
--  {{< img "/img/2021/03/gs-tut/ct/icon-elem-planets.png" >}} -- Planets
--  {{< img "/img/2021/03/gs-tut/ct/icon-elem-moons.png" >}} -- Moons
--  {{< img "/img/2021/03/gs-tut/ct/icon-elem-satellites.png" >}} -- Satellites
--  {{< img "/img/2021/03/gs-tut/ct/icon-elem-asteroids.png" >}} -- Asteroids
--  {{< img "/img/2021/03/gs-tut/ct/icon-elem-clusters.png" >}} -- Star clusters
--  {{< img "/img/2021/03/gs-tut/ct/icon-elem-milkyway.png" >}} -- Milky Way
--  {{< img "/img/2021/03/gs-tut/ct/icon-elem-galaxies.png" >}} -- Galaxies
--  {{< img "/img/2021/03/gs-tut/ct/icon-elem-nebulae.png" >}} -- Nebulae
--  {{< img "/img/2021/03/gs-tut/ct/icon-elem-meshes.png" >}} -- Meshes
--  {{< img "/img/2021/03/gs-tut/ct/icon-elem-equatorial.png" >}} -- Equatorial grid
--  {{< img "/img/2021/03/gs-tut/ct/icon-elem-ecliptic.png" >}} -- Ecliptic grid
--  {{< img "/img/2021/03/gs-tut/ct/icon-elem-galactic.png" >}} -- Galactic grid
--  {{< img "/img/2021/03/gs-tut/ct/icon-elem-labels.png" >}} -- Labels
--  {{< img "/img/2021/03/gs-tut/ct/icon-elem-titles.png" >}} -- Titles
--  {{< img "/img/2021/03/gs-tut/ct/icon-elem-orbits.png" >}} -- Orbits
--  {{< img "/img/2021/03/gs-tut/ct/icon-elem-locations.png" >}} -- Locations
--  {{< img "/img/2021/03/gs-tut/ct/icon-elem-countries.png" >}} -- Countries
--  {{< img "/img/2021/03/gs-tut/ct/icon-elem-constellations.png" >}} -- Constellations
--  {{< img "/img/2021/03/gs-tut/ct/icon-elem-boundaries.png" >}} -- Constellation boundaries
--  {{< img "/img/2021/03/gs-tut/ct/icon-elem-ruler.png" >}} -- Ruler
--  {{< img "/img/2021/03/gs-tut/ct/icon-elem-effects.png" >}} -- Particle effects
--  {{< img "/img/2021/03/gs-tut/ct/icon-elem-atmospheres.png" >}} -- Atmospheres
--  {{< img "/img/2021/03/gs-tut/ct/icon-elem-clouds.png" >}} -- Clouds
--  {{< img "/img/2021/03/gs-tut/ct/icon-elem-axes.png" >}} -- Axes
--  {{< img "/img/2021/03/gs-tut/ct/icon-elem-arrows.png" >}} -- Velocity vectors
--  {{< img "/img/2021/03/gs-tut/ct/icon-elem-others.png" >}} -- Others
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-stars.png" "invert" >}} -- Stars
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-planets.png" "invert" >}} -- Planets
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-moons.png" "invert" >}} -- Moons
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-satellites.png" "invert" >}} -- Satellites
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-asteroids.png" "invert" >}} -- Asteroids
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-clusters.png" "invert" >}} -- Star clusters
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-milkyway.png" "invert" >}} -- Milky Way
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-galaxies.png" "invert" >}} -- Galaxies
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-nebulae.png" "invert" >}} -- Nebulae
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-meshes.png" "invert" >}} -- Meshes
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-equatorial.png" "invert" >}} -- Equatorial grid
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-ecliptic.png" "invert" >}} -- Ecliptic grid
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-galactic.png" "invert" >}} -- Galactic grid
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-labels.png" "invert" >}} -- Labels
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-titles.png" "invert" >}} -- Titles
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-orbits.png" "invert" >}} -- Orbits
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-locations.png" "invert" >}} -- Locations
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-countries.png" "invert" >}} -- Countries
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-constellations.png" "invert" >}} -- Constellations
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-boundaries.png" "invert" >}} -- Constellation boundaries
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-ruler.png" "invert" >}} -- Ruler
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-effects.png" "invert" >}} -- Particle effects
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-atmospheres.png" "invert" >}} -- Atmospheres
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-clouds.png" "invert" >}} -- Clouds
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-axes.png" "invert" >}} -- Axes
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-arrows.png" "invert" >}} -- Velocity vectors
+-  {{< img "/img/2021/03/gs-tut/ct/icon-elem-others.png" "invert" >}} -- Others
 
 ### Velocity vectors
 
@@ -263,11 +263,11 @@ The datasets loaded in Gaia Sky at a certain moment can be found in the [dataset
 
 There are three main ways to load new datasets into Gaia Sky:
 
-* Directly from the UI, using the <i class="fa fa-folder-open"></i> button or pressing <kbd>ctrl</kbd> + <kbd>o</kbd>
+* Directly from the UI, using the <i class="ln ln-folder-open"></i> button or pressing <kbd>ctrl</kbd> + <kbd>o</kbd>
 * Through SAMP, via a connection to another astronomy software package such as Topcat or Aladin
 * Via a script (addressed later on in the workshop if time allows)
 
-**Loading a dataset from the UI** -- Go ahead and remove the current star catalog (either eDR3 or hipparcos) by clicking on the <i class="fa fa-trash"></i> icon in the datasets pane. Now, download a raw [Hipparcos dataset VOTable](https://gaia.ari.uni-heidelberg.de/gaiasky/files/catalogs/hip/hipparcos.vot), click on the <i class="fa fa-folder-open"></i> icon (or press <kbd>ctrl</kbd> + <kbd>o</kbd>) and select the file. In the next dialog just click <kbd>Ok</kbd> to start loading the catalog. In a few moments the Hipparcos new reduction dataset should be loaded into Gaia Sky.
+**Loading a dataset from the UI** -- Go ahead and remove the current star catalog (either eDR3 or hipparcos) by clicking on the <i class="ln ln-trash"></i> icon in the datasets pane. Now, download a raw [Hipparcos dataset VOTable](https://gaia.ari.uni-heidelberg.de/gaiasky/files/catalogs/hip/hipparcos.vot), click on the <i class="ln ln-folder-open"></i> icon (or press <kbd>ctrl</kbd> + <kbd>o</kbd>) and select the file. In the next dialog just click <kbd>Ok</kbd> to start loading the catalog. In a few moments the Hipparcos new reduction dataset should be loaded into Gaia Sky.
 
 **Loading a dataset via SAMP** -- This section presupposes that Topcat is installed on the machine and that the user knows how to use it to connect to the VO to get some data. The following video demonstrates how to do this ([mirror](https://youtu.be/sc0q-VbeoPE)):
 
@@ -291,9 +291,9 @@ A few useful tips for working with datasets:
     5.  Click <kbd>Ok</kbd>
     6.  Click on the highlight dataset {{< img "/img/2021/03/gs-tut/highlight-s-off.png" >}} icon to apply the color map
 
--  You can **define basic filters** on the objects of the dataset using their attributes from the dataset preferences window <i class="fa fa-gear"></i>. For example, we can filter out all stars with \\(\delta > 50^{\circ}\\):
+-  You can **define basic filters** on the objects of the dataset using their attributes from the dataset preferences window <i class="ln-gear"></i>. For example, we can filter out all stars with \\(\delta > 50^{\circ}\\):
 
-    1.  Click on the dataset preferences button <i class="fa fa-gear"></i>
+    1.  Click on the dataset preferences button <i class="ln-gear"></i>
     2.  Click on <kbd>Add filter</kbd>
     3.  Select your attribute (declination \\(\delta\\))
     4.  Select your comparator (\\(>\\))

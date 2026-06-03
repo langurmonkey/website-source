@@ -9,10 +9,13 @@ content:
     image: /img/projects/gaiasky.avif
     start_date: 2013
     end_date: present
+    language: java
+    platforms:
+      - linux:Linux
+      - macos:macOS
+      - windows:Windows
     icons:
-      - fa-linux
-      - fa-apple
-      - fa-windows
+      - satellite:Science
     text: >
       A real-time 3D visualisation application developed in OpenGL in the framework of Gaia outreach. Gestated in the Astronomisches Rechen-Institut of Heidelberg University.
 
@@ -21,9 +24,9 @@ content:
     image: /img/projects/dotfiles.avif
     start_date: 2018
     end_date: present
-    icons:
-      - fa-linux
-      - fa-gitea
+    language: bash
+    platforms:
+      - linux:Linux
     text: >
       My dotfiles project. Contains the configuration, bootstrapping and deploying of Arch Linux with Hyprland (Wayland) and i3 (X11).
 
@@ -32,9 +35,14 @@ content:
     image: /img/projects/playkid.avif
     start_date: 2019
     end_date: 2026
+    language: rust
+    platforms:
+      - linux:Linux
+      - macos:macOS
+      - windows:Windows
     icons:
-      - fa-gamepad
-      - fa-gitea
+      - cpu-styled:Emulator
+      - gamepad:Game
     text: >
       A Game Boy (DMG) emulator written in Rust and SDL2. It runs most Game Boy games, contains its own UI library, a full debug mode, and much more.
 
@@ -43,10 +51,13 @@ content:
     image: /img/projects/wisemonkey.png
     start_date: 2026
     end_date: present
+    language: python
+    platforms:
+      - linux:Linux
+      - macos:macOS
+      - windows:Windows
     icons:
-      - fa-linux
-      - fa-apple
-      - fa-gitea
+      - ai:AI
     text: >
       A simple, extensible, and hackable AI agent with sessions, memory management, tools, skills, and much more. For the Linux and macOS terminal.
 
@@ -55,9 +66,13 @@ content:
     url: https://codeberg.org/langurmonkey/rchip8
     image: /img/projects/rchip8.avif
     date: 2021
+    language: rust
+    platforms:
+      - linux:Linux
+      - macos:macOS
+      - windows:Windows
     icons:
-      - fa-gamepad
-      - fa-gitea
+      - cpu-styled:Emulator
     text: >
       A [CHIP-8](blog/2021/chip8-spec) emulator/VM written in [Rust](https://rust-lang.org), with arbitrary display scaling, debug mode, emulation speed control and much more. [Here is a write-up](/blog/2021/chip8-implementation).
 
@@ -66,29 +81,38 @@ content:
     image: /img/projects/catgen.avif
     start_date: 2015
     end_date: present
+    language: rust
+    platforms:
+      - linux:Linux
     icons:
-      - fa-linux
-      - fa-gitea
+      - satellite:Science
     text: >
       LOD catalog generation for Gaia Sky written in [Rust](https://rust-lang.org). It supports the integration of multiple catalogs using cross-match information, additional columns cross-referenced by id, extinction and reddening corrections and much more.
 
-  - name: Gaia Sky LLM fine-tuning
+  - name: GS LLM fine-tuning
     url: https://codeberg.org/gaiasky/gaiasky-finetune
-    image: /img/projects/finetune.avif
+    image: /img/projects/finetune.jpg
     date: 2026
+    language: python
+    platforms:
+      - linux:Linux
+      - macos:macOS
     icons:
-      - fa-cog
-      - fa-gitea
+      - ai:AI
     text: >
       Fine-tuning Qwen 3.5 9B with a custom-made dataset curated from Gaia Sky data for local inference. [Here is a write-up](/blog/2026/fine-tuning-qwen3.5-gaiasky).
 
   - name: Local RAG pipeline
     url: https://codeberg.org/langurmonkey/gaiasky-ai
-    image: /img/projects/rag.avif
+    image: /img/projects/rag-gs.jpg
     date: 2025
+    language: python
+    platforms:
+      - linux:Linux
+      - macos:macOS
     icons:
-      - fa-cog
-      - fa-gitea
+      - experiment:Experiment
+      - ai:AI
     text: >
       A local RAG infrastructure with chatbot written on top of Ollama. [Here is a write-up](/blog/2025/local-llm-rag), and another [post with an application for Gaia Sky](/blog/2025/gaiasky-ai-assistant).
 
@@ -97,9 +121,11 @@ content:
     image: /img/projects/rts-engine.avif
     start_date: 2013
     end_date: present
+    language: java
+    platforms:
+      - linux:Linux
     icons:
-      - fa-gamepad
-      - fa-gitea
+      - gamepad:Game engine
     text: >
       Real time strategy game engine written in Java. Very early stage, but already usable. There is a private fork which contains much more advanced AI based on behavior trees and state machines, original graphics, sound, heights, and uses an entity component system (ECS) internally.
 
@@ -107,9 +133,10 @@ content:
     url: https://codeberg.org/langurmonkey/virtualtexture-tools
     image: /img/projects/vt-tools.avif
     date: 2023
+    language: python
     icons:
-      - fa-python
-      - fa-gitea
+      - texture:Textures
+      - tool:Tool
     text: >
       A collection of Python scripts to generate and process Sparse Virtual Texture datasets for Gaia Sky (and others).
 
@@ -118,8 +145,11 @@ content:
     image: /img/projects/docs.avif
     start_date: 2016
     end_date: present
+    language: rst
+    platforms:
+      - web:Website
     icons:
-      - fa-book
+      - docs:Documentation
     text: >
       Documentation pages of Gaia Sky, written in reStructuredText with [Sphinx](https://www.sphinx-doc.org).
 
@@ -127,9 +157,12 @@ content:
     url: https://codeberg.org/langurmonkey/tsnake
     image: /img/projects/tsnake.avif
     date: 2019
+    language: cpp
+    platforms:
+      - linux:Linux
+      - macos:macOS
     icons:
-      - fa-linux
-      - fa-gitea
+      - gamepad:Game
     text: >
       A terminal snake game written in C++ using the ncurses library with support for different maps and tons of options. [Here a write-up](/blog/2019/learning-ncurses).
 
@@ -137,9 +170,12 @@ content:
     url: https://codeberg.org/langurmonkey/brainfuck
     image: /img/projects/brainfuck.avif
     date: 2022
+    language: rust
+    platforms:
+      - linux:Linux
     icons:
-      - fa-linux
-      - fa-gitea
+      - experiment:Experiment
+      - tool:Tool
     text: >
       A very compact [Brainfuck](http://brainfuck.org/) interpreter written in [Rust](https://rust-lang.org).
 
@@ -147,9 +183,12 @@ content:
     url: https://gitlab.com/langurmonkey/langursh
     image: /img/projects/langursh.avif
     date: 2019
+    language: c
+    platforms:
+      - linux:Linux
     icons:
-      - fa-linux
-      - fa-git-square
+      - experiment:Experiment
+      - tool:Tool
     text: >
       A basic POSIX shell written in C. It offers only the basics, but it is fully functional and very light.
 
@@ -157,9 +196,12 @@ content:
     url: https://gitlab.com/langurmonkey/mediaorganiser-py
     image: /img/projects/mediaorg.avif
     date: 2016
+    language: python
+    platforms:
+      - linux:Linux
+      - macos:macOS
     icons:
-      - fa-python
-      - fa-git-square
+      - tool:Tool
     text: >
       Very small script to organise media files into folders sorted by year and month (/YYYYMM). It scans the file name and the EXIF and RAW metadata. Very handy to keep your photos and videos automatically sorted. I also made a [C++ port](https://gitlab.com/langurmonkey/mediaorganiser), but it is kind of unmaintained.
 
@@ -167,9 +209,13 @@ content:
     url: https://codeberg.org/langurmonkey/markov-nl
     image: /img/projects/markov.avif
     date: 2019
+    language: python
+    platforms:
+      - linux:Linux
+      - macos:macOS
     icons:
-      - fa-python
-      - fa-gitea
+      - experiment:Experiment
+      - language:NLP
     text: >
       A very minimalistic first-order Markov model for natural language generation based on text input.
 
@@ -178,8 +224,12 @@ content:
     image: /img/projects/pps.avif
     start_date: 2010
     end_date: 2012
+    language: java
+    platforms:
+      - android:Android
     icons:
-      - fa-android
+      - gamepad:Game
+      - satellite:Science
     text: >
       A gravitational physics playground application for Android (v2.1+) devices.
 
@@ -187,8 +237,11 @@ content:
     url: /projects/nblw/
     image: /img/projects/nbody.avif
     date: 2010
+    language: java
+    platforms:
+      - android:Android
     icons:
-      - fa-android
+      - tool:Tool
     text: >
       A physics live wallpaper for Android (v2.1+) devices.
 
@@ -196,9 +249,11 @@ content:
     url: /projects/celestial-pole/
     image: /img/projects/pole.avif
     date: 2012
+    language: java
+    platforms:
+      - linux:Linux
     icons:
-      - fa-star
-      - fa-git-square
+      - satellite:Science
     text: >
       Tracks the motion of the mean celestial poles with respect to the ICRS due to the Earth's precession and nutation.
 
@@ -206,8 +261,11 @@ content:
     url: /projects/snake/
     image: /img/projects/snake.avif
     date: 2013
+    language: html5
+    platforms:
+      - web:Web
     icons:
-      - fa-html5
+      - experiment:Experiment
     text: >
       A modified version of an HTML5 snake game.
 
@@ -215,9 +273,12 @@ content:
     url: https://codeberg.org/langurmonkey/catalan-learning-tutor
     image: /img/projects/catalan.avif
     date: 2007
+    language: java
+    platforms:
+      - windows:Windows
+      - linux:Linux
     icons:
-      - fa-java
-      - fa-gitea
+      - language:NLP
     text: >
       Final year project of my Informatics engineering degree. University of Aberdeen, departament of Computer Science, 2007. You can find the report in the [publications section](/papers).
 
@@ -239,7 +300,7 @@ achievements:
       badge: Astronomy Picture of the Day
       date: 2016-09-26
 
-    - name: A Window to Gaia&#58; The Focal Plane
+    - name: A Window to Gaia - The Focal Plane
       url: http://www.cosmos.esa.int/web/gaia/iow_20160422
       badge: Gaia Image of the Week
       date: 2016-04-22

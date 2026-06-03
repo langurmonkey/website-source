@@ -14,7 +14,7 @@ The **Particle Physics Simulator** is a physics application for [Android](http:/
 
 ## Source code
 
-The source code can be found in this <i class="fa fa-gitlab"></i> [Gitlab repository](https://gitlab.com/langurmonkey/particle-physics-sim).
+The source code can be found in this <i class="ln-gitlab"></i> [Gitlab repository](https://gitlab.com/langurmonkey/particle-physics-sim).
 
 ## Download
 

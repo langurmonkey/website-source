@@ -47,7 +47,7 @@ enableGitInfo = true
     # minifiedFilesCSS and minifiedFilesJS. The variable is an array so that you
     # can load multiple files if necessary. You can also load the standard theme
     # files by adding the value, "default".
-    customcss              = ["/css/site-bundle.css"]
+    customcss              = ["/css/site-bundle.css", "/webfonts/langur-icons.css"]
     customjs               = ["/js/site-bundle.js"]
 
 # Contact info
@@ -152,3 +152,10 @@ enableGitInfo = true
       hardWraps = false
       unsafe = true
       xhtml = false
+
+[minify]
+  disableCSS = false
+  [minify.tdewolff]
+    [minify.tdewolff.css]
+      keepCSS2 = true
+      precision = 0

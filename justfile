@@ -2,6 +2,11 @@
 minify:
   $WEB/scripts/minify-all.sh theme-bw
 
+# Generate a font from all icons in /assets/icons
+iconfont:
+    (cd scripts && npx svgtofont --config svgtofont.config.js --output ./generated --sources ../assets/icons)
+    cp scripts/generated/langur-icons.css scripts/generated/langur-icons.eot scripts/generated/langur-icons.svg scripts/generated/langur-icons.ttf scripts/generated/langur-icons.woff scripts/generated/langur-icons.woff2 static/webfonts/
+
 # Run hugo. This is not a final target! To generate the site
 # use 'generate'.
 hugo: minify
