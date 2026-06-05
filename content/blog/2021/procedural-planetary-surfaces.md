@@ -160,13 +160,13 @@ We can also generate a specular texture where there is water. The specular textu
 
 In this article we have used a little trick that we have not yet talked about. Usually, noise sampled directly is not tileable, but the images in this article do not have seams. If sampled with \\(x\\) and \\(y\\) directly, the features do not repeat. In the case of one dimension, usually one would sample the noise using a coordinate for the only dimension available, \\(x\\).
 
-{{< fig src="/img/2021/12/procedural-surfaces/figures/noise-sampling-1d.png" link="/img/2021/12/procedural-surfaces/figures/noise-sampling-1d.png" title="Sampling noise in 1D leads to seams." class="fig-center" width="50%" loading="lazy" >}}
+{{< fig src="/img/2021/12/procedural-surfaces/figures/noise-sampling-1d.avif" link="/img/2021/12/procedural-surfaces/figures/noise-sampling-1d.avif" title="Sampling noise in 1D leads to seams." class="fig-center" width="50%" loading="lazy" >}}
 
 However, if we go one dimension higher, 2D, and sample the noise along a
 circumference embedded in this two-dimensional space, we get seamless,
 tileable noise.
 
-{{< fig src="/img/2021/12/procedural-surfaces/figures/noise-sampling-2d.png" link="/img/2021/12/procedural-surfaces/figures/noise-sampling-2d.png" title="Sampling noise along a circumference in 2D space is seamless" class="fig-center" width="50%" loading="lazy" >}}
+{{< fig src="/img/2021/12/procedural-surfaces/figures/noise-sampling-2d.avif" link="/img/2021/12/procedural-surfaces/figures/noise-sampling-2d.avif" title="Sampling noise along a circumference in 2D space is seamless" class="fig-center" width="50%" loading="lazy" >}}
 
 We can apply this same principle with any dimension \\(d\\) by sampling in \\(d+1\\). Since we need to create spherical 2D maps (our aim is to produce textures to apply to UV spheres), we do not sample the noise algorithm with the \\(x\\) and \\(y\\) coordinates of the pixel in image space. That would produce higher frequencies at the poles and lower around the equator. Additionally, the noise would contain seams, as it does not tile by default. Instead, we sample the 2D surface of a sphere of radius 1 embedded in a 3D volume, so we sample 3D noise. To do so, we iterate over the spherical coordinates \\(\varphi\\) and \\(\theta\\), and transform them to cartesian coordinates to sample the noise:
 

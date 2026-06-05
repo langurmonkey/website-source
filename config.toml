@@ -1,5 +1,5 @@
 baseurl = "https://tonisagrista.com"
-languageCode = "en-gb"
+locale = "en-gb"
 title = "Langur Monkey - Toni Sagristà Sellés"
 preserveTaxonomyNames = true
 enableRobotsTXT = true
@@ -152,10 +152,3 @@ enableGitInfo = true
       hardWraps = false
       unsafe = true
       xhtml = false
-
-[minify]
-  disableCSS = false
-  [minify.tdewolff]
-    [minify.tdewolff.css]
-      keepCSS2 = true
-      precision = 0

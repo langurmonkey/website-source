@@ -5,13 +5,13 @@
     <!-- Intro -->
     <div class="row">
       <div class="section-title">
-        <p>{{ .Site.Data.projects.subtitle }}</p>
+        <p>{{ hugo.Data.projects.subtitle }}</p>
       </div>
     </div>
 
     <!-- Projects Grid -->
     <div class="projects-container">
-      {{ range .Site.Data.projects.content }}
+      {{ range hugo.Data.projects.content }}
       <div class="project-card">
         <a id="{{ .name | anchorize }}"></a>
         {{ if .image }}
@@ -75,21 +75,21 @@
 </section>
 
 <!-- Achievements Start -->
-{{ if .Site.Data.projects.achievements }}
+{{ if hugo.Data.projects.achievements }}
 <section id="achievements">
   <div class="container">
 
     <!-- Section Title -->
     <div class="row">
       <div class="section-title">
-        <h2>{{ .Site.Data.projects.achievements.title }}</h2>
+        <h2>{{ hugo.Data.projects.achievements.title }}</h2>
       </div>
     </div>
 
     <!-- Achievements List -->
     <div class="row">
       <ul class="achievements-list">
-        {{ range .Site.Data.projects.achievements.items }}
+        {{ range hugo.Data.projects.achievements.items }}
         <li>
           <a href="{{ .url }}">{{ .name }}</a> — <strong>{{ .badge }}</strong>
           <span class="achievement-year">({{ .date }})</span>
