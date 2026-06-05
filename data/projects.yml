@@ -47,8 +47,8 @@ content:
       A Game Boy (DMG) emulator written in Rust and SDL2. It runs most Game Boy games, contains its own UI library, a full debug mode, and much more.
 
   - name: Wisemonkey
-    url: /projects/wisemonkey
-    image: /img/projects/wisemonkey.png
+    url: https://langurmonkey.codeberg.page/wisemonkey
+    image: /img/projects/wisemonkey-session.jpg
     start_date: 2026
     end_date: present
     language: python
@@ -74,7 +74,7 @@ content:
     icons:
       - cpu-styled:Emulator
     text: >
-      A [CHIP-8](blog/2021/chip8-spec) emulator/VM written in [Rust](https://rust-lang.org), with arbitrary display scaling, debug mode, emulation speed control and much more. [Here is a write-up](/blog/2021/chip8-implementation).
+      A [CHIP-8](blog/2021/chip8-spec) emulator/VM written in [Rust](https://rust-lang.org), with arbitrary display scaling, debug mode, emulation speed control and much more.
 
   - name: Gaia Sky catgen
     url: https://codeberg.org/gaiasky/gaiasky-catgen

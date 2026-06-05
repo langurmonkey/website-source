@@ -61,6 +61,12 @@
           {{ end }}
         </div>
         <p class="project-description">{{ .text | markdownify }}</p>
+        {{ with .url }}
+        <div class="project-website">
+        <i class="ln ln-link"></i><a href="{{ . }}">{{ . | truncate 45 }}</a>
+        </div>
+        {{ end }}
+
       </div>
       {{ end }}
     </div>

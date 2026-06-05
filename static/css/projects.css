@@ -164,6 +164,22 @@
   color: var(--link-color-hover);
 }
 
+.project-website {
+  display: flex;
+  position: absolute; 
+  bottom: 0.5em;
+  left: 1.3em;
+}
+
+.project-website i {
+  margin-right: 0.5em;
+  margin-top: -2px;
+  rotate: -45deg;
+}
+.project-website a {
+  font-size: 0.7em;
+}
+
 
 /* Achievements section styling */
 .achievements-list {
