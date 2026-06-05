@@ -244,7 +244,7 @@ Additionally, we have added a separate step to generate a cloud layer, and we ca
 
 {{< fig src="/img/2021/12/procedural-surfaces/planets/randomize-all.jpg" link="/img/2021/12/procedural-surfaces/planets/randomize-all.jpg" title="Random planets created with Gaia Sky." class="fig-center" width="100%" loading="lazy" >}}
 
-More information on the topic can be found in the [official documentation](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/Procedural-generation.html) of Gaia Sky.
+More information on the topic can be found in the [official documentation](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/master/Procedural-planets.html) of Gaia Sky.
 
 [^1]: https://en.wikipedia.org/wiki/Perlin_noise
 [^2]: https://en.wikipedia.org/wiki/Simplex_noise
