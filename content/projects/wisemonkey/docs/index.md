@@ -2,24 +2,15 @@
 categories = ["ai"]
 date = "2026-05-29"
 tags = ["ai", "llm", "agent", "local llm", "tools", "skills"]
-title = "Wisemonkey"
+title = "Wisemonkey documentation"
 description = "A simple, extensible, and hackable AI agent for the Linux and macOS terminal"
 showpagemeta = "false"
+layout = "single"
 +++
 
-<h3 align="center"><img src="/img/projects/wisemonkey.png" alt="Langur Agent" width="130px"><br>Wisemonkey</h3>
+<h3 align="center"><img src="/img/projects/wisemonkey.png" alt="Langur Agent" width="130px"></h3>
 
----
-
-Wisemonkey is a simple, open, hackable CLI AI agent for Linux and macOS. It connects to any service providing an OpenAI-compatible endpoint. It features:
-
-- session management
-- memory management
-- visual candy
-- tools
-- skills
-- autocompletion
-- interactive configuration
+[Wisemonkey](/projects/wisemonkey) is a simple, open, and hackable AI agent for the Linux and macOS terminal. It connects to any service providing an OpenAI, Anthropic, or Ollama-compatible endpoint. It features **session management**, **persistent memory management**, **vector store** for document embedding, native and MCP **tools**, **skills**, and much more.
 
 The source is available in this <i class="ln-codeberg"></i> [repository](https://codeberg.org/langurmonkey/wisemonkey).
 
@@ -44,6 +35,12 @@ Install the agent with:
 curl -fsSL https://codeberg.org/langurmonkey/wisemonkey/raw/branch/master/install.sh | bash
 ```
 
+Launch the onboarding process to configure the agent interactively:
+
+```bash
+wisemonkey --onboard
+```
+
 ### Running
 
 Run the agent with the default session:
@@ -62,9 +59,11 @@ Create the `.env` file with the API key:
 
 ```bash
 echo "OPENAI_API_KEY=your-api-key-here" > .env
+echo "ANTHROPIC_API_KEY=your-api-key-here" > .env
+echo "OLLAMA_API_KEY=your-api-key-here" > .env
 ```
 
-> The agent uses `python-dotenv` to load `.env` at startup. The `openai` package reads `OPENAI_API_KEY` from the environment automatically. You can also set `OPENAI_API_KEY` in your shell profile.
+> The agent uses `python-dotenv` to load `.env` at startup. The `openai` package reads `OPENAI_API_KEY` from the environment automatically. You can also set `OPENAI_API_KEY` in your shell profile. Same goes for `ANTHROPIC_API_KEY` and `OLLAMA_API_KEY`.
 
 
 ## Run from source
@@ -80,13 +79,17 @@ uv run wisemonkey
 
 ## Configuration
 
-On first run, the configuration is created in `$XDG_CONFIG_HOME/wisemonkey/config.yaml`.
+You can configure the agent interactively before the first run with `wisemonkey --onboard`.
+
+In any case, the configuration is created on first run in `$XDG_CONFIG_HOME/wisemonkey/config.yaml`.
 
 It works with any OpenAI-compatible endpoint, so LM Studio, Ollama, OpenWebUI, or any other service you configure. Here are the default values:
 
 ```yaml
 # Wisemonkey Configuration
 model:
+  # openai, anthropic, ollama, lmstudio, or generic
+  provider: generic
   # Model name
   name: qwen/qwen3.6-35b-a3b
   # URL of OpenAI endpoint
@@ -114,6 +117,16 @@ agent:
   # Enable vi mode input
   vi_mode: false
 ```
+
+### Model Context Protocol (MCP)
+
+Wisemonkey also supports MCP. Use the following commands to manage the MCP integration:
+
+- `/mcp`: Show the current MCP configuration
+- `/mcp edit`: Edit the MCP configuration file (`~/.config/wisemonkey/mcp.json`)
+- `/mcp tools`: List all MCP tools available. Alias: `/tools mcp`
+
+MCP servers are started when the agent boots. You need to restart the agent if you add new servers.
 
 ## Usage and commands
 
@@ -220,11 +233,47 @@ agent:
   max_chat_history: 128000  # Maximum history characters to keep for context
 ```
 
+## Structure
+
+Wisemonkey is built to be modular and hackable. Here is an overview of the main parts and their mapping to the file system.
+
+```
+wisemonkey/
+├── agent/                  # Core agent code.
+│   ├── agent.py            # Main agent loop, prompt handling, key bindings.
+│   ├── commands.py         # Slash commands (e.g. /embed, /quit).
+│   ├── config.py           # Configuration loading and handling.
+│   ├── console.py          # Rich console output with themed formatting.
+│   ├── core.py             # Core agent functions, like API connection and tool calls.
+│   ├── mcp.py              # MCP server support.
+│   ├── memory.py           # Session memory, paste file creation.
+│   ├── router.py           # API router implementation for OpenAI, Ollama, and Anthropic.
+│   ├── skills.py           # Skill loading and management.
+│   ├── tools.py            # Tool definitions.
+│   ├── utils.py            # Utility functions.
+│   └── vectorstore.py      # Vector store wrapper.
+├── tools/                  # Tool implementations available to the model.
+│   ├── basic.py            # Basic and example tools.
+│   ├── files.py            # File read/write tools.
+│   ├── memory.py            # search_knowledge tool.
+│   ├── network.py          # URL fetching.
+│   ├── terminal.py         # Shell command execution.
+│   └── vectorstore.py      # Vector store tool handler.
+├── skills/                 # Skill definitions. Add new skills here.
+│   ├── example.md
+│   └── rolldice.md
+├── config.yaml             # Default config file.
+├── README.md
+├── pyproject.toml
+├── install.sh              # Installer script.
+└── .env.example
+```
+
 ## Extend the agent
 
-Wisemonkey can be easily customized and extended by adding new tools, commands, and skills.
+This agent is simple enough that it can be easily customized and extended by adding new tools, commands, and skills.
 
-If you create a cool new tool, skill, or slash command, consider contributing it via a pull request!
+If you create a cool new tool, skill, or slash command, consider contributing it via a merge request!
 
 ### Adding tools
 
@@ -272,7 +321,7 @@ A slash command must return, in that order, `ok:bool`, `msg:str`, `content:str`,
     "This is the description",
     aliases=["/mycmd"],
 )
-def _cmd_mine(agent, params):
+def _cmd_my_command(agent, params) -> (bool, str, str, str):
     """This command returns a message but no content"""
     return True, "This is awesome!", None, None
 ```
@@ -302,4 +351,3 @@ description: What this skill does
 
 The front matter `name` and `description` are parsed and shown in the
 skills list. The body is injected into the system prompt.
-

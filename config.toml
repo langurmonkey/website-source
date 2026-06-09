@@ -50,6 +50,10 @@ enableGitInfo = true
     customcss              = ["/css/site-bundle.css", "/webfonts/langur-icons.css"]
     customjs               = ["/js/site-bundle.js"]
 
+[security]
+  allowContent = ['text/html', 'text/markdown']
+  enableInlineShortcodes = true
+
 # Contact info
 [params.social]
     rss             = "index.xml"
