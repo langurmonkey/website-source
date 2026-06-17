@@ -16,7 +16,7 @@ type = "homepage"
 
 I'm an informatics engineer specializing in scientific visualization and computer graphics, currently working on the ESA Gaia mission. I hold a Ph.D. in Scientific Visualization and Astronomy and an M.Sc. in Astrophysics, Particle Physics and Cosmology. Currently, my main project is the 3D Universe software [Gaia Sky](https://gaiasky.space).
 
-Outside of work, I'm fascinated by local LLMs and AI agents, and I spend my free time playing football, doing photography, and building things---like my Game Boy emulator, [Play Kid](/projects/playkid). I also enjoy snowboarding, drawing (terribly), and playing with my kids.
+Outside of work, I'm fascinated by local LLMs and AI agents, and I spend my free time playing football, doing photography, and building things---like the CLI AI agent [Wisemonkey](/projects/wisemonkey), or my Game Boy emulator [Play Kid](/projects/playkid). I also enjoy snowboarding, drawing (terribly), and playing with my kids.
 
 I share more about these projects and my experiments in the [blog](/blog).
 

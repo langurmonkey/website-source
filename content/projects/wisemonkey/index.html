@@ -55,7 +55,7 @@ layout = "content-passthrough"
   <section class="terminal-section" id="demo">
     <div class="section-label">Interactive Demo</div>
     <h2 class="section-title">See It In Action</h2>
-    <p style="text-align:center; color: var(--text-secondary); max-width: 560px; margin: -24px auto 32px; font-size: 0.95rem;">A simulated Wisemonkey session — the welcome screen you see on first launch, followed by example prompts showcasing natural-language control over tools, memory, providers, and MCP servers.</p>
+    <p style="text-align:center; color: var(--text-secondary); max-width: 560px; margin: -24px auto 32px; font-size: 0.95rem;">A simulated Wisemonkey session &mdash; the welcome screen you see on first launch, followed by example prompts showcasing natural-language control over tools, memory, providers, and MCP servers.</p>
     <div class="terminal reveal">
       <div class="terminal-header">
         <div class="terminal-dot red"></div>
@@ -156,7 +156,7 @@ layout = "content-passthrough"
             <button class="copy-btn" onclick="copyCommand(this)">Copy</button>
           </div>
           <div class="quickstart-line">
-            <span class="quickstart-comment"># Interactive configuration</span>
+            <span class="quickstart-comment"># Interactive first-time configuration</span>
           </div>
           <div class="quickstart-line">
             <span class="quickstart-prompt">$</span>
@@ -168,7 +168,7 @@ layout = "content-passthrough"
           </div>
           <div class="quickstart-line">
             <span class="quickstart-prompt">$</span>
-            <span class="quickstart-cmd">wisemonkey</span>
+            <span class="quickstart-cmd">wisemonkey [session-name]</span>
             <button class="copy-btn" onclick="copyCommand(this)">Copy</button>
           </div>
         </div>
@@ -182,7 +182,7 @@ layout = "content-passthrough"
             <button class="copy-btn" onclick="copyCommand(this)">Copy</button>
           </div>
           <div class="quickstart-line">
-            <span class="quickstart-comment"># Interactive configuration</span>
+            <span class="quickstart-comment"># Interactive first-time configuration</span>
           </div>
           <div class="quickstart-line">
             <span class="quickstart-prompt">$</span>
@@ -194,7 +194,7 @@ layout = "content-passthrough"
           </div>
           <div class="quickstart-line">
             <span class="quickstart-prompt">$</span>
-            <span class="quickstart-cmd">uv run wisemonkey</span>
+            <span class="quickstart-cmd">uv run wisemonkey [session-name]</span>
             <button class="copy-btn" onclick="copyCommand(this)">Copy</button>
           </div>
         </div>
@@ -236,6 +236,8 @@ layout = "content-passthrough"
           <div class="config-line"><span class="config-key">&nbsp;&nbsp;max_turns:</span> <span class="config-val">50</span></div>
           <div class="config-line"><span class="config-key">&nbsp;&nbsp;markdown:</span> <span class="config-val">false</span></div>
           <div class="config-line"><span class="config-key">&nbsp;&nbsp;max_chat_history:</span> <span class="config-val">320000</span></div>
+          <div class="config-line"><span class="config-key">&nbsp;&nbsp;context_files:</span></div>
+          <div class="config-line"><span class="config-val">&nbsp;&nbsp;&nbsp;&nbsp;- AGENTS.md</span></div>
           <div class="config-line"><span class="config-key">&nbsp;&nbsp;vi_mode:</span> <span class="config-val">false</span></div>
         </div>
         <div class="config-tab-content" id="cfg-mcp-json">
