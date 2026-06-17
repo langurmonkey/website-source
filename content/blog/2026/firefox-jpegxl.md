@@ -22,3 +22,5 @@ Yesterday, Firefox 152 was released. In the [release notes](https://www.firefox.
 Finally! I have written about this image format [here](/blog/2022/jpeg-xl-chrome), [here](/blog/2023/jpegxl-vs-avif), and [here](/blog/2025/google-unkills-jpegxl). The latter entry is particularly important because Google set the ball rolling by announcing that they would look into adding a memory-safe JPEG XL decoder into Chromium. It was only a matter of time before the other browsers would follow suit.
 
 I have not had the chance to test this myself, as at the time of writing, `firefox-152` has not yet landed on the Arch repositories. However, it won't be long. I'm just happy that it is finally happening. That's all.
+
+{{< sp orange >}}Edit (2026-06-17 09:26 UTC):{{</ sp >}} Well, a little over an hour after I wrote the post, and version 152 is live on the Arch extra repository. I tested it quickly and it seems to work. The [JPEG XL test page](https://jpegxl.info/resources/jpeg-xl-test-page.html) indicates that alpha transparency and animation work. I can't test the wide gamut feature as I don't have a P3 display.
