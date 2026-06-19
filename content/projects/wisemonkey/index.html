@@ -143,6 +143,7 @@ layout = "content-passthrough"
     <div class="quickstart-terminal reveal">
       <div class="quickstart-tabs">
         <button class="quickstart-tab active" data-tab="install" onclick="switchQuickstartTab(this, 'install')">One-liner</button>
+        <button class="quickstart-tab" data-tab="uvx" onclick="switchQuickstartTab(this, 'uvx')">UVX</button>
         <button class="quickstart-tab" data-tab="source" onclick="switchQuickstartTab(this, 'source')">From source</button>
       </div>
       <div class="quickstart-body">
@@ -152,7 +153,7 @@ layout = "content-passthrough"
           </div>
           <div class="quickstart-line">
             <span class="quickstart-prompt">$</span>
-            <span class="quickstart-cmd">curl -fsSL https://codeberg.org/langurmonkey/wisemonkey/raw/branch/master/install.sh | bash</span>
+            <span class="quickstart-cmd">curl -fsSL https://codeberg.org/langurmonkey/wisemonkey/raw/branch/master/install.sh | sh</span>
             <button class="copy-btn" onclick="copyCommand(this)">Copy</button>
           </div>
           <div class="quickstart-line">
@@ -169,6 +170,32 @@ layout = "content-passthrough"
           <div class="quickstart-line">
             <span class="quickstart-prompt">$</span>
             <span class="quickstart-cmd">wisemonkey [session-name]</span>
+            <button class="copy-btn" onclick="copyCommand(this)">Copy</button>
+          </div>
+        </div>
+        <div class="quickstart-tab-content" id="qs-uvx">
+          <div class="quickstart-line">
+            <span class="quickstart-comment"># Install <code>uv</code></span>
+          </div>
+          <div class="quickstart-line">
+            <span class="quickstart-prompt">$</span>
+            <span class="quickstart-cmd">curl -LsSf https://astral.sh/uv/install.sh | sh</span>
+            <button class="copy-btn" onclick="copyCommand(this)">Copy</button>
+          </div>
+          <div class="quickstart-line">
+            <span class="quickstart-comment"># Interactive first-time configuration</span>
+          </div>
+          <div class="quickstart-line">
+            <span class="quickstart-prompt">$</span>
+            <span class="quickstart-cmd">uvx wisemonkey --onboard</span>
+            <button class="copy-btn" onclick="copyCommand(this)">Copy</button>
+          </div>
+          <div class="quickstart-line">
+            <span class="quickstart-comment"># Run the agent</span>
+          </div>
+          <div class="quickstart-line">
+            <span class="quickstart-prompt">$</span>
+            <span class="quickstart-cmd">uvx wisemonkey [session-name]</span>
             <button class="copy-btn" onclick="copyCommand(this)">Copy</button>
           </div>
         </div>
