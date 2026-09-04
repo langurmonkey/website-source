@@ -32,7 +32,7 @@ css = ["/css/resume.css"]
       11/2013 &ndash; currently&nbsp;&nbsp;&nbsp;<a href="http://www.ari.uni-heidelberg.de/" title="ARI" target="_blank">ARI</a>/<a href="http://uni-heidelberg.de" title="University of Heidelberg" target="_blank">University of Heidelberg</a>, software engineer, postdoc researcher
     </h2>
     <ul>
-      <li><strong><a href="http://www.ari.uni-heidelberg.de/gaia/outreach/gaiasky">Gaia Sky</a></strong> &ndash; Lead designer and developer of Gaia Sky, a modern 3D Universe application.</li>
+      <li><strong><a href="https://gaiasky.space">Gaia Sky</a></strong> &ndash; Lead designer and developer of Gaia Sky, a modern 3D Universe application.</li>
       <li><strong>Gaia/CU3</strong> &ndash; The Gaia First Look system performs initial daily diagnostics and analyses of the science data quality and consistency of the telemetry of Gaia.</li>
       <li><strong>Gaia/CU9</strong> &ndash; Support for the scientific exploration of the Gaia data as well as its electronic publication. Support for the Gaia data visualization and public outreach.</li>
     </ul>
