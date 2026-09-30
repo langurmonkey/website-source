@@ -71,7 +71,15 @@ That's about 1.45%, or roughly 1 in 69.
 
 So it's not particularly likely, but it's certainly not extraordinary either. Given enough commits, you're bound to run into one eventually. It looks even stranger because of the leading zero, and a quick glance at the number may even make someone mistake it for a Spanish cellphone number.
 
-I wondered whether this was the first time this had happened in the Gaia Sky repository, so I ran:
+I then asked myself what the probability of **all** hash characters being numbers is. Well, if we assume ~40 characters (this is the default for SHA-1 hashes, even though git also supports SHA-256 with ~64 characters), the probability of every single one being a number is:
+
+$$
+\left(\frac{10}{16}\right)^{40} \approx 7.89 \times 10\^{-9}
+$$
+
+That's about 1 in 126.7 million. Much more unlikely, but still not totally outlandish. But I digress.
+
+Back to the case, I checked whether this was the first time this had happened in the Gaia Sky repository:
 ```bash
 ➜ git log --all --format='%H'
     | grep -E '^[0-9]{9}'
@@ -80,4 +88,4 @@ I wondered whether this was the first time this had happened in the Gaia Sky rep
 123
 ```
 
-Nope. It has happened over a hundred times, and I had simply never noticed it before. I'm pretty sure this is the first time I package a build from one of those commits though.
+Nope. It has happened over a hundred and twenty times, and I had simply never noticed it before. I'm pretty sure this is the first time I package a build from one of those commits though.
