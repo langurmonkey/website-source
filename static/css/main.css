@@ -2362,7 +2362,7 @@ figcaption>h4 {
 }
 
 figure.fig-center {
-  text-align: center
+  text-align: center;
 }
 
 figure.fig-center>img,
@@ -2377,6 +2377,11 @@ figure.fig-right {
   margin: 0 0 1em 1em;
   display: block;
   float: right;
+}
+
+div.div-center {
+  text-align: center;
+  margin: auto;
 }
 
 .post p img {
