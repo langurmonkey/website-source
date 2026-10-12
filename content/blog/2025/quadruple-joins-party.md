@@ -8,10 +8,9 @@ title = "Quadruple joins the fight!"
 description = "This float-128 implementation beats others at same precision"
 featuredpath = "date"
 type = "post"
+js = ["/js/mathjax4.js"]
 +++
 
-<!-- Loading MathJax -->
-<script type="text/javascript" id="MathJax-script" async src="/js/mathjax3.js"></script>
 
 A few days ago I wrote about [benchmarking arbitrary precision floating-point libraries in Java]({{< ref "/blog/2025/apfloat-bigdecimal" >}}). I found out that `BigDecimal` is not as slow as it is said to be, beating `Apfloat` at the same precision level by a long margin in most operations. However, for [Gaia Sky](https://gaiasky.space), I don't need hundreds of significant digits at all. It turns out 27 significant digits are enough to represent the whole universe with a precision of 1 meter.
 
