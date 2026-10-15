@@ -1,0 +1,853 @@
++++
+title = "Wisemonkey — Documentation"
+layout = "content-passthrough"
+# Canonical URL is the directory (Hugo's default for a page in a branch bundle);
+# the alias keeps the literal docs.html next to index.html working too, and
+# redirects it to the canonical one.
+aliases = ["/projects/wisemonkey/docs.html"]
++++
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wisemonkey — Documentation</title>
+<meta name="description" content="Wisemonkey documentation: installation, API keys, sessions, client/server mode, configuration, MCP, tool hooks, commands, mid-turn steering, memory, containers and extending the agent.">
+<link rel="stylesheet" href="/css/wisemonkey.css?v=2026.10.15">
+<link rel="stylesheet" href="/css/wisemonkey-docs.css?v=2026.10.15">
+<link rel="stylesheet" href="/webfonts/langur-icons.css">
+</head>
+<body>
+
+<!-- Animated Background -->
+<canvas id="bg-canvas"></canvas>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<div class="wrapper">
+
+  <!-- Nav -->
+  <nav>
+    <a href="/projects/wisemonkey/" class="logo">
+      <div class="logo-icon"><img width="45px" src="/img/projects/wisemonkey.svg"></img></div>
+      <div class="logo-text">Wise<span>monkey</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/projects/wisemonkey/#demo">Demo</a></li>
+      <li><a href="/projects/wisemonkey/#features">Features</a></li>
+      <li><a href="/projects/wisemonkey/#quickstart">Quickstart</a></li>
+      <li><a href="/projects/wisemonkey/#config">Config</a></li>
+      <li><a href="/projects/wisemonkey/#stats">Stats</a></li>
+      <li><a href="/projects/wisemonkey/docs/" class="active">Docs</a></li>
+      <li><a href="https://codeberg.org/langurmonkey/wisemonkey" target="_blank" rel="noopener noreferrer"><i class="ln ln-codeberg"></i> Codeberg <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;opacity:0.7;"><path d="M3.5 1H1v10h10V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.5 5.5L11 1M11 1H7.5M11 1V4.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="docs-hero">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Documentation &mdash; v2026.10.15
+    </div>
+    <h1>The <span class="gradient">Wisemonkey</span> manual</h1>
+    <p>Everything from installing the agent to writing your own tools: endpoints and keys, sessions, container mode, hooks, steering a running turn, and how the agent is put together.</p>
+    <div class="docs-meta">
+      Also available as <a href="https://codeberg.org/langurmonkey/wisemonkey/src/branch/master/README.md">README.md</a> &nbsp;|&nbsp; <code>wmk --help</code> lists every flag
+    </div>
+    <div class="docs-quicklinks">
+      <a href="#quickstart">Quickstart</a>
+      <a href="#api-keys">API keys</a>
+      <a href="#commands">Commands</a>
+      <a href="#steering">Steering</a>
+      <a href="#extending">Extending</a>
+    </div>
+  </section>
+
+  <!-- Layout -->
+  <div class="docs-layout">
+
+    <!-- Sidebar -->
+    <aside class="docs-sidebar">
+      <nav class="docs-nav">
+        <div class="docs-nav-group">
+          <span>Getting started</span>
+          <a href="#overview">Overview</a>
+          <a href="#quickstart">Quickstart</a>
+          <a href="#api-keys">API keys</a>
+          <a href="#container">Container</a>
+        </div>
+        <div class="docs-nav-group">
+          <span>Using the agent</span>
+          <a href="#sessions">Sessions</a>
+          <a href="#clientserver">Client/server</a>
+          <a href="#configuration">Configuration</a>
+          <a href="#file-references">File references</a>
+          <a href="#commands">Commands &amp; keys</a>
+          <a href="#steering">Mid-turn steering</a>
+          <a href="#memory">Memory &amp; context</a>
+        </div>
+        <div class="docs-nav-group">
+          <span>Reference</span>
+          <a href="#architecture">Architecture</a>
+          <a href="#extending">Extending</a>
+          <a href="#protocol">Protocol</a>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Article -->
+    <article class="docs-content">
+
+      <!-- ─────────────────────────────── Overview -->
+      <section id="overview">
+        <h2><i class="ln ln-ai-line"></i> Overview</h2>
+        <p>Wisemonkey is a simple, open and hackable AI agent for the Linux and macOS terminal. It connects to any service that speaks the OpenAI, Anthropic or Ollama dialect, and gives that model a shell: sessions, persistent memory, a vector store, tools, MCP servers, skills and guard hooks.</p>
+        <p>It is a single Python process with no daemon to babysit, no database and no hidden state &mdash; everything it knows lives in plain files under <code>$XDG_DATA_HOME/wisemonkey</code>, and everything it does goes through a tool you can read.</p>
+
+        <div class="docs-cards">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="ln ln-api"></i></div>
+            <h3>Any endpoint</h3>
+            <p>OpenAI, Anthropic, Ollama, LM Studio, or any OpenAI-compatible router. Per-endpoint API keys resolve from an ordered chain.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="ln ln-memory"></i></div>
+            <h3>Memory that lasts</h3>
+            <p>Session-scoped chat history, user profile and notes survive restarts, with a rolling window and token-cap compaction.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="ln ln-database"></i></div>
+            <h3>Vector search</h3>
+            <p>Embed PDFs and documents into a per-session store with <code>/embed</code>; the agent retrieves them with <code>search_knowledge</code>.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="ln ln-tool"></i></div>
+            <h3>Extensible</h3>
+            <p>28 built-in tools, MCP servers over stdio/HTTP/SSE, skills, and external hooks around every tool call.</p>
+          </div>
+        </div>
+
+        <div class="docs-note">
+          <strong>Requirements</strong>
+          <p>Linux or macOS, Python 3.13+ if you run from source, and a terminal. The container mode needs only Docker.</p>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────── Quickstart -->
+      <section id="quickstart">
+        <h2><i class="ln ln-download"></i> Quickstart</h2>
+
+        <h3>Install</h3>
+        <p>Wisemonkey is on <a href="https://pypi.org/project/wisemonkey/">PyPI</a>, so the shortest path is <code>uv</code>:</p>
+<pre><code><span class="cmt"># Install uv</span>
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+<span class="cmt"># Run without installing anything else</span>
+uvx wisemonkey</code></pre>
+
+        <p>Or use the install script, which clones the project, builds it and drops a <code>wmk</code> launcher in <code>~/.local/bin</code>:</p>
+<pre><code>curl -fsSL https://codeberg.org/langurmonkey/wisemonkey/raw/branch/master/install.sh | sh</code></pre>
+
+        <p>That installs to <code>~/.local/share/wisemonkey/repository</code>. If Docker is present it also installs <code>wmkc</code>, which runs the agent in a container (see <a href="#container">Container</a>). With <code>~/.local/bin</code> on your <code>$PATH</code>, configure the agent interactively:</p>
+<pre><code>wmk --onboard</code></pre>
+
+        <p>For the rest of this manual we assume <code>wmk</code> is on your path; substitute <code>uvx wisemonkey</code> if you use the PyPI route &mdash; the flags are the same.</p>
+
+        <h3>Run</h3>
+<pre><code><span class="cmt"># The default session</span>
+wmk
+
+<span class="cmt"># A named session &mdash; created if it does not exist yet</span>
+wmk my-project
+
+<span class="cmt"># List sessions</span>
+wmk --ls</code></pre>
+
+        <h3>API keys in <code>.env</code></h3>
+        <p>If the endpoint needs a key, put it in a <code>.env</code> file. Wisemonkey searches, in order:</p>
+        <ul>
+          <li><code>./.env</code> &mdash; the current directory</li>
+          <li><code>$XDG_CONFIG_HOME/wisemonkey/.env</code> &mdash; the config directory</li>
+          <li><code>$HOME/.env</code></li>
+        </ul>
+<pre><code>echo "OPENAI_API_KEY=your-api-key-here" &gt; .env
+echo "ANTHROPIC_API_KEY=your-api-key-here" &gt;&gt; .env</code></pre>
+
+        <div class="docs-note">
+          <strong>How the keys are read</strong>
+          <p><code>.env</code> is loaded with <code>python-dotenv</code> at startup, and the provider SDKs also pick their conventional variables out of the environment, so a key exported in your shell profile works just as well.</p>
+        </div>
+
+        <h3>From source</h3>
+<pre><code>git clone https://codeberg.org/langurmonkey/wisemonkey.git
+cd wisemonkey
+uv build
+export WM_API_KEY_GENERIC=your-api-key
+uv run wmk</code></pre>
+      </section>
+
+      <!-- ─────────────────────────────── API keys -->
+      <section id="api-keys">
+        <h2><i class="ln ln-key"></i> API keys for several endpoints</h2>
+        <p>Wisemonkey is usually driven through a router &mdash; OpenRouter, OpenCode, a local vLLM &mdash; and each of those wants its own key. One global variable cannot cover that: you would rewrite it on every switch (into shell history), and one endpoint's key would be sent to another the moment the provider changed.</p>
+        <p>So the key is resolved from an <strong>ordered, per-provider chain</strong>. The first non-empty value wins:</p>
+
+        <div class="docs-table-wrap">
+          <table>
+            <thead>
+              <tr><th>#</th><th>Source</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td><code>model.api_key_env</code></td><td>The environment variable <em>name</em> from <code>config.yaml</code>. Explicit always wins.</td></tr>
+              <tr><td>2</td><td><code>WM_API_KEY_&lt;PROVIDER&gt;</code></td><td>Namespaced per provider (<code>GENERIC</code>, <code>OPENAI</code>, <code>ANTHROPIC</code>), so several keys coexist.</td></tr>
+              <tr><td>3</td><td><code>OPENAI_API_KEY</code>, <code>ANTHROPIC_API_KEY</code></td><td>The provider's conventional variable. Existing setups keep working untouched.</td></tr>
+              <tr><td>4</td><td><code>WM_API_KEY</code></td><td>Generic fallback, tried <strong>last</strong> for every key-bearing provider.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Local providers (Ollama, LM Studio) need no key at all.</p>
+
+        <div class="docs-warn">
+          <strong>Only step 4 is shared</strong>
+          <p><code>WM_API_KEY_GENERIC</code> never satisfies an Anthropic request, so switching the provider cannot send the wrong credential anywhere.</p>
+        </div>
+
+        <h3>Recommended setup for routers</h3>
+        <p>Give each endpoint its own variable, and point <code>api_key_env</code> at it. The value stays in <code>.env</code>; the config only ever holds the <em>name</em>, which is why <code>config.yaml</code> stays safe to share or commit.</p>
+<pre><code>cat &gt;&gt; .env &lt;&lt;'EOF'
+OPENROUTER_API_KEY=sk-or-...
+OPENCODE_API_KEY=sk-oc-...
+EOF</code></pre>
+<pre><code>model:
+  provider: generic
+  base_url: https://openrouter.ai/api/v1
+  api_key_env: OPENROUTER_API_KEY   <span class="cmt"># name only, never the key itself</span>
+  name: anthropic/claude-sonnet-4.5</code></pre>
+
+        <p>Switching to OpenCode is then two lines in <code>config.yaml</code>, with both keys still in <code>.env</code> and neither of them in your shell history. If you do not care which key is which, the namespaced variables need no config at all:</p>
+<pre><code>WM_API_KEY_GENERIC=sk-or-...     <span class="cmt"># used by any OpenAI-compatible endpoint</span>
+WM_API_KEY_ANTHROPIC=sk-ant-...</code></pre>
+
+        <h3>Configuring an endpoint from inside the agent</h3>
+        <p><code>/model</code> configures a whole endpoint in one flow: <strong>URL &rarr; provider &rarr; key variable &rarr; model</strong> (<code>/url</code> is an alias for the same flow). A canonical URL picks the provider for you, an unknown host asks whether it is OpenAI-compatible, and a local endpoint asks no key question at all.</p>
+        <p>The key step is a list, not free text: it offers the host's conventional name first (<code>OPENROUTER_API_KEY</code> for <code>openrouter.ai</code>, <code>OPENCODE_API_KEY</code> for <code>opencode.ai</code>), marks the variables that are actually set in your environment, and keeps auto-detect as the default.</p>
+
+        <div class="docs-note">
+          <strong>If no key is found</strong>
+          <p>Wisemonkey names every variable it tried, so you know exactly what to export:</p>
+<pre><code>Missing API key for generic. Tried: WM_API_KEY_GENERIC, OPENAI_API_KEY,
+WM_API_KEY. Set one in your environment or .env file, or point
+model.api_key_env at a variable holding the key, or run /onboard.</code></pre>
+        </div>
+
+        <p>Storing a key in <code>config.yaml</code> is not supported, deliberately: <code>config.yaml</code> gets shared and committed, <code>.env</code> does not. See <code>.env.example</code> in the repository.</p>
+      </section>
+
+      <!-- ─────────────────────────────── Container -->
+      <section id="container">
+        <h2><i class="ln ln-cube"></i> Run in a container</h2>
+        <p>The <code>wmkc</code> launcher runs the agent inside a container, so it needs no Python or <code>uv</code> on the host, and the agent only ever sees the directory you launch it from. On first use it builds the image from the shipped <code>Dockerfile</code> (a few minutes) and caches it; later runs start instantly.</p>
+<pre><code><span class="cmt"># From the directory you want the agent to work in:</span>
+cd ~/my-project
+wmkc                      <span class="cmt"># same arguments as wmk</span>
+wmkc my-project           <span class="cmt"># a named session</span>
+wmkc --version</code></pre>
+
+        <p>The container runs as <strong>your</strong> user, not root, so files it writes into the workspace and into the session history come out owned by you. Three host directories are mounted:</p>
+        <ul>
+          <li><strong>the current directory</strong> &mdash; the workspace; the only part of the host the agent can see and modify</li>
+          <li><strong><code>$XDG_CONFIG_HOME/wisemonkey</code></strong> &mdash; <code>config.yaml</code>, <code>mcp.json</code> and any <code>.env</code> already in use</li>
+          <li><strong><code>$XDG_DATA_HOME/wisemonkey</code></strong> &mdash; sessions, chat history, notes and vector stores, so conversations survive the container</li>
+        </ul>
+
+        <p><code>HOME</code>, <code>USER</code>, <code>TERM</code>, <code>EDITOR</code>/<code>VISUAL</code>, the XDG variables and your API keys (<code>WM_API_KEY_*</code>, <code>OPENAI_API_KEY</code>, <code>ANTHROPIC_API_KEY</code>) are forwarded. Keys are passed <strong>by name</strong>, never as <code>NAME=value</code>, so they do not show up in <code>ps</code> or in your shell history.</p>
+
+        <div class="docs-table-wrap">
+          <table>
+            <thead>
+              <tr><th>Variable</th><th>Effect</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>WMKC_IMAGE</code></td><td>Use a different image (default <code>wisemonkey-agent:local</code>)</td></tr>
+              <tr><td><code>WMKC_BUILD=0</code></td><td>Never build; fail if the image is missing (for scripts)</td></tr>
+              <tr><td><code>WMKC_REBUILD=1</code></td><td>Rebuild the image even if it already exists</td></tr>
+              <tr><td><code>WISEMONKEY_HOME</code></td><td>Where the <code>Dockerfile</code> lives (set by the <code>install.sh</code> wrapper)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>The agent runs sandboxed: no Linux capabilities, no privilege escalation, and a bounded process count.</p>
+
+        <div class="docs-warn">
+          <strong>The image ships the agent, not the checkout</strong>
+          <p>Editing <code>agent/*.py</code> does <strong>not</strong> change a container that is already built. Rebuild with <code>WMKC_REBUILD=1 wmkc</code> to run changed code.</p>
+        </div>
+
+        <div class="docs-note">
+          <strong>Hooks run inside the container</strong>
+          <p>Tool hooks (<code>agent.hooks</code>) execute in the container, so a guard binary installed only on the host (say <code>~/.local/bin/dcg</code>) is not found there &mdash; and a hook that cannot start fails <em>open</em>. If you rely on a host-side guard, run <code>wmk</code> directly or mount the binary in.</p>
+        </div>
+
+        <div class="docs-note">
+          <strong>Client/server mode in a container</strong>
+          <p>It works, but a daemon started <em>inside</em> a container is private to that container: <code>XDG_RUNTIME_DIR</code> is deliberately not forwarded, so the socket goes to <code>/tmp/wisemonkey-&lt;user&gt;</code>.</p>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────── Sessions -->
+      <section id="sessions">
+        <h2><i class="ln ln-folder"></i> Sessions</h2>
+        <p>Wisemonkey separates memory histories into <strong>sessions</strong>, which you name. The default session is called <code>default</code>, so <code>wmk</code> and <code>wmk default</code> are equivalent. Passing a name starts that session &mdash; creating it if it does not exist, restoring it if it does.</p>
+<pre><code>wmk my-project
+
+<span class="cmt"># List the sessions</span>
+wmk --ls
+Sessions:
+- my-project - ~/.local/share/wisemonkey/sessions/my-project
+- default - ~/.local/share/wisemonkey/sessions/default</code></pre>
+
+        <p>From inside a session, <code>/sessions</code> does the same and adds message counts, marking the current one.</p>
+
+        <h3>Switching without restarting</h3>
+<pre><code>/resume                    <span class="cmt"># resume the most recently used other session</span>
+/resume my-project         <span class="cmt"># switch to 'my-project'</span></code></pre>
+        <p><code>/resume</code> rebinds the chat history, notes, user profile and vector store of the running process, and sends the previous session to disk first. An unknown name creates a new session, exactly like <code>wmk my-project</code>. It is not available in client/server mode: there the daemon owns the session, so start a server for the target session and attach to that instead.</p>
+
+        <h3>What a session holds</h3>
+        <ul>
+          <li>Input history</li>
+          <li>Chat memory, notes and user profile</li>
+          <li>The vector store of embedded documents</li>
+          <li>Its saved plans (see below)</li>
+          <li>Optionally, its own <code>config.yaml</code></li>
+        </ul>
+
+        <p>That last one means a session can diverge from the rest of the machine: on startup the agent looks for <code>&lt;session_dir&gt;/config.yaml</code> and falls back to the global <code>&lt;config_dir&gt;/wisemonkey/config.yaml</code> when it is absent. Useful for a session pinned to a cheaper model, or one with a different system prompt.</p>
+
+        <h3>Session plans</h3>
+        <p>Ask the agent for a plan and it can write it down. A <strong>plan</strong> is a short markdown file the agent keeps for a piece of work &mdash; scope, action items, open questions &mdash; stored per session in <code>&lt;session_dir&gt;/plans/</code> as <code>&lt;NAME&gt;_&lt;TIMESTAMP&gt;.md</code>. The agent creates it with the <code>save_session_plan</code> tool (the <code>create-plan</code> skill is what tells it how), and keeps it up to date afterwards.</p>
+        <p>Each plan carries front matter &mdash; <code>name</code>, <code>created</code>, <code>status</code> and <code>completed</code> &mdash; so a plan is not just prose: the agent marks it <code>done</code> or <code>obsolete</code> with <code>update_session_plan_status</code>, and revises the body with <code>update_session_plan_content</code> when your feedback changes the approach, without losing that front matter.</p>
+        <p>Reference them from inside a session:</p>
+        <ul>
+          <li><code>/plan-list</code> &mdash; list the session's plans with their status and age (aliases <code>/plan-ls</code>, <code>/plans-list</code>, <code>/plans-ls</code>)</li>
+          <li><code>/plan-read &lt;name&gt;</code> &mdash; print one; a partial name matches the most recent plan with that prefix, so <code>/plan-read REFACTOR</code> finds <code>REFACTOR_20260626_120000</code></li>
+          <li><code>/plan-edit &lt;name&gt;</code> &mdash; open one in <code>$EDITOR</code> and fix it by hand</li>
+        </ul>
+        <p>Plans live in the session directory next to the memory files, so they belong to the session they were written in: <code>/resume</code> moves to another session's plans with everything else, and a plan written in one session is not visible from another.</p>
+
+        <div class="docs-tip">
+          <strong>Sessions are directories</strong>
+          <p>A session is just a directory under <code>~/.local/share/wisemonkey/sessions</code>, so renaming the directory renames the session &mdash; its plans and everything else come along.</p>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────── Client/server -->
+      <section id="clientserver">
+        <h2><i class="ln ln-server"></i> Client/server mode</h2>
+        <p>Wisemonkey can split into a <strong>server</strong> that owns the session (chat memory, profile, notes, vector store, model connection) and thin <strong>clients</strong> that connect to it and render the UI.</p>
+<pre><code><span class="cmt"># Start a daemon for the 'default' session</span>
+wmk --server
+
+<span class="cmt"># Or for a named session</span>
+wmk --server my-project</code></pre>
+
+        <p>The server binds a Unix domain socket at <code>$XDG_RUNTIME_DIR/wisemonkey/$SESSION.sock</code> (for example <code>/run/user/1000/wisemonkey/default.sock</code>) and stays up until stopped.</p>
+
+        <p>Any client started afterwards &mdash; the REPL <code>wmk</code> or the Textual TUI <code>wmk --tui</code> &mdash; <strong>tries to attach to an existing daemon for its session first</strong>. If one is running, the client is a thin remote: turns, slash commands, cancellation and memory stats all flow over the socket, while shell commands (<code>!</code>) run locally and their results are recorded in the server's chat history. If no server is up, the client runs normally with an ephemeral server for the duration of its own lifetime.</p>
+<pre><code><span class="cmt"># Terminal 1: the daemon</span>
+wmk --server my-project
+
+<span class="cmt"># Terminal 2: attach to it (same session name!)</span>
+wmk my-project</code></pre>
+
+        <div class="docs-note">
+          <strong>Clients attach by session name</strong>
+          <p>A client for <code>session2</code> will never connect to a daemon running <code>session1</code> &mdash; it simply starts its own independent session. Several clients can therefore share one session state through one daemon, and the chat history survives client restarts for as long as the daemon keeps running.</p>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────── Configuration -->
+      <section id="configuration">
+        <h2><i class="ln ln-settings"></i> Configuration</h2>
+        <p>The configuration file is created on first run as <code>$XDG_CONFIG_HOME/wisemonkey/config.yaml</code>, from the default <code>config.yaml</code> in the repository. Configure it interactively with <code>wmk --onboard</code>, or open it in your editor with <code>wmk --edit-config</code> (the in-session command is <code>/config</code>).</p>
+
+        <p>The configuration directory also holds:</p>
+        <ul>
+          <li><code>mcp.json</code> &mdash; the MCP server definitions</li>
+          <li><code>.updates.yml</code> &mdash; the last update check and its result</li>
+          <li><code>.env</code> &mdash; optionally, the API keys</li>
+        </ul>
+
+        <h3 id="mcp">Model Context Protocol</h3>
+        <p>Wisemonkey speaks MCP. Servers are declared in <code>mcp.json</code> and started when the agent boots, so restart the agent after adding one.</p>
+<pre><code>{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/tmp"]
+    },
+    "github": {
+      "type": "http",      <span class="cmt">// stdio | http | sse</span>
+      "url": "https://api.githubcopilot.com/mcp/"
+    }
+  }
+}</code></pre>
+        <p>Manage it from inside the agent:</p>
+        <ul>
+          <li><code>/mcp</code> &mdash; show the current MCP configuration</li>
+          <li><code>/mcp edit</code> &mdash; edit <code>mcp.json</code> in your editor</li>
+          <li><code>/mcp tools</code> &mdash; list the tools the MCP servers expose (alias <code>/tools mcp</code>)</li>
+        </ul>
+
+        <h3 id="hooks">Tool hooks</h3>
+        <p>Wisemonkey can run external guard programs around every tool call &mdash; before it runs (<code>pre_tool_use</code>) and after it (<code>post_tool_use</code>). The protocol is compatible with Claude Code / Codex hooks: the hook gets JSON on stdin and answers on stdout, so an already-installed guard works with no adapter.</p>
+<pre><code>agent:
+  hooks:
+    pre_tool_use:
+      - matcher: "run_command|spawn"   <span class="cmt"># regex over tool names; empty or "*" = all</span>
+        hooks:
+          - type: command
+            command: /usr/local/bin/dcg   <span class="cmt"># use an absolute path</span>
+            timeout: 5                    <span class="cmt"># seconds</span>
+            honor_unsafe: false           <span class="cmt"># see below</span>
+    post_tool_use: []                     <span class="cmt"># logging/audit; output is ignored</span></code></pre>
+
+        <ul>
+          <li>A <code>pre_tool_use</code> hook may <code>deny</code>, <code>ask</code> or <code>allow</code> via <code>{"hookSpecificOutput": {"permissionDecision": "...", "permissionDecisionReason": "..."}}</code> on stdout, or block with exit code 2 and a reason on stderr. Silent stdout means &ldquo;no opinion&rdquo;.</li>
+          <li>A <code>deny</code> is fed back to the model as a tool error, like a declined confirmation, so the turn continues and the model can adapt. An <code>ask</code> turns into an ordinary Wisemonkey confirmation prompt.</li>
+          <li>Shell tools (<code>run_command</code>, <code>spawn</code>) are presented to a hook under the Claude name <strong><code>Bash</code></strong>, with the command in <code>tool_input.command</code> &mdash; the name a stock <code>dcg</code> matches on.</li>
+          <li>A hook that <strong>cannot start</strong> fails open with a warning: a broken install must not refuse every call. A hook that <strong>hangs past <code>timeout</code> or prints garbage</strong> fails closed, because it has not cleared the call; set <code>fail_open: true</code> on the handler to invert that.</li>
+          <li><code>honor_unsafe: true</code> makes a handler skip while <code>agent.unsafe</code> is set. The default (<code>false</code>) is that hooks <strong>always run</strong>, so <code>agent.unsafe</code> never silently disables a guard that did not ask to be switched off.</li>
+        </ul>
+
+        <div class="docs-note">
+          <strong>A block is shown as a block</strong>
+          <p>When a guard vetoes a call, the reason is displayed in a framed panel attributed to the hook, clearly distinct from the agent reporting a failure of its own.</p>
+        </div>
+
+        <h3 id="soul-file">Soul file</h3>
+        <p>A <strong>soul file</strong> is a markdown file that defines the agent's identity and persona. It is injected into the system prompt <em>before</em> the workspace instructions, so it takes precedence over <code>AGENTS.md</code> without replacing it.</p>
+        <p>Two are considered, in order:</p>
+        <ol>
+          <li><strong>Global soul</strong> &mdash; <code>$XDG_CONFIG_HOME/wisemonkey/SOUL.md</code>. Applies to every session on the machine.</li>
+          <li><strong>Workspace soul</strong> &mdash; <code>SOUL.md</code> in the working directory or any parent directory (the same walk-up lookup as <code>AGENTS.md</code>). Applies to the project.</li>
+        </ol>
+        <p>Both are loaded when present, global first. If neither exists, nothing is added.</p>
+<pre><code><span class="cmt">&lt;!-- ~/.config/wisemonkey/SOUL.md --&gt;</span>
+# Soul
+
+You are Wisemonkey, a terse and precise engineering assistant.
+You prefer concrete answers over hedging, and you never invent facts.</code></pre>
+        <p>The file names are configurable, and an empty string disables the lookup:</p>
+<pre><code>agent:
+  soul_file: SOUL.md          <span class="cmt"># workspace soul file name</span>
+  global_soul_file: SOUL.md   <span class="cmt"># global soul file name in the config directory</span></code></pre>
+        <div class="docs-tip">
+          <strong>Identity, not instructions</strong>
+          <p>Keep the soul file about who the agent is. Workspace rules belong in <code>AGENTS.md</code>, and task-specific procedures in skills.</p>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────── File references -->
+      <section id="file-references">
+        <h2><i class="ln ln-at"></i> File references (<code>@path</code>)</h2>
+        <p>Attach files directly to a prompt with an <code>@</code>-reference. Writing <code>@agent/agent.py</code> (or the backtick-quoted <code>@`agent/agent.py`</code>) inlines the file into the context sent to the model &mdash; no extra tool-call round trip.</p>
+        <ul>
+          <li><strong>Small files</strong>, up to <code>agent.at_file_max_chars</code> (default 8000 characters), are inlined as fenced code blocks appended to your message.</li>
+          <li><strong>Large files</strong> inject only a stub &mdash; path, size, first lines &mdash; so the model knows the file exists and can read it itself with the <code>read_file</code> tool.</li>
+          <li><strong>Directories</strong> inject a shallow listing.</li>
+          <li>Non-existent or handle-like tokens (<code>@langur</code>, <code>a@b.com</code>) are left untouched.</li>
+        </ul>
+        <p>The typed text stays as-is on screen and in chat history; only the message sent to the model carries the attachment. Path completion works after <code>@</code> too (<code>@ag</code> &rarr; <code>@agent/</code>), in both the REPL and the TUI. Set <code>agent.at_file_max_chars: 0</code> to turn the feature off.</p>
+      </section>
+
+      <!-- ─────────────────────────────── Commands -->
+      <section id="commands">
+        <h2><i class="ln ln-terminal"></i> Commands &amp; keys</h2>
+
+        <h3>Key bindings</h3>
+        <ul>
+          <li><kbd>Enter</kbd> &mdash; submit the prompt</li>
+          <li><kbd>Alt</kbd> / <kbd>Shift</kbd> / <kbd>Ctrl</kbd> + <kbd>Enter</kbd>, or <kbd>Ctrl</kbd> + <kbd>j</kbd> &mdash; add a new line</li>
+          <li><kbd>Ctrl</kbd> + <kbd>q</kbd> &mdash; quit</li>
+          <li><kbd>Ctrl</kbd> + <kbd>c</kbd> &mdash; cancel the running turn; at an empty prompt, clear it, and double-tap to quit</li>
+          <li><kbd>&uarr;</kbd> &mdash; walk back through your prompts (slash commands are filtered out)</li>
+        </ul>
+
+        <h4>Newline keys and your terminal</h4>
+        <p>A terminal sends the <em>same</em> byte for <kbd>Enter</kbd>, <kbd>Shift</kbd>+<kbd>Enter</kbd> and <kbd>Ctrl</kbd>+<kbd>Enter</kbd>, so the agent cannot tell them apart unless the terminal is asked to. On startup it enables the <a href="https://sw.kovidgoyal.net/kitty/keyboard-protocol/">kitty keyboard protocol</a> and disables it again on exit, so your shell is left exactly as it was.</p>
+
+        <div class="docs-table-wrap">
+          <table>
+            <thead>
+              <tr><th>Your terminal</th><th>Newline keys</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>kitty, Ghostty, Alacritty, WezTerm, foot, Rio, iTerm2</td><td><kbd>Shift</kbd>+<kbd>Enter</kbd>, <kbd>Ctrl</kbd>+<kbd>Enter</kbd>, <kbd>Alt</kbd>+<kbd>Enter</kbd>, <kbd>Ctrl</kbd>+<kbd>j</kbd></td></tr>
+              <tr><td>Terminals sending xterm <code>modifyOtherKeys</code></td><td><kbd>Shift</kbd>+<kbd>Enter</kbd>, <kbd>Alt</kbd>+<kbd>Enter</kbd>, <kbd>Ctrl</kbd>+<kbd>j</kbd></td></tr>
+              <tr><td>macOS Terminal.app</td><td><kbd>Alt</kbd>+<kbd>Enter</kbd> (needs <em>Use Option as Meta Key</em>), <kbd>Ctrl</kbd>+<kbd>j</kbd></td></tr>
+              <tr><td>GNOME Terminal, PuTTY, screen</td><td><kbd>Ctrl</kbd>+<kbd>j</kbd></td></tr>
+              <tr><td>tmux</td><td>as the outer terminal, plus <code>set -g extended-keys on</code> and <code>set -g extended-keys-format csi-u</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>When a terminal ignores the protocol, <kbd>Shift</kbd>+<kbd>Enter</kbd> simply arrives as <kbd>Enter</kbd> and submits, so <kbd>Ctrl</kbd>+<kbd>j</kbd> is the reliable one. Nothing is printed about this: the fallback is silent.</p>
+
+        <h4>Questions asked mid-session</h4>
+        <p>Commands like <code>/model</code> and <code>/config</code> ask you things &mdash; a URL, a key variable, a yes/no. Those questions are fully line-edited (arrows, <kbd>Backspace</kbd>, <kbd>Ctrl</kbd>+<kbd>u</kbd>, history) with the question styled like the rest of the UI. The one thing that does not work there is a modified <kbd>Enter</kbd>: the questions are read by <code>readline</code>, which cannot tell <kbd>Shift</kbd>+<kbd>Enter</kbd> from a plain <kbd>Enter</kbd>, so <kbd>Enter</kbd> submits.</p>
+
+        <h3>Slash commands</h3>
+        <p>List them with <code>/help</code>, and get details on one with <code>/[command] help</code> (for example <code>/config help</code>). The main ones:</p>
+
+        <div class="docs-table-wrap">
+          <table>
+            <thead>
+              <tr><th>Command</th><th>What it does</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>/model</code>, <code>/url</code></td><td>Configure the endpoint: URL, provider, key variable, model</td></tr>
+              <tr><td><code>/config</code></td><td>Configure the agent interactively; <code>/config show</code>, <code>/config edit</code></td></tr>
+              <tr><td><code>/sessions</code>, <code>/resume</code></td><td>List sessions, switch to another one</td></tr>
+              <tr><td><code>/embed</code></td><td>Embed a document into the session vector store</td></tr>
+              <tr><td><code>/mcp</code>, <code>/tools</code></td><td>Show, edit and list MCP configuration and tools</td></tr>
+              <tr><td><code>/skills</code>, <code>/context</code></td><td>List loaded skills, show what is in the context</td></tr>
+              <tr><td><code>/edit</code>, <code>/retry</code>, <code>/undo</code></td><td>Correct the last turn (see below)</td></tr>
+              <tr><td><code>/history</code>, <code>/history-info</code>, <code>/history-compact</code></td><td>Print, inspect and summarise chat history</td></tr>
+              <tr><td><code>/notes</code>, <code>/notes-add</code></td><td>Read and write persistent notes</td></tr>
+              <tr><td><code>/plan-list</code>, <code>/plan-read</code>, <code>/plan-edit</code></td><td>Session plans</td></tr>
+              <tr><td><code>/reasoning</code>, <code>/temperature</code>, <code>/markdown</code>, <code>/vi</code></td><td>Toggle per-session behaviour</td></tr>
+              <tr><td><code>/unsafe</code></td><td>Skip the confirmation prompts (see <a href="#confirmations">confirmations</a>)</td></tr>
+              <tr><td><code>/attachimage</code></td><td>Attach an image to the next prompt</td></tr>
+              <tr><td><code>/quit</code></td><td>Exit (aliases <code>/exit</code>, <code>/q</code>)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Correcting a turn</h3>
+        <p>A prompt you already sent is easy to reach but hard to take back: <kbd>&uarr;</kbd> re-sends it verbatim, and the bad exchange stays in the agent's context either way, so the model keeps building on it. Three commands deal with that:</p>
+        <div class="docs-table-wrap">
+          <table>
+            <thead>
+              <tr><th>Command</th><th>What it does</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>/edit</code></td><td>Open the last prompt in <code>$EDITOR</code> and re-run it &mdash; the edited prompt <strong>replaces</strong> the old exchange, so the model never sees both versions</td></tr>
+              <tr><td><code>/retry</code></td><td>Re-run the last prompt unchanged. <code>--drop</code> also removes the old answer first, so the re-run starts from the context the original did</td></tr>
+              <tr><td><code>/undo [n]</code></td><td>Drop the last <em>n</em> exchanges from the context entirely, without running anything</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><code>/undo</code> drops <em>whole</em> exchanges &mdash; the prompt, the answer, and any tool calls and results that belonged to it &mdash; never a fragment, which would leave a tool result in the prompt with no matching call.</p>
+
+        <h3>Shell commands</h3>
+        <p>Prefix an input with <code>!</code> to run it in the shell instead of sending it to the model:</p>
+<pre><code>!git status
+!ls -la
+!docker ps</code></pre>
+        <p>The command runs synchronously (60 s timeout by default), its stdout, stderr and exit code are printed, and the command together with its result is appended to the session chat memory, so the model can use it as context on the next turn. Since you typed the command yourself, no confirmation is requested &mdash; the same trust model as running it in your terminal.</p>
+
+        <h3 id="confirmations">Confirmations</h3>
+        <p>Some tools ask before they act: <code>run_command</code> prompts for dangerous patterns, long timeouts, writes into system directories, and paths outside the session working directory; <code>fetch_url</code> and <code>web_search</code> prompt because every call leaves the machine; <code>find_files</code> prompts for a search root outside the working directory.</p>
+        <p><code>/unsafe</code> (or <code>agent.unsafe</code> in the config) skips all of them, which is what makes unattended runs possible. It does not silence tool hooks unless a hook opts in with <code>honor_unsafe: true</code>.</p>
+      </section>
+
+      <!-- ─────────────────────────────── Steering -->
+      <section id="steering">
+        <h2><i class="ln ln-keyboard"></i> Mid-turn steering</h2>
+        <p>You do not have to wait for the agent to finish a turn before adding to it. While the model is working, Wisemonkey pins the bottom four terminal rows as a <strong>sticky footer</strong>:</p>
+<pre><code>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+ &rArr; stealth/space-bunny  Mem&hellip;
+ &#x2839; Processing prompt...
+ Ctrl+C: cancel turn   |   type + &crarr; to steer</code></pre>
+        <p>The footer stays put while the response scrolls, using the terminal's own scroll region (<code>DECSTBM</code>) &mdash; no output interception, so streaming, tools and markdown rendering all behave exactly as they do otherwise.</p>
+
+        <h3>Steering a running turn</h3>
+        <p>Type in the footer's input row while the turn runs and press <kbd>Enter</kbd>. The line is queued and shown as <code>&#x21b3; queued: &lt;text&gt;  (next tool result)</code>.</p>
+        <p>It does <strong>not</strong> have to wait for the turn to end. Wisemonkey delivers it at the <strong>next tool-call seam</strong> &mdash; right after the current batch of tools finishes, just before the model is asked again:</p>
+<pre><code>&#x2937; Read the CSV first, then plot the two columns. [steered mid-turn]</code></pre>
+        <p>The line becomes a regular <code>user</code> message, so it is persisted to chat history and counted like any other user message. That makes it a genuine mid-turn correction rather than a new turn: the model already has its earlier work in context when your line lands.</p>
+        <p>If the turn finishes before another tool call happens, nothing is lost &mdash; the line stays queued and runs as an ordinary next prompt.</p>
+
+        <h4>Details</h4>
+        <ul>
+          <li>The footer input row is deliberately <strong>not</strong> a line editor: no history, no completion, and nothing echoed to stdout while you type. The stage spinner and the <code>&#x1F4A1; Thinking...</code> indicator live on the bottom hints row, to the right of the key bindings, so they never overwrite what you are typing.</li>
+          <li><kbd>Ctrl</kbd>+<kbd>c</kbd> still cancels the running turn, even mid-turn.</li>
+          <li>Lines are captured as raw keystrokes, so an accidental keypress is harmless &mdash; it just does not appear until you press <kbd>Enter</kbd>.</li>
+          <li>Steering works in both modes: locally, and attached to a daemon (the client forwards the line and the server confirms delivery before the client drops its copy).</li>
+          <li>A queued line survives a cancelled turn.</li>
+          <li>Turn it off with <code>agent.steer_midturn: false</code>.</li>
+        </ul>
+
+        <h3>Tool output</h3>
+        <p>Each tool prints one line when it is activated:</p>
+<pre><code>&#x21b8; Activating tool:  read_file  (agent/core.py)</code></pre>
+        <p>That is the only line a <em>successful, quick</em> tool produces &mdash; a &ldquo;finished in 0.0s&rdquo; line under every call turns a fifteen-tool turn into fifteen lines of noise. The result line is therefore printed only when it tells you something:</p>
+        <ul>
+          <li><strong>Failures</strong> are always reported, with the error text and the duration.</li>
+          <li><strong>Slow tools</strong> &mdash; at least <code>agent.tool_slow_threshold</code> seconds (default 1 s) &mdash; print <code>Tool X finished in Y.Ys</code>, so the tool that made you wait is the one you can name.</li>
+        </ul>
+<pre><code>agent:
+  tool_slow_threshold: 1.0   <span class="cmt"># 0 = always print a result line; a huge value = errors only</span></code></pre>
+        <p>This is purely about what you see: the tool's full result still goes to the model and into chat history either way.</p>
+
+        <div class="docs-tip">
+          <strong>If the footer renders oddly</strong>
+          <p>Set <code>agent.footer_debug_bytes: true</code> and look at <code>$XDG_STATE_HOME/wisemonkey/footer.log</code>, which records every byte the footer writes.</p>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────── Memory -->
+      <section id="memory">
+        <h2><i class="ln ln-memory"></i> Memory &amp; context</h2>
+        <p>Persistent memory follows the XDG Base Directory spec and lives per session in <code>~/.local/share/wisemonkey/sessions/$SESSION_NAME</code>:</p>
+        <ul>
+          <li><code>user_profile.json</code> &mdash; information about you</li>
+          <li><code>notes.json</code> &mdash; persistent notes, added with the <code>save_note</code> tool</li>
+          <li><code>chat_history.json</code> &mdash; the conversation</li>
+          <li><code>chat_archive.jsonl</code> &mdash; everything trimmed out of the live history (see below)</li>
+          <li><code>vectordb/</code> &mdash; embedded documents</li>
+        </ul>
+        <p>The lifecycle is simple: memory is loaded into the system prompt on each turn, <code>save_note</code> adds notes during a session, <code>save_memory</code> writes everything to disk explicitly, and memory is auto-saved when the agent exits.</p>
+
+        <h3>Document embedding</h3>
+        <p>Embed documents into the per-session vector store and the agent can search them while answering:</p>
+<pre><code>/embed ~/documents/research_paper.pdf
+/embed ./notes.md</code></pre>
+        <p>The model queries the store with the <code>search_knowledge</code> tool. PDF, Markdown and plain text are supported; embeddings are produced by the configured embedding model and stored under <code>vectordb/</code> in the session directory.</p>
+
+        <h3>Chat history</h3>
+        <p>On top of persistent memory, the agent keeps a <strong>chat history</strong> of recent exchanges, which is what gives it context beyond a single turn:</p>
+        <ul>
+          <li>Each user message and assistant response is stored; reasoning is omitted.</li>
+          <li>The history is attached to the system prompt as the <strong>last</strong> section (after identity, workspace instructions, memory and skills), so the static prefix stays stable and provider prompt caches are not invalidated every turn.</li>
+          <li>Tool results are truncated in the formatted history unless <code>chat_history_full_tool_results</code> is enabled.</li>
+          <li>The footer shows a live per-turn token delta while the model streams; at the end of the turn the status line shows the exact delta, the provider-reported prompt tokens, and the turn's cost when <code>model.pricing</code> is configured.</li>
+          <li>Long-running commands can be backgrounded with <code>spawn</code>, watched incrementally with <code>poll_job</code>, and stopped with <code>kill_job</code>.</li>
+        </ul>
+
+<pre><code>agent:
+  max_chat_history: 80000                     <span class="cmt"># maximum history tokens to keep in context</span>
+  memory_rolling_window_turns: 10             <span class="cmt"># 0 = keep everything</span>
+  chat_history_full_tool_results: false       <span class="cmt"># full tool content in the prompt</span>
+  chat_history_tool_result_max_chars: 500     <span class="cmt"># cap per tool result when the above is false</span></code></pre>
+
+        <h4>A rolling window, and nothing is lost</h4>
+        <p><code>memory_rolling_window_turns</code> keeps only the last <em>n</em> exchanges &mdash; a user message plus everything after it until the next one &mdash; in the live history. Older exchanges leave the context (they no longer cost tokens), and the token cap compaction remains as a backstop.</p>
+        <p>Trimmed entries are never destroyed: both the rolling window and compaction append what they drop to <code>chat_archive.jsonl</code>. That file is append-only, is never read back into the prompt, and never affects token accounting &mdash; it exists purely so anything that aged out can be recovered.</p>
+
+        <h4>Inspect and summarise</h4>
+        <ul>
+          <li><code>/history</code> &mdash; print the session's turns (a prompt plus its final answer; tool calls stay out of it)</li>
+          <li><code>/history n</code> &mdash; only the last <em>n</em> turns</li>
+          <li><code>/history-info</code> &mdash; the per-exchange timestamps and sizes</li>
+          <li><code>/history-compact</code> &mdash; summarise in place, keeping the most recent exchange live; <code>/history-compact n</code> summarises and replaces only the <em>n</em> oldest interactions</li>
+          <li><code>/history-clear</code> &mdash; drop the history (and its context) entirely</li>
+        </ul>
+
+        <div class="docs-note">
+          <strong>Token accounting is exact</strong>
+          <p>History is counted with tiktoken (o200k encoding) when available, falling back to a chars/4 estimate. The count matches what is actually injected into the prompt &mdash; including the truncation applied to tool results &mdash; so one large tool result cannot trigger premature compaction.</p>
+        </div>
+
+        <h3>Images</h3>
+        <p>The agent can see images. <code>/attachimage</code> attaches one to your next prompt, and the <code>screenshot</code> and <code>read_image</code> tools let the model capture the screen or read an image from disk. Images are translated to each provider's own format behind the scenes, so vision works on OpenAI-compatible endpoints, Anthropic and Ollama alike.</p>
+      </section>
+
+      <!-- ─────────────────────────────── Architecture -->
+      <section id="architecture">
+        <h2><i class="ln ln-git"></i> Architecture</h2>
+        <p>Wisemonkey is built to be modular and hackable. The agent loop lives in <code>agent/agent.py</code>; everything about talking to a model, calling a tool or persisting memory lives in <code>agent/core.py</code> and its neighbours, so a frontend can be replaced without touching the agent.</p>
+<pre><code>wisemonkey/
+&#x251C;&#x2500;&#x2500; agent/                  <span class="cmt"># Core agent code</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; agent.py            <span class="cmt"># REPL frontend: agent loop, prompt handling, key bindings</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; tui.py              <span class="cmt"># Textual TUI frontend</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; client.py           <span class="cmt"># Client-side connection to a daemon server</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; server.py           <span class="cmt"># Daemon server (UDS) owning the session Core</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; ipc.py              <span class="cmt"># IPC protocol: messages, payloads, transports</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; emitter.py          <span class="cmt"># Turn event emitter: core callbacks -&gt; IPC events</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; commands.py         <span class="cmt"># Slash commands (e.g. /embed, /quit)</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; completion.py       <span class="cmt"># Smart path completion for the prompt</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; at_files.py         <span class="cmt"># @file/@dir reference expansion</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; shellcmd.py         <span class="cmt"># ! shell command handling</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; startup.py          <span class="cmt"># Startup banner and info rendering</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; tokens.py           <span class="cmt"># Token counting (tiktoken)</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; history.py          <span class="cmt"># Input history handling</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; config.py           <span class="cmt"># Configuration loading and handling</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; console.py          <span class="cmt"># Rich console output with themed formatting</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; output.py           <span class="cmt"># Output adapter protocol (REPL, TUI, IPC)</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; footer.py           <span class="cmt"># Sticky footer (DECSTBM scroll region) + spinner</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; steer.py            <span class="cmt"># Mid-turn steering input (cbreak key capture)</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; keys.py             <span class="cmt"># Terminal key protocol (modified Enter, kitty keys)</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; core.py             <span class="cmt"># Core agent functions: API connection and tool calls</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; mcp.py              <span class="cmt"># MCP server support</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; mdstream.py         <span class="cmt"># Streaming markdown renderer for the REPL</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; memory.py           <span class="cmt"># Session memory, paste file creation</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; router.py           <span class="cmt"># API router for OpenAI, Ollama and Anthropic</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; skills.py           <span class="cmt"># Skill loading and management</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; tools.py            <span class="cmt"># Tool definitions</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; update.py           <span class="cmt"># Update management</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; utils.py            <span class="cmt"># Utility functions</span>
+&#x2502;   &#x2514;&#x2500;&#x2500; vectorstore.py      <span class="cmt"># Vector store wrapper</span>
+&#x251C;&#x2500;&#x2500; tools/                  <span class="cmt"># Tool implementations available to the model</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; basic.py            <span class="cmt"># Basic and example tools</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; files.py            <span class="cmt"># File read/write tools</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; memory.py           <span class="cmt"># search_knowledge tool</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; network.py          <span class="cmt"># URL fetching</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; screenshot.py       <span class="cmt"># Screen capture tool (base64 JPEG, user-confirmed)</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; terminal.py         <span class="cmt"># Shell command execution</span>
+&#x2502;   &#x2514;&#x2500;&#x2500; vectorstore.py      <span class="cmt"># Vector store tool handler</span>
+&#x251C;&#x2500;&#x2500; skills/                 <span class="cmt"># Skill definitions. Add new skills here</span>
+&#x251C;&#x2500;&#x2500; tests/                  <span class="cmt"># unittest suite</span>
+&#x251C;&#x2500;&#x2500; config.yaml             <span class="cmt"># Default config file</span>
+&#x251C;&#x2500;&#x2500; wmkc                    <span class="cmt"># Run the agent in a container (wrapper around docker)</span>
+&#x251C;&#x2500;&#x2500; Dockerfile              <span class="cmt"># Container image for wmkc</span>
+&#x251C;&#x2500;&#x2500; pyproject.toml
+&#x251C;&#x2500;&#x2500; install.sh              <span class="cmt"># Installer script</span>
+&#x2514;&#x2500;&#x2500; .env.example</code></pre>
+
+        <p>The system prompt is rebuilt each turn by assembling, in order: the base prompt, the soul files, the workspace <code>AGENTS.md</code>, memory (profile and notes), the loaded skills, and finally the chat history. History goes last precisely because it changes every turn &mdash; the prefix above it stays byte-identical, which is what lets a provider cache it.</p>
+      </section>
+
+      <!-- ─────────────────────────────── Extending -->
+      <section id="extending">
+        <h2><i class="ln ln-puzzle"></i> Extending</h2>
+        <p>The agent is small enough to be extended by adding files. If you build a good tool, skill or command, consider contributing it as a merge request.</p>
+
+        <h3>Adding a tool</h3>
+        <p>Create a file in <code>tools/</code> or add to an existing one, and decorate a function with <code>@tool(...)</code>. Tools are auto-discovered on startup.</p>
+<pre><code>from agent.tools import tool
+
+@tool(
+    name="my_tool",
+    description="Does something useful. Be exhaustive here, as it is what the LLM will read to know about your tool.",
+    parameters={
+        "type": "object",
+        "properties": {
+            "input": {
+                "type": "string",
+                "description": "The input parameter."
+            }
+        },
+        "required": ["input"],
+    },
+)
+def my_handler(args):
+    input = args.get("input", "no input provided")
+    return {"result": f"{input}"}</code></pre>
+        <p>A handler can return a string, a dict, or a dict carrying <code>image_base64</code> and <code>mime_type</code> to hand the model an image. Malformed arguments from the model are reported back to it as a tool error, never a crashed turn.</p>
+
+        <h3>Adding a slash command</h3>
+        <p>Write a method &mdash; preferably in <code>agent/commands.py</code> &mdash; and decorate it with <code>@cmd(name, description, aliases, examples, can_complete)</code>. A command returns, in order, <code>ok: bool</code>, <code>msg: str</code>, <code>content: str</code> (Rich-formatted), and <code>markdown: str</code>:</p>
+<pre><code>@cmd(
+    "/my-command",
+    "This is the description",
+    aliases=["/mycmd"],
+)
+def _cmd_my_command(agent, params) -&gt; (bool, str, str, str):
+    """This command returns a message but no content"""
+    return True, "This is awesome!", None, None</code></pre>
+        <p>Commands are auto-registered and auto-completed in the prompt. A command cannot run a turn itself &mdash; it sets a pending prompt and the frontend sends it, so commands behave identically in the REPL, the TUI and a remote client.</p>
+
+        <h3>Adding a skill</h3>
+        <p>Skills are markdown files with YAML front matter, loaded from the project's <code>skills/</code> directory and from <code>./skills/</code> in the working directory. The body of a skill is injected into the system prompt, so it is the right place for procedures the agent should always know. Loading can be disabled entirely with <code>agent.skills: false</code>.</p>
+<pre><code>---
+name: my-skill
+description: What this skill does
+---
+
+# My skill
+
+## When to use
+
+...
+
+## Steps
+
+1. ...</code></pre>
+        <p>The front matter follows the <a href="https://agentskills.io">agentskills.io</a> standard; <code>name</code> and <code>description</code> are parsed and listed by <code>/skills</code>.</p>
+      </section>
+
+      <!-- ─────────────────────────────── Protocol -->
+      <section id="protocol">
+        <h2><i class="ln ln-plug"></i> Protocol</h2>
+        <p>The client/server wire protocol &mdash; a Unix domain socket carrying newline-delimited JSON &mdash; is specified in <code>docs/PROTOCOL.md</code>. It is stable enough to build third-party frontends against: attach to a session's socket, send an <code>attach</code> request, and drive turns with <code>prompt</code> while streaming events come back.</p>
+        <div class="docs-tip">
+          <strong>Everything is inspectable</strong>
+          <p>No daemon is required, no database is used, and every turn is available in <code>chat_history.json</code>. If the agent did something, there is a file that says so.</p>
+        </div>
+      </section>
+
+    </article>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Wisemonkey&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Built by <a href="https://tonisagrista.com">Langur Monkey</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="/projects/wisemonkey/">Overview</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://codeberg.org/langurmonkey/wisemonkey/src/branch/master/README.md">README</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://pypi.org/project/wisemonkey/">PyPI</a></p>
+  </footer>
+
+</div>
+
+<script src="/js/wisemonkey-particles.js?v=2026.10.15"></script>
+<script>
+  // ── Scroll Reveal ──
+  (() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  })();
+
+  // ── Copy button on every code block ──
+  (() => {
+    document.querySelectorAll('.docs-content pre').forEach((pre) => {
+      const btn = document.createElement('button');
+      btn.className = 'copy-btn';
+      btn.textContent = 'Copy';
+      btn.addEventListener('click', () => {
+        const code = pre.querySelector('code');
+        navigator.clipboard.writeText(code ? code.innerText : pre.innerText).then(() => {
+          btn.textContent = 'Copied!';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.textContent = 'Copy';
+            btn.classList.remove('copied');
+          }, 1500);
+        });
+      });
+      pre.appendChild(btn);
+    });
+  })();
+
+  // ── Sidebar scroll-spy ──
+  (() => {
+    const links = Array.from(document.querySelectorAll('.docs-nav a'));
+    const targets = links
+      .map(a => document.querySelector(a.getAttribute('href')))
+      .filter(Boolean);
+
+    if (!targets.length) return;
+
+    function sync() {
+      let current = targets[0];
+      for (const section of targets) {
+        if (section.getBoundingClientRect().top <= 140) current = section;
+      }
+      links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current.id));
+    }
+
+    window.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', sync);
+    sync();
+  })();
+</script>
+</body>
+</html>
