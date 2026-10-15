@@ -320,6 +320,7 @@ Sessions:
           <li>Input history</li>
           <li>Chat memory, notes and user profile</li>
           <li>The vector store of embedded documents</li>
+          <li>Its own scratch space, <code>tmp/</code> &mdash; the <code>TMPDIR</code> every command it runs gets</li>
           <li>Its saved plans (see below)</li>
           <li>Optionally, its own <code>config.yaml</code></li>
         </ul>
@@ -550,7 +551,8 @@ You prefer concrete answers over hedging, and you never invent facts.</code></pr
         <p>The command runs synchronously (60 s timeout by default), its stdout, stderr and exit code are printed, and the command together with its result is appended to the session chat memory, so the model can use it as context on the next turn. Since you typed the command yourself, no confirmation is requested &mdash; the same trust model as running it in your terminal.</p>
 
         <h3 id="confirmations">Confirmations</h3>
-        <p>Some tools ask before they act: <code>run_command</code> prompts for dangerous patterns, long timeouts, writes into system directories, and paths outside the session working directory; <code>fetch_url</code> and <code>web_search</code> prompt because every call leaves the machine; <code>find_files</code> prompts for a search root outside the working directory.</p>
+        <p>Some tools ask before they act: <code>run_command</code> prompts for dangerous patterns, long timeouts, writes into system directories, and paths outside the session; <code>fetch_url</code> and <code>web_search</code> prompt because every call leaves the machine; <code>find_files</code> prompts for a search root outside the session.</p>
+        <p>&ldquo;The session&rdquo; is two directories, not one. Alongside the working directory you launched it in, the agent gets its own scratch space at <code>&lt;session_dir&gt;/tmp</code>, created <code>0700</code> on first use, and every command it runs (<code>run_command</code>, <code>spawn</code>) gets <code>TMPDIR</code> pointed there. Scratch files land inside the session instead of the shared, world-readable <code>/tmp</code>, and writing to <code>$TMPDIR</code> needs no confirmation because the agent already owns it &mdash; a literal <code>/tmp</code> path still prompts.</p>
         <p><code>/unsafe</code> (or <code>agent.unsafe</code> in the config) skips all of them, which is what makes unattended runs possible. It does not silence tool hooks unless a hook opts in with <code>honor_unsafe: true</code>.</p>
       </section>
 
