@@ -19,6 +19,16 @@ The Milky Way is an essential component in any 3D Universe software. The renderi
 {{< fig src="/img/2026/10/milky-way-risinger.jpg" class="fig-center" width="50%" loading="lazy" caption="Nick Risinger's impression of the Milky Way" >}}
 
 
+## A little bit of history
+
+## The volume renderer
+
+## Particles to volume
+
+## Infrastructure in Gaia Sky
+
+## Conclusion
+
 
 
 [^1]: Astronomy Picture of the Day: Here comes the Sun
