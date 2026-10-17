@@ -27,6 +27,8 @@ The Milky Way is an essential component in any 3D Universe software. The renderi
 
 ## Infrastructure in Gaia Sky
 
+## Results
+
 ## Conclusion
 
 
