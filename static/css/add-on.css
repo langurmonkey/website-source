@@ -7,6 +7,14 @@ body {
   background-color: var(--bg-color);
 }
 
+div.footnotes li {
+  margin-bottom: 1em;
+}
+
+div.footnotes li p {
+  margin: 0 !important;
+}
+
 .dark-mode {
   color: var(--fg-color-dark) !important;
   background-color: var(--bg-color-dark) !important;
