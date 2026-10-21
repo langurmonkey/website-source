@@ -6,6 +6,9 @@
    heading a little every frame. The speed is constant (it only breathes around
    its own base and spikes away from the cursor), so the field is never at rest.
 
+   The particle count scales with the viewport area rather than being fixed, so
+   phones get a sparse field instead of 500 dots crammed into 300k px².
+
    The previous implementation instead accumulated a velocity and damped it by
    0.999 every frame. That is a decay, not a drift: after a minute of sitting
    still a particle is down to ~2% of its starting speed and visibly frozen, and
@@ -18,7 +21,11 @@
   const ctx = canvas.getContext('2d');
   if (!ctx) return;
 
-  const PARTICLE_COUNT = 500;
+  // Density-based count: one particle per ~4100 CSS px² (≈500 on a 1920×1080
+  // desktop, ≈80 on a phone), clamped so neither extreme looks empty or busy.
+  const AREA_PER_PARTICLE = 4100;
+  const MIN_PARTICLES = 30;
+  const MAX_PARTICLES = 350;
   const CONNECTION_DIST = 150;
   const MOUSE_DIST = 100;
   const MAX_SPEED = 1.6;
@@ -33,6 +40,18 @@
   function resize() {
     width = canvas.width = window.innerWidth;
     height = canvas.height = window.innerHeight;
+  }
+
+  function targetCount() {
+    const n = Math.round((width * height) / AREA_PER_PARTICLE);
+    return Math.max(MIN_PARTICLES, Math.min(MAX_PARTICLES, n));
+  }
+
+  // Grow or shrink the field to the current area, keeping existing particles.
+  function syncCount() {
+    const target = targetCount();
+    while (particles.length < target) particles.push(new Particle());
+    if (particles.length > target) particles.length = target;
   }
 
   class Particle {
@@ -88,7 +107,7 @@
   function init() {
     resize();
     particles = [];
-    for (let i = 0; i < PARTICLE_COUNT; i++) particles.push(new Particle());
+    syncCount();
   }
 
   function animate() {
@@ -119,7 +138,14 @@
     requestAnimationFrame(animate);
   }
 
-  window.addEventListener('resize', resize);
+  // Dimensions update immediately; the count is re-synced on a short debounce so
+  // mobile URL-bar collapses don't churn the particle array on every event.
+  let resizeTimer = 0;
+  window.addEventListener('resize', () => {
+    resize();
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(syncCount, 250);
+  });
   window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
   window.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
 

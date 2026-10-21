@@ -9,7 +9,7 @@ layout = "content-passthrough"
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wisemonkey — A dead simple CLI agent</title>
 <meta name="description" content="Wisemonkey is a simple, open and hackable AI agent for the Linux and macOS terminal. Any OpenAI, Anthropic or Ollama-compatible endpoint, with persistent memory, vector search, tools, MCP, skills, hooks and container support.">
-<link rel="stylesheet" href="/css/wisemonkey.css?v=2026.10.15">
+<link rel="stylesheet" href="/css/wisemonkey.css?v=2026.10.21">
 <link rel="stylesheet" href="/webfonts/langur-icons.css">
 </head>
 <body>
@@ -28,7 +28,10 @@ layout = "content-passthrough"
       <div class="logo-icon"><img width="45px" src="/img/projects/wisemonkey.svg"></img></div>
       <div class="logo-text">Wise<span>monkey</span></div>
     </a>
-    <ul class="nav-links">
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+      <span class="burger"></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
       <li><a href="#demo">Demo</a></li>
       <li><a href="#features">Features</a></li>
       <li><a href="#quickstart">Quickstart</a></li>
@@ -451,7 +454,8 @@ layout = "content-passthrough"
 
 </div>
 
-<script src="/js/wisemonkey-particles.js?v=2026.10.15"></script>
+<script src="/js/wisemonkey-particles.js?v=2026.10.21"></script>
+<script src="/js/wisemonkey-nav.js?v=2026.10.21"></script>
 <script>
 
   // ── Scroll Reveal ──

@@ -13,8 +13,10 @@
 
 /* ── Docs hero ── */
 .docs-hero {
-  padding: 64px 0 8px;
   text-align: center;
+  padding: 60px 20px;
+  backdrop-filter: blur(12px);
+  background-color: rgba(.2, .2, .2, .2);
 }
 
 .docs-hero h1 {
@@ -95,7 +97,9 @@
   grid-template-columns: 250px minmax(0, 1fr);
   gap: 56px;
   align-items: start;
-  padding: 48px 0 80px;
+  padding: 60px 20px;
+  backdrop-filter: blur(12px);
+  background-color: rgba(.2, .2, .2, .2);
 }
 
 .docs-sidebar {
