@@ -9,7 +9,7 @@ description = "Improving the Milky Way visuals in Gaia Sky: particles to volume"
 featuredpath = "date"
 type = "post"
 js = ["/js/mathjax4.js"]
-draft = false
+draft = true
 +++
 
 The Milky Way is an essential component in any 3D Universe software. Rendering a realistic (i.e. science-based) and visually appealing galaxy is paramount to the user experience, and to the cohesion of the simulated universe as a whole. Galaxies are made of gas and dust clouds, so they are volumetric in nature. In Gaia Sky we have been using particle-based representations for a long time, even though we have had the volumetric rendering infrastructure in place also for a while. This post describes the rendering technique we use in Gaia Sky 3.9.0 to render the volumetric Milky Way, and how we have constructed the dataset that enables it. Interested? Keep reading.
