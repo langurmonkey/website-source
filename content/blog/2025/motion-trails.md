@@ -8,6 +8,7 @@ title = "Motion trails in Gaia Sky"
 description = "Vertex-based motion trails implementation using screen-space velocity"
 featuredpath = "date"
 type = "post"
+js = ["/js/mathjax4.js"]
 +++
 
 Astronomical scenes, especially those rendered interactively, often feature supraluminal camera motion over immense distances. Sometimes, these motions are rendered by applying trail effects to light-emitting objects to enhance the faster-than-light velocity sensation. Gaia Sky will get an implementation of *motion trails* in the next version (3.6.9). Motion trails are a visual effect that stretches stars, galaxies, and other light-emitting particles in the direction of the velocity vector of the camera, giving a sense of speed and enhancing the perception of motion through space. This technique is inspired by relativistic visualizations and classic star streak effects, but it is grounded in angular motion rather than raw velocity.
@@ -17,9 +18,6 @@ Astronomical scenes, especially those rendered interactively, often feature supr
 In this post, I describe the technical details that made implementing a performant, vertex-based solution into Gaia Sky possible.
 
 <!--more-->
-
-<!-- Loading MathJax -->
-<script type="text/javascript" id="MathJax-script" async src="/js/mathjax3.js"></script>
 
 ## Traditional approach
 

@@ -1,0 +1,29 @@
+{{ $id := .Get "id" }}
+{{ $title := .Get "title" }}
+{{ $caption := .Get "caption" }}
+{{ $params := .Get "params" }}
+{{ $class := .Get "class" }}
+
+<figure{{ with $class }} class="{{ . }}"{{ end }}>
+    <div class="yt-container">
+        <iframe 
+            class="yt-iframe"
+            src="https://www.youtube-nocookie.com/embed/{{ $id }}{{ with $params }}?{{ . }}{{ end }}"
+            title="{{ with $title }}{{ . }}{{ else }}YouTube video{{ end }}"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+        </iframe>
+        {{- if or $title $caption -}}
+            <figcaption>
+                {{ with $title -}}
+                    <h4>{{ . | markdownify }}</h4>
+                {{- end -}}
+                {{- if $caption -}}
+                    <p class="fig-attribution">{{ $caption | markdownify }}</p>
+                {{- end }}
+            </figcaption>
+        {{- end }}
+    </div>
+</figure>

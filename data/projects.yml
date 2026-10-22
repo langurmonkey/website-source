@@ -3,7 +3,6 @@ title: Projects
 subtitle: >
   A collection of applications, tools, scripts, and experiments in software development, visualization, astronomy, and game design.
 content:
-
   - name: Gaia Sky
     url: https://gaiasky.space
     image: /img/projects/gaiasky.avif
@@ -18,17 +17,6 @@ content:
       - satellite:Science
     text: >
       A real-time 3D visualisation application developed in OpenGL in the framework of Gaia outreach. Gestated in the Astronomisches Rechen-Institut of Heidelberg University.
-
-  - name: dotfiles
-    url: https://codeberg.org/langurmonkey/dotfiles
-    image: /img/projects/dotfiles.avif
-    start_date: 2018
-    end_date: present
-    language: bash
-    platforms:
-      - linux:Linux
-    text: >
-      My dotfiles project. Contains the configuration, bootstrapping and deploying of Arch Linux with Hyprland (Wayland) and i3 (X11).
 
   - name: Play Kid
     url: /projects/playkid
@@ -60,7 +48,6 @@ content:
       - ai:AI
     text: >
       A simple, extensible, and hackable AI agent with sessions, memory management, tools, skills, and much more. For the Linux and macOS terminal.
-
 
   - name: rCHIP8
     url: https://codeberg.org/langurmonkey/rchip8
@@ -128,6 +115,17 @@ content:
       - gamepad:Game engine
     text: >
       Real time strategy game engine written in Java. Very early stage, but already usable. There is a private fork which contains much more advanced AI based on behavior trees and state machines, original graphics, sound, heights, and uses an entity component system (ECS) internally.
+
+  - name: dotfiles
+    url: https://codeberg.org/langurmonkey/dotfiles
+    image: /img/projects/dotfiles.avif
+    start_date: 2018
+    end_date: present
+    language: bash
+    platforms:
+      - linux:Linux
+    text: >
+      My dotfiles project. Contains the configuration, bootstrapping and deploying of Arch Linux with Hyprland (Wayland) and i3 (X11).
 
   - name: Virtual texture tools
     url: https://codeberg.org/langurmonkey/virtualtexture-tools

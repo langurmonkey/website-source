@@ -7,10 +7,8 @@ linktitle = ""
 title = "Gaia Sky 3 tutorial for complete beginners"
 featuredpath = "date"
 type = "post"
+js = ["/js/mathjax3.js"]
 +++
-
-<!-- Loading MathJax -->
-<script type="text/javascript" id="MathJax-script" async src="/js/mathjax3.js"></script>
 
 In this post, I'm mirroring the Gaia Sky 3 tutorial I wrote for the official [Gaia Sky documentation](https://gaia.ari.uni-heidelberg.de/gaiasky/docs) to use as a rough script for the workshop given in a splinter session of the 2021 DPAC consortium online meeting held on March 17 and 18, 2021. You can find the original page [here](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/workshops/dpac-plenary-online-2021.html).
 

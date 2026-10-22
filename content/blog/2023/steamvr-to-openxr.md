@@ -10,7 +10,7 @@ featuredalt = ""
 categories = ["Programming"]
 tags = ["gaia sky", "graphics", "technical", "vr", "virtualreality", "openxr", "steamvr", "openvr", "english"]
 type = "post"
-draft = false
+js = ["/js/mathjax3.js"]
 +++
 
 [Gaia Sky](https://zah.uni-heidelberg.de/gaia/outreach/gaiasky) has been using the [OpenVR API](https://github.com/ValveSoftware/openvr) from SteamVR for the last few years to power its Virtual Reality mode. However, the API is notoriously poorly documented, and it only works with the SteamVR runtime.[^1] That leaves out most of the existing VR headsets. Luckily, the main vendors and the community at large joined efforts to come up with an API that would be adopted by all and backed by the Khronos Group: [OpenXR](https://www.khronos.org/openxr/). Obviously, since Gaia Sky is actively maintained, it is only natural that a migration to the newer and widely supported API would happen sooner or later. But such a migration is not for free. Both APIs are wildly different, with OpenXR being much more verbose and explicit. In this post, I document the migration process and also offer a bird's eye view of the layout, structure and components of an OpenXR application for Virtual Reality.
@@ -23,8 +23,6 @@ Yesterday I fixed the last app-breaking bug in the OpenXR port of Gaia Sky. Here
 
 <iframe src="https://mastodon.social/@jumpinglangur/110339029481138017/embed" class="mastodon-embed" style="max-width: 100%; border: 0" width="100%" allowfullscreen="allowfullscreen"></iframe><script src="https://mastodon.social/embed.js" async="async"></script>
 
-<!-- Loading MathJax -->
-<script type="text/javascript" id="MathJax-script" async src="/js/mathjax3.js"></script>
 
 ## Resources
 

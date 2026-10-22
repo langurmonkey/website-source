@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600" role="img" aria-labelledby="splat-title">
+<title id="splat-title">Splatting a particle field into a voxel grid: each particle adds its weight to the nearest voxel, and the voxel stores the summed weight and the weight-averaged colour.</title>
+<defs>
+<marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#999"/></marker>
+</defs>
+<rect width="900" height="600" fill="#ffffff"/>
+<rect x="28" y="64" width="374" height="274" rx="10" fill="#ffffff" stroke="#dedede"/>
+<text x="30" y="50" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14.5" font-weight="600" fill="#222">particles</text>
+<text x="30" y="32" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#888">CONTINUOUS: POSITION, WEIGHT W, COLOUR C</text>
+<rect x="500" y="64" width="374" height="274" rx="10" fill="#ffffff" stroke="#dedede"/>
+<text x="502" y="50" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14.5" font-weight="600" fill="#222">voxel grid</text>
+<text x="502" y="32" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#888">EACH PARTICLE LANDS IN ITS NEAREST VOXEL</text>
+<circle cx="82.5" cy="98.5" r="8.6" fill="#1a8fd1" fill-opacity="0.30"/>
+<circle cx="105.0" cy="211.0" r="12.2" fill="#e08a1e" fill-opacity="0.30"/>
+<circle cx="121.0" cy="190.0" r="9.5" fill="#d6317f" fill-opacity="0.30"/>
+<circle cx="157.5" cy="108.5" r="9.1" fill="#1a8fd1" fill-opacity="0.30"/>
+<circle cx="185.0" cy="271.0" r="7.2" fill="#e08a1e" fill-opacity="0.30"/>
+<circle cx="195.0" cy="148.5" r="13.1" fill="#d6317f" fill-opacity="0.30"/>
+<circle cx="230.0" cy="221.0" r="7.7" fill="#e08a1e" fill-opacity="0.30"/>
+<circle cx="255.0" cy="283.5" r="9.9" fill="#d6317f" fill-opacity="0.30"/>
+<circle cx="267.5" cy="118.5" r="10.9" fill="#1a8fd1" fill-opacity="0.30"/>
+<circle cx="300.0" cy="181.0" r="14.0" fill="#e08a1e" fill-opacity="0.30"/>
+<circle cx="332.5" cy="258.5" r="8.6" fill="#1a8fd1" fill-opacity="0.30"/>
+<circle cx="357.5" cy="136.0" r="8.2" fill="#d6317f" fill-opacity="0.30"/>
+<circle cx="82.5" cy="98.5" r="2.6" fill="#1a8fd1"/>
+<circle cx="105.0" cy="211.0" r="2.6" fill="#e08a1e"/>
+<circle cx="121.0" cy="190.0" r="2.6" fill="#d6317f"/>
+<circle cx="157.5" cy="108.5" r="2.6" fill="#1a8fd1"/>
+<circle cx="185.0" cy="271.0" r="2.6" fill="#e08a1e"/>
+<circle cx="195.0" cy="148.5" r="2.6" fill="#d6317f"/>
+<circle cx="230.0" cy="221.0" r="2.6" fill="#e08a1e"/>
+<circle cx="255.0" cy="283.5" r="2.6" fill="#d6317f"/>
+<circle cx="267.5" cy="118.5" r="2.6" fill="#1a8fd1"/>
+<circle cx="300.0" cy="181.0" r="2.6" fill="#e08a1e"/>
+<circle cx="332.5" cy="258.5" r="2.6" fill="#1a8fd1"/>
+<circle cx="357.5" cy="136.0" r="2.6" fill="#d6317f"/>
+<line x1="416" y1="201" x2="486" y2="201" stroke="#999" stroke-width="1.6" marker-end="url(#arw)"/>
+<text x="451" y="190" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" fill="#888">splat</text>
+<rect x="512" y="276" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="512" y="226" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="512" y="176" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="512" y="126" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="512" y="76" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="562" y="276" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="562" y="226" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="562" y="176" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="562" y="126" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="562" y="76" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="612" y="276" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="612" y="226" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="612" y="176" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="612" y="126" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="612" y="76" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="662" y="276" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="662" y="226" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="662" y="176" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="662" y="126" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="662" y="76" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="712" y="276" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="712" y="226" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="712" y="176" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="712" y="126" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="712" y="76" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="762" y="276" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="762" y="226" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="762" y="176" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="762" y="126" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="762" y="76" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="812" y="276" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="812" y="226" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="812" y="176" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="812" y="126" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="812" y="76" width="50" height="50" fill="none" stroke="#c9c9c9" stroke-width="1"/>
+<rect x="512" y="76" width="50" height="50" fill="#1a8fd1" fill-opacity="0.32"/>
+<rect x="562" y="176" width="50" height="50" fill="#dc6843" fill-opacity="0.82"/>
+<rect x="612" y="226" width="50" height="50" fill="#e08a1e" fill-opacity="0.24"/>
+<rect x="612" y="76" width="50" height="50" fill="#1a8fd1" fill-opacity="0.35"/>
+<rect x="662" y="176" width="50" height="50" fill="#e08a1e" fill-opacity="0.27"/>
+<rect x="662" y="126" width="50" height="50" fill="#d6317f" fill-opacity="0.60"/>
+<rect x="712" y="276" width="50" height="50" fill="#d6317f" fill-opacity="0.40"/>
+<rect x="712" y="76" width="50" height="50" fill="#1a8fd1" fill-opacity="0.46"/>
+<rect x="762" y="226" width="50" height="50" fill="#1a8fd1" fill-opacity="0.32"/>
+<rect x="762" y="176" width="50" height="50" fill="#e08a1e" fill-opacity="0.65"/>
+<rect x="812" y="126" width="50" height="50" fill="#d6317f" fill-opacity="0.29"/>
+<rect x="562" y="176" width="50" height="50" fill="none" stroke="#222" stroke-width="2"/>
+<line x1="562" y1="226" x2="560.0" y2="400.0" stroke="#ccc" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="612" y1="226" x2="720.0" y2="400.0" stroke="#ccc" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="28" y="356" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#888">circle area &#8733; w &#183; colour = emission c</text>
+<text x="874" y="356" text-anchor="end" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#888">voxel opacity &#8733; &#961;</text>
+<rect x="560.0" y="400.0" width="160.0" height="160.0" fill="#ffffff" stroke="#222" stroke-width="2" rx="4"/>
+<circle cx="608.0" cy="512.0" r="39.0" fill="#e08a1e" fill-opacity="0.30"/>
+<circle cx="608.0" cy="512.0" r="4" fill="#e08a1e"/>
+<circle cx="659.2" cy="444.8" r="30.4" fill="#d6317f" fill-opacity="0.30"/>
+<circle cx="659.2" cy="444.8" r="4" fill="#d6317f"/>
+<text x="734.0" y="416.0" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#888">one voxel,<tspan x="734.0" dy="15">magnified</tspan></text>
+<text x="70.0" y="414.0" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#888">WHAT THE VOXEL ACCUMULATES</text>
+<text x="70.0" y="452.0" xml:space="preserve" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14.5" fill="#222">&#961; = w<tspan font-size="10" dy="3">1</tspan><tspan dy="-3"> + w</tspan><tspan font-size="10" dy="3">2</tspan><tspan dy="-3"> = </tspan><tspan fill="#e08a1e">0.80</tspan><tspan> + </tspan><tspan fill="#d6317f">0.50</tspan><tspan> = 1.30</tspan></text>
+<text x="70.0" y="484.0" xml:space="preserve" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14.5" fill="#222">c = (w<tspan font-size="10" dy="3">1</tspan><tspan dy="-3">c</tspan><tspan font-size="10" dy="3">1</tspan><tspan dy="-3"> + w</tspan><tspan font-size="10" dy="3">2</tspan><tspan dy="-3">c</tspan><tspan font-size="10" dy="3">2</tspan><tspan dy="-3">) / &#961;</tspan></text>
+<text x="70.0" y="512.0" xml:space="preserve" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#888">&#160;&#160;&#160;= (<tspan fill="#e08a1e">0.80</tspan><tspan>c</tspan><tspan font-size="9" dy="2.7">1</tspan><tspan dy="-2.7"> + </tspan><tspan fill="#d6317f">0.50</tspan><tspan>c</tspan><tspan font-size="9" dy="2.7">2</tspan><tspan dy="-2.7">)/1.30</tspan></text>
+<rect x="70.0" y="528.0" width="30" height="30" rx="3" fill="#dc6843"/>
+<text x="112.0" y="548.0" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#888">the three bytes stored for that voxel</text>
+</svg>

@@ -2419,6 +2419,25 @@ div.div-center {
   height: 100%;
 }
 
+.yt-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.yt-iframe {
+  width: 70%;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+}
+
+.yt-container figcaption {
+  width: 70%;
+  text-align: center;
+}
+
+
 .ai-box {
   padding-left: 20px;
   border-left: 1px solid var(--fg-color-dark);

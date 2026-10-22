@@ -8,6 +8,7 @@ title = "Git bisect"
 description = "Go bug hunting armed with a binary search tree"
 featuredpath = "date"
 type = "post"
+js = ["/js/mathjax4.js"]
 +++
 
 When I started using git as my VCS I skimmed the docs and `git-bisect` caught my eye. I got acquainted with it rather quickly and have been using it regularly ever since. [`git-bisect`](https://git-scm.com/docs/git-bisect) is a little handy git sub-command typically used to quickly narrow down the commit where a bug was introduced in a code base. It uses a simple binary search tree algorithm (BST) to test out different revisions by parting the remaining search space in *half*.
@@ -45,9 +46,6 @@ We can also visualize the current bisect progress with `gitk` using:
 git bisect visualize
 ```
 Note that this last command only works if a bisect is in progress in the current directory.
-
-<!-- Loading MathJax -->
-<script type="text/javascript" id="MathJax-script" async src="/js/mathjax3.js"></script>
 
 The number of steps needed to locate a bug within a list of \\(n\\) commits is roughly ~\\(\mathcal{O}(\log{}n)\\). This is very good news, especially with projects with long histories and lots of commits. In the following example, we have in the history commits A to I, while main is the current head. In that case, we would find the culprit in 3 steps.
 

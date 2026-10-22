@@ -8,10 +8,8 @@ linktitle = ""
 title = "Gaia Sky 2.2.0"
 featuredpath = "date"
 type = "post"
+js = ["/js/mathjax3.js"]
 +++
-
-<!-- Loading MathJax -->
-<script type="text/javascript" id="MathJax-script" async src="/js/mathjax3.js"></script>
 
 Today we are releasing a brand new version (`2.2.0`) of Gaia Sky with several major changes and new features. To sum up, github reports **1071** changed files, with **81672** additions and **31763** deletions. Gitlab displays a "Too many changes to show" banner, as their cap is at a 1000 files. This makes it by far the largest release ever, followed by version `1.5.0` in the summer of 2017.
 

@@ -8,14 +8,12 @@ title = "What's new in Gaia Sky 3.1"
 description = "Short rundown of what's in this major release"
 featuredpath = "date"
 type = "post"
+js = ["/js/mathjax3.js"]
 +++
 
 Over the last two weeks I have released the feature-packed version `3.1.0` of [Gaia Sky](https://zah.uni-heidelberg.de/gaia/outreach/gaiasky). Two bugfix releases (`3.1.1` and `3.1.2`) followed shortly to fix bugs and regressions introduced in the former. This post contains a small rundown of the most interesting [features in these three new versions](https://gitlab.com/langurmonkey/gaiasky/-/releases). Let's get started.
 
 <!--more-->
-
-<!-- Loading MathJax -->
-<script type="text/javascript" id="MathJax-script" async src="/js/mathjax3.js"></script>
 
 ## Enabling absolute positioning
 

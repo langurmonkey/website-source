@@ -2,14 +2,14 @@
 author = "Toni Sagrista Selles"
 categories = ["Graphics"]
 tags = ["gaiasky", "opengl", "rendering", "visualization", "volume rendering", "computer graphics", "english"]
-date = 2026-10-25
+date = 2026-10-22
 linktitle = ""
-title = "Galaxy rendering: particles to volume"
-description = "Improving the Milky Way in Gaia Sky with volume rendering"
+title = "Volumetric galaxy rendering"
+description = "Improving the Milky Way visuals in Gaia Sky: particles to volume"
 featuredpath = "date"
 type = "post"
 js = ["/js/mathjax4.js"]
-draft = true
+draft = false
 +++
 
 The Milky Way is an essential component in any 3D Universe software. Rendering a realistic (i.e. science-based) and visually appealing galaxy is paramount to the user experience, and to the cohesion of the simulated universe as a whole. Galaxies are made of gas and dust clouds, so they are volumetric in nature. In Gaia Sky we have been using particle-based representations for a long time, even though we have had the volumetric rendering infrastructure in place also for a while. This post describes the rendering technique we use in Gaia Sky 3.9.0 to render the volumetric Milky Way, and how we have constructed the dataset that enables it. Interested? Keep reading.
@@ -32,25 +32,265 @@ All these issues finally tipped me into seriously consider approaching the proje
 
 ## Particles to volume
 
-The first step is to convert the particle data to a volume in the form of a voxel grid. This step is crucial, as it can make or break the whole project. Having a good dataset is the difference between a bland-looking visual and an awesome one. Here I detail the process of converting particles to the volume, and talk a bit about the formats (R8 density/RGB8 color/RGBA8 color+density).
+The first step is to convert the particle data to a volume in the form of a voxel grid. This step is crucial, as it can make or break the whole project. Having a good dataset is the difference between a bland-looking visual and an awesome one.
+
+### The source data
+
+The source is the same particle model we were already rendering. It is split into channels, each a gzipped text file with one particle per line:
+
+```
+x y z size r g b
+```
+
+where the position is in galactic coordinates, `size` is the particle's weight and `r g b` is the emission coefficient of the particle, in arbitrary units. The Milky Way is made of three of them: **Gas** (\~15,000 particles), **Bulge** (\~900) and **ArmDust** (\~93,000). The stars and the HII regions of the model are not part of the volume: they are genuinely point-like, so they keep their billboards and a voxel grid would only blur them.
+
+Reading a few hundred thousand lines and painting them into a grid is not hard. What is hard is doing it in a way that does not depend on the resolution of the grid, so that a \\(200^{3}\\) volume and an \\(800^{3}\\) volume describe *the same galaxy* and differ only in how much detail they can hold. Most of the work below exists to enforce that.
+
+### Splatting
+
+Every particle is a point with no extent, so the first operation is a scatter into the grid. The naive version (each particle adds its weight to the nearest voxel) is what the converter calls `ultrafast`, and it is what the shipped volumes use. It is also the one that keeps the property above: a nearest-voxel scatter is the identity of the sampling, so the same data always lands in the voxel the same ray will visit.
+
+{{< fig src="/img/2026/10/galaxy-rendering-splatting.svg" class="fig-center" width="100%" loading="lazy" title="Splatting" caption="Each particle adds its weight to the voxel it falls in, so a voxel ends up with the summed weight ρ and the weight-averaged color c; here its opacity is drawn proportional to ρ. The magnification shows the arithmetic for a voxel that receives two particles." >}}
+
+There are two details here worth taking into account:
+
+- **The color accumulates with the same weight as the density**, so dividing the accumulated color by the accumulated density yields a size-weighted mean color per voxel. Getting the weights inconsistent here is the classic way to end up with a volume whose large particles dominate the hue.
+- **The grid is *galactic* but the file is not.** Voxels are dumped in C order, like this:
+
+  $$
+  (W, H, D) = gal(X, Z, -Y)
+  $$
+
+  This is because of the axis order the shader indexes a 3D texture with. The permutation is written into the metadata, in both orders, precisely so nobody has to infer it.
+
+### Smoothing without inventing detail
+
+A raw scatter of 15,000 points into a \\(400^{3}\\) grid is a swarm of dots. So every channel is blurred with a Gaussian. The tempting choice, a fixed sigma in voxels, is exactly the one that breaks resolution independence: it smooths *more* of the galaxy at 200 than at 800, and the same data produces two different objects.
+
+Instead, the blur width is a length on the particles, in world units of the box:
+
+$$
+\sigma = 0.85 \times \ell
+$$
+
+where \\(\ell\\) is the median distance from a particle to its 4th nearest neighbor — the local inter-particle spacing, not the volume divided by the count. That measures the gaps that actually need filling, and it is nearly independent of resolution by construction, since it comes from the particle positions alone. A channel that is denser gets a narrower kernel for free, and the same particles written at 200, 400 and 800 get 4×, 2× and 1× that sigma *in voxels*, which is the correct behavior.
+
+{{< fig src="/img/2026/10/galaxy-rendering-smoothing.svg" class="fig-center" width="100%" loading="lazy" alt="The same Gaussian kernel drawn over two particle fields on grids of different resolution: the blur is a fixed length in the world, so it covers twice as many voxels on the finer grid." title="Smoothing" caption="The kernel width is a length measured on the particles — σ = 0.85 ℓ, with ℓ the median distance to the 4th neighbor — so the same blur is described by twice as many voxels on a grid of twice the resolution. The result is one continuous density field; a fixed sigma in voxels would instead give a \\(200^{3}\\) volume and an \\(800^{3}\\) volume two different galaxies." >}}
+
+Two guards keep this sensible:
+
+- **A cap at twice the channel's own half-mass thickness**, along galactic Z. Without it, a sparse channel (a few hundred particles whose "local spacing" is an artifact of sparsity) would be blurred into a slab.
+- **A smoothing scale per channel** (`--smoothing-scale`). Dust uses 0.4×, because a dust lane that is smoothed like the gas stops being a lane and becomes a haze.
+
+The color is blurred with the *density* kernel, over the *unblurred* density, so the color spreads exactly as far as the density is about to. Blurring the color separately is how you get colored halos around black voxels.
+
+### Color, and why it needs normalizing
+
+The particle colors are emission coefficients, not display colors. Gas averages about 0.02, so clipping to `[0,1]` and multiplying by 255 rounds roughly 82% of the occupied voxels to zero and leaves the whole channel carried by about thirty distinct levels. Quantizing as-is gives a black galaxy.
+
+The fix is a **single scalar gain**, derived from the 99.9th percentile of the *occupied* voxels and applied to all three channels identically. One scalar is the important part: the gain preserves the chromaticity of every voxel, so the hue is still the data's. Per-channel normalization would give each channel the full 0–255 range and wash everything toward gray, which defeats the point of storing a per-voxel color at all. The gain is baked into the bytes, and the shader consumes the stored color as-is.
+
+Density gets the same treatment, by its peak, and is stored in the alpha channel.
+
+### Packing and merging
+
+Each channel is written as a raw heap of bytes, gzipped, next to a small text sidecar that declares the grid and the box:
+
+```
+Volume: emissive
+Grid size: 399x40x400
+Galactic grid (x, y, z): 399x400x40
+Volume bounds: [-0.473301, -0.048570, -0.475536] to [0.477213, 0.046252, 0.476845]
+Voxel size: 0.00250000 (cubic; the largest box side is 1, in units of the object's size)
+```
+
+The byte count per voxel selects the format — 1 byte per voxel is R8 density, 3 is RGB8 color, 4 is RGBA8 color+density — and the loader takes it from the file length, not from the file name. The RGB channels carry the chromaticity, the alpha channel the brightness, and the emitted radiance is the product `RGB × A`. An occluding volume uses the same layout, with alpha as the normalized density.
+
+The per-channel textures are then merged into two final volumes: one **emissive** (Gas at 0.7 + Bulge at 0.3) and one **occlusive** (ArmDust at 0.08). Merging is a post-process on the textures, so it needs neither the particle data nor a re-conversion, but it does have to be careful:
+
+- Densities add. The color is the density-weighted mean over the inputs that carry one, and each input's baked gain is undone first, so the merge happens in emission space. Otherwise a channel normalized to a different peak would bias the hue of the result.
+- The merge **verifies alignment** — same grid, same box to 1e-3, metadata grid consistent with the file length — rather than assuming it.
+- `--norm max` renormalizes the sum, which dims everything: at Gas+Bulge 1/1 the peak lands at 1.36 and the texture is scaled by 0.73. Renormalizing after the merge is a decision, not a detail.
+
+### Making the box fit the galaxy
+
+The original converter forced a **cubic** box on every volume. A galaxy disk is 6.7 units wide and 0.67 thick, so most of that cube covered empty space: \\(400^{3}\\) of RGBA is 244 MiB, where a 400 × 400 × 40 grid of the *same voxel size* is 24 MiB. A factor of ten, spent on nothing.
+
+The fix is to flatten the grid and the box **together**. Flattening only the grid would make the voxels anisotropic — same memory, but visibly banded along the stretched axis. So both are now per axis, the grid is derived from the data-shaped box, and `--voxel-size` lets you ask for "the detail of an \\(N^{3}\\) grid, without the empty axes":
+
+```
+just texvoxel 0.01768 galaxy out/     # -> 399 x 400 x 40 galactic, storage 400 x 40 x 399
+```
+
+25.5 MB raw instead of 244 MiB, at identical voxel size. The whole thing is still one texture with one step count: the ray-march step is `rayLength × |rayDir / extent|`, which is invariant under a rescale of the box, so flattening the box does not change how many samples a ray takes.
+
+One consequence worth knowing: the metadata grid and bounds are in **storage** order, because that is the order the file is indexed in and the shader turns a position into texture coordinates per axis, with no swizzle. Storage `(W, H, D) = galactic (X, Z, -Y)` is exactly the permutation the data is written with, so the box is permuted by the same permutation as the data. For a cube the two coincide, which is why this went unnoticed for so long, and why the change is byte-identical for existing cubic volumes.
 
 ## The volume renderer
 
-Here we go over the galaxy shader. It works in two steps: depth and emission. Depth runs early, emission runs late in the pipeline. Explain the reasons. Explain the shader structure at high level, give some pseudocode.
+Here we go over the galaxy shader, which is in `assets/shader/volume.galaxy.fragment.glsl`. It is a single-pass ray marcher, but it is drawn **twice**: once early as a depth-only pre-pass, and once late as the emission pass.
+
+### Why two passes
+
+The volume is rendered with additive blending — light is emitted, not painted — so its own fragments cannot write a meaningful depth. Adding two semi-transparent layers is commutative; the depth buffer, which keeps a single number per pixel, is not. And the volume cannot be sorted per fragment, so any attempt to give it "the" depth in the color pass is wrong by construction.
+
+But the scene needs it. The stars of the model, and the whole rest of the universe, are drawn *after* the Milky Way volume (render group 2110), and if nothing writes depth they all shine through the dust lanes. A galaxy whose dust hides nothing looks like a galaxy with a bright smudge on it.
+
+So the depth is produced as a **separate mask**, in its own pass, before anything else is drawn:
+
+```
+MODEL_VERT_GRID   (200)  - clears the depth buffer on its post-runnable
+VOLUME_DEPTH      (250)  - color mask off, only gl_FragDepth is written
+POINT_STAR        (300)  - depth-tested, no writes
+...
+VOLUME            (2110) - color only, depth test off
+```
+
+The pre-pass marches each ray only until it finds the first sample that is dense enough to occlude, writes that distance, and returns. The emission pass marches the *same* ray from the same origin and finds the same front, so both agree on where the dust starts. Stars are switched from "no depth test" to "depth test, no writes": they are hidden by the dust but cannot overwrite its depth.
+
+### What "occludes" means
+
+Not every volume should occlude. The gas is emissive, and its faint outermost haze is not opaque — letting it write depth would cut a hard, sharp-edged hole in the star field, perfectly matching the box. The dust, on the other hand, should hide what is behind its lanes.
+
+So each volume slot carries its own **density threshold**, and only samples above it count as occluding:
+
+```json
+"volumeDepthThreshold": [0.0, 0.015]
+```
+
+`0.0` disables occlusion for that slot: the gas renders, and hides nothing. The value for the dust is not arbitrary — it comes from the data. In the dust volume, the low tail of the density histogram is the blur we applied deliberately, not matter, so the threshold is set to keep the lanes and drop the tail. The constant is per texture and has to be re-tuned if the smoothing or the normalization changes.
+
+### The march
+
+Both volumes are marched in **one loop**, at the same position along the ray. That is what makes the ordering correct: a dust lane and a dust glow are the same voxels, and only the order of emission and absorption within the step decides which one you get.
+
+```glsl
+vec3 rayOrigin = transpose(R) * u_cameraPos;         // camera, in the box frame
+vec3 rayDir    = normalize(transpose(R) * v_data.fragPosWorld);
+
+vec2 span    = boxIntersection(rayOrigin, rayDir, boundsMin, boundsMax);
+float stepUVW = ...;                                 // TARGET_STEP_UVW of the box
+int  nSteps  = clamp(int(ceil(pathUVW / stepUVW)), 16, u_iterations);
+float jitter = hash12(gl_FragCoord.xy * u_time * 0.1);  // hides the banding
+
+for (int i = 0; i < nSteps; i++) {
+    float t = entry + (float(i) + jitter) * stepSize;
+    vec3  uvw = worldToVolumeUVW(rayOrigin + rayDir * t, boundsMin, boundsMax);
+
+    // Jump whole bricks that hold no density in either volume.
+    float skip = min(emptyBrickSteps(uvwGas, ...), emptyBrickSteps(uvwDust, ...));
+    if (skip >= 1.0) { i += int(skip) - 1; continue; }
+
+    vec4 gas  = sampleVolumeRGBA(uvwGas,  u_volume0, u_volume0ColorMode);
+    vec4 dust = sampleVolumeRGBA(uvwDust, u_volume1, u_volume1ColorMode);
+
+    // Emission first: light emitted in this step lies in front of this step's dust.
+    emitted      += volumeColor(GAS_RAMP, gas.a, gas.rgb, mode) * gas.a * stepUVW * transmittance;
+    // Then absorption, Beer-Lambert, only for what is behind it.
+    transmittance *= exp(-DUST_SIGMA * dust.a * stepUVWDust);
+    if (transmittance < 0.001) break;
+}
+```
+
+A few things in there are worth pointing out:
+
+- **Empty brick skipping** is the single biggest performance win. On load, the voxel grid is reduced to an occupancy grid with one texel per 4×4×4 brick, holding the *maximum* density of the brick. A zero texel then means every fetch inside that brick would have returned zero — no emission, no extinction, so skipping the whole brick cannot change the image. The shader does one nearest fetch instead of the dozens the brick would have cost, and advances the sample index rather than the step size, so the samples it does take sit on exactly the lattice it would have used anyway. On a galaxy volume, most of the march is empty space.
+- **The step is a fraction of the box, not of the grid.** `TARGET_STEP_UVW = 0.01` and the step count is clamped to `u_iterations`, so a cheaper quality preset samples the same path more coarsely instead of sampling part of it.
+- **The jitter** decorrelates neighboring pixels so a step size in UVW does not show as concentric banding. It hashes the fragment coordinate, which is per pixel and free.
+- **The pre-pass hashes position only**, never time. A phase that re-rolls every frame makes the occlusion mask boil at its edges, and at a coarse step it flickers over entire dust lanes.
+- **The transfer function** is `density × color × step`, integrated front to back, with an exposure of 20 applied at the end. Density is peak-normalized and sparse, so the ramp parameter is `log2(1 + 255·d)` — without the log the whole volume lands in the first ramp stop and the ramp does nothing.
+
+### Known limits
+
+Two, both of them consequences of doing the depth in a cheap pre-pass:
+
+- The depth is written at the **first** sample above the threshold, not where the ray actually becomes optically thick. A thin lane therefore occludes as hard as a thick one.
+- The distance is along the ray, while the log depth buffer wants view-space depth. They differ by `cos θ` away from the view axis, which is exact at the center of the screen and a few percent at the corners.
+
+Neither is visible in practice, and both are one comparison per sample away from being fixed properly.
 
 ## Infrastructure in Gaia Sky
 
-Loading infrastructure, data format (JSON), etc. THis should be rather short, already covered in the Gaia Sky docs. Add pointers.
+The renderer is only half of it. The other half is being able to load a volume from a data pack and declare it in a scene, which turned out to be mostly about *formats*.
+
+A volume object is a regular `ModelBody` with the `Volume` archetype, so it accepts `sizePc`, `parent`, `fadeIn`/`fadeOut`, `coordinates` and everything else, plus the volume-specific attributes:
+
+```json
+{
+  "name": "Milky Way (volume)",
+  "archetype": "Volume",
+  "sizePc": 26000.0,
+  "fadeIn": [1.0e3, 7.0e3],
+  "fadeOut": [15e4, 60e4],
+  "vertexShader": "shader/pbr.vertex.glsl",
+  "fragmentShader": "shader/volume.galaxy.fragment.glsl",
+  "raymarchIterations": [50, 70, 90, 110],
+  "model": {
+    "type": "sphere",
+    "blendMode": "additive",
+    "params": { "diameter": 1.3, "quality": 30 },
+    "material": {
+      "volume0": "$data/default-data/galaxy/volume/gal*/galaxy_emissive_rgba.raw.gz",
+      "volume1": "$data/default-data/galaxy/volume/gal*/galaxy_occlusive_rgba.raw.gz",
+      "volumeDepthThreshold": [0.0, 0.015]
+    }
+  }
+}
+```
+
+`raymarchIterations` has one value per quality preset — low, normal, high, ultra — so the same scene degrades gracefully on a weak GPU. Up to four volumes can be declared per object, and all of them are marched and composited in the same pass.
+
+The loader (`VolumeTextureLoader`) does three things worth mentioning:
+
+- **It crops.** The grid is cut down to the range of voxels that actually hold density, plus one voxel of padding, and the cropped grid is mapped onto the same box. Writing the empty shell into the file costs file size and load time only.
+- **It builds the occupancy grid** described above, and binds it as a separate 3D texture. A slot without one gets a 1×1×1 volume of ones, which never skips.
+- **It derives the format from the bytes**, not from the filename: 1, 3 or 4 bytes per voxel, with the grid from the metadata sidecar.
+
+None of this is Milky-Way-specific: any 3D tool that can write an RGBA8 grid can produce a volume for Gaia Sky. The format and the scene attributes are documented in the [data format](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/master/Format-3d-textures.html) and the [volumes section](https://gaia.ari.uni-heidelberg.de/gaiasky/docs/master/Data-format.html#volumes) of the Gaia Sky documentation.
+
+Memory is the price: an 800-resolution grid is 798 × 80 × 800 RGBA, about 200 MB once decompressed, **per volume**. The default data pack therefore ships three resolutions and picks one by data quality setting — 200, 400 and 800 voxels on the longest side of the box:
+
+| Resolution | Grid (galactic) | Voxels | Raw, per volume | Emissive, gzipped | Occlusive, gzipped |
+|---|---|---|---|---|---|
+| 200 | 200 × 200 × 20 | 0.8 M | 3.2 MB | 230 KB | 10.6 KB |
+| 400 | 399 × 400 × 40 | 6.4 M | 25.5 MB | 1.5 MB | 74.6 KB |
+| 800 | 798 × 800 × 80 | 51 M | 204 MB | 8.9 MB | 430 KB |
+
+Thanks to gzip (and to how much of the box is empty) the download cost is trivial; it is the decompressed texture that decides whether a card can hold it.
 
 ## Results
 
-Compare results at different resolutions (200, 400, 800), and with different number of iterations (low/normal/high/ultra presets).
+The question a resolution-independent converter has to answer is whether the three grids really are the same galaxy. They are: the mean ray integral — the integral of the density along a sample of rays through the volume, which is the quantity that has to match if the object is the same — is
 
-Add some images, add the gaia sky volume MW video (youtube).
+| Resolution | Mean ray integral |
+|---|---|
+| 200 | 0.00020193 |
+| 400 | 0.00020295 |
+| 800 | 0.00020382 |
+
+within 1% of each other, with the same total mass and the same hues, so what changes between them is only detail. And detail is visible: at 200 the dust cannot be smoothed at all (its kernel is 0.31 voxels, so the point cloud shows through), at 400 it is 0.63 voxels, and only at 800 does it reach 1.25 voxels and become a continuous lane. This is why the dust is the channel that decides which resolution you actually want, and why the 800 volume is the one in the preview video.
+
+<!-- TODO(toni): fill in the measured numbers below: frame times and/or FPS for each
+     resolution (200/400/800) and each quality preset (low/normal/high/ultra), and the
+     corresponding iteration counts (50/70/90/110). Card and driver matter, state them. -->
+
+{{< yt id="3BWCaxGOCzs" title="Volumetric Milky Way rendering in Gaia Sky" caption="Credits: The Gaia Sky Project, ESA/Gaia/DPAC." >}}
+
+<!-- TODO(toni): add the comparison images. Suggested set:
+     - side by side: particle billboards (3.8.x) vs volume (3.9.0), same camera
+     - 200 vs 400 vs 800 dust close-up (the lanes, where the difference is obvious)
+     - low vs ultra preset, same camera, cropped
+     Use {{</* fig src="..." class="fig-center" width="100%" loading="lazy" caption="..." */>}} -->
+
+The other thing the volume buys is behavior under motion. A particle galaxy seen edge-on is a field of blobs that swim around each other as you orbit, because the additive blending has no notion of front and back; the volume is a continuous medium, and the dust lanes stay put on the sky as the camera moves.
 
 ## Conclusion
 
-Write a good conclusion.
+For a decade the Milky Way in Gaia Sky was a compromise between what the data said and what a rasterizer could do with a pile of billboards. The volume rendering path removes the compromise: the galaxy is now a medium that emits and absorbs, the dust lanes hide the stars behind them and not the ones in front, and the image does not change character when the camera moves.
+
+Two things made it work, and neither of them is in the shader. The first is the converter: sizing the blur on the particles rather than on the grid is what makes 200, 400 and 800 the same object at three levels of detail, and flattening the box to the shape of the data is what makes the high resolution affordable at all — 25 MB instead of 244 MiB at identical voxel size. The second is the depth pre-pass: a volume cannot write meaningful depth in a blended pass, but the rest of the scene has to know where the dust is, and a cheap early mask costs one extra draw and solves it exactly.
+
+What is left is polish rather than architecture: sizing the ray-march step from the grid resolution instead of the box, so a finer grid is actually sampled finer; replacing the time-hashed jitter with a static one, since a float32 clock dies after about ten hours of uptime; enabling scattering in the dust, which is already wired with a coefficient of zero; and tuning the occlusion threshold, which is currently a single constant for the whole volume and would probably be better as a curve. And, of course, the same treatment for the rest of the galaxies in the catalog — nothing in the loader or the shader knows about the Milky Way.
 
 
 
