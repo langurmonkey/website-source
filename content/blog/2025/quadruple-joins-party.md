@@ -8,7 +8,7 @@ title = "Quadruple joins the fight!"
 description = "This float-128 implementation beats others at same precision"
 featuredpath = "date"
 type = "post"
-js = ["/js/mathjax4.js"]
+js = ["/js/mathjax3.js"]
 +++
 
 

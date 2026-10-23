@@ -10,7 +10,7 @@ featured = "particle-mesh-preview.jpg"
 featuredalt = "Particle-mesh in PPS 3.0"
 featuredpath = "date"
 type = "post"
-js = ["/js/mathjax4.js"]
+js = ["/js/mathjax3.js"]
 +++
 
 

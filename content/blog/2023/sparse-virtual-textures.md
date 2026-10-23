@@ -9,7 +9,7 @@ featured = "vt-earth-feature.jpg"
 featuredalt = "Real time rendering of the Earth in Gaia Sky with surface, cloud and height virtual textures."
 featuredpath = "date"
 type = "post"
-js = ["/js/mathjax4.js"]
+js = ["/js/mathjax3.js"]
 +++
 
 Implementing proper virtual texture support in [Gaia Sky](https://zah.uni-heidelberg.de/gaia/outreach/gaiasky) has been on my to-do list for many years. And for many years I have feared that very item, as the virtual texture mechanism is notoriously complex and hard to implement. However, once working, they are very cool and bring a lot of value to a Universe visualization platform such as Gaia Sky. In this post, I describe and discuss my implementation of virtual textures in Gaia Sky in detail, and provide a thorough examination of some of its most interesting points. If you are looking for the specifics of how to define or use virtual texture datasets in Gaia Sky, please refer to the [official documentation](https://gaia.ari.uni-heidelberg.de/gaiasky/docs). Here I provide only a general technical description.

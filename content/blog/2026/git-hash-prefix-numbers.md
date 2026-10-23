@@ -8,7 +8,7 @@ title = "Git hash prefix or cellphone number?"
 description = "What is the probability of getting an all-numbers Git hash prefix?"
 featuredpath = "date"
 type = "post"
-js = ["/js/mathjax4.js"]
+js = ["/js/mathjax3.js"]
 +++
 
 Today, I was playing around with a new feature in [Gaia Sky](https://gaiasky.space), and I created a new release from master. Immediately, I noticed something unusual in the generated package name:

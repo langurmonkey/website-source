@@ -8,7 +8,7 @@ title = "JPEG XL finally lands in Chrome!"
 description = "Version 155 of the popular web browser will ship with a JPEG XL decoder"
 featuredpath = "date"
 type = "post"
-js = ["/js/mathjax4.js"]
+js = ["/js/mathjax3.js"]
 +++
 
 Today, I was browsing [Hacker News](https://news.ycombinator.com), when a particular item caught my eye:

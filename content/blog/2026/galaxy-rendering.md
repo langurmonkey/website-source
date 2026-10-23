@@ -8,7 +8,7 @@ title = "Volumetric galaxy rendering"
 description = "Improving the Milky Way visuals in Gaia Sky: particles to volume"
 featuredpath = "date"
 type = "post"
-js = ["/js/mathjax4.js"]
+js = ["/js/mathjax3.js"]
 draft = false
 +++
 
@@ -16,7 +16,7 @@ The Milky Way is an essential component in any 3D Universe software. Rendering a
 
 <!--more-->
 
-{{< fig src="/img/2026/10/gal1300-close-crop.avif" link="/img/2026/10/gal1300-close.jpg" class="fig-center" width="100%" loading="lazy" caption="The Milky Way" >}}
+{{< fig src="/img/2026/10/gal1300-close-crop.avif" link="/img/2026/10/gal1300-close.jpg" class="fig-center" width="100%" loading="lazy" title="The Milky Way galaxy in Gaia Sky" >}}
 
 
 ## A little bit of history
@@ -81,7 +81,7 @@ $$
 \sigma = 0.85 \times \ell
 $$
 
-where \\(\ell\\) is the median distance from a particle to its 4th nearest neighbor — the local inter-particle spacing, not the volume divided by the count. That measures the gaps that actually need filling, and it is nearly independent of resolution by construction, since it comes from the particle positions alone. A channel that is denser gets a narrower kernel for free, and the same particles written at 200, 400 and 800 get 4×, 2× and 1× that sigma *in voxels*, which is the correct behavior.
+where \\(\ell\\) is the median distance from a particle to its 4th nearest neighbor --- the local inter-particle spacing, not the volume divided by the count. Note that this distance is the same for all particles in a channel, as \\(\ell\\) is derived from the median. That measures the gaps that actually need filling, and it is nearly independent of resolution by construction, since it comes from the particle positions alone. A channel that is denser gets a narrower kernel for free, and the same particles written at 200, 400 and 800 get 4×, 2× and 1× that sigma *in voxels*, which is the correct behavior.
 
 {{< fig src="/img/2026/10/galaxy-rendering-smoothing.svg" class="fig-center" width="100%" loading="lazy" alt="The same Gaussian kernel drawn over two particle fields on grids of different resolution: the blur is a fixed length in the world, so it covers twice as many voxels on the finer grid." title="Smoothing" caption="The kernel width is a length measured on the particles — σ = 0.85 ℓ, with ℓ the median distance to the 4th neighbor — so the same blur is described by twice as many voxels on a grid of twice the resolution. The result is one continuous density field; a fixed sigma in voxels would instead give a \\(200^{3}\\) volume and an \\(800^{3}\\) volume two different galaxies." >}}
 
