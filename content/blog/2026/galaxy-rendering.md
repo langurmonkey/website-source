@@ -71,7 +71,9 @@ There are two details here worth taking into account:
 
 ### Smoothing without inventing detail
 
-A raw scatter of 15,000 points into a \\(400^{3}\\) grid is a swarm of dots. So every channel is blurred with a Gaussian. The tempting choice, a fixed sigma in voxels, is exactly the one that breaks resolution independence: it smooths *more* of the galaxy at 200 than at 800, and the same data produces two different objects.
+TODO: revise this method. It is possibly bad.
+
+A raw scatter of 15,000 points into a \\(400^{3}\\) grid is a swarm of dimensionless points, but we need a volume, so every channel is blurred with a Gaussian. The tempting choice, a fixed sigma in voxels, is exactly the one that breaks resolution independence: it smooths *more* of the galaxy at 200 than at 800, and the same data produces two different objects.
 
 Instead, the blur width is a length on the particles, in world units of the box:
 
