@@ -9,14 +9,14 @@ description = "Improving the Milky Way visuals in Gaia Sky: particles to volume"
 featuredpath = "date"
 type = "post"
 js = ["/js/mathjax4.js"]
-draft = true
+draft = false
 +++
 
 The Milky Way is an essential component in any 3D Universe software. Rendering a realistic (i.e. science-based) and visually appealing galaxy is paramount to the user experience, and to the cohesion of the simulated universe as a whole. Galaxies are made of gas and dust clouds, so they are volumetric in nature. In Gaia Sky we have been using particle-based representations for a long time, even though we have had the volumetric rendering infrastructure in place also for a while. This post describes the rendering technique we use in Gaia Sky 3.9.0 to render the volumetric Milky Way, and how we have constructed the dataset that enables it. Interested? Keep reading.
 
 <!--more-->
 
-{{< fig src="/img/2026/10/milky-way-risinger.jpg" class="fig-center" width="50%" loading="lazy" caption="Nick Risinger's impression of the Milky Way" >}}
+{{< fig src="/img/2026/10/gal1300-close-crop.avif" link="/img/2026/10/gal1300-close.jpg" class="fig-center" width="100%" loading="lazy" caption="The Milky Way" >}}
 
 
 ## A little bit of history
@@ -24,9 +24,15 @@ The Milky Way is an essential component in any 3D Universe software. Rendering a
 The rendering of our and other galaxies has always been a topic I dreaded. I never felt that the solutions we found were good enough. I always knew that the right way to do it was with volume rendering, but the main issue was that we did not have the volumetric data.
 
 So, for a long time, we have used approximations to render the Milky Way, some more gracious than others.
-- **Enhanced flat image** --- Initially, we used a single two-faced billboard with the artist's impression by Nick Risinger, coupled with a generated star field. This was featured in the September 26, 2016 Astronomy Picture of the Day, titled "Here comes the Sun"[^1].
-- **Textured billboard approach** --- After Gaia DR3 landed in 2018 and 2022 respectively, the catalog data were used by Stefan Payne-Wardenaar[^2] to produce a high-quality representation of the whole Galaxy[^3] in Blender. At that time, I worked with Stefan to produce a particle-based version that would fit in the existing billboard systems in Gaia Sky. The first version was based on textured additive billboards and dithered depth buffer occlusion. The depth was correct, but the look of the galaxy was rather cartoonish and unrealistic. Additive blending was used for all channels except the dust, which was purely occlusive in a binary sense (no sorting, so no transparency).
-- **Billboards with additive and subtractive blending** --- Later on, inspired by [this article](https://dexyfex.com/2016/09/09/galaxy-rendering-revisited/), the textured billboards were updated to rely on blobs and additive/subtractive blending. The main issue was that the emissive parts blended additively in a very unrealistic way, and the occlusion did not respect the depth order in the scene. Several attempts were made afterwards to implement Weighted Blended Order-Independent Transparency (WBOIT)[^4], as suggested by the article, but this was very difficult to tune and produced underwhelming results.
+- **Enhanced flat image** --- Initially, we used a single two-faced billboard with the artist's impression by Nick Risinger, coupled with a generated star field. This was featured in the September 26, 2016 Astronomy Picture of the Day, titled "Here comes the Sun"[^1]. This is a very primitive galaxy, but it looks awesome from above and in still pictures due to Risinger's image.
+  {{< fig src="/img/2026/10/gal01-collage-small.jpg" link="/img/2026/10/gal01-collage.jpg" class="fig-center" width="100%" loading="lazy" >}}
+
+- **Textured billboard approach** --- After Gaia DR3 landed in 2022, the catalog data were used by Stefan Payne-Wardenaar[^2] to produce a high-quality representation of the whole Galaxy[^3] in Blender. At that time, I worked with Stefan to produce a particle-based version that would fit in the existing billboard systems in Gaia Sky. The first version was based on textured additive billboards and dithered depth buffer occlusion. The depth was correct, but the look of the galaxy was rather cartoonish and unrealistic. Additive blending was used for all channels except the dust, which was purely occlusive in a binary sense (no sorting, so no transparency), making use of dithering to simulate translucency. This version is the one that looks the worst of all. Using textured billboards is a bad move to simulate a volume of gas and dust. Also, the brightness blows out when seen edge-on.
+  {{< fig src="/img/2026/10/gal02-collage-small.jpg" link="/img/2026/10/gal02-collage.jpg" class="fig-center" width="100%" loading="lazy" >}}
+
+- **Billboards with additive and subtractive blending** --- Later on, inspired by [this article](https://dexyfex.com/2016/09/09/galaxy-rendering-revisited/), the textured billboards were updated to rely on blobs and additive/subtractive blending. The main issue was that the emissive parts blended additively in a very unrealistic way, and the occlusion did not respect the depth order in the scene. Several attempts were made afterwards to implement Weighted Blended Order-Independent Transparency (WBOIT)[^4], as suggested by the article, but this was very difficult to tune and produced underwhelming results. Looks better than the previous textured-billboards version, but the behavior of light is unrealistic. The brightness is mostly gone when seen from the top, but blows out edge-on due to the additive blending.
+  {{< fig src="/img/2026/10/gal03-collage-small.jpg" link="/img/2026/10/gal03-collage.jpg" class="fig-center" width="100%" loading="lazy" >}}
+
 
 All these issues finally tipped me into seriously consider approaching the project of converting the particle data to a volume and implementing a proper volume renderer with emission and occlusion.
 
