@@ -2353,13 +2353,16 @@ body.is-menu-visible #menu {
 figcaption,
 figcaption>h4 {
   font-family: open sans, sans-serif;
-  opacity: 0.87;
   margin: 0.5em 0 1em 0;
   color: gray;
   text-align: center;
   font-size: 16px;
   font-weight: 200;
 }
+figcaption>h4 {
+  font-variant: small-caps;
+}
+
 
 figure.fig-center {
   text-align: center;
