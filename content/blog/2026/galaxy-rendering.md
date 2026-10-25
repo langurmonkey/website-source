@@ -285,6 +285,8 @@ The question a resolution-independent conversion has to answer is whether the th
 
 within 1% of each other, with the same total mass and the same hues, so what changes between them is only detail. And detail is visible: at 200 the dust cannot be smoothed at all (its kernel is 0.31 voxels, so the point cloud shows through), at 400 it is 0.63 voxels, and only at 800 does it reach 1.25 voxels and become a continuous lane. This is why the dust is the channel that decides which resolution you actually want, and why the 800 volume is the one in the preview video.
 
+{{< imgcompare before="/img/2026/10/gal03-top.jpg" after="/img/2026/10/gal04-top.jpg" label-before="3.8.x" label-after="3.9.0" title="Top-view comparisond" caption="Particle-based galaxy compard to the volumetric galaxy." >}}
+
 <!-- TODO(toni): the numbers in this table are placeholders. Replace with measured frame
      times, and state the test machine: CPU, GPU, driver, window size and camera. -->
 

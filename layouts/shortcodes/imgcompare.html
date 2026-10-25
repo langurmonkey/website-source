@@ -1,0 +1,213 @@
+<!--
+    A before/after image comparison slider.
+
+    Two images with the same size and aspect ratio are stacked. The first
+    one (before) is clipped to the left of a movable divider, the second one
+    (after) fills the frame, so dragging the divider reveals more or less of
+    each. Everything is driven by the CSS variable --imgcmp-pos.
+
+    Attributes:
+    - before        - path to the image shown on the left (positional 0)
+    - after         - path to the image shown on the right (positional 1)
+    - title         - figure title
+    - caption       - figure caption
+    - attr          - attribution, appended after the caption
+    - attrlink      - link for the attribution
+    - alt / alt-before - alt text (defaults to the caption)
+    - label-before  - small label drawn on the left image (optional)
+    - label-after   - small label drawn on the right image (optional)
+    - start         - initial divider position, 0-100 (default 50)
+    - width         - width attribute of both images
+    - height        - height attribute of both images
+    - loading       - loading attribute (default lazy)
+    - class         - class of the figure (default fig-center)
+
+    Usage (shortcode delimiters written out):
+    imgcompare before="/img/a.jpg" after="/img/b.jpg" caption="..."
+-->
+{{- $before := .Get "before" -}}
+{{- if not $before }}{{ $before = .Get 0 }}{{ end -}}
+{{- $after := .Get "after" -}}
+{{- if not $after }}{{ $after = .Get 1 }}{{ end -}}
+{{- $start := .Get "start" | default "50" -}}
+{{- $loading := .Get "loading" | default "lazy" -}}
+{{- $class := .Get "class" | default "fig-center" -}}
+{{- $alt := .Get "alt" -}}
+{{- if not $alt }}{{ $alt = .Get "caption" | plainify }}{{ end -}}
+{{- $altBefore := .Get "alt-before" | default $alt -}}
+
+{{- if not (.Page.Scratch.Get "imgcmp") -}}
+{{- .Page.Scratch.Set "imgcmp" true }}
+<style>
+  .imgcmp {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+    line-height: 0;
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: pan-y;
+  }
+
+  .imgcmp img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: none;
+    margin: 0;
+    pointer-events: none;
+  }
+
+  .imgcmp-before {
+    position: absolute;
+    inset: 0;
+    -webkit-clip-path: inset(0 calc(100% - var(--imgcmp-pos, 50%)) 0 0);
+    clip-path: inset(0 calc(100% - var(--imgcmp-pos, 50%)) 0 0);
+    will-change: clip-path;
+  }
+
+  .imgcmp-before img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .imgcmp-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--imgcmp-pos, 50%);
+    width: 2px;
+    margin-left: -1px;
+    background: #ffffff;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25), 0 1px 6px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+  }
+
+  .imgcmp-grip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 34px;
+    height: 34px;
+    margin: -17px 0 0 -17px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+  }
+
+  .imgcmp-grip::before,
+  .imgcmp-grip::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 7px;
+    height: 7px;
+    margin-top: -4px;
+    border-top: 2px solid #4a4a4f;
+    border-right: 2px solid #4a4a4f;
+  }
+
+  .imgcmp-grip::before {
+    left: 8px;
+    transform: rotate(-135deg);
+  }
+
+  .imgcmp-grip::after {
+    right: 8px;
+    transform: rotate(45deg);
+  }
+
+  .imgcmp-tag {
+    position: absolute;
+    top: 10px;
+    padding: 5px 8px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.55);
+    color: #ffffff;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    pointer-events: none;
+  }
+
+  .imgcmp-tag--before {
+    left: 10px;
+  }
+
+  .imgcmp-tag--after {
+    right: 10px;
+  }
+
+  .imgcmp-range {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    opacity: 0;
+    cursor: ew-resize;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .imgcmp:focus-within .imgcmp-grip {
+    box-shadow: 0 0 0 3px rgba(26, 143, 209, 0.65), 0 1px 6px rgba(0, 0, 0, 0.4);
+  }
+</style>
+<script>
+  (function () {
+    document.addEventListener("input", function (event) {
+      var range = event.target;
+      if (!range.classList || !range.classList.contains("imgcmp-range")) return;
+      range.parentNode.style.setProperty("--imgcmp-pos", range.value + "%");
+    });
+  })();
+</script>
+{{- end -}}
+
+<figure{{ with $class }} class="{{ . }}"{{ end }}>
+  <div class="imgcmp" style="--imgcmp-pos: {{ $start }}%;{{ with .Get "width" }} width: {{ . }};{{ end }}">
+    <img class="imgcmp-after" src="{{ $after }}"
+      {{- with $alt }} alt="{{ . }}"{{ end }}
+      {{- with .Get "width" }} width="{{ . }}"{{ end }}
+      {{- with .Get "height" }} height="{{ . }}"{{ end }}
+      loading="{{ $loading }}" decoding="async" />
+    <div class="imgcmp-before">
+      <img src="{{ $before }}"
+        {{- with $altBefore }} alt="{{ . }}"{{ end }}
+        {{- with .Get "width" }} width="{{ . }}"{{ end }}
+        {{- with .Get "height" }} height="{{ . }}"{{ end }}
+        loading="{{ $loading }}" decoding="async" />
+      {{- with .Get "label-before" }}<span class="imgcmp-tag imgcmp-tag--before">{{ . }}</span>{{ end -}}
+    </div>
+    {{- with .Get "label-after" }}<span class="imgcmp-tag imgcmp-tag--after">{{ . }}</span>{{ end -}}
+    <div class="imgcmp-line"><span class="imgcmp-grip"></span></div>
+    <input class="imgcmp-range" type="range" min="0" max="100" step="0.1" value="{{ $start }}"
+      aria-label="{{ with .Get "title" }}{{ . }}{{ else }}Image comparison{{ end }}"
+      {{- with .Get "caption" }} title="{{ . | plainify }}"{{ end }} />
+  </div>
+  {{- if or (or (.Get "title") (.Get "caption")) (.Get "attr") -}}
+    <figcaption{{ with .Get "width" }} style="margin: 0 auto; width: {{ . }};"{{ end }}>
+      {{- with (.Get "title" | markdownify) }}<h4>{{ . }}</h4>{{ end -}}
+      {{- if or (.Get "caption") (.Get "attr") -}}
+      <p class="fig-attribution">
+        {{- .Get "caption" | markdownify -}}
+        {{- with .Get "attrlink" }}<a href="{{ . }}">{{ end -}}
+        {{- .Get "attr" | markdownify -}}
+        {{- if .Get "attrlink" }}</a>{{ end -}}
+      </p>
+      {{- end -}}
+    </figcaption>
+  {{- end -}}
+</figure>
