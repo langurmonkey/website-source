@@ -1,15 +1,13 @@
 +++
-author = "Toni Sagrista Selles"
-categories = ["Graphics"]
-tags = ["gaiasky", "opengl", "rendering", "visualization", "volume rendering", "computer graphics", "english"]
-date = 2026-10-22
-linktitle = ""
 title = "Volumetric galaxy rendering"
 description = "Improving the Milky Way visuals in Gaia Sky: particles to volume"
+author = "Toni Sagrista Selles"
+date = 2026-10-26
 featuredpath = "date"
 type = "post"
+categories = ["Graphics"]
+tags = ["gaiasky", "opengl", "rendering", "visualization", "volume rendering", "computer graphics", "english"]
 js = ["/js/mathjax3.js"]
-draft = true
 +++
 
 The Milky Way is an essential component in any 3D Universe software. Rendering a realistic (i.e. science-based) and visually appealing galaxy is paramount to the user experience, and to the cohesion of the simulated universe as a whole. Galaxies are made of gas and dust clouds, so they are volumetric in nature. In Gaia Sky we have been using particle-based representations for a long time, even though we have had the volumetric rendering infrastructure in place also for a while. This post describes the rendering technique we use in Gaia Sky 3.9.0 to render the volumetric Milky Way, and how we have constructed the dataset that enables it. Interested? Keep reading.
@@ -19,19 +17,20 @@ The Milky Way is an essential component in any 3D Universe software. Rendering a
 {{< fig src="/img/2026/10/gal1300-close-crop.avif" link="/img/2026/10/gal1300-close.jpg" class="fig-center" width="100%" loading="lazy" title="The Milky Way galaxy in Gaia Sky" >}}
 
 
+
 ## A little bit of history
 
 The rendering of our and other galaxies has always been a topic I dreaded. I never felt that the solutions we found were good enough. I always knew that the right way to do it was with volume rendering, but the main issue was that we did not have the volumetric data.
 
 So, for a long time, we have used approximations to render the Milky Way, some more gracious than others.
 - **Enhanced flat image** --- Initially, we used a single two-faced billboard with the artist's impression by Nick Risinger, coupled with a generated star field. This was featured in the September 26, 2016 Astronomy Picture of the Day, titled "Here comes the Sun"[^1]. This is a very primitive galaxy, but it looks awesome from above and in still pictures due to Risinger's image.
-  {{< fig src="/img/2026/10/gal01-collage-small.jpg" link="/img/2026/10/gal01-collage.jpg" class="fig-center" width="100%" loading="lazy" >}}
+  {{< imgswitch labels="Top, Side, Wide" images="/img/2026/10/gal01-top.jpg, /img/2026/10/gal01-side.jpg, /img/2026/10/gal01-wide.jpg" alt="The very first Milky Way in Gaia Sky." width="80%" >}}
 
 - **Textured billboard approach** --- After Gaia DR3 landed in 2022, the catalog data were used by Stefan Payne-Wardenaar[^2] to produce a high-quality representation of the whole Galaxy[^3] in Blender. At that time, I worked with Stefan to produce a particle-based version that would fit in the existing billboard systems in Gaia Sky. The first version was based on textured additive billboards and dithered depth buffer occlusion. The depth was correct, but the look of the galaxy was rather cartoonish and unrealistic. Additive blending was used for all channels except the dust, which was purely occlusive in a binary sense (no sorting, so no transparency), making use of dithering to simulate translucency. This version is the one that looks the worst of all. Using textured billboards is a bad move to simulate a volume of gas and dust. Also, the brightness blows out when seen edge-on.
-  {{< fig src="/img/2026/10/gal02-collage-small.jpg" link="/img/2026/10/gal02-collage.jpg" class="fig-center" width="100%" loading="lazy" >}}
+  {{< imgswitch labels="Top, Side, Wide" images="/img/2026/10/gal02-top.jpg, /img/2026/10/gal02-side.jpg, /img/2026/10/gal02-wide.jpg" alt="Textured billboard Milky Way in Gaia Sky." width="80%" >}}
 
 - **Billboards with additive and subtractive blending** --- Later on, inspired by [this article](https://dexyfex.com/2016/09/09/galaxy-rendering-revisited/), the textured billboards were updated to rely on blobs and additive/subtractive blending. The main issue was that the emissive parts blended additively in a very unrealistic way, and the occlusion did not respect the depth order in the scene. Several attempts were made afterwards to implement Weighted Blended Order-Independent Transparency (WBOIT)[^4], as suggested by the article, but this was very difficult to tune and produced underwhelming results. Looks better than the previous textured-billboards version, but the behavior of light is unrealistic. The brightness is mostly gone when seen from the top, but blows out edge-on due to the additive blending.
-  {{< fig src="/img/2026/10/gal03-collage-small.jpg" link="/img/2026/10/gal03-collage.jpg" class="fig-center" width="100%" loading="lazy" >}}
+  {{< imgswitch labels="Top, Side, Wide" images="/img/2026/10/gal03-top.jpg, /img/2026/10/gal03-side.jpg, /img/2026/10/gal03-wide.jpg" alt="Additive/subtractive billboards Milky Way in Gaia Sky." width="80%" >}}
 
 
 All these issues finally tipped me into seriously consider approaching the project of converting the particle data to a volume and implementing a proper volume renderer with emission and occlusion.
@@ -70,8 +69,6 @@ There are two details here worth taking into account:
   This is because of the axis order the shader indexes a 3D texture with. The permutation is written into the metadata, in both orders, precisely so nobody has to infer it.
 
 ### Smoothing without inventing detail
-
-TODO: revise this method. It is possibly bad.
 
 A raw scatter of 15,000 points into a \\(400^{3}\\) grid is a swarm of dimensionless points, but we need a volume, so every channel is blurred with a Gaussian. The tempting choice, a fixed sigma in voxels, is exactly the one that breaks resolution independence: it smooths *more* of the galaxy at 200 than at 800, and the same data produces two different objects.
 
@@ -210,17 +207,15 @@ for (int i = 0; i < nSteps; i++) {
 A few things in there are worth pointing out:
 
 - **Empty brick skipping** is the single biggest performance win. On load, the voxel grid is reduced to an occupancy grid with one texel per 4×4×4 brick, holding the *maximum* density of the brick. A zero texel then means every fetch inside that brick would have returned zero: no emission, no extinction, so skipping the whole brick cannot change the image. The shader does one nearest fetch instead of the dozens the brick would have cost, and advances the sample index rather than the step size, so the samples it does take sit on exactly the lattice it would have used anyway. On a galaxy volume, most of the march is empty space.
-- **The step is a fraction of the box, not of the grid.** `TARGET_STEP_UVW = 0.01` and the step count is clamped to `u_iterations`, so a cheaper quality preset samples the same path more coarsely instead of sampling part of it.
-- **The jitter** decorrelates neighboring pixels so a step size in UVW does not show as concentric banding. It hashes the fragment coordinate, which is per pixel and free.
-- **The pre-pass hashes position only**, never time. A phase that re-rolls every frame makes the occlusion mask boil at its edges, and at a coarse step it flickers over entire dust lanes.
-- **The transfer function** is `density × color × step`, integrated front to back, with an exposure of 20 applied at the end. Density is peak-normalized and sparse, so the ramp parameter is `log2(1 + 255·d)`. Without the log the whole volume lands in the first ramp stop and the ramp does nothing.
+- **The jitter** decorrelates neighboring pixels so a step size in UVW does not show as concentric banding.
+- **The transfer function** is \\(density \times color \times step\\), integrated front to back, with an exposure factor applied at the end. Density is peak-normalized and sparse, so the ramp parameter is \\(log_2(1 + 255\cdot d)\\). Without the log the whole volume lands in the first ramp stop and the ramp does nothing.
 
 ### Known limits
 
 Two, both of them consequences of doing the depth in a cheap pre-pass:
 
 - The depth is written at the **first** sample above the threshold, not where the ray actually becomes optically thick. A thin lane therefore occludes as hard as a thick one.
-- The distance is along the ray, while the log depth buffer wants view-space depth. They differ by `cos θ` away from the view axis, which is exact at the center of the screen and a few percent at the corners.
+- The distance is along the ray, while the log depth buffer wants view-space depth. They differ by \\(cos \Theta\\) away from the view axis, which is exact at the center of the screen and a few percent at the corners.
 
 Neither is visible in practice, and both are one comparison per sample away from being fixed properly.
 
@@ -283,50 +278,71 @@ The question a resolution-independent conversion has to answer is whether the th
 | 400 | 0.00020295 |
 | 800 | 0.00020382 |
 
-within 1% of each other, with the same total mass and the same hues, so what changes between them is only detail. And detail is visible: at 200 the dust cannot be smoothed at all (its kernel is 0.31 voxels, so the point cloud shows through), at 400 it is 0.63 voxels, and only at 800 does it reach 1.25 voxels and become a continuous lane. This is why the dust is the channel that decides which resolution you actually want, and why the 800 volume is the one in the preview video.
+within 1% of each other, with the same total mass and the same hues, so what changes between them is only detail. And detail is visible: at 200 the dust cannot be smoothed at all (its kernel is 0.31 voxels, so the point cloud shows through), at 400 it is 0.63 voxels, and only at 800 does it reach 1.25 voxels and become a continuous lane. This is why the dust is the channel that decides which resolution you actually want, and why the 800 volume is the one in the preview video below.
 
-{{< imgcompare before="/img/2026/10/gal03-top.jpg" after="/img/2026/10/gal04-top.jpg" label-before="3.8.x" label-after="3.9.0" title="Top-view comparisond" caption="Particle-based galaxy compard to the volumetric galaxy." >}}
-
-<!-- TODO(toni): the numbers in this table are placeholders. Replace with measured frame
-     times, and state the test machine: CPU, GPU, driver, window size and camera. -->
-
-The volume costs what the step count says, not what the grid says. Frame time for the Milky Way alone, at 1920×1080 with the camera [[camera description]], on [[GPU and driver]]:
+Up to 800, the volume costs what the step count says, not what the grid says. Frame time for the Milky Way alone, at QHD (2560x1440) with the camera at about 34.5 kpc above the galactic disk, on an NVIDIA GTX 1070 (driver 580.178.04) on Arch Linux. I deliberately chose to use this very old card instead of my other RTX 5080 because it may be more representative of the graphics computing power present in common household PCs and laptops. Tests have been carried out with only the base dataset loaded.
 
 | Resolution | low (50 steps) | normal (70 steps) | high (90 steps) | ultra (110 steps) |
 |---|---|---|---|---|
-| 200 | 4.2 ms (238 fps) | 5.6 ms (179 fps) | 7.1 ms (141 fps) | 8.6 ms (116 fps) |
-| 400 | 4.3 ms (233 fps) | 5.8 ms (172 fps) | 7.4 ms (135 fps) | 9.0 ms (111 fps) |
-| 800 | 4.6 ms (217 fps) | 6.2 ms (161 fps) | 8.0 ms (125 fps) | 9.8 ms (102 fps) |
+| 200 | 3.5 ms (285 fps) | 3.8 ms (259 fps) | 4.3 ms (231 fps) | 4.6 ms (216 fps) |
+| 400 | 3.4 ms (289 fps) | 3.8 ms (260 fps) | 4.1 ms (239 fps) | 4.5 ms (222 fps) |
+| 800 | 4.3 ms (230 fps) | 4.5 ms (220 fps) | 4.7 ms (212 fps) | 5.2 ms (192 fps) |
+| 1300 | 5.0 ms (198 fps) | 5.8 ms (172 fps) | 6.2 ms (161 fps) | 6.8 ms (145 fps) |
 
-The grid barely moves the cost, because the ray march is per-pixel and step-bounded: picking a finer grid buys detail without buying a frame. What moves it is the preset, and the last column is the price of a dust lane that stays smooth while the camera orbits. At 1080p even the worst cell holds inside a 16.7 ms budget, so what decides whether a card can run the 800 volume is its memory, long before it is its frame time.
+With that hardware the resolution is almost free: going from 200 to 800, sixty-four times the voxels, costs under a millisecond at every preset (3.5 → 4.3 ms at low, 4.6 → 5.2 at ultra). This is possibly because the ray march is per-pixel and the grid does not change how many steps a ray takes. That is why I also built a 1300 volume, which no shipped dataset uses: 274 times the voxels of 200, for 1.5 to 2.2 ms (3.5 → 5.0 ms at low, 4.6 → 6.8 at ultra). Even at that scale the cost stays far below the voxel count, but it is no longer invisible: 1300 is now the most expensive thing in the table, ahead of the preset.
+
+The step count is also interesting. Current presets are 50 at low against 110 at ultra, and even that only adds 0.9 ms at 800 and 1.8 ms at 1300. The slowest cell in the table is 6.8 ms (1300, ultra) at QHD, 41% of the 16.7 ms a 60 fps frame allows, so even that volume is not limited by frame time on this card.
+
+What the card does pay for is memory. These are the sizes as decompressed and uploaded to VRAM, at 4 bytes per voxel (`RGBA8`), for the flattened, cropped boxes the loader actually builds:
+
+| Resolution | Grid | Voxels | VRAM |
+|---|---|---|---|
+| 200 | 200 × 20 × 200 | 0.8 M | 3.2 MB |
+| 400 | 400 × 40 × 400 | 6.4 M | 25.6 MB |
+| 800 | 798 × 80 × 800 | 51.1 M | 204 MB |
+| 1300 | 1300 × 130 × 1300 | 219.7 M | 879 MB |
+
+Even the 1300 volume fits in the 8 GB of a GTX 1070 with room to spare. That is the flattening earning its keep: the same resolution in a cubic box would be 8.8 GB, so the high-resolution row could not have been run at all.
+
+
+The stills below are where the argument becomes visible, each pair sharing a camera. The top view is where the billboards fall short, and for a reason that is easy to get backwards: seen face-on, so few billboards overlap along the line of sight that there is almost no galaxy left.
+
+{{< imgcompare before="/img/2026/10/comp-bb-top.jpg" after="/img/2026/10/comp-volume-top.jpg" label-before="Billboards, 3.8.x" label-after="Volume, 3.9.0" title="Top view comparison between rendering methods" caption="Top view. With so few billboards along the line of sight the galaxy almost disappears; the volume still shows the disk and its dust lanes. Volume at 800 resolution." >}}
+
+Edge-on, the billboards look plausible at first glance, but they blow out, while the volume rendering stays consistent. The same additive blending that was too faint from the top saturates here: the bulge becomes a flat white patch and the disk loses its internal structure. The volume stays a thin dark lane with its dust intact. It is also dimmer overall, which is expected, because there the light is absorbed rather than added.
+
+{{< imgcompare before="/img/2026/10/comp-bb-side.jpg" after="/img/2026/10/comp-volume-side.jpg" label-before="Billboards, 3.8.x" label-after="Volume, 3.9.0" title="Edge view comparison between rendering methods" caption="Edge view. The billboards saturate, the volume does not. Volume at 800 resolution." >}}
+
+
+Dust is where the grid resolution shows. Three close-ups of the same lane, same camera, 110 iterations each:
+
+{{< imgswitch labels="200, 400, 800" images="/img/2026/10/dust-200.jpg, /img/2026/10/dust-400.jpg, /img/2026/10/dust-800.jpg" alt="Close-up of a Milky Way dust lane rendered from grids of 200, 400 and 800 resolution" title="Dust lanes at three grid resolutions" caption="The same close-up at 200, 400 and 800, 110 iterations. At 200 the fog is grainy, because the dust kernel is thinner than a voxel and the point cloud shows through. 400 is already smooth and 800 is smoother still, but the two are hard to tell apart at this framing. The stars and HII regions look the same in all three: they are billboards and never go through the grid." >}}
+
+The last comparison is the two ends of the preset range. Low is the 200 grid and 50 steps, ultra is the 800 grid and 110 steps, so both knobs move at once and this pair shows the worst case rather than the effect of either one alone.
+
+{{< imgcompare before="/img/2026/10/preset-low-top.jpg" after="/img/2026/10/preset-ultra-top.jpg" label-before="Preset: low" label-after="Preset: ultra" title="Top view preset comparison" caption="The low preset versus the ultra preset, top view." >}}
+{{< imgcompare before="/img/2026/10/preset-low-in.jpg" after="/img/2026/10/preset-ultra-in.jpg" label-before="Preset: low" label-after="Preset: ultra" title="Preset comparison from inside the disk" caption="The low preset versus the ultra preset, from inside the disk, looking at the galactic center. Low uses the 200 galaxy resolution and 50 iterations. Ultra uses the 800 galaxy resolution and 110 iterations." >}}
+
+Against ultra, the low preset is softer and hazier, and the dust has less contrast. That is intended: low is meant for modest hardware, and it still looks decent there.
+
+Below is a video I captured with the 800 galaxy running in Gaia Sky.
 
 {{< yt id="3BWCaxGOCzs" title="Volumetric Milky Way rendering in Gaia Sky" caption="Credits: The Gaia Sky Project, ESA/Gaia/DPAC." >}}
 
-<!-- TODO(toni): the three figures below are placeholders reusing images already in
-     static/img/2026/10/. The final set should be:
-     - particle billboards (3.8.x) next to the volume (3.9.0), same camera
-     - 200 vs 400 vs 800 dust close-up on the lanes
-     - low vs ultra preset, same camera, cropped
-     gal1300-wide.jpg / gal1300-top.jpg / gal1300-side.jpg and gal04-collage.jpg are
-     already volumetric captures, so they will not do for the first comparison. -->
-
-The stills below are where the argument becomes visible, all of them at the same camera:
-
-{{< fig src="/img/2026/10/gal1300-wide.jpg" class="fig-center" width="100%" loading="lazy" title="Billboards and volume" caption="Placeholder. Intended: the 3.8.x particle billboards next to the 3.9.0 volume, same camera." >}}
-
-{{< fig src="/img/2026/10/gal04-collage-small.jpg" link="/img/2026/10/gal04-collage.jpg" class="fig-center" width="100%" loading="lazy" title="Dust at 200, 400 and 800" caption="Placeholder. Intended: a close-up on the lanes at the three resolutions, where the point cloud of the 200 grid gives way to a continuous lane." >}}
-
-{{< fig src="/img/2026/10/gal1300-top.jpg" class="fig-center" width="100%" loading="lazy" title="Presets" caption="Placeholder. Intended: the low and ultra presets from the same camera, cropped." >}}
-
 ## Conclusion
 
-For a decade the Milky Way in Gaia Sky was a compromise between what the data said and what a rasterizer could do with a pile of billboards. The volume rendering path removes the compromise: the galaxy is now a medium that emits and absorbs, the dust lanes hide the stars behind them and not the ones in front, and the image does not change character when the camera moves.
+For a decade the Milky Way in Gaia Sky was a compromise between what the data said and what a rasterizer could do with a pile of billboards. The volume rendering path fixes this: the galaxy is now a medium that emits and absorbs. The dust lanes hide the stars behind them and not the ones in front, and it no longer blows out or fades to nothing depending on where the camera is.
 
-Two things made it work, and neither of them is in the shader. The first is the conversion itself: sizing the blur on the particles rather than on the grid is what makes 200, 400 and 800 the same object at three levels of detail, and flattening the box to the shape of the data is what makes the high resolution affordable at all: 24 MiB instead of 244 at identical voxel size. The second is the depth pre-pass: a volume cannot write meaningful depth in a blended pass, but the rest of the scene has to know where the dust is, and a cheap early mask costs one extra draw and solves it exactly.
+Two things made it work, and neither of them is in the shader itself. The first is the conversion: sizing the blur on the particles rather than on the grid is what makes all resolutions the same object at different levels of detail. Flattening the box to the shape of the data makes real savings in memory (256 vs 25 MB for the \\\(400^3\\\) box). This is what lets the unshipped 1300 grid fit in the 8 GB of a GTX 1070 and still draw a frame in under 7 ms. The second is the depth pre-pass: a volume cannot write meaningful depth in a blended pass. The rest of the scene has to know where the dust is, so the cheap early pass does the trick here.
 
-What is left is polish rather than architecture: sizing the ray-march step from the grid resolution instead of the box, so a finer grid is actually sampled finer; replacing the time-hashed jitter with a static one, since a float32 clock dies after about ten hours of uptime; enabling scattering in the dust, which is already wired with a coefficient of zero; and tuning the occlusion threshold, which is currently a single constant for the whole volume and would probably be better as a curve. And, of course, the same treatment for the rest of the galaxies in the catalog. The current procedural galaxy system still emits galaxies in the old billboard framework. Nothing in the loader or the shader knows about the Milky Way.
+So far, all this work only affects one galaxy: our own. Gaia Sky can already generate galaxies procedurally, but in 3.9.0+ that system still produces billboard particles. The next step is to adapt it to produce and render volumes. Other than that, what is left are smaller fixes rather than architecture:
 
+- Sizing the ray-march step from the grid resolution instead of the box, so a finer grid is actually sampled finer.
+- Replacing the time-hashed jitter with a static one (the current float32 clock dies after about ten hours of uptime).
+- Enabling scattering in the dust, which is already wired with a coefficient of zero.
+- Tuning the occlusion threshold, which is currently a single constant for the whole volume and would probably be better as a curve.
 
+Finally, all this work has been done assuming we start from a particle-based distribution, which is a weird place to start for such a project. Typically, one builds the volume from scratch via analytical distributions without going through a particle dataset. For DR4, due on December 2, we will build a volume directly from Stefan's data, bypassing the particles altogether.
 
 [^1]: Astronomy Picture of the Day: Here comes the Sun
 

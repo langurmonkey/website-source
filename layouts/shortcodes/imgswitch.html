@@ -1,0 +1,234 @@
+<!--
+    A switchable image stack: several images shown one at a time, with a row
+    of buttons underneath to pick which one is visible. Meant for comparing
+    the same scene rendered at different settings (resolutions, presets).
+
+    All images are stacked in a single grid cell, so the frame is as tall as
+    the tallest image and switching never shifts the layout. Buttons are
+    driven by the is-active class; the JS runs once per page.
+
+    Attributes:
+    - images    - comma separated image paths, in order (required)
+    - labels    - comma separated button titles, one per image (required)
+    - links     - comma separated hrefs, opened when the image is clicked (optional,
+                  one per image; missing or empty entries leave that image unlinked)
+    - title     - figure title
+    - caption   - figure caption
+    - attr      - attribution, appended after the caption
+    - attrlink  - link for the attribution
+    - alt       - alt text prefix, each image gets "<alt> (<label>)" (default: caption)
+    - active    - index of the image shown first, 0-based (default 0)
+    - width     - width of the frame (CSS length, default 100%)
+    - loading   - loading attribute of the images (default lazy)
+    - class     - class of the figure (default fig-center)
+
+    Usage (shortcode delimiters written out):
+    imgswitch labels="200, 400, 800, 1300" images="/img/a.jpg, /img/b.jpg, /img/c.jpg, /img/d.jpg" caption="..."
+
+    Labels are plain text and are HTML-escaped: keep them short and ASCII
+    ("200", "low", "Billboards"). LaTeX in a label does NOT work, because the
+    output escapes the backslashes and MathJax never sees the delimiters.
+-->
+{{- $images := slice -}}
+{{- range split (.Get "images") "," -}}
+  {{- with trim . " " }}{{ $images = $images | append . }}{{ end -}}
+{{- end -}}
+{{- if not $images }}{{ errorf "imgswitch: no images given (shortcode at %s)" .Position }}{{ end -}}
+
+{{- $labels := slice -}}
+{{- range split (.Get "labels") "," -}}
+  {{- with trim . " " }}{{ $labels = $labels | append . }}{{ end -}}
+{{- end -}}
+{{- if ne (len $labels) (len $images) -}}
+  {{- errorf "imgswitch: %d images but %d labels (shortcode at %s)" (len $images) (len $labels) .Position -}}
+{{- end -}}
+
+{{- $links := slice -}}
+{{- range split (.Get "links") "," -}}
+  {{- $links = $links | append (trim . " ") -}}
+{{- end -}}
+{{- if gt (len $links) (len $images) -}}
+  {{- warnf "imgswitch: %d images but %d links, extra links ignored (shortcode at %s)" (len $images) (len $links) .Position -}}
+{{- end -}}
+
+{{- $active := .Get "active" | default "0" | int -}}
+{{- if or (lt $active 0) (ge $active (len $images)) -}}
+  {{- errorf "imgswitch: active=%d out of range, %d images (shortcode at %s)" $active (len $images) .Position -}}
+{{- end -}}
+
+{{- $width := .Get "width" | default "100%" -}}
+{{- $loading := .Get "loading" | default "lazy" -}}
+{{- $class := .Get "class" | default "fig-center" -}}
+{{- $alt := .Get "alt" -}}
+{{- if not $alt }}{{ $alt = .Get "caption" | plainify }}{{ end -}}
+
+{{- if not (.Page.Scratch.Get "imgsw") -}}
+{{- .Page.Scratch.Set "imgsw" true }}
+<style>
+  .imgsw {
+    display: block;
+    margin: 0 auto;
+    width: {{ $width }};
+    line-height: 0;
+  }
+
+  .imgsw-frame {
+    display: grid;
+  }
+
+  .imgsw-item {
+    grid-area: 1 / 1;
+    align-self: start;
+    text-decoration: none;
+    border: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease;
+  }
+
+  .imgsw-item.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .imgsw-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: none;
+    margin: 0;
+  }
+
+  .imgsw-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4em;
+    margin: 0.8em 0 0;
+    line-height: 1;
+  }
+
+  .imgsw-btn,
+  .imgsw-btn:hover {
+    height: auto;
+    min-width: 0;
+    margin: 0;
+    padding: 0.4em 1em;
+    border: 1px solid var(--title-color);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--title-color);
+    font-family: inherit;
+    font-size: 0.8em;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+
+  .imgsw-btn:hover {
+    background: rgba(127, 127, 127, 0.15);
+    color: var(--title-color) !important;
+  }
+
+  .imgsw-btn.is-active {
+    background: var(--title-color);
+    border-color: var(--title-color);
+    color: #ffffff;
+  }
+
+  .imgsw-btn.is-active:hover {
+    color: #ffffff !important;
+  }
+
+  .imgsw-btn:focus-visible {
+    outline: 2px solid var(--title-color);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .imgsw-item,
+    .imgsw-btn {
+      transition: none;
+    }
+  }
+</style>
+<script>
+  (function () {
+    function show(root, index) {
+      var items = root.querySelectorAll(".imgsw-item");
+      var buttons = root.querySelectorAll(".imgsw-btn");
+      if (index < 0 || index >= items.length) return;
+      for (var i = 0; i < items.length; i++) {
+        var on = i === index;
+        items[i].classList.toggle("is-active", on);
+        items[i].setAttribute("aria-hidden", on ? "false" : "true");
+        buttons[i].classList.toggle("is-active", on);
+        buttons[i].setAttribute("aria-pressed", on ? "true" : "false");
+      }
+    }
+
+    document.addEventListener("click", function (event) {
+      var button = event.target.closest ? event.target.closest(".imgsw-btn") : null;
+      if (!button) return;
+      var root = button.closest(".imgsw");
+      if (root) show(root, parseInt(button.dataset.imgswIndex, 10));
+    });
+
+    // Left/right arrows walk the buttons once one of them has focus.
+    document.addEventListener("keydown", function (event) {
+      var key = event.key;
+      if (key !== "ArrowLeft" && key !== "ArrowRight") return;
+      var button = event.target.closest ? event.target.closest(".imgsw-btn") : null;
+      if (!button) return;
+      var root = button.closest(".imgsw");
+      var buttons = root.querySelectorAll(".imgsw-btn");
+      var index = parseInt(button.dataset.imgswIndex, 10);
+      index = key === "ArrowRight" ? (index + 1) % buttons.length : (index - 1 + buttons.length) % buttons.length;
+      show(root, index);
+      buttons[index].focus();
+      event.preventDefault();
+    });
+  })();
+</script>
+{{- end -}}
+
+<figure{{ with $class }} class="{{ . }}"{{ end }}>
+  <div class="imgsw">
+    <div class="imgsw-frame">
+      {{- range $i, $src := $images }}
+      {{- $link := "" -}}
+      {{- if lt $i (len $links) }}{{ $link = index $links $i }}{{ end }}
+      <a class="imgsw-item{{ if eq $i $active }} is-active{{ end }}" data-imgsw-index="{{ $i }}"
+        {{- with $link }} href="{{ . }}"{{ end }}
+        {{- if ne $i $active }} aria-hidden="true"{{ end }}>
+        <img src="{{ $src }}"
+          {{- with $alt }} alt="{{ . }} ({{ index $labels $i }})"{{ end }}
+          loading="{{ $loading }}" decoding="async" />
+      </a>
+      {{- end }}
+    </div>
+    <div class="imgsw-tabs" role="group" aria-label="{{ with .Get "title" }}{{ . }}{{ else }}Image comparison{{ end }}">
+      {{- range $i, $label := $labels }}
+      <button type="button" class="imgsw-btn{{ if eq $i $active }} is-active{{ end }}" data-imgsw-index="{{ $i }}"
+        aria-pressed="{{ if eq $i $active }}true{{ else }}false{{ end }}">{{ $label }}</button>
+      {{- end }}
+    </div>
+  </div>
+  {{- if or (or (.Get "title") (.Get "caption")) (.Get "attr") -}}
+    <figcaption>
+      {{- with (.Get "title" | markdownify) }}<h4>{{ . }}</h4>{{ end -}}
+      {{- if or (.Get "caption") (.Get "attr") -}}
+      <p class="fig-attribution">
+        {{- .Get "caption" | markdownify -}}
+        {{- with .Get "attrlink" }}<a href="{{ . }}">{{ end -}}
+        {{- .Get "attr" | markdownify -}}
+        {{- if .Get "attrlink" }}</a>{{ end -}}
+      </p>
+      {{- end -}}
+    </figcaption>
+  {{- end -}}
+</figure>
