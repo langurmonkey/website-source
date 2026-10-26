@@ -14,7 +14,7 @@ The Milky Way is an essential component in any 3D Universe software. Rendering a
 
 <!--more-->
 
-{{< fig src="/img/2026/10/gal1300-close-crop.avif" link="/img/2026/10/gal1300-close.jpg" class="fig-center" width="100%" loading="lazy" title="The Milky Way galaxy in Gaia Sky" >}}
+{{< fig src="/img/2026/10/galaxy/gal1300-close-crop.avif" link="/img/2026/10/galaxy/gal1300-close.jpg" class="fig-center" width="100%" loading="lazy" title="The Milky Way galaxy in Gaia Sky" >}}
 
 
 
@@ -24,13 +24,13 @@ The rendering of our and other galaxies has always been a topic I dreaded. I nev
 
 So, for a long time, we have used approximations to render the Milky Way, some more gracious than others.
 - **Enhanced flat image** --- Initially, we used a single two-faced billboard with the artist's impression by Nick Risinger, coupled with a generated star field. This was featured in the September 26, 2016 Astronomy Picture of the Day, titled "Here comes the Sun"[^1]. This is a very primitive galaxy, but it looks awesome from above and in still pictures due to Risinger's image.
-  {{< imgswitch labels="Top, Side, Wide" images="/img/2026/10/gal01-top.jpg, /img/2026/10/gal01-side.jpg, /img/2026/10/gal01-wide.jpg" alt="The very first Milky Way in Gaia Sky." width="80%" >}}
+  {{< imgswitch labels="Top, Side, Wide" images="/img/2026/10/galaxy/gal01-top.jpg, /img/2026/10/galaxy/gal01-side.jpg, /img/2026/10/galaxy/gal01-wide.jpg" alt="The very first Milky Way in Gaia Sky." width="80%" >}}
 
 - **Textured billboard approach** --- After Gaia DR3 landed in 2022, the catalog data were used by Stefan Payne-Wardenaar[^2] to produce a high-quality representation of the whole Galaxy[^3] in Blender. At that time, I worked with Stefan to produce a particle-based version that would fit in the existing billboard systems in Gaia Sky. The first version was based on textured additive billboards and dithered depth buffer occlusion. The depth was correct, but the look of the galaxy was rather cartoonish and unrealistic. Additive blending was used for all channels except the dust, which was purely occlusive in a binary sense (no sorting, so no transparency), making use of dithering to simulate translucency. This version is the one that looks the worst of all. Using textured billboards is a bad move to simulate a volume of gas and dust. Also, the brightness blows out when seen edge-on.
-  {{< imgswitch labels="Top, Side, Wide" images="/img/2026/10/gal02-top.jpg, /img/2026/10/gal02-side.jpg, /img/2026/10/gal02-wide.jpg" alt="Textured billboard Milky Way in Gaia Sky." width="80%" >}}
+  {{< imgswitch labels="Top, Side, Wide" images="/img/2026/10/galaxy/gal02-top.jpg, /img/2026/10/galaxy/gal02-side.jpg, /img/2026/10/galaxy/gal02-wide.jpg" alt="Textured billboard Milky Way in Gaia Sky." width="80%" >}}
 
 - **Billboards with additive and subtractive blending** --- Later on, inspired by [this article](https://dexyfex.com/2016/09/09/galaxy-rendering-revisited/), the textured billboards were updated to rely on blobs and additive/subtractive blending. The main issue was that the emissive parts blended additively in a very unrealistic way, and the occlusion did not respect the depth order in the scene. Several attempts were made afterwards to implement Weighted Blended Order-Independent Transparency (WBOIT)[^4], as suggested by the article, but this was very difficult to tune and produced underwhelming results. Looks better than the previous textured-billboards version, but the behavior of light is unrealistic. The brightness is mostly gone when seen from the top, but blows out edge-on due to the additive blending.
-  {{< imgswitch labels="Top, Side, Wide" images="/img/2026/10/gal03-top.jpg, /img/2026/10/gal03-side.jpg, /img/2026/10/gal03-wide.jpg" alt="Additive/subtractive billboards Milky Way in Gaia Sky." width="80%" >}}
+  {{< imgswitch labels="Top, Side, Wide" images="/img/2026/10/galaxy/gal03-top.jpg, /img/2026/10/galaxy/gal03-side.jpg, /img/2026/10/galaxy/gal03-wide.jpg" alt="Additive/subtractive billboards Milky Way in Gaia Sky." width="80%" >}}
 
 
 All these issues finally tipped me into seriously consider approaching the project of converting the particle data to a volume and implementing a proper volume renderer with emission and occlusion.
@@ -55,7 +55,7 @@ Reading a few hundred thousand lines and painting them into a grid is not hard. 
 
 Every particle is a point with no extent, so the first operation is a scatter into the grid: each particle adds its weight to the voxel it falls in. That is the simplest possible splat, and it is what the shipped volumes use. It is also the one that keeps the property above, because a nearest-voxel scatter is the identity of the sampling: the same data always lands in the voxel the same ray will visit.
 
-{{< fig src="/img/2026/10/galaxy-rendering-splatting.svg" class="fig-center" width="100%" loading="lazy" title="Splatting" caption="Each particle adds its weight to the voxel it falls in, so a voxel ends up with the summed weight ρ and the weight-averaged color c; here its opacity is drawn proportional to ρ. The magnification shows the arithmetic for a voxel that receives two particles." >}}
+{{< fig src="/img/2026/10/galaxy/galaxy-rendering-splatting.svg" class="fig-center" width="100%" loading="lazy" title="Splatting" caption="Each particle adds its weight to the voxel it falls in, so a voxel ends up with the summed weight ρ and the weight-averaged color c; here its opacity is drawn proportional to ρ. The magnification shows the arithmetic for a voxel that receives two particles." >}}
 
 There are two details here worth taking into account:
 
@@ -82,7 +82,7 @@ where \\(\ell\\) is the median distance from a particle to its 4th nearest neigh
 
 The 0.85 is empirical. A blur width given by hand in world units, per channel, never generalised; this little proxy held up across channels and resolutions.
 
-{{< fig src="/img/2026/10/galaxy-rendering-smoothing.svg" class="fig-center" width="100%" loading="lazy" alt="The same Gaussian kernel drawn over two particle fields on grids of different resolution: the blur is a fixed length in the world, so it covers twice as many voxels on the finer grid." title="Smoothing" caption="The kernel width is a length measured on the particles, σ = 0.85 ℓ with ℓ the median distance to the 4th neighbor, so the same blur is described by twice as many voxels on a grid of twice the resolution. The result is one continuous density field; a fixed sigma in voxels would instead give a \\(200^{3}\\) volume and an \\(800^{3}\\) volume two different galaxies." >}}
+{{< fig src="/img/2026/10/galaxy/galaxy-rendering-smoothing.svg" class="fig-center" width="100%" loading="lazy" alt="The same Gaussian kernel drawn over two particle fields on grids of different resolution: the blur is a fixed length in the world, so it covers twice as many voxels on the finer grid." title="Smoothing" caption="The kernel width is a length measured on the particles, σ = 0.85 ℓ with ℓ the median distance to the 4th neighbor, so the same blur is described by twice as many voxels on a grid of twice the resolution. The result is one continuous density field; a fixed sigma in voxels would instead give a \\(200^{3}\\) volume and an \\(800^{3}\\) volume two different galaxies." >}}
 
 Two guards keep this sensible:
 
@@ -133,7 +133,7 @@ Here we go over the galaxy shader, which is in `assets/shader/volume.galaxy.frag
 
 But first, we need a piece of geometry that emits the pixels to the fragment shader were we do the work. Here, anything works, as long as the pixels reach the fragment. Since we need to render the galaxy also from the inside, we use a flipped cube at the position of the model. The transformations for the actual galaxy are done in the fragment shader, so rotating or scaling this box does nothing. It is essentially a vessel to emit pixels.
 
-{{< fig src="/img/2026/10/galaxy-rendering-fragments.svg" class="fig-center" width="100%" loading="lazy" alt="The flipped box: rays from the camera pass through the pixels of a screen, cross the culled front faces of the box without producing a fragment, and each end on the far wall, so every pixel receives exactly one fragment. In the second panel the camera is inside the box and every pixel still receives one." title="The box" caption="The box is drawn with its front faces culled, so it never shows up as a surface: the ray crosses the near wall and every pixel it covers receives exactly one fragment on the far wall. The shader does not use that fragment as a surface, it only takes its world position as a direction from the camera. Since the near wall is never the one drawn, the camera can also sit inside the box and the screen is still full." >}}
+{{< fig src="/img/2026/10/galaxy/galaxy-rendering-fragments.svg" class="fig-center" width="100%" loading="lazy" alt="The flipped box: rays from the camera pass through the pixels of a screen, cross the culled front faces of the box without producing a fragment, and each end on the far wall, so every pixel receives exactly one fragment. In the second panel the camera is inside the box and every pixel still receives one." title="The box" caption="The box is drawn with its front faces culled, so it never shows up as a surface: the ray crosses the near wall and every pixel it covers receives exactly one fragment on the far wall. The shader does not use that fragment as a surface, it only takes its world position as a direction from the camera. Since the near wall is never the one drawn, the camera can also sit inside the box and the screen is still full." >}}
 
 ### Wait, two passes?
 
@@ -307,21 +307,21 @@ Even the 1300 volume fits in the 8 GB of a GTX 1070 with room to spare. That is 
 
 The stills below are where the argument becomes visible, each pair sharing a camera. The top view is where the billboards fall short, and for a reason that is easy to get backwards: seen face-on, so few billboards overlap along the line of sight that there is almost no galaxy left.
 
-{{< imgcompare before="/img/2026/10/comp-bb-top.jpg" after="/img/2026/10/comp-volume-top.jpg" label-before="Billboards, 3.8.x" label-after="Volume, 3.9.0" title="Top view comparison between rendering methods" caption="Top view. With so few billboards along the line of sight the galaxy almost disappears; the volume still shows the disk and its dust lanes. Volume at 800 resolution." >}}
+{{< imgcompare before="/img/2026/10/galaxy/comp-bb-top.jpg" after="/img/2026/10/galaxy/comp-volume-top.jpg" label-before="Billboards, 3.8.x" label-after="Volume, 3.9.0" title="Top view comparison between rendering methods" caption="Top view. With so few billboards along the line of sight the galaxy almost disappears; the volume still shows the disk and its dust lanes. Volume at 800 resolution." >}}
 
 Edge-on, the billboards look plausible at first glance, but they blow out, while the volume rendering stays consistent. The same additive blending that was too faint from the top saturates here: the bulge becomes a flat white patch and the disk loses its internal structure. The volume stays a thin dark lane with its dust intact. It is also dimmer overall, which is expected, because there the light is absorbed rather than added.
 
-{{< imgcompare before="/img/2026/10/comp-bb-side.jpg" after="/img/2026/10/comp-volume-side.jpg" label-before="Billboards, 3.8.x" label-after="Volume, 3.9.0" title="Edge view comparison between rendering methods" caption="Edge view. The billboards saturate, the volume does not. Volume at 800 resolution." >}}
+{{< imgcompare before="/img/2026/10/galaxy/comp-bb-side.jpg" after="/img/2026/10/galaxy/comp-volume-side.jpg" label-before="Billboards, 3.8.x" label-after="Volume, 3.9.0" title="Edge view comparison between rendering methods" caption="Edge view. The billboards saturate, the volume does not. Volume at 800 resolution." >}}
 
 
 Dust is where the grid resolution shows. Three close-ups of the same lane, same camera, 110 iterations each:
 
-{{< imgswitch labels="200, 400, 800" images="/img/2026/10/dust-200.jpg, /img/2026/10/dust-400.jpg, /img/2026/10/dust-800.jpg" alt="Close-up of a Milky Way dust lane rendered from grids of 200, 400 and 800 resolution" title="Dust lanes at three grid resolutions" caption="The same close-up at 200, 400 and 800, 110 iterations. At 200 the fog is grainy, because the dust kernel is thinner than a voxel and the point cloud shows through. 400 is already smooth and 800 is smoother still, but the two are hard to tell apart at this framing. The stars and HII regions look the same in all three: they are billboards and never go through the grid." >}}
+{{< imgswitch labels="200, 400, 800" images="/img/2026/10/galaxy/dust-200.jpg, /img/2026/10/galaxy/dust-400.jpg, /img/2026/10/galaxy/dust-800.jpg" alt="Close-up of a Milky Way dust lane rendered from grids of 200, 400 and 800 resolution" title="Dust lanes at three grid resolutions" caption="The same close-up at 200, 400 and 800, 110 iterations. At 200 the fog is grainy, because the dust kernel is thinner than a voxel and the point cloud shows through. 400 is already smooth and 800 is smoother still, but the two are hard to tell apart at this framing. The stars and HII regions look the same in all three: they are billboards and never go through the grid." >}}
 
 The last comparison is the two ends of the preset range. Low is the 200 grid and 50 steps, ultra is the 800 grid and 110 steps, so both knobs move at once and this pair shows the worst case rather than the effect of either one alone.
 
-{{< imgcompare before="/img/2026/10/preset-low-top.jpg" after="/img/2026/10/preset-ultra-top.jpg" label-before="Preset: low" label-after="Preset: ultra" title="Top view preset comparison" caption="The low preset versus the ultra preset, top view." >}}
-{{< imgcompare before="/img/2026/10/preset-low-in.jpg" after="/img/2026/10/preset-ultra-in.jpg" label-before="Preset: low" label-after="Preset: ultra" title="Preset comparison from inside the disk" caption="The low preset versus the ultra preset, from inside the disk, looking at the galactic center. Low uses the 200 galaxy resolution and 50 iterations. Ultra uses the 800 galaxy resolution and 110 iterations." >}}
+{{< imgcompare before="/img/2026/10/galaxy/preset-low-top.jpg" after="/img/2026/10/galaxy/preset-ultra-top.jpg" label-before="Preset: low" label-after="Preset: ultra" title="Top view preset comparison" caption="The low preset versus the ultra preset, top view." >}}
+{{< imgcompare before="/img/2026/10/galaxy/preset-low-in.jpg" after="/img/2026/10/galaxy/preset-ultra-in.jpg" label-before="Preset: low" label-after="Preset: ultra" title="Preset comparison from inside the disk" caption="The low preset versus the ultra preset, from inside the disk, looking at the galactic center. Low uses the 200 galaxy resolution and 50 iterations. Ultra uses the 800 galaxy resolution and 110 iterations." >}}
 
 Against ultra, the low preset is softer and hazier, and the dust has less contrast. That is intended: low is meant for modest hardware, and it still looks decent there.
 
