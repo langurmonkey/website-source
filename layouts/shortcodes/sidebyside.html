@@ -1,0 +1,8 @@
+<!--
+    Two blocks side by side, e.g. a table and the plot of that table.
+    Call it with the percent delimiters so the inner content is rendered as
+    Markdown first; the wrapper then gets exactly the rendered blocks as its
+    grid children. Nothing is styled here: div.sidebyside lives in main.css,
+    where it can drop to one column on narrow screens.
+-->
+<div class="sidebyside">{{ .Inner | markdownify }}</div>

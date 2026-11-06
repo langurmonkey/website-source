@@ -2445,3 +2445,41 @@ div.div-center {
   padding-left: 20px;
   border-left: 1px solid var(--fg-color-dark);
 }
+
+/* Two blocks side by side, e.g. a table and the plot of that table.
+   The sidebyside shortcode wraps its content in div.sidebyside.
+
+   auto-fit + a minimum of one table's width means the switch to a single
+   column is decided by the space actually available, not by the viewport: the
+   two columns are only used when both really fit, so the table can never
+   bleed over the figure and then "jump" below at some unrelated window size.
+   (the table cannot shrink below the width of its header words, which the
+   sizes below are measured against.) */
+div.sidebyside {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 1.5em;
+  align-items: center;
+  margin: 1.5em 0;
+}
+
+div.sidebyside > * {
+  margin-bottom: 0;
+  min-width: 0;
+}
+
+div.sidebyside > figure {
+  margin: 0;
+}
+
+/* a touch tighter than the default table, so the header words fit in a
+   half-column with room to spare */
+div.sidebyside > table {
+  width: 100%;
+  font-size: 0.8em;
+}
+
+div.sidebyside > table thead th,
+div.sidebyside > table td {
+  padding: 0.4em 0.45em;
+}
