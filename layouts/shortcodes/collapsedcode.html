@@ -1,4 +1,6 @@
 {{- $lang := .Get "language" -}}
+{{- /* Prefix printed before the summary, "Code:" by default */ -}}
+{{- $title := .Get "title" | default "Code:" -}}
 
 {{- /* Determine source of the code */ -}}
 {{- $code := "" -}}
@@ -12,7 +14,7 @@
 
 <details class="collapsedcode">
   <summary>
-    <span class="code">Code: </span><span class="summary">{{ .Get "summary" }}</span>
+    <span class="code">{{ $title }} </span><span class="summary">{{ .Get "summary" }}</span>
   </summary>
 
   {{ (print "```" $lang "\n" $code "\n```") | markdownify }}

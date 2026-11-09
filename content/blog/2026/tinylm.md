@@ -45,6 +45,43 @@ A few real sentences out of the 2560, so you can see the shape:
 - `the clerk organized books under the store` -- thing verb, object from the paper class.
 - And two that are *not* in the world: `lucia invited lucia`, because you cannot invite yourself, and `the farmer repaired the soup`, because soup is not a tool.
 
+{{< collapsedcode language="bash" title=" " summary="TinlyLM world description" >}}
+➜ uv run python -m tinylm.world                                     
+2560 sentences, 92 distinct words
+  8 names, 12 occupations, 9 thing verbs, 4 person verbs, 24 things in 6 classes, 6 preps, 28 places
+
+verb -> object classes:
+  drank     drinks                 ['beer', 'soda', 'water', 'wine']
+  sipped    drinks                 ['beer', 'soda', 'water', 'wine']
+  ate       food                   ['apples', 'bread', 'soup', 'sweets']
+  devoured  food                   ['apples', 'bread', 'soup', 'sweets']
+  repaired  tools + homeware       ['brushes', 'cups', 'jars', 'lamps', 'nails', 'plates', 'ropes', 'tools']
+  cleaned   clothes + homeware     ['boots', 'coats', 'cups', 'gloves', 'hats', 'jars', 'lamps', 'plates']
+  packed    clothes + drinks       ['beer', 'boots', 'coats', 'gloves', 'hats', 'soda', 'water', 'wine']
+  bought    food + paper           ['apples', 'books', 'bread', 'letters', 'maps', 'soup', 'stamps', 'sweets']
+  organized paper                  ['books', 'letters', 'maps', 'stamps']
+  helped, met, thanked, invited -> any of the 20 people except the subject
+
+things per class:
+  drinks    ['wine', 'water', 'soda', 'beer']
+  food      ['bread', 'soup', 'apples', 'sweets']
+  tools     ['tools', 'brushes', 'nails', 'ropes']
+  clothes   ['boots', 'gloves', 'hats', 'coats']
+  paper     ['books', 'letters', 'maps', 'stamps']
+  homeware  ['cups', 'plates', 'jars', 'lamps']
+
+samples:
+   john helped mary in the store
+   john helped peter
+   john helped lucia inside the factory
+   john drank wine behind the hut
+   john drank water
+   john drank soda behind the bridge
+   the singer organized letters in the harbour
+   the singer organized maps
+   the singer organized stamps beside the train
+{{</ collapsedcode >}}
+
 ## Model structure
 
 The whole model is two small tables of numbers. The first one gives every word a handful of coordinates: three numbers per word in the default model, so \\(92 \times 3 = 276\\). The second one, the readout, says how much each word likes each of those three directions, another 276. That's it, 552 numbers in total. There is no lookup table of sentences and no rules inside, just those numbers. All of them are learned from the world above.
@@ -111,7 +148,55 @@ Where the accuracy sits is worth a look, because it points straight at the diffi
 
 ## Results
 
-TinyLM is implemented in PyTorch. The whole experiment, logs and all, is at <https://codeberg.org/langurmonkey/tinylm>. Every number in this section comes from a run in `logs/`, all with the same learning rate (0.03), the same 3000 steps and seed 0.
+TinyLM is implemented in PyTorch. The whole experiment, logs and all, is at <https://codeberg.org/langurmonkey/tinylm>. First, we show how the model completes sentences. All these results are captured with the base 552-parameter model (smallest). First, we ask it to complete "john drank", with a temperature of 1. We ask it to produce 4 samples.
+
+{{< collapsedcode language="bash" title="Result:" summary="\"john drank\"" >}}
+➜ uv run python -m tinylm.predict "john drank" --topk 6 --sample 4 --temperature 1.0 --length 4
+checkpoint: /home/tsagrista/Projects/tinylm/model/tinygpt.pt  552 params  3 numbers/word  train acc 29.2%  device=cpu
+
+context: john drank    T=1    entropy 2.04 bits
+       water   25.0%
+        beer   25.0%
+        wine   25.0%
+        soda   24.6%
+        hats    0.1%
+       coats    0.1%
+
+sampling 4 continuations of 4 words at T=1:
+   1. john drank beer inside the garden
+   2. john drank soda inside the park
+   3. john drank water inside the garage
+   4. john drank water under the station
+{{</ collapsedcode >}}
+
+
+Next, we ask it to complete "the conductor", and we increase the temperature to 4.
+
+{{< collapsedcode language="bash" title="Result:" summary="\"the conductor\"" >}}
+➜ uv run python -m tinylm.predict "the conductor" --temperature 2 --sample 5 --length 6 --topk 8
+checkpoint: /home/tsagrista/Projects/tinylm/model/tinygpt.pt  552 params  3 numbers/word  train acc 29.2%  device=cpu
+
+context: the conductor    T=2    entropy 3.69 bits
+     invited   11.2%
+      helped   11.2%
+         met   11.2%
+     thanked   11.2%
+    repaired    7.2%
+      packed    7.2%
+      bought    7.2%
+     cleaned    7.2%
+
+sampling 5 continuations of 6 words at T=2:
+   1. the conductor packed soda near the tower conductor
+   2. the conductor sipped soda beside the school garage
+   3. the conductor helped sara under the factory factory
+   4. the conductor bought books beside the hut office
+   5. the conductor packed hats mary under the hut
+{{</ collapsedcode >}}
+
+An interesting observation is that the model does not know when to stop (there are no stopping tokens in our world!), so it keeps producing tokens until it reaches the target `--length`, even when the sentence is complete. That's why we get things like "the conductor helped sara under the factory *factory*". This is fine, it is by design, a trade-off we have to live with.
+
+Next, we look at how the model performs when we grow the number of hidden units and the embedding dimensions. Every number in this section comes from a run in `logs/`, all with the same learning rate (0.03), the same 3000 steps and seed 0.
 
 The baseline is the 552-number model from above: 29.2% next-word accuracy, against a ceiling of 48.4%. There are two knobs to turn, so let me turn them one at a time.
 
