@@ -45,12 +45,12 @@ Below is a list of all the material I regularly use to take photos:
 #### Other stuff
 
 *  Soonpho RGB Video Light P10.
-*  7artisans EF-FX AF lens adapter for Canon EF/EF-S to Fujifilm X mount. {{< sp accent >}}[[`side`](/img/photography/ef-fx-7artisans.avif), [`comparison`](/img/photography/ef-fx-comparison.avif)], {{</ sp >}}
-*  Viltrox EF-FX1 AF lens adapter for Canon EF/EF-S to Fujifilm X mount.
+*  [7artisans EF-FX](/blog/2026/7artisans-ef-fx) AF lens adapter for Canon EF/EF-S to Fujifilm X mount. {{< sp accent >}}[[`side`](/img/photography/ef-fx-7artisans.avif), [`comparison`](/img/photography/ef-fx-comparison.avif)]{{</ sp >}}
+*  [Viltrox EF-FX1](/blog/2021/viltrox-ef-fx1-review) AF lens adapter for Canon EF/EF-S to Fujifilm X mount.
 *  Lowepro Nova 170 AW DSLR Camera Shoulder Bag.
 *  Manfrotto Compact Advanced Smart 65" Tripod.
 
 
 ## Processing software
 
-I usually shoot raw only. I process all of my photos using [darktable](https://www.darktable.org), a free and open source photography workflow manager and raw processor.
+Since I moved to Fujifilm, I shoot JPEG+RAW, and only very occasionally process the RAW files. In the rare occasion I do so, I use [darktable](https://www.darktable.org), a free and open source photography workflow manager and raw processor.
